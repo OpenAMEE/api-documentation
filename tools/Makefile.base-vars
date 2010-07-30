@@ -67,11 +67,7 @@ ENDIF = ; fi
 
 # Customization hooks for xsltproc options
 HTML_XSLTPROC_OPTS = 
-FO_XSLTPROC_OPTS =
-# FO example: --stringparam page.height 9in --stringparam page.width 6.4in
-
-# Uncomment the following line if you'd like to print on A4 paper
-# FO_XSLTPROC_OPTS = --stringparam paper.type A4
+FO_XSLTPROC_OPTS = --stringparam fop1.extensions 1 --stringparam paper.type A4
 
 # Override in locale-specific Makefile to localize the word in the 
 # auto-generated version file.
