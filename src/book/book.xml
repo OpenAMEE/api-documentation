@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE book SYSTEM "../../dtd/docbookx.dtd"
+[
+<!ENTITY % vers   SYSTEM "version.xml">
+%vers;
+<!ENTITY app01    SYSTEM "app01-reference.xml">
+<!ENTITY index    SYSTEM "index.xml">
+]>
+
+<book id="amee">
+  <title>AMEE API Documentation</title>
+
+  <bookinfo>
+
+    <subtitle>API Version 2.x</subtitle>
+
+    <authorgroup>
+      <author>
+        <firstname>James</firstname>
+        <surname>Smith</surname>
+      </author>
+      <author>
+        <firstname>Andrew</firstname>
+        <surname>Hill</surname>
+      </author>
+    </authorgroup>
+
+    <copyright>
+      <year>2010</year>
+      <holder>AMEE UK Ltd.</holder>
+    </copyright>
+
+  </bookinfo>
+
+  &app01;
+  &index;
+
+</book>
