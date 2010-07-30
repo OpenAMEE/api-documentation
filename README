@@ -1,3 +1,13 @@
 This is the AMEE API documentation, written in docbook 4.4.
 
-To build, go into the src directory and run ../tools/book-dist.py --html
+To build, go into the src directory and run: ../tools/book-dist.py 
+
+options:
+  --html: HTML single page
+  --html-chunk: HTML multi page
+  --pdf: PDF
+  
+  
+Requirements:
+  xsltproc
+  fop (PDF only)
