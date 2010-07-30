@@ -27,7 +27,7 @@ XMLLINT = xmllint
 INSTALL_DIR = $(DESTDIR)/usr/share/doc/OVERRIDE_ME_WITH_SOMETHING_SUITABLE
 INSTALL_DATA = cp -r
 MKDIR = mkdir -p
-SVNVERSION = svnversion
+GITVERSION = git log -1 --pretty=%h
 
 # You should not normally need to edit anything below here.
 SHELL = /bin/sh

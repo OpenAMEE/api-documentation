@@ -4,9 +4,9 @@
 # directory, and *not* to the tools directory, where this file itself resides.
 
 include ../tools/Makefile.base-vars
-NAME = book
+NAME = doc
 OUTNAME = amee-doc
-DIR = book
+DIR = doc
 IMAGES = $(DIR)/images/*.png
 INSTALL_DIR = $(DESTDIR)/usr/share/doc/amee
 include ../tools/Makefile.base-rules

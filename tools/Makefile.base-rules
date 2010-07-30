@@ -8,16 +8,16 @@ install: install-html install-html-chunk install-pdf install-ps
 # Build targets
 $(VERSION_SOURCE): version
 version:
-	@if $(SVNVERSION) . > /dev/null; then \
-	  echo '<!ENTITY svn.version "'`$(SVNVERSION) .`'">' \
+	@if $(GITVERSION) > /dev/null; then \
+	  echo '<!ENTITY amee.revision "'`$(GITVERSION)`'">' \
 	    > $(VERSION_SOURCE).tmp; \
-	  echo '<!ENTITY svn.l10n_revision "$(L10N_REVISION)">' \
+	  echo '<!ENTITY amee.l10n_revision "$(L10N_REVISION)">' \
 	    >> $(VERSION_SOURCE).tmp; \
 	else \
-	  echo '<!ENTITY svn.version "">' > $(VERSION_SOURCE).tmp; \
-	  echo '<!ENTITY svn.l10n_revision "">' > $(VERSION_SOURCE).tmp; \
+	  echo '<!ENTITY amee.version "">' > $(VERSION_SOURCE).tmp; \
+	  echo '<!ENTITY amee.l10n_revision "">' > $(VERSION_SOURCE).tmp; \
 	fi
-	@echo '<!ENTITY svn.date "'`date`'">' >> $(VERSION_SOURCE).tmp
+	@echo '<!ENTITY amee.date "'`date`'">' >> $(VERSION_SOURCE).tmp
 	@if cmp -s $(VERSION_SOURCE) $(VERSION_SOURCE).tmp; then \
 	  rm $(VERSION_SOURCE).tmp; \
 	else \

@@ -68,7 +68,7 @@ def main():
     if len(targets) < 1:
         usage('No targets specified.')
         
-    if not os.path.exists('book') or not os.path.exists('Makefile'):
+    if not os.path.exists('doc') or not os.path.exists('Makefile'):
         die('Please run this from the src directory.\n')
     os.putenv('FOP_OPTS', '-Xms100m -Xmx200m')
 
