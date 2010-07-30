@@ -73,14 +73,14 @@ $(PS_TARGET): $(FO_TARGET) $(IMAGES)
 	$(TOOLS_DIR)/bin/run-fop.sh -fo $(FO_TARGET) -ps $(PS_TARGET)
 
 # Requires at least docbook-xsl-1.74
-epub: book/svn-book.xml $(EPUB_TARGET)
+epub: book/amee-doc.xml $(EPUB_TARGET)
 $(EPUB_TARGET): $(ALL_SOURCE) 
 	$(ENSURE_XSL)
-	$(TOOLS_DIR)/xsl/epub/bin/dbtoepub book/svn-book.xml
-	mv svn-book.epub $(EPUB_TARGET)
+	$(TOOLS_DIR)/xsl/epub/bin/dbtoepub book/amee-doc.xml
+	mv amee-doc.epub $(EPUB_TARGET)
 
-book/svn-book.xml: version
-	xmllint --nonet --noent --xinclude --postvalid --output book/svn-book.xml book/book.xml
+book/amee-doc.xml: version
+	xmllint --nonet --noent --xinclude --postvalid --output book/amee-doc.xml book/book.xml
 
 # Install targets
 $(INSTALL_SUBDIR):

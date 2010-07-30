@@ -38,7 +38,7 @@ def main():
     except:
         usage("Invalid syntax")
     html = html_chunk = html_arch = html_chunk_arch = pdf = 0
-    name = 'svnbook'
+    name = 'amee-doc'
     targets = []
     for opt, arg in optlist:
         if opt == '--help' or opt == '-h':
@@ -69,20 +69,20 @@ def main():
         usage('No targets specified.')
         
     if not os.path.exists('book') or not os.path.exists('Makefile'):
-        die('Please run this from the Subversion book source directory.\n')
+        die('Please run this from the src directory.\n')
     os.putenv('FOP_OPTS', '-Xms100m -Xmx200m')
 
     def _cleanup_tmp_dirs():
         if os.path.exists(name): shutil.rmtree(name)
-        if os.path.exists('__SVNBOOK_TMP__'): shutil.rmtree('__SVNBOOK_TMP__')
+        if os.path.exists('__AMEEDOC_TMP__'): shutil.rmtree('__AMEEDOC_TMP__')
       
     try:
         _cleanup_tmp_dirs()
-        os.mkdir('__SVNBOOK_TMP__')
-        os.system('DESTDIR=__SVNBOOK_TMP__ make clean %s' \
+        os.mkdir('__AMEEDOC_TMP__')
+        os.system('DESTDIR=__AMEEDOC_TMP__ make clean %s' \
                   % (' '.join(targets)))
-        if os.path.isdir('__SVNBOOK_TMP__/usr/share/doc/subversion/book'):
-            os.rename('__SVNBOOK_TMP__/usr/share/doc/subversion/book', name)
+        if os.path.isdir('__AMEEDOC_TMP__/usr/share/doc/amee/doc'):
+            os.rename('__AMEEDOC_TMP__/usr/share/doc/amee/doc', name)
             os.system('tar cvfz %s.tar.gz %s' % (name, name))
     finally:
         _cleanup_tmp_dirs()

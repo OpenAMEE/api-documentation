@@ -5,10 +5,10 @@
 
 include ../tools/Makefile.base-vars
 NAME = book
-OUTNAME = svn-book
+OUTNAME = amee-doc
 DIR = book
 IMAGES = $(DIR)/images/*.png
-INSTALL_DIR = $(DESTDIR)/usr/share/doc/subversion
+INSTALL_DIR = $(DESTDIR)/usr/share/doc/amee
 include ../tools/Makefile.base-rules
 
 # Compatibility targets - the book buildsystem had quite target names which
