@@ -1,13 +1,12 @@
 <?xml version="1.0"?>
-<!DOCTYPE book SYSTEM "../../dtd/docbookx.dtd"
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
 [
 <!ENTITY % vers   SYSTEM "version.xml">
 %vers;
-<!ENTITY app01    SYSTEM "app01-reference.xml">
-<!ENTITY index    SYSTEM "index.xml">
 ]>
 
-<book id="amee">
+<book id="amee" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>AMEE API Documentation</title>
 
   <bookinfo>
@@ -32,7 +31,7 @@
 
   </bookinfo>
 
-  &app01;
-  &index;
+  <xi:include href="app01-reference.xml" />
+  <xi:include href="index.xml" />
 
 </book>

@@ -66,8 +66,8 @@ IFIMAGES = if test -n "$(IMAGES)"; then
 ENDIF = ; fi
 
 # Customization hooks for xsltproc options
-HTML_XSLTPROC_OPTS = 
-FO_XSLTPROC_OPTS = --stringparam fop1.extensions 1 --stringparam paper.type A4
+HTML_XSLTPROC_OPTS = --xinclude
+FO_XSLTPROC_OPTS = --xinclude --stringparam fop1.extensions 1 --stringparam paper.type A4
 
 # Override in locale-specific Makefile to localize the word in the 
 # auto-generated version file.
