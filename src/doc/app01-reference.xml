@@ -47,7 +47,7 @@ Accept: application/json
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
 				</programlisting>
-				<programlisting language="javascript"><xi:include href='samples/json/get_profiles.xml' parse="text"/></programlisting>
+				<programlisting language="javascript"><xi:include href='samples/json/get_profiles.js' parse="text"/></programlisting>
 			</section>
 			<section>
 				<title>XML</title>
