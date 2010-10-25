@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<programlisting language="xml"><![CDATA[
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Resources xmlns="http://schemas.amee.cc/2.0">
+	<ProfilesResource>
+		<Profiles>
+			<Profile created="2009-03-19 10:54:43.0" modified="2009-03-19 10:54:43.0" uid="563DE12868DC">
+				<Path/>
+				<Name/>
+				<Environment uid="5F5887BCF726"/>
+				<Permission created="2009-03-19 10:54:43.0" modified="2009-03-19 10:54:43.0" uid="E746CC640299">
+					<Environment uid="5F5887BCF726"/>
+					<Name>amee</Name>
+					<Username>v2user</Username>
+				</Permission>
+			</Profile>
+			<Profile created="2009-03-17 14:17:12.0" modified="2009-03-17 14:17:12.0" uid="E0047238E5E0">
+				<Path/>
+				<Name/>
+				<Environment uid="5F5887BCF726"/>
+				<Permission created="2009-03-17 14:17:12.0" modified="2009-03-17 14:17:12.0" uid="D24F947B27EA">
+					<Environment uid="5F5887BCF726"/>
+					<Name>amee</Name>
+					<Username>v2user</Username>
+				</Permission>
+			</Profile>
+			...
+		</Profiles>
+		<Pager>
+			<Start>0</Start>
+			<From>1</From>
+			<To>10</To>
+			<Items>16</Items>
+			<CurrentPage>1</CurrentPage>
+			<RequestedPage>1</RequestedPage>
+			<NextPage>2</NextPage>
+			<PreviousPage>-1</PreviousPage>
+			<LastPage>2</LastPage>
+			<ItemsPerPage>10</ItemsPerPage>
+			<ItemsFound>10</ItemsFound>
+		</Pager>
+	</ProfilesResource>
+</Resources>
+]]></programlisting>

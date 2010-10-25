@@ -1,4 +1,6 @@
-<appendix id="amee.reference">
+<!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+<appendix id="amee.reference" xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <title>API Reference</title>
 
@@ -45,82 +47,7 @@ Accept: application/json
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
 				</programlisting>
-				<programlisting language="javascript"><![CDATA[
-{
-  "apiVersion":"2.0",
-  "pager":{
-    "to":10,
-    "lastPage":2,
-    "nextPage":2,
-    "items":16,
-    "start":0,
-    "itemsFound":10,
-    "requestedPage":1,
-    "currentPage":1,
-    "from":1,
-    "itemsPerPage":10,
-    "previousPage":-1
-  },
-  "profiles":[
-    {
-      "uid":"B28A58B0E243",
-      "environment":{
-        "uid":"5F5887BCF726"
-      },
-      "created":"2009-03-19 10:54:46.0",
-      "name":"B28A58B0E243",
-      "path":"B28A58B0E243",
-      "permission":{
-        "uid":"AEECFC02BF27",
-        "created":"2009-03-19 10:54:46.0",
-        "group":{
-          "uid":"AC65FFA5F9D9",
-          "name":"amee"
-        },
-        "environmentUid":"5F5887BCF726",
-        "auth":{
-          "uid":"BA6EB0039D69",
-          "username":"v2user"
-        },
-        "modified":"2009-03-19 10:54:46.0"
-      },
-      "modified":"2009-03-19 10:54:46.0"
-    },
-    {
-      "uid":"E0047238E5E0",
-      "environment":{
-        "uid":"5F5887BCF726"
-      },
-      "created":"2009-03-17 14:17:12.0",
-      "name":"E0047238E5E0",
-      "path":"E0047238E5E0",
-      "permission":{
-        "uid":"D24F947B27EA",
-        "created":"2009-03-17 14:17:12.0",
-        "group":{
-          "uid":"AC65FFA5F9D9",
-          "name":"amee"
-        },
-        "environmentUid":"5F5887BCF726",
-        "auth":{
-          "uid":"BA6EB0039D69",
-          "username":"v2user"
-        },
-        "modified":"2009-03-17 14:17:12.0"
-      },
-      "modified":"2009-03-17 14:17:12.0"
-    },
-    ...
-  ],
-  "actions":{
-    "allowCreate":true,
-    "allowView":true,
-    "allowList":true,
-    "allowModify":true,
-    "allowDelete":true
-  }
-}				
-				]]></programlisting>
+				<xi:include href='samples/json/get_profiles.xml'/>
 			</section>
 			<section>
 				<title>XML</title>
@@ -134,49 +61,7 @@ Accept: application/xml
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
 				</programlisting>
-				<programlisting language="xml"><![CDATA[
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Resources xmlns="http://schemas.amee.cc/2.0">
-  <ProfilesResource>
-    <Profiles>
-      <Profile created="2009-03-19 10:54:43.0" modified="2009-03-19 10:54:43.0" uid="563DE12868DC">
-        <Path/>
-        <Name/>
-        <Environment uid="5F5887BCF726"/>
-        <Permission created="2009-03-19 10:54:43.0" modified="2009-03-19 10:54:43.0" uid="E746CC640299">
-          <Environment uid="5F5887BCF726"/>
-          <Name>amee</Name>
-          <Username>v2user</Username>
-        </Permission>
-        </Profile>
-      <Profile created="2009-03-17 14:17:12.0" modified="2009-03-17 14:17:12.0" uid="E0047238E5E0">
-        <Path/>
-        <Name/>
-        <Environment uid="5F5887BCF726"/>
-        <Permission created="2009-03-17 14:17:12.0" modified="2009-03-17 14:17:12.0" uid="D24F947B27EA">
-          <Environment uid="5F5887BCF726"/>
-          <Name>amee</Name>
-          <Username>v2user</Username>
-        </Permission>
-      </Profile>
-      ...
-    </Profiles>
-    <Pager>
-      <Start>0</Start>
-      <From>1</From>
-      <To>10</To>
-      <Items>16</Items>
-      <CurrentPage>1</CurrentPage>
-      <RequestedPage>1</RequestedPage>
-      <NextPage>2</NextPage>
-      <PreviousPage>-1</PreviousPage>
-      <LastPage>2</LastPage>
-      <ItemsPerPage>10</ItemsPerPage>
-      <ItemsFound>10</ItemsFound>
-    </Pager>
-  </ProfilesResource>
-</Resources>
-				]]></programlisting>
+				<xi:include href='samples/xml/get_profiles.xml'/>
 			</section>
 		</section>
   	</section>
