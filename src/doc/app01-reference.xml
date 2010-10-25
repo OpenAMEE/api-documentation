@@ -64,131 +64,77 @@ Content-Type: application/xml; charset=UTF-8
 				<programlisting language="xml"><xi:include href='samples/xml/get_profiles.xml' parse="text"/></programlisting>
 			</section>
 		</section>
-  	</section>
-		
-  </section>
-
-
-
-<!--
-
-=== Create Profile ===
-
- * '''URL''': http://{server}/profiles
- * '''Method''': POST
- * '''Request format''': application/x-www-form-urlencoded
- * '''Response format''': application/xml, application/json
- * '''Response code''': 200 OK
- * '''Response body''': A description of the new profile.
-
-||'''API Version'''||'''Parameter'''||'''Definition'''||'''Required'''||
-||all||profile||Create a new profile. Value should always be set to 'true'.||Yes||
-
-==== Example: AMEE 2 JSON ====
-Request:
-{{{
+		<section>
+			<title>Create Profile</title>
+			<itemizedlist>
+				<listitem>URL: <code>http://{server}/profiles</code></listitem>
+				<listitem>Method: <code>POST</code></listitem>
+				<listitem>Request format:  <code>application/x-www-form-urlencoded</code></listitem>
+				<listitem>Response format: <code>application/xml, application/json</code></listitem>
+				<listitem>Response code: <code>200 OK</code></listitem>
+				<listitem>Response body: A description of the new profile.</listitem>
+			</itemizedlist>			
+			<para>
+				||'''API Version'''||'''Parameter'''||'''Definition'''||'''Required'''||
+				||all||profile||Create a new profile. Value should always be set to 'true'.||Yes||
+			</para>
+			<section>
+				<title>JSON</title>
+				<para>Request</para>
+				<programlisting>
 POST /profiles HTTP/1.1
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
-Authtoken: 
-}}}
-{{{
+				</programlisting>
+				<programlisting>
 profile=true
-}}}
-
-Response:
-{{{
+				</programlisting>
+				<para>Response</para>
+				<programlisting>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-}}}
-{{{
-#!js
-{
-  "apiVersion":"2.0",
-  "profile":{
-    "uid":"180D73DA5229",
-    "environment":{
-      "uid":"5F5887BCF726"
-    },
-    "created":"Wed Mar 18 10:23:59 GMT 2009",
-    "name":"180D73DA5229",
-    "path":"180D73DA5229",
-    "permission":{
-      "uid":"2F093CD55011",
-      "created":"Wed Mar 18 10:23:59 GMT 2009",
-      "group":{
-        "uid":"AC65FFA5F9D9",
-        "name":"amee"
-      },
-      "environmentUid":"5F5887BCF726",
-      "auth":{
-        "uid":"BA6EB0039D69",
-        "username":"v2user"
-      },
-      "modified":"Wed Mar 18 10:23:59 GMT 2009"
-    },
-    "modified":"Wed Mar 18 10:23:59 GMT 2009"
-  }
-}
-}}}
-
-==== Example: AMEE 2 XML ====
-Request:
-{{{
+				</programlisting>
+				<programlisting language="javascript"><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
+			</section>
+			<section>
+				<title>XML</title>
+				<para>Request</para>
+				<programlisting>
 POST /profiles HTTP/1.1
 Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
-Authtoken: {your_authtoken_goes_here}
-}}}
-{{{
+				</programlisting>
+				<programlisting>
 profile=true
-}}}
-
-Response:
-{{{
+				</programlisting>
+				<para>Response</para>
+				<programlisting>
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
-}}}
-{{{
-#!xml
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Resources xmlns="http://schemas.amee.cc/2.0">
-  <ProfilesResource>
-    <Profile created="Wed Mar 18 10:23:54 GMT 2009" modified="Wed Mar 18 10:23:54 GMT 2009" uid="7C7D68C2A7CD">
-      <Path/>
-      <Name/>
-      <Environment uid="5F5887BCF726"/>
-      <Permission created="Wed Mar 18 10:23:54 GMT 2009" modified="Wed Mar 18 10:23:54 GMT 2009" uid="0D7EAF107FEB">
-        <Environment uid="5F5887BCF726"/>
-        <Name>amee</Name>
-        <Username>v2user</Username>
-      </Permission>
-    </Profile>
-  </ProfilesResource>
-</Resources>
-}}}
-
-=== Delete Profile ===
-
- * '''URL''': http://{server}/profiles/{profile_uid}
- * '''Method''': DELETE
- * '''Response code''': 200 OK
- * '''Body''': None
-
-Deletes the specified Profile. All data associated with that profile will also be deleted.
-
-==== Example ====
-
-Request:
-{{{
+				</programlisting>
+				<programlisting language="xml"><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
+			</section>
+		</section>
+		<section>
+			<title>Delete Profile</title>
+			<itemizedlist>
+				<listitem>URL: <code>http://{server}/profiles/{profile_uid}</code></listitem>
+				<listitem>Method: <code>DELETE</code></listitem>
+				<listitem>Response code: <code>200 OK</code></listitem>
+				<listitem>Response body: None</listitem>
+			</itemizedlist>			
+			<section>
+				<title>Example</title>
+				<para>Request</para>
+				<programlisting>
 DELETE /profiles/358E3BCF690E HTTP/1.1
-Authtoken: {your_authtoken_goes_here}
-}}}
-Response:
-{{{
+				</programlisting>
+				<para>Response</para>
+				<programlisting>
 HTTP/1.1 200 OK
-}}}
-
--->
-
+				</programlisting>
+			</section>
+		</section>
+	</section>
+  </section>
 </appendix>
