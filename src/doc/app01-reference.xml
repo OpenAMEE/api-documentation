@@ -1,5 +1,12 @@
 <!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
-  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
+[
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % dbcent PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/opt/local/share/xml/docbook/4.5/dbcentx.mod">
+%dbcent;
+]>
+
 <appendix id="amee.reference" xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <title>API Reference</title>
@@ -39,10 +46,23 @@
 				<listitem>Response code: <code>200 OK</code></listitem>
 				<listitem>Response body: A description of the new profile.</listitem>
 			</itemizedlist>			
-			<para>
-				||'''API Version'''||'''Parameter'''||'''Definition'''||'''Required'''||
-				||all||profile||Create a new profile. Value should always be set to 'true'.||Yes||
-			</para>
+			<table frame='all'><tgroup cols='3' align='left' colsep='1' rowsep='1'>
+				<colspec colnum='3' align='center'/>
+				<thead>
+					<row>
+						<entry>Parameter</entry>
+						<entry>Description</entry>
+						<entry>Required?</entry>
+					</row>
+				</thead>
+				<tbody>
+					<row>					
+						<entry>profile</entry>
+						<entry>Tells AMEE to create a profile. Should always be 'true'.</entry>
+						<entry>&check;</entry>
+					</row>
+				</tbody></tgroup>
+			</table>
 			<section>
 				<title>JSON</title>
 				<para>Request</para>
