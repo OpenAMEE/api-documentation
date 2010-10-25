@@ -7,9 +7,13 @@
   <section>
   	<title>Profiles</title>
     <para>
-	  A Profile is a set of data that collectively represent the CO2 emissions of a person, group, organisation, etc. 
-	  You are free to choose in your application what a profile corresponds to. You can create any number of separate 
-	  Profiles. Each Profile has a unique identifier or UID such as '6B0DD95CDF3D'.
+	  A Profile is the basic grouping element in AMEE. A single profile is used to contain all data corresponding to a single entity 
+	  in a client application. This could be a person, a building, an organisation, etc.; 
+	  you are free to choose what a profile corresponds to in your application. You can create any number of separate 
+	  Profiles.
+	</para>
+	<para>
+	  Each Profile has a unique identifier or UID such as '6B0DD95CDF3D'.
 	</para>
 	<para>
 	  See also: [wiki:AmeeConcepts AMEE Concepts], [wiki:AmeeProfileApi AMEE Profile API], [wiki:ProfileHistory Profile History]
@@ -23,49 +27,10 @@
 	<section>
 		<title>API Operations</title>
 		<section>
-			<title>List Profiles</title>
-			<itemizedlist>
-				<listitem>URL: <code>http://{server}/profiles</code></listitem>
-				<listitem>Method: <code>GET</code></listitem>
-				<listitem>Response format: <code>application/xml, application/json</code></listitem>
-				<listitem>Response code: <code>200 OK</code></listitem>
-				<listitem>Response body: A list of Profiles for the current [wiki:User User]</listitem>
-			</itemizedlist>			
-			<para>
-				As well as the current [wiki:User User], the profiles visible will depend on which [wiki:Group Groups] 
-				and [wiki:Role Roles] the User is associated with and the [wiki:Permission Permissions] on each Profile object.
-			</para>
-			<section>
-				<title>JSON</title>
-				<para>Request</para>
-				<programlisting>
-GET /profiles HTTP/1.1
-Accept: application/json
-				</programlisting>
-				<para>Response</para>
-				<programlisting>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-				</programlisting>
-				<programlisting language="javascript"><xi:include href='samples/json/get_profiles.js' parse="text"/></programlisting>
-			</section>
-			<section>
-				<title>XML</title>
-				<para>Request</para>
-				<programlisting>
-GET /profiles HTTP/1.1
-Accept: application/xml
-				</programlisting>
-				<para>Response</para>
-				<programlisting>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-				</programlisting>
-				<programlisting language="xml"><xi:include href='samples/xml/get_profiles.xml' parse="text"/></programlisting>
-			</section>
-		</section>
-		<section>
 			<title>Create Profile</title>
+			<para>
+				Used to create a new profile, in which ProfileItems can be stored.
+			</para>			
 			<itemizedlist>
 				<listitem>URL: <code>http://{server}/profiles</code></listitem>
 				<listitem>Method: <code>POST</code></listitem>
@@ -116,7 +81,52 @@ Content-Type: application/xml; charset=UTF-8
 			</section>
 		</section>
 		<section>
+			<title>List Profiles</title>
+			<para>
+				Lists all profiles available to the current user. Currently this is the list of all profiles
+				created by the current user, but may in future depend on other permissions.
+			</para>			
+			<itemizedlist>
+				<listitem>URL: <code>http://{server}/profiles</code></listitem>
+				<listitem>Method: <code>GET</code></listitem>
+				<listitem>Response format: <code>application/xml, application/json</code></listitem>
+				<listitem>Response code: <code>200 OK</code></listitem>
+				<listitem>Response body: A list of Profiles for the current [wiki:User User]</listitem>
+			</itemizedlist>			
+			<section>
+				<title>JSON</title>
+				<para>Request</para>
+				<programlisting>
+GET /profiles HTTP/1.1
+Accept: application/json
+				</programlisting>
+				<para>Response</para>
+				<programlisting>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+				</programlisting>
+				<programlisting language="javascript"><xi:include href='samples/json/get_profiles.js' parse="text"/></programlisting>
+			</section>
+			<section>
+				<title>XML</title>
+				<para>Request</para>
+				<programlisting>
+GET /profiles HTTP/1.1
+Accept: application/xml
+				</programlisting>
+				<para>Response</para>
+				<programlisting>
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+				</programlisting>
+				<programlisting language="xml"><xi:include href='samples/xml/get_profiles.xml' parse="text"/></programlisting>
+			</section>
+		</section>
+		<section>
 			<title>Delete Profile</title>
+			<para>
+				Completely remove a specified profile from the AMEE database, including all Profile Items contained within in.
+			</para>			
 			<itemizedlist>
 				<listitem>URL: <code>http://{server}/profiles/{profile_uid}</code></listitem>
 				<listitem>Method: <code>DELETE</code></listitem>
