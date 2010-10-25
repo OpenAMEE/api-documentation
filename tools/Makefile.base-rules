@@ -27,8 +27,8 @@ version:
 html: valid $(HTML_TARGET)
 $(HTML_TARGET): $(ALL_SOURCE) $(VERSION_SOURCE) $(STYLESHEET) $(IMAGES)
 	$(ENSURE_XSL)
-	$(XSLTPROC) $(HTML_XSLTPROC_OPTS) --output $(HTML_TARGET) \
-	  $(XSL_DIR)/html-stylesheet.xsl $(XML_SOURCE)
+	$(XSLTPROC) -o $(HTML_TARGET)  $(XML_SOURCE) \
+	  $(XSL_DIR)/html-stylesheet.xsl $(HTML_XSLTPROC_OPTS)
 
 # The trailing slash on the xsltproc --output option is essential to
 # output pages into the directory
@@ -37,9 +37,8 @@ $(HTML_CHUNK_TARGET): $(ALL_SOURCE) $(VERSION_SOURCE) $(STYLESHEET) $(IMAGES)
 	mkdir -p $(HTML_CHUNK_DIR)
 	$(IFIMAGES) mkdir -p $(HTML_CHUNK_DIR)/images $(ENDIF)
 	$(ENSURE_XSL)
-	$(XSLTPROC) $(HTML_XSLTPROC_OPTS) \
-           --output $(HTML_CHUNK_DIR)/ \
-	   $(XSL_DIR)/chunk-stylesheet.xsl $(XML_SOURCE)
+	$(XSLTPROC) $(XML_SOURCE) \
+	   $(XSL_DIR)/chunk-stylesheet.xsl $(HTML_XSLTPROC_OPTS) base.dir=$(HTML_CHUNK_DIR)/
 	cp $(STYLESHEET) $(HTML_CHUNK_DIR)
 	$(IFIMAGES) cp $(IMAGES) $(HTML_CHUNK_DIR)/images $(ENDIF)
 
