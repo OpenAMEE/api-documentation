@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<programlisting language="xml"><![CDATA[
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Resources xmlns="http://schemas.amee.cc/2.0">
 	<ProfilesResource>
@@ -41,4 +39,3 @@
 		</Pager>
 	</ProfilesResource>
 </Resources>
-]]></programlisting>
