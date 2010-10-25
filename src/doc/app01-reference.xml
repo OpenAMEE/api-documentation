@@ -98,7 +98,7 @@ profile=true
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
 				</programlisting>
-				<programlisting language="xml"><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
+				<programlisting language="myxml"><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
 			</section>
 		</section>
 		<section>
@@ -140,7 +140,7 @@ Accept: application/xml
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
 				</programlisting>
-				<programlisting language="xml"><xi:include href='samples/xml/get_profiles.xml' parse="text"/></programlisting>
+				<programlisting language="myxml"><xi:include href='samples/xml/get_profiles.xml' parse="text"/></programlisting>
 			</section>
 		</section>
 		<section>
