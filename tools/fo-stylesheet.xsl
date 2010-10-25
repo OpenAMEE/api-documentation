@@ -2,6 +2,8 @@
 
   <!-- xsl:import href="http://docbook.sourceforge.net/release/xsl/current/fo/docbook.xsl"/ -->
   <xsl:import href="xsl/fo/docbook.xsl"/>
+  <xsl:import href="xsl/highlighting/common.xsl"/>
+  <xsl:import href="xsl/fo/highlight.xsl"/>
 
   <!-- PARAMETER REFERENCE:                                       -->
   <!-- http://docbook.sourceforge.net/release/xsl/current/doc/fo/ -->

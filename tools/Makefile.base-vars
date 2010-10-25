@@ -22,7 +22,8 @@
 # should be overridden if necessary to ensure proper paths are used.
 
 # Paths which you may wish to customize:
-XSLTPROC = java -cp '/opt/local/share/xsl/docbook-xsl/extensions/saxon65.jar:/opt/local/share/java/saxon.jar:/Users/james/.m2/repository/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar' \
+XSLTPROC = java -cp '/opt/local/share/xsl/docbook-xsl/extensions/saxon65.jar:/opt/local/share/java/saxon.jar:/Users/james/.m2/repository/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar:/Users/james/Downloads/xslthl-2.0.2/xslthl-2.0.2.jar' \
+  -Dxslthl.config="file:///opt/local/share/xsl/docbook-xsl/highlighting/xslthl-config.xml" \
   -Djavax.xml.parsers.DocumentBuilderFactory=org.apache.xerces.jaxp.DocumentBuilderFactoryImpl \
   -Djavax.xml.parsers.SAXParserFactory=org.apache.xerces.jaxp.SAXParserFactoryImpl \
   -Dorg.apache.xerces.xni.parser.XMLParserConfiguration=org.apache.xerces.parsers.XIncludeParserConfiguration \
@@ -70,8 +71,8 @@ IFIMAGES = if test -n "$(IMAGES)"; then
 ENDIF = ; fi
 
 # Customization hooks for xsltproc options
-HTML_XSLTPROC_OPTS = use.extensions=1
-FO_XSLTPROC_OPTS = fop1.extensions=1 paper.type=A4
+HTML_XSLTPROC_OPTS = use.extensions=1 highlight.source=1
+FO_XSLTPROC_OPTS = fop1.extensions=1 highlight.source=1 paper.type=A4
 
 # Override in locale-specific Makefile to localize the word in the 
 # auto-generated version file.

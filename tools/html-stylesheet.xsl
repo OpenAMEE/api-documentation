@@ -2,6 +2,8 @@
 
   <!-- xsl:import href="http://docbook.sourceforge.net/release/xsl/current/html/docbook.xsl"/ -->
   <xsl:import href="xsl/xhtml/docbook.xsl"/>
+  <xsl:import href="xsl/highlighting/common.xsl"/>
+  <xsl:import href="xsl/xhtml/highlight.xsl"/>
 
   <xsl:include href="base-html-stylesheet.xsl"/>
 

@@ -2,6 +2,8 @@
 
   <!-- xsl:import href="http://docbook.sourceforge.net/release/xsl/current/html/chunk.xsl"/ -->
   <xsl:import href="xsl/xhtml/chunk.xsl"/>
+  <xsl:import href="xsl/highlighting/common.xsl"/>
+  <xsl:import href="xsl/xhtml/highlight.xsl"/>
 
   <xsl:include href="base-html-stylesheet.xsl"/>
 
