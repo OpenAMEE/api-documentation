@@ -1,3 +1,309 @@
 <appendix id="amee.reference">
+
   <title>API Reference</title>
+
+  <section>
+  	<title>Profiles</title>
+    <para>
+	  A Profile is a set of data that collectively represent the CO2 emissions of a person, group, organisation, etc. 
+	  You are free to choose in your application what a profile corresponds to. You can create any number of separate 
+	  Profiles. Each Profile has a unique identifier or UID such as '6B0DD95CDF3D'.
+	</para>
+	<para>
+	  See also: [wiki:AmeeConcepts AMEE Concepts], [wiki:AmeeProfileApi AMEE Profile API], [wiki:ProfileHistory Profile History]
+	</para>
+	<section>
+		<title>Properties</title>
+		<para>
+		  There  are no distinct properties for a Profile. See also: [wiki:CommonProperties Common Properties]
+		</para>
+	</section>
+	<section>
+		<title>API Operations</title>
+		<section>
+			<title>List Profiles</title>
+			<itemizedlist>
+				<listitem>URL: <code>http://{server}/profiles</code></listitem>
+				<listitem>Method: <code>GET</code></listitem>
+				<listitem>Response format: <code>application/xml, application/json</code></listitem>
+				<listitem>Response code: <code>200 OK</code></listitem>
+				<listitem>Response body: A list of Profiles for the current [wiki:User User]</listitem>
+			</itemizedlist>			
+			<para>
+				As well as the current [wiki:User User], the profiles visible will depend on which [wiki:Group Groups] 
+				and [wiki:Role Roles] the User is associated with and the [wiki:Permission Permissions] on each Profile object.
+			</para>
+			<section>
+				<title>JSON</title>
+				<para>Request</para>
+				<programlisting>
+GET /profiles HTTP/1.1
+Accept: application/json
+				</programlisting>
+				<para>Response</para>
+				<programlisting>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+				</programlisting>
+				<programlisting language="javascript"><![CDATA[
+{
+  "apiVersion":"2.0",
+  "pager":{
+    "to":10,
+    "lastPage":2,
+    "nextPage":2,
+    "items":16,
+    "start":0,
+    "itemsFound":10,
+    "requestedPage":1,
+    "currentPage":1,
+    "from":1,
+    "itemsPerPage":10,
+    "previousPage":-1
+  },
+  "profiles":[
+    {
+      "uid":"B28A58B0E243",
+      "environment":{
+        "uid":"5F5887BCF726"
+      },
+      "created":"2009-03-19 10:54:46.0",
+      "name":"B28A58B0E243",
+      "path":"B28A58B0E243",
+      "permission":{
+        "uid":"AEECFC02BF27",
+        "created":"2009-03-19 10:54:46.0",
+        "group":{
+          "uid":"AC65FFA5F9D9",
+          "name":"amee"
+        },
+        "environmentUid":"5F5887BCF726",
+        "auth":{
+          "uid":"BA6EB0039D69",
+          "username":"v2user"
+        },
+        "modified":"2009-03-19 10:54:46.0"
+      },
+      "modified":"2009-03-19 10:54:46.0"
+    },
+    {
+      "uid":"E0047238E5E0",
+      "environment":{
+        "uid":"5F5887BCF726"
+      },
+      "created":"2009-03-17 14:17:12.0",
+      "name":"E0047238E5E0",
+      "path":"E0047238E5E0",
+      "permission":{
+        "uid":"D24F947B27EA",
+        "created":"2009-03-17 14:17:12.0",
+        "group":{
+          "uid":"AC65FFA5F9D9",
+          "name":"amee"
+        },
+        "environmentUid":"5F5887BCF726",
+        "auth":{
+          "uid":"BA6EB0039D69",
+          "username":"v2user"
+        },
+        "modified":"2009-03-17 14:17:12.0"
+      },
+      "modified":"2009-03-17 14:17:12.0"
+    },
+    ...
+  ],
+  "actions":{
+    "allowCreate":true,
+    "allowView":true,
+    "allowList":true,
+    "allowModify":true,
+    "allowDelete":true
+  }
+}				
+				]]></programlisting>
+			</section>
+			<section>
+				<title>XML</title>
+				<para>Request</para>
+				<programlisting>
+GET /profiles HTTP/1.1
+Accept: application/xml
+				</programlisting>
+				<para>Response</para>
+				<programlisting>
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+				</programlisting>
+				<programlisting language="xml"><![CDATA[
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Resources xmlns="http://schemas.amee.cc/2.0">
+  <ProfilesResource>
+    <Profiles>
+      <Profile created="2009-03-19 10:54:43.0" modified="2009-03-19 10:54:43.0" uid="563DE12868DC">
+        <Path/>
+        <Name/>
+        <Environment uid="5F5887BCF726"/>
+        <Permission created="2009-03-19 10:54:43.0" modified="2009-03-19 10:54:43.0" uid="E746CC640299">
+          <Environment uid="5F5887BCF726"/>
+          <Name>amee</Name>
+          <Username>v2user</Username>
+        </Permission>
+        </Profile>
+      <Profile created="2009-03-17 14:17:12.0" modified="2009-03-17 14:17:12.0" uid="E0047238E5E0">
+        <Path/>
+        <Name/>
+        <Environment uid="5F5887BCF726"/>
+        <Permission created="2009-03-17 14:17:12.0" modified="2009-03-17 14:17:12.0" uid="D24F947B27EA">
+          <Environment uid="5F5887BCF726"/>
+          <Name>amee</Name>
+          <Username>v2user</Username>
+        </Permission>
+      </Profile>
+      ...
+    </Profiles>
+    <Pager>
+      <Start>0</Start>
+      <From>1</From>
+      <To>10</To>
+      <Items>16</Items>
+      <CurrentPage>1</CurrentPage>
+      <RequestedPage>1</RequestedPage>
+      <NextPage>2</NextPage>
+      <PreviousPage>-1</PreviousPage>
+      <LastPage>2</LastPage>
+      <ItemsPerPage>10</ItemsPerPage>
+      <ItemsFound>10</ItemsFound>
+    </Pager>
+  </ProfilesResource>
+</Resources>
+				]]></programlisting>
+			</section>
+		</section>
+  	</section>
+		
+  </section>
+
+
+
+<!--
+
+=== Create Profile ===
+
+ * '''URL''': http://{server}/profiles
+ * '''Method''': POST
+ * '''Request format''': application/x-www-form-urlencoded
+ * '''Response format''': application/xml, application/json
+ * '''Response code''': 200 OK
+ * '''Response body''': A description of the new profile.
+
+||'''API Version'''||'''Parameter'''||'''Definition'''||'''Required'''||
+||all||profile||Create a new profile. Value should always be set to 'true'.||Yes||
+
+==== Example: AMEE 2 JSON ====
+Request:
+{{{
+POST /profiles HTTP/1.1
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authtoken: 
+}}}
+{{{
+profile=true
+}}}
+
+Response:
+{{{
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+}}}
+{{{
+#!js
+{
+  "apiVersion":"2.0",
+  "profile":{
+    "uid":"180D73DA5229",
+    "environment":{
+      "uid":"5F5887BCF726"
+    },
+    "created":"Wed Mar 18 10:23:59 GMT 2009",
+    "name":"180D73DA5229",
+    "path":"180D73DA5229",
+    "permission":{
+      "uid":"2F093CD55011",
+      "created":"Wed Mar 18 10:23:59 GMT 2009",
+      "group":{
+        "uid":"AC65FFA5F9D9",
+        "name":"amee"
+      },
+      "environmentUid":"5F5887BCF726",
+      "auth":{
+        "uid":"BA6EB0039D69",
+        "username":"v2user"
+      },
+      "modified":"Wed Mar 18 10:23:59 GMT 2009"
+    },
+    "modified":"Wed Mar 18 10:23:59 GMT 2009"
+  }
+}
+}}}
+
+==== Example: AMEE 2 XML ====
+Request:
+{{{
+POST /profiles HTTP/1.1
+Accept: application/xml
+Content-Type: application/x-www-form-urlencoded
+Authtoken: {your_authtoken_goes_here}
+}}}
+{{{
+profile=true
+}}}
+
+Response:
+{{{
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+}}}
+{{{
+#!xml
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Resources xmlns="http://schemas.amee.cc/2.0">
+  <ProfilesResource>
+    <Profile created="Wed Mar 18 10:23:54 GMT 2009" modified="Wed Mar 18 10:23:54 GMT 2009" uid="7C7D68C2A7CD">
+      <Path/>
+      <Name/>
+      <Environment uid="5F5887BCF726"/>
+      <Permission created="Wed Mar 18 10:23:54 GMT 2009" modified="Wed Mar 18 10:23:54 GMT 2009" uid="0D7EAF107FEB">
+        <Environment uid="5F5887BCF726"/>
+        <Name>amee</Name>
+        <Username>v2user</Username>
+      </Permission>
+    </Profile>
+  </ProfilesResource>
+</Resources>
+}}}
+
+=== Delete Profile ===
+
+ * '''URL''': http://{server}/profiles/{profile_uid}
+ * '''Method''': DELETE
+ * '''Response code''': 200 OK
+ * '''Body''': None
+
+Deletes the specified Profile. All data associated with that profile will also be deleted.
+
+==== Example ====
+
+Request:
+{{{
+DELETE /profiles/358E3BCF690E HTTP/1.1
+Authtoken: {your_authtoken_goes_here}
+}}}
+Response:
+{{{
+HTTP/1.1 200 OK
+}}}
+
+-->
+
 </appendix>
