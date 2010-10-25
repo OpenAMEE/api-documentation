@@ -1,0 +1,13 @@
+body {
+	background-color:#A7D4D4;
+	font-family:Arial,sans-serif;
+	margin:0;
+	padding:0;	
+}
+
+div.navheader, div.navfooter, body > div.section, body > div.book, body > div.appendix, body > div.chapter, body > div.index {
+	background-color:#FFFFFF;
+	margin:0 auto;
+	max-width:960px;
+	padding:20px;
+}
