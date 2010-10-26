@@ -1,12 +1,10 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version='1.0'>
 
-  <!-- xsltproc can't support these extensions
   <xsl:param name="use.extensions">1</xsl:param>
   <xsl:param name="callouts.extension">1</xsl:param>
   <xsl:param name="linenumbering.extension">1</xsl:param>
   <xsl:param name="tablecolumns.extension">1</xsl:param>
   <xsl:param name="textinsert.extension">1</xsl:param>
-  -->
 
   <xsl:param name="html.stylesheet">styles.css</xsl:param>
   <xsl:param name="toc.section.depth">2</xsl:param>
