@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Time Series</title>
+  <section>
+    <title>Profile Item Sequences</title>
+    <section>
+      <title>Start &amp; End Dates</title>
+    </section>
+  </section>
+  <section>
+    <title>Time Series Queries</title>
+  </section>
+  <section>
+    <title>Data Item Value History</title>
+  </section>
+</chapter>

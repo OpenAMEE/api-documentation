@@ -31,6 +31,14 @@
 
   </bookinfo>
 
+  <xi:include href='ch_introduction.xml'/>
+  <xi:include href='ch_concepts.xml'/>
+  <xi:include href='ch_calculations.xml'/>
+  <xi:include href='ch_timeseries.xml'/>
+  <xi:include href='ch_advanced.xml'/>
+  <xi:include href='ch_clients.xml'/>
+  <xi:include href='ch_casestudy.xml'/>
+
   <appendix id="amee.reference">
     <title>API Reference</title>
     <xi:include href='ref_profiles.xml'/>
