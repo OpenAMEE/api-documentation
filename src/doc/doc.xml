@@ -31,7 +31,11 @@
 
   </bookinfo>
 
-  <xi:include href="app01-reference.xml" />
+  <appendix id="amee.reference">
+    <title>API Reference</title>
+    <xi:include href='ref_profiles.xml'/>
+  </appendix>
+  
   <xi:include href="index.xml" />
 
 </book>
