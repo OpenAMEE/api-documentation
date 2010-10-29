@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
+[
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % dbcent PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/opt/local/share/xml/docbook/4.5/dbcentx.mod">
+%dbcent;
+]>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Profile Categories</title>
+  <para>
+  </para>
+  <section>
+  	<title>Properties</title>
+  	<para>
+  	</para>
+  </section>
+  <section>
+  	<title>API Operations</title>
+  	<section>
+  		<title>Get Category</title>
+  		<para>
+  		</para>			
+  		<itemizedlist>
+  			<listitem>URL: <code>http://{server}/profiles</code></listitem>
+  			<listitem>Method: <code>GET</code></listitem>
+  			<listitem>Response format: <code>application/xml, application/json</code></listitem>
+  			<listitem>Response code: <code>200 OK</code></listitem>
+  			<listitem>Response body: </listitem>
+  		</itemizedlist>			
+  		<section>
+  			<title>JSON</title>
+  			<para>Request</para>
+  			<programlisting>
+POST /profiles HTTP/1.1
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+  			</programlisting>
+  			<programlisting>
+profile=true
+  			</programlisting>
+  			<para>Response</para>
+  			<programlisting>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+  			</programlisting>
+  			<programlisting language="javascript"><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
+  		</section>
+  		<section>
+  			<title>XML</title>
+  			<para>Request</para>
+  			<programlisting>
+POST /profiles HTTP/1.1
+Accept: application/xml
+Content-Type: application/x-www-form-urlencoded
+  			</programlisting>
+  			<programlisting>
+profile=true
+  			</programlisting>
+  			<para>Response</para>
+  			<programlisting>
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+  			</programlisting>
+  			<programlisting language="xml"><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
+  		</section>
+  	</section>
+  </section>
+</section>
