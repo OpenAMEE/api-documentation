@@ -4,4 +4,16 @@
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Performing Calculations</title>
+  <section>
+    <title>Authentication</title>
+  </section>
+  <section>
+    <title>Creating a Profile</title>
+  </section>
+  <section>
+    <title>Adding a Profile Item</title>
+  </section>
+  <section>
+    <title>Selecting a Data Item</title>
+  </section>
 </chapter>
