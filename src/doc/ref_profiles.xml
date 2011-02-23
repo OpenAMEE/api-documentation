@@ -55,39 +55,47 @@
 		<section role='tabbed'>
 		  <section role='tab'>
   			<title>JSON</title>
-  			<para>Request</para>
-  			<programlisting>
+  			<httprequest>
+  			  <header>
 POST /profiles HTTP/1.1
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
-  			</programlisting>
-  			<programlisting>
+          </header>
+          <body>
 profile=true
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
+          </body>
+        </httprequest>
+        <httpresponse>
+          <header>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="javascript"><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
+          </header>
+  			  <body format='json'>
+  			    <xi:include href='samples/json/post_profiles.js' parse="text"/>
+  			  </body>
+			  </httpresponse>
   		</section>
   		<section role='tab'>
   			<title>XML</title>
-  			<para>Request</para>
-  			<programlisting>
+  			<httprequest>
+  			  <header>
 POST /profiles HTTP/1.1
 Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
-  			</programlisting>
-  			<programlisting>
+          </header>
+          <body>
 profile=true
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
+          </body>
+        </httprequest>
+        <httpresponse>
+          <header>
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="xml"><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
+          </header>
+          <body format='xml'>
+            <xi:include href='samples/xml/post_profiles.xml' parse="text"/>
+          </body>
+        </httpresponse>
   		</section>
   	</section>
 	</section>
@@ -107,31 +115,39 @@ Content-Type: application/xml; charset=UTF-8
 		<section role='tabbed'>
 		  <section role='tab'>
   			<title>JSON</title>
-  			<para>Request</para>
-  			<programlisting>
+  			<httprequest>
+  			  <header>
 GET /profiles HTTP/1.1
 Accept: application/json
-    		</programlisting>
-    		<para>Response</para>
-    		<programlisting>
+          </header>
+    		</httprequest>
+  			<httpresponse>
+  			  <header>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="javascript"><xi:include href='samples/json/get_profiles.js' parse="text"/></programlisting>
+          </header>
+          <body format='json'>
+  			    <xi:include href='samples/json/get_profiles.js' parse="text"/>
+			    </body>
+		    </httpresponse>
   		</section>
 		  <section role='tab'>
   			<title>XML</title>
-  			<para>Request</para>
-  			<programlisting>
+  			<httprequest>
+  			  <header>
 GET /profiles HTTP/1.1
 Accept: application/xml
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
+          </header>
+    		</httprequest>
+  			<httpresponse>
+  			  <header>
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="xml"><xi:include href='samples/xml/get_profiles.xml' parse="text"/></programlisting>
+          </header>
+          <body format='xml'>
+  			    <xi:include href='samples/xml/get_profiles.xml' parse="text"/>
+			    </body>
+		    </httpresponse>
   		</section>
 		</section>
 	</section>
@@ -149,14 +165,16 @@ Content-Type: application/xml; charset=UTF-8
 		<section role='tabbed'>
 		  <section role='tab'>
     		<title>Example</title>
-    		<para>Request</para>
-    		<programlisting>
+  			<httprequest>
+  			  <header>
 DELETE /profiles/358E3BCF690E HTTP/1.1
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
+          </header>
+  			</httprequest>
+  			<httpresponse>
+  			  <header>
 HTTP/1.1 200 OK
-  			</programlisting>
+          </header>
+  			</httpresponse>
   		</section>
 		</section>
 	</section>

@@ -17,6 +17,21 @@
 
   <xsl:param name="para.propagates.style">1</xsl:param>
 
+  <xsl:template name='user.head.content'>    
+    <script type="text/javascript" src="syntax/shCore.js"></script>
+    <script type="text/javascript" src="syntax/shBrushJScript.js"></script>
+    <script type="text/javascript" src="syntax/shBrushXml.js"></script>
+    <script type="text/javascript" src="syntax/shBrushPlain.js"></script>
+    <link href="syntax/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="syntax/shThemeDefault.css" rel="stylesheet" type="text/css" />
+  </xsl:template>
+  
+  <xsl:template name='user.footer.content'>    
+    <script type="text/javascript">
+       SyntaxHighlighter.all()
+    </script>
+  </xsl:template>
+
   <xsl:template match="sect1" mode="toc">
     <xsl:param name="toc-context" select="."/>
     <xsl:call-template name="subtoc">
@@ -68,6 +83,57 @@
         </div>
       </xsl:for-each>
     </div>
+  </xsl:template>
+
+  <xsl:template match="httprequest">
+    <h4>Request</h4>
+    <xsl:apply-templates/>    
+    <hr/>
+  </xsl:template>
+
+  <xsl:template match="httprequest/header">
+    <script type="syntaxhighlighter" class="brush: plain" title="Header">
+      <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
+      <xsl:apply-templates/>
+      <xsl:text disable-output-escaping="yes"><![CDATA[]]]]><![CDATA[>]]></xsl:text></script>
+    <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
+  </xsl:template>
+
+  <xsl:template match="httprequest/body">
+    <script type="syntaxhighlighter" class="brush: plain" title="Body">
+      <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
+      <xsl:apply-templates/>
+      <xsl:text disable-output-escaping="yes"><![CDATA[]]]]><![CDATA[>]]></xsl:text></script>
+    <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
+  </xsl:template>
+
+  <xsl:template match="httpresponse">
+    <h4>Response</h4>
+    <xsl:apply-templates/>    
+  </xsl:template>
+
+  <xsl:template match="httpresponse/header">
+    <script type="syntaxhighlighter" class="brush: plain" title="Header">
+      <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
+      <xsl:apply-templates/>
+      <xsl:text disable-output-escaping="yes"><![CDATA[]]]]><![CDATA[>]]></xsl:text></script>
+    <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
+  </xsl:template>
+
+  <xsl:template match="httpresponse/body[@format='json']">
+    <script type="syntaxhighlighter" class="brush: js" title="Body">
+      <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
+      <xsl:apply-templates/>
+      <xsl:text disable-output-escaping="yes"><![CDATA[]]]]><![CDATA[>]]></xsl:text></script>
+    <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
+  </xsl:template>
+
+  <xsl:template match="httpresponse/body[@format='xml']">
+    <script type="syntaxhighlighter" class="brush: xml" title="Body">
+      <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
+      <xsl:apply-templates/>
+      <xsl:text disable-output-escaping="yes"><![CDATA[]]]]><![CDATA[>]]></xsl:text></script>
+    <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
   </xsl:template>
 
 </xsl:stylesheet>
