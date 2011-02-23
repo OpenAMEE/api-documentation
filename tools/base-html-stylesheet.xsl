@@ -22,6 +22,8 @@
     <script type="text/javascript" src="syntax/shBrushJScript.js"></script>
     <script type="text/javascript" src="syntax/shBrushXml.js"></script>
     <script type="text/javascript" src="syntax/shBrushPlain.js"></script>
+    <script type="text/javascript" src='script/jquery-1.5.min.js'></script>
+    <script type="text/javascript" src='script/tabs.js'></script>
     <link href="syntax/shCore.css" rel="stylesheet" type="text/css" />
     <link href="syntax/shThemeDefault.css" rel="stylesheet" type="text/css" />
   </xsl:template>
@@ -52,8 +54,6 @@
   </xsl:template>
 
   <xsl:template match="section[@role='tabbed']">
-    <script type="text/javascript" src='script/jquery-1.5.min.js'></script>
-    <script type="text/javascript" src='script/tabs.js'></script>
     <ul class='tabs'>
       <xsl:for-each select="section[@role='tab']">
         <li>
