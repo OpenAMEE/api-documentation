@@ -81,7 +81,8 @@
       </div>
     </div>
     <script type="text/javascript">
-       SyntaxHighlighter.all()
+      SyntaxHighlighter.defaults['auto-links'] = false;
+      SyntaxHighlighter.all()
     </script>
   </xsl:template>
 

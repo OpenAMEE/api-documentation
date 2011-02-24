@@ -37,7 +37,7 @@
 }
 .syntaxhighlighter .gutter .line {
   border-right: 3px solid #6ce26c !important;
-  min-width: 1.5em;
+  min-width: 2em;
 }
 .syntaxhighlighter .gutter .line.highlighted {
   background-color: #6ce26c !important;

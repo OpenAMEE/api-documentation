@@ -11,205 +11,225 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Profile Items</title>
   <para>
+    Profile items represent individual instances of energy use or consumption. A client application
+    will create a profile item for each item of energy use; the resulting object contains the emissions
+    associated with that item of energy use.
   </para>
-  <section>
-  	<title>Properties</title>
-  	<para>
-  	</para>
-  </section>
-  <section>
-  	<title>API Operations</title>
-  	<section>
-  		<title>Create Item</title>
-  		<para>
-  		</para>			
-  		<itemizedlist>
-  			<listitem>URL: <code>http://{server}/profiles</code></listitem>
-  			<listitem>Method: <code>GET</code></listitem>
-  			<listitem>Response format: <code>application/xml, application/json</code></listitem>
-  			<listitem>Response code: <code>200 OK</code></listitem>
-  			<listitem>Response body: </listitem>
-  		</itemizedlist>
-  		<section>
+  <para>
+    Profile items are contained inside Profile Categories, which in are contained inside Profiles. Profile
+    items in turn contains Profile Item Values, which represent the individual values that go into the 
+    calculation.
+  </para>    
+	<section>
+		<title>Properties</title>
+		<table>
+			<tr>
+				<th>Property</th>
+				<th>Description</th>
+			</tr>
+			<tr>					
+				<td>UID</td>
+				<td>A 12-letter unique identifier for the profile item. See Unique IDs for more information.</td>
+			</tr>
+			<tr>					
+				<td>created</td>
+				<td>The time and date on which the profile item was created.</td>
+			</tr>
+			<tr>					
+				<td>modified</td>
+				<td>The time and date on which the profile item was last modified.</td>
+			</tr>
+			<tr>					
+				<td>name</td>
+				<td>The name of the profile item. Profile items with the same name and Data Item are considered to be a time series.</td>
+			</tr>
+			<tr>					
+				<td>startDate</td>
+				<td>The date/time from which the profile item is valid. See discussion of time series for more detail.</td>
+			</tr>
+			<tr>					
+				<td>endDate</td>
+				<td>The date/time until which the profile item is valid. See discussion of time series for more detail.</td>
+			</tr>
+			<tr>					
+				<td>Data Item</td>
+				<td>The data item which this profile item uses to obtain emission factors.</td>
+			</tr>
+		</table>
+	</section>
+	<section>
+		<title>Create Profile Item</title>
+		<para>
+			Used to create a new profile item.
+		</para>
+		<table class='requestdetails'>
+			<tr>					
+				<td>URL</td>
+				<td>https://{server}.amee.com/profiles/{category_path}</td>
+			</tr>
+			<tr>					
+				<td>HTTP Method</td>
+				<td>POST</td>
+			</tr>
+			<tr>					
+				<td>Request Content-Type</td>
+				<td>application/x-www-form-urlencoded</td>
+			</tr>
+			<tr>
+				<td>Compulsory Parameters</td>
+				<td>
+      		<table>
+      			<tr>
+    					<th>Parameter</th>
+    					<th>Description</th>
+      			</tr>
+    				<tr>					
+    					<td>dataItemUid</td>
+    					<td>The UID of the Data Item which a new Profile Item should be based upon. This should be obtained from a DrillDown request.</td>
+    				</tr>
+      		</table>
+				</td>
+			</tr>
+			<tr>
+				<td>Optional Parameters</td>
+				<td>
+      		<table>
+      			<tr>
+    					<th>Parameter</th>
+    					<th>Description</th>
+      			</tr>
+    				<tr>
+    					<td>{valueName}</td>
+    					<td>Set a Profile Item Value by specifying the name and value. For example, the value 
+    					  name could be 'distance' supplied with a value of '300'. Multiple name/value pairs
+    					  can be submitted so long as the named Item Values exist for the Profile Item. Names
+    					  and values are case sensitive.</td>
+    				</tr>
+    				<tr>					
+    					<td>{valueName}Unit</td>
+    					<td>If a value is set, a unit can also be set. In the distance example above, the 
+    					  'distanceUnit' parameter could be set to 'km', 'mi', or any other supported distance 
+    					  unit. All values have default units if none are supplied.</td>
+    				</tr>
+    				<tr>					
+    					<td>{valueName}PerUnit</td>
+    					<td>If a value is set, a perUnit can also be set, which indicates the timescale over which
+    					  the value applies. In the distance example above, the 'distancePerUnit' parameter could be
+    					  set to 'day', 'month', or any other supported time unit. Not all values support perUnits; check AMEE
+    					  explorer for each case. Relevant values have default perUnits if none are supplied.</td>
+    				</tr>
+    				<tr>					
+    					<td>name</td>
+    					<td>Set the name of the item. You cannot create two items with the same dataItemUid and 
+    					  overlapping dates unless you give them a unique name. Items with the same name and dataItemUid
+    					  are considered to be a time series.</td>
+    				</tr>
+    				<tr>					
+    					<td>startDate</td>
+    					<td>An ISO8601 date/time which specifies when the item should be valid from. This parameter is
+    					  compulsory if either endDate or duration are specified. Defaults to the current time.</td>
+    				</tr>
+    				<tr>					
+    					<td>endDate</td>
+    					<td>An ISO8601 date/time which specifies when the item should be valid until. Defaults to
+    					  infinitely far in the future.</td>
+    				</tr>
+    				<tr>					
+    					<td>duration</td>
+    					<td>As an alternative to specifying an end time, you can specify the duration that the item 
+    					  should be valid for in ISO8601 duration format.</td>
+    				</tr>
+    				<tr>					
+    					<td>representation</td>
+    					<td>If set to 'full', the newly-created item will be returned in the response to the POST request.
+    					  By default, only a Location header is returned.</td>
+    				</tr>
+      		</table>
+				</td>
+			</tr>
+			<tr>
+				<td>Response Content-Type</td>
+				<td>application/json or application/xml</td>
+			</tr>
+			<tr>
+				<td>Successful Response Code</td>
+				<td>201 CREATED</td>
+			</tr>
+		</table>
+		<para>
+		  If the representation parameter is set to full, the response will include the details of the created item. 
+		  Otherwise, a Location header is returned which indicates the URL of the new item.
+		</para>
+		<section role='tabbed'>
+		  <section role='tab'>
+  			<title>Example</title>
+  			<httprequest>
+  			  <header>
+POST /profiles/4737069901D3/home/energy/quantity HTTP/1.1
+Accept: application/json, application/xml
+Content-Type: application/x-www-form-urlencoded
+          </header>
+          <body>
+dataItemUid=66056991EE23&amp;energyConsumption=10&amp;energyConsumptionUnit=kWh&amp;
+energyConsumptionPerUnit=month&amp;startDate=2009-03-19T16%3A51%3A00%2B00%3A00
+          </body>
+        </httprequest>
+        <httpresponse>
+          <header>
+HTTP/1.1 201 CREATED
+Location: https://{server}.amee.com/profiles/4737069901D3/home/energy/quantity/F7C0580D088A
+Content-Type: text/plain
+          </header>
+			  </httpresponse>
+  		</section>
+		  <section role='tab'>
   			<title>JSON</title>
-  			<para>Request</para>
-  			<programlisting>
-POST /profiles HTTP/1.1
+  			<httprequest>
+  			  <header>
+POST /profiles/4737069901D3/home/energy/quantity HTTP/1.1
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
-  			</programlisting>
-  			<programlisting>
-profile=true
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
-HTTP/1.1 200 OK
+          </header>
+          <body>
+dataItemUid=66056991EE23&amp;energyConsumption=10&amp;energyConsumptionUnit=kWh&amp;
+energyConsumptionPerUnit=month&amp;startDate=2009-03-19T16%3A51%3A00%2B00%3A00&amp;
+representation=full
+          </body>
+        </httprequest>
+        <httpresponse>
+          <header>
+HTTP/1.1 201 CREATED
 Content-Type: application/json; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="javascript"><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
+          </header>
+  			  <body format='json'>
+  			    <xi:include href='samples/json/create_profile_item.js' parse="text"/>
+  			  </body>
+			  </httpresponse>
   		</section>
-  		<section>
+  		<section role='tab'>
   			<title>XML</title>
-  			<para>Request</para>
-  			<programlisting>
-POST /profiles HTTP/1.1
+  			<httprequest>
+  			  <header>
+POST /profiles/4737069901D3/home/energy/quantity HTTP/1.1
 Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
-  			</programlisting>
-  			<programlisting>
-profile=true
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
-HTTP/1.1 200 OK
+          </header>
+          <body>
+dataItemUid=66056991EE23&amp;energyConsumption=10&amp;energyConsumptionUnit=kWh&amp;
+energyConsumptionPerUnit=month&amp;startDate=2009-03-19T16%3A51%3A00%2B00%3A00&amp;
+representation=full
+          </body>
+        </httprequest>
+        <httpresponse>
+          <header>
+HTTP/1.1 201 CREATED
 Content-Type: application/xml; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="xml"><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
+          </header>
+          <body format='xml'>
+            <xi:include href='samples/xml/create_profile_item.xml' parse="text"/>
+          </body>
+        </httpresponse>
   		</section>
   	</section>
-  	<section>
-      <title>Get Item</title>
-  		<para>
-  		</para>			
-  		<itemizedlist>
-  			<listitem>URL: <code>http://{server}/profiles</code></listitem>
-  			<listitem>Method: <code>GET</code></listitem>
-  			<listitem>Response format: <code>application/xml, application/json</code></listitem>
-  			<listitem>Response code: <code>200 OK</code></listitem>
-  			<listitem>Response body: </listitem>
-  		</itemizedlist>			
-  		<section>
-  			<title>JSON</title>
-  			<para>Request</para>
-  			<programlisting>
-POST /profiles HTTP/1.1
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-  			</programlisting>
-  			<programlisting>
-profile=true
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="javascript"><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
-  		</section>
-  		<section>
-  			<title>XML</title>
-  			<para>Request</para>
-  			<programlisting>
-POST /profiles HTTP/1.1
-Accept: application/xml
-Content-Type: application/x-www-form-urlencoded
-  			</programlisting>
-  			<programlisting>
-profile=true
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="xml"><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
-  		</section>
-  	</section>
-  	<section>
-      <title>Update Item</title>
-  		<para>
-  		</para>			
-  		<itemizedlist>
-  			<listitem>URL: <code>http://{server}/profiles</code></listitem>
-  			<listitem>Method: <code>GET</code></listitem>
-  			<listitem>Response format: <code>application/xml, application/json</code></listitem>
-  			<listitem>Response code: <code>200 OK</code></listitem>
-  			<listitem>Response body: </listitem>
-  		</itemizedlist>			
-  		<section>
-  			<title>JSON</title>
-  			<para>Request</para>
-  			<programlisting>
-POST /profiles HTTP/1.1
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-  			</programlisting>
-  			<programlisting>
-profile=true
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="javascript"><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
-  		</section>
-  		<section>
-  			<title>XML</title>
-  			<para>Request</para>
-  			<programlisting>
-POST /profiles HTTP/1.1
-Accept: application/xml
-Content-Type: application/x-www-form-urlencoded
-  			</programlisting>
-  			<programlisting>
-profile=true
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="xml"><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
-  		</section>
-  	</section>
-    <section>
-      <title>Delete Item</title>
-  		<para>
-  		</para>			
-  		<itemizedlist>
-  			<listitem>URL: <code>http://{server}/profiles</code></listitem>
-  			<listitem>Method: <code>GET</code></listitem>
-  			<listitem>Response format: <code>application/xml, application/json</code></listitem>
-  			<listitem>Response code: <code>200 OK</code></listitem>
-  			<listitem>Response body: </listitem>
-  		</itemizedlist>
-  		<section>
-  			<title>JSON</title>
-  			<para>Request</para>
-  			<programlisting>
-POST /profiles HTTP/1.1
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-  			</programlisting>
-  			<programlisting>
-profile=true
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="javascript"><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
-  		</section>
-  		<section>
-  			<title>XML</title>
-  			<para>Request</para>
-  			<programlisting>
-POST /profiles HTTP/1.1
-Accept: application/xml
-Content-Type: application/x-www-form-urlencoded
-  			</programlisting>
-  			<programlisting>
-profile=true
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="xml"><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
-  		</section>
-  	</section>
-  </section>
+	</section>
 </section>
