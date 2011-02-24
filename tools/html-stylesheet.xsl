@@ -13,4 +13,12 @@
   <!-- Uncomment this to enable auto-numbering of sections -->
   <!-- xsl:param name="section.autolabel" select="1" / -->
 
+  <xsl:template name='user.header.content'>
+    <xsl:call-template name='amee.header'/>
+  </xsl:template>
+
+  <xsl:template name='user.footer.content'>
+    <xsl:call-template name='amee.footer'/>
+  </xsl:template>
+
 </xsl:stylesheet>

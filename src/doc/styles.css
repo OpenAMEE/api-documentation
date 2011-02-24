@@ -74,3 +74,7 @@ div.tab-body {
     background: white;
     border: 1px solid #AAA;
 }
+
+div.tab-body table {
+	border-spacing: 0px;
+}

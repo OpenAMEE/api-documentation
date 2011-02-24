@@ -6,7 +6,7 @@
   <xsl:param name="tablecolumns.extension">1</xsl:param>
   <xsl:param name="textinsert.extension">1</xsl:param>
 
-  <xsl:param name="html.stylesheet">styles.css</xsl:param>
+  <xsl:param name="html.stylesheet">styles.css</xsl:param>  
   <xsl:param name="toc.section.depth">2</xsl:param>
   <xsl:param name="annotate.toc">0</xsl:param>
 
@@ -17,18 +17,69 @@
 
   <xsl:param name="para.propagates.style">1</xsl:param>
 
-  <xsl:template name='user.head.content'>    
+  <xsl:template name='user.head.content'>
     <script type="text/javascript" src="syntax/shCore.js"></script>
     <script type="text/javascript" src="syntax/shBrushJScript.js"></script>
     <script type="text/javascript" src="syntax/shBrushXml.js"></script>
     <script type="text/javascript" src="syntax/shBrushPlain.js"></script>
     <script type="text/javascript" src='script/jquery-1.5.min.js'></script>
     <script type="text/javascript" src='script/tabs.js'></script>
+    <link href="http://explorer.amee.com/stylesheets/main.css" rel="stylesheet" type="text/css" />
     <link href="syntax/shCore.css" rel="stylesheet" type="text/css" />
     <link href="syntax/shThemeDefault.css" rel="stylesheet" type="text/css" />
   </xsl:template>
   
-  <xsl:template name='user.footer.content'>    
+  <xsl:template name='amee.header'>
+    <div id="header">
+      <div id="multisitenav">
+        <div id="menu">
+          <ul>
+            <li><img height="12" width="1" src="http://www2.amee.com/wp-content/themes/amee2/images/sitedivider.gif" alt="|"/></li>
+            <li class="menuitem"><a href="http://www.amee.com">About AMEE</a></li>
+            <li><img height="12" width="1" src="http://www2.amee.com/wp-content/themes/amee2/images/sitedivider.gif" alt="|"/></li>
+            <li class="menuitem"><a href="http://explorer.amee.com">AMEE <span class="explorer">explorer</span></a></li>
+            <li><img height="12" width="1" src="http://www2.amee.com/wp-content/themes/amee2/images/sitedivider.gif" alt="|"/></li>
+            <li class="menuitem"><a class='currentsite' href="http://my.amee.com/developers">Developer Center</a></li>
+            <li><img height="12" width="1" src="http://www2.amee.com/wp-content/themes/amee2/images/sitedivider.gif" alt="|"/></li>
+            <li class="menuitem">
+              <a href="/login">My Account</a>
+            </li>
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div id="sitenav">
+        <div class="header_right">
+          <div class="searchform">
+            <form method="post" action="http://explorer.amee.com/search">
+              <input type="text" value="" size="30" name="search[query]" id="header_search_input"/>
+              <input type="submit" value="Search" name="commit" id="header_search_submit_button"/>
+            </form>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <a href="/"><div id="mainlogo"></div></a>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </xsl:template>
+
+  <xsl:template name='amee.footer'>
+    <div id="footer-wrap">
+      <div id="footer">
+        <div id="footer-logo"></div>
+        <a href="/help">Help</a>
+        |
+        <a href="http://www.amee.com/about">About</a>
+        |
+        <a href="http://www.amee.com/tcs">Terms &amp; Conditions</a>
+        |
+        <a href="http://www.amee.com/contact">Contact</a>
+        <br/>
+        (c) (FIXME) 2009-2011 AMEE UK Ltd.
+        <div class="clear"></div>
+      </div>
+    </div>
     <script type="text/javascript">
        SyntaxHighlighter.all()
     </script>
