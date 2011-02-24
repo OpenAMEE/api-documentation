@@ -79,6 +79,10 @@ div.tab-body table {
 	border-spacing: 0px;
 }
 
-table table {
-	border-spacing: 0px;
+table.requestdetails, table.requestdetails table {
+	border-spacing: 0px;	
+}
+
+table.requestdetails > tbody > tr:nth-child(odd) {
+	background: #EEE;
 }
