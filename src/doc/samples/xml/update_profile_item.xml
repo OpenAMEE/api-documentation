@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Resources xmlns="http://schemas.amee.cc/2.0">
+  <ProfileItemResource>
+    <ProfileItem created="2009-03-19T17:38:47Z" modified="2009-03-19T17:38:48Z" uid="30A4140A2755">
+      <Name>test1</Name>
+      <ItemValues>
+        <ItemValue uid="6DD88A20F3F3">
+          <Path>country</Path>
+          <Name>Country</Name>
+          <Value/>
+          <Unit/>
+          <PerUnit/>
+          <ItemValueDefinition uid="F3900EDAB5EB">
+            <Path>country</Path>
+            <Name>Country</Name>
+            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="CCEB59CACE1B">
+              <Name>text</Name>
+              <ValueType>TEXT</ValueType>
+              <Description/>
+              <Environment uid="5F5887BCF726"/>
+            </ValueDefinition>
+            <FromProfile>true</FromProfile>
+            <FromData>false</FromData>
+          </ItemValueDefinition>
+        </ItemValue>
+        <ItemValue uid="A4738DA2D687">
+          <Path>occupants</Path>
+          <Name>Occupants</Name>
+          <Value>-1</Value>
+          <Unit/>
+          <PerUnit/>
+          <ItemValueDefinition uid="85DAD143CD22">
+            <Path>occupants</Path>
+            <Name>Occupants</Name>
+            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="45433E48B39F">
+              <Name>amount</Name>
+              <ValueType>DECIMAL</ValueType>
+              <Description/>
+              <Environment uid="5F5887BCF726"/>
+            </ValueDefinition>
+            <FromProfile>true</FromProfile>
+            <FromData>false</FromData>
+          </ItemValueDefinition>
+        </ItemValue>
+        <ItemValue uid="34FC365AE672">
+          <Path>distance</Path>
+          <Name>Distance</Name>
+          <Value>200</Value>
+          <Unit>km</Unit>
+          <PerUnit>month</PerUnit>
+          <ItemValueDefinition uid="5898B35AE183">
+            <Path>distance</Path>
+            <Name>Distance</Name>
+            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="45433E48B39F">
+              <Name>amount</Name>
+              <ValueType>DECIMAL</ValueType>
+              <Description/>
+              <Environment uid="5F5887BCF726"/>
+            </ValueDefinition>
+            <Unit>km</Unit>
+            <PerUnit>year</PerUnit>
+            <FromProfile>true</FromProfile>
+            <FromData>false</FromData>
+          </ItemValueDefinition>
+        </ItemValue>
+        <ItemValue uid="B14C7A0B39E9">
+          <Path>fuelConsumption</Path>
+          <Name>Fuel Consumption</Name>
+          <Value>0</Value>
+          <Unit>km</Unit>
+          <PerUnit>L</PerUnit>
+          <ItemValueDefinition uid="2538ABD1FFE7">
+            <Path>fuelConsumption</Path>
+            <Name>Fuel Consumption</Name>
+            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="45433E48B39F">
+              <Name>amount</Name>
+              <ValueType>DECIMAL</ValueType>
+              <Description/>
+              <Environment uid="5F5887BCF726"/>
+            </ValueDefinition>
+            <Unit>km</Unit>
+            <PerUnit>L</PerUnit>
+            <FromProfile>true</FromProfile>
+            <FromData>false</FromData>
+          </ItemValueDefinition>
+        </ItemValue>
+        <ItemValue uid="1C7921F9B352">
+          <Path>ownFuelConsumption</Path>
+          <Name>Own Fuel Consumption</Name>
+          <Value>0</Value>
+          <Unit>km</Unit>
+          <PerUnit>L</PerUnit>
+          <ItemValueDefinition uid="FBFB386F5FBB">
+            <Path>ownFuelConsumption</Path>
+            <Name>Own Fuel Consumption</Name>
+            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="45433E48B39F">
+              <Name>amount</Name>
+              <ValueType>DECIMAL</ValueType>
+              <Description/>
+              <Environment uid="5F5887BCF726"/>
+            </ValueDefinition>
+            <Unit>km</Unit>
+            <PerUnit>L</PerUnit>
+            <FromProfile>true</FromProfile>
+            <FromData>false</FromData>
+          </ItemValueDefinition>
+        </ItemValue>
+      </ItemValues>
+      <Environment uid="5F5887BCF726"/>
+      <ItemDefinition uid="253122C933E1"/>
+      <DataCategory uid="E13720699F84">
+        <Name>Generic</Name>
+        <Path>generic</Path>
+      </DataCategory>
+      <Amount unit="kg/year">308.640000</Amount>
+      <StartDate>2009-03-19T00:00:00Z</StartDate>
+      <EndDate/>
+      <DataItem uid="31449121F8B8">
+        <Label>petrol, large</Label>
+      </DataItem>
+      <Profile uid="03FC2D6A50C9"/>
+    </ProfileItem>
+    <Path>/transport/motorcycle/generic/30A4140A2755</Path>
+    <Profile uid="03FC2D6A50C9"/>
+  </ProfileItemResource>
+</Resources>
