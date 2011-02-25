@@ -42,7 +42,7 @@
 			</tr>
 			<tr>
 				<td>Successful Response Code</td>
-				<td>201 CREATED</td>
+				<td>200 OK</td>
 			</tr>
 		</table>
 		<para>
