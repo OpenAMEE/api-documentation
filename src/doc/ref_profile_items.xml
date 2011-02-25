@@ -65,7 +65,7 @@
 		<table class='requestdetails'>
 			<tr>					
 				<td>URL</td>
-				<td>https://{server}.amee.com/profiles/{category_path}</td>
+				<td>https://{server}.amee.com/profiles/{profile_uid}/{category_path}</td>
 			</tr>
 			<tr>					
 				<td>HTTP Method</td>
@@ -240,7 +240,7 @@ Content-Type: application/xml; charset=UTF-8
 		<table class='requestdetails'>
 			<tr>					
 				<td>URL</td>
-				<td>https://{server}.amee.com/profiles/{category_path}/{profile_item_uid}</td>
+				<td>https://{server}.amee.com/profiles/{profile_uid}/{category_path}/{profile_item_uid}</td>
 			</tr>
 			<tr>					
 				<td>HTTP Method</td>
