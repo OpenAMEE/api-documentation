@@ -76,78 +76,6 @@
 				<td>application/x-www-form-urlencoded</td>
 			</tr>
 			<tr>
-				<td>Compulsory Parameters</td>
-				<td>
-      		<table>
-      			<tr>
-    					<th>Parameter</th>
-    					<th>Description</th>
-      			</tr>
-    				<tr>					
-    					<td>dataItemUid</td>
-    					<td>The UID of the Data Item which a new Profile Item should be based upon. This should be obtained from a DrillDown request.</td>
-    				</tr>
-      		</table>
-				</td>
-			</tr>
-			<tr>
-				<td>Optional Parameters</td>
-				<td>
-      		<table>
-      			<tr>
-    					<th>Parameter</th>
-    					<th>Description</th>
-      			</tr>
-    				<tr>
-    					<td>{valueName}</td>
-    					<td>Set a Profile Item Value by specifying the name and value. For example, the value 
-    					  name could be 'distance' supplied with a value of '300'. Multiple name/value pairs
-    					  can be submitted so long as the named Item Values exist for the Profile Item. Names
-    					  and values are case sensitive.</td>
-    				</tr>
-    				<tr>					
-    					<td>{valueName}Unit</td>
-    					<td>If a value is set, a unit can also be set. In the distance example above, the 
-    					  'distanceUnit' parameter could be set to 'km', 'mi', or any other supported distance 
-    					  unit. All values have default units if none are supplied.</td>
-    				</tr>
-    				<tr>					
-    					<td>{valueName}PerUnit</td>
-    					<td>If a value is set, a perUnit can also be set, which indicates the timescale over which
-    					  the value applies. In the distance example above, the 'distancePerUnit' parameter could be
-    					  set to 'day', 'month', or any other supported time unit. Not all values support perUnits; check AMEE
-    					  explorer for each case. Relevant values have default perUnits if none are supplied.</td>
-    				</tr>
-    				<tr>					
-    					<td>name</td>
-    					<td>Set the name of the item. You cannot create two items with the same dataItemUid and 
-    					  overlapping dates unless you give them a unique name. Items with the same name and dataItemUid
-    					  are considered to be a time series.</td>
-    				</tr>
-    				<tr>					
-    					<td>startDate</td>
-    					<td>An ISO8601 date/time which specifies when the item should be valid from. This parameter is
-    					  compulsory if either endDate or duration are specified. Defaults to the current time.</td>
-    				</tr>
-    				<tr>					
-    					<td>endDate</td>
-    					<td>An ISO8601 date/time which specifies when the item should be valid until. Defaults to
-    					  infinitely far in the future.</td>
-    				</tr>
-    				<tr>					
-    					<td>duration</td>
-    					<td>As an alternative to specifying an end time, you can specify the duration that the item 
-    					  should be valid for in ISO8601 duration format.</td>
-    				</tr>
-    				<tr>					
-    					<td>representation</td>
-    					<td>If set to 'full', the newly-created item will be returned in the response to the POST request.
-    					  By default, only a Location header is returned.</td>
-    				</tr>
-      		</table>
-				</td>
-			</tr>
-			<tr>
 				<td>Response Content-Type</td>
 				<td>application/json or application/xml</td>
 			</tr>
@@ -156,6 +84,74 @@
 				<td>201 CREATED</td>
 			</tr>
 		</table>
+		<section>
+		  <title>Compulsory Parameters</title>
+  		<table class='parameters'>
+  			<tr>
+					<th>Parameter</th>
+					<th>Description</th>
+  			</tr>
+				<tr>					
+					<td>dataItemUid</td>
+					<td>The UID of the Data Item which a new Profile Item should be based upon. This should be obtained from a DrillDown request.</td>
+				</tr>
+  		</table>
+	  </section>
+		<section>
+		  <title>Optional Parameters</title>
+  		<table class='parameters'>
+  			<tr>
+					<th>Parameter</th>
+					<th>Description</th>
+  			</tr>
+				<tr>
+					<td>{valueName}</td>
+					<td>Set a Profile Item Value by specifying the name and value. For example, the value 
+					  name could be 'distance' supplied with a value of '300'. Multiple name/value pairs
+					  can be submitted so long as the named Item Values exist for the Profile Item. Names
+					  and values are case sensitive.</td>
+				</tr>
+				<tr>					
+					<td>{valueName}Unit</td>
+					<td>If a value is set, a unit can also be set. In the distance example above, the 
+					  'distanceUnit' parameter could be set to 'km', 'mi', or any other supported distance 
+					  unit. All values have default units if none are supplied.</td>
+				</tr>
+				<tr>					
+					<td>{valueName}PerUnit</td>
+					<td>If a value is set, a perUnit can also be set, which indicates the timescale over which
+					  the value applies. In the distance example above, the 'distancePerUnit' parameter could be
+					  set to 'day', 'month', or any other supported time unit. Not all values support perUnits; check AMEE
+					  explorer for each case. Relevant values have default perUnits if none are supplied.</td>
+				</tr>
+				<tr>					
+					<td>name</td>
+					<td>Set the name of the item. You cannot create two items with the same dataItemUid and 
+					  overlapping dates unless you give them a unique name. Items with the same name and dataItemUid
+					  are considered to be a time series.</td>
+				</tr>
+				<tr>					
+					<td>startDate</td>
+					<td>An ISO8601 date/time which specifies when the item should be valid from. This parameter is
+					  compulsory if either endDate or duration are specified. Defaults to the current time.</td>
+				</tr>
+				<tr>					
+					<td>endDate</td>
+					<td>An ISO8601 date/time which specifies when the item should be valid until. Defaults to
+					  infinitely far in the future.</td>
+				</tr>
+				<tr>					
+					<td>duration</td>
+					<td>As an alternative to specifying an end time, you can specify the duration that the item 
+					  should be valid for in ISO8601 duration format.</td>
+				</tr>
+				<tr>					
+					<td>representation</td>
+					<td>If set to 'full', the newly-created item will be returned in the response to the POST request.
+					  By default, only a Location header is returned.</td>
+				</tr>
+  		</table>
+	  </section>
 		<para>
 		  If the representation parameter is set to full, the response will include the details of the created item. 
 		  Otherwise, a Location header is returned which indicates the URL of the new item.
@@ -318,63 +314,6 @@ Content-Type: application/xml; charset=UTF-8
 				<td>application/x-www-form-urlencoded</td>
 			</tr>
 			<tr>
-				<td>Optional Parameters</td>
-				<td>
-      		<table>
-      			<tr>
-    					<th>Parameter</th>
-    					<th>Description</th>
-      			</tr>
-    				<tr>
-    					<td>{valueName}</td>
-    					<td>Set a Profile Item Value by specifying the name and value. For example, the value 
-    					  name could be 'distance' supplied with a value of '300'. Multiple name/value pairs
-    					  can be submitted so long as the named Item Values exist for the Profile Item. Names
-    					  and values are case sensitive.</td>
-    				</tr>
-    				<tr>					
-    					<td>{valueName}Unit</td>
-    					<td>If a value is set, a unit can also be set. In the distance example above, the 
-    					  'distanceUnit' parameter could be set to 'km', 'mi', or any other supported distance 
-    					  unit. All values have default units if none are supplied.</td>
-    				</tr>
-    				<tr>					
-    					<td>{valueName}PerUnit</td>
-    					<td>If a value is set, a perUnit can also be set, which indicates the timescale over which
-    					  the value applies. In the distance example above, the 'distancePerUnit' parameter could be
-    					  set to 'day', 'month', or any other supported time unit. Not all values support perUnits; check AMEE
-    					  explorer for each case. Relevant values have default perUnits if none are supplied.</td>
-    				</tr>
-    				<tr>					
-    					<td>name</td>
-    					<td>Set the name of the item. You cannot create two items with the same dataItemUid and 
-    					  overlapping dates unless you give them a unique name. Items with the same name and dataItemUid
-    					  are considered to be a time series.</td>
-    				</tr>
-    				<tr>					
-    					<td>startDate</td>
-    					<td>An ISO8601 date/time which specifies when the item should be valid from. This parameter is
-    					  compulsory if either endDate or duration are specified. Defaults to the current time.</td>
-    				</tr>
-    				<tr>					
-    					<td>endDate</td>
-    					<td>An ISO8601 date/time which specifies when the item should be valid until. Defaults to
-    					  infinitely far in the future.</td>
-    				</tr>
-    				<tr>					
-    					<td>duration</td>
-    					<td>As an alternative to specifying an end time, you can specify the duration that the item 
-    					  should be valid for in ISO8601 duration format.</td>
-    				</tr>
-    				<tr>					
-    					<td>representation</td>
-    					<td>If set to 'full', the newly-created item will be returned in the response to the POST request.
-    					  By default, only a Location header is returned.</td>
-    				</tr>
-      		</table>
-				</td>
-			</tr>
-			<tr>
 				<td>Response Content-Type</td>
 				<td>application/json or application/xml</td>
 			</tr>
@@ -383,6 +322,61 @@ Content-Type: application/xml; charset=UTF-8
 				<td>200 OK</td>
 			</tr>
 		</table>
+		<section>
+		  <title>Optional Parameters</title>
+  		<table class='parameters'>
+  			<tr>
+					<th>Parameter</th>
+					<th>Description</th>
+  			</tr>
+				<tr>
+					<td>{valueName}</td>
+					<td>Set a Profile Item Value by specifying the name and value. For example, the value 
+					  name could be 'distance' supplied with a value of '300'. Multiple name/value pairs
+					  can be submitted so long as the named Item Values exist for the Profile Item. Names
+					  and values are case sensitive.</td>
+				</tr>
+				<tr>					
+					<td>{valueName}Unit</td>
+					<td>If a value is set, a unit can also be set. In the distance example above, the 
+					  'distanceUnit' parameter could be set to 'km', 'mi', or any other supported distance 
+					  unit. All values have default units if none are supplied.</td>
+				</tr>
+				<tr>					
+					<td>{valueName}PerUnit</td>
+					<td>If a value is set, a perUnit can also be set, which indicates the timescale over which
+					  the value applies. In the distance example above, the 'distancePerUnit' parameter could be
+					  set to 'day', 'month', or any other supported time unit. Not all values support perUnits; check AMEE
+					  explorer for each case. Relevant values have default perUnits if none are supplied.</td>
+				</tr>
+				<tr>					
+					<td>name</td>
+					<td>Set the name of the item. You cannot create two items with the same dataItemUid and 
+					  overlapping dates unless you give them a unique name. Items with the same name and dataItemUid
+					  are considered to be a time series.</td>
+				</tr>
+				<tr>					
+					<td>startDate</td>
+					<td>An ISO8601 date/time which specifies when the item should be valid from. This parameter is
+					  compulsory if either endDate or duration are specified. Defaults to the current time.</td>
+				</tr>
+				<tr>					
+					<td>endDate</td>
+					<td>An ISO8601 date/time which specifies when the item should be valid until. Defaults to
+					  infinitely far in the future.</td>
+				</tr>
+				<tr>					
+					<td>duration</td>
+					<td>As an alternative to specifying an end time, you can specify the duration that the item 
+					  should be valid for in ISO8601 duration format.</td>
+				</tr>
+				<tr>					
+					<td>representation</td>
+					<td>If set to 'full', the newly-created item will be returned in the response to the POST request.
+					  By default, only a Location header is returned.</td>
+				</tr>
+  		</table>
+	  </section>
 		<para>
 		  If the representation parameter is set to full, the response will include the details of the created item. 
 		  Otherwise, it will be empty.

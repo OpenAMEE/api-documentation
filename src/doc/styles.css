@@ -79,10 +79,14 @@ div.tab-body table {
 	border-spacing: 0px;
 }
 
-table.requestdetails, table.requestdetails table {
+table.requestdetails, table.parameters {
 	border-spacing: 0px;	
 }
 
-table.requestdetails > tbody > tr:nth-child(odd) {
+table.requestdetails td, table.parameters td {
+	padding: 5px;
+}
+
+table.requestdetails tr:nth-child(odd), table.parameters tr:nth-child(odd) {
 	background: #EEE;
 }

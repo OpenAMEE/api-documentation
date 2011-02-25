@@ -61,21 +61,6 @@
 				<td>application/x-www-form-urlencoded</td>
 			</tr>
 			<tr>
-				<td>Compulsory Parameters</td>
-				<td>
-      		<table>
-      			<tr>
-    					<th>Parameter</th>
-    					<th>Description</th>
-      			</tr>
-    				<tr>					
-    					<td>profile</td>
-    					<td>Tells AMEE to create a profile. Should always be 'true'.</td>
-    				</tr>
-      		</table>
-				</td>
-			</tr>
-			<tr>
 				<td>Response Content-Type</td>
 				<td>application/json or application/xml</td>
 			</tr>
@@ -84,6 +69,19 @@
 				<td>200 OK</td>
 			</tr>
 		</table>
+		<section>
+		  <title>Compulsory Parameters</title>
+  		<table class='parameters'>
+  			<tr>
+					<th>Parameter</th>
+					<th>Description</th>
+  			</tr>
+				<tr>					
+					<td>profile</td>
+					<td>Tells AMEE to create a profile. Should always be 'true'.</td>
+				</tr>
+  		</table>
+    </section>
 		<para>
 		  The response body contains a JSON or XML description of the new profile.
 		</para>
