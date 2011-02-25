@@ -172,7 +172,7 @@
     <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
   </xsl:template>
 
-  <xsl:template match="section[@role='httpresponse']/section[@role='json-body']">
+  <xsl:template match="section[@role='json-body']">
     <script type="syntaxhighlighter" class="brush: js" title="Body">
       <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
       <xsl:apply-templates/>
@@ -180,7 +180,7 @@
     <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
   </xsl:template>
 
-  <xsl:template match="section[@role='httpresponse']/section[@role='xml-body']">
+  <xsl:template match="section[@role='xml-body']">
     <script type="syntaxhighlighter" class="brush: xml" title="Body">
       <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
       <xsl:apply-templates/>

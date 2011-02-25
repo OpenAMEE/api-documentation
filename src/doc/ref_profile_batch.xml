@@ -11,57 +11,99 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Batch Operations</title>
   <para>
+    Multiple Profile Items can be set in a single HTTP request by using the Batch Update mechanism. 
+    Batch updates are performed by sending an XML or JSON document to the profile root or profile
+    category URL. If you send a POST request, new Profile Items will be created. If you send a 
+    PUT, existing Profile Items will be updated. If sending to the profile root, any data in
+    any category can be created or modified. When sending to a category, only items within that
+    category can be created or modified. 
   </para>
-  <section>
-  	<title>API Operations</title>
-  	<section>
-  		<title>Create Profile Items</title>
-  		<para>
-  		</para>			
-  		<itemizedlist>
-  			<listitem>URL: <code>http://{server}/profiles</code></listitem>
-  			<listitem>Method: <code>POST</code></listitem>
-  			<listitem>Request format:  <code>application/x-www-form-urlencoded</code></listitem>
-  			<listitem>Response format: <code>application/xml, application/json</code></listitem>
-  			<listitem>Response code: <code>200 OK</code></listitem>
-  			<listitem>Response body: A description of the new profile.</listitem>
-  		</itemizedlist>			
-  		<section>
-  			<title>JSON</title>
-  			<para>Request</para>
-  			<programlisting>
-POST /profiles HTTP/1.1
+	<section>
+		<title>Create Multiple Profile Items</title>
+		<para>
+			Used to create a new profile item.
+		</para>
+		<table class='requestdetails'>
+			<tr>					
+				<td>URL</td>
+				<td>https://{server}.amee.com/profiles/{profile_uid}[/{category_path}]</td>
+			</tr>
+			<tr>					
+				<td>HTTP Method</td>
+				<td>POST</td>
+			</tr>
+			<tr>					
+				<td>Request Content-Type</td>
+				<td>application/json or application/xml</td>
+			</tr>
+			<tr>
+				<td>Response Content-Type</td>
+				<td>application/json or application/xml</td>
+			</tr>
+			<tr>
+				<td>Successful Response Code</td>
+				<td>201 CREATED</td>
+			</tr>
+		</table>
+		<para>
+		  The request should include a JSON or XML-encoded body containing the values which should be set.
+		  See the examples below for the exact structure. Compulsory and optional parameters are as discussed
+		  in the section on creating individual profile items, but instead of putting the parameters in a form
+		  encoded body, parameter names become hash keys or tag names in the JSON or XML. As for creating 
+		  individual items, a dataItemUid is compulsory. Other parameters are optional.
+	  </para>
+		<para>
+		  You do not need to tell the platform which category the items should be created in; it will infer this
+		  from the specified dataItemUid. This means that items can be created across multiple categories at once.
+	  </para>
+		<para>
+		  The response will contain a list of the locations of the created items.
+		</para>
+		<section role='tabbed'>
+		  <section role='tab'>
+  			<title>Example</title>
+  			<section role='httprequest'>
+  			  <section role='header'>
+POST /profiles/80EC1B49E2A9 HTTP/1.1
 Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-  			</programlisting>
-  			<programlisting>
-profile=true
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
+Content-Type: application/json
+          </section>
+          <section role='json-body'>
+            <xi:include href='samples/json/batch_create_request.js' parse="text"/>
+          </section>
+        </section>
+        <section role='httpresponse'>
+          <section role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="javascript"><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
+          </section>
+  			  <section role='json-body'>
+  			    <xi:include href='samples/json/batch_create.js' parse="text"/>
+  			  </section>
+			  </section>
   		</section>
-  		<section>
+  		<section role='tab'>
   			<title>XML</title>
-  			<para>Request</para>
-  			<programlisting>
-POST /profiles HTTP/1.1
+  			<section role='httprequest'>
+  			  <section role='header'>
+POST /profiles/59586731F930 HTTP/1.1
 Accept: application/xml
-Content-Type: application/x-www-form-urlencoded
-  			</programlisting>
-  			<programlisting>
-profile=true
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
-HTTP/1.1 200 OK
+Content-Type: application/xml
+          </section>
+          <section role='xml-body'>
+            <xi:include href='samples/xml/batch_create_request.xml' parse="text"/>
+          </section>
+        </section>
+        <section role='httpresponse'>
+          <section role='header'>
+HTTP/1.1 201 CREATED
 Content-Type: application/xml; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="xml"><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
+          </section>
+          <section role='xml-body'>
+            <xi:include href='samples/xml/batch_create.xml' parse="text"/>
+          </section>
+        </section>
   		</section>
   	</section>
-  </section>
+	</section>
 </section>
