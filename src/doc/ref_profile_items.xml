@@ -386,4 +386,32 @@ Content-Type: application/xml; charset=UTF-8
   		</section>
   	</section>
 	</section>
+	<section>
+		<title>Delete Profile Item</title>
+		<para>
+			Completely remove the specified profile item from the AMEE database. This information cannot be recovered after deletion.
+		</para>			
+		<table class='requestdetails'>
+			<tr><td>URL</td><td>https://{server}.amee.com/profiles/{profile_uid}/{category_path}/{profile_item_uid}</td></tr>
+			<tr><td>HTTP Method</td><td>DELETE</td></tr>
+			<tr><td>Successful Response Code</td><td>200 OK</td></tr>
+		</table>
+		<section role='tabbed'>
+		  <section role='tab'>
+    		<title>Example</title>
+  			<section role='httprequest'>
+  			  <section role='header'>
+DELETE /profiles/228A21573085/home/energy/quantity/B56410A978B6 HTTP/1.1
+Accept: application/json, application/xml
+          </section>
+  			</section>
+  			<section role='httpresponse'>
+  			  <section role='header'>
+HTTP/1.1 200 OK
+Content-Type: text/plain
+          </section>
+  			</section>
+  		</section>
+		</section>
+	</section>
 </section>
