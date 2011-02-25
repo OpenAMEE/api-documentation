@@ -61,7 +61,7 @@ EPUB_TARGET = $(DIR)/$(OUTNAME).epub
 XML_SOURCE = $(DIR)/$(NAME).xml
 VERSION_SOURCE = $(DIR)/version.xml
 ALL_SOURCE = $(filter-out $(DIR)/version.xml $(DIR)/amee-doc.xml, $(wildcard $(DIR)/*.xml))
-STYLESHEET = $(DIR)/styles.css
+STYLESHEET = $(DIR)/styles.css $(DIR)/syntax $(DIR)/script
 INSTALL_SUBDIR = $(INSTALL_DIR)/$(NAME)
 
 ENSURE_XSL = if ! test -e "$(TOOLS_DIR)/xsl"; \
