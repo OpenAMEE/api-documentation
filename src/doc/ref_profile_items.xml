@@ -163,72 +163,72 @@
 		<section role='tabbed'>
 		  <section role='tab'>
   			<title>Example</title>
-  			<httprequest>
-  			  <header>
+  			<section role='httprequest'>
+  			  <section role='header'>
 POST /profiles/4737069901D3/home/energy/quantity HTTP/1.1
 Accept: application/json, application/xml
 Content-Type: application/x-www-form-urlencoded
-          </header>
-          <body>
+          </section>
+          <section role='body'>
 dataItemUid=66056991EE23&amp;energyConsumption=10&amp;energyConsumptionUnit=kWh&amp;
 energyConsumptionPerUnit=month&amp;startDate=2009-03-19T16%3A51%3A00%2B00%3A00
-          </body>
-        </httprequest>
-        <httpresponse>
-          <header>
+          </section>
+        </section>
+        <section role='httpresponse'>
+          <section role='header'>
 HTTP/1.1 201 CREATED
 Location: https://{server}.amee.com/profiles/4737069901D3/home/energy/quantity/F7C0580D088A
 Content-Type: text/plain
-          </header>
-			  </httpresponse>
+          </section>
+			  </section>
   		</section>
 		  <section role='tab'>
   			<title>JSON</title>
-  			<httprequest>
-  			  <header>
+  			<section role='httprequest'>
+  			  <section role='header'>
 POST /profiles/4737069901D3/home/energy/quantity HTTP/1.1
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
-          </header>
-          <body>
+          </section>
+          <section role='body'>
 dataItemUid=66056991EE23&amp;energyConsumption=10&amp;energyConsumptionUnit=kWh&amp;
 energyConsumptionPerUnit=month&amp;startDate=2009-03-19T16%3A51%3A00%2B00%3A00&amp;
 representation=full
-          </body>
-        </httprequest>
-        <httpresponse>
-          <header>
+          </section>
+        </section>
+        <section role='httpresponse'>
+          <section role='header'>
 HTTP/1.1 201 CREATED
 Content-Type: application/json; charset=UTF-8
-          </header>
-  			  <body format='json'>
+          </section>
+  			  <section role='json-body'>
   			    <xi:include href='samples/json/create_profile_item.js' parse="text"/>
-  			  </body>
-			  </httpresponse>
+  			  </section>
+			  </section>
   		</section>
   		<section role='tab'>
   			<title>XML</title>
-  			<httprequest>
-  			  <header>
+  			<section role='httprequest'>
+  			  <section role='header'>
 POST /profiles/4737069901D3/home/energy/quantity HTTP/1.1
 Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
-          </header>
-          <body>
+          </section>
+          <section role='body'>
 dataItemUid=66056991EE23&amp;energyConsumption=10&amp;energyConsumptionUnit=kWh&amp;
 energyConsumptionPerUnit=month&amp;startDate=2009-03-19T16%3A51%3A00%2B00%3A00&amp;
 representation=full
-          </body>
-        </httprequest>
-        <httpresponse>
-          <header>
+          </section>
+        </section>
+        <section role='httpresponse'>
+          <section role='header'>
 HTTP/1.1 201 CREATED
 Content-Type: application/xml; charset=UTF-8
-          </header>
-          <body format='xml'>
+          </section>
+          <section role='xml-body'>
             <xi:include href='samples/xml/create_profile_item.xml' parse="text"/>
-          </body>
-        </httpresponse>
+          </section>
+        </section>
   		</section>
   	</section>
 	</section>

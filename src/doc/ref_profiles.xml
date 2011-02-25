@@ -90,47 +90,47 @@
 		<section role='tabbed'>
 		  <section role='tab'>
   			<title>JSON</title>
-  			<httprequest>
-  			  <header>
+  			<section role='httprequest'>
+  			  <section role='header'>
 POST /profiles HTTP/1.1
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
-          </header>
-          <body>
+          </section>
+          <section role='body'>
 profile=true
-          </body>
-        </httprequest>
-        <httpresponse>
-          <header>
+          </section>
+        </section>
+        <section role='httpresponse'>
+          <section role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-          </header>
-  			  <body format='json'>
+          </section>
+  			  <section role='json-body'>
   			    <xi:include href='samples/json/post_profiles.js' parse="text"/>
-  			  </body>
-			  </httpresponse>
+  			  </section>
+			  </section>
   		</section>
   		<section role='tab'>
   			<title>XML</title>
-  			<httprequest>
-  			  <header>
+  			<section role='httprequest'>
+  			  <section role='header'>
 POST /profiles HTTP/1.1
 Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
-          </header>
-          <body>
+          </section>
+          <section role='body'>
 profile=true
-          </body>
-        </httprequest>
-        <httpresponse>
-          <header>
+          </section>
+        </section>
+        <section role='httpresponse'>
+          <section role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
-          </header>
-          <body format='xml'>
+          </section>
+          <section role='xml-body'>
             <xi:include href='samples/xml/post_profiles.xml' parse="text"/>
-          </body>
-        </httpresponse>
+          </section>
+        </section>
   		</section>
   	</section>
 	</section>
@@ -152,39 +152,39 @@ Content-Type: application/xml; charset=UTF-8
 		<section role='tabbed'>
 		  <section role='tab'>
   			<title>JSON</title>
-  			<httprequest>
-  			  <header>
+  			<section role='httprequest'>
+  			  <section role='header'>
 GET /profiles HTTP/1.1
 Accept: application/json
-          </header>
-    		</httprequest>
-  			<httpresponse>
-  			  <header>
+          </section>
+    		</section>
+  			<section role='httpresponse'>
+  			  <section role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-          </header>
-          <body format='json'>
+          </section>
+          <section role='json-body'>
   			    <xi:include href='samples/json/get_profiles.js' parse="text"/>
-			    </body>
-		    </httpresponse>
+			    </section>
+		    </section>
   		</section>
 		  <section role='tab'>
   			<title>XML</title>
-  			<httprequest>
-  			  <header>
+  			<section role='httprequest'>
+  			  <section role='header'>
 GET /profiles HTTP/1.1
 Accept: application/xml
-          </header>
-    		</httprequest>
-  			<httpresponse>
-  			  <header>
+          </section>
+    		</section>
+  			<section role='httpresponse'>
+  			  <section role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
-          </header>
-          <body format='xml'>
+          </section>
+          <section role='xml-body'>
   			    <xi:include href='samples/xml/get_profiles.xml' parse="text"/>
-			    </body>
-		    </httpresponse>
+			    </section>
+		    </section>
   		</section>
 		</section>
 	</section>
@@ -201,16 +201,16 @@ Content-Type: application/xml; charset=UTF-8
 		<section role='tabbed'>
 		  <section role='tab'>
     		<title>Example</title>
-  			<httprequest>
-  			  <header>
+  			<section role='httprequest'>
+  			  <section role='header'>
 DELETE /profiles/358E3BCF690E HTTP/1.1
-          </header>
-  			</httprequest>
-  			<httpresponse>
-  			  <header>
+          </section>
+  			</section>
+  			<section role='httpresponse'>
+  			  <section role='header'>
 HTTP/1.1 200 OK
-          </header>
-  			</httpresponse>
+          </section>
+  			</section>
   		</section>
 		</section>
 	</section>

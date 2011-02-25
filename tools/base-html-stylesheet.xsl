@@ -137,13 +137,13 @@
     </div>
   </xsl:template>
 
-  <xsl:template match="httprequest">
+  <xsl:template match="section[@role='httprequest']">
     <h4>Request</h4>
     <xsl:apply-templates/>    
     <hr/>
   </xsl:template>
 
-  <xsl:template match="httprequest/header">
+  <xsl:template match="section[@role='httprequest']/section[@role='header']">
     <script type="syntaxhighlighter" class="brush: plain" title="Header">
       <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
       <xsl:apply-templates/>
@@ -151,7 +151,7 @@
     <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
   </xsl:template>
 
-  <xsl:template match="httprequest/body">
+  <xsl:template match="section[@role='httprequest']/section[@role='body']">
     <script type="syntaxhighlighter" class="brush: plain" title="Body">
       <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
       <xsl:apply-templates/>
@@ -159,12 +159,12 @@
     <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
   </xsl:template>
 
-  <xsl:template match="httpresponse">
+  <xsl:template match="section[@role='httpresponse']">
     <h4>Response</h4>
     <xsl:apply-templates/>    
   </xsl:template>
 
-  <xsl:template match="httpresponse/header">
+  <xsl:template match="section[@role='httpresponse']/section[@role='header']">
     <script type="syntaxhighlighter" class="brush: plain" title="Header">
       <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
       <xsl:apply-templates/>
@@ -172,7 +172,7 @@
     <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
   </xsl:template>
 
-  <xsl:template match="httpresponse/body[@format='json']">
+  <xsl:template match="section[@role='httpresponse']/section[@role='json-body']">
     <script type="syntaxhighlighter" class="brush: js" title="Body">
       <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
       <xsl:apply-templates/>
@@ -180,7 +180,7 @@
     <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
   </xsl:template>
 
-  <xsl:template match="httpresponse/body[@format='xml']">
+  <xsl:template match="section[@role='httpresponse']/section[@role='xml-body']">
     <script type="syntaxhighlighter" class="brush: xml" title="Body">
       <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
       <xsl:apply-templates/>
