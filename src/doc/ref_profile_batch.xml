@@ -64,45 +64,45 @@
 		  <section role='tab'>
   			<title>JSON</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 POST /profiles/80EC1B49E2A9 HTTP/1.1
 Accept: application/json
 Content-Type: application/json
-          </section>
-          <section role='json-body'>
+          </programlisting>
+          <programlisting role='json-body'>
             <xi:include href='samples/json/batch_create_request.js' parse="text"/>
-          </section>
+          </programlisting>
         </section>
         <section role='httpresponse'>
-          <section role='header'>
+          <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-          </section>
-  			  <section role='json-body'>
+          </programlisting>
+  			  <programlisting role='json-body'>
   			    <xi:include href='samples/json/batch_create.js' parse="text"/>
-  			  </section>
+  			  </programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
   			<title>XML</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 POST /profiles/59586731F930 HTTP/1.1
 Accept: application/xml
 Content-Type: application/xml
-          </section>
-          <section role='xml-body'>
+          </programlisting>
+          <programlisting role='xml-body'>
             <xi:include href='samples/xml/batch_create_request.xml' parse="text"/>
-          </section>
+          </programlisting>
         </section>
         <section role='httpresponse'>
-          <section role='header'>
+          <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
-          </section>
-          <section role='xml-body'>
+          </programlisting>
+          <programlisting role='xml-body'>
             <xi:include href='samples/xml/batch_create.xml' parse="text"/>
-          </section>
+          </programlisting>
         </section>
   		</section>
   	</section>
@@ -148,39 +148,39 @@ Content-Type: application/xml; charset=UTF-8
 		  <section role='tab'>
   			<title>JSON</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 POST /profiles/80EC1B49E2A9 HTTP/1.1
 Accept: application/json
 Content-Type: application/json
-          </section>
-          <section role='json-body'>
+          </programlisting>
+          <programlisting role='json-body'>
             <xi:include href='samples/json/batch_update_request.js' parse="text"/>
-          </section>
+          </programlisting>
         </section>
         <section role='httpresponse'>
-          <section role='header'>
+          <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: text/plain
-          </section>
+          </programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
   			<title>XML</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 POST /profiles/59586731F930 HTTP/1.1
 Accept: application/xml
 Content-Type: application/xml
-          </section>
-          <section role='xml-body'>
+          </programlisting>
+          <programlisting role='xml-body'>
             <xi:include href='samples/xml/batch_update_request.xml' parse="text"/>
-          </section>
+          </programlisting>
         </section>
         <section role='httpresponse'>
-          <section role='header'>
+          <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: text/plain
-          </section>
+          </programlisting>
         </section>
   		</section>
   	</section>

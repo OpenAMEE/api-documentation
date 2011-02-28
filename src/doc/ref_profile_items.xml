@@ -160,70 +160,70 @@
 		  <section role='tab'>
   			<title>Example</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 POST /profiles/4737069901D3/home/energy/quantity HTTP/1.1
 Accept: application/json, application/xml
 Content-Type: application/x-www-form-urlencoded
-          </section>
-          <section role='body'>
+          </programlisting>
+          <programlisting role='body'>
 dataItemUid=66056991EE23&amp;energyConsumption=10&amp;energyConsumptionUnit=kWh&amp;
 energyConsumptionPerUnit=month&amp;startDate=2009-03-19T16%3A51%3A00%2B00%3A00
-          </section>
+          </programlisting>
         </section>
         <section role='httpresponse'>
-          <section role='header'>
+          <programlisting role='header'>
 HTTP/1.1 201 CREATED
 Location: https://{server}.amee.com/profiles/4737069901D3/home/energy/quantity/F7C0580D088A
 Content-Type: text/plain
-          </section>
+          </programlisting>
 			  </section>
   		</section>
 		  <section role='tab'>
   			<title>JSON</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 POST /profiles/4737069901D3/home/energy/quantity HTTP/1.1
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
-          </section>
-          <section role='body'>
+          </programlisting>
+          <programlisting role='body'>
 dataItemUid=66056991EE23&amp;energyConsumption=10&amp;energyConsumptionUnit=kWh&amp;
 energyConsumptionPerUnit=month&amp;startDate=2009-03-19T16%3A51%3A00%2B00%3A00&amp;
 representation=full
-          </section>
+          </programlisting>
         </section>
         <section role='httpresponse'>
-          <section role='header'>
+          <programlisting role='header'>
 HTTP/1.1 201 CREATED
 Content-Type: application/json; charset=UTF-8
-          </section>
-  			  <section role='json-body'>
+          </programlisting>
+  			  <programlisting role='json-body'>
   			    <xi:include href='samples/json/create_profile_item.js' parse="text"/>
-  			  </section>
+  			  </programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
   			<title>XML</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 POST /profiles/4737069901D3/home/energy/quantity HTTP/1.1
 Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
-          </section>
-          <section role='body'>
+          </programlisting>
+          <programlisting role='body'>
 dataItemUid=66056991EE23&amp;energyConsumption=10&amp;energyConsumptionUnit=kWh&amp;
 energyConsumptionPerUnit=month&amp;startDate=2009-03-19T16%3A51%3A00%2B00%3A00&amp;
 representation=full
-          </section>
+          </programlisting>
         </section>
         <section role='httpresponse'>
-          <section role='header'>
+          <programlisting role='header'>
 HTTP/1.1 201 CREATED
 Content-Type: application/xml; charset=UTF-8
-          </section>
-          <section role='xml-body'>
+          </programlisting>
+          <programlisting role='xml-body'>
             <xi:include href='samples/xml/create_profile_item.xml' parse="text"/>
-          </section>
+          </programlisting>
         </section>
   		</section>
   	</section>
@@ -258,39 +258,39 @@ Content-Type: application/xml; charset=UTF-8
 		  <section role='tab'>
   			<title>JSON</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 GET /profiles/F38ECBD56D59/home/energy/quantity/5891C88F29FA HTTP/1.1
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
-          </section>
+          </programlisting>
         </section>
         <section role='httpresponse'>
-          <section role='header'>
+          <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-          </section>
-  			  <section role='json-body'>
+          </programlisting>
+  			  <programlisting role='json-body'>
   			    <xi:include href='samples/json/get_profile_item.js' parse="text"/>
-  			  </section>
+  			  </programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
   			<title>XML</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 GET /profiles/4737069901D3/home/energy/quantity/F7C0580D088A HTTP/1.1
 Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
-          </section>
+          </programlisting>
         </section>
         <section role='httpresponse'>
-          <section role='header'>
+          <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
-          </section>
-          <section role='xml-body'>
+          </programlisting>
+          <programlisting role='xml-body'>
             <xi:include href='samples/xml/get_profile_item.xml' parse="text"/>
-          </section>
+          </programlisting>
         </section>
   		</section>
   	</section>
@@ -371,39 +371,39 @@ Content-Type: application/xml; charset=UTF-8
 		  <section role='tab'>
   			<title>JSON</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 GET /profiles/F554D93A62AB/home/energy/quantity HTTP/1.1
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
-          </section>
+          </programlisting>
         </section>
         <section role='httpresponse'>
-          <section role='header'>
+          <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-          </section>
-  			  <section role='json-body'>
+          </programlisting>
+  			  <programlisting role='json-body'>
   			    <xi:include href='samples/json/get_profile_category.js' parse="text"/>
-  			  </section>
+  			  </programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
   			<title>XML</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 GET /profiles/E3C664F77FB4/home/energy/quantity HTTP/1.1
 Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
-          </section>
+          </programlisting>
         </section>
         <section role='httpresponse'>
-          <section role='header'>
+          <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
-          </section>
-          <section role='xml-body'>
+          </programlisting>
+          <programlisting role='xml-body'>
             <xi:include href='samples/xml/get_profile_category.xml' parse="text"/>
-          </section>
+          </programlisting>
         </section>
   		</section>
   	</section>
@@ -498,64 +498,64 @@ Content-Type: application/xml; charset=UTF-8
 		  <section role='tab'>
   			<title>Example</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 PUT /profiles/4A546C3F1B2E/transport/motorcycle/generic/9B32A9FC3B08 HTTP/1.1
 Accept: application/json, application/xml
 Content-Type: application/x-www-form-urlencoded
-          </section>
-          <section role='body'>
+          </programlisting>
+          <programlisting role='body'>
 distance=200&amp;distanceUnit=km&amp;distancePerUnit=month
-          </section>
+          </programlisting>
         </section>
         <section role='httpresponse'>
-          <section role='header'>
+          <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: text/plain
-          </section>
+          </programlisting>
 			  </section>
   		</section>
 		  <section role='tab'>
   			<title>JSON</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 PUT /profiles/155DD3C63646/transport/motorcycle/generic/D47C465B8157 HTTP/1.1
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
-          </section>
-          <section role='body'>
+          </programlisting>
+          <programlisting role='body'>
 distance=200&amp;distanceUnit=km&amp;distancePerUnit=month&amp;representation=full
-          </section>
+          </programlisting>
         </section>
         <section role='httpresponse'>
-          <section role='header'>
+          <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-          </section>
-  			  <section role='json-body'>
+          </programlisting>
+  			  <programlisting role='json-body'>
   			    <xi:include href='samples/json/update_profile_item.js' parse="text"/>
-  			  </section>
+  			  </programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
   			<title>XML</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 PUT /profiles/03FC2D6A50C9/transport/motorcycle/generic/30A4140A2755 HTTP/1.1
 Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
-          </section>
-          <section role='body'>
+          </programlisting>
+          <programlisting role='body'>
 distance=200&amp;distanceUnit=km&amp;distancePerUnit=month&amp;representation=full
-          </section>
+          </programlisting>
         </section>
         <section role='httpresponse'>
-          <section role='header'>
+          <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
-          </section>
-          <section role='xml-body'>
+          </programlisting>
+          <programlisting role='xml-body'>
             <xi:include href='samples/xml/update_profile_item.xml' parse="text"/>
-          </section>
+          </programlisting>
         </section>
   		</section>
   	</section>
@@ -574,16 +574,16 @@ Content-Type: application/xml; charset=UTF-8
 		  <section role='tab'>
     		<title>Example</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 DELETE /profiles/228A21573085/home/energy/quantity/B56410A978B6 HTTP/1.1
 Accept: application/json, application/xml
-          </section>
+          </programlisting>
   			</section>
   			<section role='httpresponse'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: text/plain
-          </section>
+          </programlisting>
   			</section>
   		</section>
 		</section>

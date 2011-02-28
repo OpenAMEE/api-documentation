@@ -89,45 +89,45 @@
 		  <section role='tab'>
   			<title>JSON</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 POST /profiles HTTP/1.1
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
-          </section>
-          <section role='body'>
+          </programlisting>
+          <programlisting role='body'>
 profile=true
-          </section>
+          </programlisting>
         </section>
         <section role='httpresponse'>
-          <section role='header'>
+          <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-          </section>
-  			  <section role='json-body'>
+          </programlisting>
+  			  <programlisting role='json-body'>
   			    <xi:include href='samples/json/post_profiles.js' parse="text"/>
-  			  </section>
+  			  </programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
   			<title>XML</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 POST /profiles HTTP/1.1
 Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
-          </section>
-          <section role='body'>
+          </programlisting>
+          <programlisting role='body'>
 profile=true
-          </section>
+          </programlisting>
         </section>
         <section role='httpresponse'>
-          <section role='header'>
+          <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
-          </section>
-          <section role='xml-body'>
+          </programlisting>
+          <programlisting role='xml-body'>
             <xi:include href='samples/xml/post_profiles.xml' parse="text"/>
-          </section>
+          </programlisting>
         </section>
   		</section>
   	</section>
@@ -151,37 +151,37 @@ Content-Type: application/xml; charset=UTF-8
 		  <section role='tab'>
   			<title>JSON</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 GET /profiles HTTP/1.1
 Accept: application/json
-          </section>
+          </programlisting>
     		</section>
   			<section role='httpresponse'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-          </section>
-          <section role='json-body'>
+          </programlisting>
+          <programlisting role='json-body'>
   			    <xi:include href='samples/json/get_profiles.js' parse="text"/>
-			    </section>
+			    </programlisting>
 		    </section>
   		</section>
 		  <section role='tab'>
   			<title>XML</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 GET /profiles HTTP/1.1
 Accept: application/xml
-          </section>
+          </programlisting>
     		</section>
   			<section role='httpresponse'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
-          </section>
-          <section role='xml-body'>
+          </programlisting>
+          <programlisting role='xml-body'>
   			    <xi:include href='samples/xml/get_profiles.xml' parse="text"/>
-			    </section>
+			    </programlisting>
 		    </section>
   		</section>
 		</section>
@@ -200,16 +200,16 @@ Content-Type: application/xml; charset=UTF-8
 		  <section role='tab'>
     		<title>Example</title>
   			<section role='httprequest'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 DELETE /profiles/358E3BCF690E HTTP/1.1
 Accept: application/json, application/xml
-          </section>
+          </programlisting>
   			</section>
   			<section role='httpresponse'>
-  			  <section role='header'>
+  			  <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: text/plain
-          </section>
+          </programlisting>
   			</section>
   		</section>
 		</section>
