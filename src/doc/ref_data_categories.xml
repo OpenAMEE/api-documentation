@@ -10,62 +10,177 @@
 
 <section xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Data Categories</title>
-  <para>
-  </para>
-  <section>
-  	<title>Properties</title>
-  	<para>
-  	</para>
-  </section>
-  <section>
-  	<title>API Operations</title>
-  	<section>
-  		<title>Get Category</title>
-  		<para>
-  		</para>			
-  		<itemizedlist>
-  			<listitem>URL: <code>http://{server}/profiles</code></listitem>
-  			<listitem>Method: <code>GET</code></listitem>
-  			<listitem>Response format: <code>application/xml, application/json</code></listitem>
-  			<listitem>Response code: <code>200 OK</code></listitem>
-  			<listitem>Response body: </listitem>
-  		</itemizedlist>			
-  		<section>
-  			<title>JSON</title>
-  			<para>Request</para>
-  			<programlisting>
-POST /profiles HTTP/1.1
+	<section id='drilldown_reference'>
+		<title>Look up a Data Item UID</title>
+    <para>
+      Drilldowns are a special resource available within every Data Category that contains Data Items.
+    </para>
+    <para>
+      As data items are identified by UIDs in API calls such as creating Profile Items, a way is 
+      required of translating human-readable choices into these UIDs. This is particularly important 
+      for large categories, such as UK car models, which can contain many thousands of data items.
+    </para>
+    <para>
+      Data item UIDs may be different on different AMEE platforms for the same item. Because of
+      this, data item UIDs should never be hardcoded into client apps. Instead, you should use the 
+      drilldown URL (which doesn't change) to obtain the UIDs, which can then be cached. 
+      Drilldown URLs may be safely hardcoded, so that you don't necessarily have to iterate through
+      the choices each time if you already know which item you want to get to.
+    </para>
+		<para>
+      Each call to the resource will give a list of choices. The API client can then select one of
+      these and provide it as a parameter to the next drilldown call. When the sequence of choices
+      uniquely identifies one data item, a single choice named 'uid' is returned. This is the UID 
+      that should be used to refer to the chosen Data Item when creating Profile Items (see 
+      <xref linkend='create_profile_item_reference'/>).
+	  </para>
+		<table class='requestdetails'>
+			<tr><td>URL</td><td>https://{server}.amee.com/data/{category_path}/drill</td></tr>
+			<tr><td>HTTP Method</td><td>GET</td></tr>
+			<tr><td>Response Content-Type</td><td>application/xml or application/json</td></tr>
+			<tr><td>Successful Response Code</td><td>200 OK</td></tr>
+		</table>
+		<section>
+		  <title>Optional Parameters</title>
+  		<table class='parameters'>
+  			<tr>
+					<th>Parameter</th>
+					<th>Description</th>
+  			</tr>
+				<tr>
+					<td>{choice_name}</td>
+					<td>Any number of choices and the values chosen. See below for detailed explanation.
+					  Choices must be provided in the correct order.</td>
+				</tr>
+  		</table>
+	  </section>
+		<para>
+		  The response body contains a number of sections. The 'choices' section lists available drill
+		  choices. The 'selections' sections shows choices that have already been made.
+	  </para>
+	  <section>
+	    <title>First Choice</title>
+	    <para>
+	      The first request has no parameters, so fetches the options for the first drill choice.
+      </para>
+  		<section role='tabbed'>
+  		  <section role='tab'>
+    			<title>JSON</title>
+    			<section role='httprequest'>
+    			  <programlisting role='header'>
+GET /data/transport/car/generic/drill HTTP/1.1
 Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-  			</programlisting>
-  			<programlisting>
-profile=true
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
+            </programlisting>
+      		</section>
+    			<section role='httpresponse'>
+    			  <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="javascript"><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
-  		</section>
-  		<section>
-  			<title>XML</title>
-  			<para>Request</para>
-  			<programlisting>
-POST /profiles HTTP/1.1
+            </programlisting>
+            <programlisting role='json-body'><xi:include href='samples/json/drill_1.js' parse="text"/></programlisting>
+  		    </section>
+    		</section>
+  		  <section role='tab'>
+    			<title>XML</title>
+    			<section role='httprequest'>
+    			  <programlisting role='header'>
+GET /data/transport/car/generic/drill HTTP/1.1
 Accept: application/xml
-Content-Type: application/x-www-form-urlencoded
-  			</programlisting>
-  			<programlisting>
-profile=true
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
+            </programlisting>
+      		</section>
+    			<section role='httpresponse'>
+    			  <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="xml"><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
+            </programlisting>
+            <programlisting role='xml-body'><xi:include href='samples/xml/drill_1.xml' parse="text"/></programlisting>
+  		    </section>
+    		</section>
   		</section>
-  	</section>
-  </section>
+    </section>
+	  <section>
+	    <title>Second Choice</title>
+	    <para>
+	      In this example, the user has picked 'diesel' as the selection for the first choice.
+	      This is passed as a URL parameter to the second request.
+      </para>
+  		<section role='tabbed'>
+  		  <section role='tab'>
+    			<title>JSON</title>
+    			<section role='httprequest'>
+    			  <programlisting role='header'>
+GET /data/transport/car/generic/drill?fuel=diesel HTTP/1.1
+Accept: application/json
+            </programlisting>
+      		</section>
+    			<section role='httpresponse'>
+    			  <programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+            </programlisting>
+            <programlisting role='json-body'><xi:include href='samples/json/drill_2.js' parse="text"/></programlisting>
+  		    </section>
+    		</section>
+  		  <section role='tab'>
+    			<title>XML</title>
+    			<section role='httprequest'>
+    			  <programlisting role='header'>
+GET /data/transport/car/generic/drill?fuel=diesel HTTP/1.1
+Accept: application/xml
+            </programlisting>
+      		</section>
+    			<section role='httpresponse'>
+    			  <programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+            </programlisting>
+            <programlisting role='xml-body'><xi:include href='samples/xml/drill_2.xml' parse="text"/></programlisting>
+  		    </section>
+    		</section>
+  		</section>
+    </section>
+	  <section>
+	    <title>Final Result</title>
+	    <para>
+	      This category has only two drill choices, so two selections are enough to fully identify a data item. The user 
+	      has selected 'large' for the size choice in this example. The UID of the selected data item appears as a choice
+	      named 'uid'. If user input is not required, and you know that you want to the large diesel car data item in your
+	      application, you can use this form directly without having to do the previous two calls.
+      </para>
+  		<section role='tabbed'>
+  		  <section role='tab'>
+    			<title>JSON</title>
+    			<section role='httprequest'>
+    			  <programlisting role='header'>
+GET /data/transport/car/generic/drill?fuel=diesel&amp;size=large HTTP/1.1
+Accept: application/json
+            </programlisting>
+      		</section>
+    			<section role='httpresponse'>
+    			  <programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+            </programlisting>
+            <programlisting role='json-body'><xi:include href='samples/json/drill_3.js' parse="text"/></programlisting>
+  		    </section>
+    		</section>
+  		  <section role='tab'>
+    			<title>XML</title>
+    			<section role='httprequest'>
+    			  <programlisting role='header'>
+GET /data/transport/car/generic/drill?fuel=diesel&amp;size=large HTTP/1.1
+Accept: application/xml
+            </programlisting>
+      		</section>
+    			<section role='httpresponse'>
+    			  <programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+            </programlisting>
+            <programlisting role='xml-body'><xi:include href='samples/xml/drill_3.xml' parse="text"/></programlisting>
+  		    </section>
+    		</section>
+  		</section>
+    </section>
+	</section>
 </section>
