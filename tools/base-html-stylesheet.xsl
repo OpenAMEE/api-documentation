@@ -16,7 +16,7 @@
   <xsl:param name="callout.graphics.extension">.png</xsl:param>
 
   <xsl:param name="section.autolabel">1</xsl:param>
-  <xsl:param name="section.label.includes.component.label">0</xsl:param>
+  <xsl:param name="section.label.includes.component.label">1</xsl:param>
 
   <xsl:param name="para.propagates.style">1</xsl:param>
 

@@ -93,7 +93,7 @@
   			</tr>
 				<tr>					
 					<td>dataItemUid</td>
-					<td>The UID of the Data Item which a new Profile Item should be based upon. This should be obtained from a DrillDown request.</td>
+					<td>The UID of the Data Item which a new Profile Item should be based upon. This should be obtained from a drilldown request as described in <xref linkend='drilldown_reference' />.</td>
 				</tr>
   		</table>
 	  </section>

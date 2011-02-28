@@ -49,6 +49,7 @@
 
   <appendix>
     <title>Data API Reference</title>
+    <xi:include href='ref_drill_down.xml'/>
   </appendix>
   
   <xi:include href="index.xml" />
