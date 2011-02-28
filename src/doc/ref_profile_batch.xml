@@ -48,7 +48,7 @@
 		<para>
 		  The request should include a JSON or XML-encoded body containing the values which should be set.
 		  See the examples below for the exact structure. Compulsory and optional parameters are as discussed
-		  in the section on creating individual profile items, but instead of putting the parameters in a form
+		  in <xref linkend='create_profile_item_reference'/>, but instead of putting the parameters in a form
 		  encoded body, parameter names become hash keys or tag names in the JSON or XML. As for creating 
 		  individual items, a dataItemUid is compulsory. Other parameters are optional.
 	  </para>
@@ -137,7 +137,7 @@ Content-Type: application/xml; charset=UTF-8
 		<para>
 		  The request should include a JSON or XML-encoded body containing the UIDs of the items, and the values
 		  which should be updated. See the examples below for the exact structure. Parameters are as discussed in 
-		  the section on updating individual profile items, but instead of putting the parameters in a form
+		  <xref linkend='update_profile_item_reference'/>, but instead of putting the parameters in a form
 		  encoded body, parameter names become hash keys or tag names in the JSON or XML.
 	  </para>
 	  <para>

@@ -57,7 +57,7 @@
 			</tr>
 		</table>
 	</section>
-	<section>
+	<section xml:id='create_profile_item_reference'>
 		<title>Create Profile Item</title>
 		<para>
 			Used to create a new profile item.
@@ -408,7 +408,7 @@ Content-Type: application/xml; charset=UTF-8
   		</section>
   	</section>
 	</section>
-  <section>
+  <section xml:id='update_profile_item_reference'>
 		<title>Update Profile Item</title>
 		<para>
 			Used to update an existing profile item.
