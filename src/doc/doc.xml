@@ -11,7 +11,7 @@
 
   <bookinfo>
 
-    <subtitle>API Version 2.x</subtitle>
+    <subtitle>API Version 2</subtitle>
 
     <authorgroup>
       <author>
@@ -26,6 +26,7 @@
 
     <copyright>
       <year>2010</year>
+      <year>2011</year>
       <holder>AMEE UK Ltd.</holder>
     </copyright>
 
