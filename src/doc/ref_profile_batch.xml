@@ -62,7 +62,7 @@
 		</para>
 		<section role='tabbed'>
 		  <section role='tab'>
-  			<title>Example</title>
+  			<title>JSON</title>
   			<section role='httprequest'>
   			  <section role='header'>
 POST /profiles/80EC1B49E2A9 HTTP/1.1
@@ -146,7 +146,7 @@ Content-Type: application/xml; charset=UTF-8
 		</para>
 		<section role='tabbed'>
 		  <section role='tab'>
-  			<title>Example</title>
+  			<title>JSON</title>
   			<section role='httprequest'>
   			  <section role='header'>
 POST /profiles/80EC1B49E2A9 HTTP/1.1
