@@ -1,0 +1,12 @@
+{
+  "profileItems":[
+    {
+      "profileItemUid":"63CF7BE48B3F",
+      "volumePerTime":300
+    },
+    {
+      "profileItemUid":"32E5C8BA51AA",
+      "distance":400
+    }
+  ]
+}
