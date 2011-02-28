@@ -354,6 +354,16 @@ Content-Type: application/xml; charset=UTF-8
 					  return kg/month instead of kg/year, for example. See the list of supported units for
 					  more details. Default is per year.</td>
 				</tr>
+				<tr>					
+					<td>page</td>
+					<td>If there is more than one page of data, retrieve the specified page. Default is 
+					  to fetch page 1. See <xref linkend='paging'/>.</td>
+				</tr>
+				<tr>
+					<td>itemsPerPage</td>
+					<td>Specify the number of items returned in a single page. Default is 
+					  to fetch 10 items per page. See <xref linkend='paging'/>.</td>
+				</tr>
   		</table>
 	  </section>
 		<para>
