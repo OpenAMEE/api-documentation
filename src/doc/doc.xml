@@ -40,9 +40,15 @@
   <xi:include href='ch_clients.xml'/>
   <xi:include href='ch_casestudy.xml'/>
 
-  <appendix id="amee.reference">
-    <title>API Reference</title>
+  <appendix>
+    <title>Profile API Reference</title>
     <xi:include href='ref_profiles.xml'/>
+    <xi:include href='ref_profile_items.xml'/>
+    <xi:include href='ref_profile_batch.xml'/>
+  </appendix>
+
+  <appendix>
+    <title>Data API Reference</title>
   </appendix>
   
   <xi:include href="index.xml" />
