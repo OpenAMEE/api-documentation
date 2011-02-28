@@ -356,12 +356,12 @@ Content-Type: application/xml; charset=UTF-8
 				</tr>
 				<tr>					
 					<td>page</td>
-					<td>If there is more than one page of data, retrieve the specified page. Default is 
+					<td>If there is more than one page of profile items, retrieve the specified page. Default is 
 					  to fetch page 1. See <xref linkend='paging'/>.</td>
 				</tr>
 				<tr>
 					<td>itemsPerPage</td>
-					<td>Specify the number of items returned in a single page. Default is 
+					<td>Specify the number of profile items returned in a single page. Default is 
 					  to fetch 10 items per page. See <xref linkend='paging'/>.</td>
 				</tr>
   		</table>
