@@ -10,6 +10,109 @@
 
 <section xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Data Categories</title>
+  <para>
+    A Profile is identified by its UID, which forms part of the URL for any operations that are performed on or inside the profile.
+  </para>
+	<section>
+		<title>Properties</title>
+		<table>
+			<tr>
+				<th>Property</th>
+				<th>Description</th>
+			</tr>
+			<tr>					
+				<td>UID</td>
+				<td>A 12-letter unique identifier for the category. See Unique IDs for more information.</td>
+			</tr>
+			<tr>					
+				<td>created</td>
+				<td>The time and date on which the category was created.</td>
+			</tr>
+			<tr>					
+				<td>modified</td>
+				<td>The time and date on which the category was last modified. Note that this
+				   does not track changes to items inside the category, only to the category itself.</td>
+			</tr>
+			<tr>					
+				<td>name</td>
+				<td>The display name for the category.</td>
+			</tr>
+			<tr>					
+				<td>path</td>
+				<td>The path of this Data Category. A path forms part of the URL.</td>
+			</tr>
+		</table>
+	</section>
+	<section>
+		<title>Get Data Category</title>
+		<para>
+			Lists all subcategories and data items in a data category
+		</para>
+		<table class='requestdetails'>
+			<tr><td>URL</td><td>https://{server}.amee.com/data[/{category_path}]</td></tr>
+			<tr><td>HTTP Method</td><td>GET</td></tr>
+			<tr><td>Response Content-Type</td><td>application/xml or application/json</td></tr>
+			<tr><td>Successful Response Code</td><td>200 OK</td></tr>
+		</table>
+		<section>
+		  <title>Optional Parameters</title>
+  		<table class='parameters'>
+  			<tr>
+					<th>Parameter</th>
+					<th>Description</th>
+  			</tr>
+				<tr>
+					<td>page</td>
+					<td>If there is more than one page of data items, retrieve the specified page. Default is 
+					  to fetch page 1. See <xref linkend='paging'/>.</td>
+				</tr>
+				<tr>
+					<td>itemsPerPage</td>
+					<td>Specify the number of data items returned in a single page. Default is 
+					  to fetch 10 items per page. See <xref linkend='paging'/>.</td>
+				</tr>
+  		</table>
+	  </section>
+		<para>
+		  The response contains a JSON or XML encoded description of the data category. The result 
+		  will contain descriptions of subcategories or data items if they exist inside the data
+		  category.
+	  </para>
+		<section role='tabbed'>
+		  <section role='tab'>
+  			<title>JSON</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+GET /data/transport/car/generic HTTP/1.1
+Accept: application/json
+          </programlisting>
+    		</section>
+  			<section role='httpresponse'>
+  			  <programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+          </programlisting>
+          <programlisting role='json-body'><xi:include href='samples/json/get_data_category.js' parse="text"/></programlisting>
+		    </section>
+  		</section>
+		  <section role='tab'>
+  			<title>XML</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+GET /data/transport/car/generic HTTP/1.1
+Accept: application/xml
+          </programlisting>
+    		</section>
+  			<section role='httpresponse'>
+  			  <programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+          </programlisting>
+          <programlisting role='xml-body'><xi:include href='samples/xml/get_data_category.xml' parse="text"/></programlisting>
+		    </section>
+  		</section>
+		</section>
+	</section>
 	<section id='drilldown_reference'>
 		<title>Look up a Data Item UID</title>
     <para>
