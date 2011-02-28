@@ -103,9 +103,7 @@ profile=true
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'>
-  			    <xi:include href='samples/json/post_profiles.js' parse="text"/>
-  			  </programlisting>
+  			  <programlisting role='json-body'><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
@@ -125,9 +123,7 @@ profile=true
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'>
-            <xi:include href='samples/xml/post_profiles.xml' parse="text"/>
-          </programlisting>
+          <programlisting role='xml-body'><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
         </section>
   		</section>
   	</section>
@@ -161,9 +157,7 @@ Accept: application/json
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-          <programlisting role='json-body'>
-  			    <xi:include href='samples/json/get_profiles.js' parse="text"/>
-			    </programlisting>
+          <programlisting role='json-body'><xi:include href='samples/json/get_profiles.js' parse="text"/></programlisting>
 		    </section>
   		</section>
 		  <section role='tab'>
@@ -179,9 +173,7 @@ Accept: application/xml
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'>
-  			    <xi:include href='samples/xml/get_profiles.xml' parse="text"/>
-			    </programlisting>
+          <programlisting role='xml-body'><xi:include href='samples/xml/get_profiles.xml' parse="text"/></programlisting>
 		    </section>
   		</section>
 		</section>

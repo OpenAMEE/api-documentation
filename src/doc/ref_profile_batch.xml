@@ -69,18 +69,14 @@ POST /profiles/80EC1B49E2A9 HTTP/1.1
 Accept: application/json
 Content-Type: application/json
           </programlisting>
-          <programlisting role='json-body'>
-            <xi:include href='samples/json/batch_create_request.js' parse="text"/>
-          </programlisting>
+          <programlisting role='json-body'><xi:include href='samples/json/batch_create_request.js' parse="text"/></programlisting>
         </section>
         <section role='httpresponse'>
           <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'>
-  			    <xi:include href='samples/json/batch_create.js' parse="text"/>
-  			  </programlisting>
+  			  <programlisting role='json-body'><xi:include href='samples/json/batch_create.js' parse="text"/></programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
@@ -91,18 +87,14 @@ POST /profiles/59586731F930 HTTP/1.1
 Accept: application/xml
 Content-Type: application/xml
           </programlisting>
-          <programlisting role='xml-body'>
-            <xi:include href='samples/xml/batch_create_request.xml' parse="text"/>
-          </programlisting>
+          <programlisting role='xml-body'><xi:include href='samples/xml/batch_create_request.xml' parse="text"/></programlisting>
         </section>
         <section role='httpresponse'>
           <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'>
-            <xi:include href='samples/xml/batch_create.xml' parse="text"/>
-          </programlisting>
+          <programlisting role='xml-body'><xi:include href='samples/xml/batch_create.xml' parse="text"/></programlisting>
         </section>
   		</section>
   	</section>
@@ -153,9 +145,7 @@ POST /profiles/80EC1B49E2A9 HTTP/1.1
 Accept: application/json
 Content-Type: application/json
           </programlisting>
-          <programlisting role='json-body'>
-            <xi:include href='samples/json/batch_update_request.js' parse="text"/>
-          </programlisting>
+          <programlisting role='json-body'><xi:include href='samples/json/batch_update_request.js' parse="text"/></programlisting>
         </section>
         <section role='httpresponse'>
           <programlisting role='header'>
@@ -172,9 +162,7 @@ POST /profiles/59586731F930 HTTP/1.1
 Accept: application/xml
 Content-Type: application/xml
           </programlisting>
-          <programlisting role='xml-body'>
-            <xi:include href='samples/xml/batch_update_request.xml' parse="text"/>
-          </programlisting>
+          <programlisting role='xml-body'><xi:include href='samples/xml/batch_update_request.xml' parse="text"/></programlisting>
         </section>
         <section role='httpresponse'>
           <programlisting role='header'>

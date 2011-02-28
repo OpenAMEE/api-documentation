@@ -197,9 +197,7 @@ representation=full
 HTTP/1.1 201 CREATED
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'>
-  			    <xi:include href='samples/json/create_profile_item.js' parse="text"/>
-  			  </programlisting>
+  			  <programlisting role='json-body'><xi:include href='samples/json/create_profile_item.js' parse="text"/></programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
@@ -221,9 +219,7 @@ representation=full
 HTTP/1.1 201 CREATED
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'>
-            <xi:include href='samples/xml/create_profile_item.xml' parse="text"/>
-          </programlisting>
+          <programlisting role='xml-body'><xi:include href='samples/xml/create_profile_item.xml' parse="text"/></programlisting>
         </section>
   		</section>
   	</section>
@@ -269,9 +265,7 @@ Content-Type: application/x-www-form-urlencoded
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'>
-  			    <xi:include href='samples/json/get_profile_item.js' parse="text"/>
-  			  </programlisting>
+  			  <programlisting role='json-body'><xi:include href='samples/json/get_profile_item.js' parse="text"/></programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
@@ -288,9 +282,7 @@ Content-Type: application/x-www-form-urlencoded
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'>
-            <xi:include href='samples/xml/get_profile_item.xml' parse="text"/>
-          </programlisting>
+          <programlisting role='xml-body'><xi:include href='samples/xml/get_profile_item.xml' parse="text"/></programlisting>
         </section>
   		</section>
   	</section>
@@ -382,9 +374,7 @@ Content-Type: application/x-www-form-urlencoded
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'>
-  			    <xi:include href='samples/json/get_profile_category.js' parse="text"/>
-  			  </programlisting>
+  			  <programlisting role='json-body'><xi:include href='samples/json/get_profile_category.js' parse="text"/></programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
@@ -401,9 +391,7 @@ Content-Type: application/x-www-form-urlencoded
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'>
-            <xi:include href='samples/xml/get_profile_category.xml' parse="text"/>
-          </programlisting>
+          <programlisting role='xml-body'><xi:include href='samples/xml/get_profile_category.xml' parse="text"/></programlisting>
         </section>
   		</section>
   	</section>
@@ -531,9 +519,7 @@ distance=200&amp;distanceUnit=km&amp;distancePerUnit=month&amp;representation=fu
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'>
-  			    <xi:include href='samples/json/update_profile_item.js' parse="text"/>
-  			  </programlisting>
+  			  <programlisting role='json-body'><xi:include href='samples/json/update_profile_item.js' parse="text"/></programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
@@ -553,9 +539,7 @@ distance=200&amp;distanceUnit=km&amp;distancePerUnit=month&amp;representation=fu
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'>
-            <xi:include href='samples/xml/update_profile_item.xml' parse="text"/>
-          </programlisting>
+          <programlisting role='xml-body'><xi:include href='samples/xml/update_profile_item.xml' parse="text"/></programlisting>
         </section>
   		</section>
   	</section>
