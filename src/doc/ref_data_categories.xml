@@ -11,7 +11,6 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Data Categories</title>
   <para>
-    A Profile is identified by its UID, which forms part of the URL for any operations that are performed on or inside the profile.
   </para>
 	<section>
 		<title>Properties</title>
