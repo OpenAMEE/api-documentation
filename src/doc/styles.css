@@ -90,3 +90,8 @@ table.requestdetails td, table.parameters td {
 table.requestdetails tr:nth-child(odd), table.parameters tr:nth-child(odd) {
 	background: #EEE;
 }
+
+div#footer p.copyright {
+	display: inline;
+	margin: 0px;
+}

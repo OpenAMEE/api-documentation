@@ -79,7 +79,7 @@
         |
         <a href="http://www.amee.com/contact">Contact</a>
         <br/>
-        (c) (FIXME) 2009-2011 AMEE UK Ltd.
+        <xsl:apply-templates select="//copyright[1]" mode="titlepage.mode"/>
         <div class="clear"></div>
       </div>
     </div>
