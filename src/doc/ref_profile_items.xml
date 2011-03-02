@@ -133,17 +133,18 @@
 				<tr>					
 					<td>startDate</td>
 					<td>An ISO8601 date/time which specifies when the item should be valid from. This parameter is
-					  compulsory if either endDate or duration are specified. Defaults to the current time.</td>
+					  compulsory if either endDate or duration are specified. Defaults to the current time.
+					  See <xref linkend='date_reference'/> for details of format.</td>
 				</tr>
 				<tr>					
 					<td>endDate</td>
 					<td>An ISO8601 date/time which specifies when the item should be valid until. Defaults to
-					  infinitely far in the future.</td>
+					  infinitely far in the future. See <xref linkend='date_reference'/> for details of format.</td>
 				</tr>
 				<tr>					
 					<td>duration</td>
 					<td>As an alternative to specifying an end time, you can specify the duration that the item 
-					  should be valid for in ISO8601 duration format.</td>
+					  should be valid for in ISO8601 duration format. See <xref linkend='duration_reference'/> for details.</td>
 				</tr>
 				<tr>					
 					<td>representation</td>
@@ -323,17 +324,18 @@ Content-Type: application/xml; charset=UTF-8
 					  window affects which profile items will be returned in the response, and included 
 					  in the total emission value. See parameters below for details. The date should be
 					  specified in ISO8601 format. Default value is the start of the current month. If
-					  endDate or duration are specified, this parameter is compulsory.</td>
+					  endDate or duration are specified, this parameter is compulsory.
+					  See <xref linkend='date_reference'/> for details of format.</td>
 				</tr>
 				<tr>					
 					<td>endDate</td>
 					<td>See startDate above. Should be specified in ISO8601 format. Defaults to
-					  infinitely far in the future.</td>
+					  infinitely far in the future. See <xref linkend='date_reference'/> for details of format.</td>
 				</tr>
 				<tr>					
 					<td>duration</td>
 					<td>As an alternative to specifying an end time, you can specify the duration of the query
-					  window in ISO8601 duration format.</td>
+					  window in ISO8601 duration format. See <xref linkend='date_reference'/> for details of format.</td>
 				</tr>
 				<tr>					
 					<td>mode</td>
@@ -469,17 +471,19 @@ Content-Type: application/xml; charset=UTF-8
 				<tr>					
 					<td>startDate</td>
 					<td>An ISO8601 date/time which specifies when the item should be valid from. This parameter is
-					  compulsory if either endDate or duration are specified. Defaults to the current time.</td>
+					  compulsory if either endDate or duration are specified. Defaults to the current time.
+					  See <xref linkend='date_reference'/> for details of format.</td>
 				</tr>
 				<tr>					
 					<td>endDate</td>
 					<td>An ISO8601 date/time which specifies when the item should be valid until. Defaults to
-					  infinitely far in the future.</td>
+					  infinitely far in the future.
+					  See <xref linkend='date_reference'/> for details of format.</td>
 				</tr>
 				<tr>					
 					<td>duration</td>
 					<td>As an alternative to specifying an end time, you can specify the duration that the item 
-					  should be valid for in ISO8601 duration format.</td>
+					  should be valid for in ISO8601 duration format. See <xref linkend='duration_reference'/> for details.</td>
 				</tr>
 				<tr>					
 					<td>representation</td>
