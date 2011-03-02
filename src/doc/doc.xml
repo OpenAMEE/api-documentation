@@ -64,6 +64,7 @@
     </para>
     <xi:include href='ref_data_categories.xml'/>
     <xi:include href='ref_data_items.xml'/>
+    <xi:include href='ref_data_item_values.xml'/>
   </appendix>
 
   <appendix>
