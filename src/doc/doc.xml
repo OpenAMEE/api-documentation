@@ -57,6 +57,6 @@
     <xi:include href='ref_data_categories.xml'/>
   </appendix>
   
-  <!-- <xi:include href="index.xml" /> -->
+  <!-- <index id="amee.index"/> -->
 
 </book>
