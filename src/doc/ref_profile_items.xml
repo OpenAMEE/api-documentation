@@ -349,7 +349,7 @@ Content-Type: application/xml; charset=UTF-8
 					  get just the emissions that took place during the query window, set this parameter
 					  to 'prorata'.</td>
 				</tr>
-				<tr>					
+				<tr>
 					<td>returnUnit</td>
 					<td>Mass units that should be used for the calculation results. Specifying returnUnit=lb would
 					  return lb/year instead of kg/year, for example. See the list of supported units for
@@ -364,12 +364,12 @@ Content-Type: application/xml; charset=UTF-8
 				<tr>					
 					<td>page</td>
 					<td>If there is more than one page of profile items, retrieve the specified page. Default is 
-					  to fetch page 1. See <xref linkend='paging'/>.</td>
+					  to fetch page 1. See <xref linkend='paging_reference'/>.</td>
 				</tr>
 				<tr>
 					<td>itemsPerPage</td>
 					<td>Specify the number of profile items returned in a single page. Default is 
-					  to fetch 10 items per page. See <xref linkend='paging'/>.</td>
+					  to fetch 10 items per page. See <xref linkend='paging_reference'/>.</td>
 				</tr>
   		</table>
 	  </section>

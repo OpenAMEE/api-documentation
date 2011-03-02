@@ -72,8 +72,8 @@
       appendix provides a reference for them.
     </para>
     <xi:include href='ref_authentication.xml'/>
-    <!--<xi:include href='ref_uids.xml'/>
-    <xi:include href='ref_paging.xml'/> -->
+    <xi:include href='ref_uids.xml'/>
+    <xi:include href='ref_paging.xml'/>
     <xi:include href='ref_dates.xml'/>
   </appendix>
 

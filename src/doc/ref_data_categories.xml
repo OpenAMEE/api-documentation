@@ -63,12 +63,12 @@
 				<tr>
 					<td>page</td>
 					<td>If there is more than one page of data items, retrieve the specified page. Default is 
-					  to fetch page 1. See <xref linkend='paging'/>.</td>
+					  to fetch page 1. See <xref linkend='paging_reference'/>.</td>
 				</tr>
 				<tr>
 					<td>itemsPerPage</td>
 					<td>Specify the number of data items returned in a single page. Default is 
-					  to fetch 10 items per page. See <xref linkend='paging'/>.</td>
+					  to fetch 10 items per page. See <xref linkend='paging_reference'/>.</td>
 				</tr>
   		</table>
 	  </section>
