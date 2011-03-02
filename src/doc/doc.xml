@@ -65,6 +65,20 @@
     <xi:include href='ref_data_categories.xml'/>
   </appendix>
 
+  <appendix>
+    <title>Common Concepts Reference</title>
+    <para>
+      There are a number of concepts that are used by different resources across the AMEE API. This
+      appendix provides a reference for them.
+    </para>
+    <!--xi:include href='ref_authentication.xml'/>
+    <xi:include href='ref_uids.xml'/>
+    <xi:include href='ref_paging.xml'/> -->
+    <xi:include href='ref_dates.xml'/>
+  </appendix>
+
+  <xi:include href='bibliography.xml'/>
+
   <!-- <index id="amee.index"/> -->
 
 </book>

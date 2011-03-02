@@ -18,6 +18,8 @@
   <xsl:param name="section.autolabel">1</xsl:param>
   <xsl:param name="section.label.includes.component.label">1</xsl:param>
 
+  <xsl:param name="bibliography.numbered">1</xsl:param>
+
   <xsl:param name="para.propagates.style">1</xsl:param>
 
   <xsl:template name='user.head.content'>
@@ -189,6 +191,14 @@
       <xsl:apply-templates/>
       <xsl:text disable-output-escaping="yes"><![CDATA[]]]]><![CDATA[>]]></xsl:text></script>
     <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
+  </xsl:template>
+
+  <xsl:template match="biblioentry|bibliomixed" mode="xref-to-prefix">
+    <span class='biblioref'>[</span>
+  </xsl:template>
+
+  <xsl:template match="biblioentry|bibliomixed" mode="xref-to-suffix">
+    <span class='biblioref'>]</span>
   </xsl:template>
 
 </xsl:stylesheet>
