@@ -63,6 +63,7 @@
       selection of data items by client applications.
     </para>
     <xi:include href='ref_data_categories.xml'/>
+    <xi:include href='ref_data_items.xml'/>
   </appendix>
 
   <appendix>

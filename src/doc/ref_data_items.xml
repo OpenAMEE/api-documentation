@@ -11,61 +11,98 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Data Items</title>
   <para>
+    A Data Item represents a single type of energy usage which contributes to CO2 emissions.
+    Data Items provide the data required to perform emissions calculations for Profile Items.
   </para>
-  <section>
-  	<title>Properties</title>
-  	<para>
-  	</para>
-  </section>
-  <section>
-  	<title>API Operations</title>
-  	<section>
-      <title>Get Item</title>
-  		<para>
-  		</para>			
-  		<itemizedlist>
-  			<listitem>URL: <code>http://{server}/profiles</code></listitem>
-  			<listitem>Method: <code>GET</code></listitem>
-  			<listitem>Response format: <code>application/xml, application/json</code></listitem>
-  			<listitem>Response code: <code>200 OK</code></listitem>
-  			<listitem>Response body: </listitem>
-  		</itemizedlist>			
-  		<section>
+  <para>
+    For example, a particular Data Item could represent an average sized petrol car. 
+    You could create a Profile Item associated with this Data Item, which would specify
+    that a user has an average sized petrol car. You could set extra parameters in this
+    Profile Item to specify information such as that the car is driven 5000 kilometres per year.
+  </para>
+  <para>
+    Each Data Item can have several Data Item Values (distance, for instance).
+  </para>
+	<section>
+		<title>Properties</title>
+		<table>
+			<tr>
+				<th>Property</th>
+				<th>Description</th>
+			</tr>
+			<tr>					
+				<td>UID</td>
+				<td>A 12-letter unique identifier for the data item. See <xref linkend='uid_reference'/> for more information.</td>
+			</tr>
+			<tr>					
+				<td>created</td>
+				<td>The time and date on which the item was created.</td>
+			</tr>
+			<tr>					
+				<td>modified</td>
+				<td>The time and date on which the item was last modified.</td>
+			</tr>
+			<tr>					
+				<td>name</td>
+				<td>A display name for this Data Item. This is not always used and 
+				  will default to the UID.</td>
+			</tr>
+			<tr>					
+				<td>path</td>
+				<td>The path segment for this Data Item within the URL path. 
+				  This is not always used and will default to the UID.</td>
+			</tr>
+		</table>
+	</section>
+	<section>
+		<title>Get Data Item</title>
+		<para>
+			Fetches a representation of a data item.
+		</para>
+		<table class='requestdetails'>
+			<tr><td>URL</td><td>https://{server}.amee.com/data/{category_path}/{data_item_uid}</td></tr>
+			<tr><td>HTTP Method</td><td>GET</td></tr>
+			<tr><td>Response Content-Type</td><td>application/xml or application/json</td></tr>
+			<tr><td>Successful Response Code</td><td>200 OK</td></tr>
+		</table>
+		<para>
+		  The response contains a JSON or XML encoded description of the data item.
+	  </para>
+		<section role='tabbed'>
+		  <section role='tab'>
   			<title>JSON</title>
-  			<para>Request</para>
-  			<programlisting>
-POST /profiles HTTP/1.1
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+GET /data/transport/plane/generic/FFC7A05D54AD HTTP/1.1
 Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-  			</programlisting>
-  			<programlisting>
-profile=true
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+    		</section>
+  			<section role='httpresponse'>
+  			  <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="javascript"><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
+          </programlisting>
+          <programlisting role='json-body'><xi:include href='samples/json/get_data_item.js' parse="text"/></programlisting>
+		    </section>
   		</section>
-  		<section>
+		  <section role='tab'>
   			<title>XML</title>
-  			<para>Request</para>
-  			<programlisting>
-POST /profiles HTTP/1.1
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+GET /data/transport/plane/generic/FFC7A05D54AD HTTP/1.1
 Accept: application/xml
-Content-Type: application/x-www-form-urlencoded
-  			</programlisting>
-  			<programlisting>
-profile=true
-  			</programlisting>
-  			<para>Response</para>
-  			<programlisting>
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+    		</section>
+  			<section role='httpresponse'>
+  			  <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
-  			</programlisting>
-  			<programlisting language="xml"><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
+          </programlisting>
+          <programlisting role='xml-body'><xi:include href='samples/xml/get_data_item.xml' parse="text"/></programlisting>
+		    </section>
   		</section>
-  	</section>
-  </section>
+		</section>
+	</section>
 </section>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Resources>
+  <DataItemResource>
+    <DataItem created="2007-08-01 09:00:41.0" modified="2007-08-01 09:00:41.0" uid="FFC7A05D54AD">
+      <Name>FFC7A05D54AD</Name>
+      <ItemValues>
+        <ItemValue uid="E459F81B0876">
+          <Path>type</Path>
+          <Name>Type</Name>
+          <Value>domestic</Value>
+          <Unit/>
+          <PerUnit/>
+          <ItemValueDefinition uid="C376560CB19F">
+            <Path>type</Path>
+            <Name>Type</Name>
+            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="CCEB59CACE1B">
+              <Name>text</Name>
+              <ValueType>TEXT</ValueType>
+              <Description/>
+              <Environment uid="5F5887BCF726"/>
+            </ValueDefinition>
+            <FromProfile>false</FromProfile>
+            <FromData>true</FromData>
+          </ItemValueDefinition>
+        </ItemValue>
+        <ItemValue uid="33A729613596">
+          <Path>size</Path>
+          <Name>Size</Name>
+          <Value>one way</Value>
+          <Unit/>
+          <PerUnit/>
+          <ItemValueDefinition uid="5D7FB5F552A5">
+            <Path>size</Path>
+            <Name>Size</Name>
+            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="CCEB59CACE1B">
+              <Name>text</Name>
+              <ValueType>TEXT</ValueType>
+              <Description/>
+              <Environment uid="5F5887BCF726"/>
+            </ValueDefinition>
+            <FromProfile>false</FromProfile>
+            <FromData>true</FromData>
+          </ItemValueDefinition>
+        </ItemValue>
+        <ItemValue uid="19602052C053">
+          <Path>kgCO2PerPassengerKm</Path>
+          <Name>kgCO2 Per Passenger Km</Name>
+          <Value>0.0000</Value>
+          <Unit/>
+          <PerUnit/>
+          <ItemValueDefinition uid="D7B4340D9404">
+            <Path>kgCO2PerPassengerKm</Path>
+            <Name>kgCO2 Per Passenger Km</Name>
+            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="996AE5477B3F">
+              <Name>kgCO2PerKm</Name>
+              <ValueType>DECIMAL</ValueType>
+              <Description/>
+              <Environment uid="5F5887BCF726"/>
+            </ValueDefinition>
+            <FromProfile>false</FromProfile>
+            <FromData>true</FromData>
+          </ItemValueDefinition>
+        </ItemValue>
+        <ItemValue uid="C32B6E2EDCB0">
+          <Path>kgCO2PerPassengerJourney</Path>
+          <Name>kgCO2 Per Passenger Journey</Name>
+          <Value>81.2000</Value>
+          <Unit/>
+          <PerUnit/>
+          <ItemValueDefinition uid="653828811D42">
+            <Path>kgCO2PerPassengerJourney</Path>
+            <Name>kgCO2 Per Passenger Journey</Name>
+            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-08-01 08:57:31.0" uid="8CB8A1789CD6">
+              <Name>kgCO2PerJourney</Name>
+              <ValueType>DECIMAL</ValueType>
+              <Description/>
+              <Environment uid="5F5887BCF726"/>
+            </ValueDefinition>
+            <FromProfile>false</FromProfile>
+            <FromData>true</FromData>
+          </ItemValueDefinition>
+        </ItemValue>
+        <ItemValue uid="F3C2C8046B54">
+          <Path>source</Path>
+          <Name>Source</Name>
+          <Value>defra/amee 2008</Value>
+          <Unit/>
+          <PerUnit/>
+          <ItemValueDefinition uid="0F0592F05AAC">
+            <Path>source</Path>
+            <Name>Source</Name>
+            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="CCEB59CACE1B">
+              <Name>text</Name>
+              <ValueType>TEXT</ValueType>
+              <Description/>
+              <Environment uid="5F5887BCF726"/>
+            </ValueDefinition>
+            <FromProfile>false</FromProfile>
+            <FromData>true</FromData>
+          </ItemValueDefinition>
+        </ItemValue>
+      </ItemValues>
+      <Environment uid="5F5887BCF726"/>
+      <ItemDefinition uid="441BF4BEA15B"/>
+      <DataCategory uid="FBA97B70DBDF">
+        <Name>Generic</Name>
+        <Path>generic</Path>
+      </DataCategory>
+      <Path>FFC7A05D54AD</Path>
+      <Label>domestic,one way
+      </Label>
+      <StartDate>2007-08-01T09:00:41+01:00</StartDate>
+      <EndDate/>
+    </DataItem>
+    <Path>/transport/plane/generic/FFC7A05D54AD</Path>
+    <Choices>
+      <Name>userValueChoices</Name>
+      <Choices>
+        <Choice>
+          <Name>distance</Name>
+          <Value/>
+        </Choice>
+        <Choice>
+          <Name>IATACode1</Name>
+          <Value/>
+        </Choice>
+        <Choice>
+          <Name>IATACode2</Name>
+          <Value/>
+        </Choice>
+        <Choice>
+          <Name>journeys</Name>
+          <Value/>
+        </Choice>
+        <Choice>
+          <Name>lat1</Name>
+          <Value>-999</Value>
+        </Choice>
+        <Choice>
+          <Name>lat2</Name>
+          <Value>-999</Value>
+        </Choice>
+        <Choice>
+          <Name>long1</Name>
+          <Value>-999</Value>
+        </Choice>
+        <Choice>
+          <Name>long2</Name>
+          <Value>-999</Value>
+        </Choice>
+        <Choice>
+          <Name>numberOfPassengers</Name>
+          <Value/>
+        </Choice>
+        <Choice>
+          <Name>passengerClass</Name>
+          <Value/>
+        </Choice>
+      </Choices>
+    </Choices>
+    <AmountPerMonth>0.000000</AmountPerMonth>
+  </DataItemResource>
+</Resources>
