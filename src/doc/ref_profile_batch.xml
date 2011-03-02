@@ -68,6 +68,7 @@
 POST /profiles/80EC1B49E2A9 HTTP/1.1
 Accept: application/json
 Content-Type: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
           <programlisting role='json-body'><xi:include href='samples/json/batch_create_request.js' parse="text"/></programlisting>
         </section>
@@ -86,6 +87,7 @@ Content-Type: application/json; charset=UTF-8
 POST /profiles/59586731F930 HTTP/1.1
 Accept: application/xml
 Content-Type: application/xml
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
           <programlisting role='xml-body'><xi:include href='samples/xml/batch_create_request.xml' parse="text"/></programlisting>
         </section>
@@ -141,9 +143,10 @@ Content-Type: application/xml; charset=UTF-8
   			<title>JSON</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-POST /profiles/80EC1B49E2A9 HTTP/1.1
+PUT /profiles/80EC1B49E2A9 HTTP/1.1
 Accept: application/json
 Content-Type: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
           <programlisting role='json-body'><xi:include href='samples/json/batch_update_request.js' parse="text"/></programlisting>
         </section>
@@ -158,9 +161,10 @@ Content-Type: text/plain
   			<title>XML</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-POST /profiles/59586731F930 HTTP/1.1
+PUT /profiles/59586731F930 HTTP/1.1
 Accept: application/xml
 Content-Type: application/xml
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
           <programlisting role='xml-body'><xi:include href='samples/xml/batch_update_request.xml' parse="text"/></programlisting>
         </section>

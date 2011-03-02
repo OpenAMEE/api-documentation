@@ -172,6 +172,7 @@ Content-Type: application/xml; charset=UTF-8
     			  <programlisting role='header'>
 GET /data/transport/car/generic/drill HTTP/1.1
 Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
             </programlisting>
       		</section>
     			<section role='httpresponse'>
@@ -188,6 +189,7 @@ Content-Type: application/json; charset=UTF-8
     			  <programlisting role='header'>
 GET /data/transport/car/generic/drill HTTP/1.1
 Accept: application/xml
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
             </programlisting>
       		</section>
     			<section role='httpresponse'>
@@ -213,6 +215,7 @@ Content-Type: application/xml; charset=UTF-8
     			  <programlisting role='header'>
 GET /data/transport/car/generic/drill?fuel=diesel HTTP/1.1
 Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
             </programlisting>
       		</section>
     			<section role='httpresponse'>
@@ -229,6 +232,7 @@ Content-Type: application/json; charset=UTF-8
     			  <programlisting role='header'>
 GET /data/transport/car/generic/drill?fuel=diesel HTTP/1.1
 Accept: application/xml
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
             </programlisting>
       		</section>
     			<section role='httpresponse'>
@@ -256,6 +260,7 @@ Content-Type: application/xml; charset=UTF-8
     			  <programlisting role='header'>
 GET /data/transport/car/generic/drill?fuel=diesel&amp;size=large HTTP/1.1
 Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
             </programlisting>
       		</section>
     			<section role='httpresponse'>
@@ -272,6 +277,7 @@ Content-Type: application/json; charset=UTF-8
     			  <programlisting role='header'>
 GET /data/transport/car/generic/drill?fuel=diesel&amp;size=large HTTP/1.1
 Accept: application/xml
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
             </programlisting>
       		</section>
     			<section role='httpresponse'>

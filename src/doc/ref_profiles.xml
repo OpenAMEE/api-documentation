@@ -93,6 +93,7 @@
 POST /profiles HTTP/1.1
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
           <programlisting role='body'>
 profile=true
@@ -113,6 +114,7 @@ Content-Type: application/json; charset=UTF-8
 POST /profiles HTTP/1.1
 Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
           <programlisting role='body'>
 profile=true
@@ -150,6 +152,7 @@ Content-Type: application/xml; charset=UTF-8
   			  <programlisting role='header'>
 GET /profiles HTTP/1.1
 Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
     		</section>
   			<section role='httpresponse'>
@@ -166,6 +169,7 @@ Content-Type: application/json; charset=UTF-8
   			  <programlisting role='header'>
 GET /profiles HTTP/1.1
 Accept: application/xml
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
     		</section>
   			<section role='httpresponse'>
@@ -195,6 +199,7 @@ Content-Type: application/xml; charset=UTF-8
   			  <programlisting role='header'>
 DELETE /profiles/358E3BCF690E HTTP/1.1
 Accept: application/json, application/xml
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
   			</section>
   			<section role='httpresponse'>
