@@ -28,7 +28,7 @@
 			</tr>
 			<tr>					
 				<td>UID</td>
-				<td>A 12-letter unique identifier for the profile. See <xref linkend='uids'/> for more information.</td>
+				<td>A 12-letter unique identifier for the profile. See <xref linkend='uid_reference'/> for more information.</td>
 			</tr>
 			<tr>					
 				<td>created</td>
