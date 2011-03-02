@@ -47,6 +47,9 @@
 
   <appendix>
     <title>Profile API Reference</title>
+    <para>
+      The Profile section of the AMEE API is used to store user data and perform calculations.
+    </para>
     <xi:include href='ref_profiles.xml'/>
     <xi:include href='ref_profile_items.xml'/>
     <xi:include href='ref_profile_batch.xml'/>
@@ -54,9 +57,14 @@
 
   <appendix>
     <title>Data API Reference</title>
+    <para>
+      The Data section of the AMEE API provides reference-style access to data categories and items 
+      created by AMEE. It also provides drilldown resources to allow interactive or automatic 
+      selection of data items by client applications.
+    </para>
     <xi:include href='ref_data_categories.xml'/>
   </appendix>
-  
+
   <!-- <index id="amee.index"/> -->
 
 </book>
