@@ -43,6 +43,10 @@
 				<td>name</td>
 				<td>The name of the profile item. Profile items with the same name and Data Item are considered to be a time series.</td>
 			</tr>
+			<tr>
+			  <td>amounts</td>
+			  <td>A set of emission results for the item. This may include emissions separated by gas. See <xref linkend='profile_item_amounts_reference'/> for details.</td>
+		  </tr>
 			<tr>					
 				<td>startDate</td>
 				<td>The date/time from which the profile item is valid. See discussion of time series for more detail.</td>
@@ -57,6 +61,32 @@
 			</tr>
 		</table>
 	</section>
+	<section xml:id='profile_item_amounts_reference'>
+	  <title>Results</title>
+	  <para>
+      Profile Items can contain multiple return values, not just a single value. This is often used to 
+      split up emissions for different gases, for instance carbon dioxide and methane.
+    </para>
+    <para>
+      In the responses, these results are included in an 'amounts' object. See the examples below 
+      for the exact XML and JSON representations. Each 'amount' contained within has the following 
+      properties:
+    </para>
+    <table>
+      <tr><td>type</td><td>A description of the type of output. For instance, 'CO2'.</td></tr>
+      <tr><td>value</td><td>The value of the output.</td></tr>
+      <tr><td>unit</td><td>The units that the value field is measured in.</td></tr>
+      <tr><td>default</td><td>Optionally, this field is 'true' for the default result, often 
+                              an aggregated total across different gases. This default is also 
+                              included in the single 'amount' field in the response for backwards 
+                              compatibility.</td></tr>
+    </table>
+    <para>
+      The 'amounts' section of the response can also contain 'note' objects. These provide other 
+      textual information relevant to the result, for instance warning of errors, or clarifying 
+      emission factors that were used.
+    </para>
+  </section>
 	<section xml:id='create_profile_item_reference'>
 		<title>Create Profile Item</title>
 		<para>
@@ -371,7 +401,8 @@ Content-Type: application/xml; charset=UTF-8
   		</table>
 	  </section>
 		<para>
-		  The response describes the profile category and any items within it.
+		  The response describes the profile category and any items within it. A summed total of the default 
+		  amounts in each item is provided in the response.
 		</para>
 		<section role='tabbed'>
 		  <section role='tab'>
