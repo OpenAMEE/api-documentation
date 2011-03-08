@@ -580,7 +580,7 @@ Content-Type: application/xml; charset=UTF-8
     		<title>Example</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-DELETE GET /profiles/YLLIKH73BDYS/transport/defra/fuel/F0638HOIFC1H HTTP/1.1
+DELETE /profiles/YLLIKH73BDYS/transport/defra/fuel/F0638HOIFC1H HTTP/1.1
 Accept: application/json, application/xml
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
