@@ -1,392 +1,194 @@
 {
-  "apiVersion":"2.0",
-  "pager":{
-    "to":2,
-    "lastPage":1,
-    "nextPage":-1,
-    "items":2,
-    "start":0,
-    "itemsFound":2,
-    "requestedPage":1,
-    "currentPage":1,
-    "from":1,
-    "itemsPerPage":10,
-    "previousPage":-1
-  },
-  "profileCategories":[],
-  "dataCategory":{
-    "uid":"A92693A99BAD",
-    "dataCategory":{
-      "uid":"30BA55A0C472",
-      "name":"Energy",
-      "path":"energy"
-    },
-    "environment":{
-      "uid":"5F5887BCF726",
-      "itemsPerFeed":10,
-      "description":"",
-      "name":"AMEE",
-      "owner":"",
-      "path":"",
-      "itemsPerPage":10
-    },
-    "created":"2007-07-27 09:30:44.0",
-    "name":"Quantity",
-    "path":"quantity",
-    "itemDefinition":{
-      "uid":"212C818D8F16",
-      "environment":{
-        "uid":"5F5887BCF726"
-      },
-      "created":"2007-07-27 09:30:44.0",
-      "name":"Energy Quantity",
-      "drillDown":"type",
-      "modified":"2007-07-27 09:30:44.0"
-    },
-    "modified":"2007-07-27 09:30:44.0"
-  },
-  "environment":{
-    "uid":"5F5887BCF726",
-    "itemsPerFeed":10,
-    "created":"2007-07-27 09:30:44.0",
-    "description":"",
-    "name":"AMEE",
-    "owner":"",
-    "path":"",
-    "itemsPerPage":10,
-    "modified":"2007-07-27 09:30:44.0"
-  },
-  "totalAmount":{
-    "unit":"kg/year",
-    "value":"624.660000"
-  },
-  "path":"/home/energy/quantity",
-  "profileItemActions":{
-    "allowCreate":true,
-    "allowView":true,
-    "allowList":true,
-    "allowModify":true,
-    "allowDelete":true
-  },
-  "actions":{
-    "allowCreate":true,
-    "allowView":true,
-    "allowList":true,
-    "allowModify":true,
-    "allowDelete":true
-  },
-  "profileItems":[
+  "profileItems": [
     {
-      "amount":{
-        "unit":"kg/year",
-        "value":24.66
-      },
-      "uid":"91C8D5EA8287",
-      "startDate":"2009-03-18T10:24:00Z",
-      "itemValues":[
+      "modified": "2011-03-08T13:56:01Z",
+      "name": null,
+      "itemValues": [
         {
-          "itemValueDefinition":{
-            "uid":"E0EFED6FD7E6",
-            "name":"Payment frequency",
-            "path":"paymentFrequency",
-            "valueDefinition":{
-              "uid":"CCEB59CACE1B",
-              "environment":{
-                "uid":"5F5887BCF726"
+          "name": "Mass of fuel consumed",
+          "itemValueDefinition": {
+            "fromData": false,
+            "name": "Mass of fuel consumed",
+            "drillDown": false,
+            "fromProfile": true,
+            "uid": "50151C2D0B90",
+            "valueDefinition": {
+              "modified": "2007-07-27 07:30:44.0",
+              "name": "amount",
+              "valueType": "DECIMAL",
+              "uid": "45433E48B39F",
+              "description": "",
+              "environment": {
+                "uid": "5F5887BCF726"
               },
-              "created":"2007-07-27 09:30:44.0",
-              "description":"",
-              "name":"text",
-              "valueType":"TEXT",
-              "modified":"2007-07-27 09:30:44.0"
-            }
+              "created": "2007-07-27 07:30:44.0"
+            },
+            "unit": "kg",
+            "path": "mass"
           },
-          "perUnit":"",
-          "uid":"664A7C527788",
-          "unit":"",
-          "name":"Payment frequency",
-          "value":"",
-          "path":"paymentFrequency",
-          "displayPath":"paymentFrequency",
-          "displayName":"Payment frequency"
+          "displayName": "Mass of fuel consumed",
+          "perUnit": "",
+          "startDate": "2011-03-08T13:56:00Z",
+          "uid": "42ROH1HOI2BE",
+          "value": "",
+          "unit": "kg",
+          "path": "mass",
+          "displayPath": "mass"
         },
         {
-          "itemValueDefinition":{
-            ...
+          "name": "Volume of fuel consumed",
+          "itemValueDefinition": {
+            "fromData": false,
+            "name": "Volume of fuel consumed",
+            "drillDown": false,
+            "fromProfile": true,
+            "uid": "93899EF4E3AF",
+            "valueDefinition": {
+              "modified": "2007-07-27 07:30:44.0",
+              "name": "amount",
+              "valueType": "DECIMAL",
+              "uid": "45433E48B39F",
+              "description": "",
+              "environment": {
+                "uid": "5F5887BCF726"
+              },
+              "created": "2007-07-27 07:30:44.0"
+            },
+            "unit": "L",
+            "path": "volume"
           },
-          "perUnit":"",
-          "uid":"646C9F2E7BFD",
-          "unit":"",
-          "name":"Green tariff",
-          "value":"",
-          "path":"greenTariff",
-          "displayPath":"greenTariff",
-          "displayName":"Green tariff"
-        },
-        {
-          "itemValueDefinition":{
-            ...
-          },
-          "perUnit":"",
-          "uid":"DF24821FCAFF",
-          "unit":"",
-          "name":"Season",
-          "value":"",
-          "path":"season",
-          "displayPath":"season",
-          "displayName":"Season"
-        },
-        {
-          "itemValueDefinition":{
-            ...
-          },
-          "perUnit":"",
-          "uid":"E81D893DA770",
-          "unit":"",
-          "name":"Includes Heating",
-          "value":"false",
-          "path":"includesHeating",
-          "displayPath":"includesHeating",
-          "displayName":"Includes Heating"
-        },
-        {
-          "itemValueDefinition":{
-            ...
-          },
-          "perUnit":"year",
-          "uid":"0A7A75228E75",
-          "unit":"kg",
-          "name":"Mass Per Time",
-          "value":"0",
-          "path":"massPerTime",
-          "displayPath":"massPerTime",
-          "displayName":"Mass Per Time"
-        },
-        {
-          "itemValueDefinition":{
-            ...
-          },
-          "perUnit":"month",
-          "uid":"449497EFDDA8",
-          "unit":"kWh",
-          "name":"Energy Consumption",
-          "value":"10",
-          "path":"energyConsumption",
-          "displayPath":"energyConsumption",
-          "displayName":"Energy Consumption"
-        },
-        {
-          "itemValueDefinition":{
-            ...
-          },
-          "perUnit":"year",
-          "uid":"D748A6115D46",
-          "unit":"kWh",
-          "name":"Current Reading",
-          "value":"0",
-          "path":"currentReading",
-          "displayPath":"currentReading",
-          "displayName":"Current Reading"
-        },
-        {
-          "itemValueDefinition":{
-            ...
-          },
-          "perUnit":"year",
-          "uid":"33A42602015A",
-          "unit":"kWh",
-          "name":"Last Reading",
-          "value":"0",
-          "path":"lastReading",
-          "displayPath":"lastReading",
-          "displayName":"Last Reading"
-        },
-        {
-          "itemValueDefinition":{
-            ...
-          },
-          "perUnit":"year",
-          "uid":"1A64F4928A5A",
-          "unit":"L",
-          "name":"Volume Per Time",
-          "value":"0",
-          "path":"volumePerTime",
-          "displayPath":"volumePerTime",
-          "displayName":"Volume Per Time"
-        },
-        {
-          "itemValueDefinition":{
-            ...
-          },
-          "perUnit":"year",
-          "uid":"0D3F2548F2C8",
-          "unit":"",
-          "name":"Number of deliveries",
-          "value":"",
-          "path":"deliveries",
-          "displayPath":"deliveries",
-          "displayName":"Number of deliveries"
+          "displayName": "Volume of fuel consumed",
+          "perUnit": "",
+          "startDate": "2011-03-08T13:56:00Z",
+          "uid": "U9J6XCMJT07I",
+          "value": "500",
+          "unit": "L",
+          "path": "volume",
+          "displayPath": "volume"
         }
       ],
-      "created":"2009-03-18T10:24:44Z",
-      "name":"test1",
-      "endDate":"",
-      "dataItem":{
-        "uid":"66056991EE23",
-        "Label":"gas"
+      "amount": {
+        "value": 1161,
+        "unit": "kg/year"
       },
-      "modified":"2009-03-18T10:24:45Z"
-    },
-    {
-      "amount":{
-        "unit":"kg/year",
-        "value":600
+      "startDate": "2011-03-08T13:56:00Z",
+      "uid": "F0638HOIFC1H",
+      "dataItem": {
+        "Label": "petrol",
+        "uid": "19B311DDF0B1"
       },
-      "uid":"8D91B1B3AA7F",
-      "startDate":"2009-03-18T10:24:00Z",
-      "itemValues":[
-        {
-          "itemValueDefinition":{
-            ...
+      "amounts": {
+        "amount": [
+          {
+            "default": "true",
+            "type": "totalDirectCO2e",
+            "value": 1161,
+            "unit": "kg"
           },
-          "perUnit":"",
-          "uid":"9AE21CAE9FB9",
-          "unit":"",
-          "name":"Payment frequency",
-          "value":"",
-          "path":"paymentFrequency",
-          "displayPath":"paymentFrequency",
-          "displayName":"Payment frequency"
-        },
-        {
-          "itemValueDefinition":{
-            ...
+          {
+            "type": "lifeCycleCO2e",
+            "value": 1366.45,
+            "unit": "kg"
           },
-          "perUnit":"",
-          "uid":"27BEDBFA4B95",
-          "unit":"",
-          "name":"Green tariff",
-          "value":"",
-          "path":"greenTariff",
-          "displayPath":"greenTariff",
-          "displayName":"Green tariff"
-        },
-        {
-          "itemValueDefinition":{
-            ...
+          {
+            "type": "CO2",
+            "value": 1150.9,
+            "unit": "kg"
           },
-          "perUnit":"",
-          "uid":"B62345BF0C1B",
-          "unit":"",
-          "name":"Season",
-          "value":"",
-          "path":"season",
-          "displayPath":"season",
-          "displayName":"Season"
-        },
-        {
-          "itemValueDefinition":{
-            ...
+          {
+            "type": "nitrousOxideCO2e",
+            "value": 7.8,
+            "unit": "kg"
           },
-          "perUnit":"",
-          "uid":"ECD08626DFD4",
-          "unit":"",
-          "name":"Includes Heating",
-          "value":"false",
-          "path":"includesHeating",
-          "displayPath":"includesHeating",
-          "displayName":"Includes Heating"
-        },
-        {
-          "itemValueDefinition":{
-            ...
+          {
+            "type": "methaneCO2e",
+            "value": 2.3,
+            "unit": "kg"
           },
-          "perUnit":"year",
-          "uid":"950BE1E365F5",
-          "unit":"kg",
-          "name":"Mass Per Time",
-          "value":"0",
-          "path":"massPerTime",
-          "displayPath":"massPerTime",
-          "displayName":"Mass Per Time"
-        },
-        {
-          "itemValueDefinition":{
-            ...
-          },
-          "perUnit":"year",
-          "uid":"3C73CEC8013A",
-          "unit":"kWh",
-          "name":"Energy Consumption",
-          "value":"0",
-          "path":"energyConsumption",
-          "displayPath":"energyConsumption",
-          "displayName":"Energy Consumption"
-        },
-        {
-          "itemValueDefinition":{
-            ...
-          },
-          "perUnit":"year",
-          "uid":"14DF0C9B48EA",
-          "unit":"kWh",
-          "name":"Current Reading",
-          "value":"0",
-          "path":"currentReading",
-          "displayPath":"currentReading",
-          "displayName":"Current Reading"
-        },
-        {
-          "itemValueDefinition":{
-            ...
-          },
-          "perUnit":"year",
-          "uid":"3651AB0B3DEB",
-          "unit":"kWh",
-          "name":"Last Reading",
-          "value":"0",
-          "path":"lastReading",
-          "displayPath":"lastReading",
-          "displayName":"Last Reading"
-        },
-        {
-          "itemValueDefinition":{
-            ...
-          },
-          "perUnit":"month",
-          "uid":"0187E2D7F44C",
-          "unit":"L",
-          "name":"Volume Per Time",
-          "value":"20",
-          "path":"volumePerTime",
-          "displayPath":"volumePerTime",
-          "displayName":"Volume Per Time"
-        },
-        {
-          "itemValueDefinition":{
-            ...
-          },
-          "perUnit":"year",
-          "uid":"800F5A8C68A0",
-          "unit":"",
-          "name":"Number of deliveries",
-          "value":"",
-          "path":"deliveries",
-          "displayPath":"deliveries",
-          "displayName":"Number of deliveries"
-        }
-      ],
-      "created":"2009-03-18T10:24:46Z",
-      "name":"test2",
-      "endDate":"",
-      "dataItem":{
-        "uid":"878854C275BC",
-        "Label":"biodiesel"
+          {
+            "type": "indirectCO2e",
+            "value": 205.45,
+            "unit": "kg"
+          }
+        ],
+        "note": [
+          {
+            "type": "comment",
+            "value": "This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation"
+          }
+        ]
       },
-      "modified":"2009-03-18T10:24:46Z"
+      "endDate": "",
+      "created": "2011-03-08T13:56:01Z"
     }
   ],
-  "profile":{
-    "uid":"F554D93A62AB"
-  }
+  "dataCategory": {
+    "modified": "2011-02-10 20:35:47.0",
+    "name": "Fuel",
+    "dataCategory": {
+      "name": "Defra",
+      "uid": "4888AD538569",
+      "path": "defra",
+      "deprecated": false
+    },
+    "uid": "138B5405E0CE",
+    "path": "fuel",
+    "itemDefinition": {
+      "modified": "2010-11-09 19:32:16.0",
+      "name": "DEFRA transport fuels",
+      "drillDown": "fuel",
+      "uid": "80DB1AB8141F",
+      "environment": {
+        "uid": "5F5887BCF726"
+      },
+      "created": "2010-11-09 19:29:48.0"
+    },
+    "environment": {
+      "name": "AMEE",
+      "itemsPerPage": 10,
+      "uid": "5F5887BCF726",
+      "path": "",
+      "description": "",
+      "itemsPerFeed": 10,
+      "owner": ""
+    },
+    "deprecated": false,
+    "created": "2010-11-09 19:30:24.0"
+  },
+  "profile": {
+    "uid": "YLLIKH73BDYS"
+  },
+  "pager": {
+    "items": 1,
+    "currentPage": 1,
+    "itemsPerPage": 10,
+    "from": 1,
+    "nextPage": -1,
+    "to": 1,
+    "itemsFound": 1,
+    "start": 0,
+    "requestedPage": 1,
+    "lastPage": 1,
+    "previousPage": -1
+  },
+  "totalAmount": {
+    "value": "1161.0",
+    "unit": "kg/year"
+  },
+  "path": "/transport/defra/fuel",
+  "profileCategories": [
+
+  ],
+  "environment": {
+    "modified": "Fri Jul 27 08:30:44 UTC 2007",
+    "name": "AMEE",
+    "itemsPerPage": 10,
+    "uid": "5F5887BCF726",
+    "path": "",
+    "description": "",
+    "itemsPerFeed": 10,
+    "owner": "",
+    "created": "Fri Jul 27 08:30:44 UTC 2007"
+  },
+  "apiVersion": "2.0"
 }

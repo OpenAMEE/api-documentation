@@ -1,190 +1,151 @@
 {
-  "apiVersion":"2.0",
-  "profileItem":{
-    "uid":"D47C465B8157",
-    "itemValues":[
+  "profile": {
+    "uid": "YLLIKH73BDYS"
+  },
+  "path": "/transport/defra/fuel/9UY7CR57O59V",
+  "profileItem": {
+    "name": "json_example",
+    "modified": "2011-03-08T13:59:03Z",
+    "dataCategory": {
+      "name": "Fuel",
+      "uid": "138B5405E0CE",
+      "path": "fuel",
+      "deprecated": false
+    },
+    "profile": {
+      "uid": "YLLIKH73BDYS"
+    },
+    "itemValues": [
       {
-        "itemValueDefinition":{
-          "uid":"F3900EDAB5EB",
-          "name":"Country",
-          "path":"country",
-          "valueDefinition":{
-            "uid":"CCEB59CACE1B",
-            "environment":{
-              "uid":"5F5887BCF726"
+        "name": "Mass of fuel consumed",
+        "itemValueDefinition": {
+          "fromData": false,
+          "name": "Mass of fuel consumed",
+          "drillDown": false,
+          "fromProfile": true,
+          "uid": "50151C2D0B90",
+          "valueDefinition": {
+            "modified": "2007-07-27 07:30:44.0",
+            "name": "amount",
+            "valueType": "DECIMAL",
+            "uid": "45433E48B39F",
+            "description": "",
+            "environment": {
+              "uid": "5F5887BCF726"
             },
-            "created":"2007-07-27 09:30:44.0",
-            "description":"",
-            "name":"text",
-            "valueType":"TEXT",
-            "modified":"2007-07-27 09:30:44.0"
-          }
+            "created": "2007-07-27 07:30:44.0"
+          },
+          "unit": "kg",
+          "path": "mass"
         },
-        "perUnit":"",
-        "uid":"01D8AD934852",
-        "unit":"",
-        "name":"Country",
-        "value":"",
-        "path":"country",
-        "displayPath":"country",
-        "displayName":"Country"
+        "displayName": "Mass of fuel consumed",
+        "perUnit": "",
+        "startDate": "2011-01-05T00:00:00Z",
+        "uid": "TV1542A62T96",
+        "value": "",
+        "unit": "kg",
+        "path": "mass",
+        "displayPath": "mass"
       },
       {
-        "itemValueDefinition":{
-          "uid":"85DAD143CD22",
-          "name":"Occupants",
-          "path":"occupants",
-          "valueDefinition":{
-            "uid":"45433E48B39F",
-            "environment":{
-              "uid":"5F5887BCF726"
+        "name": "Volume of fuel consumed",
+        "itemValueDefinition": {
+          "fromData": false,
+          "name": "Volume of fuel consumed",
+          "drillDown": false,
+          "fromProfile": true,
+          "uid": "93899EF4E3AF",
+          "valueDefinition": {
+            "modified": "2007-07-27 07:30:44.0",
+            "name": "amount",
+            "valueType": "DECIMAL",
+            "uid": "45433E48B39F",
+            "description": "",
+            "environment": {
+              "uid": "5F5887BCF726"
             },
-            "created":"2007-07-27 09:30:44.0",
-            "description":"",
-            "name":"amount",
-            "valueType":"DECIMAL",
-            "modified":"2007-07-27 09:30:44.0"
-          }
+            "created": "2007-07-27 07:30:44.0"
+          },
+          "unit": "L",
+          "path": "volume"
         },
-        "perUnit":"",
-        "uid":"FB45DF9BC8FC",
-        "unit":"",
-        "name":"Occupants",
-        "value":"-1",
-        "path":"occupants",
-        "displayPath":"occupants",
-        "displayName":"Occupants"
-      },
-      {
-        "itemValueDefinition":{
-          "perUnit":"year",
-          "uid":"5898B35AE183",
-          "unit":"km",
-          "name":"Distance",
-          "path":"distance",
-          "valueDefinition":{
-            "uid":"45433E48B39F",
-            "environment":{
-              "uid":"5F5887BCF726"
-            },
-            "created":"2007-07-27 09:30:44.0",
-            "description":"",
-            "name":"amount",
-            "valueType":"DECIMAL",
-            "modified":"2007-07-27 09:30:44.0"
-          }
-        },
-        "perUnit":"month",
-        "uid":"557784471D55",
-        "unit":"km",
-        "name":"Distance",
-        "value":"200",
-        "path":"distance",
-        "displayPath":"distance",
-        "displayName":"Distance"
-      },
-      {
-        "itemValueDefinition":{
-          "perUnit":"L",
-          "uid":"2538ABD1FFE7",
-          "unit":"km",
-          "name":"Fuel Consumption",
-          "path":"fuelConsumption",
-          "valueDefinition":{
-            "uid":"45433E48B39F",
-            "environment":{
-              "uid":"5F5887BCF726"
-            },
-            "created":"2007-07-27 09:30:44.0",
-            "description":"",
-            "name":"amount",
-            "valueType":"DECIMAL",
-            "modified":"2007-07-27 09:30:44.0"
-          }
-        },
-        "perUnit":"L",
-        "uid":"905DAF5F5008",
-        "unit":"km",
-        "name":"Fuel Consumption",
-        "value":"0",
-        "path":"fuelConsumption",
-        "displayPath":"fuelConsumption",
-        "displayName":"Fuel Consumption"
-      },
-      {
-        "itemValueDefinition":{
-          "perUnit":"L",
-          "uid":"FBFB386F5FBB",
-          "unit":"km",
-          "name":"Own Fuel Consumption",
-          "path":"ownFuelConsumption",
-          "valueDefinition":{
-            "uid":"45433E48B39F",
-            "environment":{
-              "uid":"5F5887BCF726"
-            },
-            "created":"2007-07-27 09:30:44.0",
-            "description":"",
-            "name":"amount",
-            "valueType":"DECIMAL",
-            "modified":"2007-07-27 09:30:44.0"
-          }
-        },
-        "perUnit":"L",
-        "uid":"F3F38381BFD8",
-        "unit":"km",
-        "name":"Own Fuel Consumption",
-        "value":"0",
-        "path":"ownFuelConsumption",
-        "displayPath":"ownFuelConsumption",
-        "displayName":"Own Fuel Consumption"
+        "displayName": "Volume of fuel consumed",
+        "perUnit": "",
+        "startDate": "2011-01-05T00:00:00Z",
+        "uid": "9F90AKHD7CMG",
+        "value": "1000",
+        "unit": "L",
+        "path": "volume",
+        "displayPath": "volume"
       }
     ],
-    "dataCategory":{
-      "uid":"E13720699F84",
-      "name":"Generic",
-      "path":"generic"
+    "amount": {
+      "value": 2322,
+      "unit": "kg/year"
     },
-    "startDate":"2009-03-19T00:00:00Z",
-    "itemDefinition":{
-      "uid":"253122C933E1",
-      "name":"Motorcycle Generic",
-      "drillDown":"fuel, size"
+    "startDate": "2011-01-05T00:00:00Z",
+    "uid": "9UY7CR57O59V",
+    "amounts": {
+      "amount": [
+        {
+          "default": "true",
+          "type": "totalDirectCO2e",
+          "value": 2322,
+          "unit": "kg"
+        },
+        {
+          "type": "lifeCycleCO2e",
+          "value": 2732.9,
+          "unit": "kg"
+        },
+        {
+          "type": "CO2",
+          "value": 2301.8,
+          "unit": "kg"
+        },
+        {
+          "type": "nitrousOxideCO2e",
+          "value": 15.6,
+          "unit": "kg"
+        },
+        {
+          "type": "methaneCO2e",
+          "value": 4.6,
+          "unit": "kg"
+        },
+        {
+          "type": "indirectCO2e",
+          "value": 410.9,
+          "unit": "kg"
+        }
+      ],
+      "note": [
+        {
+          "type": "comment",
+          "value": "This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation"
+        }
+      ]
     },
-    "endDate":"",
-    "dataItem":{
-      "uid":"31449121F8B8",
-      "Label":"petrol, large"
+    "dataItem": {
+      "Label": "petrol",
+      "uid": "19B311DDF0B1"
     },
-    "modified":"2009-03-19T17:38:50Z",
-    "amount":{
-      "unit":"kg/year",
-      "value":308.64
+    "environment": {
+      "name": "AMEE",
+      "itemsPerPage": 10,
+      "uid": "5F5887BCF726",
+      "path": "",
+      "description": "",
+      "itemsPerFeed": 10,
+      "owner": ""
     },
-    "environment":{
-      "uid":"5F5887BCF726",
-      "itemsPerFeed":10,
-      "description":"",
-      "name":"AMEE",
-      "owner":"",
-      "path":"",
-      "itemsPerPage":10
+    "itemDefinition": {
+      "name": "DEFRA transport fuels",
+      "drillDown": "fuel",
+      "uid": "80DB1AB8141F"
     },
-    "created":"2009-03-19T17:38:50Z",
-    "name":"test1",
-    "profile":{
-      "uid":"155DD3C63646"
-    }
+    "endDate": "",
+    "created": "2011-03-08T13:59:03Z"
   },
-  "path":"/transport/motorcycle/generic/D47C465B8157",
-  "actions":{
-    "allowCreate":true,
-    "allowView":true,
-    "allowList":true,
-    "allowModify":true,
-    "allowDelete":true
-  },
-  "profile":{
-    "uid":"155DD3C63646"
-  }
+  "apiVersion": "2.0"
 }

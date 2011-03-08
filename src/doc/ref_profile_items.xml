@@ -162,20 +162,19 @@
   			<title>Example</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-POST /profiles/4737069901D3/home/energy/quantity HTTP/1.1
+POST /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
 Accept: application/json, application/xml
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
           <programlisting role='body'>
-dataItemUid=66056991EE23&amp;energyConsumption=10&amp;energyConsumptionUnit=kWh&amp;
-energyConsumptionPerUnit=month&amp;startDate=2009-03-19T16%3A51%3A00%2B00%3A00
+dataItemUid=19B311DDF0B1&amp;volume=500&amp;startDate=2011-01-05T00%3A00%3A00%2B00%3A00
           </programlisting>
         </section>
         <section role='httpresponse'>
           <programlisting role='header'>
 HTTP/1.1 201 CREATED
-Location: https://{server}.amee.com/profiles/4737069901D3/home/energy/quantity/F7C0580D088A
+Location: https://{server}.amee.com/profiles/4737069901D3/home/energy/quantity/F0638HOIFC1H
 Content-Type: text/plain
           </programlisting>
 			  </section>
@@ -184,15 +183,14 @@ Content-Type: text/plain
   			<title>JSON</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-POST /profiles/4737069901D3/home/energy/quantity HTTP/1.1
+POST /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
           <programlisting role='body'>
-dataItemUid=66056991EE23&amp;energyConsumption=10&amp;energyConsumptionUnit=kWh&amp;
-energyConsumptionPerUnit=month&amp;startDate=2009-03-19T16%3A51%3A00%2B00%3A00&amp;
-representation=full
+dataItemUid=19B311DDF0B1&amp;volume=500&amp;startDate=2011-01-05T00%3A00%3A00%2B00%3A00
+&amp;representation=full
           </programlisting>
         </section>
         <section role='httpresponse'>
@@ -207,15 +205,14 @@ Content-Type: application/json; charset=UTF-8
   			<title>XML</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-POST /profiles/4737069901D3/home/energy/quantity HTTP/1.1
+POST /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
 Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
           <programlisting role='body'>
-dataItemUid=66056991EE23&amp;energyConsumption=10&amp;energyConsumptionUnit=kWh&amp;
-energyConsumptionPerUnit=month&amp;startDate=2009-03-19T16%3A51%3A00%2B00%3A00&amp;
-representation=full
+dataItemUid=19B311DDF0B1&amp;volume=500&amp;startDate=2011-01-05T00%3A00%3A00%2B00%3A00
+&amp;representation=full
           </programlisting>
         </section>
         <section role='httpresponse'>
@@ -259,7 +256,7 @@ Content-Type: application/xml; charset=UTF-8
   			<title>JSON</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-GET /profiles/F38ECBD56D59/home/energy/quantity/5891C88F29FA HTTP/1.1
+GET /profiles/YLLIKH73BDYS/transport/defra/fuel/F0638HOIFC1H HTTP/1.1
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
@@ -277,7 +274,7 @@ Content-Type: application/json; charset=UTF-8
   			<title>XML</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-GET /profiles/4737069901D3/home/energy/quantity/F7C0580D088A HTTP/1.1
+GET /profiles/YLLIKH73BDYS/transport/defra/fuel/F0638HOIFC1H HTTP/1.1
 Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
@@ -381,7 +378,7 @@ Content-Type: application/xml; charset=UTF-8
   			<title>JSON</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-GET /profiles/F554D93A62AB/home/energy/quantity HTTP/1.1
+GET /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
@@ -399,7 +396,7 @@ Content-Type: application/json; charset=UTF-8
   			<title>XML</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-GET /profiles/E3C664F77FB4/home/energy/quantity HTTP/1.1
+GET /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
 Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
@@ -508,13 +505,13 @@ Content-Type: application/xml; charset=UTF-8
   			<title>Example</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-PUT /profiles/4A546C3F1B2E/transport/motorcycle/generic/9B32A9FC3B08 HTTP/1.1
+PUT /profiles/YLLIKH73BDYS/transport/defra/fuel/F0638HOIFC1H HTTP/1.1
 Accept: application/json, application/xml
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
           <programlisting role='body'>
-distance=200&amp;distanceUnit=km&amp;distancePerUnit=month
+volume=1000
           </programlisting>
         </section>
         <section role='httpresponse'>
@@ -528,13 +525,13 @@ Content-Type: text/plain
   			<title>JSON</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-PUT /profiles/155DD3C63646/transport/motorcycle/generic/D47C465B8157 HTTP/1.1
+PUT /profiles/YLLIKH73BDYS/transport/defra/fuel/9UY7CR57O59V HTTP/1.1
 Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
           <programlisting role='body'>
-distance=200&amp;distanceUnit=km&amp;distancePerUnit=month&amp;representation=full
+volume=1000&amp;representation=full
           </programlisting>
         </section>
         <section role='httpresponse'>
@@ -549,13 +546,13 @@ Content-Type: application/json; charset=UTF-8
   			<title>XML</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-PUT /profiles/03FC2D6A50C9/transport/motorcycle/generic/30A4140A2755 HTTP/1.1
+PUT /profiles/YLLIKH73BDYS/transport/defra/fuel/669ZF2KG9YWC HTTP/1.1
 Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
           <programlisting role='body'>
-distance=200&amp;distanceUnit=km&amp;distancePerUnit=month&amp;representation=full
+volume=1000&amp;representation=full
           </programlisting>
         </section>
         <section role='httpresponse'>
@@ -583,7 +580,7 @@ Content-Type: application/xml; charset=UTF-8
     		<title>Example</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-DELETE /profiles/228A21573085/home/energy/quantity/B56410A978B6 HTTP/1.1
+DELETE GET /profiles/YLLIKH73BDYS/transport/defra/fuel/F0638HOIFC1H HTTP/1.1
 Accept: application/json, application/xml
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>

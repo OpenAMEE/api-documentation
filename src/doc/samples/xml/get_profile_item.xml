@@ -1,226 +1,80 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
 <Resources xmlns="http://schemas.amee.cc/2.0">
-  <ProfileItemResource>
-    <ProfileItem created="2009-03-19T16:51:27Z" modified="2009-03-19T16:51:28Z" uid="F7C0580D088A">
-      <Name/>
-      <ItemValues>
-        <ItemValue uid="F3789DF76016">
-          <Path>paymentFrequency</Path>
-          <Name>Payment frequency</Name>
-          <Value/>
-          <Unit/>
-          <PerUnit/>
-          <ItemValueDefinition uid="E0EFED6FD7E6">
-            <Path>paymentFrequency</Path>
-            <Name>Payment frequency</Name>
-            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="CCEB59CACE1B">
-              <Name>text</Name>
-              <ValueType>TEXT</ValueType>
-              <Description/>
-              <Environment uid="5F5887BCF726"/>
-            </ValueDefinition>
-            <FromProfile>true</FromProfile>
-            <FromData>false</FromData>
-          </ItemValueDefinition>
-        </ItemValue>
-        <ItemValue uid="B705D6B944EA">
-          <Path>greenTariff</Path>
-          <Name>Green tariff</Name>
-          <Value/>
-          <Unit/>
-          <PerUnit/>
-          <ItemValueDefinition uid="63005554AE8A">
-            <Path>greenTariff</Path>
-            <Name>Green tariff</Name>
-            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="CCEB59CACE1B">
-              <Name>text</Name>
-              <ValueType>TEXT</ValueType>
-              <Description/>
-              <Environment uid="5F5887BCF726"/>
-            </ValueDefinition>
-            <FromProfile>true</FromProfile>
-            <FromData>false</FromData>
-          </ItemValueDefinition>
-        </ItemValue>
-        <ItemValue uid="1D1D0C3E80F5">
-          <Path>season</Path>
-          <Name>Season</Name>
-          <Value/>
-          <Unit/>
-          <PerUnit/>
-          <ItemValueDefinition uid="527AADFB3B65">
-            <Path>season</Path>
-            <Name>Season</Name>
-            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="CCEB59CACE1B">
-              <Name>text</Name>
-              <ValueType>TEXT</ValueType>
-              <Description/>
-              <Environment uid="5F5887BCF726"/>
-            </ValueDefinition>
-            <FromProfile>true</FromProfile>
-            <FromData>false</FromData>
-          </ItemValueDefinition>
-        </ItemValue>
-        <ItemValue uid="5B2A02B6942F">
-          <Path>includesHeating</Path>
-          <Name>Includes Heating</Name>
-          <Value>false</Value>
-          <Unit/>
-          <PerUnit/>
-          <ItemValueDefinition uid="1740E500BDAB">
-            <Path>includesHeating</Path>
-            <Name>Includes Heating</Name>
-            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="CCEB59CACE1B">
-              <Name>text</Name>
-              <ValueType>TEXT</ValueType>
-              <Description/>
-              <Environment uid="5F5887BCF726"/>
-            </ValueDefinition>
-            <FromProfile>true</FromProfile>
-            <FromData>false</FromData>
-          </ItemValueDefinition>
-        </ItemValue>
-        <ItemValue uid="FD95442E0925">
-          <Path>massPerTime</Path>
-          <Name>Mass Per Time</Name>
-          <Value>0</Value>
-          <Unit>kg</Unit>
-          <PerUnit>year</PerUnit>
-          <ItemValueDefinition uid="666C77B224B3">
-            <Path>massPerTime</Path>
-            <Name>Mass Per Time</Name>
-            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="45433E48B39F">
-              <Name>amount</Name>
-              <ValueType>DECIMAL</ValueType>
-              <Description/>
-              <Environment uid="5F5887BCF726"/>
-            </ValueDefinition>
-            <Unit>kg</Unit>
-            <PerUnit>year</PerUnit>
-            <FromProfile>true</FromProfile>
-            <FromData>false</FromData>
-          </ItemValueDefinition>
-        </ItemValue>
-        <ItemValue uid="2709ADBEB2B6">
-          <Path>energyConsumption</Path>
-          <Name>Energy Consumption</Name>
-          <Value>10</Value>
-          <Unit>kWh</Unit>
-          <PerUnit>month</PerUnit>
-          <ItemValueDefinition uid="BFD215C4CAB1">
-            <Path>energyConsumption</Path>
-            <Name>Energy Consumption</Name>
-            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="45433E48B39F">
-              <Name>amount</Name>
-              <ValueType>DECIMAL</ValueType>
-              <Description/>
-              <Environment uid="5F5887BCF726"/>
-            </ValueDefinition>
-            <Unit>kWh</Unit>
-            <PerUnit>year</PerUnit>
-            <FromProfile>true</FromProfile>
-            <FromData>false</FromData>
-          </ItemValueDefinition>
-        </ItemValue>
-        <ItemValue uid="3FE1D5F5CAE5">
-          <Path>currentReading</Path>
-          <Name>Current Reading</Name>
-          <Value>0</Value>
-          <Unit>kWh</Unit>
-          <PerUnit>year</PerUnit>
-          <ItemValueDefinition uid="A9B493A4A1A6">
-            <Path>currentReading</Path>
-            <Name>Current Reading</Name>
-            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="45433E48B39F">
-              <Name>amount</Name>
-              <ValueType>DECIMAL</ValueType>
-              <Description/>
-              <Environment uid="5F5887BCF726"/>
-            </ValueDefinition>
-            <Unit>kWh</Unit>
-            <PerUnit>year</PerUnit>
-            <FromProfile>true</FromProfile>
-            <FromData>false</FromData>
-          </ItemValueDefinition>
-        </ItemValue>
-        <ItemValue uid="5DCE439A4AC0">
-          <Path>lastReading</Path>
-          <Name>Last Reading</Name>
-          <Value>0</Value>
-          <Unit>kWh</Unit>
-          <PerUnit>year</PerUnit>
-          <ItemValueDefinition uid="4C689DEF0A41">
-            <Path>lastReading</Path>
-            <Name>Last Reading</Name>
-            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="45433E48B39F">
-              <Name>amount</Name>
-              <ValueType>DECIMAL</ValueType>
-              <Description/>
-              <Environment uid="5F5887BCF726"/>
-            </ValueDefinition>
-            <Unit>kWh</Unit>
-            <PerUnit>year</PerUnit>
-            <FromProfile>true</FromProfile>
-            <FromData>false</FromData>
-          </ItemValueDefinition>
-        </ItemValue>
-        <ItemValue uid="AD7823A8CEEA">
-          <Path>volumePerTime</Path>
-          <Name>Volume Per Time</Name>
-          <Value>0</Value>
-          <Unit>L</Unit>
-          <PerUnit>year</PerUnit>
-          <ItemValueDefinition uid="7BBABF4C2E9E">
-            <Path>volumePerTime</Path>
-            <Name>Volume Per Time</Name>
-            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="45433E48B39F">
-              <Name>amount</Name>
-              <ValueType>DECIMAL</ValueType>
-              <Description/>
-              <Environment uid="5F5887BCF726"/>
-            </ValueDefinition>
-            <Unit>L</Unit>
-            <PerUnit>year</PerUnit>
-            <FromProfile>true</FromProfile>
-            <FromData>false</FromData>
-          </ItemValueDefinition>
-        </ItemValue>
-        <ItemValue uid="2AA05DF06EAC">
-          <Path>deliveries</Path>
-          <Name>Number of deliveries</Name>
-          <Value/>
-          <Unit/>
-          <PerUnit>year</PerUnit>
-          <ItemValueDefinition uid="F0ED40C7EF8F">
-            <Path>deliveries</Path>
-            <Name>Number of deliveries</Name>
-            <ValueDefinition created="2007-07-27 09:30:44.0" modified="2007-07-27 09:30:44.0" uid="45433E48B39F">
-              <Name>amount</Name>
-              <ValueType>DECIMAL</ValueType>
-              <Description/>
-              <Environment uid="5F5887BCF726"/>
-            </ValueDefinition>
-            <PerUnit>year</PerUnit>
-            <FromProfile>true</FromProfile>
-            <FromData>false</FromData>
-          </ItemValueDefinition>
-        </ItemValue>
-      </ItemValues>
-      <Environment uid="5F5887BCF726"/>
-      <ItemDefinition uid="212C818D8F16"/>
-      <DataCategory uid="A92693A99BAD">
-        <Name>Quantity</Name>
-        <Path>quantity</Path>
-      </DataCategory>
-      <Amount unit="kg/year">24.660000</Amount>
-      <StartDate>2009-03-19T16:51:00Z</StartDate>
-      <EndDate/>
-      <DataItem uid="66056991EE23">
-        <Label>gas</Label>
-      </DataItem>
-      <Profile uid="4737069901D3"/>
-    </ProfileItem>
-    <Path>/home/energy/quantity/F7C0580D088A</Path>
-    <Profile uid="4737069901D3"/>
-  </ProfileItemResource>
+ <ProfileItemResource>
+  <ProfileItem created="2011-03-08T13:56:01Z" modified="2011-03-08T13:56:01Z" uid="F0638HOIFC1H">
+   <Name/>
+   <ItemValues>
+    <ItemValue uid="42ROH1HOI2BE">
+     <Path>mass</Path>
+     <Name>Mass of fuel consumed</Name>
+     <Value/>
+     <Unit>kg</Unit>
+     <PerUnit/>
+     <StartDate>2011-03-08T13:56:00Z</StartDate>
+     <ItemValueDefinition uid="50151C2D0B90">
+      <Path>mass</Path>
+      <Name>Mass of fuel consumed</Name>
+      <ValueDefinition created="2007-07-27 07:30:44.0" modified="2007-07-27 07:30:44.0" uid="45433E48B39F">
+       <Name>amount</Name>
+       <ValueType>DECIMAL</ValueType>
+       <Description/>
+       <Environment uid="5F5887BCF726"/>
+      </ValueDefinition>
+      <Unit>kg</Unit>
+      <FromProfile>true</FromProfile>
+      <FromData>false</FromData>
+      <DrillDown>false</DrillDown>
+     </ItemValueDefinition>
+    </ItemValue>
+    <ItemValue uid="U9J6XCMJT07I">
+     <Path>volume</Path>
+     <Name>Volume of fuel consumed</Name>
+     <Value>500</Value>
+     <Unit>L</Unit>
+     <PerUnit/>
+     <StartDate>2011-03-08T13:56:00Z</StartDate>
+     <ItemValueDefinition uid="93899EF4E3AF">
+      <Path>volume</Path>
+      <Name>Volume of fuel consumed</Name>
+      <ValueDefinition created="2007-07-27 07:30:44.0" modified="2007-07-27 07:30:44.0" uid="45433E48B39F">
+       <Name>amount</Name>
+       <ValueType>DECIMAL</ValueType>
+       <Description/>
+       <Environment uid="5F5887BCF726"/>
+      </ValueDefinition>
+      <Unit>L</Unit>
+      <FromProfile>true</FromProfile>
+      <FromData>false</FromData>
+      <DrillDown>false</DrillDown>
+     </ItemValueDefinition>
+    </ItemValue>
+   </ItemValues>
+   <Environment uid="5F5887BCF726"/>
+   <ItemDefinition uid="80DB1AB8141F"/>
+   <DataCategory uid="138B5405E0CE">
+    <Name>Fuel</Name>
+    <Path>fuel</Path>
+    <Deprecated>false</Deprecated>
+   </DataCategory>
+   <Amount unit="kg/year">1161.0</Amount>
+   <Amounts>
+    <Amount default="true" perUnit="" type="totalDirectCO2e" unit="kg">1161.0</Amount>
+    <Amount perUnit="" type="lifeCycleCO2e" unit="kg">1366.45</Amount>
+    <Amount perUnit="" type="CO2" unit="kg">1150.9</Amount>
+    <Amount perUnit="" type="nitrousOxideCO2e" unit="kg">7.8</Amount>
+    <Amount perUnit="" type="methaneCO2e" unit="kg">2.3</Amount>
+    <Amount perUnit="" type="indirectCO2e" unit="kg">205.45</Amount>
+    <Note type="comment">This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation</Note>
+   </Amounts>
+   <StartDate>2011-03-08T13:56:00Z</StartDate>
+   <EndDate/>
+   <DataItem uid="19B311DDF0B1">
+    <Label>petrol</Label>
+   </DataItem>
+   <Profile uid="YLLIKH73BDYS"/>
+  </ProfileItem>
+  <Path>/transport/defra/fuel/F0638HOIFC1H</Path>
+  <Profile uid="YLLIKH73BDYS"/>
+ </ProfileItemResource>
 </Resources>
