@@ -5,8 +5,9 @@ set :repository,  "./src/doc/html-chunk"
 set :deploy_via, :copy
 set :copy_compression,    :gzip
 
-set :user,  'rails'
+set :user,  'deploy'
 set :deploy_to, '/var/www/apps/documentation'
+set :use_sudo, false
 
 role :web, "flood.amee.com"
 role :app, "flood.amee.com"
