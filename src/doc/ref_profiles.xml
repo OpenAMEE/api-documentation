@@ -37,8 +37,8 @@
 			<tr>					
 				<td>modified</td>
 				<td>The time and date on which the profile was last modified. Note that this
-				   does not track changes inside the profile, only to the profile resource 
-				   itself.</td>
+				   does not track changes inside the profile, such as to profile item values, 
+				   only to the profile resource itself.</td>
 			</tr>
 		</table>
 	</section>

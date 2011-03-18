@@ -30,7 +30,8 @@
 			<tr>					
 				<td>modified</td>
 				<td>The time and date on which the category was last modified. Note that this
-				   does not track changes to items inside the category, only to the category itself.</td>
+				   does not track changes to items inside the category, such as to data item
+				   values, only to the category itself.</td>
 			</tr>
 			<tr>					
 				<td>name</td>
@@ -250,8 +251,13 @@ Content-Type: application/xml; charset=UTF-8
 	    <para>
 	      This category has only two drill choices, so two selections are enough to fully identify a data item. The user 
 	      has selected 'large' for the size choice in this example. The UID of the selected data item appears as a choice
-	      named 'uid'. If user input is not required, and you know that you want to the large diesel car data item in your
-	      application, you can use this form directly without having to do the previous two calls.
+	      named 'uid'.
+      </para>
+      <para>
+        If you know beforehand the sequence of drill choices you will wish to make, it is not necessary to go through
+        the process of requesting each step of the drill process. That is, while we recommend strongly against
+        hard-coding Data Item UIDs in your application, it is perfectly sensible to code a fully specified Drill
+        request to look up the data UID in your application’s initialisation.
       </para>
   		<section role='tabbed'>
   		  <section role='tab'>

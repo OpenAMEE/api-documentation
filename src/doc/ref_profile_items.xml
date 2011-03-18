@@ -17,7 +17,7 @@
   </para>
   <para>
     Profile items are contained inside Profile Categories, which in are contained inside Profiles. Profile
-    items in turn contains Profile Item Values, which represent the individual values that go into the 
+    items in turn contains Profile Item Values, which represent the individual inputs to the 
     calculation.
   </para>    
 	<section>
@@ -41,7 +41,9 @@
 			</tr>
 			<tr>					
 				<td>name</td>
-				<td>The name of the profile item. Profile items with the same name and Data Item are considered to be a time series.</td>
+				<td>The name of the item. Two items cannot have the same dataItemUid and 
+				  overlapping dates unless they also have different names. Items with the
+				  same name and dataItemUid are considered to be a time series.</td>
 			</tr>
 			<tr>
 			  <td>amounts</td>
@@ -56,7 +58,7 @@
 				<td>The date/time until which the profile item is valid. See discussion of time series for more detail.</td>
 			</tr>
 			<tr>					
-				<td>Data Item</td>
+				<td>Data Item (dataItemUid)</td>
 				<td>The data item which this profile item uses to obtain emission factors.</td>
 			</tr>
 		</table>
@@ -64,12 +66,12 @@
 	<section xml:id='profile_item_amounts_reference'>
 	  <title>Results</title>
 	  <para>
-      Profile Items can contain multiple return values, not just a single value. This is often used to 
+      Profile Items can yield multiple return values, not just a single value. This is often used to 
       split up emissions for different gases, for instance carbon dioxide and methane.
     </para>
     <para>
       In the responses, these results are included in an 'amounts' object. See the examples below 
-      for the exact XML and JSON representations. Each 'amount' contained within has the following 
+      for the exact XML and JSON representations. Each 'amount' returned has the following 
       properties:
     </para>
     <table>

@@ -16,8 +16,7 @@
   </para>
   <para>
     Data Item Values themselves are rarely used, as all information in them normally appears
-    in their parent Data Item. However, some data items have historical information, which may be
-    accessed through the API.
+    in their parent Data Item.
   </para>
   <section>
   	<title>Properties</title>

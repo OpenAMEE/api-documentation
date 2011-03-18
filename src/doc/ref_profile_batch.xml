@@ -53,8 +53,11 @@
 		  individual items, a dataItemUid is compulsory. Other parameters are optional.
 	  </para>
 		<para>
-		  You do not need to tell the platform which category the items should be created in; it will infer this
-		  from the specified dataItemUid. This means that items can be created across multiple categories at once.
+		  If you post to the root URL of the profile, you do not need to tell the platform which category the 
+		  items should be created in; it will infer this from the specified dataItemUid. This means that items 
+		  can be created across multiple categories at once. However, if you post to a particular category, 
+		  an error will be raised if any dataItemUids are not within that category. This restriction could be useful
+		  for debugging.
 	  </para>
 	  <para>
       Creation is atomic: in the event of failure, an error code will be returned and none of the items will
