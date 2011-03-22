@@ -16,6 +16,9 @@
   <xsl:param name="chunk.first.sections">1</xsl:param>
   <xsl:param name="chunk.quietly" select="1"></xsl:param>
 
+  <xsl:template name='header.navigation'>
+  </xsl:template>
+
   <xsl:template name='user.header.navigation'>
     <xsl:call-template name='amee.header'/>
   </xsl:template>
