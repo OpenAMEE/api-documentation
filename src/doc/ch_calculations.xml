@@ -4,14 +4,62 @@
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Performing Calculations</title>
-  <section>
-    <title>Authentication</title>
-  </section>
+  <para>
+    Now that you're authenticated, we can start to store data and perform calculations. The first step in this is to create a profile.
+  </para>
   <section>
     <title>Creating a Profile</title>
+    <para>
+      A profile could represent an individual, an office, an entire company, or whatever you want, really. 
+      It's completely up to you how you want to split up your data; you can create as many profiles as you
+      like. Your application design will probably suggest the most appropriate split, but generally speaking,
+      if something is considered a single energy-using entity in your system, it would have a profile to itself.
+    </para>
+    <para>
+      Each profile in AMEE is identified by a 16-digit random string (a profile UID), which you will need to 
+      store in your application's database alongside any other user details you might have; if the user comes 
+      back later on, you will need the profile UID to retrieve their information again. This is because privacy 
+      and security of data are of utmost importance; all data stored in AMEE is anonymised, so you cannot retrieve 
+      profile data based on personal information.
+    </para>
+    <para>
+      To create a profile, you can send a POST request to https://stage.amee.com/profiles. You need to send the 
+      parameter profile=true in the body, as shown in the following XML example (a JSON example is shown in <xref linkend='create_profile_reference'/>):
+    </para>
+		<section role='tabbed'>
+  		<section role='tab'>
+  			<title>XML</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+POST /profiles HTTP/1.1
+Accept: application/xml
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+          <programlisting role='body'>
+profile=true
+          </programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+          </programlisting>
+          <programlisting role='xml-body'><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
+        </section>
+  		</section>
+  	</section>
+  	<para>
+      The important part of this response is the uid attribute in the Profile tag, which in this case has the 
+      value 7C7D68C2A7CD. This is the UID for the newly-created profile, and forms part of the URL for
+      subsequent requests that use that profile.
+   </para>
   </section>
   <section>
     <title>Adding a Profile Item</title>
+  </section>
+  <section>
+    <title>Getting Results</title>
   </section>
   <section>
     <title>Selecting a Data Item</title>

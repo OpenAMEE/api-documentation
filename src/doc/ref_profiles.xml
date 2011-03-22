@@ -42,7 +42,7 @@
 			</tr>
 		</table>
 	</section>
-	<section>
+	<section id='create_profile_reference'>
 		<title>Create Profile</title>
 		<para>
 			Used to create a new profile, in which ProfileItems can be stored.
