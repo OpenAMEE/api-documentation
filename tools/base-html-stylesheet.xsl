@@ -26,6 +26,7 @@
     <script type="text/javascript" src="syntax/shCore.js"></script>
     <script type="text/javascript" src="syntax/shBrushJScript.js"></script>
     <script type="text/javascript" src="syntax/shBrushXml.js"></script>
+    <script type="text/javascript" src="syntax/shBrushRuby.js"></script>
     <script type="text/javascript" src="syntax/shBrushPlain.js"></script>
     <script type="text/javascript" src='script/jquery-1.5.min.js'></script>
     <script type="text/javascript" src='script/tabs.js'></script>
@@ -193,6 +194,14 @@
     <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
   </xsl:template>
 
+  <xsl:template match="programlisting[@role='ruby']">
+    <script type="syntaxhighlighter" class="brush: ruby">
+      <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
+      <xsl:apply-templates/>
+      <xsl:text disable-output-escaping="yes"><![CDATA[]]]]><![CDATA[>]]></xsl:text></script>
+    <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
+  </xsl:template>
+  
   <xsl:template match="biblioentry|bibliomixed" mode="xref-to-prefix">
     <span class='biblioref'>[</span>
   </xsl:template>

@@ -33,7 +33,7 @@
         request, using the standard HTTP format. Most HTTP libraries will support this functionality; as an 
         example, the following code shows this process in Ruby:
       </para>
-      <programlisting>
+      <programlisting role='ruby'>
 http = Net::HTTP.new @host, 443
 http.use_ssl = true
 req = Net::HTTP::Get.new @location
