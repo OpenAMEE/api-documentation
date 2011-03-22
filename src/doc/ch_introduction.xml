@@ -7,4 +7,11 @@
   <section>
     <title>What is AMEE?</title>    
   </section>
+  <section>
+    <title>Previous Versions</title>
+    <para>
+      This manual covers version 2 of the AMEE API only. If you need documentation 
+      for version 1, please refer to <ulink url="http://my.amee.com/developers/legacy"/>.
+    </para>
+  </section>
 </chapter>
