@@ -51,12 +51,101 @@ Content-Type: application/xml; charset=UTF-8
   	</section>
   	<para>
       The important part of this response is the uid attribute in the Profile tag, which in this case has the 
-      value 7C7D68C2A7CD. This is the UID for the newly-created profile, and forms part of the URL for
+      value YLLIKH73BDYS. This is the UID for the newly-created profile, and forms part of the URL for
       subsequent requests that use that profile.
+   </para>
+   <para>     
+     A profile contains a hierarchy of profile categories, which split up the data that you can store into 
+     contextual areas, similar to a folder structure on disk. Top-level categories include such broad sections 
+     as "Home", "Business", "Transport", and so on. Each category can contain any number of other categories
+      and some categories (the lower-level ones normally) can contain profile items. These are a bit like files, 
+      and are where you actually store your energy data.
    </para>
   </section>
   <section>
     <title>Adding a Profile Item</title>
+    <para>
+      Once you've selected the category where you want to store your energy data, you will want to create a profile
+      item to store that data. To do this, simply POST to the category URL with an appropriate set of parameters, 
+      and your data will be stored in a newly-created profile item. For example, to store some energy data in the 
+      /transport/defra/fuel category, you would send the following request:
+    </para>
+		<section role='tabbed'>
+		  <section role='tab'>
+  			<title>Example</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+POST /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
+Accept: application/json, application/xml
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+          <programlisting role='body'>
+dataItemUid=19B311DDF0B1&amp;volume=500&amp;startDate=2011-01-05T00%3A00%3A00%2B00%3A00
+          </programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+HTTP/1.1 201 CREATED
+Location: https://{server}.amee.com/profiles/4737069901D3/home/energy/quantity/F0638HOIFC1H
+Content-Type: text/plain
+          </programlisting>
+			  </section>
+  		</section>
+		</section>
+		<para>
+      If the request is successful, you get back a 201 CREATED response, with the location of the 
+      newly-created item. There are a few things to note here, particularly the parameters in the 
+      POST request. The first is dataItemUid, which specifies exactly what type of data you wish to 
+      store in the category (in this case, the type of fuel). We will come back to this in more 
+      detail in a moment. The second is volume, which is a profile item value specific 
+      to this category. As each category can store a different type of data, the profile item values 
+      are different for each one, and we will go into more detail on how you can find our which ones
+      to use in each category later on. However, in this case, the call will store a value of 500 litres 
+      per month for this item. Note that you can select the units you wish to use with your POST - 
+      see <xref linkend='units' /> for details.
+    </para>
+    <para>
+      There is one other option, which is useful in many cases. If you pass representation=full as an 
+      extra parameter in the POST request, you will get back a representation of the newly-created item, 
+      rather than just the location. If you want to get back the CO2 value of the data you have just 
+      stored, you will want to do this. The XML representation looks just like a GET response:
+    </para>
+		<section role='tabbed'>
+  		<section role='tab'>
+  			<title>XML</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+POST /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
+Accept: application/xml
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+          <programlisting role='body'>
+dataItemUid=19B311DDF0B1&amp;volume=500&amp;startDate=2011-01-05T00%3A00%3A00%2B00%3A00
+&amp;representation=full
+          </programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+HTTP/1.1 201 CREATED
+Content-Type: application/xml; charset=UTF-8
+          </programlisting>
+          <programlisting role='xml-body'><xi:include href='samples/xml/create_profile_item.xml' parse="text"/></programlisting>
+        </section>
+  		</section>
+  	</section>
+  	<para>
+      Note the ProfileItem tag. It contains all the details of the new item. The item values are 
+      representations of the stored parameters from your POST request. In this case, the item value is volume, 
+      and the value is 500. Unit and PerUnit show the units for this item value, in this case litres per month.
+    </para>
+    <para>
+      You can store thousands of different types of energy use in AMEE by finding the appropriate category and
+      creating the right items. By setting various parameters, you can store different data values at different
+      times, or in different units. We will go into some of these options in the following sections, but first, let's 
+      find out how to find out what the actual emissions from our calculation are.
+    </para>
   </section>
   <section>
     <title>Getting Results</title>
