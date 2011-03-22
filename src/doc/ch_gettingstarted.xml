@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Getting Started</title>
+  <section>
+    <title>Obtaining an API Key</title>
+    <para>
+      The first step towards using the AMEE platform is to sign up for an access key. You can do this for free
+      at <ulink url="http://my.amee.com/signup"/>. Enter your details, and you will be emailed an API key, 
+      as well as links to documentation and other relevant resources.
+    </para>
+    <para>
+      This key will give you access to the AMEE stage platform. This platform is free for you to use while 
+      you are developing and testing your client application. However, the data on it is regularly wiped, so 
+      once you decide your application is ready to go into production, you will need to change over to using 
+      the AMEE live platform (where service fees may apply). In the examples below, because it's where you'll 
+      be starting out, we will use the URL for the stage platform.
+    </para>
+  </section>
+  <section>
+    <title>Authentication</title>
+    <para>
+      Once you've got your key, you're ready to start talking to the API itself, and the first step is 
+      authentication. There are two methods of authenticating with the API; using HTTP Basic, or by 
+      creating an authenticated session.
+    </para>
+    <section>
+      <title>HTTP Basic</title>
+      <para>
+        HTTP Basic authentication is extremely simple. You simply provide your username and password with every 
+        request, using the standard HTTP format. Most HTTP libraries will support this functionality; as an 
+        example, the following code shows this process in Ruby:
+      </para>
+      <programlisting>
+http = Net::HTTP.new @host, 443
+http.use_ssl = true
+req = Net::HTTP::Get.new @location
+req.basic_auth @username, @password
+http.request(req)
+      </programlisting>
+      <para>
+        You should only use HTTP Basic authentication if you are connecting to the AMEE API over SSL. However, this
+        is the recommended method, and all examples in this manual will use it.
+      </para>
+    </section>
+    <section>
+      <title>Authenticated Sessions</title>
+      <para>
+        Alternatively, you can create an authenticated session. You will need to make a POST request to 
+        https://stage.amee.com/auth, providing your username and password as form-encoded data in the request 
+        body. You also need to specify which format you want the result in (XML or JSON) using a standard 
+        "Accept" header. The response to this request includes various pieces of information, but the most 
+        important is the authentication token, which is returned both as a cookie and as a custom header, 
+        both called "authToken". You should store this authToken value and include it as a cookie in any 
+        subsequent requests to the API. The authToken will expire after two hours, or if unused for half an 
+        hour. Therefore, if you are using authenticated sessions, your application should always be prepared 
+        to re-authorise on any request, should the authToken expire.    
+      </para>
+    </section>
+  </section>
+</chapter>
