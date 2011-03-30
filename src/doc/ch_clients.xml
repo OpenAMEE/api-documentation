@@ -4,6 +4,9 @@
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Client Libraries</title>
+  
+  <!-- No need to write this for now -->
+  
   <section>
     <title>Ruby</title>
   </section>
