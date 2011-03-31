@@ -96,7 +96,7 @@ Content-Type: text/plain
       to this category. As each category can store a different type of data, the profile item values 
       are different for each one, and we will go into more detail on how you can find our which ones
       to use in each category later on. However, in this case, the call will store a value of 500 litres 
-      per month for this item. Note that you can select the units you wish to use with your POST - 
+      for this item. Note that you can select the units you wish to use with your POST - 
       see <xref linkend='units' /> for details.
     </para>
     <para>
@@ -132,7 +132,7 @@ Content-Type: application/xml; charset=UTF-8
   	<para>
       Note the ProfileItem tag. It contains all the details of the new item. The item values are 
       representations of the stored parameters from your POST request. In this case, the item value is volume, 
-      and the value is 500. Unit and PerUnit show the units for this item value, in this case litres per month.
+      and the value is 500. Unit and PerUnit show the units for this item value, in this case litres.
     </para>
     <para>
       You can store thousands of different types of energy use in AMEE by finding the appropriate category and
@@ -143,10 +143,12 @@ Content-Type: application/xml; charset=UTF-8
   </section>
   <section>
     <title>Getting Results</title>
+	<para>The Amount tag simply shows the effective amount of CO2 emitted by the energy used. So, in this case, if you used 500 litres of gas, you would emit 1161.0kg of CO2.</para>
+	<para>The Amounts tag shows separately the amounts of other greenhouse gases emitted, by name, often together with an equivalent amount of CO2 that would have the same climate impact, and other outputs of interest. The exact set of outputs varies from category to category, as documented in AMEE explorer. In this case we see that 1150.9kg of CO2, plus varying amounts of other gases, produce the 1161.0kg of climate-equivalent CO2, or CO2e.</para>
   </section>
   <section>
     <title>Selecting a Data Item</title>
-<parah>As a neutral aggregation platform, AMEE makes available a number of different methodologies for carbon calculation, which use different calculation techniques, different inputs, and different levels of accuracy. The choice of which of these to use will be up to you, and should be one of the first things you will decide when you come to use the platform. It will depend on your reporting requirements, legal requirements, and so on.</para>
+<para>As a neutral aggregation platform, AMEE makes available a number of different methodologies for carbon calculation, which use different calculation techniques, different inputs, and different levels of accuracy. The choice of which of these to use will be up to you, and should be one of the first things you will decide when you come to use the platform. It will depend on your reporting requirements, legal requirements, and so on.</para>
 <para>Every category within AMEE is individually documented in AMEE explorer. This documentation describes the functionality of each category, the source of any data or calculating methodologies, relationships with other AMEE categories, and provides instructions for how to use the category to store relevant data and make emissions calculations. AMEE explorer provides powerful search and tagging capabilities, making it easy to discover the categories and data items you wish to use. It also provides the ability to perform instant calculations directly in your browser, so you can easily check your results, and the ability to generate example code for how to use the AMEE API to access those categories.</para>
   </section>
 </chapter>

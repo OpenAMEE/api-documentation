@@ -49,12 +49,14 @@ duration=PT30S</programlisting>
       data. Above, we saw that profile categories include a list of current profile items. 
       This "present time" behaviour can be modified by providing startDate and endDate query 
       parameters in the GET request. You can request all data between particular dates, 
-      everything that starts after a certain time, or numerous other methods, including a 
-      "prorata" mode which calculates the amount of carbon emitted during only the queried 
-      time period.
+      or everything that starts after a certain time.
+<para>By default, emission values for items are for the
+		  whole item, for any items that overlap the query interval at all, not just the part of the item that intersects the query window. To
+		  get just the emissions that took place during the query window, set the mode parameter to 'prorata' with your request.</para>
     </para>
   </section>
   <section>
     <title>Data Item Value History</title>
+<para>Some AMEE data categories have time series for emissions factor data. For these categories, the appropriate values are automatically used for calculating the emissions due to a profile item, so that if, for example, the item has start and end date in 1995, the 1995 emissions factor would be used. Furthermore, if the profile item start and end dates overlap multiple values in the data series, AMEE will sort this out automatically, bringing you the correct total emissions by summing across each period where the data differs.</para>
   </section>
 </chapter>
