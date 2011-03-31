@@ -5,7 +5,9 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Introduction</title>
   <section>
-    <title>What is AMEE?</title>    
+    <title>What is AMEE?</title>
+	<para>AMEE is a web-based API that allows users to store and retrieve many forms of consumption data over long periods, while simultaneously applying recognised carbon calculation models to determine the environmental consequences of that consumption.  It has been used by developers to deliver energy tracking and management applications ranging from the UK Government's Act On CO2 calculator, CNN and Google applications; to "powering" carbon management applications such as Carbonetworks and Misys OpenCarbonWorld. The “Powered by AMEE” logo shows that your application complies with authoritative standards.</para>
+	<parah>The AMEE API consists of two parts; <emphasis>profiles</emphasis> and <emphasis>data</emphasis>. Your energy data is stored in a set of profiles. By storing this data over time, you can build up a history of energy use for your clients, your business, or yourself. The data area stores a huge array of standard models and related methodologies. When you store your consumption data in a profile, these models are automatically applied to give a reliable carbon footprint for your energy use.</para>
   </section>
   <section>
     <title>Previous Versions</title>

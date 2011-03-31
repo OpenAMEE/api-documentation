@@ -10,13 +10,7 @@
   <section>
     <title>Creating a Profile</title>
     <para>
-      A profile could represent an individual, an office, an entire company, or whatever you want, really. 
-      It's completely up to you how you want to split up your data; you can create as many profiles as you
-      like. Your application design will probably suggest the most appropriate split, but generally speaking,
-      if something is considered a single energy-using entity in your system, it would have a profile to itself.
-    </para>
-    <para>
-      Each profile in AMEE is identified by a 16-digit random string (a profile UID), which you will need to 
+      As with all entities in AMEE, each profile is identified by a UID, which you will need to 
       store in your application's database alongside any other user details you might have; if the user comes 
       back later on, you will need the profile UID to retrieve their information again. This is because privacy 
       and security of data are of utmost importance; all data stored in AMEE is anonymised, so you cannot retrieve 
@@ -50,7 +44,7 @@ Content-Type: application/xml; charset=UTF-8
   		</section>
   	</section>
   	<para>
-      The important part of this response is the uid attribute in the Profile tag, which in this case has the 
+      The important part of this response is the UID attribute in the Profile tag, which in this case has the 
       value YLLIKH73BDYS. This is the UID for the newly-created profile, and forms part of the URL for
       subsequent requests that use that profile.
    </para>
@@ -152,5 +146,7 @@ Content-Type: application/xml; charset=UTF-8
   </section>
   <section>
     <title>Selecting a Data Item</title>
+<parah>As a neutral aggregation platform, AMEE makes available a number of different methodologies for carbon calculation, which use different calculation techniques, different inputs, and different levels of accuracy. The choice of which of these to use will be up to you, and should be one of the first things you will decide when you come to use the platform. It will depend on your reporting requirements, legal requirements, and so on.</para>
+<para>Every category within AMEE is individually documented in AMEE explorer. This documentation describes the functionality of each category, the source of any data or calculating methodologies, relationships with other AMEE categories, and provides instructions for how to use the category to store relevant data and make emissions calculations. AMEE explorer provides powerful search and tagging capabilities, making it easy to discover the categories and data items you wish to use. It also provides the ability to perform instant calculations directly in your browser, so you can easily check your results, and the ability to generate example code for how to use the AMEE API to access those categories.</para>
   </section>
 </chapter>
