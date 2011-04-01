@@ -12,11 +12,13 @@
       as well as links to documentation and other relevant resources.
     </para>
     <para>
-      This key will give you access to the AMEE stage platform. This platform is free for you to use while 
-      you are developing and testing your client application. However, the data on it is regularly wiped, so 
-      once you decide your application is ready to go into production, you will need to change over to using 
-      the AMEE live platform (where service fees may apply). In the examples below, because it's where you'll 
-      be starting out, we will use the URL for the stage platform.
+      This key will give you access to the AMEE stage platform (stage.amee.com). This platform is free for
+      you to use while you are developing and testing your client application. However, the data on it is
+      regularly wiped, so once you decide your application is ready to go into production, you will need to
+      change over to using the AMEE live platform (live.amee.com, here service fees may apply).
+    </para>
+    <para>
+      Throughout the documentation, the examples will use the AMEE stage platform URL.
     </para>
   </section>
   <section>
