@@ -1,9 +1,9 @@
 # See comment in ./Makefile.base-vars
 
 # Grouping targets
-all: html html-chunk pdf ps
+all: html html-chunk php-chunk pdf ps
 all-html: html html-chunk
-install: install-html install-html-chunk install-pdf install-ps
+install: install-html install-html-chunk install-php-chunk install-pdf install-ps
 
 # Build targets
 $(VERSION_SOURCE): version
@@ -41,6 +41,16 @@ $(HTML_CHUNK_TARGET): $(ALL_SOURCE) $(VERSION_SOURCE) $(STYLESHEET) $(IMAGES)
 	   $(XSL_DIR)/chunk-stylesheet.xsl $(HTML_XSLTPROC_OPTS) base.dir=$(HTML_CHUNK_DIR)/
 	cp -R $(STYLESHEET) $(HTML_CHUNK_DIR)
 	$(IFIMAGES) cp $(IMAGES) $(HTML_CHUNK_DIR)/images $(ENDIF)
+
+php-chunk: valid $(PHP_CHUNK_TARGET)
+$(PHP_CHUNK_TARGET): $(ALL_SOURCE) $(VERSION_SOURCE) $(STYLESHEET) $(IMAGES)
+	mkdir -p $(PHP_CHUNK_DIR)
+	$(IFIMAGES) mkdir -p $(PHP_CHUNK_DIR)/images $(ENDIF)
+	$(ENSURE_XSL)
+	$(XSLTPROC) $(XML_SOURCE) \
+	   $(XSL_DIR)/php-chunk-stylesheet.xsl $(HTML_XSLTPROC_OPTS) base.dir=$(PHP_CHUNK_DIR)/
+	cp -R $(STYLESHEET) $(PHP_CHUNK_DIR)
+	$(IFIMAGES) cp $(IMAGES) $(PHP_CHUNK_DIR)/images $(ENDIF)
 
 html-arch: valid $(HTML_ARCH_TARGET)
 $(HTML_ARCH_TARGET): $(HTML_TARGET) $(IMAGES)
@@ -97,6 +107,12 @@ install-html-chunk: $(HTML_CHUNK_TARGET) $(INSTALL_SUBDIR)
 	$(INSTALL_DATA) $(STYLESHEET) $(INSTALL_SUBDIR)
 	$(IFIMAGES) $(INSTALL_DATA) $(IMAGES) $(INSTALL_SUBDIR)/images $(ENDIF)
 
+install-php-chunk: $(PHP_CHUNK_TARGET) $(INSTALL_SUBDIR)
+	$(IFIMAGES) $(MKDIR) $(INSTALL_SUBDIR)/images $(ENDIF)
+	$(INSTALL_DATA) $(PHP_CHUNK_DIR)/*.php $(INSTALL_SUBDIR)
+	$(INSTALL_DATA) $(STYLESHEET) $(INSTALL_SUBDIR)
+	$(IFIMAGES) $(INSTALL_DATA) $(IMAGES) $(INSTALL_SUBDIR)/images $(ENDIF)
+
 install-html-arch: $(HTML_ARCH_TARGET) $(INSTALL_SUBDIR)
 	$(INSTALL_DATA) $(HTML_ARCH_TARGET) $(INSTALL_SUBDIR)
 
@@ -115,6 +131,7 @@ clean:
 	rm -f $(HTML_ARCH_TARGET) $(HTML_CHUNK_ARCH_TARGET)
 	rm -f $(FO_TARGET) $(PDF_TARGET) $(PS_TARGET) $(EPUB_TARGET)
 	rm -rf $(HTML_CHUNK_DIR)
+	rm -rf $(PHP_CHUNK_DIR)
 
 # Utility targets
 valid: $(VERSION_SOURCE)

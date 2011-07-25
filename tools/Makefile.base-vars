@@ -48,6 +48,8 @@ HTML_TARGET = $(DIR)/$(OUTNAME).html
 # In the HTML chunk build, index.html is created last, so serves as an 
 # acceptable timestamp file for the entire multi-file output.
 HTML_CHUNK_TARGET = $(HTML_CHUNK_DIR)/index.html
+PHP_CHUNK_DIR = $(DIR)/php-chunk
+PHP_CHUNK_TARGET = $(PHP_CHUNK_DIR)/index.php
 ARCH_CMD = tar -jcvf
 ARCH_EXT = .tar.bz2
 HTML_ARCH_BASENAME = $(OUTNAME)-html

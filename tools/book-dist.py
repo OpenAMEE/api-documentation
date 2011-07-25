@@ -21,6 +21,7 @@ def usage(err_msg):
 Options:
    --html:            Make the single-page HTML book
    --html-chunk:      Make the chunked HTML book
+   --php-chunk:       Make the chunked PHP book
    --html-arch:       Make the single-page HTML book (in an archive)
    --html-chunk-arch: Make the chunked HTML book (in an archive)
    --pdf:             Make the PDF book
@@ -32,12 +33,12 @@ Options:
 def main():
     try:
         optlist, args = getopt.getopt(sys.argv[1:], "h",
-                                      ['help', 'html', 'html-chunk',
+                                      ['help', 'html', 'html-chunk', 'php-chunk',
                                        'html-arch', 'html-chunk-arch',
                                        'pdf', 'name='])
     except:
         usage("Invalid syntax")
-    html = html_chunk = html_arch = html_chunk_arch = pdf = 0
+    html = html_chunk = php_chunk = html_arch = html_chunk_arch = pdf = 0
     name = 'amee-doc'
     targets = []
     for opt, arg in optlist:
@@ -47,6 +48,8 @@ def main():
             html = 1
         if opt == '--html-chunk':
             html_chunk = 1
+        if opt == '--php-chunk':
+            php_chunk = 1
         if opt == '--html-arch':
             html_arch = 1
         if opt == '--html-chunk-arch':
@@ -61,6 +64,7 @@ def main():
         
     if html: targets.append('install-html')
     if html_chunk: targets.append('install-html-chunk')
+    if php_chunk: targets.append('install-php-chunk')
     if html_arch: targets.append('install-html-arch')
     if html_chunk_arch: targets.append('install-html-chunk-arch')
     if pdf: targets.append('install-pdf')
