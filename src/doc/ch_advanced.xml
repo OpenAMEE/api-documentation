@@ -102,6 +102,11 @@ duration=PT30S</programlisting>
   </section>
   <section id='paging'>
     <title>Paging</title>
+	<para>
+	    Many resources in AMEE are capable of containing a large number of sub-resources, for instance 
+	    profile categories can contain many profile items. Retrieving them all in one request may be prohibitively
+	    expensive, so for this reason such resources are paged. Details of how to page through items in AMEE are provided at <xref linkend="paging_reference"/>.
+	  </para>
   </section>
 </chapter>
 
