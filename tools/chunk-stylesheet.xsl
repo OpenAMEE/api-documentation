@@ -19,6 +19,10 @@
   <xsl:template name='header.navigation'>
   </xsl:template>
 
+  <xsl:template name='user.head.content'>
+    <xsl:call-template name='amee.head.content'/>
+  </xsl:template>
+
   <xsl:template name='user.header.navigation'>
     <xsl:call-template name='amee.header'/>
   </xsl:template>

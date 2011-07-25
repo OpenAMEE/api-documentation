@@ -22,7 +22,7 @@
 
   <xsl:param name="para.propagates.style">1</xsl:param>
 
-  <xsl:template name='user.head.content'>
+  <xsl:template name='amee.head.content'>
     <script type="text/javascript" src="syntax/shCore.js"></script>
     <script type="text/javascript" src="syntax/shBrushJScript.js"></script>
     <script type="text/javascript" src="syntax/shBrushXml.js"></script>
