@@ -3,7 +3,7 @@
   "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Getting Started</title>
+  <title>Quick Start</title>
   <section>
     <title>Obtaining an API Key</title>
     <para>
@@ -45,19 +45,8 @@ http.request(req)
         is the recommended method, and all examples in this manual will use it.
       </para>
     </section>
-    <section>
-      <title>Authenticated Sessions</title>
-      <para>
-        Alternatively, you can create an authenticated session. You will need to make a POST request to 
-        https://stage.amee.com/auth, providing your username and password as form-encoded data in the request 
-        body. You also need to specify which format you want the result in (XML or JSON) using a standard 
-        "Accept" header. The response to this request includes various pieces of information, but the most 
-        important is the authentication token, which is returned both as a cookie and as a custom header, 
-        both called "authToken". You should store this authToken value and include it as a cookie in any 
-        subsequent requests to the API. The authToken will expire after two hours, or if unused for half an 
-        hour. Therefore, if you are using authenticated sessions, your application should always be prepared 
-        to re-authorise on any request, should the authToken expire.    
-      </para>
-    </section>
+  </section>
+  <section>
+    <title>Content Types</title>
   </section>
 </chapter>

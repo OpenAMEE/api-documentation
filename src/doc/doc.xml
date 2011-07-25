@@ -36,11 +36,11 @@
   </bookinfo>
 
   <xi:include href='ch_introduction.xml'/>
-  <xi:include href='ch_concepts.xml'/>
-  <xi:include href='ch_gettingstarted.xml'/>
+  <xi:include href='ch_quickstart.xml'/>
+  <xi:include href='ch_data.xml'/>
   <xi:include href='ch_calculations.xml'/>
-  <xi:include href='ch_timeseries.xml'/>
-  <xi:include href='ch_advanced.xml'/>
+  <xi:include href='ch_profiles.xml'/>
+  <!--><xi:include href='ch_advanced.xml'/>-->
 
   <appendix>
     <title>Profile API Reference</title>
