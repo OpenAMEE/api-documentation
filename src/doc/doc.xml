@@ -41,11 +41,6 @@
   <xi:include href='ch_calculations.xml'/>
   <xi:include href='ch_timeseries.xml'/>
   <xi:include href='ch_advanced.xml'/>
-  <!--
-  These are commented for this version, as they aren't 100% necessary for the first pass
-  <xi:include href='ch_clients.xml'/>
-  <xi:include href='ch_casestudy.xml'/>
-  -->
 
   <appendix>
     <title>Profile API Reference</title>
