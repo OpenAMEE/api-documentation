@@ -17,7 +17,7 @@
   <xsl:param name="chunk.first.sections">1</xsl:param>
   <xsl:param name="chunk.quietly" select="1"></xsl:param>
 
-  <xsl:param name="wordpress.dir">..</xsl:param>
+  <xsl:param name="wordpress.dir">/var/www/www.amee.com</xsl:param>
 
   <xsl:template name="chunk-element-content">
     <xsl:param name="prev"/>
