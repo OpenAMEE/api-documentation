@@ -78,7 +78,6 @@
         <div id="content" class="contenttwothirds" role="main">
           
           <xsl:call-template name="body.attributes"/>
-          <xsl:call-template name="user.header.navigation"/>
 
           <xsl:call-template name="header.navigation">
             <xsl:with-param name="prev" select="$prev"/>
