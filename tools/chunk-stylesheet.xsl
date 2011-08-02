@@ -8,6 +8,10 @@
   <!-- PARAMETER REFERENCE:                                         -->
   <!-- http://docbook.sourceforge.net/release/xsl/current/doc/html/ -->
 
+  <xsl:param name="section.autolabel">1</xsl:param>
+  <xsl:param name="section.label.includes.component.label">1</xsl:param>
+  <xsl:param name="toc.section.depth">2</xsl:param>
+
   <xsl:param name="chunker.output.encoding" select="'utf-8'"/>
   <xsl:param name="chunker.output.indent" select="'yes'"/>
   <xsl:param name="chunk.section.depth">1</xsl:param>

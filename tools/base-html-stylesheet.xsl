@@ -7,16 +7,12 @@
   <xsl:param name="textinsert.extension">1</xsl:param>
 
   <xsl:param name="html.stylesheet">styles.css</xsl:param>  
-  <xsl:param name="toc.section.depth">2</xsl:param>
   <xsl:param name="annotate.toc">0</xsl:param>
 
   <xsl:param name="admon.graphics" select="1" />
   <xsl:param name="admon.graphics.extension">.png</xsl:param>
   <xsl:param name="callout.graphics" select="1" />
   <xsl:param name="callout.graphics.extension">.png</xsl:param>
-
-  <xsl:param name="section.autolabel">1</xsl:param>
-  <xsl:param name="section.label.includes.component.label">1</xsl:param>
 
   <xsl:param name="bibliography.numbered">1</xsl:param>
 

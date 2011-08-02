@@ -13,6 +13,10 @@
   <!-- Uncomment this to enable auto-numbering of sections -->
   <!-- xsl:param name="section.autolabel" select="1" / -->
 
+  <xsl:param name="section.autolabel">1</xsl:param>
+  <xsl:param name="section.label.includes.component.label">1</xsl:param>
+  <xsl:param name="toc.section.depth">2</xsl:param>
+
   <xsl:template name='user.head.content'>
     <xsl:call-template name='amee.head.content'/>
   </xsl:template>

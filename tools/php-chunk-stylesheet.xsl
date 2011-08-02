@@ -13,9 +13,14 @@
   <xsl:param name="chunker.output.indent" select="'yes'"/>
   <xsl:param name="chunk.section.depth">0</xsl:param>
 
+  <xsl:param name="toc.section.depth">0</xsl:param>
+
   <xsl:param name="use.id.as.filename">1</xsl:param>
   <xsl:param name="chunk.first.sections">1</xsl:param>
   <xsl:param name="chunk.quietly" select="1"></xsl:param>
+
+  <xsl:param name="chapter.autolabel">0</xsl:param>
+  <xsl:param name="appendix.autolabel">0</xsl:param>
 
   <xsl:param name="wordpress.dir">/var/www/www.amee.com</xsl:param>
 
@@ -83,15 +88,11 @@
             <xsl:copy-of select="$content"/>
           </div>
 
-          <xsl:call-template name="user.footer.content"/>
-
           <xsl:call-template name="footer.navigation">
             <xsl:with-param name="prev" select="$prev"/>
             <xsl:with-param name="next" select="$next"/>
             <xsl:with-param name="nav.context" select="$nav.context"/>
           </xsl:call-template>
-
-          <xsl:call-template name="user.footer.navigation"/>
 
         </div>
       </div>
