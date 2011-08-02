@@ -1,7 +1,7 @@
 set :stages, %w(staging production)
 require "capistrano/ext/multistage"
 
-set :application, "AMEE API Documentation"
+set :application, "AMEEconnect Documentation"
 
 set :scm, :none
 set :repository,  "./src/doc/php-chunk"

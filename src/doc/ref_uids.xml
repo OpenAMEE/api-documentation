@@ -10,7 +10,7 @@
 	<title>UIDs</title>
   <para>
     Every object in AMEE has a unique identifer (UID). These are guaranteed to be unique across 
-    the entire API, though equivalent items on different servers (stage vs live, for instance) may 
+    the entire platform, though equivalent items on different servers (stage vs live, for instance) may 
     have different UIDs.
   </para>
   <para>

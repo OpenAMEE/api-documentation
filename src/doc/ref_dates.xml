@@ -11,12 +11,12 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Date and Time Representation</title>
 	<para>
-	  The AMEE API has many parameters and fields which use dates and times. This section summarises the representation of those parameters.
+	  AMEEconnect has many parameters and fields which use dates and times. This section summarises the representation of those parameters.
   </para>
   <section id='date_reference'>
     <title>Dates/Times</title>
     <para>
-      The AMEE API allows very fine time resolutions, down to the minute. Dates/Times are represented in the standard IS0 8601<biblioref linkend="ISO8601"/> format:
+      AMEEconnect allows very fine time resolutions, down to the minute. Dates/Times are represented in the standard IS0 8601<biblioref linkend="ISO8601"/> format:
     </para>
     <programlisting>YYYY-MM-DDThh:mm:ssTZD</programlisting>
     <para>

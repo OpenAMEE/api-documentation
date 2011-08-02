@@ -9,7 +9,7 @@
 <section id='auth_reference' xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Authentication</title>
   <para>
-    The AMEE API uses HTTP Basic authentication <biblioref linkend='httpbasic'/> for all 
+    AMEEconnect uses HTTP Basic authentication <biblioref linkend='httpbasic'/> for all 
     requests. The following example shows how this is done with the CURL command line 
     HTTP client.
   </para>

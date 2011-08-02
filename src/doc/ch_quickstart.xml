@@ -43,7 +43,7 @@ req.basic_auth @username, @password
 http.request(req)
       </programlisting>
       <para>
-        You should only use HTTP Basic authentication if you are connecting to the AMEE API over SSL. (Using
+        You should only use HTTP Basic authentication if you are connecting to AMEEconnect over SSL. (Using
         SSL is recommended, and all examples in this manual use it.)
       </para>
     </section>

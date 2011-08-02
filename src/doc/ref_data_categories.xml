@@ -119,7 +119,7 @@ Content-Type: application/xml; charset=UTF-8
       Drilldowns are a special resource available within every Data Category that contains Data Items.
     </para>
     <para>
-      As data items are identified by UIDs in API calls such as creating Profile Items, a way is 
+      As data items are identified by UIDs in AMEEconnect calls such as creating Profile Items, a way is 
       required of translating human-readable choices into these UIDs. This is particularly important 
       for large categories, such as UK car models, which can contain many thousands of data items.
     </para>
@@ -131,7 +131,7 @@ Content-Type: application/xml; charset=UTF-8
       the choices each time if you already know which item you want to get to.
     </para>
 		<para>
-      Each call to the resource will give a list of choices. The API client can then select one of
+      Each call to the resource will give a list of choices. The client can then select one of
       these and provide it as a parameter to the next drilldown call. When the sequence of choices
       uniquely identifies one data item, a single choice named 'uid' is returned. This is the UID 
       that should be used to refer to the chosen Data Item when creating Profile Items (see 

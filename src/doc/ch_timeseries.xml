@@ -13,7 +13,7 @@
     <title>Naming Profile Items</title>
     <para>
       If you create two profile items with the same data item UID, and which overlap the same 
-      time, then the AMEE API will complain as it can't form a sensible time series from the 
+      time, then AMEEconnect will complain as it can't form a sensible time series from the 
       data. However, there are cases in which you might want to do this; energy used by two 
       cars of the same type, for instance. In this case, you can provide a name parameter to 
       identify each series. You can build up multiple histories in the same profile category 
