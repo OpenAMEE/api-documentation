@@ -79,14 +79,6 @@
           
           <xsl:call-template name="body.attributes"/>
 
-          <xsl:call-template name="header.navigation">
-            <xsl:with-param name="prev" select="$prev"/>
-            <xsl:with-param name="next" select="$next"/>
-            <xsl:with-param name="nav.context" select="$nav.context"/>
-          </xsl:call-template>
-
-          <xsl:call-template name="user.header.content"/>
-    
           <div id="content" class="narrowcolumn" role="main">
             <xsl:copy-of select="$content"/>
           </div>
