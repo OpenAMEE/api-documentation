@@ -11,7 +11,7 @@
 
   <bookinfo>
 
-    <subtitle>covers API version 2</subtitle>
+    <subtitle>API version 2</subtitle>
 
     <authorgroup>
       <author>
@@ -45,7 +45,7 @@
   <appendix>
     <title>Profile Reference</title>
     <para>
-      The profile section of AMEEconnect is used to store user data and perform calculations.
+      AMEEconnect profiles are used to store user data and perform calculations.
     </para>
     <xi:include href='ref_profiles.xml'/>
     <xi:include href='ref_profile_items.xml'/>
@@ -55,8 +55,8 @@
   <appendix>
     <title>Data Reference</title>
     <para>
-      The sata section of AMEEconnect provides reference-style access to data categories and items 
-      created by AMEE. It also provides drilldown resources to allow interactive or automatic 
+      AMEEconnect provides reference-style access to data categories and items 
+      curated by AMEE. It also provides drilldown resources to allow interactive or automatic 
       selection of data items by client applications.
     </para>
     <xi:include href='ref_data_categories.xml'/>
