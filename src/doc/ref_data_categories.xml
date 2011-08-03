@@ -14,7 +14,7 @@
   </para>
 	<section>
 		<title>Properties</title>
-		<table>
+		<table class='properties'>
 			<tr>
 				<th>Property</th>
 				<th>Description</th>

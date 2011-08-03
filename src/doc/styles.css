@@ -6,6 +6,12 @@ pre.programlisting {
 	padding:0.25em;	
 }
 
+/* footer */
+
+div.navfooter {
+	border-top: 1px dotted #7B7B7B;
+}
+
 /* TAB STYLES */
 
 ul.tabs {
@@ -47,26 +53,37 @@ div.tab-body table {
 	border-spacing: 0px;
 }
 
-table.requestdetails, table.parameters {
+/* Tables */
+
+table.requestdetails, table.parameters, table.properties {
 	border-spacing: 0px;
 	margin-bottom: 15px;	
 }
 
-table.requestdetails td, table.parameters td {
+table.requestdetails td, table.parameters td, table.properties td {
 	padding: 5px;
 }
 
-table.requestdetails tr:nth-child(odd), table.parameters tr:nth-child(odd) {
+table.requestdetails tr:nth-child(odd), table.parameters tr:nth-child(odd), table.properties tr:nth-child(odd) {
 	background: #E0E0E0;
 }
 
-table.requestdetails tr:nth-child(even), table.parameters tr:nth-child(even) {
+table.requestdetails tr:nth-child(even), table.parameters tr:nth-child(even), table.properties tr:nth-child(even) {
 	background: #FFF;
 }
 
-div#footer p.copyright {
-	display: inline;
-	margin: 0px;
+/* TOC styles */
+
+div.toc dl dl {
+	margin-left: 20px !important;
+}
+
+div.toc dl dt {
+	font-weight: normal !important;
+}
+
+div.toc dl dd, div.toc dl dl {
+	margin-bottom: 0px !important;
 }
 
 .biblioref {
