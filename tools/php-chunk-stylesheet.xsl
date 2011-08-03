@@ -236,42 +236,7 @@
       </div>
     </xsl:if>
   </xsl:template>
-
-
-  <!--><xsl:template match="title" mode="titlepage.mode">
-    <xsl:variable name="id">
-      <xsl:choose>
-        <xsl:when test="contains(local-name(..), 'info')">
-          <xsl:call-template name="object.id">
-            <xsl:with-param name="object" select="../.."/>
-          </xsl:call-template>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:call-template name="object.id">
-            <xsl:with-param name="object" select=".."/>
-          </xsl:call-template>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-
-    <h2 class='entry-title'>
-      <xsl:apply-templates select="." mode="common.html.attributes"/>
-      <xsl:if test="$generate.id.attributes = 0">
-        <a id="{$id}"/>
-      </xsl:if>
-      <xsl:choose>
-        <xsl:when test="$show.revisionflag != 0 and @revisionflag">
-  	<span class="{@revisionflag}">
-  	  <xsl:apply-templates mode="titlepage.mode"/>
-  	</span>
-        </xsl:when>
-        <xsl:otherwise>
-  	<xsl:apply-templates mode="titlepage.mode"/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </h2>
-  </xsl:template>-->
-    
+  
   <xsl:template match="authorgroup" mode="titlepage.mode">
   </xsl:template>
   
