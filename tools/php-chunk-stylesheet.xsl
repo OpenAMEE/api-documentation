@@ -74,6 +74,21 @@
 
     <xsl:processing-instruction name="php">
       require('<xsl:value-of select="$wordpress.dir"/>/wp-blog-header.php');
+
+      add_action('bcn_before_fill', 'add_crumbs');
+      
+      function add_crumbs($trail) {
+        $breadcrumb = new bcn_breadcrumb("<xsl:apply-templates select="$doc" mode="object.title.markup.textonly"/>");
+        array_push($trail->trail, $breadcrumb);
+        <xsl:variable name="up" select="parent::*"/>
+        <xsl:if test="count($up) != 0">
+          $breadcrumb = new bcn_breadcrumb("Documentation", '', '', '&lt;a href="/developer/docs"&gt;', true);
+          array_push($trail->trail, $breadcrumb);
+        </xsl:if>                
+        $breadcrumb = new bcn_breadcrumb("Developer", '', '', '&lt;a href="/developer"&gt;', true);
+        array_push($trail->trail, $breadcrumb);
+      }
+
       class MyPost { var $post_title = "<xsl:apply-templates select="$doc" mode="object.title.markup.textonly"/>"; }
       $wp_query->is_home = false;
       $wp_query->is_page = true;
