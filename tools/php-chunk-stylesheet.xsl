@@ -46,7 +46,7 @@
         <xsl:choose>
           <xsl:when test="ancestor::chapter">title entry-title</xsl:when>
           <xsl:when test="ancestor::appendix">title entry-title</xsl:when>
-          <xsl:when test="ancestor::bibliography">title entry-title</xsl:when>
+          <xsl:when test="ancestor-or-self::bibliography">title entry-title</xsl:when>
           <xsl:otherwise>title</xsl:otherwise>
         </xsl:choose>
       </xsl:attribute>
