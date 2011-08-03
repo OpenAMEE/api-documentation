@@ -1,16 +1,16 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version='1.0'>
 
   <xsl:param name="generate.toc">
-      appendix  toc,title
+      appendix  toc
       article/appendix  nop
       article   toc,title
       book      toc,title
-      chapter   toc,title
+      chapter   toc
       part      toc,title
       preface   toc,title
       qandadiv  toc
       qandaset  toc
-      reference toc,title
+      reference toc
       sect1     toc
       sect2     toc
       sect3     toc
@@ -116,6 +116,8 @@
         select="sect3|refentry|bridgehead[$bridgehead.in.toc != 0]"/>
     </xsl:call-template>
   </xsl:template>
+
+  <xsl:template match="section[@role='tabbed']" mode='toc'/>
 
   <xsl:template match="section[@role='tabbed']">
     <ul class='tabs'>
