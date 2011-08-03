@@ -138,12 +138,24 @@
     </ul>
     <div class='tab-bodies'>
       <xsl:for-each select="section[@role='tab']">
+        <div class="greyBoxTwoThirdsPageHeader">
+          <xsl:if test='position() != 1'>
+            <xsl:attribute name='style'>display:none</xsl:attribute>
+          </xsl:if>
+          .
+        </div>
         <div>
-          <xsl:attribute name='class'>tab-body <xsl:value-of select='title'/></xsl:attribute>
+          <xsl:attribute name='class'>tab-body greyBoxTwoThirdsPageContent <xsl:value-of select='title'/></xsl:attribute>
           <xsl:if test='position() != 1'>
             <xsl:attribute name='style'>display:none</xsl:attribute>
           </xsl:if>
           <xsl:apply-templates/>
+        </div>
+        <div class="greyBoxTwoThirdsPageFooter">
+          <xsl:if test='position() != 1'>
+            <xsl:attribute name='style'>display:none</xsl:attribute>
+          </xsl:if>
+          .
         </div>
       </xsl:for-each>
     </div>

@@ -46,14 +46,6 @@ ul.tabs li {
     border: 1px solid #AAA;
 }
 
-div.tab-body {
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
 ul.tabs li.active {
     background: white;
     border: 1px solid #AAA;
@@ -68,11 +60,6 @@ ul.tabs li a {
 
 div.tab-body h4 {
 	margin: 0px;
-}
-
-div.tab-body {
-    background: white;
-    border: 1px solid #AAA;
 }
 
 div.tab-body table {
