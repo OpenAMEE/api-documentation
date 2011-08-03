@@ -22,7 +22,8 @@
 # should be overridden if necessary to ensure proper paths are used.
 
 # Paths which you may wish to customize:
-XSLTPROC = java -cp '/opt/local/share/xsl/docbook-xsl/extensions/saxon65.jar:/opt/local/share/java/saxon.jar:${HOME}/.m2/repository/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar' \
+XSLTPROC = java -cp '/opt/local/share/xsl/docbook-xsl/extensions/saxon65.jar:/opt/local/share/java/saxon.jar:${HOME}/.m2/repository/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar:../tools/bin/xslthl-2.0.2.jar' \
+  -Dxslthl.config="file:///opt/local/share/xsl/docbook-xsl/highlighting/xslthl-config.xml" \
   -Djavax.xml.parsers.DocumentBuilderFactory=org.apache.xerces.jaxp.DocumentBuilderFactoryImpl \
   -Djavax.xml.parsers.SAXParserFactory=org.apache.xerces.jaxp.SAXParserFactoryImpl \
   -Dorg.apache.xerces.xni.parser.XMLParserConfiguration=org.apache.xerces.parsers.XIncludeParserConfiguration \
@@ -63,7 +64,7 @@ EPUB_TARGET = $(DIR)/$(OUTNAME).epub
 XML_SOURCE = $(DIR)/$(NAME).xml
 VERSION_SOURCE = $(DIR)/version.xml
 ALL_SOURCE = $(filter-out $(DIR)/version.xml $(DIR)/amee-doc.xml, $(wildcard $(DIR)/*.xml))
-STYLESHEET = $(DIR)/styles.css $(DIR)/syntax $(DIR)/script
+STYLESHEET = $(DIR)/styles.css $(DIR)/script
 INSTALL_SUBDIR = $(INSTALL_DIR)/$(NAME)
 
 ENSURE_XSL = if ! test -e "$(TOOLS_DIR)/xsl"; \

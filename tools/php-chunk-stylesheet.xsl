@@ -46,15 +46,8 @@
       get_header();
     <xsl:text>?</xsl:text></xsl:processing-instruction>
 
-    <script type="text/javascript" src="syntax/shCore.js"></script>
-    <script type="text/javascript" src="syntax/shBrushJScript.js"></script>
-    <script type="text/javascript" src="syntax/shBrushXml.js"></script>
-    <script type="text/javascript" src="syntax/shBrushRuby.js"></script>
-    <script type="text/javascript" src="syntax/shBrushPlain.js"></script>
     <script type="text/javascript" src='script/jquery-1.5.min.js'></script>
     <script type="text/javascript" src='script/tabs.js'></script>
-    <link href="syntax/shCore.css" rel="stylesheet" type="text/css" />
-    <link href="syntax/shThemeDefault.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
     .entry-meta {
             display: none!IMPORTANT;
