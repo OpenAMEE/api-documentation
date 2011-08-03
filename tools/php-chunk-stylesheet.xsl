@@ -14,6 +14,7 @@
   <xsl:param name="chunk.section.depth">0</xsl:param>
 
   <xsl:param name="toc.max.depth">2</xsl:param>
+  <xsl:param name="footer.rule">0</xsl:param>
 
   <xsl:param name="use.id.as.filename">1</xsl:param>
   <xsl:param name="chunk.first.sections">1</xsl:param>
@@ -136,6 +137,145 @@
     <xsl:text>?</xsl:text></xsl:processing-instruction>
 
     <xsl:value-of select="$chunk.append"/>
+  </xsl:template>
+    
+  <xsl:param name="local.l10n.xml" select="document('')" />
+  <l:i18n xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0">
+   <l:l10n language="en">
+    <l:gentext key="nav-home" text="Contents"/>
+   </l:l10n>
+  </l:i18n>
+  
+  <xsl:template name="footer.navigation">
+    <xsl:param name="prev" select="/foo"/>
+    <xsl:param name="next" select="/foo"/>
+    <xsl:param name="nav.context"/>
+
+    <xsl:variable name="home" select="/*[1]"/>
+    <xsl:variable name="up" select="parent::*"/>
+
+    <xsl:variable name="row1" select="count($prev) &gt; 0                                     or count($up) &gt; 0                                     or count($next) &gt; 0"/>
+
+    <xsl:variable name="row2" select="($prev and $navig.showtitles != 0)                                     or (generate-id($home) != generate-id(.)                                         or $nav.context = 'toc')                                     or ($chunk.tocs.and.lots != 0                                         and $nav.context != 'toc')                                     or ($next and $navig.showtitles != 0)"/>
+
+    <xsl:if test="$suppress.navigation = '0' and $suppress.footer.navigation = '0'">
+      <div class="navfooter">
+        <xsl:if test="$footer.rule != 0">
+          <hr/>
+        </xsl:if>
+
+        <xsl:if test="$row1">
+          <table width="100%" summary="Navigation footer">
+            <xsl:if test="$row1">
+              <tr>
+                <td width="40%" align="{$direction.align.start}">
+                  <xsl:if test="count($prev)&gt;0">
+                    <a accesskey="p">
+                      <xsl:attribute name="href">
+                        <xsl:call-template name="href.target">
+                          <xsl:with-param name="object" select="$prev"/>
+                        </xsl:call-template>
+                      </xsl:attribute>
+                      &#x00AB; <xsl:apply-templates select="$prev" mode="object.title.markup"/>
+                    </a>
+                  </xsl:if>
+                  <xsl:text>&#160;</xsl:text>
+                </td>
+                <td width="20%" align="center">
+                  <xsl:choose>
+                    <xsl:when test="$home != . or $nav.context = 'toc'">
+                      <a accesskey="h">
+                        <xsl:attribute name="href">
+                          <xsl:call-template name="href.target">
+                            <xsl:with-param name="object" select="$home"/>
+                          </xsl:call-template>
+                        </xsl:attribute>
+                        <xsl:call-template name="navig.content">
+                          <xsl:with-param name="direction" select="'home'"/>
+                        </xsl:call-template>
+                      </a>
+                      <xsl:if test="$chunk.tocs.and.lots != 0 and $nav.context != 'toc'">
+                        <xsl:text>&#160;|&#160;</xsl:text>
+                      </xsl:if>
+                    </xsl:when>
+                    <xsl:otherwise>&#160;</xsl:otherwise>
+                  </xsl:choose>
+
+                  <xsl:if test="$chunk.tocs.and.lots != 0 and $nav.context != 'toc'">
+                    <a accesskey="t">
+                      <xsl:attribute name="href">
+                        <xsl:apply-templates select="/*[1]" mode="recursive-chunk-filename">
+                          <xsl:with-param name="recursive" select="true()"/>
+                        </xsl:apply-templates>
+                        <xsl:text>-toc</xsl:text>
+                        <xsl:value-of select="$html.ext"/>
+                      </xsl:attribute>
+                      <xsl:call-template name="gentext">
+                        <xsl:with-param name="key" select="'nav-toc'"/>
+                      </xsl:call-template>
+                    </a>
+                  </xsl:if>
+                </td>
+                <td width="40%" align="{$direction.align.end}">
+                  <xsl:text>&#160;</xsl:text>
+                  <xsl:if test="count($next)&gt;0">
+                    <a accesskey="n">
+                      <xsl:attribute name="href">
+                        <xsl:call-template name="href.target">
+                          <xsl:with-param name="object" select="$next"/>
+                        </xsl:call-template>
+                      </xsl:attribute>
+                      <xsl:apply-templates select="$next" mode="object.title.markup"/> &#x00BB;
+                    </a>
+                  </xsl:if>
+                </td>
+              </tr>
+            </xsl:if>
+          </table>
+        </xsl:if>
+      </div>
+    </xsl:if>
+  </xsl:template>
+
+
+  <!--><xsl:template match="title" mode="titlepage.mode">
+    <xsl:variable name="id">
+      <xsl:choose>
+        <xsl:when test="contains(local-name(..), 'info')">
+          <xsl:call-template name="object.id">
+            <xsl:with-param name="object" select="../.."/>
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:call-template name="object.id">
+            <xsl:with-param name="object" select=".."/>
+          </xsl:call-template>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <h2 class='entry-title'>
+      <xsl:apply-templates select="." mode="common.html.attributes"/>
+      <xsl:if test="$generate.id.attributes = 0">
+        <a id="{$id}"/>
+      </xsl:if>
+      <xsl:choose>
+        <xsl:when test="$show.revisionflag != 0 and @revisionflag">
+  	<span class="{@revisionflag}">
+  	  <xsl:apply-templates mode="titlepage.mode"/>
+  	</span>
+        </xsl:when>
+        <xsl:otherwise>
+  	<xsl:apply-templates mode="titlepage.mode"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </h2>
+  </xsl:template>-->
+    
+  <xsl:template match="authorgroup" mode="titlepage.mode">
+  </xsl:template>
+  
+  <xsl:template match="copyright" mode="titlepage.mode">
   </xsl:template>
   
 </xsl:stylesheet>
