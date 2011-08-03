@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Perform Calculations</title>
+  <para>
+    Now that you're authenticated, we can start to store data and perform calculations. The first step in this is to create a profile.
+  </para>
+  <section>
+    <title>Creating a Profile</title>
+    <para>
+      As with all entities in AMEE, each profile is identified by a UID, which you will need to 
+      store in your application's database alongside any other user details you might have; if the user comes 
+      back later on, you will need the profile UID to retrieve their information again. This is because privacy 
+      and security of data are of utmost importance; all data stored in AMEE is anonymised, so you cannot retrieve 
+      profile data based on personal information.
+    </para>
+    <para>
+      To create a profile, you can send a POST request to https://stage.amee.com/profiles. You need to send the 
+      parameter profile=true in the body, as shown in the following XML example (a JSON example is shown in <xref linkend='create_profile_reference'/>):
+    </para>
+		<section role='tabbed'>
+  		<section role='tab'>
+  			<title>XML</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+POST /profiles HTTP/1.1
+Accept: application/xml
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+          <programlisting role='body'>
+profile=true
+          </programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+          </programlisting>
+          <programlisting role='xml-body'><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
+        </section>
+  		</section>
+  	</section>
+  	<para>
+      The important part of this response is the UID attribute in the Profile tag, which in this case has the 
+      value YLLIKH73BDYS. This is the UID for the newly-created profile, and forms part of the URL for
+      subsequent requests that use that profile.
+   </para>
+   <para>     
+     A profile contains a hierarchy of profile categories, which split up the data that you can store into 
+     contextual areas, similar to a folder structure on disk. Top-level categories include such broad sections 
+     as "Home", "Business", "Transport", and so on. Each category can contain any number of other categories
+      and some categories (the lower-level ones normally) can contain profile items. These are a bit like files, 
+      and are where you actually store your energy data.
+   </para>
+  </section>
+  <section>
+    <title>Adding a Profile Item</title>
+    <para>
+      Once you've selected the category where you want to store your energy data, you will want to create a profile
+      item to store that data. To do this, simply POST to the category URL with an appropriate set of parameters, 
+      and your data will be stored in a newly-created profile item. For example, to store some energy data in the 
+      /transport/defra/fuel category, you would send the following request:
+    </para>
+		<section role='tabbed'>
+		  <section role='tab'>
+  			<title>Example</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+POST /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
+Accept: application/json, application/xml
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+          <programlisting role='body'>
+dataItemUid=19B311DDF0B1&amp;volume=500&amp;startDate=2011-01-05T00%3A00%3A00%2B00%3A00
+          </programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+HTTP/1.1 201 CREATED
+Location: https://{server}.amee.com/profiles/4737069901D3/home/energy/quantity/F0638HOIFC1H
+Content-Type: text/plain
+          </programlisting>
+			  </section>
+  		</section>
+		</section>
+		<para>
+      If the request is successful, you get back a 201 CREATED response, with the location of the 
+      newly-created item. There are a few things to note here, particularly the parameters in the 
+      POST request. The first is dataItemUid, which specifies exactly what type of data you wish to 
+      store in the category (in this case, the type of fuel). We will come back to this in more 
+      detail in a moment. The second is volume, which is a profile item value specific 
+      to this category. As each category can store a different type of data, the profile item values 
+      are different for each one, and we will go into more detail on how you can find our which ones
+      to use in each category later on. However, in this case, the call will store a value of 500 litres 
+      for this item. Note that you can select the units you wish to use with your POST - 
+      see <xref linkend='units' /> for details.
+    </para>
+    <para>
+      There is one other option, which is useful in many cases. If you pass representation=full as an 
+      extra parameter in the POST request, you will get back a representation of the newly-created item, 
+      rather than just the location. If you want to get back the CO2 value of the data you have just 
+      stored, you will want to do this. The XML representation looks just like a GET response:
+    </para>
+		<section role='tabbed'>
+  		<section role='tab'>
+  			<title>XML</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+POST /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
+Accept: application/xml
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+          <programlisting role='body'>
+dataItemUid=19B311DDF0B1&amp;volume=500&amp;startDate=2011-01-05T00%3A00%3A00%2B00%3A00
+&amp;representation=full
+          </programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+HTTP/1.1 201 CREATED
+Content-Type: application/xml; charset=UTF-8
+          </programlisting>
+          <programlisting role='xml-body'><xi:include href='samples/xml/create_profile_item.xml' parse="text"/></programlisting>
+        </section>
+  		</section>
+  	</section>
+  	<para>
+      Note the ProfileItem tag. It contains all the details of the new item. The item values are 
+      representations of the stored parameters from your POST request. In this case, the item value is volume, 
+      and the value is 500. Unit and PerUnit show the units for this item value, in this case litres.
+    </para>
+    <para>
+      You can store thousands of different types of energy use in AMEE by finding the appropriate category and
+      creating the right items. By setting various parameters, you can store different data values at different
+      times, or in different units. We will go into some of these options in the following sections, but first, let's 
+      find out how to find out what the actual emissions from our calculation are.
+    </para>
+  </section>
+  <section>
+    <title>Getting Results</title>
+	<para>The Amount tag simply shows the effective amount of CO2 emitted by the energy used. So, in this case, if you used 500 litres of gas, you would emit 1161.0kg of CO2.</para>
+	<para>The Amounts tag shows separately the amounts of other greenhouse gases emitted, by name, often together with an equivalent amount of CO2 that would have the same climate impact, and other outputs of interest. The exact set of outputs varies from category to category, as documented in AMEEdiscover. In this case we see that 1150.9kg of CO2, plus varying amounts of other gases, produce the 1161.0kg of climate-equivalent CO2, or CO2e.</para>
+  </section>
+  <section>
+    <title>Selecting a Data Item</title>
+<para>As a neutral aggregation platform, AMEE makes available a number of different methodologies for carbon calculation, which use different calculation techniques, different inputs, and different levels of accuracy. The choice of which of these to use will be up to you, and should be one of the first things you will decide when you come to use the platform. It will depend on your reporting requirements, legal requirements, and so on.</para>
+<para>Every category within AMEE is individually documented in AMEEdiscover. This documentation describes the functionality of each category, the source of any data or calculating methodologies, relationships with other AMEE categories, and provides instructions for how to use the category to store relevant data and make emissions calculations. AMEEdiscover provides powerful search and tagging capabilities, making it easy to discover the categories and data items you wish to use. It also provides the ability to perform instant calculations directly in your browser, so you can easily check your results, and the ability to generate example code for how to use AMEEconnect to access those categories.</para>
+  </section>
+</chapter>

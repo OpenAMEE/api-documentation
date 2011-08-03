@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Resources>
+  <DrillDownResource>
+    <DataCategory uid="87E55DA88017">
+      ...
+    </DataCategory>
+    <ItemDefinition uid="123C4A18B5D6"/>
+    <Selections/>
+    <Choices>
+      <Name>fuel</Name>
+      <Choices>
+        <Choice>
+          <Name>average</Name>
+          <Value>average</Value>
+        </Choice>
+        <Choice>
+          <Name>cng</Name>
+          <Value>cng</Value>
+        </Choice>
+        <Choice>
+          <Name>diesel</Name>
+          <Value>diesel</Value>
+        </Choice>
+        <Choice>
+          <Name>lpg</Name>
+          <Value>lpg</Value>
+        </Choice>
+        <Choice>
+          <Name>petrol</Name>
+          <Value>petrol</Value>
+        </Choice>
+        <Choice>
+          <Name>petrol hybrid</Name>
+          <Value>petrol hybrid</Value>
+        </Choice>
+      </Choices>
+    </Choices>
+  </DrillDownResource>
+</Resources>

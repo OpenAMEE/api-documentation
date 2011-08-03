@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Advanced Options</title>
+  <section>
+    <title>Units</title>
+    <para>
+      As mentioned above, AMEEconnect includes built-in support for a wide range of unit conversions. Most units 
+      are SI by default, but if you want to specify fuel in US gallons instead, you can. Time units can also 
+      be changed. Each parameter in a profile item has associated Unit and PerUnit parameters which control 
+      these. For instance, if you wanted to use the default units for fuel, you could add a fuel purchase with 
+      the following parameter, which would represent a fuel usage of 100 litres per month.
+    </para>
+    <programlisting>volume=100</programlisting>
+    <para>
+      If, however, you are measuring in gallons on a weekly basis, you could specify the following parameters:
+    </para>
+    <programlisting>volume=100&amp;volumeUnit=gal&amp;volumePerUnit=week</programlisting>
+    <para>
+      All unit conversion calculations are automatically handled by AMEEconnect, giving you the correct 
+      results for your application with the minimum of effort.
+    </para>      
+  </section>
+  <section>
+    <title>Authenticated Sessions</title>
+    <para>
+      If you do not wish to use HTTP Basic authentication with each request, you can create an
+      authenticated session. You will need to make a POST request to 
+      https://stage.amee.com/auth, providing your username and password as form-encoded data in the request 
+      body. You also need to specify which format you want the result in (XML or JSON) using a standard 
+      "Accept" header. The response to this request includes various pieces of information, but the most 
+      important is the authentication token, which is returned both as a cookie and as a custom header, 
+      both called "authToken". You should store this authToken value and include it as a cookie in any 
+      subsequent requests. The authToken will expire after two hours, or if unused for half an 
+      hour. Therefore, if you are using authenticated sessions, your application should always be prepared 
+      to re-authorise on any request, should the authToken expire.    
+    </para>
+  </section>
+  <section>
+    <title>Time Series</title>
+    <para>
+      Storing a single profile item is useful, but most data changes over time, particularly 
+      when we are talking about energy use. AMEE allows you to store time information along 
+      with your data, so that you can build up a series of data points over time.
+    </para>
+    <section>
+      <title>Naming Profile Items</title>
+      <para>
+        If you create two profile items with the same data item UID, and which overlap the same 
+        time, then AMEEconnect will complain as it can't form a sensible time series from the 
+        data. However, there are cases in which you might want to do this; energy used by two 
+        cars of the same type, for instance. In this case, you can provide a name parameter to 
+        identify each series. You can build up multiple histories in the same profile category 
+        by using different names for each one. A name is not required, but if you suspect that 
+        you will want to store multiple time series alongside each other, it is good practise 
+        to specify one.
+      </para>
+    </section>
+    <section>
+      <title>Start &amp; End Dates</title>
+      <para>
+        Three parameters are available to control time information, startDate, endDate, and 
+        duration. By providing these when you create profile items, you can set the time 
+        that the created profile item is valid for. By default, startDate is "now" and 
+        endDate is infinitely far in the future. If your data is not time-sensitive, then 
+        this will be fine. However, if your data represents usage at a particular time, you 
+        can set the values explicitly. The maximum time resolution of the AMEE platform is 1 
+        minute. If seconds are specified, they are rounded down. Note that you can't set 
+        endDate and duration at the same time.
+      </para>
+      <para>
+        All these parameters are specified in standard ISO-8601 format. For instance, the 
+        following would all be valid parameters (when correctly form-encoded):
+      </para>
+      <programlisting>startDate=2009-08-01T14:30:55Z
+endDate=2009-08-02T14:30:55-08:00
+duration=PT30S</programlisting>
+    </section>
+    <section>
+      <title>Time Series Queries</title>
+      <para>
+        Once you have built up a time series, you will probably want to retrieve historical 
+        data. Above, we saw that profile categories include a list of current profile items. 
+        This "present time" behaviour can be modified by providing startDate and endDate query 
+        parameters in the GET request. You can request all data between particular dates, 
+        everything that starts after a certain time, or numerous other methods, including a 
+        "prorata" mode which calculates the amount of carbon emitted during only the queried 
+        time period.
+      </para>
+    </section>
+    <section>
+      <title>Data Item Value History</title>
+    </section>
+  </section>
+  <section>
+    <title>Return Units</title>
+    <para>
+      Similar to input units, the CO2 emission results generated by AMEE have default units of kg/year. If you 
+      prefer pounds per week, you can specify some special parameters in your GET requests:
+    </para>
+    <programlisting>https://stage.amee.com/profiles/7C7D68C2A7CD/home/energy/quantity?returnUnit=lb&amp;returnPerUnit=week</programlisting>
+  </section>
+  <section id='paging'>
+    <title>Paging</title>
+	<para>
+	    Many resources in AMEE are capable of containing a large number of sub-resources, for instance 
+	    profile categories can contain many profile items. Retrieving them all in one request may be prohibitively
+	    expensive, so for this reason such resources are paged. Details of how to page through items in AMEE are provided at <xref linkend="paging_reference"/>.
+	  </para>
+  </section>
+</chapter>
+

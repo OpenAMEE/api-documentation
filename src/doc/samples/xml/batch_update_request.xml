@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProfileCategory>
+  <ProfileItems>
+    <ProfileItem>
+      <profileItemUid>71AFED5FEFE9</profileItemUid>
+      <volumePerTime>300</volumePerTime>
+    </ProfileItem>
+    <ProfileItem>
+      <profileItemUid>23133CF30A35</profileItemUid>
+      <distance>400</distance>
+    </ProfileItem>
+  </ProfileItems>
+</ProfileCategory>

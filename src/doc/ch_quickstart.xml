@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Quick Start</title>
+  <section>
+    <title>Obtaining an API Key</title>
+    <para>
+      The first step towards using the AMEE platform is to sign up for an access key. You can do this for free
+      at <ulink url="http://my.amee.com/signup"/>. Enter your details, and you will be emailed an API key, 
+      as well as links to documentation and other relevant resources.
+    </para>
+    <para>
+      This key will give you access to the AMEE stage platform (stage.amee.com). This platform is free for
+      you to use while you are developing and testing your client application. However, the data on it is
+      regularly wiped, so once you decide your application is ready to go into production, you will need to
+      change over to using the AMEE live platform (live.amee.com, here service fees may apply).
+    </para>
+    <para>
+      Throughout the documentation, the examples will use the AMEE stage platform URL.
+    </para>
+  </section>
+  <section>
+    <title>Authentication</title>
+    <para>
+      Once you've got your key, you're ready to start talking to the API itself, and the first step is 
+      authentication. There are two methods of authenticating with the API; using HTTP Basic, or by 
+      creating an authenticated session.
+    </para>
+    <section>
+      <title>HTTP Basic</title>
+      <para>
+        HTTP Basic authentication is extremely simple. You simply provide your username and password with every 
+        request, using the standard HTTP format. Most HTTP libraries will support this functionality; as an 
+        example, the following code shows this process in Ruby:
+      </para>
+      <programlisting role='ruby'>
+http = Net::HTTP.new @host, 443
+http.use_ssl = true
+req = Net::HTTP::Get.new @location
+req.basic_auth @username, @password
+http.request(req)
+      </programlisting>
+      <para>
+        You should only use HTTP Basic authentication if you are connecting to AMEEconnect over SSL. (Using
+        SSL is recommended, and all examples in this manual use it.)
+      </para>
+    </section>
+  </section>
+  <section>
+    <title>Content Types</title>
+  </section>
+</chapter>

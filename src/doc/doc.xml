@@ -7,31 +7,77 @@
 ]>
 
 <book id="amee" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>AMEE API Documentation</title>
+  <title>AMEEconnect Documentation</title>
 
   <bookinfo>
 
-    <subtitle>API Version 2.x</subtitle>
+    <subtitle>API version 2</subtitle>
 
     <authorgroup>
       <author>
-        <firstname>James</firstname>
-        <surname>Smith</surname>
+        <firstname>Diggory</firstname>
+        <surname>Briercliffe</surname>
       </author>
       <author>
         <firstname>Andrew</firstname>
         <surname>Hill</surname>
       </author>
+      <author>
+        <firstname>James</firstname>
+        <surname>Smith</surname>
+      </author>
     </authorgroup>
 
     <copyright>
-      <year>2010</year>
+      <year>2007-2011</year>
       <holder>AMEE UK Ltd.</holder>
     </copyright>
 
   </bookinfo>
 
-  <xi:include href="app01-reference.xml" />
-  <xi:include href="index.xml" />
+  <xi:include href='ch_introduction.xml'/>
+  <xi:include href='ch_quickstart.xml'/>
+  <xi:include href='ch_data.xml'/>
+  <xi:include href='ch_calculations.xml'/>
+  <xi:include href='ch_profiles.xml'/>
+  <!--><xi:include href='ch_advanced.xml'/>-->
+
+  <appendix>
+    <title>Profile Reference</title>
+    <para>
+      AMEEconnect profiles are used to store user data and perform calculations.
+    </para>
+    <xi:include href='ref_profiles.xml'/>
+    <xi:include href='ref_profile_items.xml'/>
+    <xi:include href='ref_profile_batch.xml'/>
+  </appendix>
+
+  <appendix>
+    <title>Data Reference</title>
+    <para>
+      AMEEconnect provides reference-style access to data categories and items 
+      curated by AMEE. It also provides drilldown resources to allow interactive or automatic 
+      selection of data items by client applications.
+    </para>
+    <xi:include href='ref_data_categories.xml'/>
+    <xi:include href='ref_data_items.xml'/>
+    <xi:include href='ref_data_item_values.xml'/>
+  </appendix>
+
+  <appendix>
+    <title>Common Concepts Reference</title>
+    <para>
+      There are a number of concepts that are used by different resources across AMEEconnect. This
+      appendix provides a reference for them.
+    </para>
+    <xi:include href='ref_authentication.xml'/>
+    <xi:include href='ref_uids.xml'/>
+    <xi:include href='ref_paging.xml'/>
+    <xi:include href='ref_dates.xml'/>
+  </appendix>
+
+  <xi:include href='bibliography.xml'/>
+
+  <!-- <index id="amee.index"/> -->
 
 </book>

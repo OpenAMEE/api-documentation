@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Resources xmlns="http://schemas.amee.cc/2.0">
+ <ProfileCategoryResource>
+  <Path>/transport/defra/fuel</Path>
+  <Profile uid="YLLIKH73BDYS"/>
+  <Environment created="Fri Jul 27 08:30:44 UTC 2007" modified="Fri Jul 27 08:30:44 UTC 2007" uid="5F5887BCF726">
+   <Name>AMEE</Name>
+   <Path/>
+   <Description/>
+   <Owner/>
+   <ItemsPerPage>10</ItemsPerPage>
+   <ItemsPerFeed>10</ItemsPerFeed>
+  </Environment>
+  <DataCategory uid="138B5405E0CE">
+   <Name>Fuel</Name>
+   <Path>fuel</Path>
+   <Deprecated>false</Deprecated>
+  </DataCategory>
+  <ProfileCategories/>
+  <ProfileItems>
+   <ProfileItem created="2011-03-08T13:56:01Z" modified="2011-03-08T13:56:01Z" uid="F0638HOIFC1H">
+    <Name/>
+    <ItemValues>
+     <ItemValue uid="42ROH1HOI2BE">
+      <Path>mass</Path>
+      <Name>Mass of fuel consumed</Name>
+      <Value/>
+      <Unit>kg</Unit>
+      <PerUnit/>
+      <StartDate>2011-03-08T13:56:00Z</StartDate>
+      <ItemValueDefinition uid="50151C2D0B90">
+       <Path>mass</Path>
+       <Name>Mass of fuel consumed</Name>
+       <ValueDefinition created="2007-07-27 07:30:44.0" modified="2007-07-27 07:30:44.0" uid="45433E48B39F">
+        <Name>amount</Name>
+        <ValueType>DECIMAL</ValueType>
+        <Description/>
+        <Environment uid="5F5887BCF726"/>
+       </ValueDefinition>
+       <Unit>kg</Unit>
+       <FromProfile>true</FromProfile>
+       <FromData>false</FromData>
+       <DrillDown>false</DrillDown>
+      </ItemValueDefinition>
+     </ItemValue>
+     <ItemValue uid="U9J6XCMJT07I">
+      <Path>volume</Path>
+      <Name>Volume of fuel consumed</Name>
+      <Value>500</Value>
+      <Unit>L</Unit>
+      <PerUnit/>
+      <StartDate>2011-03-08T13:56:00Z</StartDate>
+      <ItemValueDefinition uid="93899EF4E3AF">
+       <Path>volume</Path>
+       <Name>Volume of fuel consumed</Name>
+       <ValueDefinition created="2007-07-27 07:30:44.0" modified="2007-07-27 07:30:44.0" uid="45433E48B39F">
+        <Name>amount</Name>
+        <ValueType>DECIMAL</ValueType>
+        <Description/>
+        <Environment uid="5F5887BCF726"/>
+       </ValueDefinition>
+       <Unit>L</Unit>
+       <FromProfile>true</FromProfile>
+       <FromData>false</FromData>
+       <DrillDown>false</DrillDown>
+      </ItemValueDefinition>
+     </ItemValue>
+    </ItemValues>
+    <Amount unit="kg/year">1161.0</Amount>
+    <Amounts>
+     <Amount default="true" perUnit="" type="totalDirectCO2e" unit="kg">1161.0</Amount>
+     <Amount perUnit="" type="lifeCycleCO2e" unit="kg">1366.45</Amount>
+     <Amount perUnit="" type="CO2" unit="kg">1150.9</Amount>
+     <Amount perUnit="" type="nitrousOxideCO2e" unit="kg">7.8</Amount>
+     <Amount perUnit="" type="methaneCO2e" unit="kg">2.3</Amount>
+     <Amount perUnit="" type="indirectCO2e" unit="kg">205.45</Amount>
+     <Note type="comment">This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation</Note>
+    </Amounts>
+    <StartDate>2011-03-08T13:56:00Z</StartDate>
+    <EndDate/>
+    <DataItem uid="19B311DDF0B1">
+     <Label>petrol</Label>
+    </DataItem>
+   </ProfileItem>
+  </ProfileItems>
+  <Pager>
+   <Start>0</Start>
+   <From>1</From>
+   <To>1</To>
+   <Items>1</Items>
+   <CurrentPage>1</CurrentPage>
+   <RequestedPage>1</RequestedPage>
+   <NextPage>-1</NextPage>
+   <PreviousPage>-1</PreviousPage>
+   <LastPage>1</LastPage>
+   <ItemsPerPage>10</ItemsPerPage>
+   <ItemsFound>1</ItemsFound>
+  </Pager>
+  <TotalAmount unit="kg/year">1161.0</TotalAmount>
+ </ProfileCategoryResource>
+</Resources>

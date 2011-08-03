@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
+[
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % dbcent PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/opt/local/share/xml/docbook/4.5/dbcentx.mod">
+%dbcent;
+]>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Date and Time Representation</title>
+	<para>
+	  AMEEconnect has many parameters and fields which use dates and times. This section summarises the representation of those parameters.
+  </para>
+  <section id='date_reference'>
+    <title>Dates/Times</title>
+    <para>
+      AMEEconnect allows very fine time resolutions, down to the minute. Dates/Times are represented in the standard IS0 8601<biblioref linkend="ISO8601"/> format:
+    </para>
+    <programlisting>YYYY-MM-DDThh:mm:ssTZD</programlisting>
+    <para>
+      For example:
+    </para>
+    <itemizedlist>
+      <listitem>2009-08-01T14:30:55Z (UTC)</listitem>
+      <listitem>2009-08-01T14:30:55+00:00 (GMT)</listitem>
+      <listitem>2009-08-01T14:30:55-08:00 (GMT-8) </listitem>
+    </itemizedlist>
+  </section>
+  <section id='duration_reference'>
+    <title>Durations</title>
+    <para>
+      Durations are also used in some paramters. These are also represented in IS0 8601<biblioref linkend="ISO8601"/> format:
+    </para>
+    <programlisting>PnYnMnDTnHnMnS</programlisting>
+    <para>
+      Parts of the duration which are 0 are optional. For example:
+    </para>
+    <itemizedlist>
+      <listitem>P10Y (10 years)</listitem>
+      <listitem>PT30S (30 seconds)</listitem>
+      <listitem>P14DT12H10M (14 days, 12 hours, 10 minutes)</listitem>
+    </itemizedlist>
+  </section>
+</section>
