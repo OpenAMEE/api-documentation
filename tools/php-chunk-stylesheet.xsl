@@ -13,7 +13,7 @@
   <xsl:param name="chunker.output.indent" select="'yes'"/>
   <xsl:param name="chunk.section.depth">0</xsl:param>
 
-  <xsl:param name="toc.section.depth">0</xsl:param>
+  <xsl:param name="toc.max.depth">2</xsl:param>
 
   <xsl:param name="use.id.as.filename">1</xsl:param>
   <xsl:param name="chunk.first.sections">1</xsl:param>
@@ -24,6 +24,41 @@
 
   <xsl:param name="wordpress.dir">/var/www/www.amee.com</xsl:param>
 
+  <!-- customised header output to add a style to chapter titles -->
+  <xsl:template name="component.title">
+    <xsl:param name="node" select="."/>
+    <xsl:variable name="level">
+      <xsl:choose>
+        <xsl:when test="ancestor::section">
+          <xsl:value-of select="count(ancestor::section)+1"/>
+        </xsl:when>
+        <xsl:when test="ancestor::sect5">6</xsl:when>
+        <xsl:when test="ancestor::sect4">5</xsl:when>
+        <xsl:when test="ancestor::sect3">4</xsl:when>
+        <xsl:when test="ancestor::sect2">3</xsl:when>
+        <xsl:when test="ancestor::sect1">2</xsl:when>
+        <xsl:otherwise>1</xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <xsl:element name="h{$level+1}">
+      <xsl:attribute name="class">
+        <xsl:choose>
+          <xsl:when test="ancestor::chapter">title entry-title</xsl:when>
+          <xsl:when test="ancestor::appendix">title entry-title</xsl:when>
+          <xsl:when test="ancestor::bibliography">title entry-title</xsl:when>
+          <xsl:otherwise>title</xsl:otherwise>
+        </xsl:choose>
+      </xsl:attribute>
+      <xsl:call-template name="anchor">
+        <xsl:with-param name="node" select="$node"/>
+        <xsl:with-param name="conditional" select="0"/>
+      </xsl:call-template>
+      <xsl:apply-templates select="$node" mode="object.title.markup">
+        <xsl:with-param name="allow-anchors" select="1"/>
+      </xsl:apply-templates>
+    </xsl:element>
+  </xsl:template>
+  
   <xsl:template name="chunk-element-content">
     <xsl:param name="prev"/>
     <xsl:param name="next"/>
