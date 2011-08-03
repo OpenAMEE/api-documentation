@@ -3,7 +3,7 @@
   "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Performing Calculations</title>
+  <title>Perform Calculations</title>
   <para>
     Now that you're authenticated, we can start to store data and perform calculations. The first step in this is to create a profile.
   </para>

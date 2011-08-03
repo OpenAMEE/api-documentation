@@ -3,5 +3,5 @@
   "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Accessing Emission Factors</title>
+  <title>Get Emission Factors</title>
 </chapter>
