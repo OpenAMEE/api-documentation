@@ -4,4 +4,60 @@
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Store Data</title>
+  <section>
+    <title>Time Series</title>
+    <para>
+      Storing a single profile item is useful, but most data changes over time, particularly 
+      when we are talking about energy use. AMEE allows you to store time information along 
+      with your data, so that you can build up a series of data points over time.
+    </para>
+    <section>
+      <title>Naming Profile Items</title>
+      <para>
+        If you create two profile items with the same data item UID, and which overlap the same 
+        time, then AMEEconnect will complain, as it can't form a sensible time series from the 
+        data. However, there are cases in which you might want to do this; energy used by two 
+        cars of the same type, for instance. In this case, you can provide a name parameter to 
+        identify each series. You can build up multiple histories in the same profile category 
+        by using different names for each one. A name is not required, but if you suspect that 
+        you will want to store multiple time series alongside each other, it is good practise 
+        to specify one.
+      </para>
+    </section>
+    <section>
+      <title>Start &amp; End Dates</title>
+      <para>
+        Three parameters are available to control time information, startDate, endDate, and 
+        duration. By providing these when you create profile items, you can set the time 
+        that the created profile item is valid for. By default, startDate is "now" and 
+        endDate is infinitely far in the future. If your data is not time-sensitive, then 
+        this will be fine. However, if your data represents usage at a particular time, you 
+        can set the values explicitly. The maximum time resolution of the AMEE platform is 1 
+        minute. If seconds are specified, they are rounded down. Note that you can't set 
+        endDate and duration at the same time.
+      </para>
+      <para>
+        All these parameters are specified in standard ISO-8601 format. For instance, the 
+        following would all be valid parameters (when correctly form-encoded):
+      </para>
+      <programlisting>startDate=2009-08-01T14:30:55Z
+endDate=2009-08-02T14:30:55-08:00
+duration=PT30S</programlisting>
+    </section>
+    <section>
+      <title>Time Series Queries</title>
+      <para>
+        Once you have built up a time series, you will probably want to retrieve historical 
+        data. Above, we saw that profile categories include a list of current profile items. 
+        This "present time" behaviour can be modified by providing startDate and endDate query 
+        parameters in the GET request. You can request all data between particular dates, 
+        everything that starts after a certain time, or numerous other methods, including a 
+        "prorata" mode which calculates the amount of carbon emitted during only the queried 
+        time period.
+      </para>
+    </section>
+    <!--<section>
+      <title>Data Item Value History</title>
+    </section>-->
+  </section>
 </chapter>

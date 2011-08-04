@@ -4,4 +4,21 @@
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Get Emission Factors</title>
+  <section>
+    <title>Selecting a Data Item</title>
+      <para>As a neutral aggregation platform, AMEE makes available a number of different methodologies for 
+        carbon calculation, which use different calculation techniques, different inputs, and different levels 
+        of accuracy. The choice of which of these to use will be up to you, and should be one of the first things 
+        you will decide when you come to use the platform. It will depend on your reporting requirements, legal 
+        requirements, and so on.
+      </para>
+      <para>Every category within AMEE is individually documented in AMEEdiscover. This documentation describes 
+        the functionality of each category, the source of any data or calculating methodologies, relationships 
+        with other AMEE categories, and provides instructions for how to use the category to store relevant data 
+        and make emissions calculations. AMEEdiscover provides powerful search and tagging capabilities, making 
+        it easy to discover the categories and data items you wish to use. It also provides the ability to perform 
+        instant calculations directly in your browser, so you can easily check your results, and the ability to 
+        generate example code for how to use AMEEconnect to access those categories.
+      </para>
+  </section>
 </chapter>

@@ -42,6 +42,27 @@ Content-Type: application/xml; charset=UTF-8
           <programlisting role='xml-body'><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
         </section>
   		</section>
+  		<section role='tab'>
+  			<title>JSON</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+POST /profiles HTTP/1.1
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+          <programlisting role='body'>
+profile=true
+          </programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+          </programlisting>
+          <programlisting role='json-body'><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
+        </section>
+  		</section>
   	</section>
   	<para>
       The important part of this response is the UID attribute in the Profile tag, which in this case has the 
@@ -128,6 +149,28 @@ Content-Type: application/xml; charset=UTF-8
           <programlisting role='xml-body'><xi:include href='samples/xml/create_profile_item.xml' parse="text"/></programlisting>
         </section>
   		</section>
+  		<section role='tab'>
+  			<title>JSON</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+POST /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+          <programlisting role='body'>
+dataItemUid=19B311DDF0B1&amp;volume=500&amp;startDate=2011-01-05T00%3A00%3A00%2B00%3A00
+&amp;representation=full
+          </programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+HTTP/1.1 201 CREATED
+Content-Type: application/json; charset=UTF-8
+          </programlisting>
+          <programlisting role='json-body'><xi:include href='samples/json/create_profile_item.js' parse="text"/></programlisting>
+        </section>
+  		</section>
   	</section>
   	<para>
       Note the ProfileItem tag. It contains all the details of the new item. The item values are 
@@ -145,10 +188,5 @@ Content-Type: application/xml; charset=UTF-8
     <title>Getting Results</title>
 	<para>The Amount tag simply shows the effective amount of CO2 emitted by the energy used. So, in this case, if you used 500 litres of gas, you would emit 1161.0kg of CO2.</para>
 	<para>The Amounts tag shows separately the amounts of other greenhouse gases emitted, by name, often together with an equivalent amount of CO2 that would have the same climate impact, and other outputs of interest. The exact set of outputs varies from category to category, as documented in AMEEdiscover. In this case we see that 1150.9kg of CO2, plus varying amounts of other gases, produce the 1161.0kg of climate-equivalent CO2, or CO2e.</para>
-  </section>
-  <section>
-    <title>Selecting a Data Item</title>
-<para>As a neutral aggregation platform, AMEE makes available a number of different methodologies for carbon calculation, which use different calculation techniques, different inputs, and different levels of accuracy. The choice of which of these to use will be up to you, and should be one of the first things you will decide when you come to use the platform. It will depend on your reporting requirements, legal requirements, and so on.</para>
-<para>Every category within AMEE is individually documented in AMEEdiscover. This documentation describes the functionality of each category, the source of any data or calculating methodologies, relationships with other AMEE categories, and provides instructions for how to use the category to store relevant data and make emissions calculations. AMEEdiscover provides powerful search and tagging capabilities, making it easy to discover the categories and data items you wish to use. It also provides the ability to perform instant calculations directly in your browser, so you can easily check your results, and the ability to generate example code for how to use AMEEconnect to access those categories.</para>
   </section>
 </chapter>
