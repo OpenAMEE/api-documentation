@@ -206,7 +206,7 @@ dataItemUid=19B311DDF0B1&amp;volume=500&amp;startDate=2011-01-05T00%3A00%3A00%2B
         <section role='httpresponse'>
           <programlisting role='header'>
 HTTP/1.1 201 CREATED
-Location: https://{server}.amee.com/profiles/4737069901D3/home/energy/quantity/F0638HOIFC1H
+Location: https://{server}.amee.com/profiles/YLLIKH73BDYS/transport/defra/fuel/F0638HOIFC1H
 Content-Type: text/plain
           </programlisting>
 			  </section>

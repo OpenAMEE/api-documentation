@@ -80,7 +80,7 @@
       }
     ],
     "amount": {
-      "value": 1161,
+      "value": 1155.85,
       "unit": "kg/year"
     },
     "startDate": "2011-03-08T13:56:00Z",
@@ -90,12 +90,12 @@
         {
           "default": "true",
           "type": "totalDirectCO2e",
-          "value": 1161,
+          "value": 1155.85,
           "unit": "kg"
         },
         {
           "type": "lifeCycleCO2e",
-          "value": 1366.45,
+          "value": 1361.35,
           "unit": "kg"
         },
         {
@@ -105,17 +105,17 @@
         },
         {
           "type": "nitrousOxideCO2e",
-          "value": 7.8,
+          "value": 3.25,
           "unit": "kg"
         },
         {
           "type": "methaneCO2e",
-          "value": 2.3,
+          "value": 1.7,
           "unit": "kg"
         },
         {
           "type": "indirectCO2e",
-          "value": 205.45,
+          "value": 205.5,
           "unit": "kg"
         }
       ],

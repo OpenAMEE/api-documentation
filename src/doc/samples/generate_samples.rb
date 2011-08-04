@@ -87,6 +87,8 @@ end
 formats.each do |format|
   uid = nil
   begin
+    # Get drill
+    save 'fuel_drill', format, connections[format].get('/data/transport/defra/fuel/drill?fuel=petrol').body
     # Get a profile category with items
     save 'get_profile_category', format, connections[format].get('/profiles/YLLIKH73BDYS/transport/defra/fuel').body
     # Get an existing profile item

@@ -2,10 +2,10 @@
   "profile": {
     "uid": "YLLIKH73BDYS"
   },
-  "path": "/transport/defra/fuel/9UY7CR57O59V",
+  "path": "/transport/defra/fuel/5C61SFIV391I",
   "profileItem": {
     "name": "json_example",
-    "modified": "2011-03-08T13:59:03Z",
+    "modified": "2011-08-04T17:16:07Z",
     "dataCategory": {
       "name": "Fuel",
       "uid": "138B5405E0CE",
@@ -41,7 +41,7 @@
         "displayName": "Mass of fuel consumed",
         "perUnit": "",
         "startDate": "2011-01-05T00:00:00Z",
-        "uid": "TV1542A62T96",
+        "uid": "QMIFK54JE3PE",
         "value": "",
         "unit": "kg",
         "path": "mass",
@@ -72,7 +72,7 @@
         "displayName": "Volume of fuel consumed",
         "perUnit": "",
         "startDate": "2011-01-05T00:00:00Z",
-        "uid": "9F90AKHD7CMG",
+        "uid": "XO51RT4VSAB9",
         "value": "1000",
         "unit": "L",
         "path": "volume",
@@ -80,22 +80,22 @@
       }
     ],
     "amount": {
-      "value": 2322,
+      "value": 2311.7,
       "unit": "kg/year"
     },
     "startDate": "2011-01-05T00:00:00Z",
-    "uid": "9UY7CR57O59V",
+    "uid": "5C61SFIV391I",
     "amounts": {
       "amount": [
         {
           "default": "true",
           "type": "totalDirectCO2e",
-          "value": 2322,
+          "value": 2311.7,
           "unit": "kg"
         },
         {
           "type": "lifeCycleCO2e",
-          "value": 2732.9,
+          "value": 2722.7,
           "unit": "kg"
         },
         {
@@ -105,17 +105,17 @@
         },
         {
           "type": "nitrousOxideCO2e",
-          "value": 15.6,
+          "value": 6.5,
           "unit": "kg"
         },
         {
           "type": "methaneCO2e",
-          "value": 4.6,
+          "value": 3.4,
           "unit": "kg"
         },
         {
           "type": "indirectCO2e",
-          "value": 410.9,
+          "value": 411,
           "unit": "kg"
         }
       ],
@@ -145,7 +145,7 @@
       "uid": "80DB1AB8141F"
     },
     "endDate": "",
-    "created": "2011-03-08T13:59:03Z"
+    "created": "2011-08-04T17:16:07Z"
   },
   "apiVersion": "2.0"
 }

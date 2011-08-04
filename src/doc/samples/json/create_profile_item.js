@@ -1,7 +1,7 @@
 {
   "profileItems": [
     {
-      "modified": "2011-03-08T13:59:03Z",
+      "modified": "2011-08-04T17:16:07Z",
       "name": "json_example",
       "itemValues": [
         {
@@ -29,7 +29,7 @@
           "displayName": "Mass of fuel consumed",
           "perUnit": "",
           "startDate": "2011-01-05T00:00:00Z",
-          "uid": "TV1542A62T96",
+          "uid": "QMIFK54JE3PE",
           "value": "",
           "unit": "kg",
           "path": "mass",
@@ -60,7 +60,7 @@
           "displayName": "Volume of fuel consumed",
           "perUnit": "",
           "startDate": "2011-01-05T00:00:00Z",
-          "uid": "9F90AKHD7CMG",
+          "uid": "XO51RT4VSAB9",
           "value": "500",
           "unit": "L",
           "path": "volume",
@@ -68,11 +68,11 @@
         }
       ],
       "amount": {
-        "value": 1161,
+        "value": 1155.85,
         "unit": "kg/year"
       },
       "startDate": "2011-01-05T00:00:00Z",
-      "uid": "9UY7CR57O59V",
+      "uid": "5C61SFIV391I",
       "dataItem": {
         "Label": "petrol",
         "uid": "19B311DDF0B1"
@@ -82,12 +82,12 @@
           {
             "default": "true",
             "type": "totalDirectCO2e",
-            "value": 1161,
+            "value": 1155.85,
             "unit": "kg"
           },
           {
             "type": "lifeCycleCO2e",
-            "value": 1366.45,
+            "value": 1361.35,
             "unit": "kg"
           },
           {
@@ -97,17 +97,17 @@
           },
           {
             "type": "nitrousOxideCO2e",
-            "value": 7.8,
+            "value": 3.25,
             "unit": "kg"
           },
           {
             "type": "methaneCO2e",
-            "value": 2.3,
+            "value": 1.7,
             "unit": "kg"
           },
           {
             "type": "indirectCO2e",
-            "value": 205.45,
+            "value": 205.5,
             "unit": "kg"
           }
         ],
@@ -119,11 +119,11 @@
         ]
       },
       "endDate": "",
-      "created": "2011-03-08T13:59:03Z"
+      "created": "2011-08-04T17:16:07Z"
     }
   ],
   "dataCategory": {
-    "modified": "2011-02-10 20:35:47.0",
+    "modified": "2011-08-01 15:40:14.0",
     "name": "Fuel",
     "dataCategory": {
       "name": "Defra",
@@ -134,7 +134,7 @@
     "uid": "138B5405E0CE",
     "path": "fuel",
     "itemDefinition": {
-      "modified": "2010-11-09 19:32:16.0",
+      "modified": "2011-08-01 15:36:37.0",
       "name": "DEFRA transport fuels",
       "drillDown": "fuel",
       "uid": "80DB1AB8141F",
@@ -172,7 +172,7 @@
     "previousPage": -1
   },
   "totalAmount": {
-    "value": "1161.0",
+    "value": "1155.8500000000001",
     "unit": "kg/year"
   },
   "path": "/transport/defra/fuel",

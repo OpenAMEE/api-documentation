@@ -19,10 +19,10 @@
   </DataCategory>
   <ProfileCategories/>
   <ProfileItems>
-   <ProfileItem created="2011-03-08T13:59:05Z" modified="2011-03-08T13:59:05Z" uid="669ZF2KG9YWC">
+   <ProfileItem created="2011-08-04T17:16:10Z" modified="2011-08-04T17:16:10Z" uid="UC9MIF9GZO1A">
     <Name>xml_example</Name>
     <ItemValues>
-     <ItemValue uid="YNHN5QCD23Y0">
+     <ItemValue uid="9U46OXTYM6JR">
       <Path>mass</Path>
       <Name>Mass of fuel consumed</Name>
       <Value/>
@@ -44,7 +44,7 @@
        <DrillDown>false</DrillDown>
       </ItemValueDefinition>
      </ItemValue>
-     <ItemValue uid="W8X4ZWO4Q1B4">
+     <ItemValue uid="JILC5X8VVMGJ">
       <Path>volume</Path>
       <Name>Volume of fuel consumed</Name>
       <Value>500</Value>
@@ -67,14 +67,14 @@
       </ItemValueDefinition>
      </ItemValue>
     </ItemValues>
-    <Amount unit="kg/year">1161.0</Amount>
+    <Amount unit="kg/year">1155.8500000000001</Amount>
     <Amounts>
-     <Amount default="true" perUnit="" type="totalDirectCO2e" unit="kg">1161.0</Amount>
-     <Amount perUnit="" type="lifeCycleCO2e" unit="kg">1366.45</Amount>
+     <Amount default="true" perUnit="" type="totalDirectCO2e" unit="kg">1155.8500000000001</Amount>
+     <Amount perUnit="" type="lifeCycleCO2e" unit="kg">1361.3500000000001</Amount>
      <Amount perUnit="" type="CO2" unit="kg">1150.9</Amount>
-     <Amount perUnit="" type="nitrousOxideCO2e" unit="kg">7.8</Amount>
-     <Amount perUnit="" type="methaneCO2e" unit="kg">2.3</Amount>
-     <Amount perUnit="" type="indirectCO2e" unit="kg">205.45</Amount>
+     <Amount perUnit="" type="nitrousOxideCO2e" unit="kg">3.25</Amount>
+     <Amount perUnit="" type="methaneCO2e" unit="kg">1.7</Amount>
+     <Amount perUnit="" type="indirectCO2e" unit="kg">205.5</Amount>
      <Note type="comment">This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation</Note>
     </Amounts>
     <StartDate>2011-01-05T00:00:00Z</StartDate>
@@ -97,6 +97,6 @@
    <ItemsPerPage>10</ItemsPerPage>
    <ItemsFound>0</ItemsFound>
   </Pager>
-  <TotalAmount unit="kg/year">1161.0</TotalAmount>
+  <TotalAmount unit="kg/year">1155.8500000000001</TotalAmount>
  </ProfileCategoryResource>
 </Resources>
