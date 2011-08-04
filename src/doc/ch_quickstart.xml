@@ -5,50 +5,93 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Quick Start</title>
   <section>
-    <title>Obtaining an API Key</title>
+    <title>What is AMEEconnect?</title>
+	  <para>AMEEconnect is a web-based API that gives you access to the data and capabilities of the AMEE platform. It allows you to store and retrieve many forms of consumption data over long periods, while simultaneously applying recognised carbon calculation models to determine the environmental consequences of that consumption.</para>
+  </section>
+  <section>
+    <title>Getting Started</title>
     <para>
-      The first step towards using the AMEE platform is to sign up for an access key. You can do this for free
-      at <ulink url="http://my.amee.com/signup"/>. Enter your details, and you will be emailed an API key, 
-      as well as links to documentation and other relevant resources.
+      The first step in using AMEEconnect is to sign up for an API key. You can get a free trial account
+      at <ulink url="http://my.amee.com/signup"/>. Enter your details, and you will be emailed your new API key details.
     </para>
     <para>
-      This key will give you access to the AMEE stage platform (stage.amee.com). This platform is free for
-      you to use while you are developing and testing your client application. However, the data on it is
-      regularly wiped, so once you decide your application is ready to go into production, you will need to
-      change over to using the AMEE live platform (live.amee.com, here service fees may apply).
+      This API key will give you access to the AMEE staging platform (stage.amee.com). This platform is designed for
+      you to use while you are developing and testing your application. However, the data on it is regularly 
+      wiped, so once you decide your application is ready to go into production, you will need to
+      change over to using the AMEE live platform (live.amee.com; service fees may apply).
     </para>
     <para>
-      Throughout the documentation, the examples will use the AMEE stage platform URL.
+      Throughout the following documentation, the examples will use the AMEE stage platform URL.
     </para>
   </section>
   <section>
     <title>Authentication</title>
     <para>
       Once you've got your key, you're ready to start talking to the API itself, and the first step is 
-      authentication. There are two methods of authenticating with the API; using HTTP Basic, or by 
-      creating an authenticated session.
+      authentication.
     </para>
-    <section>
-      <title>HTTP Basic</title>
-      <para>
-        HTTP Basic authentication is extremely simple. You simply provide your username and password with every 
-        request, using the standard HTTP format. Most HTTP libraries will support this functionality; as an 
-        example, the following code shows this process in Ruby:
-      </para>
-      <programlisting role='ruby'>
+    <para>
+      AMEE uses <emphasis>HTTP Basic</emphasis> authentication. You simply provide your username and password with every 
+      request, using the standard HTTP basic auth format. Most HTTP libraries will support this functionality; as an 
+      example, the following code shows this process in Ruby:
+    </para>
+    <programlisting role='ruby'>
 http = Net::HTTP.new @host, 443
 http.use_ssl = true
 req = Net::HTTP::Get.new @location
 req.basic_auth @username, @password
 http.request(req)
-      </programlisting>
-      <para>
-        You should only use HTTP Basic authentication if you are connecting to AMEEconnect over SSL. (Using
-        SSL is recommended, and all examples in this manual use it.)
-      </para>
-    </section>
+    </programlisting>
+    <para>
+      You should only use HTTP Basic authentication if you are connecting to AMEEconnect over a secure HTTPS connection. Using
+      HTTPS is highly recommended, and all examples in this manual use it, but if you need to use HTTP, see <xref linkend='authenticated_sessions' />
+      for how to do secure authentication over insecure connections.
+    </para>
   </section>
   <section>
     <title>Content Types</title>
+    <para>
+      AMEEconnect supports two content types. Depending on which format you prefer to parse, you can choose either one. 
+      The information is the same in both.
+    </para>
+    <table class='properties'>
+      <tr>
+        <th>Encoding</th>
+        <th>MIME type</th>
+      </tr>
+      <tr>
+        <td>XML</td>
+        <td>application/xml</td>
+      </tr>
+      <tr>
+        <td>JSON</td>
+        <td>application/json</td>
+      </tr>
+    </table>
+    <para>
+      You should specify your desired content type in the <emphasis>Accept</emphasis> header in your HTTP request. For example:
+    </para>
+		<section role='tabbed'>
+  		<section role='tab'>
+  			<title>XML</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+GET /profiles HTTP/1.1
+Accept: application/xml
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+        </section>
+  		</section>
+  		<section role='tab'>
+  			<title>JSON</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+GET /profiles HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+        </section>
+  		</section>
+  	</section>
   </section>
 </chapter>
