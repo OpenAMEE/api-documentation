@@ -19,4 +19,14 @@
     <publishername>Wikipedia</publishername>
   </biblioentry>
 
+  <biblioentry id="jsonpath">
+    <title><ulink url="http://goessner.net/articles/JsonPath/">JSONPath</ulink></title>
+    <publishername>Stefan Goessner</publishername>
+  </biblioentry>
+
+  <biblioentry id="xpath">
+    <title><ulink url="http://www.w3schools.com/xpath/default.asp">XPath Tutorial</ulink></title>
+    <publishername>W3Schools</publishername>
+  </biblioentry>
+
 </bibliography>

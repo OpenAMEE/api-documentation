@@ -4,6 +4,11 @@
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Quick Start</title>
+  <para>
+    So you want to use AMEEconnect? This part of the manual will get you going, no problems. As it's a quick overview, we've 
+    left out the detailed responses, just giving XPath<biblioref linkend="xpath"/> details for the important bits. Subsequent chapters will go into 
+    much more detail.
+  </para>
   <section>
     <title>What is AMEEconnect?</title>
 	  <para>AMEEconnect is a web-based API that gives you access to the data and capabilities of the AMEE platform. It allows you to store and retrieve many forms of consumption data over long periods, while simultaneously applying recognised carbon calculation models to determine the environmental consequences of that consumption.</para>
@@ -121,7 +126,6 @@ profile=true
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
         </section>
   		</section>
 		  <section role='tab'>
@@ -142,12 +146,11 @@ profile=true
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
 			  </section>
   		</section>
   	</section>
   	<para>
-  	  The resulting XML or JSON contains a Profile object, which in turn has what's known in AMEEconnect as a UID. This is a unique string that identifies the profile (all entities in AMEEconnect actually have a UID, as you'll see later). If you're using XML, the XPath you want to get the UID from the response is <emphasis>//Profile/@uid</emphasis> which in this case gives us YLLIKH73BDYS.
+  	  The returneds XML or JSON contains a Profile object, which in turn has what's known in AMEEconnect as a UID. This is a unique string that identifies the profile (all entities in AMEEconnect actually have a UID, as you'll see later). If you're using XML, the XPath you want to get the UID from the response is <emphasis>//Profile/@uid</emphasis> which in this case gives us YLLIKH73BDYS.
 	  </para>
   </section>
   <section>
@@ -170,7 +173,6 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/fuel_drill.xml' parse="text"/></programlisting>
 		    </section>
   		</section>
 		  <section role='tab'>
@@ -187,13 +189,13 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-          <programlisting role='json-body'><xi:include href='samples/json/fuel_drill.js' parse="text"/></programlisting>
 		    </section>
   		</section>
 		</section>
 		<para>
-		  The response contains a Choice node which contains the UID of the data item, in this case 19B311DDF0B1. We will need this to identify the exact
-		  calculation in the next step. You can extract it using the XPath <emphasis>//Choices/Choice/Name/text()</emphasis>.
+		  The response contains a Choice node which contains the UID of the data item, in this case 19B311DDF0B1. We will need this 
+		  to identify the exact calculation in the next step. As long as the drilldown is fully qualified (we'll explain this later), 
+		  you can extract it using the XPath <emphasis>//Choices/Choice/Name/text()</emphasis>.
 	  </para>
   </section>
   <section>
@@ -216,7 +218,8 @@ Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
           <programlisting role='body'>
-dataItemUid=19B311DDF0B1&amp;volume=500&amp;startDate=2011-01-05T00%3A00%3A00%2B00%3A00
+dataItemUid=19B311DDF0B1&amp;volume=500
+&amp;startDate=2011-01-05T00%3A00%3A00%2B00%3A00
 &amp;representation=full
           </programlisting>
         </section>
@@ -225,7 +228,6 @@ dataItemUid=19B311DDF0B1&amp;volume=500&amp;startDate=2011-01-05T00%3A00%3A00%2B
 HTTP/1.1 201 CREATED
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/create_profile_item.xml' parse="text"/></programlisting>
         </section>
   		</section>
 		  <section role='tab'>
@@ -238,7 +240,8 @@ Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
           <programlisting role='body'>
-dataItemUid=19B311DDF0B1&amp;volume=500&amp;startDate=2011-01-05T00%3A00%3A00%2B00%3A00
+dataItemUid=19B311DDF0B1&amp;volume=500
+&amp;startDate=2011-01-05T00%3A00%3A00%2B00%3A00
 &amp;representation=full
           </programlisting>
         </section>
@@ -247,18 +250,17 @@ dataItemUid=19B311DDF0B1&amp;volume=500&amp;startDate=2011-01-05T00%3A00%3A00%2B
 HTTP/1.1 201 CREATED
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'><xi:include href='samples/json/create_profile_item.js' parse="text"/></programlisting>
 			  </section>
   		</section>
     </section>
     <para>
-      The response contains a set of Amount nodes, which correspond to the various results of the calculation. If we look at the value of the 
-      default result in the above, we can see that under this methodology, burning 500 litres of petrol produces around 1156kg of CO2-equivalent 
-      emissions. Job done!
+      The response contains a set of Amount nodes, which correspond to the various results of the calculation (there can be more 
+      than one sometimes). The results are in Amount nodes, so if we use the XPath <emphasis>//Amounts/Amount/text()</emphasis>, 
+      we can see that under this methodology, burning 500 litres of petrol produces around 1156kg of CO2-equivalent emissions. Job done!
     </para>
     <para>
       This is, of course, only a quick overview. The following chapters will go into much more details on what it all means and what you can do 
-      with it.
+      with it, and the reference sections contain full descriptions of the XML and JSON responses which we've left out here.
     </para>
   </section>
 </chapter>
