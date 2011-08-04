@@ -219,7 +219,6 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
           <programlisting role='body'>
 dataItemUid=19B311DDF0B1&amp;volume=500
-&amp;startDate=2011-01-05T00%3A00%3A00%2B00%3A00
 &amp;representation=full
           </programlisting>
         </section>
@@ -241,7 +240,6 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
           <programlisting role='body'>
 dataItemUid=19B311DDF0B1&amp;volume=500
-&amp;startDate=2011-01-05T00%3A00%3A00%2B00%3A00
 &amp;representation=full
           </programlisting>
         </section>
