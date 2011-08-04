@@ -133,7 +133,7 @@ Content-Type: application/xml; charset=UTF-8
       You should store the authToken value and include it as a cookie in any 
       subsequent requests. The authToken will expire after two hours, or if unused for half an 
       hour. Therefore, if you are using authenticated sessions, your application should always be prepared 
-      to re-authorise on any request if you receive a 401 response.
+      to re-authorise on any request if you receive a 401 UNAUTHORIZED response.
     </para>
 		<section role='tabbed'>
   		<section role='tab'>
