@@ -322,7 +322,7 @@ Content-Type: application/xml; charset=UTF-8
   		</section>
   	</section>
 	</section>
-	<section>
+	<section xml:id='list_profile_item_reference'>
 		<title>List Profile Items</title>
 		<para>
 			Fetches all profile items in a particular category.
@@ -371,6 +371,13 @@ Content-Type: application/xml; charset=UTF-8
 					<td>As an alternative to specifying an end time, you can specify the duration of the query
 					  window in ISO8601 duration format. See <xref linkend='date_reference'/> for details of format.</td>
 				</tr>
+				<tr>
+				  <td>selectby</td>
+				  <td>Setting this to 'start' will only include items which start during the query window. 
+				    Setting 'end' will include only items which end during the window. The default behaviour 
+				    is to include any item that intersects the query window.
+				  </td>
+			  </tr>
 				<tr>					
 					<td>mode</td>
 					<td>Set the calculation mode used. By default, emission values for items are for the
