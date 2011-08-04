@@ -21,7 +21,66 @@
     <para>
       All unit conversion calculations are automatically handled by AMEEconnect, giving you the correct 
       results for your application with the minimum of effort.
-    </para>      
+    </para>
+    <para>
+      The following table lists the most common units supported by AMEE, along with the symbol that 
+      should be used for the POST options.
+    </para>
+    <table class='properties'>
+      <tr><th>Mass</th><th>symbol</th></tr>
+      <tr><td>Grams</td><td>g</td></tr>
+      <tr><td>Kilograms</td><td>kg</td></tr>
+      <tr><td>Metric Tons / Tonnes</td><td>t</td></tr>
+      <tr><td>Ounces</td><td>oz</td></tr>
+      <tr><td>Pounds</td><td>lb</td></tr>
+      <tr><td>Tons (UK imperial)</td><td>ton_uk</td></tr>
+      <tr><td>Tons (US imperial)</td><td>ton_us</td></tr>
+      <tr><th>Distance</th><th>symbol</th></tr>
+      <tr><td>Metres</td><td>m</td></tr>
+      <tr><td>Kilometres</td><td>km</td></tr>
+      <tr><td>Feet</td><td>ft</td></tr>
+      <tr><td>Yards</td><td>yd</td></tr>
+      <tr><td>Miles</td><td>mi</td></tr>
+      <tr><td>Nautical Miles</td><td>nmi</td></tr> 
+      <tr><th>Volume</th><th>symbol</th></tr>
+      <tr><td>Litres</td><td>L</td></tr>
+      <tr><td>Cubic Metres</td><td>m³</td></tr>
+      <tr><td>Fluid Ounces (UK imperial)</td><td>oz_fl_uk</td></tr>
+      <tr><td>Fluid Ounces (US imperial)</td><td>oz_fl</td></tr>
+      <tr><td>Gallons (UK imperial)</td><td>gal_uk or gallon_uk</td></tr>
+      <tr><td>Gallons (US imperial)</td><td>gal</td></tr>
+      <tr><th>Energy</th><th>symbol</th></tr>
+      <tr><td>Kilowatt-Hours</td><td>kWh</td></tr>
+      <tr><td>Joules</td><td>J</td></tr>
+      <tr><th>Energy - BTU</th><th>symbol</th></tr>
+      <tr><td>39 °F</td><td>BTU_ThirtyNineF</td></tr>
+      <tr><td>Mean</td><td>BTU_Mean</td></tr>
+      <tr><td>IT</td><td>BTU_IT</td></tr>
+      <tr><td>ISO</td><td>BTU_ISO</td></tr>
+      <tr><td>59 °F</td><td>BTU_FiftyNineF</td></tr>
+      <tr><td>60 °F</td><td>BTU_SixtyF</td></tr>
+      <tr><td>63 °F</td><td>BTU_SixtyThreeF</td></tr>
+      <tr><td>Thermochemical</td><td>BTU_Thermochemical</td></tr> 
+      <tr><th>Energy - Therm</th><th>symbol</th></tr>
+      <tr><td>39 °F</td><td>thm_ThirtyNineF</td></tr>
+      <tr><td>Mean</td><td>thm_Mean</td></tr>
+      <tr><td>IT</td><td>thm_IT</td></tr>
+      <tr><td>EC</td><td>thm_ec, alias of thm_IT</td></tr>
+      <tr><td>ISO</td><td>thm_ISO</td></tr>
+      <tr><td>59 °F</td><td>thm_FiftyNineF</td></tr>
+      <tr><td>US</td><td>thm_us, alias of thm_FiftyNineF</td></tr>
+      <tr><td>60 °F</td><td>thm_SixtyF</td></tr>
+      <tr><td>63 °F</td><td>thm_SixtyThreeF</td></tr>
+      <tr><td>Thermochemical</td><td>thm_Thermochemical</td></tr>
+      <tr><th>Time</th><th>symbol</th></tr>
+      <tr><td>Second</td><td>s</td></tr>
+      <tr><td>Minute</td><td>min</td></tr>
+      <tr><td>Hour</td><td>h</td></tr>
+      <tr><td>Day</td><td>day</td></tr>
+      <tr><td>Week</td><td>week</td></tr>
+      <tr><td>Month</td><td>month</td></tr>
+      <tr><td>Year</td><td>year</td></tr>
+    </table>
     <section>
       <title>Return Units</title>
       <para>
