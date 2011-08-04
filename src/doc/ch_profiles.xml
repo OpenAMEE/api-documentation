@@ -6,60 +6,135 @@
   <title>Store Data</title>
   <section xml:id='storedata'>
     <title>Using AMEE to store data</title>
+    <para>
+      If you have a lot of energy information, or want to keep your own application as light
+      as possible, you can use AMEE to store your calculations permanently so that you can
+      retrieve them later. By handing the database handling requirements to AMEE, you save money 
+      on hosting and processing your own data.
+    </para>
+    <para>
+      The process for doing this is actually exactly the same as for doing calculations as described
+      in the previous chapter; when you do a calculation, you create a Profile Item, which is stored 
+      in the AMEE platform.
+    </para>
   </section>
   <section>
-    <title>Retrieving stored data</title>
+    <title>More about Profiles</title>
+    <para>
+      So far, we've mostly ignored Profiles. Here, however, they become more relevant. If you are storing 
+      data for many different entities, you can use multiple profiles to separate that data into silos.
+    </para>
+    <para>
+      A common use case is to have a separate profile for each user of a web application, but equally you could 
+      have a profile for each office in a business application, or any number of other things. In general, the 
+      smallest entity in your system will probably correspond to a profile. You should store the Profile UID generated
+      by AMEE in your application alongside other data for the entity; there is no way to search AMEE for profiles that 
+      match particular metadata, as all profiles are fully anonymised.
+    </para>
+  </section>
+  <section>
+    <title>Naming Profile Items</title>
+    <para>
+      If you create two profile items with the same data item UID, and which overlap the same 
+      time, then AMEEconnect will complain, as it can't form a single consistent time series from the 
+      data (see below). However, there are cases in which you might want to do this; energy used by two 
+      cars of the same type. In this case, you can provide a name parameter to identify each set. 
+      You can build up multiple datasets in the same profile category 
+      by using different names for each one. A name is not required, but if you suspect that 
+      you will want to store multiple datasets alongside each other, it is good practise 
+      to specify one.
+    </para>
   </section>
   <section>
     <title>Building Time Series</title>
     <para>
       Storing a single profile item is useful, but most data changes over time, particularly 
-      when we are talking about energy use. AMEE allows you to store time information along 
+      when we are talking about energy use. AMEEconnect allows you to store time information along 
       with your data, so that you can build up a series of data points over time.
     </para>
-    <section>
-      <title>Naming Profile Items</title>
-      <para>
-        If you create two profile items with the same data item UID, and which overlap the same 
-        time, then AMEEconnect will complain, as it can't form a sensible time series from the 
-        data. However, there are cases in which you might want to do this; energy used by two 
-        cars of the same type, for instance. In this case, you can provide a name parameter to 
-        identify each series. You can build up multiple histories in the same profile category 
-        by using different names for each one. A name is not required, but if you suspect that 
-        you will want to store multiple time series alongside each other, it is good practise 
-        to specify one.
-      </para>
-    </section>
-    <section>
-      <title>Start &amp; End Dates</title>
-      <para>
-        Three parameters are available to control time information, startDate, endDate, and 
-        duration. By providing these when you create profile items, you can set the time 
-        that the created profile item is valid for. By default, startDate is "now" and 
-        endDate is infinitely far in the future. If your data is not time-sensitive, then 
-        this will be fine. However, if your data represents usage at a particular time, you 
-        can set the values explicitly. The maximum time resolution of the AMEE platform is 1 
-        minute. If seconds are specified, they are rounded down. Note that you can't set 
-        endDate and duration at the same time.
-      </para>
-      <para>
-        All these parameters are specified in standard ISO-8601 format. For instance, the 
-        following would all be valid parameters (when correctly form-encoded):
-      </para>
-      <programlisting>startDate=2009-08-01T14:30:55Z
+    <para>
+      Three parameters are available to control time information, startDate, endDate, and 
+      duration. By providing these when you create profile items, you can set the time 
+      that the created profile item is valid for. By default, startDate is "now" and 
+      endDate is infinitely far in the future. If your data is not time-sensitive, then 
+      this will be fine. However, if your data represents usage at a particular time, you 
+      can set the values explicitly. The maximum time resolution of AMEEconnect is 1 
+      minute. If seconds are specified, they are rounded down. Note that you can't set 
+      endDate and duration at the same time.
+    </para>
+    <para>
+      All these parameters are specified in standard ISO-8601 format. For instance, the 
+      following would all be valid parameters (when correctly form-encoded):
+    </para>
+    <programlisting>startDate=2009-08-01T14:30:55Z
 endDate=2009-08-02T14:30:55-08:00
 duration=PT30S</programlisting>
+  </section>
+  <section>
+    <title>Retrieving stored data</title>
+    <para>
+      To retrieve stored data, you can do a GET on the category in which you have created profiles items.
+      This will return a paged response listing all the profile items in that category, as well as a total amount
+      of emissions for all of them. The request is shown below; see <xref linkend='list_profile_item_reference'/>
+      for the full response details.
+    </para>
+    <para>
+      These responses can be filtered by time period; see below.
+    </para>
+    <para>
+      AMEEconnect does not support aggregation across different categories or profiles. Often the same data
+      could be stored in multiple places using different methodologies, so in order to avoid double counting, 
+      the aggregation is left to the client who best understands the business logic involved.
+    </para>
+  </section>
+  <section>
+    <title>Time Series Queries</title>
+    <para>
+      Once you have built up a time series, you will probably want to retrieve historical 
+      data. Above, we saw that profile categories include a list of current profile items. 
+      This "present time" behaviour can be modified by providing startDate and endDate query 
+      parameters in the GET request, using the same format as above. 
+    </para>
+    <para>
+      There are a couple of request parameters that control what is returned:
+    </para>
+    <section>
+      <title>selectby</title>
+      <table class='properties'>
+        <tr><th>Option</th><th>Meaning</th></tr>
+        <tr>
+          <td><emphasis>unspecified</emphasis></td>
+          <td>Include items which intersects the query window.</td>
+        </tr>
+        <tr>
+          <td>start</td>
+          <td>Only include items which start during the query window.</td>
+        </tr>
+        <tr>
+          <td>end</td>
+          <td>Only include items which end during the query window.</td>
+        </tr>
+      </table>
     </section>
     <section>
-      <title>Time Series Queries</title>
+      <title>mode</title>
+      <table class='properties'>
+        <tr><th>Option</th><th>Meaning</th></tr>
+        <tr>
+          <td><emphasis>unspecified</emphasis></td>
+          <td>
+            Get the total emission values for all items.
+          </td>
+        </tr>
+        <tr>
+          <td>prorata</td>
+          <td>Get only the emissions which took place during the query window.</td>
+        </tr>
+      </table>
       <para>
-        Once you have built up a time series, you will probably want to retrieve historical 
-        data. Above, we saw that profile categories include a list of current profile items. 
-        This "present time" behaviour can be modified by providing startDate and endDate query 
-        parameters in the GET request. You can request all data between particular dates, 
-        everything that starts after a certain time, or numerous other methods, including a 
-        "prorata" mode which calculates the amount of carbon emitted during only the queried 
-        time period.
+        For instance, if you have a profile item that lasts a week, and request just one day within that period, if you 
+        do not specify mode, you will still get the emissions for the week. If you specify mode=prorata, you will get the 
+        emissions just during that single day.
       </para>
     </section>
   </section>
