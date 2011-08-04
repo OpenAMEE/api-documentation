@@ -2,10 +2,16 @@
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
   "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
 
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='profiles'>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Store Data</title>
+  <section xml:id='storedata'>
+    <title>Using AMEE to store data</title>
+  </section>
   <section>
-    <title>Time Series</title>
+    <title>Retrieving stored data</title>
+  </section>
+  <section>
+    <title>Building Time Series</title>
     <para>
       Storing a single profile item is useful, but most data changes over time, particularly 
       when we are talking about energy use. AMEE allows you to store time information along 
@@ -56,8 +62,5 @@ duration=PT30S</programlisting>
         time period.
       </para>
     </section>
-    <!--<section>
-      <title>Data Item Value History</title>
-    </section>-->
   </section>
 </chapter>

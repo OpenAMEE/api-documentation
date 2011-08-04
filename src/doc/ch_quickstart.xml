@@ -102,7 +102,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
   <section>
     <title>Create a Profile</title>
     <para>
-      To do calculations with AMEEconnect, you will need to create a <emphasis>Profile</emphasis>. We'll get into more detail about profiles in <xref linkend='profiles'/>, but for now we'll just go ahead and create one.
+      To do calculations with AMEEconnect, you will need to create a <emphasis>Profile</emphasis>. We'll get into more detail about profiles in <xref linkend='storedata'/>, but for now we'll just go ahead and create one.
     </para>
     <para>
       To do this, you need to POST to the /profiles path, with 'profile=true' in the body, like this:

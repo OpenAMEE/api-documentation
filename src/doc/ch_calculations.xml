@@ -4,81 +4,11 @@
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Perform Calculations</title>
-  <para>
-    Now that you're authenticated, we can start to store data and perform calculations. The first step in this is to create a profile.
-  </para>
   <section>
     <title>Creating a Profile</title>
-    <para>
-      As with all entities in AMEE, each profile is identified by a UID, which you will need to 
-      store in your application's database alongside any other user details you might have; if the user comes 
-      back later on, you will need the profile UID to retrieve their information again. This is because privacy 
-      and security of data are of utmost importance; all data stored in AMEE is anonymised, so you cannot retrieve 
-      profile data based on personal information.
-    </para>
-    <para>
-      To create a profile, you can send a POST request to https://stage.amee.com/profiles. You need to send the 
-      parameter profile=true in the body, as shown in the following XML example (a JSON example is shown in <xref linkend='create_profile_reference'/>):
-    </para>
-		<section role='tabbed'>
-  		<section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-POST /profiles HTTP/1.1
-Accept: application/xml
-Content-Type: application/x-www-form-urlencoded
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting role='body'>
-profile=true
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
-        </section>
-  		</section>
-  		<section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-POST /profiles HTTP/1.1
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting role='body'>
-profile=true
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
-          <programlisting role='json-body'><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
-        </section>
-  		</section>
-  	</section>
-  	<para>
-      The important part of this response is the UID attribute in the Profile tag, which in this case has the 
-      value YLLIKH73BDYS. This is the UID for the newly-created profile, and forms part of the URL for
-      subsequent requests that use that profile.
-   </para>
-   <para>     
-     A profile contains a hierarchy of profile categories, which split up the data that you can store into 
-     contextual areas, similar to a folder structure on disk. Top-level categories include such broad sections 
-     as "Home", "Business", "Transport", and so on. Each category can contain any number of other categories
-      and some categories (the lower-level ones normally) can contain profile items. These are a bit like files, 
-      and are where you actually store your energy data.
-   </para>
   </section>
   <section>
-    <title>Adding a Profile Item</title>
+    <title>Doing Calculations with Profile Items</title>
     <para>
       Once you've selected the category where you want to store your energy data, you will want to create a profile
       item to store that data. To do this, simply POST to the category URL with an appropriate set of parameters, 
