@@ -63,5 +63,18 @@
 	    expensive, so for this reason such resources are paged. Details of how to page through items in AMEE are provided in <xref linkend="paging_reference"/>.
 	  </para>
   </section>
+  <section>
+    <title>Interactive Drilldowns</title>
+    <para>
+      Sometimes you want to give your users a choice of which calculation to perform within a category. For instance, they might
+      need to choose the model of their car, or how their home is heated. For those situations when there are too many
+      options to present in a single list, AMEEconnect provides the facility to perform step-by-step interactive drilldowns.
+      You make a request to the drill resource, present the user with the choices, then make another request based on their choice.
+      This gives you the next set of choices, and so on until the drill is fully specified.
+    </para>
+    <para>
+      This process is fully documented in <xref linkend="drilldown_reference"/>.
+    </para>
+  </section>
 </chapter>
 
