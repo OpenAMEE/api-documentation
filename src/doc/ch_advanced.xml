@@ -104,11 +104,54 @@
       body. You also need to specify which format you want the result in (XML or JSON) using a standard 
       "Accept" header. The response to this request includes various pieces of information, but the most 
       important is the authentication token, which is returned both as a cookie and as a custom header, 
-      both called "authToken". You should store this authToken value and include it as a cookie in any 
+      both called "authToken".
+    </para>
+		<section role='tabbed'>
+  		<section role='tab'>
+  			<title>Example</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+POST /auth HTTP/1.1
+Accept: application/xml (or applicaiton/json)
+Content-Type: application/x-www-form-urlencoded
+          </programlisting>
+          <programlisting role='body'>
+username=my_username&amp;password=my_password
+          </programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+HTTP/1.1 200 OK
+Set-Cookie: authToken=1KVARbypAjxLGViZ0Cg+UskZEHmqVkhx/PmEvzkPGpnUlH17KQbJ58xfapXiewVVPvG2CtrQNTuawY+KWU4Dxx08570dM2Z0sZAoeijdlucuCOvAyHhi9A==; 
+authToken: 1KVARbypAjxLGViZ0Cg+UskZEHmqVkhx/PmEvzkPGpnUlH17KQbJ58xfapXiewVVPvG2CtrQNTuawY+KWU4Dxx08570dM2Z0sZAoeijdlucuCOvAyHhi9A==
+Content-Type: application/xml; charset=UTF-8
+          </programlisting>
+        </section>
+  		</section>
+  	</section>
+    <para>
+      You should store the authToken value and include it as a cookie in any 
       subsequent requests. The authToken will expire after two hours, or if unused for half an 
       hour. Therefore, if you are using authenticated sessions, your application should always be prepared 
-      to re-authorise on any request, should the authToken expire.    
+      to re-authorise on any request if you receive a 401 response.
     </para>
+		<section role='tabbed'>
+  		<section role='tab'>
+  			<title>Example</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+GET /data HTTP/1.1
+Cookie: authToken=1KVARbypAjxLGViZ0Cg+UskZEHmqVkhx/PmEvzkPGpnUlH17KQbJ58xfapXiewVVPvG2CtrQNTuawY+KWU4Dxx08570dM2Z0sZAoeijdlucuCOvAyHhi9A==
+accept:application/xml
+          </programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+HTTP/1.1 200 OK
+          </programlisting>
+        </section>
+  		</section>
+  	</section>
     <para>
       Note that this facility is deprecated, and will not be present in version 3 of AMEEconnect. We highly recommend
       connecting over HTTPS and using Basic Authentication instead.
