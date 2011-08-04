@@ -36,7 +36,7 @@
       </para>
     </section>
   </section>
-  <section>
+  <section xml:id='authenticated_sessions'>
     <title>Authenticated Sessions</title>
     <para>
       If you do not wish to use HTTP Basic authentication with each request, you can create an
