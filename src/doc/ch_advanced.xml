@@ -165,7 +165,7 @@ HTTP/1.1 200 OK
 	    expensive, so for this reason such resources are paged. Details of how to page through items in AMEE are provided in <xref linkend="paging_reference"/>.
 	  </para>
   </section>
-  <section>
+  <section xml:id='interactive_drilldowns'>
     <title>Interactive Drilldowns</title>
     <para>
       Sometimes you want to give your users a choice of which calculation to perform within a category. For instance, they might

@@ -43,7 +43,7 @@
 			</tr>
 		</table>
 	</section>
-	<section>
+	<section xml:id='reference_data_category'>
 		<title>Get Data Category</title>
 		<para>
 			Lists all subcategories and data items in a data category
