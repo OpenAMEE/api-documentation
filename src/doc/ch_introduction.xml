@@ -23,7 +23,7 @@
     <title>API Versions</title>
     <para>
       This manual covers API version 2 of AMEEconnect only. If you need documentation 
-      for API version 1, please refer to the legacy documentation at <ulink url="http://my.amee.com/developers"/>.
+      for API version 1, please refer to the legacy documentation at <ulink url="http://www.amee.com/developer/docs/legacy"/>.
     </para>
   </section>
 </chapter>
