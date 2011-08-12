@@ -29,7 +29,7 @@ profile=true
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
+          <programlisting language='xml' ><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
         </section>
   		</section>
 		  <section role='tab'>
@@ -50,7 +50,7 @@ profile=true
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
+  			  <programlisting language='javascript'><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
 			  </section>
   		</section>
 		</section>
@@ -89,7 +89,7 @@ dataItemUid=19B311DDF0B1&amp;volume=500
 HTTP/1.1 201 CREATED
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/create_profile_item.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/create_profile_item.xml' parse="text"/></programlisting>
         </section>
   		</section>
   		<section role='tab'>
@@ -111,7 +111,7 @@ dataItemUid=19B311DDF0B1&amp;volume=500
 HTTP/1.1 201 CREATED
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-          <programlisting role='json-body'><xi:include href='samples/json/create_profile_item.js' parse="text"/></programlisting>
+          <programlisting language='javascript'><xi:include href='samples/json/create_profile_item.js' parse="text"/></programlisting>
         </section>
   		</section>
   	</section>

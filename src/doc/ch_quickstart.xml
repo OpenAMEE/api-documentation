@@ -40,7 +40,7 @@
       request, using the standard HTTP basic auth format. Most HTTP libraries will support this functionality; as an 
       example, the following code shows this process in Ruby:
     </para>
-    <programlisting role='ruby'>
+    <programlisting language='ruby'>
 http = Net::HTTP.new @host, 443
 http.use_ssl = true
 req = Net::HTTP::Get.new @location

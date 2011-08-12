@@ -73,14 +73,14 @@ Accept: application/json
 Content-Type: application/json
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
-          <programlisting role='json-body'><xi:include href='samples/json/batch_create_request.js' parse="text"/></programlisting>
+          <programlisting language='javascript'><xi:include href='samples/json/batch_create_request.js' parse="text"/></programlisting>
         </section>
         <section role='httpresponse'>
           <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'><xi:include href='samples/json/batch_create.js' parse="text"/></programlisting>
+  			  <programlisting language='javascript'><xi:include href='samples/json/batch_create.js' parse="text"/></programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
@@ -92,14 +92,14 @@ Accept: application/xml
 Content-Type: application/xml
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/batch_create_request.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/batch_create_request.xml' parse="text"/></programlisting>
         </section>
         <section role='httpresponse'>
           <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/batch_create.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/batch_create.xml' parse="text"/></programlisting>
         </section>
   		</section>
   	</section>
@@ -151,7 +151,7 @@ Accept: application/json
 Content-Type: application/json
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
-          <programlisting role='json-body'><xi:include href='samples/json/batch_update_request.js' parse="text"/></programlisting>
+          <programlisting language='javascript'><xi:include href='samples/json/batch_update_request.js' parse="text"/></programlisting>
         </section>
         <section role='httpresponse'>
           <programlisting role='header'>
@@ -169,7 +169,7 @@ Accept: application/xml
 Content-Type: application/xml
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/batch_update_request.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/batch_update_request.xml' parse="text"/></programlisting>
         </section>
         <section role='httpresponse'>
           <programlisting role='header'>

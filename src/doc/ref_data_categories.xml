@@ -92,7 +92,7 @@ Accept: application/json
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-          <programlisting role='json-body'><xi:include href='samples/json/get_data_category.js' parse="text"/></programlisting>
+          <programlisting language='javascript'><xi:include href='samples/json/get_data_category.js' parse="text"/></programlisting>
 		    </section>
   		</section>
 		  <section role='tab'>
@@ -108,7 +108,7 @@ Accept: application/xml
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/get_data_category.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/get_data_category.xml' parse="text"/></programlisting>
 		    </section>
   		</section>
 		</section>
@@ -181,7 +181,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
             </programlisting>
-            <programlisting role='json-body'><xi:include href='samples/json/drill_1.js' parse="text"/></programlisting>
+            <programlisting language='javascript'><xi:include href='samples/json/drill_1.js' parse="text"/></programlisting>
   		    </section>
     		</section>
   		  <section role='tab'>
@@ -198,7 +198,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
             </programlisting>
-            <programlisting role='xml-body'><xi:include href='samples/xml/drill_1.xml' parse="text"/></programlisting>
+            <programlisting language='xml'><xi:include href='samples/xml/drill_1.xml' parse="text"/></programlisting>
   		    </section>
     		</section>
   		</section>
@@ -224,7 +224,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
             </programlisting>
-            <programlisting role='json-body'><xi:include href='samples/json/drill_2.js' parse="text"/></programlisting>
+            <programlisting language='javascript'><xi:include href='samples/json/drill_2.js' parse="text"/></programlisting>
   		    </section>
     		</section>
   		  <section role='tab'>
@@ -241,7 +241,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
             </programlisting>
-            <programlisting role='xml-body'><xi:include href='samples/xml/drill_2.xml' parse="text"/></programlisting>
+            <programlisting language='xml'><xi:include href='samples/xml/drill_2.xml' parse="text"/></programlisting>
   		    </section>
     		</section>
   		</section>
@@ -274,7 +274,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
             </programlisting>
-            <programlisting role='json-body'><xi:include href='samples/json/drill_3.js' parse="text"/></programlisting>
+            <programlisting language='javascript'><xi:include href='samples/json/drill_3.js' parse="text"/></programlisting>
   		    </section>
     		</section>
   		  <section role='tab'>
@@ -291,7 +291,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
             </programlisting>
-            <programlisting role='xml-body'><xi:include href='samples/xml/drill_3.xml' parse="text"/></programlisting>
+            <programlisting language='xml'><xi:include href='samples/xml/drill_3.xml' parse="text"/></programlisting>
   		    </section>
     		</section>
   		</section>
