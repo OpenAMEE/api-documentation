@@ -4,7 +4,7 @@
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Store Data</title>
-  <section xml:id='storedata'>
+  <section xml:id='store-data'>
     <title>Using AMEE to store data</title>
     <para>
       If you have a lot of energy information, or want to keep your own application as light
@@ -18,7 +18,7 @@
       in the AMEE platform.
     </para>
   </section>
-  <section>
+  <section xml:id='about-profiles'>
     <title>More about Profiles</title>
     <para>
       So far, we've mostly ignored Profiles. Here, however, they become more relevant. If you are storing 
@@ -32,7 +32,7 @@
       match particular metadata, as all profiles are fully anonymised.
     </para>
   </section>
-  <section>
+  <section xml:id='naming-items'>
     <title>Naming Profile Items</title>
     <para>
       If you create two profile items with the same data item UID, and which overlap the same 
@@ -45,7 +45,7 @@
       to specify one.
     </para>
   </section>
-  <section>
+  <section xml:id='build-time-series'>
     <title>Building Time Series</title>
     <para>
       Storing a single profile item is useful, but most data changes over time, particularly 
@@ -70,12 +70,12 @@
 endDate=2009-08-02T14:30:55-08:00
 duration=PT30S</programlisting>
   </section>
-  <section>
+  <section xml:id='retrieve-items'>
     <title>Retrieving stored data</title>
     <para>
       To retrieve stored data, you can do a GET on the category in which you have created profiles items.
       This will return a paged response listing all the profile items in that category, as well as a total amount
-      of emissions for all of them. The request is shown below; see <xref linkend='list_profile_item_reference'/>
+      of emissions for all of them. The request is shown below; see <xref linkend='list-profile-items-reference'/>
       for the full response details.
     </para>
     <para>
@@ -87,7 +87,7 @@ duration=PT30S</programlisting>
       the aggregation is left to the client who best understands the business logic involved.
     </para>
   </section>
-  <section>
+  <section xml:id='time-series-queries'>
     <title>Time Series Queries</title>
     <para>
       Once you have built up a time series, you will probably want to retrieve historical 

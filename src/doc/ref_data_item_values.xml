@@ -8,7 +8,7 @@
 %dbcent;
 ]>
 
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id='data-item-value-reference' xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Data Item Values</title>
   <para>
     Data Item Values belong to Data Items. Each Data Item Value represents a distinct value 
@@ -27,7 +27,7 @@
 			</tr>
 			<tr>					
 				<td>UID</td>
-				<td>A 12-letter unique identifier for the data item. See <xref linkend='uid_reference'/> for more information.</td>
+				<td>A 12-letter unique identifier for the data item. See <xref linkend='uid-reference'/> for more information.</td>
 			</tr>
 			<tr>					
 				<td>created</td>
@@ -43,7 +43,7 @@
 			</tr>
 		</table>
 	</section>
-	<section>
+	<section xml:id='get-data-item-value-reference'>
 		<title>Get Single Value</title>
 		<para>
 			Fetches a representation of a single data item value.

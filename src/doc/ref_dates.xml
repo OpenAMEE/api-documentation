@@ -8,12 +8,12 @@
 %dbcent;
 ]>
 
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id='date-reference' xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Date and Time Representation</title>
 	<para>
 	  AMEEconnect has many parameters and fields which use dates and times. This section summarises the representation of those parameters.
   </para>
-  <section id='date_reference'>
+  <section id='dates-times-reference'>
     <title>Dates/Times</title>
     <para>
       AMEEconnect allows very fine time resolutions, down to the minute. Dates/Times are represented in the standard IS0 8601<biblioref linkend="ISO8601"/> format:
@@ -28,7 +28,7 @@
       <listitem>2009-08-01T14:30:55-08:00 (GMT-8) </listitem>
     </itemizedlist>
   </section>
-  <section id='duration_reference'>
+  <section id='duration-reference'>
     <title>Durations</title>
     <para>
       Durations are also used in some paramters. These are also represented in IS0 8601<biblioref linkend="ISO8601"/> format:

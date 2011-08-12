@@ -8,7 +8,7 @@
 %dbcent;
 ]>
 
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id='data-item-reference' xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Data Items</title>
   <para>
     A Data Item represents a single type of energy usage which contributes to CO2 emissions.
@@ -32,7 +32,7 @@
 			</tr>
 			<tr>					
 				<td>UID</td>
-				<td>A 12-letter unique identifier for the data item. See <xref linkend='uid_reference'/> for more information.</td>
+				<td>A 12-letter unique identifier for the data item. See <xref linkend='uid-reference'/> for more information.</td>
 			</tr>
 			<tr>					
 				<td>created</td>
@@ -54,7 +54,7 @@
 			</tr>
 		</table>
 	</section>
-	<section>
+	<section xml:id='get-data-item-reference'>
 		<title>Get Data Item</title>
 		<para>
 			Fetches a representation of a data item.

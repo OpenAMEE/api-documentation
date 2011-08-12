@@ -9,11 +9,11 @@
     left out the detailed responses, just giving XPath<biblioref linkend="xpath"/> details for the important bits. Subsequent chapters will go into 
     much more detail.
   </para>
-  <section>
+  <section xml:id='ameeconnect'>
     <title>What is AMEEconnect?</title>
 	  <para>AMEEconnect is a web-based API that gives you access to the data and capabilities of the AMEE platform. It allows you to store and retrieve many forms of consumption data over long periods, while simultaneously applying recognised carbon calculation models to determine the environmental consequences of that consumption.</para>
   </section>
-  <section>
+  <section xml:id='getting-started'>
     <title>Getting Started</title>
     <para>
       The first step in using AMEEconnect is to sign up for an API key. You can get a free trial account
@@ -29,7 +29,7 @@
       Throughout the following documentation, the examples will use the AMEE stage platform URL.
     </para>
   </section>
-  <section>
+  <section xml:id='authentication'>
     <title>Authentication</title>
     <para>
       Once you've got your key, you're ready to start talking to the API itself, and the first step is 
@@ -49,11 +49,11 @@ http.request(req)
     </programlisting>
     <para>
       You should only use HTTP Basic authentication if you are connecting to AMEEconnect over a secure HTTPS connection. Using
-      HTTPS is highly recommended, and all examples in this manual use it, but if you need to use HTTP, see <xref linkend='authenticated_sessions' />
+      HTTPS is highly recommended, and all examples in this manual use it, but if you need to use HTTP, see <xref linkend='authenticated-sessions' />
       for how to do secure authentication over insecure connections.
     </para>
   </section>
-  <section>
+  <section xml:id='content-types'>
     <title>Content Types</title>
     <para>
       AMEEconnect supports two content types. Depending on which format you prefer to parse, you can choose either one. 
@@ -99,10 +99,10 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
   		</section>
   	</section>
   </section>
-  <section>
+  <section xml:id='quick-create-profile'>
     <title>Create a Profile</title>
     <para>
-      To do calculations with AMEEconnect, you will need to create a <emphasis>Profile</emphasis>. We'll get into more detail about profiles in <xref linkend='storedata'/>, but for now we'll just go ahead and create one.
+      To do calculations with AMEEconnect, you will need to create a <emphasis>Profile</emphasis>. We'll get into more detail about profiles in <xref linkend='store-data'/>, but for now we'll just go ahead and create one.
     </para>
     <para>
       To do this, you need to POST to the /profiles path, with 'profile=true' in the body, like this:
@@ -153,7 +153,7 @@ Content-Type: application/json; charset=UTF-8
   	  The returneds XML or JSON contains a Profile object, which in turn has what's known in AMEEconnect as a UID. This is a unique string that identifies the profile (all entities in AMEEconnect actually have a UID, as you'll see later). If you're using XML, the XPath you want to get the UID from the response is <emphasis>//Profile/@uid</emphasis> which in this case gives us YLLIKH73BDYS.
 	  </para>
   </section>
-  <section>
+  <section xml:id='quick-choose-data-item'>
     <title>Choose a Data Item</title>
     <para>
       The next step is to choose which calculation you actually want to do. <ulink url="http://discover.amee.com">AMEEdiscover</ulink> lists all the possible calculations available in AMEE (over 8 million!), with rich searching and tagging functionality to make it easy to find what you want. By browsing the categories in AMEEdiscover, you can find the type of calculation you want to do, and then by looking at the Data Items tab, you can see the range of particular calculations that are possible in that category. Each category has a path, and each data item is identified by a set of drilldown choices. We need the UID of the data item we want to use, and we get this by doing a drilldown request. This request uses the path of the category and the drilldown choices you choose, which in this case specify that we are interested in petrol.
@@ -198,7 +198,7 @@ Content-Type: application/json; charset=UTF-8
 		  you can extract it using the XPath <emphasis>//Choices/Choice/Name/text()</emphasis>.
 	  </para>
   </section>
-  <section>
+  <section xml:id='quick-do-calculation'>
     <title>Do a Calculation</title>
     <para>
       The last step is to actually perform the calculation. For this, you need to use the information obtained

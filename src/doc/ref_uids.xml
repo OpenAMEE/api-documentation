@@ -6,7 +6,7 @@
 <!ENTITY % xml.features "INCLUDE">
 ]>
 
-<section id='uid_reference' xmlns:xi="http://www.w3.org/2001/XInclude">
+<section id='uid-reference' xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>UIDs</title>
   <para>
     Every object in AMEE has a unique identifer (UID). These are guaranteed to be unique across 

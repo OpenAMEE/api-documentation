@@ -4,7 +4,7 @@
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Perform Calculations</title>
-  <section>
+  <section xml:id='create-profile'>
     <title>Creating a Profile</title>
     <para>
       In order to do calculations with AMEE, you need to create one or more profiles. We will discuss profiles in
@@ -60,7 +60,7 @@ Content-Type: application/json; charset=UTF-8
 		  For this response, that gives us a UID of YLLIKH73BDYS.
 	  </para>
   </section>
-  <section>
+  <section xml:id='doing-calculations'>
     <title>Doing Calculations with Profile Items</title>
     <para>
       Calculations are performed using Profile Items, which are part of a Profile. You need to have already identified
@@ -148,7 +148,7 @@ Content-Type: application/json; charset=UTF-8
       results from our calculation are.
     </para>
   </section>
-  <section>
+  <section xml:id='getting-results'>
     <title>Getting Results</title>
 	    <para>
 	      The Amounts tag shows separately the amounts of other greenhouse gases emitted, by name, often together with 

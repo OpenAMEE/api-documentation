@@ -4,14 +4,14 @@
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Introduction</title>
-  <section>
+  <section xml:id='about'>
     <title>About This Manual</title>
     <para>
       This manual is designed to show you how to use AMEEconnect to embed environmental intelligence
       from the AMEE platform into your applications or systems.
     </para>
   </section>
-  <section>
+  <section xml:id='before-you-start'>
     <title>Before You Start</title>
     <para>
       As AMEEconnect is an HTTP-based service, we assume that you are familiar with the operation
@@ -19,7 +19,7 @@
       as well.
     </para>
   </section>
-  <section>
+  <section xml:id='api-versions'>
     <title>API Versions</title>
     <para>
       This manual covers API version 2 of AMEEconnect only. If you need documentation 

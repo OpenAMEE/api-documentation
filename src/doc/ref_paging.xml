@@ -6,7 +6,7 @@
 <!ENTITY % xml.features "INCLUDE">
 ]>
 
-<section id='paging_reference' xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id='paging-reference' xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Paging</title>
   <para>
     Many resources in AMEE are capable of containing a large number of sub-resources, for instance 
