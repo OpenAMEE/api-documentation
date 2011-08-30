@@ -9,7 +9,7 @@
     AMEEconnect, you can wire the latest data straight into the heart of your application. AMEEconnect can also
     perform the actual calculations for you - we'll cover that in the next chapter.
   </para>
-  <section>
+  <section xml:id='categories-and-items'>
     <title>Categories and Items</title>
     <para>
       A category in AMEE is a collection of items representing energy consuming or other activities 
@@ -28,7 +28,7 @@
       appliance.
     </para>
   </section>
-  <section>
+  <section xml:id='ameediscover'>
     <title>Introduction to AMEEdiscover</title>
     <para>
       As a neutral aggregation platform, AMEE contains many different methodologies related to environmental
@@ -47,7 +47,7 @@
       generate example code that helps you use AMEEconnect to access those categories.
     </para>
   </section>
-  <section>
+  <section xml:id='using-ameediscover'>
     <title>Using AMEEdiscover with AMEEconnect</title>
     <para>
       If you want to fetch data with AMEEconnect, you first need to work out which data you want. AMEEdiscover helps
@@ -57,7 +57,7 @@
       Firstly, each category in AMEE has a <emphasis>path</emphasis>. This corresponds to its URL in AMEEconnect, and
       is shown in the 'API Details' box on each AMEEdiscover category page. For instance, the <ulink href='http://explorer.amee.com/categories/DEFRA_transport_fuel_methodology'>DEFRA transport fuel methodology</ulink> category
       has a path of <emphasis>/transport/defra/fuel</emphasis>. You could get a list of available data items in that category through AMEEconnect
-      by doing a GET to /data/transport/defra/fuel; see <xref linkend='reference_data_category'/> in the reference guide for details.
+      by doing a GET to /data/transport/defra/fuel; see <xref linkend='get-data-category-reference'/> in the reference guide for details.
     </para>
     <para>
       Alternatively, if you want to access a single data item with the category, you will need to identify which one. The <ulink
@@ -65,7 +65,7 @@
       all the data items within a category, including drilldown options.
     </para>
   </section>
-  <section>
+  <section xml:id='drilldowns'>
     <title>Performing Drilldowns</title>
     <para>
       Data items are identified by their UIDs, not by textual names. In order to get one of these UIDs, you need to perform a drilldown
@@ -86,7 +86,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/fuel_drill.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/fuel_drill.xml' parse="text"/></programlisting>
 		    </section>
   		</section>
 		  <section role='tab'>
@@ -103,14 +103,14 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-          <programlisting role='json-body'><xi:include href='samples/json/fuel_drill.js' parse="text"/></programlisting>
+          <programlisting language='javascript'><xi:include href='samples/json/fuel_drill.js' parse="text"/></programlisting>
 		    </section>
   		</section>
 		</section>
     <para>
       A drilldown response consists of two sections. The first is the 'Selections' part. This shows choices that have already been
       made and specified in the drilldown URL. The second is the 'Choices' part, which shows what choices are available for the next 
-      level of drill. Drilldowns support interactive choice of the various levels; see <xref linkend='interactive_drilldowns'/> for details.
+      level of drill. Drilldowns support interactive choice of the various levels; see <xref linkend='interactive-drilldowns'/> for details.
     </para>
     <para>
       Here, however, we know all the drill choices we want in advance; we know we want petrol in this case. So, we can specify all the required
@@ -123,7 +123,7 @@ Content-Type: application/json; charset=UTF-8
       It's safe to cache the UIDs once they've been fetched, however, as they change extremely rarely within a single platform.
     </para>
   </section>
-  <section>
+  <section xml:id='get-data-items'>
     <title>Fetching Data Items</title>
     <para>
       If you want to get the raw emission factors for an item, you can, once you have the UID. You will also need the UID for
@@ -147,7 +147,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/fuel_data_item.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/fuel_data_item.xml' parse="text"/></programlisting>
 		    </section>
   		</section>
 		  <section role='tab'>
@@ -164,7 +164,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-          <programlisting role='json-body'><xi:include href='samples/json/fuel_data_item.js' parse="text"/></programlisting>
+          <programlisting language='javascript'><xi:include href='samples/json/fuel_data_item.js' parse="text"/></programlisting>
 		    </section>
   		</section>
 		</section>

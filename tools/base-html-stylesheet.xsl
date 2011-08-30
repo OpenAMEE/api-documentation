@@ -1,5 +1,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version='1.0'>
 
+  <xsl:import href="xsl/xhtml/highlight.xsl"/>
+
   <xsl:param name="generate.toc">
       appendix  toc
       article/appendix  nop
@@ -170,48 +172,6 @@
     <h4>Response</h4>
     <xsl:apply-templates/>    
   </xsl:template>
-
-
-  <!--><xsl:template match="section[@role='httprequest']/programlisting[@role='header']">
-    <script type="syntaxhighlighter" class="brush: plain" title="Header">
-      <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
-      <xsl:apply-templates/>
-      <xsl:text disable-output-escaping="yes"><![CDATA[]]]]><![CDATA[>]]></xsl:text></script>
-    <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
-  </xsl:template>
-
-  <xsl:template match="section[@role='httprequest']/programlisting[@role='body']">
-    <script type="syntaxhighlighter" class="brush: plain" title="Body">
-      <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
-      <xsl:apply-templates/>
-      <xsl:text disable-output-escaping="yes"><![CDATA[]]]]><![CDATA[>]]></xsl:text></script>
-    <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
-  </xsl:template>
-
-  <xsl:template match="section[@role='httpresponse']/programlisting[@role='header']">
-    <script type="syntaxhighlighter" class="brush: plain" title="Header">
-      <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
-      <xsl:apply-templates/>
-      <xsl:text disable-output-escaping="yes"><![CDATA[]]]]><![CDATA[>]]></xsl:text></script>
-    <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
-  </xsl:template>
-
-  <xsl:template match="programlisting[@role='json-body']">
-    <programlisting language='javascript' xml:space="preserve"><xsl:apply-templates/></programlisting>
-  </xsl:template>
-
-  <xsl:template match="programlisting[@role='xml-body']">
-    <programlisting language='myxml' xml:space="preserve"><xsl:apply-templates/></programlisting>
-  </xsl:template>
-
-  <xsl:template match="programlisting[@role='ruby']">
-    <script type="syntaxhighlighter" class="brush: ruby">
-      <xsl:text disable-output-escaping="yes"><![CDATA[<![CDATA[]]></xsl:text>
-      <xsl:apply-templates/>
-      <xsl:text disable-output-escaping="yes"><![CDATA[]]]]><![CDATA[>]]></xsl:text></script>
-    <noscript><pre class='programlisting'><xsl:apply-templates/></pre></noscript>
-  </xsl:template>
-  -->
   
   <xsl:template match="biblioentry|bibliomixed" mode="xref-to-prefix">
     <span class='biblioref'>[</span>

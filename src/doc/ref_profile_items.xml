@@ -8,7 +8,7 @@
 %dbcent;
 ]>
 
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id='profile-item-reference' xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Profile Items</title>
   <para>
     Profile items represent individual instances of energy use or consumption. A client application
@@ -29,7 +29,7 @@
 			</tr>
 			<tr>					
 				<td>UID</td>
-				<td>A 12-letter unique identifier for the profile item. See <xref linkend='uid_reference'/> for more information.</td>
+				<td>A 12-letter unique identifier for the profile item. See <xref linkend='uid-reference'/> for more information.</td>
 			</tr>
 			<tr>					
 				<td>created</td>
@@ -47,7 +47,7 @@
 			</tr>
 			<tr>
 			  <td>amounts</td>
-			  <td>A set of emission results for the item. This may include emissions separated by gas. See <xref linkend='profile_item_amounts_reference'/> for details.</td>
+			  <td>A set of emission results for the item. This may include emissions separated by gas. See <xref linkend='profile-item-amounts-reference'/> for details.</td>
 		  </tr>
 			<tr>					
 				<td>startDate</td>
@@ -63,7 +63,7 @@
 			</tr>
 		</table>
 	</section>
-	<section xml:id='profile_item_amounts_reference'>
+	<section xml:id='profile-item-amounts-reference'>
 	  <title>Results</title>
 	  <para>
       Profile Items can yield multiple return values, not just a single value. This is often used to 
@@ -89,7 +89,7 @@
       emission factors that were used.
     </para>
   </section>
-	<section xml:id='create_profile_item_reference'>
+	<section xml:id='create-profile-item-reference'>
 		<title>Create Profile Item</title>
 		<para>
 			Used to create a new profile item.
@@ -125,7 +125,7 @@
   			</tr>
 				<tr>					
 					<td>dataItemUid</td>
-					<td>The UID of the Data Item which a new Profile Item should be based upon. This should be obtained from a drilldown request as described in <xref linkend='drilldown_reference' />.</td>
+					<td>The UID of the Data Item which a new Profile Item should be based upon. This should be obtained from a drilldown request as described in <xref linkend='drilldown-reference' />.</td>
 				</tr>
   		</table>
 	  </section>
@@ -166,17 +166,17 @@
 					<td>startDate</td>
 					<td>An ISO8601 date/time which specifies when the item should be valid from. This parameter is
 					  compulsory if either endDate or duration are specified. Defaults to the current time.
-					  See <xref linkend='date_reference'/> for details of format.</td>
+					  See <xref linkend='dates-times-reference'/> for details of format.</td>
 				</tr>
 				<tr>					
 					<td>endDate</td>
 					<td>An ISO8601 date/time which specifies when the item should be valid until. Defaults to
-					  infinitely far in the future. See <xref linkend='date_reference'/> for details of format.</td>
+					  infinitely far in the future. See <xref linkend='dates-times-reference'/> for details of format.</td>
 				</tr>
 				<tr>					
 					<td>duration</td>
 					<td>As an alternative to specifying an end time, you can specify the duration that the item 
-					  should be valid for in ISO8601 duration format. See <xref linkend='duration_reference'/> for details.</td>
+					  should be valid for in ISO8601 duration format. See <xref linkend='duration-reference'/> for details.</td>
 				</tr>
 				<tr>					
 					<td>representation</td>
@@ -230,7 +230,7 @@ dataItemUid=19B311DDF0B1&amp;volume=500&amp;startDate=2011-01-05T00%3A00%3A00%2B
 HTTP/1.1 201 CREATED
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'><xi:include href='samples/json/create_profile_item.js' parse="text"/></programlisting>
+  			  <programlisting language='javascript'><xi:include href='samples/json/create_profile_item.js' parse="text"/></programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
@@ -252,12 +252,12 @@ dataItemUid=19B311DDF0B1&amp;volume=500&amp;startDate=2011-01-05T00%3A00%3A00%2B
 HTTP/1.1 201 CREATED
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/create_profile_item.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/create_profile_item.xml' parse="text"/></programlisting>
         </section>
   		</section>
   	</section>
 	</section>
-	<section>
+	<section xml:id='get-profile-item-reference'>
 		<title>Read Profile Item</title>
 		<para>
 			Used to fetch a representation of an existing profile item.
@@ -299,7 +299,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'><xi:include href='samples/json/get_profile_item.js' parse="text"/></programlisting>
+  			  <programlisting language='javascript'><xi:include href='samples/json/get_profile_item.js' parse="text"/></programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
@@ -317,12 +317,12 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/get_profile_item.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/get_profile_item.xml' parse="text"/></programlisting>
         </section>
   		</section>
   	</section>
 	</section>
-	<section xml:id='list_profile_item_reference'>
+	<section xml:id='list-profile-items-reference'>
 		<title>List Profile Items</title>
 		<para>
 			Fetches all profile items in a particular category.
@@ -359,17 +359,17 @@ Content-Type: application/xml; charset=UTF-8
 					  in the total emission value. See parameters below for details. The date should be
 					  specified in ISO8601 format. Default value is the start of the current month. If
 					  endDate or duration are specified, this parameter is compulsory.
-					  See <xref linkend='date_reference'/> for details of format.</td>
+					  See <xref linkend='dates-times-reference'/> for details of format.</td>
 				</tr>
 				<tr>					
 					<td>endDate</td>
 					<td>See startDate above. Should be specified in ISO8601 format. Defaults to
-					  infinitely far in the future. See <xref linkend='date_reference'/> for details of format.</td>
+					  infinitely far in the future. See <xref linkend='dates-times-reference'/> for details of format.</td>
 				</tr>
 				<tr>					
 					<td>duration</td>
 					<td>As an alternative to specifying an end time, you can specify the duration of the query
-					  window in ISO8601 duration format. See <xref linkend='date_reference'/> for details of format.</td>
+					  window in ISO8601 duration format. See <xref linkend='duration-reference'/> for details of format.</td>
 				</tr>
 				<tr>
 				  <td>selectby</td>
@@ -400,12 +400,12 @@ Content-Type: application/xml; charset=UTF-8
 				<tr>					
 					<td>page</td>
 					<td>If there is more than one page of profile items, retrieve the specified page. Default is 
-					  to fetch page 1. See <xref linkend='paging_reference'/>.</td>
+					  to fetch page 1. See <xref linkend='paging-reference'/>.</td>
 				</tr>
 				<tr>
 					<td>itemsPerPage</td>
 					<td>Specify the number of profile items returned in a single page. Default is 
-					  to fetch 10 items per page. See <xref linkend='paging_reference'/>.</td>
+					  to fetch 10 items per page. See <xref linkend='paging-reference'/>.</td>
 				</tr>
   		</table>
 	  </section>
@@ -429,7 +429,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'><xi:include href='samples/json/get_profile_category.js' parse="text"/></programlisting>
+  			  <programlisting language='javascript'><xi:include href='samples/json/get_profile_category.js' parse="text"/></programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
@@ -447,12 +447,12 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/get_profile_category.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/get_profile_category.xml' parse="text"/></programlisting>
         </section>
   		</section>
   	</section>
 	</section>
-  <section xml:id='update_profile_item_reference'>
+  <section xml:id='update-profile-item-reference'>
 		<title>Update Profile Item</title>
 		<para>
 			Used to update an existing profile item.
@@ -516,18 +516,18 @@ Content-Type: application/xml; charset=UTF-8
 					<td>startDate</td>
 					<td>An ISO8601 date/time which specifies when the item should be valid from. This parameter is
 					  compulsory if either endDate or duration are specified. Defaults to the current time.
-					  See <xref linkend='date_reference'/> for details of format.</td>
+					  See <xref linkend='dates-times-reference'/> for details of format.</td>
 				</tr>
 				<tr>					
 					<td>endDate</td>
 					<td>An ISO8601 date/time which specifies when the item should be valid until. Defaults to
 					  infinitely far in the future.
-					  See <xref linkend='date_reference'/> for details of format.</td>
+					  See <xref linkend='dates-times-reference'/> for details of format.</td>
 				</tr>
 				<tr>					
 					<td>duration</td>
 					<td>As an alternative to specifying an end time, you can specify the duration that the item 
-					  should be valid for in ISO8601 duration format. See <xref linkend='duration_reference'/> for details.</td>
+					  should be valid for in ISO8601 duration format. See <xref linkend='duration-reference'/> for details.</td>
 				</tr>
 				<tr>					
 					<td>representation</td>
@@ -579,7 +579,7 @@ volume=1000&amp;representation=full
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'><xi:include href='samples/json/update_profile_item.js' parse="text"/></programlisting>
+  			  <programlisting language='javascript'><xi:include href='samples/json/update_profile_item.js' parse="text"/></programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
@@ -600,12 +600,12 @@ volume=1000&amp;representation=full
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/update_profile_item.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/update_profile_item.xml' parse="text"/></programlisting>
         </section>
   		</section>
   	</section>
 	</section>
-	<section>
+	<section xml:id='delete-profile-item-reference'>
 		<title>Delete Profile Item</title>
 		<para>
 			Completely remove the specified profile item from the AMEE database. This information cannot be recovered after deletion.

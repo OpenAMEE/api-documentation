@@ -8,7 +8,7 @@
 %dbcent;
 ]>
 
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id='batch-operation-reference' xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Batch Operations</title>
   <para>
     Multiple Profile Items can be set in a single HTTP request by using the Batch Update mechanism. 
@@ -18,7 +18,7 @@
     any category can be created or modified. When sending to a category, only items within that
     category can be created or modified. 
   </para>
-	<section>
+	<section xml:id='batch-create-reference'>
 		<title>Create Multiple Profile Items</title>
 		<para>
 			Used to create multiple new profile items in a single HTTP request.
@@ -48,7 +48,7 @@
 		<para>
 		  The request should include a JSON or XML-encoded body containing the values which should be set.
 		  See the examples below for the exact structure. Compulsory and optional parameters are as discussed
-		  in <xref linkend='create_profile_item_reference'/>, but instead of putting the parameters in a form
+		  in <xref linkend='create-profile-item-reference'/>, but instead of putting the parameters in a form
 		  encoded body, parameter names become hash keys or tag names in the JSON or XML. As for creating 
 		  individual items, a dataItemUid is compulsory. Other parameters are optional.
 	  </para>
@@ -73,14 +73,14 @@ Accept: application/json
 Content-Type: application/json
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
-          <programlisting role='json-body'><xi:include href='samples/json/batch_create_request.js' parse="text"/></programlisting>
+          <programlisting language='javascript'><xi:include href='samples/json/batch_create_request.js' parse="text"/></programlisting>
         </section>
         <section role='httpresponse'>
           <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'><xi:include href='samples/json/batch_create.js' parse="text"/></programlisting>
+  			  <programlisting language='javascript'><xi:include href='samples/json/batch_create.js' parse="text"/></programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
@@ -92,19 +92,19 @@ Accept: application/xml
 Content-Type: application/xml
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/batch_create_request.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/batch_create_request.xml' parse="text"/></programlisting>
         </section>
         <section role='httpresponse'>
           <programlisting role='header'>
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/batch_create.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/batch_create.xml' parse="text"/></programlisting>
         </section>
   		</section>
   	</section>
 	</section>
-	<section>
+	<section xml:id='batch-update-reference'>
 		<title>Update Multiple Profile Items</title>
 		<para>
 			Used to update multiple profile items in a single HTTP request.
@@ -134,7 +134,7 @@ Content-Type: application/xml; charset=UTF-8
 		<para>
 		  The request should include a JSON or XML-encoded body containing the UIDs of the items, and the values
 		  which should be updated. See the examples below for the exact structure. Parameters are as discussed in 
-		  <xref linkend='update_profile_item_reference'/>, but instead of putting the parameters in a form
+		  <xref linkend='update-profile-item-reference'/>, but instead of putting the parameters in a form
 		  encoded body, parameter names become hash keys or tag names in the JSON or XML.
 	  </para>
 	  <para>
@@ -151,7 +151,7 @@ Accept: application/json
 Content-Type: application/json
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
-          <programlisting role='json-body'><xi:include href='samples/json/batch_update_request.js' parse="text"/></programlisting>
+          <programlisting language='javascript'><xi:include href='samples/json/batch_update_request.js' parse="text"/></programlisting>
         </section>
         <section role='httpresponse'>
           <programlisting role='header'>
@@ -169,7 +169,7 @@ Accept: application/xml
 Content-Type: application/xml
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/batch_update_request.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/batch_update_request.xml' parse="text"/></programlisting>
         </section>
         <section role='httpresponse'>
           <programlisting role='header'>

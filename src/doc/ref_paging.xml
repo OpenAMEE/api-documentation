@@ -6,7 +6,7 @@
 <!ENTITY % xml.features "INCLUDE">
 ]>
 
-<section id='paging_reference' xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id='paging-reference' xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Paging</title>
   <para>
     Many resources in AMEE are capable of containing a large number of sub-resources, for instance 
@@ -21,11 +21,11 @@
   <section role='tabbed'>
     <section role='tab'>
       <title>JSON</title>
-      <programlisting role='json-body'><xi:include href='samples/json/pager.js' parse="text"/></programlisting>
+      <programlisting language='javascript'><xi:include href='samples/json/pager.js' parse="text"/></programlisting>
     </section>
     <section role='tab'>
       <title>XML</title>
-      <programlisting role='xml-body'><xi:include href='samples/xml/pager.xml' parse="text"/></programlisting>
+      <programlisting language='xml'><xi:include href='samples/xml/pager.xml' parse="text"/></programlisting>
     </section>
   </section>
 	<section>

@@ -8,7 +8,7 @@
 %dbcent;
 ]>
 
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id='profile-reference' xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Profiles</title>
   <para>
     A Profile is the basic grouping element in AMEE. A single profile is used to contain all data corresponding to a single entity 
@@ -28,7 +28,7 @@
 			</tr>
 			<tr>					
 				<td>UID</td>
-				<td>A 12-letter unique identifier for the profile. See <xref linkend='uid_reference'/> for more information.</td>
+				<td>A 12-letter unique identifier for the profile. See <xref linkend='uid-reference'/> for more information.</td>
 			</tr>
 			<tr>					
 				<td>created</td>
@@ -42,7 +42,7 @@
 			</tr>
 		</table>
 	</section>
-	<section id='create_profile_reference'>
+	<section id='create-profile-reference'>
 		<title>Create Profile</title>
 		<para>
 			Used to create a new profile, in which ProfileItems can be stored.
@@ -104,7 +104,7 @@ profile=true
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
+  			  <programlisting language='javascript'><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
 			  </section>
   		</section>
   		<section role='tab'>
@@ -125,12 +125,12 @@ profile=true
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
         </section>
   		</section>
   	</section>
 	</section>
-	<section>
+	<section xml:id='list-profiles-reference'>
 		<title>List Profiles</title>
 		<para>
 			Lists all profiles available to the current user. Currently this is the list of all profiles
@@ -160,7 +160,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-          <programlisting role='json-body'><xi:include href='samples/json/get_profiles.js' parse="text"/></programlisting>
+          <programlisting language='javascript'><xi:include href='samples/json/get_profiles.js' parse="text"/></programlisting>
 		    </section>
   		</section>
 		  <section role='tab'>
@@ -177,12 +177,12 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/get_profiles.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/get_profiles.xml' parse="text"/></programlisting>
 		    </section>
   		</section>
 		</section>
 	</section>
-	<section>
+	<section xml:id='delete-profile-item-reference'>
 		<title>Delete Profile</title>
 		<para>
 			Completely remove the specified profile from the AMEE database, including all Profile Items contained within it. This information cannot be recovered after deletion.

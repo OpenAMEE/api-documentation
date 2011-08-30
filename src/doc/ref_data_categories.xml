@@ -8,7 +8,7 @@
 %dbcent;
 ]>
 
-<section xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xml:id='data-category-reference' xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Data Categories</title>
   <para>
   </para>
@@ -21,7 +21,7 @@
 			</tr>
 			<tr>					
 				<td>UID</td>
-				<td>A 12-letter unique identifier for the category. See <xref linkend='uid_reference'/> for more information.</td>
+				<td>A 12-letter unique identifier for the category. See <xref linkend='uid-reference'/> for more information.</td>
 			</tr>
 			<tr>					
 				<td>created</td>
@@ -43,7 +43,7 @@
 			</tr>
 		</table>
 	</section>
-	<section xml:id='reference_data_category'>
+	<section xml:id='get-data-category-reference'>
 		<title>Get Data Category</title>
 		<para>
 			Lists all subcategories and data items in a data category
@@ -64,12 +64,12 @@
 				<tr>
 					<td>page</td>
 					<td>If there is more than one page of data items, retrieve the specified page. Default is 
-					  to fetch page 1. See <xref linkend='paging_reference'/>.</td>
+					  to fetch page 1. See <xref linkend='paging-reference'/>.</td>
 				</tr>
 				<tr>
 					<td>itemsPerPage</td>
 					<td>Specify the number of data items returned in a single page. Default is 
-					  to fetch 10 items per page. See <xref linkend='paging_reference'/>.</td>
+					  to fetch 10 items per page. See <xref linkend='paging-reference'/>.</td>
 				</tr>
   		</table>
 	  </section>
@@ -92,7 +92,7 @@ Accept: application/json
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-          <programlisting role='json-body'><xi:include href='samples/json/get_data_category.js' parse="text"/></programlisting>
+          <programlisting language='javascript'><xi:include href='samples/json/get_data_category.js' parse="text"/></programlisting>
 		    </section>
   		</section>
 		  <section role='tab'>
@@ -108,12 +108,12 @@ Accept: application/xml
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/get_data_category.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/get_data_category.xml' parse="text"/></programlisting>
 		    </section>
   		</section>
 		</section>
 	</section>
-	<section id='drilldown_reference'>
+	<section id='drilldown-reference'>
 		<title>Look up a Data Item UID</title>
     <para>
       Drilldowns are a special resource available within every Data Category that contains Data Items.
@@ -135,7 +135,7 @@ Content-Type: application/xml; charset=UTF-8
       these and provide it as a parameter to the next drilldown call. When the sequence of choices
       uniquely identifies one data item, a single choice named 'uid' is returned. This is the UID 
       that should be used to refer to the chosen Data Item when creating Profile Items (see 
-      <xref linkend='create_profile_item_reference'/>).
+      <xref linkend='create-profile-item-reference'/>).
 	  </para>
 		<table class='requestdetails'>
 			<tr><td>URL</td><td>https://{server}.amee.com/data/{category_path}/drill</td></tr>
@@ -181,7 +181,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
             </programlisting>
-            <programlisting role='json-body'><xi:include href='samples/json/drill_1.js' parse="text"/></programlisting>
+            <programlisting language='javascript'><xi:include href='samples/json/drill_1.js' parse="text"/></programlisting>
   		    </section>
     		</section>
   		  <section role='tab'>
@@ -198,7 +198,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
             </programlisting>
-            <programlisting role='xml-body'><xi:include href='samples/xml/drill_1.xml' parse="text"/></programlisting>
+            <programlisting language='xml'><xi:include href='samples/xml/drill_1.xml' parse="text"/></programlisting>
   		    </section>
     		</section>
   		</section>
@@ -224,7 +224,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
             </programlisting>
-            <programlisting role='json-body'><xi:include href='samples/json/drill_2.js' parse="text"/></programlisting>
+            <programlisting language='javascript'><xi:include href='samples/json/drill_2.js' parse="text"/></programlisting>
   		    </section>
     		</section>
   		  <section role='tab'>
@@ -241,7 +241,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
             </programlisting>
-            <programlisting role='xml-body'><xi:include href='samples/xml/drill_2.xml' parse="text"/></programlisting>
+            <programlisting language='xml'><xi:include href='samples/xml/drill_2.xml' parse="text"/></programlisting>
   		    </section>
     		</section>
   		</section>
@@ -274,7 +274,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
             </programlisting>
-            <programlisting role='json-body'><xi:include href='samples/json/drill_3.js' parse="text"/></programlisting>
+            <programlisting language='javascript'><xi:include href='samples/json/drill_3.js' parse="text"/></programlisting>
   		    </section>
     		</section>
   		  <section role='tab'>
@@ -291,7 +291,7 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
             </programlisting>
-            <programlisting role='xml-body'><xi:include href='samples/xml/drill_3.xml' parse="text"/></programlisting>
+            <programlisting language='xml'><xi:include href='samples/xml/drill_3.xml' parse="text"/></programlisting>
   		    </section>
     		</section>
   		</section>

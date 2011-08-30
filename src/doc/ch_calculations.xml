@@ -4,7 +4,7 @@
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Perform Calculations</title>
-  <section>
+  <section xml:id='create-profile'>
     <title>Creating a Profile</title>
     <para>
       In order to do calculations with AMEE, you need to create one or more profiles. We will discuss profiles in
@@ -29,7 +29,7 @@ profile=true
 HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
+          <programlisting language='xml' ><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
         </section>
   		</section>
 		  <section role='tab'>
@@ -50,7 +50,7 @@ profile=true
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-  			  <programlisting role='json-body'><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
+  			  <programlisting language='javascript'><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
 			  </section>
   		</section>
 		</section>
@@ -60,7 +60,7 @@ Content-Type: application/json; charset=UTF-8
 		  For this response, that gives us a UID of YLLIKH73BDYS.
 	  </para>
   </section>
-  <section>
+  <section xml:id='doing-calculations'>
     <title>Doing Calculations with Profile Items</title>
     <para>
       Calculations are performed using Profile Items, which are part of a Profile. You need to have already identified
@@ -89,7 +89,7 @@ dataItemUid=19B311DDF0B1&amp;volume=500
 HTTP/1.1 201 CREATED
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting role='xml-body'><xi:include href='samples/xml/create_profile_item.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/create_profile_item.xml' parse="text"/></programlisting>
         </section>
   		</section>
   		<section role='tab'>
@@ -111,7 +111,7 @@ dataItemUid=19B311DDF0B1&amp;volume=500
 HTTP/1.1 201 CREATED
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-          <programlisting role='json-body'><xi:include href='samples/json/create_profile_item.js' parse="text"/></programlisting>
+          <programlisting language='javascript'><xi:include href='samples/json/create_profile_item.js' parse="text"/></programlisting>
         </section>
   		</section>
   	</section>
@@ -148,7 +148,7 @@ Content-Type: application/json; charset=UTF-8
       results from our calculation are.
     </para>
   </section>
-  <section>
+  <section xml:id='getting-results'>
     <title>Getting Results</title>
 	    <para>
 	      The Amounts tag shows separately the amounts of other greenhouse gases emitted, by name, often together with 
