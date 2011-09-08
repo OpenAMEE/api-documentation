@@ -167,6 +167,12 @@
                 <div class="subMenuItem">
                   <a href="/developer/sdks/">SDKs</a>
                 </div>
+                <div class="subMenuItem">
+                  <a href="/blog/category/developernews/">Developer Blog</a>
+                </div>
+                <div class="subMenuItem">
+                  <a href="/amee-open-source-policy/">Open Source Policy</a>
+                </div>
                 <div class="subMenuItem End">
                   <a href="http://status.amee.com">Status</a>
                 </div>
