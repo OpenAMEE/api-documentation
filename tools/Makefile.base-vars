@@ -22,8 +22,8 @@
 # should be overridden if necessary to ensure proper paths are used.
 
 # Paths which you may wish to customize:
-XSLTPROC = java -cp '../tools/bin/saxon65.jar:../tools/bin/saxon.jar:../tools/bin/xercesImpl-2.9.1.jar:../tools/bin/xslthl-2.0.2.jar' \
-  -Dxslthl.config="../tools/bin/xslthl-config.xml" \
+XSLTPROC = java -cp '../tools/bin/saxon65.jar:../tools/bin/saxon.jar:../tools/bin/xercesImpl-2.9.1.jar:../tools/xslthl-2.0.2/xslthl-2.0.2.jar' \
+  -Dxslthl.config="file://$(CURDIR)/../tools/xslthl-2.0.2/highlighters/xslthl-config.xml" \
   -Djavax.xml.parsers.DocumentBuilderFactory=org.apache.xerces.jaxp.DocumentBuilderFactoryImpl \
   -Djavax.xml.parsers.SAXParserFactory=org.apache.xerces.jaxp.SAXParserFactoryImpl \
   -Dorg.apache.xerces.xni.parser.XMLParserConfiguration=org.apache.xerces.parsers.XIncludeParserConfiguration \
