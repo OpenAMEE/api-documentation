@@ -4,7 +4,7 @@
 [
 <!ENTITY % sgml.features "IGNORE">
 <!ENTITY % xml.features "INCLUDE">
-<!ENTITY % dbcent PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/opt/local/share/xml/docbook/4.5/dbcentx.mod">
+<!ENTITY % dbcent PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/usr/local/Cellar/docbook/5.0/docbook/xml/4.5/dbcentx.mod">
 %dbcent;
 ]>
 
