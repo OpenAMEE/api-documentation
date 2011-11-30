@@ -157,7 +157,7 @@
               <div class="subMenuItem"><a href="/developer/sdks/">SDKs</a></div>
               <div class="subMenuItem"><a href="/amee-open-source-policy/">Open Source Policy</a></div>
               <div class="subMenuItem"><a href="/category/developernews/">Developer Blog</a></div>
-              <div class="subMenuItem"><a href="/labs/">AMEE Labs</a></div>
+              <!--<div class="subMenuItem"><a href="/labs/">AMEE Labs</a></div>-->
               <div class="subMenuItem"><a href="http://status.amee.com">Status</a></div>
               </div>
               <div class="greyBoxThirdPageFooter">.</div>
