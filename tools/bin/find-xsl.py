@@ -24,6 +24,8 @@ candidate_xsldirs = (
     '/sw/share/xml/xsl/docbook-xsl',
     # Mac OS X + MacPorts
     '/opt/local/share/xsl/docbook-xsl',
+    # Mac OS X + Homebrew
+    '/usr/local/Cellar/docbook/5.0/docbook/xsl/1.76.1/',
     # Please add your OS's location here if not listed!
     )
 #######################################################

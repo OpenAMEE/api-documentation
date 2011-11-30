@@ -9,5 +9,8 @@ options:
   
   
 Requirements:
+  docbook (install via homebrew)
   xsltproc
   fop (PDF only)
+  
+  
