@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Resources xmlns="http://schemas.amee.cc/2.0">
+  <DrillDownResource>
+    ...
+    <Choices>
+      <Name>uid</Name>
+      <Choices>
+        <Choice>
+          <Name>2EC340002E72</Name>
+          <Value>2EC340002E72</Value>
+        </Choice>
+      </Choices>
+    </Choices>
+  </DrillDownResource>
+</Resources>
