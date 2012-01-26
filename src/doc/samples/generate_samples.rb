@@ -91,6 +91,8 @@ formats.each do |format|
     save 'fuel_drill', format, connections[format].get('/data/transport/defra/fuel/drill?fuel=petrol').body
     # Get fuel data item
     save 'fuel_data_item', format, connections[format].get('/data/transport/defra/fuel/19B311DDF0B1').body
+    # Do a data calculation
+    save 'data_calculation', format, connections[format].get('/data/transport/defra/fuel/19B311DDF0B1?volume=500').body
     # Get a profile category with items
     save 'get_profile_category', format, connections[format].get('/profiles/YLLIKH73BDYS/transport/defra/fuel').body
     # Get an existing profile item
