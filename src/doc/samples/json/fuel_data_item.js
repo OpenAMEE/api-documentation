@@ -155,36 +155,6 @@
         "displayPath": "massDirectCO2ePerVolume"
       },
       {
-        "name": "Type of fuel",
-        "itemValueDefinition": {
-          "fromData": true,
-          "name": "Type of fuel",
-          "drillDown": true,
-          "fromProfile": false,
-          "uid": "2A295F2622CE",
-          "valueDefinition": {
-            "modified": "2007-07-27 07:30:44.0",
-            "name": "text",
-            "valueType": "TEXT",
-            "uid": "CCEB59CACE1B",
-            "description": "",
-            "environment": {
-              "uid": "5F5887BCF726"
-            },
-            "created": "2007-07-27 07:30:44.0"
-          },
-          "path": "fuel"
-        },
-        "displayName": "Type of fuel",
-        "perUnit": "",
-        "startDate": "1970-01-01T00:00:00Z",
-        "uid": "A10E681D1E20",
-        "value": "petrol",
-        "unit": "",
-        "path": "fuel",
-        "displayPath": "fuel"
-      },
-      {
         "name": "Indirect CO2e emissions factor",
         "itemValueDefinition": {
           "fromData": true,
@@ -215,6 +185,36 @@
         "unit": "kg",
         "path": "massIndirectCO2ePerVolume",
         "displayPath": "massIndirectCO2ePerVolume"
+      },
+      {
+        "name": "Type of fuel",
+        "itemValueDefinition": {
+          "fromData": true,
+          "name": "Type of fuel",
+          "drillDown": true,
+          "fromProfile": false,
+          "uid": "2A295F2622CE",
+          "valueDefinition": {
+            "modified": "2007-07-27 07:30:44.0",
+            "name": "text",
+            "valueType": "TEXT",
+            "uid": "CCEB59CACE1B",
+            "description": "",
+            "environment": {
+              "uid": "5F5887BCF726"
+            },
+            "created": "2007-07-27 07:30:44.0"
+          },
+          "path": "fuel"
+        },
+        "displayName": "Type of fuel",
+        "perUnit": "",
+        "startDate": "1970-01-01T00:00:00Z",
+        "uid": "A10E681D1E20",
+        "value": "petrol",
+        "unit": "",
+        "path": "fuel",
+        "displayPath": "fuel"
       },
       {
         "name": "Direct N2O emissions factor (CO2e)",
@@ -313,31 +313,37 @@
     "amount": [
       {
         "default": "true",
+        "perUnit": "",
         "type": "totalDirectCO2e",
         "value": 0,
         "unit": "kg"
       },
       {
+        "perUnit": "",
         "type": "lifeCycleCO2e",
         "value": 0,
         "unit": "kg"
       },
       {
+        "perUnit": "",
         "type": "CO2",
         "value": 0,
         "unit": "kg"
       },
       {
+        "perUnit": "",
         "type": "nitrousOxideCO2e",
         "value": 0,
         "unit": "kg"
       },
       {
+        "perUnit": "",
         "type": "methaneCO2e",
         "value": 0,
         "unit": "kg"
       },
       {
+        "perUnit": "",
         "type": "indirectCO2e",
         "value": 0,
         "unit": "kg"
