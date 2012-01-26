@@ -15,7 +15,7 @@
 	  This API key will let you use the AMEE staging platform (stage.amee.com), which is intended for use during development.
     </para>
     <para>
-      AMEEconnect is a RESTful API, and uses HTTP requests for all actions, and standard methods of authentication
+      AMEEconnect is a RESTful API, with HTTP requests for all actions, and uses standard methods of authentication
 	  and response selection. Use <emphasis>HTTP Basic</emphasis> authentication, and specify whether you want XML 
 	  or JSON responses using the <emphasis>Accept</emphasis> header.
     </para>
@@ -31,9 +31,9 @@
 	</para>
 	<para>
 	  For instance, to do a flight calculation, you might start by <ulink url='http://discover.amee.com/search/flights'>searching
-	  for flights</ulink>. By looking through the search results, you can see that the 
-	  <ulink url='http://discover.amee.com/categories/Great_Circle_flight_methodology'>Great Circle flight methodology</ulink> 
-	  category deals with flights between two locations. Let's try that one.
+	  for flights</ulink>. By looking through the search results, you can see that the
+	  <ulink url='http://discover.amee.com/categories/Great_Circle_flight_methodology'>Great Circle flight methodology</ulink> category
+	  deals with flights between two locations. Let's try that one.
 	</para>
 	<para>
 	  There are two pieces of information required to identify a calculation. The first is the <emphasis>path</emphasis>. This
@@ -42,12 +42,12 @@
 	</para>
 	<para>
 	  The second are the <emphasis>drilldown options</emphasis>. Each category can contain a number of variants on a single 
-	  calculation; different input values. Each of these items is identified by a series of drilldown options. The best way to
+	  calculation; different input values if you like. Each of these is identified by a series of drilldown options. The best way to
 	  get these is to use the <ulink url='http://discover.amee.com/categories/Great_Circle_flight_methodology/data/code'>code tab</ulink>
 	  and copy the drill options from the generated code. In this case, the drill option we want is <emphasis>type=great+circle+route</emphasis>.
 	</para>
 	<para>
-	  You now have all the information you need to make a drilldown request and get the identifier (UID) for the calculation. You'll need this next.
+	  You now have all the information you need to make a drilldown request and get the identifier (UID) for the actual calculation.
     </para>
 		<section role='tabbed'>
   		<section role='tab'>
@@ -105,8 +105,9 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
       Now we can actually perform the calculation. 
 	</para>
 	<para>
-	  You do a GET request to the data item URL, which is made up of the path and the UID you just fetched, and include 
-	  some parameters. These are different for every category, but again you can grab them from the code tab in AMEEdiscover.
+	  You do a GET request to a Data Item URL, which is made up of the category path and the UID you just fetched, and include 
+	  some parameters for your input values. These are different for every category, but again you can grab them from the code 
+	  tab in AMEEdiscover.
     </para>
 	<para>
 	  In this case there are two required parameters, <emphasis>IATACode1</emphasis> and <emphasis>IATACode2</emphasis>, 
