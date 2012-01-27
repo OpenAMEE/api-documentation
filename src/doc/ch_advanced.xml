@@ -8,10 +8,10 @@
     <title>Units</title>
     <para>
       AMEEconnect includes built-in support for a wide range of unit conversions. Most units 
-      are SI by default, but if you want to specify fuel in US gallons instead, you can. Time units can also 
-      be changed. Each parameter in a profile item has associated Unit and PerUnit parameters which control 
-      these. For instance, if you wanted to use the default units for fuel, you could add a fuel purchase with 
-      the following parameter, which would represent a fuel usage of 100 litres per month.
+      are metric by default, but if you want to specify fuel in US gallons instead, you can. Time units can also 
+      be changed if present for that parameter. Each input parameter has associated Unit and PerUnit
+	  parameters which control these. For instance, if you wanted to use the default units, you can add a parameter 
+	  with no units.
     </para>
     <programlisting>volume=100</programlisting>
     <para>

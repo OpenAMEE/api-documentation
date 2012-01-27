@@ -15,9 +15,7 @@
     <para>
       The process for doing this is very similar to doing calculations as described
       in the previous chapter, except that you use slightly different URLs.
-	  Instead of 
-	  When you do a calculation, you create a Profile Item, which is stored 
-      in the AMEE platform.
+	  The calculation is stored as a Profile Item, which is contained within a Profile.
     </para>
   </section>
   <section xml:id='create-profile'>
