@@ -89,31 +89,37 @@
       "amount": [
         {
           "default": "true",
+          "perUnit": "",
           "type": "totalDirectCO2e",
           "value": 2311.7,
           "unit": "kg"
         },
         {
+          "perUnit": "",
           "type": "lifeCycleCO2e",
           "value": 2722.7,
           "unit": "kg"
         },
         {
+          "perUnit": "",
           "type": "CO2",
           "value": 2301.8,
           "unit": "kg"
         },
         {
+          "perUnit": "",
           "type": "nitrousOxideCO2e",
           "value": 6.5,
           "unit": "kg"
         },
         {
+          "perUnit": "",
           "type": "methaneCO2e",
           "value": 3.4,
           "unit": "kg"
         },
         {
+          "perUnit": "",
           "type": "indirectCO2e",
           "value": 411,
           "unit": "kg"

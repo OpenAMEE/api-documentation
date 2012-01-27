@@ -4,162 +4,84 @@
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Perform Calculations</title>
-  <section xml:id='create-profile'>
-    <title>Creating a Profile</title>
-    <para>
-      In order to do calculations with AMEE, you need to create one or more profiles. We will discuss profiles in
-      greater detail in the next section, so for now we will just create one and move on.
-    </para>
-		<section role='tabbed'>
-  		<section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-POST /profiles HTTP/1.1
-Accept: application/xml
-Content-Type: application/x-www-form-urlencoded
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting role='body'>
-profile=true
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-          <programlisting language='xml' ><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
-        </section>
-  		</section>
-		  <section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-POST /profiles HTTP/1.1
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting role='body'>
-profile=true
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
-  			  <programlisting language='javascript'><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
-			  </section>
-  		</section>
-		</section>
-		<para>
-		  We need the UID of the profile in order to create profile items - it becomes part of the path in the next step. As described 
-		  in in the Quick Start chapter, for now we'll just grab this out of the response with an XPath expression, <emphasis>//Profile/@uid</emphasis>.
-		  For this response, that gives us a UID of YLLIKH73BDYS.
-	  </para>
-  </section>
   <section xml:id='doing-calculations'>
-    <title>Doing Calculations with Profile Items</title>
+    <title>Doing Calculations with Data Items</title>
     <para>
-      Calculations are performed using Profile Items, which are part of a Profile. You need to have already identified
-      the category and data item that you want to use for the calculation, as described in the previous chapter.
-      Once you've done this, simply POST to the category URL within the profile with the appropriate set of parameters,
-      and your calculation will be carried out. For example, to calculate some usage data for the 
-      /transport/defra/fuel category, you would send the following request:
+      One-off calculations are performed using Data Items. The previous section showed how to select a data item
+	  using drilldowns, so have a read of that first if you haven't already.
+    </para>
+	<para>  
+      Once you know the path and UID of the data item you want to use, you simply send a GET request to the item URL as you
+	  would to get the emission factors from the item. The difference is, you provide your input values as query parameters
+	  on the URL, and your calculation will be carried out. 
+	  For example, to calculate some usage data for the /transport/defra/fuel category, you would send the following request:
     </para>
 		<section role='tabbed'>
   		<section role='tab'>
   			<title>XML</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-POST /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
+GET /data/transport/defra/fuel/19B311DDF0B1?volume=500 HTTP/1.1
 Accept: application/xml
-Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting role='body'>
-dataItemUid=19B311DDF0B1&amp;volume=500
-&amp;representation=full
           </programlisting>
         </section>
         <section role='httpresponse'>
           <programlisting role='header'>
-HTTP/1.1 201 CREATED
+HTTP/1.1 200 OK
 Content-Type: application/xml; charset=UTF-8
           </programlisting>
-          <programlisting language='xml'><xi:include href='samples/xml/create_profile_item.xml' parse="text"/></programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/data_calculation.xml' parse="text"/></programlisting>
         </section>
   		</section>
   		<section role='tab'>
   			<title>JSON</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-POST /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
+GET /data/transport/defra/fuel/19B311DDF0B1?volume=500 HTTP/1.1
 Accept: application/json
-Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting role='body'>
-dataItemUid=19B311DDF0B1&amp;volume=500
-&amp;representation=full
           </programlisting>
         </section>
         <section role='httpresponse'>
           <programlisting role='header'>
-HTTP/1.1 201 CREATED
+HTTP/1.1 200 OK
 Content-Type: application/json; charset=UTF-8
           </programlisting>
-          <programlisting language='javascript'><xi:include href='samples/json/create_profile_item.js' parse="text"/></programlisting>
+          <programlisting language='javascript'><xi:include href='samples/json/data_calculation.js' parse="text"/></programlisting>
         </section>
   		</section>
   	</section>
-		<para>
-      There are a few things to note here, particularly the parameters in the 
-      POST request. The first is <emphasis>dataItemUid</emphasis>, which specifies exactly which data item you wish to 
-      use for the calculation (in this case, the type of fuel). We looked at obtaining these UIDs in the previous chapter,
-      so that should make sense already.
+    <para>
+      The parameters to the GET request are your input values obtained from your user (or application). 
+	  Here we just use the <emphasis>volume</emphasis> parameter, 
+	  but as each category represents a different methodology or calculation, the input values 
+      are different for each one. AMEEdiscover lists which are valid for which categories, as well
+      as showing different usage options; which parameters are required, optional, and so on.
     </para>
     <para>
-      Secondly we have the <emphasis>volume</emphasis> parameter, which is a parameter specific 
-      to this category. As each category can store a different type of data, the profile item values 
-      are different for each one. AMEEdiscover lists which ones are valid for which categories, as well
-      as showing different usage options; which parameters are required, optional, and so on. In this case, 
+	  In this case, 
       the call will send a value of 500 for this item (which is in litres by default - again, see AMEEdiscover).
-    </para>
-    <para>
-      Finally we pass the <emphasis>representation=full</emphasis> parameter. This asks AMEEconnect to
-      send back a representation of the calculation. We will see why this is necessary in the next chapter, 
-      so don't worry about it for now.
-    </para>
-    <para>
-      You can select the units you wish to use for the values in your calculation - see <xref linkend='units' /> for details.
-    </para>
-  	<para>
-      If you look at the response, you can see the ProfileItem tag. It contains all the details of the calculation.
-      The item values are the parameters from your POST request. In this case, the item value is volume, 
-      and the value is 500. Unit and PerUnit show the units for this item value, in this case litres.
+	  You can select the units you wish to use for the values in your calculation - see <xref linkend='units' /> 
+	  for details.
     </para>
     <para>
       You can perform thousands of different types of calculation by finding the appropriate category and
-      data items. By setting various parameters, you can also store these values, or track how they change over time. 
-      We will go into these options in the following chapter, but first, let'ssee how to find out what the actual 
-      results from our calculation are.
+      data items. By using profiles, you can also store these values, or track how they change over time. 
+      We will go into these options in the following chapter.
     </para>
   </section>
   <section xml:id='getting-results'>
     <title>Getting Results</title>
 	    <para>
-	      The Amounts tag shows separately the amounts of other greenhouse gases emitted, by name, often together with 
+	      The Amounts tag in the response shows separately the amounts of greenhouse gases emitted, by name, often together with 
 	      an equivalent amount of CO2 that would have the same climate impact, and other outputs of interest. The exact set 
 	      of outputs varies from category to category, as documented in AMEEdiscover. In this case we see that 1151kg of 
 	      CO2, plus some other gases, produce the 1156kg of climate-equivalent CO2, or CO2e.
 	    </para>
 	    <para>
 	      You may also notice the Amount tag. This shows the default result from the Amounts section, and is for backwards
-	      compatibility. New users of AMEEconnect should not need to use this; it's better to use the multiple Amount results
-	      contained inside the Amounts tag.
+	      compatibility only.
 	    </para>
   </section>
 </chapter>

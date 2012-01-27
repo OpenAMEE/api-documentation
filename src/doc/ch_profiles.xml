@@ -13,15 +13,15 @@
       on hosting and processing your own data.
     </para>
     <para>
-      The process for doing this is actually exactly the same as for doing calculations as described
-      in the previous chapter; when you do a calculation, you create a Profile Item, which is stored 
-      in the AMEE platform.
+      The process for doing this is very similar to doing calculations as described
+      in the previous chapter, except that you use slightly different URLs.
+	  The calculation is stored as a Profile Item, which is contained within a Profile.
     </para>
   </section>
-  <section xml:id='about-profiles'>
-    <title>More about Profiles</title>
+  <section xml:id='create-profile'>
+    <title>Creating a Profile</title>
     <para>
-      So far, we've mostly ignored Profiles. Here, however, they become more relevant. If you are storing 
+      In order to store data in AMEE, you need to create one or more profiles. If you are storing 
       data for many different entities, you can use multiple profiles to separate that data into silos.
     </para>
     <para>
@@ -31,7 +31,134 @@
       by AMEE in your application alongside other data for the entity; there is no way to search AMEE for profiles that 
       match particular metadata, as all profiles are fully anonymised.
     </para>
+    <para>
+		You create a profile by doing a POST to /profiles, including profile=true in the request body.
+	</para>
+		<section role='tabbed'>
+  		<section role='tab'>
+  			<title>XML</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+POST /profiles HTTP/1.1
+Accept: application/xml
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+          <programlisting role='body'>
+profile=true
+          </programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+          </programlisting>
+          <programlisting language='xml' ><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
+        </section>
+  		</section>
+		  <section role='tab'>
+  			<title>JSON</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+POST /profiles HTTP/1.1
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+          <programlisting role='body'>
+profile=true
+          </programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+          </programlisting>
+  			  <programlisting language='javascript'><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
+			  </section>
+  		</section>
+		</section>
+		<para>
+		  We need the UID of the profile in order to create profile items - it becomes part of the path in the next step. As described 
+		  in in the Quick Start chapter, for now we'll just grab this out of the response with an XPath expression, <emphasis>//Profile/@uid</emphasis>.
+		  For this response, that gives us a UID of YLLIKH73BDYS.
+	  </para>
   </section>
+  <section xml:id='create-profile'>
+    <title>Storing data</title>
+    <para>
+      Storing data in a profile is pretty much the same as doing one-off calculations as described in the previous section, except that
+	  you POST to the category path inside the profile you are using, and provide the data item UID and input parameters in the POST body.
+    </para>
+    <para>
+	  The following example performs the same calculation as in the previous section, but stores it into a profile for later retrieval.
+    </para>
+	<section role='tabbed'>
+  		<section role='tab'>
+  			<title>XML</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+POST /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
+Accept: application/xml
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+          <programlisting role='body'>
+dataItemUid=19B311DDF0B1&amp;volume=500
+&amp;representation=full
+          </programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+HTTP/1.1 201 CREATED
+Content-Type: application/xml; charset=UTF-8
+          </programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/create_profile_item.xml' parse="text"/></programlisting>
+        </section>
+  		</section>
+  		<section role='tab'>
+  			<title>JSON</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+POST /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+          <programlisting role='body'>
+dataItemUid=19B311DDF0B1&amp;volume=500
+&amp;representation=full
+          </programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+HTTP/1.1 201 CREATED
+Content-Type: application/json; charset=UTF-8
+          </programlisting>
+          <programlisting language='javascript'><xi:include href='samples/json/create_profile_item.js' parse="text"/></programlisting>
+        </section>
+  		</section>
+  	</section>
+    <para>
+      There are a few things to note here, particularly the parameters in the 
+      POST request. The first is <emphasis>dataItemUid</emphasis>, which specifies exactly which data item you wish to 
+      use for the calculation (in this case, the type of fuel). We looked at obtaining these UIDs in the previous chapter,
+      so that should make sense already.
+    </para>
+    <para>
+      Secondly we have the <emphasis>volume</emphasis> parameter, which is a parameter specific 
+      to this category. As each category can store a different type of data, the profile item values 
+      are different for each one. AMEEdiscover lists which ones are valid for which categories, as well
+      as showing different usage options; which parameters are required, optional, and so on. In this case, 
+      the call will send a value of 500 for this item (which is in litres by default - again, see AMEEdiscover).
+    </para>
+    <para>
+      Finally we pass the <emphasis>representation=full</emphasis> parameter. This asks AMEEconnect to
+      send back a representation of the calculation. We will see why this is necessary in the next chapter, 
+      so don't worry about it for now.
+    </para>
+  </section>
+
   <section xml:id='naming-items'>
     <title>Naming Profile Items</title>
     <para>

@@ -5,316 +5,186 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Quick Start</title>
   <para>
-    So you want to use AMEEconnect? This part of the manual will get you going, no problems. As it's a quick overview, we've 
-    left out the detailed responses, just giving XPath<biblioref linkend="xpath"/> details for the important bits. Subsequent chapters will go into 
-    much more detail.
+    If you want to calculate carbon emissions (or other sustainability metrics) in your applications, AMEEconnect is for you.
+	This guide will give you the bare minimum you need to get going.
   </para>
-  <section xml:id='ameeconnect'>
-    <title>What is AMEEconnect?</title>
-	  <para>AMEEconnect is a web-based API that gives you access to the data and capabilities of the AMEE platform. It allows you to store and retrieve many forms of consumption data over long periods, while simultaneously applying recognised carbon calculation models to determine the environmental consequences of that consumption.</para>
-  </section>
   <section xml:id='getting-started'>
     <title>Getting Started</title>
     <para>
-      The first step in using AMEEconnect is to sign up for an API key. You can get a free trial account
-      at <ulink url="http://my.amee.com/signup"/>. Enter your details, and you will be emailed your new API key details.
+      Before you start, you'll need an API key. You can get one for free at <ulink url="https://my.amee.com/signup"/>. 
+	  This API key will let you use the AMEE staging platform (stage.amee.com), which is intended for use during development.
     </para>
     <para>
-      This API key will give you access to the AMEE staging platform (stage.amee.com). This platform is designed for
-      you to use while you are developing and testing your application. However, the data on it is regularly 
-      wiped, so once you decide your application is ready to go into production, you will need to
-      change over to using the AMEE live platform (live.amee.com; service fees may apply).
+      AMEEconnect is a RESTful API, with HTTP requests for all actions, and uses standard methods of authentication
+	  and response selection. Use <emphasis>HTTP Basic</emphasis> authentication, and specify whether you want XML 
+	  or JSON responses using the <emphasis>Accept</emphasis> header.
     </para>
-    <para>
-      Throughout the following documentation, the examples will use the AMEE stage platform URL.
-    </para>
-  </section>
-  <section xml:id='authentication'>
-    <title>Authentication</title>
-    <para>
-      Once you've got your key, you're ready to start talking to the API itself, and the first step is 
-      authentication.
-    </para>
-    <para>
-      AMEE uses <emphasis>HTTP Basic</emphasis> authentication. You simply provide your username and password with every 
-      request, using the standard HTTP basic auth format. Most HTTP libraries will support this functionality; some examples
-      are below:
-    </para>
-    <section role='tabbed'>
-  		<section role='tab'>
-  		  <title>curl</title>
-  		  <programlisting>
-curl https://stage.amee.com \
--u username:password
-    	  </programlisting>
-  	  </section>
-  	  <section role='tab'>
-  		  <title>Ruby</title>
-        <programlisting language='ruby'>
-http = Net::HTTP.new @host, 443
-http.use_ssl = true
-req = Net::HTTP::Get.new @location
-req.basic_auth @username, @password
-http.request(req)
-        </programlisting>
-      </section>
-  		<section role='tab'>
-  			<title>HTTP</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET / HTTP/1.1
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  		</section>
-    </section>
-    <para>
-      You should only use HTTP Basic authentication if you are connecting to AMEEconnect over a secure HTTPS connection. Using
-      HTTPS is highly recommended, and all examples in this manual use it, but if you need to use HTTP, see <xref linkend='authenticated-sessions' />
-      for how to do secure authentication over insecure connections.
-    </para>
-  </section>
-  <section xml:id='content-types'>
-    <title>Content Types</title>
-    <para>
-      AMEEconnect supports two content types. Depending on which format you prefer to parse, you can choose either one. 
-      The information is the same in both.
-    </para>
-    <table class='properties'>
-      <tr>
-        <th>Encoding</th>
-        <th>MIME type</th>
-      </tr>
-      <tr>
-        <td>XML</td>
-        <td>application/xml</td>
-      </tr>
-      <tr>
-        <td>JSON</td>
-        <td>application/json</td>
-      </tr>
-    </table>
-    <para>
-      You should specify your desired content type in the <emphasis>Accept</emphasis> header in your HTTP request. For example:
-    </para>
-		<section role='tabbed'>
-  		<section role='tab'>
-  			<title>curl</title>
-			  <programlisting>
-curl https://stage.amee.com/profiles \
--H 'Accept: application/xml' \
--u username:password
-        </programlisting>
-  		</section>
-  		<section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /profiles HTTP/1.1
-Accept: application/xml
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-        </section>
-  		</section>
-  		<section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /profiles HTTP/1.1
-Accept: application/json
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-        </section>
-  		</section>
-  	</section>
-  </section>
-  <section xml:id='quick-create-profile'>
-    <title>Create a Profile</title>
-    <para>
-      To do calculations with AMEEconnect, you will need to create a <emphasis>Profile</emphasis>. We'll get into more detail about profiles in <xref linkend='store-data'/>, but for now we'll just go ahead and create one.
-    </para>
-    <para>
-      To do this, you need to POST to the /profiles path, with 'profile=true' in the body, like this:
-    </para>
-		<section role='tabbed'>
-  		<section role='tab'>
-  			<title>curl</title>
-			  <programlisting>
-curl https://stage.amee.com/profiles \
--X POST -d 'profile=true' \
--H 'Accept: application/xml' \
--u username:password
-        </programlisting>
-  		</section>
-  		<section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-POST /profiles HTTP/1.1
-Accept: application/xml
-Content-Type: application/x-www-form-urlencoded
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting role='body'>
-profile=true
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-        </section>
-  		</section>
-		  <section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-POST /profiles HTTP/1.1
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting role='body'>
-profile=true
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
-			  </section>
-  		</section>
-  	</section>
-  	<para>
-  	  The returned XML or JSON contains a Profile object, which in turn has what's known in AMEEconnect as a UID. This is a unique string that identifies the profile (all entities in AMEEconnect actually have a UID, as you'll see later). If you're using XML, the XPath you want to get the UID from the response is <emphasis>//Profile/@uid</emphasis> which in this case gives us YLLIKH73BDYS.
-	  </para>
   </section>
   <section xml:id='quick-choose-data-item'>
-    <title>Choose a Data Item</title>
+    <title>Find your calculation</title>
     <para>
-      The next step is to choose which calculation you actually want to do. <ulink url="http://discover.amee.com">AMEEdiscover</ulink> lists all the possible calculations available in AMEE (over 8 million!), with rich searching and tagging functionality to make it easy to find what you want. By browsing the categories in AMEEdiscover, you can find the type of calculation you want to do, and then by looking at the Data Items tab, you can see the range of particular calculations that are possible in that category. Each category has a path, and each data item is identified by a set of drilldown choices. We need the UID of the data item we want to use, and we get this by doing a drilldown request. This request uses the path of the category and the drilldown choices you choose, which in this case specify that we are interested in petrol.
+      The first step is to choose which calculation you actually want to do. 
+	</para>
+	<para>
+	  <ulink url="http://discover.amee.com">AMEEdiscover</ulink> lists all the possible calculations available in AMEE 
+	  (over 8 million!), with rich searching and tagging functionality to make it easy to find what you want.
+	</para>
+	<para>
+	  For instance, to do a flight calculation, you might start by <ulink url='http://discover.amee.com/search/flights'>searching
+	  for flights</ulink>. By looking through the search results, you can see that the
+	  <ulink url='http://discover.amee.com/categories/Great_Circle_flight_methodology'>Great Circle flight methodology</ulink> category
+	  deals with flights between two locations. Let's try that one.
+	</para>
+	<para>
+	  There are two pieces of information required to identify a calculation. The first is the <emphasis>path</emphasis>. This
+	  can be found on the documentation page for the category, in the AMEEconnect sidebar box. In this case, it's 
+	  <emphasis>/transport/defra/route</emphasis>
+	</para>
+	<para>
+	  The second are the <emphasis>drilldown options</emphasis>. Each category can contain a number of variants on a single 
+	  calculation; different input values if you like. Each of these is identified by a series of drilldown options. The best way to
+	  get these is to use the <ulink url='http://discover.amee.com/categories/Great_Circle_flight_methodology/data/code'>code tab</ulink>
+	  and copy the drill options from the generated code. In this case, the drill option we want is <emphasis>type=great+circle+route</emphasis>.
+	</para>
+	<para>
+	  You now have all the information you need to make a drilldown request and get the identifier (UID) for the actual calculation.
     </para>
 		<section role='tabbed'>
   		<section role='tab'>
   			<title>curl</title>
+   			<section role='httprequest'>
 			  <programlisting>
-curl https://stage.amee.com/data/transport/defra/fuel/drill?fuel=petrol \
--H 'Accept: application/xml' \
--u username:password
-        </programlisting>
+$ curl 'https://stage.amee.com/data/transport/defra/route/drill?type=great+circle+route' \
+    -H 'Accept: application/xml' \
+    -u username:password -s | \
+    xpath '//Choices/Choice/Name/text()'
+              </programlisting>
+ 	  	    </section>
+   			<section role='httpresponse'>
+			  <programlisting>
+Found 1 nodes:
+-- NODE --
+2EC340002E72
+            </programlisting>
+	  	  </section>
   		</section>
 		  <section role='tab'>
   			<title>XML</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-GET /data/transport/defra/fuel/drill?fuel=petrol HTTP/1.1
+GET /data/transport/defra/route/drill?type=great+circle+route HTTP/1.1
 Accept: application/xml
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
     		</section>
   			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
+              <programlisting language='xml'><xi:include href='samples/xml/quickstart_drill.xml' parse="text"/></programlisting>
 		    </section>
   		</section>
 		  <section role='tab'>
   			<title>JSON</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-GET /data/transport/defra/fuel/drill?fuel=petrol HTTP/1.1
+GET /data/transport/defra/route/drill?type=great+circle+route HTTP/1.1
 Accept: application/json
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
           </programlisting>
     		</section>
   			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
+              <programlisting language='xml'><xi:include href='samples/json/quickstart_drill.js' parse="text"/></programlisting>
 		    </section>
   		</section>
-		</section>
-		<para>
-		  The response contains a Choice node which contains the UID of the data item, in this case AA6B1557CEA6. We will need this 
-		  to identify the exact calculation in the next step. As long as the drilldown is fully qualified (we'll explain this later), 
-		  you can extract it using the XPath <emphasis>//Choices/Choice/Name/text()</emphasis>.
-	  </para>
+	</section>
+	<para>
+	  The response contains the UID of the calculation (or <emphasis>data item</emphasis>, in this case 2EC340002E72.
+    </para>
   </section>
   <section xml:id='quick-do-calculation'>
-    <title>Do a Calculation</title>
+    <title>Do the calculation</title>
     <para>
-      The last step is to actually perform the calculation. For this, you need to use the information obtained
-      from the above calls and put it all together. We do a POST to the data category path <emphasis>within</emphasis> the 
-      profile you created, and we specify the data item UID you got from the drilldown. This tells the platform exactly which
-      calculation you want to perform. You also need to pass in some parameters for your calculation - these are also
-      listed in AMEEdiscover, in the Value Definitions tab. Here, we will calculate the emissions of burning 500 litres of petrol:
+      Now we can actually perform the calculation. 
+	</para>
+	<para>
+	  You do a GET request to a Data Item URL, which is made up of the category path and the UID you just fetched, and include 
+	  some parameters for your input values. These are different for every category, but again you can grab them from the code 
+	  tab in AMEEdiscover.
     </para>
+	<para>
+	  In this case there are two required parameters, <emphasis>IATACode1</emphasis> and <emphasis>IATACode2</emphasis>, 
+	  which let us put in airport codes for the two endpoints of our flight.
+	</para>
 	  <section role='tabbed'>
   		<section role='tab'>
   			<title>curl</title>
+   			<section role='httprequest'>
 			  <programlisting>
-curl https://stage.amee.com/profiles/YLLIKH73BDYS/transport/defra/fuel \
--X POST \
--d 'dataItemUid=AA6B1557CEA6&amp;volume=500&amp;representation=full' \
--H 'Accept: application/xml' \
--u username:password
-        </programlisting>
-  		</section>
+$ curl 'https://stage.amee.com/data/transport/defra/route/2EC340002E72?IATACode1=LHR&amp;IATACode2=LAX' \
+    -H 'Accept: application/xml' \
+    -u username:password -s | \
+    xpath '//Amounts/Amount'
+              </programlisting>
+ 	  	    </section>
+   			<section role='httpresponse'>
+			  <programlisting>
+Found 7 nodes:
+&lt;Amount default="true" perUnit="" type="totalDirectCO2e" unit="kg"&gt;
+  1064.491020315156
+&lt;/Amount&gt;
+&lt;Amount perUnit="" type="distance" unit="km"&gt;
+  9550.430830030109
+&lt;/Amount&gt;
+&lt;Amount perUnit="" type="lifeCycleCO2e" unit="kg"&gt;
+  1260.561365255674
+&lt;/Amount&gt;
+&lt;Amount perUnit="" type="CO2" unit="kg"&gt;
+  1054.0810507104231
+&lt;/Amount&gt;
+&lt;Amount perUnit="" type="nitrousOxideCO2e" unit="kg"&gt;
+  10.409969604732819
+&lt;/Amount&gt;
+&lt;Amount perUnit="" type="methaneCO2e" unit="kg"&gt;
+  0.0955043083003011
+&lt;/Amount&gt;
+&lt;Amount perUnit="" type="indirectCO2e" unit="kg"&gt;
+  196.07034494051814
+&lt;/Amount&gt;
+              </programlisting>
+ 	  	    </section>
+	  	</section>
   		<section role='tab'>
   			<title>XML</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-POST /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
+GET /data/transport/defra/route/2EC340002E72?IATACode1=LHR&amp;IATACode2=LAX HTTP/1.1
 Accept: application/xml
-Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting role='body'>
-dataItemUid=AA6B1557CEA6&amp;volume=500
-&amp;representation=full
           </programlisting>
         </section>
         <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 201 CREATED
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
+              <programlisting language='xml'><xi:include href='samples/xml/quickstart_calc.xml' parse="text"/></programlisting>
         </section>
   		</section>
 		  <section role='tab'>
   			<title>JSON</title>
   			<section role='httprequest'>
   			  <programlisting role='header'>
-POST /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
+GET /data/transport/defra/route/2EC340002E72?IATACode1=LHR&amp;IATACode2=LAX HTTP/1.1
 Accept: application/json
-Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting role='body'>
-dataItemUid=AA6B1557CEA6&amp;volume=500
-&amp;representation=full
           </programlisting>
         </section>
         <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 201 CREATED
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
+              <programlisting language='xml'><xi:include href='samples/json/quickstart_calc.js' parse="text"/></programlisting>
 			  </section>
   		</section>
     </section>
     <para>
-      The response contains a set of Amount nodes, which correspond to the various results of the calculation (there can be more 
-      than one sometimes). The results are in Amount nodes, so if we use the XPath <emphasis>//Amounts/Amount/text()</emphasis>, 
-      we can see that under this methodology, burning 500 litres of petrol produces around 1156kg of CO2-equivalent emissions. Job done!
+	  And that's it! You've just done your first calculation using AMEEconnect. London to LA: 1065kg of emissions (as shown in the 
+	  default amount).
     </para>
     <para>
-      This is, of course, only a quick overview. The following chapters will go into much more details on what it all means and what you can do 
-      with it, and the reference sections contain full descriptions of the XML and JSON responses which we've left out here.
+      This is, of course, only a quick overview. The rest of this documentation goes into much more detail on what it all means
+	  and what more you can do with it, whether you want to just grab the input factors, or build up complex histories over time.
     </para>
   </section>
 </chapter>

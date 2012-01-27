@@ -1,9 +1,9 @@
 {
   "amount": {
-    "value": 0,
+    "value": 1155.85,
     "unit": "kg/year"
   },
-  "amountPerMonth": 0,
+  "amountPerMonth": 96.3208333333333,
   "userValueChoices": {
     "name": "userValueChoices",
     "choices": [
@@ -13,7 +13,7 @@
       },
       {
         "name": "volume",
-        "value": ""
+        "value": "500"
       }
     ]
   },
@@ -315,37 +315,37 @@
         "default": "true",
         "perUnit": "",
         "type": "totalDirectCO2e",
-        "value": 0,
+        "value": 1155.85,
         "unit": "kg"
       },
       {
         "perUnit": "",
         "type": "lifeCycleCO2e",
-        "value": 0,
+        "value": 1361.35,
         "unit": "kg"
       },
       {
         "perUnit": "",
         "type": "CO2",
-        "value": 0,
+        "value": 1150.9,
         "unit": "kg"
       },
       {
         "perUnit": "",
         "type": "nitrousOxideCO2e",
-        "value": 0,
+        "value": 3.25,
         "unit": "kg"
       },
       {
         "perUnit": "",
         "type": "methaneCO2e",
-        "value": 0,
+        "value": 1.7,
         "unit": "kg"
       },
       {
         "perUnit": "",
         "type": "indirectCO2e",
-        "value": 0,
+        "value": 205.5,
         "unit": "kg"
       }
     ],

@@ -208,19 +208,19 @@
     </Choice>
     <Choice>
      <Name>volume</Name>
-     <Value/>
+     <Value>500</Value>
     </Choice>
    </Choices>
   </Choices>
-  <AmountPerMonth>0.0</AmountPerMonth>
-  <Amount unit="kg/year">0.0</Amount>
+  <AmountPerMonth>96.32083333333334</AmountPerMonth>
+  <Amount unit="kg/year">1155.8500000000001</Amount>
   <Amounts>
-   <Amount default="true" perUnit="" type="totalDirectCO2e" unit="kg">0.0</Amount>
-   <Amount perUnit="" type="lifeCycleCO2e" unit="kg">0.0</Amount>
-   <Amount perUnit="" type="CO2" unit="kg">0.0</Amount>
-   <Amount perUnit="" type="nitrousOxideCO2e" unit="kg">0.0</Amount>
-   <Amount perUnit="" type="methaneCO2e" unit="kg">0.0</Amount>
-   <Amount perUnit="" type="indirectCO2e" unit="kg">0.0</Amount>
+   <Amount default="true" perUnit="" type="totalDirectCO2e" unit="kg">1155.8500000000001</Amount>
+   <Amount perUnit="" type="lifeCycleCO2e" unit="kg">1361.3500000000001</Amount>
+   <Amount perUnit="" type="CO2" unit="kg">1150.9</Amount>
+   <Amount perUnit="" type="nitrousOxideCO2e" unit="kg">3.25</Amount>
+   <Amount perUnit="" type="methaneCO2e" unit="kg">1.7</Amount>
+   <Amount perUnit="" type="indirectCO2e" unit="kg">205.5</Amount>
    <Note type="comment">This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation</Note>
   </Amounts>
  </DataItemResource>

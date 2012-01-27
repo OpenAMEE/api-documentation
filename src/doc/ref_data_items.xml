@@ -57,7 +57,8 @@
 	<section xml:id='get-data-item-reference'>
 		<title>Get Data Item</title>
 		<para>
-			Fetches a representation of a data item.
+			Fetches a representation of a data item. If query parameters are provided,
+			a calculation is performed.
 		</para>
 		<table class='requestdetails'>
 			<tr><td>URL</td><td>https://{server}.amee.com/data/{category_path}/{data_item_uid}</td></tr>
@@ -65,6 +66,35 @@
 			<tr><td>Response Content-Type</td><td>application/xml or application/json</td></tr>
 			<tr><td>Successful Response Code</td><td>200 OK</td></tr>
 		</table>
+		<section>
+		  <title>Optional Parameters</title>
+  		<table class='parameters'>
+  			<tr>
+					<th>Parameter</th>
+					<th>Description</th>
+  			</tr>
+				<tr>
+					<td>{valueName}</td>
+					<td>Set a Profile Item Value by specifying the name and value. For example, the value 
+					  name could be 'distance' supplied with a value of '300'. Multiple name/value pairs
+					  can be submitted so long as the named Item Values exist. Names
+					  and values are case sensitive.</td>
+				</tr>
+				<tr>					
+					<td>{valueName}Unit</td>
+					<td>If a value is set, a unit can also be set. In the distance example above, the 
+					  'distanceUnit' parameter could be set to 'km', 'mi', or any other supported distance 
+					  unit. All values have default units if none are supplied.</td>
+				</tr>
+				<tr>					
+					<td>{valueName}PerUnit</td>
+					<td>If a value is set, a perUnit can also be set, which indicates the timescale over which
+					  the value applies. In the distance example above, the 'distancePerUnit' parameter could be
+					  set to 'day', 'month', or any other supported time unit. Not all values support perUnits; check 
+					  AMEEdiscover for each case. Relevant values have default perUnits if none are supplied.</td>
+				</tr>
+  		</table>
+	  </section>
 		<para>
 		  The response contains a JSON or XML encoded description of the data item.
 	  </para>
