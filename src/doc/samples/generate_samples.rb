@@ -3,9 +3,7 @@
 require 'rubygems'
 require 'amee'
 
-PROFILE_UID = 'YLLIKH73BDYS'
-
-formats = [:json, :xml]
+formats = [:xml]
 
 conf = YAML.load_file('amee.yml').symbolize_keys
 
@@ -79,18 +77,17 @@ def save(name, format, body)
   end
 end
 
-def get_item_uid(connection, body)
-  category = AMEE::Profile::Category.parse(connection, body, {})
-  category.items[0][:path]
-end
-
 def request(method, path, options = {})
-  if options.empty?
-    response = $connections[@format].send("#{method.to_s}", path)
+  case method
+  when :delete
+    response = body = $connections[@format].v3_delete(path)
+  when :post
+    response = $connections[@format].v3_post(path, options.merge(:returnobj => true))
+    body = response.body
   else
-    response = $connections[@format].send("#{method.to_s}", path, options)
+    response = body = $connections[@format].send("v3_#{method.to_s}", path, options)
   end
-  save method.to_s+path.gsub(/\/[A-Z0-9]{12}/,'/UID').gsub('/','_'), @format, response.body unless response.body.empty?
+  save method.to_s+path.gsub(/\/[A-Z0-9]{12}/,'/UID').gsub('/','_')+options.to_s, @format, body
   response
 end
 
@@ -98,23 +95,30 @@ formats.each do |format|
   @format = format
   uid = nil
   begin
+    # Create profile
+    response = request :post, '/3/profiles', :profile => true
+    profile_uid = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
     # Get drill
-    request :get, '/data/transport/defra/fuel/drill?fuel=petrol'
+    response = request :get, '/3/categories/DEFRA_transport_fuel_methodology/drill', :fuel => 'petrol'
+    data_item_uid = response.match(/<Value>([A-Z0-9]{12})<\/Value>/)[1]
     # Get fuel data item
-    request :get, '/data/transport/defra/fuel/19B311DDF0B1'
+    request :get, "/3/categories/DEFRA_transport_fuel_methodology/#{data_item_uid}"
     # Do a data calculation
-    request :get, '/data/transport/defra/fuel/19B311DDF0B1', :volume => 500
-    # Get a profile category with items
-    request :get, '/profiles/YLLIKH73BDYS/transport/defra/fuel'
+    request :get, "/3/categories/DEFRA_transport_fuel_methodology/#{data_item_uid}", :'values.volume' => 500
     # Create a new profile item
-    response = request(:post, '/profiles/YLLIKH73BDYS/transport/defra/fuel', :dataItemUid => '19B311DDF0B1', :volume => 500, :representation => 'full', :name => "#{@format}_example", :startDate => '2011-01-05T00:00:00+00:00')
-    uid = get_item_uid($connections[@format], response.body)
+    response = request(:post, "/3/profiles/#{profile_uid}/items", :dataItemUid => data_item_uid, :'values.volume' => 500, :name => "#{@format}_example", :startDate => '2011-01-05T00:00:00+00:00')
+    item_uid = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
+    # Get profile with list of used categories
+    request :get, "/3/profiles/#{profile_uid};categories"
+    # Get a list of items in a profile
+    request :get, "/3/profiles/#{profile_uid}/items"
     # Get an existing profile item
-    request :get, "/profiles/YLLIKH73BDYS/transport/defra/fuel/#{uid}"
+    request :get, "/3/profiles/#{profile_uid}/items/#{item_uid};amounts"
     # Update a profile item
-    request :put, "/profiles/YLLIKH73BDYS/transport/defra/fuel/#{uid}", :volume => 1000, :representation => 'full'
+    request :put, "/3/profiles/#{profile_uid}/items/#{item_uid}", :'values.volume' => 1000
   ensure
     # Clear up
-    request :delete, "/profiles/YLLIKH73BDYS/transport/defra/fuel/#{uid}" if uid
+    request :delete, "/3/profiles/#{profile_uid}/items/#{item_uid}" if item_uid
+    request :delete, "/3/profiles/#{profile_uid}" if profile_uid
   end
 end
