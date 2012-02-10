@@ -2,10 +2,10 @@
   "profile": {
     "uid": "YLLIKH73BDYS"
   },
-  "path": "/transport/defra/fuel/F0638HOIFC1H",
+  "path": "/transport/defra/fuel/C7BJD9OFW9XM",
   "profileItem": {
-    "name": null,
-    "modified": "2011-03-08T13:56:01Z",
+    "name": "json_example",
+    "modified": "2012-02-10T14:52:37Z",
     "dataCategory": {
       "name": "Fuel",
       "uid": "138B5405E0CE",
@@ -40,8 +40,8 @@
         },
         "displayName": "Mass of fuel consumed",
         "perUnit": "",
-        "startDate": "2011-03-08T13:56:00Z",
-        "uid": "42ROH1HOI2BE",
+        "startDate": "2011-01-05T00:00:00Z",
+        "uid": "VT871B2LW9AG",
         "value": "",
         "unit": "kg",
         "path": "mass",
@@ -71,57 +71,57 @@
         },
         "displayName": "Volume of fuel consumed",
         "perUnit": "",
-        "startDate": "2011-03-08T13:56:00Z",
-        "uid": "U9J6XCMJT07I",
-        "value": "500",
+        "startDate": "2011-01-05T00:00:00Z",
+        "uid": "SY0ZLEYW4C7T",
+        "value": "1000",
         "unit": "L",
         "path": "volume",
         "displayPath": "volume"
       }
     ],
     "amount": {
-      "value": 1155.85,
+      "value": 2311.7,
       "unit": "kg/year"
     },
-    "startDate": "2011-03-08T13:56:00Z",
-    "uid": "F0638HOIFC1H",
+    "startDate": "2011-01-05T00:00:00Z",
+    "uid": "C7BJD9OFW9XM",
     "amounts": {
       "amount": [
         {
           "default": "true",
           "perUnit": "",
           "type": "totalDirectCO2e",
-          "value": 1155.85,
+          "value": 2311.7,
           "unit": "kg"
         },
         {
           "perUnit": "",
           "type": "lifeCycleCO2e",
-          "value": 1361.35,
+          "value": 2722.7,
           "unit": "kg"
         },
         {
           "perUnit": "",
           "type": "CO2",
-          "value": 1150.9,
+          "value": 2301.8,
           "unit": "kg"
         },
         {
           "perUnit": "",
           "type": "nitrousOxideCO2e",
-          "value": 3.25,
+          "value": 6.5,
           "unit": "kg"
         },
         {
           "perUnit": "",
           "type": "methaneCO2e",
-          "value": 1.7,
+          "value": 3.4,
           "unit": "kg"
         },
         {
           "perUnit": "",
           "type": "indirectCO2e",
-          "value": 205.5,
+          "value": 411,
           "unit": "kg"
         }
       ],
@@ -151,7 +151,7 @@
       "uid": "80DB1AB8141F"
     },
     "endDate": "",
-    "created": "2011-03-08T13:56:01Z"
+    "created": "2012-02-10T14:52:37Z"
   },
   "apiVersion": "2.0"
 }

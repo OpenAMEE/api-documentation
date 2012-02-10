@@ -2,10 +2,10 @@
 
 <Resources xmlns="http://schemas.amee.cc/2.0">
  <ProfileItemResource>
-  <ProfileItem created="2011-08-04T17:16:10Z" modified="2011-08-04T17:16:10Z" uid="UC9MIF9GZO1A">
+  <ProfileItem created="2012-02-10T14:52:39Z" modified="2012-02-10T14:52:39Z" uid="4MFIS2UGKWAW">
    <Name>xml_example</Name>
    <ItemValues>
-    <ItemValue uid="9U46OXTYM6JR">
+    <ItemValue uid="1W37QZO644K0">
      <Path>mass</Path>
      <Name>Mass of fuel consumed</Name>
      <Value/>
@@ -27,7 +27,7 @@
       <DrillDown>false</DrillDown>
      </ItemValueDefinition>
     </ItemValue>
-    <ItemValue uid="JILC5X8VVMGJ">
+    <ItemValue uid="324KWOIT0Z00">
      <Path>volume</Path>
      <Name>Volume of fuel consumed</Name>
      <Value>1000</Value>
@@ -74,7 +74,7 @@
    </DataItem>
    <Profile uid="YLLIKH73BDYS"/>
   </ProfileItem>
-  <Path>/transport/defra/fuel/UC9MIF9GZO1A</Path>
+  <Path>/transport/defra/fuel/4MFIS2UGKWAW</Path>
   <Profile uid="YLLIKH73BDYS"/>
  </ProfileItemResource>
 </Resources>

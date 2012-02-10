@@ -1,7 +1,7 @@
 {
   "profileItems": [
     {
-      "modified": "2011-08-04T17:16:07Z",
+      "modified": "2012-02-10T14:52:37Z",
       "name": "json_example",
       "itemValues": [
         {
@@ -29,7 +29,7 @@
           "displayName": "Mass of fuel consumed",
           "perUnit": "",
           "startDate": "2011-01-05T00:00:00Z",
-          "uid": "QMIFK54JE3PE",
+          "uid": "VT871B2LW9AG",
           "value": "",
           "unit": "kg",
           "path": "mass",
@@ -60,7 +60,7 @@
           "displayName": "Volume of fuel consumed",
           "perUnit": "",
           "startDate": "2011-01-05T00:00:00Z",
-          "uid": "XO51RT4VSAB9",
+          "uid": "SY0ZLEYW4C7T",
           "value": "500",
           "unit": "L",
           "path": "volume",
@@ -72,7 +72,7 @@
         "unit": "kg/year"
       },
       "startDate": "2011-01-05T00:00:00Z",
-      "uid": "5C61SFIV391I",
+      "uid": "C7BJD9OFW9XM",
       "dataItem": {
         "Label": "petrol",
         "uid": "19B311DDF0B1"
@@ -125,7 +125,7 @@
         ]
       },
       "endDate": "",
-      "created": "2011-08-04T17:16:07Z"
+      "created": "2012-02-10T14:52:37Z"
     }
   ],
   "dataCategory": {

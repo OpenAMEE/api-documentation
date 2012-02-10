@@ -9,7 +9,7 @@ formats = [:json, :xml]
 
 conf = YAML.load_file('amee.yml').symbolize_keys
 
-connections = {
+$connections = {
   :json => AMEE::Connection.new(conf[:server], conf[:username], conf[:password], :ssl => true, :format => :json, :debug => true),
   :xml => AMEE::Connection.new(conf[:server], conf[:username], conf[:password], :ssl => true, :format => :xml, :debug => true)
 }
@@ -82,29 +82,39 @@ end
 def get_item_uid(connection, body)
   category = AMEE::Profile::Category.parse(connection, body, {})
   category.items[0][:path]
-end    
+end
+
+def request(method, path, options = {})
+  if options.empty?
+    response = $connections[@format].send("#{method.to_s}", path)
+  else
+    response = $connections[@format].send("#{method.to_s}", path, options)
+  end
+  save method.to_s+path.gsub(/\/[A-Z0-9]{12}/,'/UID').gsub('/','_'), @format, response.body unless response.body.empty?
+  response
+end
 
 formats.each do |format|
+  @format = format
   uid = nil
   begin
     # Get drill
-    save 'fuel_drill', format, connections[format].get('/data/transport/defra/fuel/drill?fuel=petrol').body
+    request :get, '/data/transport/defra/fuel/drill?fuel=petrol'
     # Get fuel data item
-    save 'fuel_data_item', format, connections[format].get('/data/transport/defra/fuel/19B311DDF0B1').body
+    request :get, '/data/transport/defra/fuel/19B311DDF0B1'
     # Do a data calculation
-    save 'data_calculation', format, connections[format].get('/data/transport/defra/fuel/19B311DDF0B1?volume=500').body
+    request :get, '/data/transport/defra/fuel/19B311DDF0B1', :volume => 500
     # Get a profile category with items
-    save 'get_profile_category', format, connections[format].get('/profiles/YLLIKH73BDYS/transport/defra/fuel').body
-    # Get an existing profile item
-    save 'get_profile_item', format, connections[format].get('/profiles/YLLIKH73BDYS/transport/defra/fuel/F0638HOIFC1H').body
+    request :get, '/profiles/YLLIKH73BDYS/transport/defra/fuel'
     # Create a new profile item
-    response = connections[format].post('/profiles/YLLIKH73BDYS/transport/defra/fuel', :dataItemUid => '19B311DDF0B1', :volume => 500, :representation => 'full', :name => "#{format}_example", :startDate => '2011-01-05T00:00:00+00:00')
-    save 'create_profile_item', format, response.body
-    uid = get_item_uid(connections[format], response.body)
+    response = request(:post, '/profiles/YLLIKH73BDYS/transport/defra/fuel', :dataItemUid => '19B311DDF0B1', :volume => 500, :representation => 'full', :name => "#{@format}_example", :startDate => '2011-01-05T00:00:00+00:00')
+    uid = get_item_uid($connections[@format], response.body)
+    # Get an existing profile item
+    request :get, "/profiles/YLLIKH73BDYS/transport/defra/fuel/#{uid}"
     # Update a profile item
-    save 'update_profile_item', format, connections[format].put("/profiles/YLLIKH73BDYS/transport/defra/fuel/#{uid}", :volume => 1000, :representation => 'full').body
+    request :put, "/profiles/YLLIKH73BDYS/transport/defra/fuel/#{uid}", :volume => 1000, :representation => 'full'
   ensure
     # Clear up
-    connections[format].delete("/profiles/YLLIKH73BDYS/transport/defra/fuel/#{uid}")
+    request :delete, "/profiles/YLLIKH73BDYS/transport/defra/fuel/#{uid}" if uid
   end
 end

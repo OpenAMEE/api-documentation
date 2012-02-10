@@ -2,16 +2,16 @@
 
 <Resources xmlns="http://schemas.amee.cc/2.0">
  <ProfileItemResource>
-  <ProfileItem created="2011-03-08T13:56:01Z" modified="2011-03-08T13:56:01Z" uid="F0638HOIFC1H">
-   <Name/>
+  <ProfileItem created="2012-02-10T14:52:39Z" modified="2012-02-10T14:52:39Z" uid="4MFIS2UGKWAW">
+   <Name>xml_example</Name>
    <ItemValues>
-    <ItemValue uid="42ROH1HOI2BE">
+    <ItemValue uid="1W37QZO644K0">
      <Path>mass</Path>
      <Name>Mass of fuel consumed</Name>
      <Value/>
      <Unit>kg</Unit>
      <PerUnit/>
-     <StartDate>2011-03-08T13:56:00Z</StartDate>
+     <StartDate>2011-01-05T00:00:00Z</StartDate>
      <ItemValueDefinition uid="50151C2D0B90">
       <Path>mass</Path>
       <Name>Mass of fuel consumed</Name>
@@ -27,13 +27,13 @@
       <DrillDown>false</DrillDown>
      </ItemValueDefinition>
     </ItemValue>
-    <ItemValue uid="U9J6XCMJT07I">
+    <ItemValue uid="324KWOIT0Z00">
      <Path>volume</Path>
      <Name>Volume of fuel consumed</Name>
      <Value>500</Value>
      <Unit>L</Unit>
      <PerUnit/>
-     <StartDate>2011-03-08T13:56:00Z</StartDate>
+     <StartDate>2011-01-05T00:00:00Z</StartDate>
      <ItemValueDefinition uid="93899EF4E3AF">
       <Path>volume</Path>
       <Name>Volume of fuel consumed</Name>
@@ -67,14 +67,14 @@
     <Amount perUnit="" type="indirectCO2e" unit="kg">205.5</Amount>
     <Note type="comment">This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation</Note>
    </Amounts>
-   <StartDate>2011-03-08T13:56:00Z</StartDate>
+   <StartDate>2011-01-05T00:00:00Z</StartDate>
    <EndDate/>
    <DataItem uid="19B311DDF0B1">
     <Label>petrol</Label>
    </DataItem>
    <Profile uid="YLLIKH73BDYS"/>
   </ProfileItem>
-  <Path>/transport/defra/fuel/F0638HOIFC1H</Path>
+  <Path>/transport/defra/fuel/4MFIS2UGKWAW</Path>
   <Profile uid="YLLIKH73BDYS"/>
  </ProfileItemResource>
 </Resources>
