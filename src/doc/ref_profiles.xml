@@ -114,23 +114,6 @@
 			<tr><td>HTTP Method</td><td>DELETE</td></tr>
 			<tr><td>Successful Response Code</td><td>200 OK</td></tr>
 		</table>
-		<section role='tabbed'>
-		  <section role='tab'>
-    		<title>Example</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-DELETE /profiles/358E3BCF690E HTTP/1.1
-Accept: application/json, application/xml
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-  			</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: text/plain
-          </programlisting>
-  			</section>
-  		</section>
-		</section>
+		<xi:include href='samples/delete_3_profiles_UID.xml'/>
 	</section>
 </section>
