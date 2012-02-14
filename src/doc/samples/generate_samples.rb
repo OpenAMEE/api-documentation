@@ -85,7 +85,7 @@ def save(name, format, request)
     f.puts "<section role='httprequest'>"
     # Request header
     f.puts "<programlisting role='header'>"
-    f.puts "#{request.method.to_s.upcase} /#{request.url.split('/',4).last} HTTP/1.1"
+    f.puts "#{request.method.to_s.upcase} /#{request.url.split('/',4).last.gsub('&','&amp;')} HTTP/1.1"
     f.puts "Accept: #{request.headers[:Accept]}"
     f.puts "Content-Type: #{request.headers[:'Content-Type']}" if request.headers[:'Content-Type']
     f.puts "Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ="
@@ -177,6 +177,13 @@ $formats.each do |format|
     when :xml
       data_item_uid = response.body.match(/<Value>([A-Z0-9]{12})<\/Value>/)[1]
     end
+    # Get data category information
+    request :get, "/3/categories/DEFRA_transport_fuel_methodology"
+    request :get, "/3/categories/DEFRA_transport_fuel_methodology/items"
+    # Do a drilldown
+    request :get, "/3/categories/Generic_car_transport/drill"
+    request :get, "/3/categories/Generic_car_transport/drill", :fuel => 'diesel'
+    request :get, "/3/categories/Generic_car_transport/drill", :fuel => 'diesel', :size => 'large'
     # Get fuel data item
     request :get, "/3/categories/DEFRA_transport_fuel_methodology/#{data_item_uid}"
     # Do a data calculation

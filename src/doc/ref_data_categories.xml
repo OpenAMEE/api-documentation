@@ -78,40 +78,8 @@
 		  will contain descriptions of subcategories or data items if they exist inside the data
 		  category.
 	  </para>
-		<section role='tabbed'>
-		  <section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/car/generic HTTP/1.1
-Accept: application/json
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
-          <programlisting language='javascript'><xi:include href='samples/json/get_data_category.js' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		  <section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/car/generic HTTP/1.1
-Accept: application/xml
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-          <programlisting language='xml'><xi:include href='samples/xml/get_data_category.xml' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		</section>
+      <xi:include href="samples/get_3_categories_DEFRA_transport_fuel_methodology.xml"/>
+      <xi:include href="samples/get_3_categories_DEFRA_transport_fuel_methodology_items.xml"/>
 	</section>
 	<section id='drilldown-reference'>
 		<title>Look up a Data Item UID</title>
@@ -166,42 +134,7 @@ Content-Type: application/xml; charset=UTF-8
 	    <para>
 	      The first request has no parameters, so fetches the options for the first drill choice.
       </para>
-  		<section role='tabbed'>
-  		  <section role='tab'>
-    			<title>JSON</title>
-    			<section role='httprequest'>
-    			  <programlisting role='header'>
-GET /data/transport/car/generic/drill HTTP/1.1
-Accept: application/json
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-            </programlisting>
-      		</section>
-    			<section role='httpresponse'>
-    			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-            </programlisting>
-            <programlisting language='javascript'><xi:include href='samples/json/drill_1.js' parse="text"/></programlisting>
-  		    </section>
-    		</section>
-  		  <section role='tab'>
-    			<title>XML</title>
-    			<section role='httprequest'>
-    			  <programlisting role='header'>
-GET /data/transport/car/generic/drill HTTP/1.1
-Accept: application/xml
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-            </programlisting>
-      		</section>
-    			<section role='httpresponse'>
-    			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-            </programlisting>
-            <programlisting language='xml'><xi:include href='samples/xml/drill_1.xml' parse="text"/></programlisting>
-  		    </section>
-    		</section>
-  		</section>
+      <xi:include href="samples/get_3_categories_Generic_car_transport_drill.xml"/>
     </section>
 	  <section>
 	    <title>Second Choice</title>
@@ -209,42 +142,7 @@ Content-Type: application/xml; charset=UTF-8
 	      In this example, the user has picked 'diesel' as the selection for the first choice.
 	      This is passed as a URL parameter to the second request.
       </para>
-  		<section role='tabbed'>
-  		  <section role='tab'>
-    			<title>JSON</title>
-    			<section role='httprequest'>
-    			  <programlisting role='header'>
-GET /data/transport/car/generic/drill?fuel=diesel HTTP/1.1
-Accept: application/json
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-            </programlisting>
-      		</section>
-    			<section role='httpresponse'>
-    			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-            </programlisting>
-            <programlisting language='javascript'><xi:include href='samples/json/drill_2.js' parse="text"/></programlisting>
-  		    </section>
-    		</section>
-  		  <section role='tab'>
-    			<title>XML</title>
-    			<section role='httprequest'>
-    			  <programlisting role='header'>
-GET /data/transport/car/generic/drill?fuel=diesel HTTP/1.1
-Accept: application/xml
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-            </programlisting>
-      		</section>
-    			<section role='httpresponse'>
-    			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-            </programlisting>
-            <programlisting language='xml'><xi:include href='samples/xml/drill_2.xml' parse="text"/></programlisting>
-  		    </section>
-    		</section>
-  		</section>
+      <xi:include href="samples/get_3_categories_Generic_car_transport_drillfueldiesel.xml"/>
     </section>
 	  <section>
 	    <title>Final Result</title>
@@ -259,42 +157,7 @@ Content-Type: application/xml; charset=UTF-8
         hard-coding Data Item UIDs in your application, it is perfectly sensible to code a fully specified Drill
         request to look up the data UID in your application’s initialisation.
       </para>
-  		<section role='tabbed'>
-  		  <section role='tab'>
-    			<title>JSON</title>
-    			<section role='httprequest'>
-    			  <programlisting role='header'>
-GET /data/transport/car/generic/drill?fuel=diesel&amp;size=large HTTP/1.1
-Accept: application/json
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-            </programlisting>
-      		</section>
-    			<section role='httpresponse'>
-    			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-            </programlisting>
-            <programlisting language='javascript'><xi:include href='samples/json/drill_3.js' parse="text"/></programlisting>
-  		    </section>
-    		</section>
-  		  <section role='tab'>
-    			<title>XML</title>
-    			<section role='httprequest'>
-    			  <programlisting role='header'>
-GET /data/transport/car/generic/drill?fuel=diesel&amp;size=large HTTP/1.1
-Accept: application/xml
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-            </programlisting>
-      		</section>
-    			<section role='httpresponse'>
-    			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-            </programlisting>
-            <programlisting language='xml'><xi:include href='samples/xml/drill_3.xml' parse="text"/></programlisting>
-  		    </section>
-    		</section>
-  		</section>
+      <xi:include href="samples/get_3_categories_Generic_car_transport_drillsizelargefueldiesel.xml"/>
     </section>
 	</section>
 </section>
