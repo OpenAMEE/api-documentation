@@ -1,0 +1,20 @@
+<section role='tab'>
+<title>XML</title>
+<section role='httprequest'>
+<programlisting role='header'>
+PUT /3/profiles/7LPPC3KESZ3K/items/DQDTTB0ZSIMY HTTP/1.1
+Accept: application/xml
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+<programlisting role='body'>
+values.volume=1000
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 204 No Content
+Content-Type: text/plain
+</programlisting>
+</section>
+</section>

@@ -93,7 +93,7 @@ def save(name, format, request)
     # Request body
     unless request.body.blank?
       f.puts "<programlisting role='body'>"
-      f.puts request.body
+      f.puts request.body.gsub('&','&amp;')
       f.puts "</programlisting>"
     end
     f.puts "</section>"
@@ -146,6 +146,7 @@ def request(method, path, options = {})
   case method
   when :post, :put
     request_options[:headers][:'Content-Type'] = 'application/x-www-form-urlencoded'
+    request_options[:headers][:'Expect'] = '' if method == :put
     request_options[:body] = form_encode(options) unless options.empty?
   else
     request_options[:params] = options unless options.empty?
@@ -181,7 +182,7 @@ $formats.each do |format|
     # Do a data calculation
     request :get, "/3/categories/DEFRA_transport_fuel_methodology/#{data_item_uid};amounts", :'values.volume' => 500
     # Create a new profile item
-    response = request(:post, "/3/profiles/#{profile_uid}/items", :dataItemUid => data_item_uid, :'values.volume' => 500, :name => "#{@format}_example", :startDate => '2011-01-05T00:00:00Z')
+    response = request(:post, "/3/profiles/#{profile_uid}/items", :dataItemUid => data_item_uid, :'values.volume' => 500, :name => "example", :startDate => '2011-01-05T00:00:00Z')
     item_uid = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
     # Get profile with list of used categories
     request :get, "/3/profiles/#{profile_uid};categories"

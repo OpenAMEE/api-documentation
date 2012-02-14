@@ -1,0 +1,16 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+DELETE /3/profiles/FC2ODLZHCNHS/items/1U36W0KJFW3S HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: text/plain
+</programlisting>
+</section>
+</section>
