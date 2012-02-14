@@ -1,0 +1,21 @@
+<section role='tab'>
+<title>XML</title>
+<section role='httprequest'>
+<programlisting role='header'>
+POST /3/profiles HTTP/1.1
+Accept: application/xml
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+<programlisting role='body'>
+profile=true
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 201 Created
+Content-Type: text/plain
+Location: https://platform-api-dev.amee.com/3.6.0/profiles/JYU7ZDF2AV72
+</programlisting>
+</section>
+</section>

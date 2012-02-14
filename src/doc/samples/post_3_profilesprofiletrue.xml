@@ -1,0 +1,4 @@
+<section role='tabbed' xmlns:xi='http://www.w3.org/2001/XInclude'>
+<xi:include href='json/post_3_profilesprofiletrue.xml'/>
+<xi:include href='xml/post_3_profilesprofiletrue.xml'/>
+</section>
