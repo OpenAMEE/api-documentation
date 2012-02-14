@@ -2,15 +2,14 @@
 
 require 'rubygems'
 require 'amee'
+require 'typhoeus'
+require 'json'
+require 'nokogiri'
 
-formats = [:xml]
+$formats = [:json, :xml]
 
-conf = YAML.load_file('amee.yml').symbolize_keys
-
-$connections = {
-  :json => AMEE::Connection.new(conf[:server], conf[:username], conf[:password], :ssl => true, :format => :json, :debug => true),
-  :xml => AMEE::Connection.new(conf[:server], conf[:username], conf[:password], :ssl => true, :format => :xml, :debug => true)
-}
+$conf = YAML.load_file('amee.yml').symbolize_keys
+$hydra = Typhoeus::Hydra.new
 
 #!/usr/bin/ruby
 require 'rubygems'
@@ -65,48 +64,124 @@ XSL = <<-EOXSL
 </xsl:stylesheet>
 EOXSL
 
-def save(name, format, body)
-  case format
-  when :json
-    output = JSON.pretty_generate(JSON[body])
-    File.open("json/#{name}.js", 'w') { |f| f.puts output }
-  when :xml
-    xsl = Nokogiri::XSLT(XSL)
-    xml = Nokogiri(body)
-    File.open("xml/#{name}.xml", 'w') { |f| f.puts xsl.apply_to(xml).to_s }
+
+
+def save(name, format, request)
+
+  # write container. This is a horrible hack as it will happen multiple times
+  File.open("#{name}.xml", 'w') do |f| 
+    f.puts "<section role='tabbed' xmlns:xi='http://www.w3.org/2001/XInclude'>"
+    $formats.each do |x|
+      f.puts "<xi:include href='#{x}/#{name}.xml'/>"
+    end
+    f.puts "</section>"
   end
+
+  # Write individual output
+  File.open("#{format}/#{name}.xml", 'w') do |f| 
+    f.puts "<section role='tab'>"
+    f.puts "<title>#{format.to_s.upcase}</title>"
+  
+    f.puts "<section role='httprequest'>"
+    # Request header
+    f.puts "<programlisting role='header'>"
+    f.puts "#{request.method.to_s.upcase} /#{request.url.split('/',4).last} HTTP/1.1"
+    f.puts "Accept: #{request.headers[:Accept]}"
+    f.puts "Content-Type: #{request.headers[:'Content-Type']}" if request.headers[:'Content-Type']
+    f.puts "Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ="
+    f.puts "</programlisting>"    
+    # Request body
+    unless request.body.blank?
+      f.puts "<programlisting role='body'>"
+      f.puts request.body
+      f.puts "</programlisting>"
+    end
+    f.puts "</section>"
+    
+    response = request.response
+    f.puts "<section role='httpresponse'>"
+    # Response header
+    f.puts "<programlisting role='header'>"
+    f.puts response.headers.to_s.split("\n").first
+    f.puts "Content-Type: #{response.headers_hash['Content-Type']}"
+    f.puts "Location: #{response.headers_hash['Location']}" if response.headers_hash.has_key?('Location')
+    f.puts "</programlisting>"
+    # Response body
+    unless request.response.body.blank?
+      lang = format.to_s
+      lang = "javascript" if lang == 'json'
+      f.puts "<programlisting language='#{lang}'><![CDATA["
+      case format
+      when :json
+        output = JSON.pretty_generate(JSON[request.response.body])
+      when :xml
+        xsl = Nokogiri::XSLT(XSL)
+        xml = Nokogiri(request.response.body)
+        output = xsl.apply_to(xml).to_s
+      end
+      f.puts output
+      f.puts "]]></programlisting>"
+    end
+    f.puts "</section>"
+
+    f.puts "</section>"
+  end
+
+end
+
+def form_encode(data)
+  data.map { |datum|
+    "#{CGI::escape(datum[0].to_s)}=#{CGI::escape(datum[1].to_s)}"
+  }.join('&')
 end
 
 def request(method, path, options = {})
+  # Perform the request
+  request_options = {
+    :method       => method,
+    :headers      => {:Accept => "application/#{@format}"},
+    :username     => $conf[:username],
+    :password     => $conf[:password]
+  }
   case method
-  when :delete
-    response = body = $connections[@format].v3_delete(path)
-  when :post
-    response = $connections[@format].v3_post(path, options.merge(:returnobj => true))
-    body = response.body
+  when :post, :put
+    request_options[:headers][:'Content-Type'] = 'application/x-www-form-urlencoded'
+    request_options[:body] = form_encode(options) unless options.empty?
   else
-    response = body = $connections[@format].send("v3_#{method.to_s}", path, options)
+    request_options[:params] = options unless options.empty?
   end
-  save method.to_s+path.gsub(/\/[A-Z0-9]{12}/,'/UID').gsub('/','_')+options.to_s, @format, body
-  response
+  request = Typhoeus::Request.new("https://#{$conf[:server]}#{path}", request_options)
+  $hydra.queue(request)
+  $hydra.run
+  # Save request
+  save method.to_s+path.gsub(/\/[A-Z0-9]{12}/,'/UID').gsub('/','_')+options.to_s, @format, request
+  # Pass response object back
+  request.response
 end
 
-formats.each do |format|
+$formats.each do |format|
   @format = format
   uid = nil
   begin
     # Create profile
     response = request :post, '/3/profiles', :profile => true
     profile_uid = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
+    # Get profile list
+    request :get, "/3/profiles"
     # Get drill
     response = request :get, '/3/categories/DEFRA_transport_fuel_methodology/drill', :fuel => 'petrol'
-    data_item_uid = response.match(/<Value>([A-Z0-9]{12})<\/Value>/)[1]
+    case @format
+    when :json
+      data_item_uid = response.body.match(/"values":\["([A-Z0-9]{12})"\],"name":"uid"/)[1]
+    when :xml
+      data_item_uid = response.body.match(/<Value>([A-Z0-9]{12})<\/Value>/)[1]
+    end
     # Get fuel data item
     request :get, "/3/categories/DEFRA_transport_fuel_methodology/#{data_item_uid}"
     # Do a data calculation
-    request :get, "/3/categories/DEFRA_transport_fuel_methodology/#{data_item_uid}", :'values.volume' => 500
+    request :get, "/3/categories/DEFRA_transport_fuel_methodology/#{data_item_uid};amounts", :'values.volume' => 500
     # Create a new profile item
-    response = request(:post, "/3/profiles/#{profile_uid}/items", :dataItemUid => data_item_uid, :'values.volume' => 500, :name => "#{@format}_example", :startDate => '2011-01-05T00:00:00+00:00')
+    response = request(:post, "/3/profiles/#{profile_uid}/items", :dataItemUid => data_item_uid, :'values.volume' => 500, :name => "#{@format}_example", :startDate => '2011-01-05T00:00:00Z')
     item_uid = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
     # Get profile with list of used categories
     request :get, "/3/profiles/#{profile_uid};categories"
