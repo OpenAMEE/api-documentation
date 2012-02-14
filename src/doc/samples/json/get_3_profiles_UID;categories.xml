@@ -1,0 +1,32 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3/profiles/OZ5AVVXJJWY7;categories HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "profile": {
+    "uid": "OZ5AVVXJJWY7",
+    "categories": [
+      {
+        "name": "Fuel",
+        "wikiName": "DEFRA_transport_fuel_methodology",
+        "uid": "9819052D7010"
+      }
+    ]
+  },
+  "version": "3.6.0",
+  "status": "OK"
+}
+]]></programlisting>
+</section>
+</section>
