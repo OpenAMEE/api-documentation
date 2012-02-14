@@ -145,42 +145,7 @@ Content-Type: application/xml; charset=UTF-8
 		<para>
 		  The response contains a JSON or XML encoded list of profiles for the current user.
 	  </para>
-		<section role='tabbed'>
-		  <section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /profiles HTTP/1.1
-Accept: application/json
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
-          <programlisting language='javascript'><xi:include href='samples/json/get_profiles.js' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		  <section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /profiles HTTP/1.1
-Accept: application/xml
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-          <programlisting language='xml'><xi:include href='samples/xml/get_profiles.xml' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		</section>
+  	  <xi:include href='samples/get_3_profiles.xml'/>
 	</section>
 	<section xml:id='delete-profile-item-reference'>
 		<title>Delete Profile</title>

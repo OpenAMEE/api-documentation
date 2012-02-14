@@ -1,0 +1,63 @@
+<section role='tab'>
+<title>XML</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3/profiles HTTP/1.1
+Accept: application/xml
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+</programlisting>
+<programlisting language='xml'><![CDATA[
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Representation>
+ <Profiles truncated="false">
+  <Profile uid="W6AWS5W9F6VK"/>
+  <Profile uid="ZWEQYTJA6UBC"/>
+  <Profile uid="CBIJQ7EE5036"/>
+  <Profile uid="JB1ZKI12VHLA"/>
+  <Profile uid="Y3AZOPZRCEUH"/>
+  <Profile uid="9S9XANXALL2Z"/>
+  <Profile uid="HVBV4VJF615J"/>
+  <Profile uid="8BQMRKGSZIE0"/>
+  <Profile uid="M1J4KSD64Q3V"/>
+  <Profile uid="GGAHUS77RHQO"/>
+  <Profile uid="DVRX3M2AWUAP"/>
+  <Profile uid="9LKDH0FUV5Y7"/>
+  <Profile uid="OQU5T1769X0X"/>
+  <Profile uid="BPTZFKL5F0Q1"/>
+  <Profile uid="7VIPMFKUU8BK"/>
+  <Profile uid="8GRN75YNM4QI"/>
+  <Profile uid="BH9DM59K3422"/>
+  <Profile uid="LIQID16YK8JG"/>
+  <Profile uid="XLQG44RSEEVB"/>
+  <Profile uid="G15389A96841"/>
+  <Profile uid="DXIZ08T06XNA"/>
+  <Profile uid="VD5PU6CEGS7K"/>
+  <Profile uid="7K6VI0MQ8WTX"/>
+  <Profile uid="SBGVWFDQCYSQ"/>
+  <Profile uid="DL10G69G0YH0"/>
+  <Profile uid="53WXPH538S2A"/>
+  <Profile uid="4BGHRL420U8L"/>
+  <Profile uid="WT9B70KHXT6Q"/>
+  <Profile uid="FCS7LJRUUDD2"/>
+  <Profile uid="GKPM4NG04MIV"/>
+  <Profile uid="99CMCYVCZ8JF"/>
+  <Profile uid="ZQKV8OYQ5I19"/>
+  <Profile uid="PEPJ66826ON2"/>
+  <Profile uid="0QC9SLHSW1AJ"/>
+  <Profile uid="C4OQZ4P7QN1Y"/>
+  <Profile uid="5Q3HXFKW3Q8W"/>
+  <Profile uid="JYU7ZDF2AV72"/>
+ </Profiles>
+ <Status>OK</Status>
+ <Version>3.6.0</Version>
+</Representation>
+]]></programlisting>
+</section>
+</section>
