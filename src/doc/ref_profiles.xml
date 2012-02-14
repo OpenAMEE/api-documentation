@@ -8,33 +8,33 @@
 %dbcent;
 ]>
 
-<section xml:id='profile-reference' xmlns:xi="http://www.w3.org/2001/XInclude">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="profile-reference">
 	<title>Profiles</title>
-  <para>
+	<para>
     A Profile is the basic grouping element in AMEE. A single profile is used to contain all data corresponding to a single entity 
     in a client application. This could be a person, a building, an organisation, etc.; 
     you are free to choose what a profile corresponds to in your application. You can create any number of separate 
     Profiles.
   </para>
-  <para>
+	<para>
     A Profile is identified by its UID, which forms part of the URL for any operations that are performed on or inside the profile.
   </para>
 	<section>
 		<title>Properties</title>
-		<table class='properties'>
+		<table class="properties">
 			<tr>
 				<th>Property</th>
 				<th>Description</th>
 			</tr>
-			<tr>					
+			<tr>
 				<td>UID</td>
-				<td>A 12-letter unique identifier for the profile. See <xref linkend='uid-reference'/> for more information.</td>
+				<td>A 12-letter unique identifier for the profile. See <xref linkend="uid-reference"/> for more information.</td>
 			</tr>
-			<tr>					
+			<tr>
 				<td>created</td>
 				<td>The time and date on which the profile was created.</td>
 			</tr>
-			<tr>					
+			<tr>
 				<td>modified</td>
 				<td>The time and date on which the profile was last modified. Note that this
 				   does not track changes inside the profile, such as to profile item values, 
@@ -42,21 +42,21 @@
 			</tr>
 		</table>
 	</section>
-	<section id='create-profile-reference'>
+	<section id="create-profile-reference">
 		<title>Create Profile</title>
 		<para>
 			Used to create a new profile, in which ProfileItems can be stored.
 		</para>
-		<table class='requestdetails'>
-			<tr>					
+		<table class="requestdetails">
+			<tr>
 				<td>URL</td>
 				<td>https://{server}.amee.com/profiles</td>
 			</tr>
-			<tr>					
+			<tr>
 				<td>HTTP Method</td>
 				<td>POST</td>
 			</tr>
-			<tr>					
+			<tr>
 				<td>Request Content-Type</td>
 				<td>application/x-www-form-urlencoded</td>
 			</tr>
@@ -70,50 +70,72 @@
 			</tr>
 		</table>
 		<section>
-		  <title>Compulsory Parameters</title>
-  		<table class='parameters'>
-  			<tr>
+			<title>Compulsory Parameters</title>
+			<table class="parameters">
+				<tr>
 					<th>Parameter</th>
 					<th>Description</th>
-  			</tr>
-				<tr>					
+				</tr>
+				<tr>
 					<td>profile</td>
 					<td>Tells AMEE to create a profile. Should always be 'true'.</td>
 				</tr>
-  		</table>
-    </section>
+			</table>
+		</section>
 		<para>
 		  The response body contains a JSON or XML description of the new profile.
 		</para>
-		<xi:include href='samples/post_3_profilesprofiletrue.xml'/>
+		<xi:include href="samples/post_3_profilesprofiletrue.xml"/>
 	</section>
-	<section xml:id='list-profiles-reference'>
+	<section xml:id="list-profiles-reference">
 		<title>List Profiles</title>
 		<para>
 			Lists all profiles available to the current user. Currently this is the list of all profiles
 			created by the current user, but may in future depend on other permissions.
 		</para>
-		<table class='requestdetails'>
-			<tr><td>URL</td><td>https://{server}.amee.com/profiles</td></tr>
-			<tr><td>HTTP Method</td><td>GET</td></tr>
-			<tr><td>Response Content-Type</td><td>application/xml or application/json</td></tr>
-			<tr><td>Successful Response Code</td><td>200 OK</td></tr>
+		<table class="requestdetails">
+			<tr>
+				<td>URL</td>
+				<td>https://{server}.amee.com/profiles</td>
+			</tr>
+			<tr>
+				<td>HTTP Method</td>
+				<td>GET</td>
+			</tr>
+			<tr>
+				<td>Response Content-Type</td>
+				<td>application/xml or application/json</td>
+			</tr>
+			<tr>
+				<td>Successful Response Code</td>
+				<td>200 OK</td>
+			</tr>
 		</table>
 		<para>
 		  The response contains a JSON or XML encoded list of profiles for the current user.
 	  </para>
-  	  <xi:include href='samples/get_3_profiles.xml'/>
+		<xi:include href="samples/get_3_profiles.xml"/>
 	</section>
-	<section xml:id='delete-profile-item-reference'>
+	<section xml:id="delete-profile-item-reference">
 		<title>Delete Profile</title>
 		<para>
-			Completely remove the specified profile from the AMEE database, including all Profile Items contained within it. This information cannot be recovered after deletion.
-		</para>			
-		<table class='requestdetails'>
-			<tr><td>URL</td><td>https://{server}.amee.com/profiles/{profile_uid}</td></tr>
-			<tr><td>HTTP Method</td><td>DELETE</td></tr>
-			<tr><td>Successful Response Code</td><td>200 OK</td></tr>
+			Completely remove the specified profile from the AMEE database, including all Profile Items 
+			contained within it. This information cannot be recovered after deletion.
+		</para>
+		<table class="requestdetails">
+			<tr>
+				<td>URL</td>
+				<td>https://{server}.amee.com/profiles/{profile_uid}</td>
+			</tr>
+			<tr>
+				<td>HTTP Method</td>
+				<td>DELETE</td>
+			</tr>
+			<tr>
+				<td>Successful Response Code</td>
+				<td>200 OK</td>
+			</tr>
 		</table>
-		<xi:include href='samples/delete_3_profiles_UID.xml'/>
+		<xi:include href="samples/delete_3_profiles_UID.xml"/>
 	</section>
 </section>
