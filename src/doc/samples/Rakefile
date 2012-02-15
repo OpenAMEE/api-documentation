@@ -1,7 +1,9 @@
 #!/usr/bin/env ruby
 
 require 'rubygems'
-require 'amee'
+require 'yaml'
+require 'active_support/core_ext/hash'
+require 'cgi'
 require 'typhoeus'
 require 'json'
 require 'nokogiri'
@@ -136,6 +138,7 @@ def form_encode(data)
 end
 
 def request(method, path, options = {})
+  puts "  #{method} #{path} #{options.inspect}"
   # Perform the request
   request_options = {
     :method       => method,
@@ -160,48 +163,60 @@ def request(method, path, options = {})
   request.response
 end
 
-$formats.each do |format|
-  @format = format
-  uid = nil
-  begin
-    # Create profile
-    response = request :post, '/3/profiles', :profile => true
-    profile_uid = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
-    # Get profile list
-    request :get, "/3/profiles"
-    # Get drill
-    response = request :get, '/3/categories/DEFRA_transport_fuel_methodology/drill', :fuel => 'petrol'
-    case @format
-    when :json
-      data_item_uid = response.body.match(/"values":\["([A-Z0-9]{12})"\],"name":"uid"/)[1]
-    when :xml
-      data_item_uid = response.body.match(/<Value>([A-Z0-9]{12})<\/Value>/)[1]
+task :samples do
+  $formats.each do |format|
+    puts "Generating #{format} samples"
+    @format = format
+    uid = nil
+    begin
+      # Quickstart examples
+      response = request :get, "/3/categories/Great_Circle_flight_methodology/drill", :type=>'great circle route'
+      case @format
+      when :json
+        data_item_uid = response.body.match(/"values":\["([A-Z0-9]{12})"\],"name":"uid"/)[1]
+      when :xml
+        data_item_uid = response.body.match(/<Value>([A-Z0-9]{12})<\/Value>/)[1]
+      end
+      request :get, "/3/categories/Great_Circle_flight_methodology/items/#{data_item_uid}/calculation", :IATAcode1=>'LHR', :IATAcode2=>'LAX'
+      # Create profile
+      response = request :post, '/3/profiles', :profile => true
+      profile_uid = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
+      # Get profile list
+      request :get, "/3/profiles"
+      # Get drill
+      response = request :get, '/3/categories/DEFRA_transport_fuel_methodology/drill', :fuel => 'petrol'
+      case @format
+      when :json
+        data_item_uid = response.body.match(/"values":\["([A-Z0-9]{12})"\],"name":"uid"/)[1]
+      when :xml
+        data_item_uid = response.body.match(/<Value>([A-Z0-9]{12})<\/Value>/)[1]
+      end
+      # Get data category information
+      request :get, "/3/categories/DEFRA_transport_fuel_methodology"
+      request :get, "/3/categories/DEFRA_transport_fuel_methodology/items"
+      # Do a drilldown
+      request :get, "/3/categories/Generic_car_transport/drill"
+      request :get, "/3/categories/Generic_car_transport/drill", :fuel => 'diesel'
+      request :get, "/3/categories/Generic_car_transport/drill", :fuel => 'diesel', :size => 'large'
+      # Get fuel data item
+      request :get, "/3/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid}"
+      # Do a data calculation
+      request :get, "/3/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid}/calculation", :'volume' => 500
+      # Create a new profile item
+      response = request(:post, "/3/profiles/#{profile_uid}/items", :dataItemUid => data_item_uid, :'values.volume' => 500, :name => "example", :startDate => '2011-01-05T00:00:00Z')
+      item_uid = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
+      # Get profile with list of used categories
+      request :get, "/3/profiles/#{profile_uid};categories"
+      # Get a list of items in a profile
+      request :get, "/3/profiles/#{profile_uid}/items"
+      # Get an existing profile item
+      request :get, "/3/profiles/#{profile_uid}/items/#{item_uid};amounts"
+      # Update a profile item
+      request :put, "/3/profiles/#{profile_uid}/items/#{item_uid}", :'values.volume' => 1000
+    ensure
+      # Clear up
+      request :delete, "/3/profiles/#{profile_uid}/items/#{item_uid}" if item_uid
+      request :delete, "/3/profiles/#{profile_uid}" if profile_uid
     end
-    # Get data category information
-    request :get, "/3/categories/DEFRA_transport_fuel_methodology"
-    request :get, "/3/categories/DEFRA_transport_fuel_methodology/items"
-    # Do a drilldown
-    request :get, "/3/categories/Generic_car_transport/drill"
-    request :get, "/3/categories/Generic_car_transport/drill", :fuel => 'diesel'
-    request :get, "/3/categories/Generic_car_transport/drill", :fuel => 'diesel', :size => 'large'
-    # Get fuel data item
-    request :get, "/3/categories/DEFRA_transport_fuel_methodology/#{data_item_uid}"
-    # Do a data calculation
-    request :get, "/3/categories/DEFRA_transport_fuel_methodology/#{data_item_uid};amounts", :'values.volume' => 500
-    # Create a new profile item
-    response = request(:post, "/3/profiles/#{profile_uid}/items", :dataItemUid => data_item_uid, :'values.volume' => 500, :name => "example", :startDate => '2011-01-05T00:00:00Z')
-    item_uid = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
-    # Get profile with list of used categories
-    request :get, "/3/profiles/#{profile_uid};categories"
-    # Get a list of items in a profile
-    request :get, "/3/profiles/#{profile_uid}/items"
-    # Get an existing profile item
-    request :get, "/3/profiles/#{profile_uid}/items/#{item_uid};amounts"
-    # Update a profile item
-    request :put, "/3/profiles/#{profile_uid}/items/#{item_uid}", :'values.volume' => 1000
-  ensure
-    # Clear up
-    request :delete, "/3/profiles/#{profile_uid}/items/#{item_uid}" if item_uid
-    request :delete, "/3/profiles/#{profile_uid}" if profile_uid
   end
 end
