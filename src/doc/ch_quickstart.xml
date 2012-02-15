@@ -54,10 +54,10 @@
   			<title>curl</title>
    			<section role='httprequest'>
 			  <programlisting>
-$ curl 'https://stage.amee.com/data/transport/defra/route/drill?type=great+circle+route' \
+$ curl 'https://platform-api-stage.amee.com/3/categories/Great_Circle_flight_methodology/drill?type=great+circle+route' \
     -H 'Accept: application/xml' \
     -u username:password -s | \
-    xpath '//Choices/Choice/Name/text()'
+    xpath '//Choices/Values/Value/text()'
               </programlisting>
  	  	    </section>
    			<section role='httpresponse'>
@@ -68,32 +68,8 @@ Found 1 nodes:
             </programlisting>
 	  	  </section>
   		</section>
-		  <section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/defra/route/drill?type=great+circle+route HTTP/1.1
-Accept: application/xml
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-              <programlisting language='xml'><xi:include href='samples/xml/quickstart_drill.xml' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		  <section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/defra/route/drill?type=great+circle+route HTTP/1.1
-Accept: application/json
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-              <programlisting language='xml'><xi:include href='samples/json/quickstart_drill.js' parse="text"/></programlisting>
-		    </section>
-  		</section>
+		<xi:include href="samples/json/get_3_categories_Great_Circle_flight_methodology_drilltypegreat circle route.xml"/>
+		<xi:include href="samples/xml/get_3_categories_Great_Circle_flight_methodology_drilltypegreat circle route.xml"/>
 	</section>
 	<para>
 	  The response contains the UID of the calculation (or <emphasis>data item</emphasis>, in this case 2EC340002E72.
@@ -113,12 +89,13 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 	  In this case there are two required parameters, <emphasis>IATACode1</emphasis> and <emphasis>IATACode2</emphasis>, 
 	  which let us put in airport codes for the two endpoints of our flight.
 	</para>
+	
 	  <section role='tabbed'>
   		<section role='tab'>
   			<title>curl</title>
    			<section role='httprequest'>
 			  <programlisting>
-$ curl 'https://stage.amee.com/data/transport/defra/route/2EC340002E72?IATACode1=LHR&amp;IATACode2=LAX' \
+$ curl 'https://platform-api-stage.amee.com/3/categories/Great_Circle_flight_methodology/items/2EC340002E72/calculation?IATAcode1=LHR&amp;IATAcode2=LAX' \
     -H 'Accept: application/xml' \
     -u username:password -s | \
     xpath '//Amounts/Amount'
@@ -151,32 +128,8 @@ Found 7 nodes:
               </programlisting>
  	  	    </section>
 	  	</section>
-  		<section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/defra/route/2EC340002E72?IATACode1=LHR&amp;IATACode2=LAX HTTP/1.1
-Accept: application/xml
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-              <programlisting language='xml'><xi:include href='samples/xml/quickstart_calc.xml' parse="text"/></programlisting>
-        </section>
-  		</section>
-		  <section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/defra/route/2EC340002E72?IATACode1=LHR&amp;IATACode2=LAX HTTP/1.1
-Accept: application/json
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-              <programlisting language='xml'><xi:include href='samples/json/quickstart_calc.js' parse="text"/></programlisting>
-			  </section>
-  		</section>
+		<xi:include href="samples/json/get_3_categories_Great_Circle_flight_methodology_items_UID_calculationIATAcode1LHRIATAcode2LAX.xml"/>
+		<xi:include href="samples/xml/get_3_categories_Great_Circle_flight_methodology_items_UID_calculationIATAcode1LHRIATAcode2LAX.xml"/>
     </section>
     <para>
 	  And that's it! You've just done your first calculation using AMEEconnect. London to LA: 1065kg of emissions (as shown in the 

@@ -1,0 +1,36 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3/categories/Great_Circle_flight_methodology/drill?type=great+circle+route HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "version": "3.6.0",
+  "drill": {
+    "selections": [
+      {
+        "name": "type",
+        "value": "great circle route"
+      }
+    ],
+    "choices": {
+      "name": "uid",
+      "values": [
+        "A4CA32225DEA"
+      ]
+    }
+  },
+  "status": "OK"
+}
+]]></programlisting>
+</section>
+</section>
