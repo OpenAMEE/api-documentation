@@ -206,6 +206,7 @@ task :samples do
       request :get, "/3/categories/Generic_car_transport/drill", :fuel => 'diesel', :size => 'large'
       # Get fuel data item
       request :get, "/3/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid};values"
+      request :get, "/3/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid}/values/massTotalCO2ePerVolume"
       # Do a data calculation
       request :get, "/3/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid}/calculation", :'volume' => 500
       # Create a new profile item
