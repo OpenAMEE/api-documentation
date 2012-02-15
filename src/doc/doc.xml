@@ -49,7 +49,7 @@
     </para>
     <xi:include href='ref_profiles.xml'/>
     <xi:include href='ref_profile_items.xml'/>
-    <xi:include href='ref_profile_batch.xml'/>
+    <!--><xi:include href='ref_profile_batch.xml'/>-->
   </appendix>
 
   <appendix>
