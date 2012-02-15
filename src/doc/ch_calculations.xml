@@ -16,42 +16,7 @@
 	  on the URL, and your calculation will be carried out. 
 	  For example, to calculate some usage data for the /transport/defra/fuel category, you would send the following request:
     </para>
-		<section role='tabbed'>
-  		<section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/defra/fuel/19B311DDF0B1?volume=500 HTTP/1.1
-Accept: application/xml
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-          <programlisting language='xml'><xi:include href='samples/xml/data_calculation.xml' parse="text"/></programlisting>
-        </section>
-  		</section>
-  		<section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/defra/fuel/19B311DDF0B1?volume=500 HTTP/1.1
-Accept: application/json
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
-          <programlisting language='javascript'><xi:include href='samples/json/data_calculation.js' parse="text"/></programlisting>
-        </section>
-  		</section>
-  	</section>
+	<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_items_UID_calculationvolume500.xml' />
     <para>
       The parameters to the GET request are your input values obtained from your user (or application). 
 	  Here we just use the <emphasis>volume</emphasis> parameter, 

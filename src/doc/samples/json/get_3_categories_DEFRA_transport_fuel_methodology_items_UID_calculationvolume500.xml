@@ -1,0 +1,72 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3/categories/DEFRA_transport_fuel_methodology/items/AD650C628120/calculation?volume=500 HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "notes": [
+    {
+      "type": "comment",
+      "value": "This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation"
+    }
+  ],
+  "version": "3.6.0",
+  "amounts": [
+    {
+      "default": true,
+      "perUnit": "",
+      "type": "totalDirectCO2e",
+      "value": 1155.85,
+      "unit": "kg"
+    },
+    {
+      "default": false,
+      "perUnit": "",
+      "type": "lifeCycleCO2e",
+      "value": 1361.35,
+      "unit": "kg"
+    },
+    {
+      "default": false,
+      "perUnit": "",
+      "type": "CO2",
+      "value": 1150.9,
+      "unit": "kg"
+    },
+    {
+      "default": false,
+      "perUnit": "",
+      "type": "nitrousOxideCO2e",
+      "value": 3.25,
+      "unit": "kg"
+    },
+    {
+      "default": false,
+      "perUnit": "",
+      "type": "methaneCO2e",
+      "value": 1.7,
+      "unit": "kg"
+    },
+    {
+      "default": false,
+      "perUnit": "",
+      "type": "indirectCO2e",
+      "value": 205.5,
+      "unit": "kg"
+    }
+  ],
+  "status": "OK"
+}
+]]></programlisting>
+</section>
+</section>
