@@ -158,7 +158,7 @@ def request(method, path, options = {})
   $hydra.queue(request)
   $hydra.run
   # Save request
-  save method.to_s+path.gsub(/\/[A-Z0-9]{12}/,'/UID').gsub('/','_')+options.to_s, @format, request
+  save method.to_s+path.gsub(/\/[A-Z0-9]{12}/,'/UID').gsub('/','_')+options.map{|k,v|"#{k}#{v}"}.join(''), @format, request
   # Pass response object back
   request.response
 end
