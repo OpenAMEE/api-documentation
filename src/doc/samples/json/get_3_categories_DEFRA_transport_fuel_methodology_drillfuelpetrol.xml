@@ -1,0 +1,36 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3/categories/DEFRA_transport_fuel_methodology/drill?fuel=petrol HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "version": "3.6.0",
+  "drill": {
+    "selections": [
+      {
+        "name": "fuel",
+        "value": "petrol"
+      }
+    ],
+    "choices": {
+      "name": "uid",
+      "values": [
+        "AD650C628120"
+      ]
+    }
+  },
+  "status": "OK"
+}
+]]></programlisting>
+</section>
+</section>

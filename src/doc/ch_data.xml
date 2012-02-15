@@ -71,42 +71,7 @@
       Data items are identified by their UIDs, not by textual names. In order to get one of these UIDs, you need to perform a drilldown
       request. To find the UID for the petrol item in the DEFRA transport fuel methodology, you need to make the following call:
     </para>
-		<section role='tabbed'>
-		  <section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/defra/fuel/drill?fuel=petrol HTTP/1.1
-Accept: application/xml
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-          <programlisting language='xml'><xi:include href='samples/xml/fuel_drill.xml' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		  <section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/defra/fuel/drill?fuel=petrol HTTP/1.1
-Accept: application/json
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
-          <programlisting language='javascript'><xi:include href='samples/json/fuel_drill.js' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		</section>
+	<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_drillfuelpetrol.xml' />
     <para>
       A drilldown response consists of two sections. The first is the 'Selections' part. This shows choices that have already been
       made and specified in the drilldown URL. The second is the 'Choices' part, which shows what choices are available for the next 
@@ -132,42 +97,7 @@ Content-Type: application/json; charset=UTF-8
     <para>
       Fetching a data item is as simple as doing a GET on the category path with the UID as the last element:
     </para>
-		<section role='tabbed'>
-		  <section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/defra/fuel/19B311DDF0B1 HTTP/1.1
-Accept: application/xml
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-          <programlisting language='xml'><xi:include href='samples/xml/fuel_data_item.xml' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		  <section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/defra/fuel/19B311DDF0B1 HTTP/1.1
-Accept: application/json
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
-          <programlisting language='javascript'><xi:include href='samples/json/fuel_data_item.js' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		</section>
+	<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_items_UID;values.xml' />
 		<para>
 		  The response contains a representation of the data item, including all its values. There are various types of values, but at this
 		  point we are interested in the ones where FromData is true - these are the emission factors that act as inputs to calculations.

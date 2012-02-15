@@ -1,0 +1,85 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3/categories/DEFRA_transport_fuel_methodology/items/AD650C628120;values HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "version": "3.6.0",
+  "status": "OK",
+  "item": {
+    "uid": "AD650C628120",
+    "values": [
+      {
+        "history": false,
+        "perUnit": "L",
+        "compoundUnit": "kg/L",
+        "value": "0.0034",
+        "unit": "kg",
+        "path": "massCH4PerVolume"
+      },
+      {
+        "history": false,
+        "perUnit": "L",
+        "compoundUnit": "kg/L",
+        "value": "2.7227",
+        "unit": "kg",
+        "path": "massTotalCO2ePerVolume"
+      },
+      {
+        "history": false,
+        "perUnit": "L",
+        "compoundUnit": "kg/L",
+        "value": "2.3117",
+        "unit": "kg",
+        "path": "massDirectCO2ePerVolume"
+      },
+      {
+        "history": false,
+        "value": "http://www.defra.gov.uk/environment/economy/business-efficiency/reporting",
+        "path": "source"
+      },
+      {
+        "history": false,
+        "perUnit": "L",
+        "compoundUnit": "kg/L",
+        "value": "0.411",
+        "unit": "kg",
+        "path": "massIndirectCO2ePerVolume"
+      },
+      {
+        "history": false,
+        "value": "petrol",
+        "path": "fuel"
+      },
+      {
+        "history": false,
+        "perUnit": "L",
+        "compoundUnit": "kg/L",
+        "value": "2.3018",
+        "unit": "kg",
+        "path": "massCO2PerVolume"
+      },
+      {
+        "history": false,
+        "perUnit": "L",
+        "compoundUnit": "kg/L",
+        "value": "0.0065",
+        "unit": "kg",
+        "path": "massN2OPerVolume"
+      }
+    ]
+  }
+}
+]]></programlisting>
+</section>
+</section>
