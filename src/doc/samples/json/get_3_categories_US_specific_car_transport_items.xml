@@ -1,0 +1,175 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3/categories/US_specific_car_transport/items HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "status": "OK",
+  "items": [
+    {
+      "uid": "35781BC54FFE"
+    },
+    {
+      "uid": "AF508C0A040B"
+    },
+    {
+      "uid": "9F1C2BC98D57"
+    },
+    {
+      "uid": "8BB8CB965944"
+    },
+    {
+      "uid": "1C74B14C813B"
+    },
+    {
+      "uid": "8D756809F30F"
+    },
+    {
+      "uid": "4E1A48B0693B"
+    },
+    {
+      "uid": "0BF0C5774C65"
+    },
+    {
+      "uid": "243421EB37AC"
+    },
+    {
+      "uid": "012F96930BE8"
+    },
+    {
+      "uid": "2F6F9CD27A85"
+    },
+    {
+      "uid": "28F22160F454"
+    },
+    {
+      "uid": "C34F53A8D24C"
+    },
+    {
+      "uid": "FEF6EC98F905"
+    },
+    {
+      "uid": "8850D415D117"
+    },
+    {
+      "uid": "4E31E063FC65"
+    },
+    {
+      "uid": "21611CF8300E"
+    },
+    {
+      "uid": "5BED05401ED5"
+    },
+    {
+      "uid": "42DFFDA35AC5"
+    },
+    {
+      "uid": "89239E14D8D6"
+    },
+    {
+      "uid": "7C44CF03B962"
+    },
+    {
+      "uid": "BD276917FA09"
+    },
+    {
+      "uid": "0FBF2E62371C"
+    },
+    {
+      "uid": "364413AB5826"
+    },
+    {
+      "uid": "1D674B9B91BE"
+    },
+    {
+      "uid": "E0CEB7A950D4"
+    },
+    {
+      "uid": "C828C1F5D33F"
+    },
+    {
+      "uid": "CB46EAB520F7"
+    },
+    {
+      "uid": "2EDA7BB47216"
+    },
+    {
+      "uid": "D7C4942D399A"
+    },
+    {
+      "uid": "7C08D1D3CF74"
+    },
+    {
+      "uid": "7F3B6B995E93"
+    },
+    {
+      "uid": "02A49EAEBB7F"
+    },
+    {
+      "uid": "924F8C2365E9"
+    },
+    {
+      "uid": "5D81D5E54201"
+    },
+    {
+      "uid": "82DD0261F272"
+    },
+    {
+      "uid": "E86B27ED07B6"
+    },
+    {
+      "uid": "90B2DA5EBE7E"
+    },
+    {
+      "uid": "4B0F3A370095"
+    },
+    {
+      "uid": "ED4B3595A12F"
+    },
+    {
+      "uid": "A624DB5B01C7"
+    },
+    {
+      "uid": "69560320DEBC"
+    },
+    {
+      "uid": "E560E7A7C752"
+    },
+    {
+      "uid": "25DC47E7B5D0"
+    },
+    {
+      "uid": "2A4F091CC1C6"
+    },
+    {
+      "uid": "356453105A17"
+    },
+    {
+      "uid": "EC2651E03D0D"
+    },
+    {
+      "uid": "70F00F9C35C7"
+    },
+    {
+      "uid": "A5C9C9F7E989"
+    },
+    {
+      "uid": "43C208361329"
+    }
+  ],
+  "resultsTruncated": true,
+  "version": "3.6.0"
+}
+]]></programlisting>
+</section>
+</section>

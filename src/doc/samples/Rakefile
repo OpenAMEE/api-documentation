@@ -200,6 +200,8 @@ task :samples do
       # Get data category information
       request :get, "/3/categories/DEFRA_transport_fuel_methodology"
       request :get, "/3/categories/DEFRA_transport_fuel_methodology/items"
+      # Get a large category to demonstrate paging
+      request :get, "/3/categories/US_specific_car_transport/items"
       # Do a drilldown
       request :get, "/3/categories/Generic_car_transport/drill"
       request :get, "/3/categories/Generic_car_transport/drill", :fuel => 'diesel'

@@ -18,16 +18,7 @@
     are fairly self-explanatory. 'items' shows the total number of items, while 'itemsFound' is the number of items
     in the response.
   </para>
-  <section role='tabbed'>
-    <section role='tab'>
-      <title>JSON</title>
-      <programlisting language='javascript'><xi:include href='samples/json/pager.js' parse="text"/></programlisting>
-    </section>
-    <section role='tab'>
-      <title>XML</title>
-      <programlisting language='xml'><xi:include href='samples/xml/pager.xml' parse="text"/></programlisting>
-    </section>
-  </section>
+  <xi:include href='samples/get_3_categories_US_specific_car_transport_items.xml'/>
 	<section>
 	  <title>Request Parameters</title>
 	  <para>
