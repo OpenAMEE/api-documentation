@@ -128,8 +128,8 @@ Found 7 nodes:
               </programlisting>
  	  	    </section>
 	  	</section>
-		<xi:include href="samples/json/get_3_categories_Great_Circle_flight_methodology_items_UID_calculationIATAcode1LHRIATAcode2LAX.xml"/>
-		<xi:include href="samples/xml/get_3_categories_Great_Circle_flight_methodology_items_UID_calculationIATAcode1LHRIATAcode2LAX.xml"/>
+		<xi:include href="samples/json/get_3_categories_Great_Circle_flight_methodology_items_UID_calculationIATAcode2LAXIATAcode1LHR.xml"/>
+		<xi:include href="samples/xml/get_3_categories_Great_Circle_flight_methodology_items_UID_calculationIATAcode2LAXIATAcode1LHR.xml"/>
     </section>
     <para>
 	  And that's it! You've just done your first calculation using AMEEconnect. London to LA: 1065kg of emissions (as shown in the 
