@@ -2,7 +2,7 @@
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
   "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
 
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='quickstart'>
   <title>Quick Start</title>
   <para>
     If you want to calculate carbon emissions (or other sustainability metrics) in your applications, AMEEconnect is for you.
@@ -12,7 +12,7 @@
     <title>Getting Started</title>
     <para>
       Before you start, you'll need an API key. You can get one for free at <ulink url="https://my.amee.com/signup"/>. 
-	  This API key will let you use the AMEE staging platform (stage.amee.com), which is intended for use during development.
+	  This API key will let you use the AMEE staging platform (platform-api-stage.amee.com), which is intended for use during development.
     </para>
     <para>
       AMEEconnect is a RESTful API, with HTTP requests for all actions, and uses standard methods of authentication
@@ -21,12 +21,12 @@
     </para>
   </section>
   <section xml:id='quick-choose-data-item'>
-    <title>Find your calculation</title>
+    <title>Find your emissions model</title>
     <para>
-      The first step is to choose which calculation you actually want to do. 
+      The first step is to choose which emissions model you want to use for your calculation.
 	</para>
 	<para>
-	  <ulink url="http://discover.amee.com">AMEEdiscover</ulink> lists all the possible calculations available in AMEE 
+	  <ulink url="http://discover.amee.com">AMEEdiscover</ulink> lists all the possible models available in AMEE 
 	  (over 8 million!), with rich searching and tagging functionality to make it easy to find what you want.
 	</para>
 	<para>
@@ -36,18 +36,18 @@
 	  deals with flights between two locations. Let's try that one.
 	</para>
 	<para>
-	  There are two pieces of information required to identify a calculation. The first is the <emphasis>path</emphasis>. This
-	  can be found on the documentation page for the category, in the AMEEconnect sidebar box. In this case, it's 
-	  <emphasis>/transport/defra/route</emphasis>
+	  There are two pieces of information required to identify an emissions model. The first is the <emphasis>category name</emphasis>. This
+	  can be found on the Developer page for the category, and it's also part of the URL in AMEEdiscover. In this case, it's
+	  <emphasis>Great_Circle_flight_methodology</emphasis>.
 	</para>
 	<para>
-	  The second are the <emphasis>drilldown options</emphasis>. Each category can contain a number of variants on a single 
-	  calculation; different input values if you like. Each of these is identified by a series of drilldown options. The best way to
-	  get these is to use the <ulink url='http://discover.amee.com/categories/Great_Circle_flight_methodology/data/code'>code tab</ulink>
-	  and copy the drill options from the generated code. In this case, the drill option we want is <emphasis>type=great+circle+route</emphasis>.
+	  The second are the <emphasis>drilldown options</emphasis>. Each category can contain a number of models, each of which is a variant 
+	  on a single calculation; different input values if you like. Each of these is identified by a series of drilldown options. The best way to
+	  get these is to use the <ulink url='http://discover.amee.com/categories/Great_Circle_flight_methodology/data/developer'>developer tab</ulink>
+	  and copy the drill options. In this case, the drill option we want is <emphasis>type=great+circle+route</emphasis>.
 	</para>
 	<para>
-	  You now have all the information you need to make a drilldown request and get the identifier (UID) for the actual calculation.
+	  You now have all the information you need to make a drilldown request and get the identifier (UID) for the actual emissions model.
     </para>
 		<section role='tabbed'>
   		<section role='tab'>
@@ -72,7 +72,7 @@ Found 1 nodes:
 		<xi:include href="samples/xml/get_3_categories_Great_Circle_flight_methodology_drill_type=great circle route.xml"/>
 	</section>
 	<para>
-	  The response contains the UID of the calculation (or <emphasis>data item</emphasis>, in this case 2EC340002E72.
+	  The response contains the UID of the emissions model, in this case 2EC340002E72.
     </para>
   </section>
   <section xml:id='quick-do-calculation'>
@@ -81,9 +81,9 @@ Found 1 nodes:
       Now we can actually perform the calculation. 
 	</para>
 	<para>
-	  You do a GET request to a Data Item URL, which is made up of the category path and the UID you just fetched, and include 
-	  some parameters for your input values. These are different for every category, but again you can grab them from the code 
-	  tab in AMEEdiscover.
+	  You simply do a GET request to URL that represents the emissions model you've chosen, which is made up of the category path
+	  and the UID you just fetched, and include some parameters for your input values. These are different for every category, 
+	  but again you can grab them from the code tab in AMEEdiscover.
     </para>
 	<para>
 	  In this case there are two required parameters, <emphasis>IATACode1</emphasis> and <emphasis>IATACode2</emphasis>, 
