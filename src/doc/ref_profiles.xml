@@ -85,7 +85,7 @@
 		<para>
 		  The response body contains a JSON or XML description of the new profile.
 		</para>
-		<xi:include href="samples/post_3_profilesprofiletrue.xml"/>
+		<xi:include href="samples/post_3_profiles_profile=true.xml"/>
 		<xi:include href="samples/get_3_profiles_UID;categories.xml"/>
 	</section>
 	<section xml:id="list-profiles-reference">

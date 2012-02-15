@@ -68,8 +68,8 @@ Found 1 nodes:
             </programlisting>
 	  	  </section>
   		</section>
-		<xi:include href="samples/json/get_3_categories_Great_Circle_flight_methodology_drilltypegreat circle route.xml"/>
-		<xi:include href="samples/xml/get_3_categories_Great_Circle_flight_methodology_drilltypegreat circle route.xml"/>
+		<xi:include href="samples/json/get_3_categories_Great_Circle_flight_methodology_drill_type=great circle route.xml"/>
+		<xi:include href="samples/xml/get_3_categories_Great_Circle_flight_methodology_drill_type=great circle route.xml"/>
 	</section>
 	<para>
 	  The response contains the UID of the calculation (or <emphasis>data item</emphasis>, in this case 2EC340002E72.
@@ -128,8 +128,8 @@ Found 7 nodes:
               </programlisting>
  	  	    </section>
 	  	</section>
-		<xi:include href="samples/json/get_3_categories_Great_Circle_flight_methodology_items_UID_calculationIATAcode2LAXIATAcode1LHR.xml"/>
-		<xi:include href="samples/xml/get_3_categories_Great_Circle_flight_methodology_items_UID_calculationIATAcode2LAXIATAcode1LHR.xml"/>
+		<xi:include href="samples/json/get_3_categories_Great_Circle_flight_methodology_items_UID_calculation_IATAcode1=LHR_IATAcode2=LAX.xml"/>
+		<xi:include href="samples/xml/get_3_categories_Great_Circle_flight_methodology_items_UID_calculation_IATAcode1=LHR_IATAcode2=LAX.xml"/>
     </section>
     <para>
 	  And that's it! You've just done your first calculation using AMEEconnect. London to LA: 1065kg of emissions (as shown in the 

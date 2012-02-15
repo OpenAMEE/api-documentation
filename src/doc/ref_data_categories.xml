@@ -142,7 +142,7 @@
 	      In this example, the user has picked 'diesel' as the selection for the first choice.
 	      This is passed as a URL parameter to the second request.
       </para>
-      <xi:include href="samples/get_3_categories_Generic_car_transport_drillfueldiesel.xml"/>
+      <xi:include href="samples/get_3_categories_Generic_car_transport_drill_fuel=diesel.xml"/>
     </section>
 	  <section>
 	    <title>Final Result</title>
@@ -157,7 +157,7 @@
         hard-coding Data Item UIDs in your application, it is perfectly sensible to code a fully specified Drill
         request to look up the data UID in your application’s initialisation.
       </para>
-      <xi:include href="samples/get_3_categories_Generic_car_transport_drillsizelargefueldiesel.xml"/>
+      <xi:include href="samples/get_3_categories_Generic_car_transport_drill_fuel=diesel_size=large.xml"/>
     </section>
 	</section>
 </section>

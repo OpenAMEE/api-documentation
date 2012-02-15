@@ -71,7 +71,7 @@
       Data items are identified by their UIDs, not by textual names. In order to get one of these UIDs, you need to perform a drilldown
       request. To find the UID for the petrol item in the DEFRA transport fuel methodology, you need to make the following call:
     </para>
-	<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_drillfuelpetrol.xml' />
+	<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_drill_fuel=petrol.xml' />
     <para>
       A drilldown response consists of two sections. The first is the 'Selections' part. This shows choices that have already been
       made and specified in the drilldown URL. The second is the 'Choices' part, which shows what choices are available for the next 
