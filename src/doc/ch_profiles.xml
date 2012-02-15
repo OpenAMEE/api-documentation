@@ -34,50 +34,7 @@
     <para>
 		You create a profile by doing a POST to /profiles, including profile=true in the request body.
 	</para>
-		<section role='tabbed'>
-  		<section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-POST /profiles HTTP/1.1
-Accept: application/xml
-Content-Type: application/x-www-form-urlencoded
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting role='body'>
-profile=true
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-          <programlisting language='xml' ><xi:include href='samples/xml/post_profiles.xml' parse="text"/></programlisting>
-        </section>
-  		</section>
-		  <section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-POST /profiles HTTP/1.1
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting role='body'>
-profile=true
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
-  			  <programlisting language='javascript'><xi:include href='samples/json/post_profiles.js' parse="text"/></programlisting>
-			  </section>
-  		</section>
-		</section>
+	<xi:include href='samples/post_3_profiles_profile=true.xml'/>
 		<para>
 		  We need the UID of the profile in order to create profile items - it becomes part of the path in the next step. As described 
 		  in in the Quick Start chapter, for now we'll just grab this out of the response with an XPath expression, <emphasis>//Profile/@uid</emphasis>.
@@ -93,52 +50,8 @@ Content-Type: application/json; charset=UTF-8
     <para>
 	  The following example performs the same calculation as in the previous section, but stores it into a profile for later retrieval.
     </para>
-	<section role='tabbed'>
-  		<section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-POST /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
-Accept: application/xml
-Content-Type: application/x-www-form-urlencoded
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting role='body'>
-dataItemUid=19B311DDF0B1&amp;volume=500
-&amp;representation=full
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 201 CREATED
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-          <programlisting language='xml'><xi:include href='samples/xml/create_profile_item.xml' parse="text"/></programlisting>
-        </section>
-  		</section>
-  		<section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-POST /profiles/YLLIKH73BDYS/transport/defra/fuel HTTP/1.1
-Accept: application/json
-Content-Type: application/x-www-form-urlencoded
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting role='body'>
-dataItemUid=19B311DDF0B1&amp;volume=500
-&amp;representation=full
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 201 CREATED
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
-          <programlisting language='javascript'><xi:include href='samples/json/create_profile_item.js' parse="text"/></programlisting>
-        </section>
-  		</section>
-  	</section>
+	<xi:include href='samples/post_3_profiles_UID_items_dataItemUid=AD650C628120_values.volume=500_name=example_startDate=2011-01-05T00:00:00Z.xml'/>
+	<xi:include href='samples/get_3_profiles_UID_items_UID;amounts.xml'/>
     <para>
       There are a few things to note here, particularly the parameters in the 
       POST request. The first is <emphasis>dataItemUid</emphasis>, which specifies exactly which data item you wish to 
