@@ -8,6 +8,8 @@ require 'typhoeus'
 require 'json'
 require 'nokogiri'
 
+task :default => 'samples'
+
 $formats = [:json, :xml]
 
 $conf = YAML.load_file('amee.yml').symbolize_keys
@@ -65,8 +67,6 @@ XSL = <<-EOXSL
 </xsl:template>
 </xsl:stylesheet>
 EOXSL
-
-
 
 def save(name, format, request)
 
@@ -163,6 +163,16 @@ def request(method, path, options = {})
   request.response
 end
 
+def replace_ids(format, old_uid, new_uid)
+  puts "  Replacing UIDs (#{old_uid} -> #{new_uid})"
+  Dir.glob("#{format}/*.xml") do |filename|
+    text = File.read(filename)
+    File.open(filename, "w") do |file| 
+      file.puts text.gsub(old_uid, new_uid)
+    end
+  end
+end
+
 task :samples do
   $formats.each do |format|
     puts "Generating #{format} samples"
@@ -217,6 +227,9 @@ task :samples do
       # Clear up
       request :delete, "/3/profiles/#{profile_uid}/items/#{item_uid}" if item_uid
       request :delete, "/3/profiles/#{profile_uid}" if profile_uid
+      # Replace the IDs in the files so we don't change everything every time
+      replace_ids(format, item_uid, '1U36W0KJFW3S')
+      replace_ids(format, profile_uid, 'FC2ODLZHCNHS')
     end
   end
 end

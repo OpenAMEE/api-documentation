@@ -2,7 +2,7 @@
 <title>XML</title>
 <section role='httprequest'>
 <programlisting role='header'>
-GET /3/profiles/7LPPC3KESZ3K/items/DQDTTB0ZSIMY;amounts HTTP/1.1
+GET /3/profiles/FC2ODLZHCNHS/items/1U36W0KJFW3S;amounts HTTP/1.1
 Accept: application/xml
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 </programlisting>
@@ -16,7 +16,7 @@ Content-Type: application/xml; charset=UTF-8
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <Representation>
- <Item uid="DQDTTB0ZSIMY">
+ <Item uid="1U36W0KJFW3S">
   <Amounts>
    <Amount default="true" perUnit="" type="totalDirectCO2e" unit="kg">1155.8500000000001</Amount>
    <Amount perUnit="" type="lifeCycleCO2e" unit="kg">1361.3500000000001</Amount>

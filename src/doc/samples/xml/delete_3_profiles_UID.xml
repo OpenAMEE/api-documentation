@@ -2,7 +2,7 @@
 <title>XML</title>
 <section role='httprequest'>
 <programlisting role='header'>
-DELETE /3/profiles/JYU7ZDF2AV72 HTTP/1.1
+DELETE /3/profiles/FC2ODLZHCNHS HTTP/1.1
 Accept: application/xml
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 </programlisting>

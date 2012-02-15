@@ -2,7 +2,7 @@
 <title>XML</title>
 <section role='httprequest'>
 <programlisting role='header'>
-GET /3/profiles/E667P9PBV3IF;categories HTTP/1.1
+GET /3/profiles/FC2ODLZHCNHS;categories HTTP/1.1
 Accept: application/xml
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 </programlisting>
@@ -16,7 +16,7 @@ Content-Type: application/xml; charset=UTF-8
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <Representation>
- <Profile uid="E667P9PBV3IF">
+ <Profile uid="FC2ODLZHCNHS">
   <Categories>
    <Category uid="9819052D7010">
     <Name>Fuel</Name>

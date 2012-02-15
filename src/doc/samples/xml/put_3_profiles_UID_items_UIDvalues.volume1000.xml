@@ -2,7 +2,7 @@
 <title>XML</title>
 <section role='httprequest'>
 <programlisting role='header'>
-PUT /3/profiles/7LPPC3KESZ3K/items/DQDTTB0ZSIMY HTTP/1.1
+PUT /3/profiles/FC2ODLZHCNHS/items/1U36W0KJFW3S HTTP/1.1
 Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=

@@ -2,7 +2,7 @@
 <title>JSON</title>
 <section role='httprequest'>
 <programlisting role='header'>
-GET /3/profiles/OZ5AVVXJJWY7;categories HTTP/1.1
+GET /3/profiles/FC2ODLZHCNHS;categories HTTP/1.1
 Accept: application/json
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 </programlisting>
@@ -15,7 +15,7 @@ Content-Type: application/json; charset=UTF-8
 <programlisting language='javascript'><![CDATA[
 {
   "profile": {
-    "uid": "OZ5AVVXJJWY7",
+    "uid": "FC2ODLZHCNHS",
     "categories": [
       {
         "name": "Fuel",
