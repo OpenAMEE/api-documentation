@@ -14,13 +14,9 @@ Content-Type: application/json; charset=UTF-8
 </programlisting>
 <programlisting language='javascript'><![CDATA[
 {
-  "version": "3.6.0",
+  "status": "OK",
   "drill": {
-    "selections": [
-
-    ],
     "choices": {
-      "name": "fuel",
       "values": [
         "petrol",
         "diesel",
@@ -28,10 +24,14 @@ Content-Type: application/json; charset=UTF-8
         "lpg",
         "cng",
         "average"
-      ]
-    }
+      ],
+      "name": "fuel"
+    },
+    "selections": [
+
+    ]
   },
-  "status": "OK"
+  "version": "3.6.0"
 }
 ]]></programlisting>
 </section>

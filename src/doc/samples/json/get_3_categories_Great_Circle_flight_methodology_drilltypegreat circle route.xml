@@ -14,22 +14,22 @@ Content-Type: application/json; charset=UTF-8
 </programlisting>
 <programlisting language='javascript'><![CDATA[
 {
-  "version": "3.6.0",
+  "status": "OK",
   "drill": {
+    "choices": {
+      "values": [
+        "A4CA32225DEA"
+      ],
+      "name": "uid"
+    },
     "selections": [
       {
         "name": "type",
         "value": "great circle route"
       }
-    ],
-    "choices": {
-      "name": "uid",
-      "values": [
-        "A4CA32225DEA"
-      ]
-    }
+    ]
   },
-  "status": "OK"
+  "version": "3.6.0"
 }
 ]]></programlisting>
 </section>

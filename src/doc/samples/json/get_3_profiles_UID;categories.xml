@@ -14,18 +14,18 @@ Content-Type: application/json; charset=UTF-8
 </programlisting>
 <programlisting language='javascript'><![CDATA[
 {
+  "status": "OK",
+  "version": "3.6.0",
   "profile": {
     "uid": "FC2ODLZHCNHS",
     "categories": [
       {
+        "uid": "9819052D7010",
         "name": "Fuel",
-        "wikiName": "DEFRA_transport_fuel_methodology",
-        "uid": "9819052D7010"
+        "wikiName": "DEFRA_transport_fuel_methodology"
       }
     ]
-  },
-  "version": "3.6.0",
-  "status": "OK"
+  }
 }
 ]]></programlisting>
 </section>

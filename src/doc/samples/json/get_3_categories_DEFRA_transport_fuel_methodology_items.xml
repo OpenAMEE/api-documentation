@@ -14,6 +14,7 @@ Content-Type: application/json; charset=UTF-8
 </programlisting>
 <programlisting language='javascript'><![CDATA[
 {
+  "status": "OK",
   "items": [
     {
       "uid": "726781F150E3"
@@ -35,8 +36,7 @@ Content-Type: application/json; charset=UTF-8
     }
   ],
   "resultsTruncated": false,
-  "version": "3.6.0",
-  "status": "OK"
+  "version": "3.6.0"
 }
 ]]></programlisting>
 </section>

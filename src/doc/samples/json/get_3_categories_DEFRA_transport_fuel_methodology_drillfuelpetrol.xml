@@ -14,22 +14,22 @@ Content-Type: application/json; charset=UTF-8
 </programlisting>
 <programlisting language='javascript'><![CDATA[
 {
-  "version": "3.6.0",
+  "status": "OK",
   "drill": {
+    "choices": {
+      "values": [
+        "AD650C628120"
+      ],
+      "name": "uid"
+    },
     "selections": [
       {
         "name": "fuel",
         "value": "petrol"
       }
-    ],
-    "choices": {
-      "name": "uid",
-      "values": [
-        "AD650C628120"
-      ]
-    }
+    ]
   },
-  "status": "OK"
+  "version": "3.6.0"
 }
 ]]></programlisting>
 </section>

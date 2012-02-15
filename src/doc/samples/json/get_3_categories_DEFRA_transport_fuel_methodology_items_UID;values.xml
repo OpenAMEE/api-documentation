@@ -14,7 +14,6 @@ Content-Type: application/json; charset=UTF-8
 </programlisting>
 <programlisting language='javascript'><![CDATA[
 {
-  "version": "3.6.0",
   "status": "OK",
   "item": {
     "uid": "AD650C628120",
@@ -22,26 +21,26 @@ Content-Type: application/json; charset=UTF-8
       {
         "history": false,
         "perUnit": "L",
-        "compoundUnit": "kg/L",
+        "unit": "kg",
         "value": "0.0034",
-        "unit": "kg",
-        "path": "massCH4PerVolume"
+        "path": "massCH4PerVolume",
+        "compoundUnit": "kg/L"
       },
       {
         "history": false,
         "perUnit": "L",
-        "compoundUnit": "kg/L",
+        "unit": "kg",
         "value": "2.7227",
-        "unit": "kg",
-        "path": "massTotalCO2ePerVolume"
+        "path": "massTotalCO2ePerVolume",
+        "compoundUnit": "kg/L"
       },
       {
         "history": false,
         "perUnit": "L",
-        "compoundUnit": "kg/L",
-        "value": "2.3117",
         "unit": "kg",
-        "path": "massDirectCO2ePerVolume"
+        "value": "2.3117",
+        "path": "massDirectCO2ePerVolume",
+        "compoundUnit": "kg/L"
       },
       {
         "history": false,
@@ -51,10 +50,10 @@ Content-Type: application/json; charset=UTF-8
       {
         "history": false,
         "perUnit": "L",
-        "compoundUnit": "kg/L",
-        "value": "0.411",
         "unit": "kg",
-        "path": "massIndirectCO2ePerVolume"
+        "value": "0.411",
+        "path": "massIndirectCO2ePerVolume",
+        "compoundUnit": "kg/L"
       },
       {
         "history": false,
@@ -64,21 +63,22 @@ Content-Type: application/json; charset=UTF-8
       {
         "history": false,
         "perUnit": "L",
-        "compoundUnit": "kg/L",
-        "value": "2.3018",
         "unit": "kg",
-        "path": "massCO2PerVolume"
+        "value": "2.3018",
+        "path": "massCO2PerVolume",
+        "compoundUnit": "kg/L"
       },
       {
         "history": false,
         "perUnit": "L",
-        "compoundUnit": "kg/L",
-        "value": "0.0065",
         "unit": "kg",
-        "path": "massN2OPerVolume"
+        "value": "0.0065",
+        "path": "massN2OPerVolume",
+        "compoundUnit": "kg/L"
       }
     ]
-  }
+  },
+  "version": "3.6.0"
 }
 ]]></programlisting>
 </section>

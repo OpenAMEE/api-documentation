@@ -14,6 +14,8 @@ Content-Type: application/json; charset=UTF-8
 </programlisting>
 <programlisting language='javascript'><![CDATA[
 {
+  "status": "OK",
+  "resultsTruncated": false,
   "profiles": [
     {
       "uid": "W6AWS5W9F6VK"
@@ -25,9 +27,7 @@ Content-Type: application/json; charset=UTF-8
       "uid": "FC2ODLZHCNHS"
     }
   ],
-  "resultsTruncated": false,
-  "version": "3.6.0",
-  "status": "OK"
+  "version": "3.6.0"
 }
 ]]></programlisting>
 </section>

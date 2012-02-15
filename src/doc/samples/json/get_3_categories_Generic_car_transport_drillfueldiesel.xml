@@ -14,24 +14,24 @@ Content-Type: application/json; charset=UTF-8
 </programlisting>
 <programlisting language='javascript'><![CDATA[
 {
-  "version": "3.6.0",
+  "status": "OK",
   "drill": {
+    "choices": {
+      "values": [
+        "small",
+        "medium",
+        "large"
+      ],
+      "name": "size"
+    },
     "selections": [
       {
         "name": "fuel",
         "value": "diesel"
       }
-    ],
-    "choices": {
-      "name": "size",
-      "values": [
-        "small",
-        "medium",
-        "large"
-      ]
-    }
+    ]
   },
-  "status": "OK"
+  "version": "3.6.0"
 }
 ]]></programlisting>
 </section>

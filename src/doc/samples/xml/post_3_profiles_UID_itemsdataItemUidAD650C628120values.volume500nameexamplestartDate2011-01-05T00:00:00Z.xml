@@ -1,14 +1,14 @@
 <section role='tab'>
-<title>JSON</title>
+<title>XML</title>
 <section role='httprequest'>
 <programlisting role='header'>
 POST /3/profiles/FC2ODLZHCNHS/items HTTP/1.1
-Accept: application/json
+Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 </programlisting>
 <programlisting role='body'>
-dataItemUid=AD650C628120&amp;startDate=2011-01-05T00%3A00%3A00Z&amp;values.volume=500&amp;name=example
+dataItemUid=AD650C628120&amp;values.volume=500&amp;name=example&amp;startDate=2011-01-05T00%3A00%3A00Z
 </programlisting>
 </section>
 <section role='httpresponse'>

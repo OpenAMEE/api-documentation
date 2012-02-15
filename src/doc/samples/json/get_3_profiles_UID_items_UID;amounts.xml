@@ -14,58 +14,58 @@ Content-Type: application/json; charset=UTF-8
 </programlisting>
 <programlisting language='javascript'><![CDATA[
 {
-  "version": "3.6.0",
   "status": "OK",
   "item": {
     "uid": "1U36W0KJFW3S",
     "amounts": {
-      "notes": [
-        {
-          "type": "comment",
-          "value": "This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation"
-        }
-      ],
       "amount": [
         {
+          "perUnit": "",
+          "unit": "kg",
           "default": true,
-          "perUnit": "",
-          "type": "totalDirectCO2e",
-          "value": 1155.85,
-          "unit": "kg"
+          "value": 1155.8500000000001,
+          "type": "totalDirectCO2e"
         },
         {
           "perUnit": "",
-          "type": "lifeCycleCO2e",
-          "value": 1361.35,
-          "unit": "kg"
+          "unit": "kg",
+          "value": 1361.3500000000001,
+          "type": "lifeCycleCO2e"
         },
         {
           "perUnit": "",
-          "type": "CO2",
+          "unit": "kg",
           "value": 1150.9,
-          "unit": "kg"
+          "type": "CO2"
         },
         {
           "perUnit": "",
-          "type": "nitrousOxideCO2e",
+          "unit": "kg",
           "value": 3.25,
-          "unit": "kg"
+          "type": "nitrousOxideCO2e"
         },
         {
           "perUnit": "",
-          "type": "methaneCO2e",
+          "unit": "kg",
           "value": 1.7,
-          "unit": "kg"
+          "type": "methaneCO2e"
         },
         {
           "perUnit": "",
-          "type": "indirectCO2e",
+          "unit": "kg",
           "value": 205.5,
-          "unit": "kg"
+          "type": "indirectCO2e"
+        }
+      ],
+      "notes": [
+        {
+          "value": "This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation",
+          "type": "comment"
         }
       ]
     }
-  }
+  },
+  "version": "3.6.0"
 }
 ]]></programlisting>
 </section>
