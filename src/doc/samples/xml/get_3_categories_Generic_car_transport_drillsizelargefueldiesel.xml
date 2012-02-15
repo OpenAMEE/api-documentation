@@ -2,7 +2,7 @@
 <title>XML</title>
 <section role='httprequest'>
 <programlisting role='header'>
-GET /3/categories/Generic_car_transport/drill?fuel=diesel&size=large HTTP/1.1
+GET /3/categories/Generic_car_transport/drill?fuel=diesel&amp;size=large HTTP/1.1
 Accept: application/xml
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 </programlisting>
