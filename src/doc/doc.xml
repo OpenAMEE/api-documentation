@@ -42,7 +42,7 @@
   <xi:include href='ch_profiles.xml'/>
   <xi:include href='ch_advanced.xml'/>
 
-  <appendix>
+  <appendix xml:id='profile_ref'>
     <title>Profile Reference</title>
     <para>
       AMEEconnect profiles are used to store user data and perform calculations.
@@ -52,7 +52,7 @@
     <!--><xi:include href='ref_profile_batch.xml'/>-->
   </appendix>
 
-  <appendix>
+  <appendix xml:id='data_ref'>
     <title>Data Reference</title>
     <para>
       AMEEconnect provides reference-style access to data categories and items 
@@ -64,7 +64,7 @@
     <xi:include href='ref_data_item_values.xml'/>
   </appendix>
 
-  <appendix>
+  <appendix xml:id='concepts_ref'>
     <title>Common Concepts Reference</title>
     <para>
       There are a number of concepts that are used by different resources across AMEEconnect. This
