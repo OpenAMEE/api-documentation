@@ -2,7 +2,7 @@
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
   "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
 
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='calculations'>
   <title>Perform Calculations</title>
   <section xml:id='doing-calculations'>
     <title>Doing Calculations with Data Items</title>
@@ -11,10 +11,10 @@
 	  using drilldowns, so have a read of that first if you haven't already.
     </para>
 	<para>  
-      Once you know the path and UID of the data item you want to use, you simply send a GET request to the item URL as you
-	  would to get the emission factors from the item. The difference is, you provide your input values as query parameters
-	  on the URL, and your calculation will be carried out. 
-	  For example, to calculate some usage data for the /transport/defra/fuel category, you would send the following request:
+      Once you know the path and UID of the data item you want to use, you simply send a GET request to the item's calculation URL.
+	  You provide your input values as query parameters in the URL, and your calculation will be carried out. 
+	  For example, to calculate some usage data for the petrol item in the DEFRA_transport_fuel_methodology category, 
+	  you would send the following request:
     </para>
 	<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_items_UID_calculation_volume=500.xml' />
     <para>
@@ -26,7 +26,7 @@
     </para>
     <para>
 	  In this case, 
-      the call will send a value of 500 for this item (which is in litres by default - again, see AMEEdiscover).
+      the request will send a value of 500 for this item (which is in litres by default - again, see AMEEdiscover).
 	  You can select the units you wish to use for the values in your calculation - see <xref linkend='units' /> 
 	  for details.
     </para>
@@ -45,8 +45,7 @@
 	      CO2, plus some other gases, produce the 1156kg of climate-equivalent CO2, or CO2e.
 	    </para>
 	    <para>
-	      You may also notice the Amount tag. This shows the default result from the Amounts section, and is for backwards
-	      compatibility only.
+	      Any notes or errors returned by the calculation will also be included in the response.
 	    </para>
   </section>
 </chapter>
