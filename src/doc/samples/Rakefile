@@ -197,6 +197,8 @@ task :samples do
       when :xml
         data_item_uid = response.body.match(/<Value>([A-Z0-9]{12})<\/Value>/)[1]
       end
+      # Do a search
+      request :get, "/3/search;name;label;parent", :types => 'DC,DI', :q => 'camels'
       # Get data category information
       request :get, "/3/categories/DEFRA_transport_fuel_methodology"
       request :get, "/3/categories/DEFRA_transport_fuel_methodology/items"

@@ -1,0 +1,44 @@
+<section role='tab'>
+<title>XML</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3/search;name;label;parent?q=camels&amp;types=DC%2CDI HTTP/1.1
+Accept: application/xml
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+</programlisting>
+<programlisting language='xml'><![CDATA[
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Representation>
+ <Results truncated="false">
+  <Item uid="OY2PAJ81ANXL">
+   <Name/>
+   <Label>camels, developed countries</Label>
+   <CategoryUid>PZH8T4QFP4NO</CategoryUid>
+   <CategoryWikiName>Enteric_fermentation</CategoryWikiName>
+  </Item>
+  <Item uid="03KUHQEORUTL">
+   <Name/>
+   <Label>camels, developing countries</Label>
+   <CategoryUid>PZH8T4QFP4NO</CategoryUid>
+   <CategoryWikiName>Enteric_fermentation</CategoryWikiName>
+  </Item>
+  <Category uid="5OE77HEIZPTH">
+   <Name>IPCC methodology for manure sourced nitrous oxide - other livestock</Name>
+   <WikiName>Other_livestock_manure_nitrous_oxide_emissions</WikiName>
+   <ParentUid>KQH78FEYITVS</ParentUid>
+   <ParentWikiName>Manure_associated_nitrous_oxide_emissions</ParentWikiName>
+  </Category>
+ </Results>
+ <Status>OK</Status>
+ <Version>3.6.0</Version>
+</Representation>
+]]></programlisting>
+</section>
+</section>

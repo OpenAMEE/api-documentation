@@ -95,6 +95,13 @@
       </para>
     </section>
   </section>
+  <section xml:id='interactive-drilldowns'>
+    <title>Search</title>
+    <para>
+      AMEEconnect provides full-text search capabilities.
+    </para>
+	<xi:include href='samples/get_3_search;name;label;parent_types=DC,DI_q=camels.xml'/>
+  </section>
   <section xml:id='authenticated-sessions'>
     <title>Authenticated Sessions</title>
     <para>

@@ -1,0 +1,46 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3/search;name;label;parent?q=camels&amp;types=DC%2CDI HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "results": [
+    {
+      "uid": "OY2PAJ81ANXL",
+      "categoryUid": "PZH8T4QFP4NO",
+      "categoryWikiName": "Enteric_fermentation",
+      "name": "",
+      "label": "camels, developed countries"
+    },
+    {
+      "uid": "03KUHQEORUTL",
+      "categoryUid": "PZH8T4QFP4NO",
+      "categoryWikiName": "Enteric_fermentation",
+      "name": "",
+      "label": "camels, developing countries"
+    },
+    {
+      "uid": "5OE77HEIZPTH",
+      "parentUid": "KQH78FEYITVS",
+      "parentWikiName": "Manure_associated_nitrous_oxide_emissions",
+      "name": "IPCC methodology for manure sourced nitrous oxide - other livestock",
+      "wikiName": "Other_livestock_manure_nitrous_oxide_emissions"
+    }
+  ],
+  "status": "OK",
+  "resultsTruncated": false,
+  "version": "3.6.0"
+}
+]]></programlisting>
+</section>
+</section>
