@@ -54,6 +54,32 @@
 			</tr>
 		</table>
 	</section>
+	<section xml:id='list-data-item-reference'>
+		<title>List Data Items</title>
+		<para>
+			Fetches a list of data items.
+		</para>
+		<table class='requestdetails'>
+			<tr><td>URL</td><td>https://{server}.amee.com/data/{category_path}/{data_item_uid}</td></tr>
+			<tr><td>HTTP Method</td><td>GET</td></tr>
+			<tr><td>Response Content-Type</td><td>application/xml or application/json</td></tr>
+			<tr><td>Successful Response Code</td><td>200 OK</td></tr>
+		</table>
+		<section>
+		  <title>Optional Parameters</title>
+  		<table class='parameters'>
+  			<tr>
+					<th>Parameter</th>
+					<th>Description</th>
+  			</tr>
+  		</table>
+	  </section>
+		<para>
+		  The response contains a JSON or XML encoded description of the data item.
+	  </para>
+		<xi:include href='samples/get_3_categories_US_specific_car_transport_items;label_engineSize=2.5_resultLimit=10.xml'/>
+	</section>
+	
 	<section xml:id='get-data-item-reference'>
 		<title>Get Data Item</title>
 		<para>
