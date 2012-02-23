@@ -54,12 +54,12 @@
     <para>
       Firstly, each category in AMEE has a <emphasis>name</emphasis>. This is part of its URL in AMEEconnect, and
       is shown its API form on the the 'Developer' tab for each category. For instance, the 
-	  <ulink href='http://explorer.amee.com/categories/DEFRA_transport_fuel_methodology'>DEFRA transport fuel methodology</ulink> 
+	  <ulink url='http://discover.amee.com/categories/DEFRA_transport_fuel_methodology'>DEFRA transport fuel methodology</ulink>
 	  category has a name of <emphasis>DEFRA_transport_fuel_methodology</emphasis>.
     </para>
     <para>
       If you want to access a single data item with the category, you will need to identify which one. The AMEEdiscover 
-	  <ulink href='http://explorer.amee.com/categories/DEFRA_transport_fuel_methodology/data'>Data Items</ulink> list is useful here. It shows
+	  <ulink url='http://discover.amee.com/categories/DEFRA_transport_fuel_methodology/data'>Data Items</ulink> list is useful here. It shows
       all the emissions models (or data items) within a category, including their drilldown options.
     </para>
   </section>
