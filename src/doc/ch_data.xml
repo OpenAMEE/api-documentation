@@ -9,7 +9,7 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='data'>
   <title>Get Emission Factors</title>
   <para>
-    If you just want access to authoritative emission factors, AMEE has you covered. Using AMEEdiscover and 
+    If you just want access to authoritative emission factors, AMEE has you covered. Using &discover; and 
     &api_name;, you can wire the latest data straight into the heart of your application.
   </para>
   <section xml:id='categories'>
@@ -32,7 +32,7 @@
     </para>
   </section>
   <section xml:id='ameediscover'>
-    <title>Introduction to AMEEdiscover</title>
+    <title>Introduction to &discover;</title>
     <para>
       As a neutral aggregation platform, AMEE contains many different methodologies related to environmental
       intelligence. They use different calculation techniques, different inputs, and have different levels 
@@ -42,17 +42,17 @@
     </para>
     <para>
       Each of these methodologies is a category, and every category within AMEE is individually documented in 
-      AMEEdiscover. The category page describes how the category works, where it came from, relationships 
-      with other categories, and so on. AMEEdiscover includes powerful search and tagging capabilities, making 
+      &discover;. The category page describes how the category works, where it came from, relationships 
+      with other categories, and so on. &discover; includes powerful search and tagging capabilities, making 
       it easy to find the categories and models you wish to use. It also lets you perform 
       instant calculations directly in your browser, so you can easily check your results. It can even
       generate example code for you.
     </para>
   </section>
   <section xml:id='using-ameediscover'>
-    <title>Using AMEEdiscover with &api_name;</title>
+    <title>Using &discover; with &api_name;</title>
     <para>
-      If you want to fetch data with &api_name;, you first need to work out which data you want. AMEEdiscover helps
+      If you want to fetch data with &api_name;, you first need to work out which data you want. &discover; helps
       you to do this and gives you the parameters you need to build the required URLs.
     </para>
     <para>
@@ -62,7 +62,7 @@
 	  category has a name of <emphasis>DEFRA_transport_fuel_methodology</emphasis>.
     </para>
     <para>
-      If you want to access a single data item with the category, you will need to identify which one. The AMEEdiscover 
+      If you want to access a single data item with the category, you will need to identify which one. The &discover; 
 	  <ulink url='http://discover.amee.com/categories/DEFRA_transport_fuel_methodology/data'>Data Items</ulink> list is useful here. It shows
       all the emissions models (or data items) within a category, including their drilldown options.
     </para>

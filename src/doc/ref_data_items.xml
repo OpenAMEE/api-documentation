@@ -119,7 +119,7 @@
 					<td>If a value is set, a perUnit can also be set, which indicates the timescale over which
 					  the value applies. In the distance example above, the 'distancePerUnit' parameter could be
 					  set to 'day', 'month', or any other supported time unit. Not all values support perUnits; check 
-					  AMEEdiscover for each case. Relevant values have default perUnits if none are supplied.</td>
+					  &discover; for each case. Relevant values have default perUnits if none are supplied.</td>
 				</tr>
   		</table>
 	  </section>

@@ -65,9 +65,9 @@
     <para>
       Secondly we have the <emphasis>volume</emphasis> parameter, which is a parameter specific 
       to this category. As each category can store a different type of data, the profile item values 
-      are different for each one. AMEEdiscover lists which ones are valid for which categories, as well
+      are different for each one. &discover; lists which ones are valid for which categories, as well
       as showing different usage options; which parameters are required, optional, and so on. In this case, 
-      the call will send a value of 500 for this item (which is in litres by default - again, see AMEEdiscover).
+      the call will send a value of 500 for this item (which is in litres by default - again, see &discover;).
     </para>
     <para>
       Finally we pass the <emphasis>representation=full</emphasis> parameter. This asks &api_name; to

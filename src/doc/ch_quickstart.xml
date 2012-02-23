@@ -29,7 +29,7 @@
       The first step is to choose which emissions model you want to use for your calculation.
 	</para>
 	<para>
-	  <ulink url="http://discover.amee.com">AMEEdiscover</ulink> lists all the possible models available in AMEE 
+	  <ulink url="http://discover.amee.com">&discover;</ulink> lists all the possible models available in AMEE 
 	  (over 8 million!), with rich searching and tagging functionality to make it easy to find what you want.
 	</para>
 	<para>
@@ -40,7 +40,7 @@
 	</para>
 	<para>
 	  There are two pieces of information required to identify an emissions model. The first is the <emphasis>category name</emphasis>. This
-	  can be found on the Developer page for the category, and it's also part of the URL in AMEEdiscover. In this case, it's
+	  can be found on the Developer page for the category, and it's also part of the URL in &discover;. In this case, it's
 	  <emphasis>Great_Circle_flight_methodology</emphasis>.
 	</para>
 	<para>
@@ -86,7 +86,7 @@ Found 1 nodes:
 	<para>
 	  You simply do a GET request to URL that represents the emissions model you've chosen, which is made up of the category path
 	  and the UID you just fetched, and include some parameters for your input values. These are different for every category, 
-	  but again you can grab them from the code tab in AMEEdiscover.
+	  but again you can grab them from the code tab in &discover;.
     </para>
 	<para>
 	  In this case there are two required parameters, <emphasis>IATACode1</emphasis> and <emphasis>IATACode2</emphasis>, 

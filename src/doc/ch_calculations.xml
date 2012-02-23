@@ -25,12 +25,12 @@
       The parameters to the GET request are your input values obtained from your user (or application). 
 	  Here we just use the <emphasis>volume</emphasis> parameter, 
 	  but as each category represents a different methodology or calculation, the input values 
-      are different for each one. AMEEdiscover lists which are valid for which categories, as well
+      are different for each one. &discover; lists which are valid for which categories, as well
       as showing different usage options; which parameters are required, optional, and so on.
     </para>
     <para>
 	  In this case, 
-      the request will send a value of 500 for this item (which is in litres by default - again, see AMEEdiscover).
+      the request will send a value of 500 for this item (which is in litres by default - again, see &discover;).
 	  You can select the units you wish to use for the values in your calculation - see <xref linkend='units' /> 
 	  for details.
     </para>
@@ -45,7 +45,7 @@
 	    <para>
 	      The Amounts tag in the response shows separately the amounts of greenhouse gases emitted, by name, often together with 
 	      an equivalent amount of CO2 that would have the same climate impact, and other outputs of interest. The exact set 
-	      of outputs varies from category to category, as documented in AMEEdiscover. In this case we see that 1151kg of 
+	      of outputs varies from category to category, as documented in &discover;. In this case we see that 1151kg of 
 	      CO2, plus some other gases, produce the 1156kg of climate-equivalent CO2, or CO2e.
 	    </para>
 	    <para>
