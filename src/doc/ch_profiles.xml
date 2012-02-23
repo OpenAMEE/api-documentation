@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
-  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
+[
+<!ENTITY % translations   SYSTEM "translations.xml">
+%translations;
+]>
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='profiles'>
   <title>Store Data</title>
@@ -66,7 +70,7 @@
       the call will send a value of 500 for this item (which is in litres by default - again, see AMEEdiscover).
     </para>
     <para>
-      Finally we pass the <emphasis>representation=full</emphasis> parameter. This asks AMEEconnect to
+      Finally we pass the <emphasis>representation=full</emphasis> parameter. This asks &api_name; to
       send back a representation of the calculation. We will see why this is necessary in the next chapter, 
       so don't worry about it for now.
     </para>
@@ -76,7 +80,7 @@
     <title>Naming Profile Items</title>
     <para>
       If you create two profile items with the same data item UID, and which overlap the same 
-      time, then AMEEconnect will complain, as it can't form a single consistent time series from the 
+      time, then &api_name; will complain, as it can't form a single consistent time series from the 
       data (see below). However, there are cases in which you might want to do this; energy used by two 
       cars of the same type. In this case, you can provide a name parameter to identify each set. 
       You can build up multiple datasets in the same profile category 
@@ -89,7 +93,7 @@
     <title>Building Time Series</title>
     <para>
       Storing a single profile item is useful, but most data changes over time, particularly 
-      when we are talking about energy use. AMEEconnect allows you to store time information along 
+      when we are talking about energy use. &api_name; allows you to store time information along 
       with your data, so that you can build up a series of data points over time.
     </para>
     <para>
@@ -98,7 +102,7 @@
       that the created profile item is valid for. By default, startDate is "now" and 
       endDate is infinitely far in the future. If your data is not time-sensitive, then 
       this will be fine. However, if your data represents usage at a particular time, you 
-      can set the values explicitly. The maximum time resolution of AMEEconnect is 1 
+      can set the values explicitly. The maximum time resolution of &api_name; is 1 
       minute. If seconds are specified, they are rounded down. Note that you can't set 
       endDate and duration at the same time.
     </para>
@@ -122,7 +126,7 @@ duration=PT30S</programlisting>
       These responses can be filtered by time period; see below.
     </para>
     <para>
-      AMEEconnect does not support aggregation across different categories or profiles. Often the same data
+      &api_name; does not support aggregation across different categories or profiles. Often the same data
       could be stored in multiple places using different methodologies, so in order to avoid double counting, 
       the aggregation is left to the client who best understands the business logic involved.
     </para>

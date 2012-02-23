@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
-  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
+[
+<!ENTITY % translations   SYSTEM "translations.xml">
+%translations;
+]>
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='calculations'>
   <title>Perform Calculations</title>

@@ -1,12 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
-  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
+[
+<!ENTITY % translations   SYSTEM "translations.xml">
+%translations;
+]>
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='data'>
   <title>Get Emission Factors</title>
   <para>
     If you just want access to authoritative emission factors, AMEE has you covered. Using AMEEdiscover and 
-    AMEEconnect, you can wire the latest data straight into the heart of your application.
+    &api_name;, you can wire the latest data straight into the heart of your application.
   </para>
   <section xml:id='categories'>
     <title>Categories</title>
@@ -46,13 +50,13 @@
     </para>
   </section>
   <section xml:id='using-ameediscover'>
-    <title>Using AMEEdiscover with AMEEconnect</title>
+    <title>Using AMEEdiscover with &api_name;</title>
     <para>
-      If you want to fetch data with AMEEconnect, you first need to work out which data you want. AMEEdiscover helps
+      If you want to fetch data with &api_name;, you first need to work out which data you want. AMEEdiscover helps
       you to do this and gives you the parameters you need to build the required URLs.
     </para>
     <para>
-      Firstly, each category in AMEE has a <emphasis>name</emphasis>. This is part of its URL in AMEEconnect, and
+      Firstly, each category in AMEE has a <emphasis>name</emphasis>. This is part of its URL in &api_name;, and
       is shown its API form on the the 'Developer' tab for each category. For instance, the 
 	  <ulink url='http://discover.amee.com/categories/DEFRA_transport_fuel_methodology'>DEFRA transport fuel methodology</ulink>
 	  category has a name of <emphasis>DEFRA_transport_fuel_methodology</emphasis>.

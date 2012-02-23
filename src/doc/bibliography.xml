@@ -4,6 +4,8 @@
 [
 <!ENTITY % sgml.features "IGNORE">
 <!ENTITY % xml.features "INCLUDE">
+<!ENTITY % translations   SYSTEM "translations.xml">
+%translations;
 ]>
 
 <bibliography xml:id='bib'>

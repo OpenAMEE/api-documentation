@@ -4,6 +4,8 @@
 [
 <!ENTITY % sgml.features "IGNORE">
 <!ENTITY % xml.features "INCLUDE">
+<!ENTITY % translations   SYSTEM "translations.xml">
+%translations;
 ]>
 
 <section xml:id='paging-reference' xmlns:xi="http://www.w3.org/2001/XInclude">

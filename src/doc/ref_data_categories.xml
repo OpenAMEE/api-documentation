@@ -6,6 +6,8 @@
 <!ENTITY % xml.features "INCLUDE">
 <!ENTITY % dbcent PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/usr/local/Cellar/docbook/5.0/docbook/xml/4.5/dbcentx.mod">
 %dbcent;
+<!ENTITY % translations   SYSTEM "translations.xml">
+%translations;
 ]>
 
 <section xml:id='data-category-reference' xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -87,7 +89,7 @@
       Drilldowns are a special resource available within every Data Category that contains Data Items.
     </para>
     <para>
-      As data items are identified by UIDs in AMEEconnect calls such as creating Profile Items, a way is 
+      As data items are identified by UIDs in &api_name; calls such as creating Profile Items, a way is 
       required of translating human-readable choices into these UIDs. This is particularly important 
       for large categories, such as UK car models, which can contain many thousands of data items.
     </para>

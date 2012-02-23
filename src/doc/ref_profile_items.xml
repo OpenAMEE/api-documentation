@@ -6,6 +6,8 @@
 <!ENTITY % xml.features "INCLUDE">
 <!ENTITY % dbcent PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/usr/local/Cellar/docbook/5.0/docbook/xml/4.5/dbcentx.mod">
 %dbcent;
+<!ENTITY % translations   SYSTEM "translations.xml">
+%translations;
 ]>
 
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="profile-item-reference">

@@ -1,11 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
-  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
-
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
+[
+<!ENTITY % translations   SYSTEM "translations.xml">
+%translations;
+]>
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='quickstart'>
   <title>Quick Start</title>
   <para>
-    If you want to calculate carbon emissions (or other sustainability metrics) in your applications, AMEEconnect is for you.
+    If you want to calculate carbon emissions (or other sustainability metrics) in your applications, &api_name; is for you.
 	This guide will give you the bare minimum you need to get going.
   </para>
   <section xml:id='getting-started'>
@@ -15,7 +18,7 @@
 	  This API key will let you use the AMEE staging platform (platform-api-stage.amee.com), which is intended for use during development.
     </para>
     <para>
-      AMEEconnect is a RESTful API, with HTTP requests for all actions, and uses standard methods of authentication
+      &api_name; is a RESTful API, with HTTP requests for all actions, and uses standard methods of authentication
 	  and response selection. Use <emphasis>HTTP Basic</emphasis> authentication, and specify whether you want XML 
 	  or JSON responses using the <emphasis>Accept</emphasis> header.
     </para>
@@ -132,7 +135,7 @@ Found 7 nodes:
 		<xi:include href="samples/xml/get_3_categories_Great_Circle_flight_methodology_items_UID_calculation_IATAcode1=LHR_IATAcode2=LAX.xml"/>
     </section>
     <para>
-	  And that's it! You've just done your first calculation using AMEEconnect. London to LA: 1065kg of emissions (as shown in the 
+	  And that's it! You've just done your first calculation using &api_name;. London to LA: 1065kg of emissions (as shown in the 
 	  default amount).
     </para>
     <para>

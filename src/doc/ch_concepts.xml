@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
-"http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+"http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
+[
+<!ENTITY % translations   SYSTEM "translations.xml">
+%translations;
+]>
 
 <<<< THIS IS NOT USED AT THE MOMENT >>>>
 
@@ -8,7 +12,7 @@
 	<title>Basic Concepts</title>
 	<section>
 		<title>REST</title>
-		<para>Representational State Transfer (REST) is a system for creating efficient programmable interfaces with the World Wide Web. When a client uses AMEEconnect to request information from an AMEE server, or provide information to it, is based around the transfer of <emphasis>representations</emphasis> of <emphasis>resources</emphasis>. A representation of a resource is typically a document that captures the current or intended state of a resource. Interactions with a RESTful API create, update, read, or delete a resource. Resources in AMEE include profiles, categories, items, and values. Each resource in AMEE is uniquely referenced by a unique identifier, or UID, a 16-digit random string.</para>
+		<para>Representational State Transfer (REST) is a system for creating efficient programmable interfaces with the World Wide Web. When a client uses &api_name; to request information from an AMEE server, or provide information to it, is based around the transfer of <emphasis>representations</emphasis> of <emphasis>resources</emphasis>. A representation of a resource is typically a document that captures the current or intended state of a resource. Interactions with a RESTful API create, update, read, or delete a resource. Resources in AMEE include profiles, categories, items, and values. Each resource in AMEE is uniquely referenced by a unique identifier, or UID, a 16-digit random string.</para>
 	</section>
 	<section>
 		<title>Categories</title>

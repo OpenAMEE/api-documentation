@@ -1,13 +1,17 @@
 <?xml version="1.0"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
-  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
+[
+<!ENTITY % translations   SYSTEM "translations.xml">
+%translations;
+]>
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='advanced'>
   <title>Advanced Options</title>
   <section xml:id='units'>
     <title>Units</title>
     <para>
-      AMEEconnect includes built-in support for a wide range of unit conversions. Most units 
+      &api_name; includes built-in support for a wide range of unit conversions. Most units 
       are metric by default, but if you want to specify fuel in US gallons instead, you can. Time units can also 
       be changed if present for that parameter. Each input parameter has associated Unit and PerUnit
 	  parameters which control these. For instance, if you wanted to use the default units, you can add a parameter 
@@ -19,7 +23,7 @@
     </para>
     <programlisting>volume=100&amp;volumeUnit=gal&amp;volumePerUnit=week</programlisting>
     <para>
-      All unit conversion calculations are automatically handled by AMEEconnect, giving you the correct 
+      All unit conversion calculations are automatically handled by &api_name;, giving you the correct 
       results for your application with the minimum of effort.
     </para>
     <para>
@@ -98,7 +102,7 @@
   <section xml:id='search'>
     <title>Search</title>
     <para>
-      AMEEconnect provides full-text search capabilities.
+      &api_name; provides full-text search capabilities.
     </para>
 	<xi:include href='samples/get_3_search;name;label;parent_types=DC,DI_q=camels.xml'/>
   </section>
@@ -115,7 +119,7 @@
     <para>
       Sometimes you want to give your users a choice of which calculation to perform within a category. For instance, they might
       need to choose the model of their car, or how their home is heated. For those situations when there are too many
-      options to present in a single list, AMEEconnect provides the facility to perform step-by-step interactive drilldowns.
+      options to present in a single list, &api_name; provides the facility to perform step-by-step interactive drilldowns.
       You make a request to the drill resource, present the user with the choices, then make another request based on their choice.
       This gives you the next set of choices, and so on until the drill is fully specified.
     </para>

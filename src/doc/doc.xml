@@ -4,6 +4,8 @@
 [
 <!ENTITY % vers   SYSTEM "version.xml">
 %vers;
+<!ENTITY % translations   SYSTEM "translations.xml">
+%translations;
 ]>
 
 <book id="amee" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -11,7 +13,7 @@
 
   <bookinfo>
 
-    <subtitle>AMEEconnect version 2</subtitle>
+    <subtitle>&api_name; version &api_version;</subtitle>
 
     <authorgroup>
       <author>
@@ -45,7 +47,7 @@
   <appendix xml:id='profile_ref'>
     <title>Profile Reference</title>
     <para>
-      AMEEconnect profiles are used to store user data and perform calculations.
+      &api_name; profiles are used to store user data and perform calculations.
     </para>
     <xi:include href='ref_profiles.xml'/>
     <xi:include href='ref_profile_items.xml'/>
@@ -55,7 +57,7 @@
   <appendix xml:id='data_ref'>
     <title>Data Reference</title>
     <para>
-      AMEEconnect provides reference-style access to data categories and items 
+      &api_name; provides reference-style access to data categories and items 
       curated by AMEE. It also provides drilldown resources to allow interactive or automatic 
       selection of data items by client applications.
     </para>
@@ -67,7 +69,7 @@
   <appendix xml:id='concepts_ref'>
     <title>Common Concepts Reference</title>
     <para>
-      There are a number of concepts that are used by different resources across AMEEconnect. This
+      There are a number of concepts that are used by different resources across &api_name;. This
       appendix provides a reference for them.
     </para>
     <xi:include href='ref_authentication.xml'/>
