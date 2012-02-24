@@ -10,7 +10,16 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 <section role='httpresponse'>
 <programlisting role='header'>
 HTTP/1.1 200 OK
-Content-Type: text/plain
+Content-Type: application/xml
 </programlisting>
+<programlisting language='xml'><![CDATA[
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Representation>
+ <Status>OK</Status>
+ <Entity uid="FC2ODLZHCNHS"/>
+ <Version>3.6.0</Version>
+</Representation>
+]]></programlisting>
 </section>
 </section>

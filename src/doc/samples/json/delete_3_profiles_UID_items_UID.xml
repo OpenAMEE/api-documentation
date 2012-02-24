@@ -10,7 +10,16 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 <section role='httpresponse'>
 <programlisting role='header'>
 HTTP/1.1 200 OK
-Content-Type: text/plain
+Content-Type: application/json; charset=UTF-8
 </programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "status": "OK",
+  "entity": {
+    "uid": "1U36W0KJFW3S"
+  },
+  "version": "3.6.0"
+}
+]]></programlisting>
 </section>
 </section>
