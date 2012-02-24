@@ -44,34 +44,12 @@
   <xi:include href='ch_profiles.xml'/>
   <xi:include href='ch_advanced.xml'/>
 
-  <appendix xml:id='profile_ref'>
-    <title>Profile Reference</title>
-    <para>
-      &api_name; profiles are used to store user data and perform calculations.
-    </para>
-    <xi:include href='ref_profiles.xml'/>
-    <xi:include href='ref_profile_items.xml'/>
-    <!--><xi:include href='ref_profile_batch.xml'/>-->
-  </appendix>
-
-  <appendix xml:id='data_ref'>
-    <title>Data Reference</title>
-    <para>
-      &api_name; provides reference-style access to data categories and items 
-      curated by AMEE. It also provides drilldown resources to allow interactive or automatic 
-      selection of data items by client applications.
-    </para>
+  <appendix xml:id='reference'>
     <xi:include href='ref_data_categories.xml'/>
     <xi:include href='ref_data_items.xml'/>
     <xi:include href='ref_data_item_values.xml'/>
-  </appendix>
-
-  <appendix xml:id='concepts_ref'>
-    <title>Common Concepts Reference</title>
-    <para>
-      There are a number of concepts that are used by different resources across &api_name;. This
-      appendix provides a reference for them.
-    </para>
+    <xi:include href='ref_profiles.xml'/>
+    <xi:include href='ref_profile_items.xml'/>
     <xi:include href='ref_authentication.xml'/>
     <xi:include href='ref_uids.xml'/>
     <xi:include href='ref_paging.xml'/>
