@@ -14,8 +14,18 @@ profile=true
 <section role='httpresponse'>
 <programlisting role='header'>
 HTTP/1.1 201 Created
-Content-Type: text/plain
+Content-Type: application/json; charset=UTF-8
 Location: https://platform-api-dev.amee.com/3.6.0/profiles/FC2ODLZHCNHS
 </programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "location": "/3.6.0/profiles/FC2ODLZHCNHS",
+  "status": "OK",
+  "entity": {
+    "uid": "FC2ODLZHCNHS"
+  },
+  "version": "3.6.0"
+}
+]]></programlisting>
 </section>
 </section>

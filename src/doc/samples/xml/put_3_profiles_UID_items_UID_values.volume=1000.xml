@@ -13,8 +13,17 @@ values.volume=1000
 </section>
 <section role='httpresponse'>
 <programlisting role='header'>
-HTTP/1.1 204 No Content
-Content-Type: text/plain
+HTTP/1.1 200 OK
+Content-Type: application/xml
 </programlisting>
+<programlisting language='xml'><![CDATA[
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Representation>
+ <Status>OK</Status>
+ <Entity uid="1U36W0KJFW3S"/>
+ <Version>3.6.0</Version>
+</Representation>
+]]></programlisting>
 </section>
 </section>
