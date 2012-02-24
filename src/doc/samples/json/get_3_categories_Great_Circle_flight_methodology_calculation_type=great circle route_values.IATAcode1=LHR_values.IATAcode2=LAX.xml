@@ -2,7 +2,7 @@
 <title>JSON</title>
 <section role='httprequest'>
 <programlisting role='header'>
-GET /3/categories/Great_Circle_flight_methodology/items/A4CA32225DEA/calculation?IATAcode1=LHR&amp;IATAcode2=LAX HTTP/1.1
+GET /3/categories/Great_Circle_flight_methodology/calculation?type=great+circle+route&amp;values.IATAcode1=LHR&amp;values.IATAcode2=LAX HTTP/1.1
 Accept: application/json
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 </programlisting>

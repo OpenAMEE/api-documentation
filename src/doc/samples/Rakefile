@@ -181,15 +181,8 @@ task :samples do
     @format = format
     uid = nil
     begin
-      # Quickstart examples
-      response = request :get, "/3/categories/Great_Circle_flight_methodology/drill", :type=>'great circle route'
-      case @format
-      when :json
-        data_item_uid = response.body.match(/"values":\["([A-Z0-9]{12})"\],"name":"uid"/)[1]
-      when :xml
-        data_item_uid = response.body.match(/<Value>([A-Z0-9]{12})<\/Value>/)[1]
-      end
-      request :get, "/3/categories/Great_Circle_flight_methodology/items/#{data_item_uid}/calculation", :IATAcode1=>'LHR', :IATAcode2=>'LAX'
+      # Quickstart example
+      request :get, "/3/categories/Great_Circle_flight_methodology/calculation", :type=>'great circle route', :'values.IATAcode1'=>'LHR', :'values.IATAcode2'=>'LAX'
       # Create profile
       response = request :post, '/3/profiles', :profile => true
       profile_uid = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
