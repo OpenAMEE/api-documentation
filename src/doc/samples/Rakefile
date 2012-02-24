@@ -221,6 +221,7 @@ task :samples do
       when :xml
         data_item_uid = response.body.match(/<Item uid="([A-Z0-9]{12})">/)[1]
       end
+      request :get, "/3/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid};values"
       request :get, "/3/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid}/values/massTotalCO2ePerVolume"
     ensure
       # Clear up

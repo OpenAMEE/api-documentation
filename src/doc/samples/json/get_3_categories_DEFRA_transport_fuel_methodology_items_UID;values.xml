@@ -1,0 +1,85 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3/categories/DEFRA_transport_fuel_methodology/items/AD650C628120;values HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "status": "OK",
+  "item": {
+    "uid": "AD650C628120",
+    "values": [
+      {
+        "history": false,
+        "perUnit": "L",
+        "unit": "kg",
+        "value": "2.7227",
+        "path": "massTotalCO2ePerVolume",
+        "compoundUnit": "kg/L"
+      },
+      {
+        "history": false,
+        "perUnit": "L",
+        "unit": "kg",
+        "value": "0.0034",
+        "path": "massCH4PerVolume",
+        "compoundUnit": "kg/L"
+      },
+      {
+        "history": false,
+        "value": "http://www.defra.gov.uk/environment/economy/business-efficiency/reporting",
+        "path": "source"
+      },
+      {
+        "history": false,
+        "perUnit": "L",
+        "unit": "kg",
+        "value": "2.3117",
+        "path": "massDirectCO2ePerVolume",
+        "compoundUnit": "kg/L"
+      },
+      {
+        "history": false,
+        "value": "petrol",
+        "path": "fuel"
+      },
+      {
+        "history": false,
+        "perUnit": "L",
+        "unit": "kg",
+        "value": "0.411",
+        "path": "massIndirectCO2ePerVolume",
+        "compoundUnit": "kg/L"
+      },
+      {
+        "history": false,
+        "perUnit": "L",
+        "unit": "kg",
+        "value": "2.3018",
+        "path": "massCO2PerVolume",
+        "compoundUnit": "kg/L"
+      },
+      {
+        "history": false,
+        "perUnit": "L",
+        "unit": "kg",
+        "value": "0.0065",
+        "path": "massN2OPerVolume",
+        "compoundUnit": "kg/L"
+      }
+    ]
+  },
+  "version": "3.6.0"
+}
+]]></programlisting>
+</section>
+</section>
