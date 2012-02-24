@@ -45,6 +45,7 @@
   <xi:include href='ch_advanced.xml'/>
 
   <appendix xml:id='reference'>
+	<title>&api_name; API reference</title>
     <xi:include href='ref_data_categories.xml'/>
     <xi:include href='ref_data_items.xml'/>
     <xi:include href='ref_data_item_values.xml'/>
