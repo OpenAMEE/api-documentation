@@ -81,7 +81,6 @@
 		  category.
 	  </para>
       <xi:include href="samples/get_3_categories_DEFRA_transport_fuel_methodology.xml"/>
-      <xi:include href="samples/get_3_categories_DEFRA_transport_fuel_methodology_items.xml"/>
 	</section>
 	<section id='drilldown-reference'>
 		<title>Look up a Data Item UID</title>

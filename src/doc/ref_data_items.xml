@@ -79,7 +79,8 @@
 		<para>
 		  The response contains a JSON or XML encoded description of the data item.
 	  </para>
-		<xi:include href='samples/get_3_categories_US_specific_car_transport_items;label_engineSize=2.5_resultLimit=10.xml'/>
+      <xi:include href="samples/get_3_categories_DEFRA_transport_fuel_methodology_items.xml"/>
+	  <xi:include href='samples/get_3_categories_US_specific_car_transport_items;label_engineSize=2.5_resultLimit=10.xml'/>
 	</section>
 	
 	<section xml:id='get-data-item-reference'>
