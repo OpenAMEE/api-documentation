@@ -203,7 +203,7 @@
 		  If the representation parameter is set to full, the response will include the details of the created item. 
 		  Otherwise, a Location header is returned which indicates the URL of the new item.
 		</para>
-		<xi:include href="samples/post_3_profiles_UID_items_dataItemUid=AD650C628120_values.volume=500_name=example_startDate=2011-01-05T00:00:00Z.xml"/>
+		<xi:include href="samples/post_3_profiles_UID_items_category=DEFRA_transport_fuel_methodology_fuel=petrol_values.volume=500_name=example_startDate=2011-01-05T00:00:00Z.xml"/>
 	</section>
 	<section xml:id="get-profile-item-reference">
 		<title>Read Profile Item</title>
