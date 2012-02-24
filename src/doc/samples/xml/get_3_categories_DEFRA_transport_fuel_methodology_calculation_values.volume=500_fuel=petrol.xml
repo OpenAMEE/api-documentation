@@ -2,7 +2,7 @@
 <title>XML</title>
 <section role='httprequest'>
 <programlisting role='header'>
-GET /3/categories/DEFRA_transport_fuel_methodology/items/AD650C628120/calculation?volume=500 HTTP/1.1
+GET /3/categories/DEFRA_transport_fuel_methodology/calculation?fuel=petrol&amp;values.volume=500 HTTP/1.1
 Accept: application/xml
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 </programlisting>
