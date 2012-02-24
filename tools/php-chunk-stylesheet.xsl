@@ -149,11 +149,11 @@
             <li class="widget-container content2_block" id="secondary-html-content-2">
               <div class="greyBoxThirdPageHeader">.</div>
               <div class="greyBoxThirdPageContent subMenuLinks">
-              <div class="subMenuItem"><a href="/developer/docs/ch02.php">Quickstart</a></div>
+              <div class="subMenuItem"><a href="/developer/docs/quickstart.php">Quickstart</a></div>
               <div class="subMenuItem"><a href="/developer/how-to/">How to</a></div>
               <div class="subMenuItem"><a href="/developer/amee-appkit/">AMEEappkit</a></div>
               <div class="subMenuItem"><a href="/developer/docs/index.php">Documentation</a></div>
-              <div class="subMenuItem"><a href="/developer/docs/apa.php">API reference</a></div>
+              <div class="subMenuItem"><a href="/developer/docs/reference.php">API reference</a></div>
               <div class="subMenuItem"><a href="/developer/sdks/">SDKs</a></div>
               <div class="subMenuItem"><a href="/amee-open-source-policy/">Open Source Policy</a></div>
               <div class="subMenuItem"><a href="/category/developernews/">Developer Blog</a></div>
