@@ -14,8 +14,7 @@
   <section xml:id='getting-started'>
     <title>Getting Started</title>
     <para>
-      Before you start, you'll need an API key. You can get one for free at <ulink url="https://my.amee.com/signup"/>. 
-	  This API key will let you use the AMEE staging platform (platform-api-stage.amee.com), which is intended for use during development.
+      Before you start, you'll need a free API key, which you can get by signing up at <ulink url="https://my.amee.com/signup"/>.
     </para>
     <para>
       &api_name; is a RESTful API, with HTTP requests for all actions, and uses standard methods of authentication
@@ -24,30 +23,30 @@
     </para>
   </section>
   <section xml:id='quick-choose-data-item'>
-    <title>Find your emissions model</title>
+    <title>Choose your &category;</title>
     <para>
-      The first step is to choose which emissions model you want to use for your calculation.
+      The first step is to choose which &category; you want to use for calculation.
 	</para>
 	<para>
-	  <ulink url="http://discover.amee.com">&discover;</ulink> lists all the possible models available in AMEE 
+	  <ulink url="&discover_url;">&discover;</ulink> has information on all the &categories; available in AMEE 
 	  (over 8 million!), with rich searching and tagging functionality to make it easy to find what you want.
 	</para>
 	<para>
-	  For instance, to do a flight calculation, you might start by <ulink url='http://discover.amee.com/search/flights'>searching
-	  for flights</ulink>. By looking through the search results, you can see that the
-	  <ulink url='http://discover.amee.com/categories/Great_Circle_flight_methodology'>Great Circle flight methodology</ulink> category
+	  For instance, to work out emissions for a flight, you would start by <ulink url='&discover_url;/search/flights'>searching
+	  for flights</ulink>. By looking through the results, you can see that the
+	  <ulink url='&discover_url;/categories/Great_Circle_flight_methodology'>Great Circle flight methodology</ulink> &category;
 	  deals with flights between two locations. Let's try that one.
 	</para>
 	<para>
-	  There are two pieces of information required to identify an emissions model. The first is the <emphasis>category name</emphasis>. This
-	  can be found on the Developer page for the category, and it's also part of the URL in &discover;. In this case, it's
-	  <emphasis>Great_Circle_flight_methodology</emphasis>.
+	  To do a calculation you need two things. First is the <emphasis>&category; name</emphasis>. This
+	  can be found on the <ulink url='&discover_url;/categories/Great_Circle_flight_methodology/data/developer'>&developer_tab;</ulink> for the &category;, 
+	  and it's also part of the URL in &discover;. In this case, it's <code>Great_Circle_flight_methodology</code>.
 	</para>
 	<para>
-	  The second are the <emphasis>drilldown options</emphasis>. Each category can contain a number of models, each of which is a variant 
-	  on a single calculation; different input values if you like. Each of these is identified by a series of drilldown options. The best way to
-	  get these is to use the <ulink url='http://discover.amee.com/categories/Great_Circle_flight_methodology/data/developer'>developer tab</ulink>
-	  and copy the drill options. In this case, the drill option we want is <emphasis>type=great+circle+route</emphasis>.
+	  The second are the <emphasis>&drill_options;</emphasis>. Each &category; can contain a number of different &data_items;, each of which is a variant 
+	  on a single calculation; different input values if you like. Each of these is identified by a set of &drill_options;. Again, these are shown on
+	  the <ulink url='&discover_url;/categories/Great_Circle_flight_methodology/data/developer'>&developer_tab;</ulink> for the &category;. 
+	  For this &category;, there is only one &data_item;, so the &drill_options; are just <code>type=great+circle+route</code>.
 	</para>
   </section>
   <section xml:id='quick-do-calculation'>
@@ -56,12 +55,13 @@
       Now we can actually perform the calculation. 
 	</para>
 	<para>
-	  You simply do a GET request to URL that represents the emissions model you've chosen, which is made up of the category path
-	  and the UID you just fetched, and include some parameters for your input values. These are different for every category, 
-	  but again you can grab them from the code tab in &discover;.
+	  You simply do a GET request to URL that represents the &category; you've chosen, which includes made up of the &category; name,
+	  and you include the &drill_options; as parameters in order to identify the &data_item;. You also include some &profile_item_value; parameters; 
+	  these are different for every category, but again the 
+	  <ulink url='&discover_url;/categories/Great_Circle_flight_methodology/data/developer'>&developer_tab;</ulink> will tell you what they are.
     </para>
 	<para>
-	  In this case there are two required parameters, <emphasis>IATACode1</emphasis> and <emphasis>IATACode2</emphasis>, 
+	  In this case there are two required &profile_item_values;, <code>values.IATACode1</code> and <code>values.IATACode2</code>, 
 	  which let us put in airport codes for the two endpoints of our flight.
 	</para>
 	
@@ -108,11 +108,11 @@ Found 7 nodes:
     </section>
     <para>
 	  And that's it! You've just done your first calculation using &api_name;. London to LA: 1065kg of emissions (as shown in the 
-	  default amount).
+	  default &return_value;, in the Amount tags).
     </para>
     <para>
       This is, of course, only a quick overview. The rest of this documentation goes into much more detail on what it all means
-	  and what more you can do with it, whether you want to just grab the input factors, or build up complex histories over time.
+	  and what more you can do with it, whether you want to just grab the &emission_factors;, or build up complex histories over time.
     </para>
   </section>
 </chapter>
