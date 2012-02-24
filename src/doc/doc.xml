@@ -9,11 +9,11 @@
 ]>
 
 <book id="amee" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Documentation</title>
+  <title>&api_name; Documentation</title>
 
   <bookinfo>
 
-    <subtitle>&api_name; version &api_version;</subtitle>
+    <subtitle>API version &api_version;</subtitle>
 
     <authorgroup>
       <author>
@@ -31,7 +31,7 @@
     </authorgroup>
 
     <copyright>
-      <year>2007-2011</year>
+      <year>2007-2012</year>
       <holder>AMEE UK Ltd.</holder>
     </copyright>
 
