@@ -214,7 +214,7 @@ task :samples do
       # Do a data calculation
       request :get, "/3/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid}/calculation", :'volume' => 500
       # Create a new profile item
-      response = request(:post, "/3/profiles/#{profile_uid}/items", :dataItemUid => data_item_uid, :'values.volume' => 500, :name => "example", :startDate => '2011-01-05T00:00:00Z')
+      response = request(:post, "/3/profiles/#{profile_uid}/items", :category => 'DEFRA_transport_fuel_methodology', :fuel => 'petrol', :'values.volume' => 500, :name => "example", :startDate => '2011-01-05T00:00:00Z')
       item_uid = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
       # Get profile with list of used categories
       request :get, "/3/profiles/#{profile_uid};categories"
