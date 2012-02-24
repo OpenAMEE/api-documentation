@@ -49,17 +49,17 @@
     <title>Storing data</title>
     <para>
       Storing data in a profile is pretty much the same as doing one-off calculations as described in the previous section, except that
-	  you POST to the category path inside the profile you are using, and provide the data item UID and input parameters in the POST body.
+	  you POST to the category path inside the profile you are using, and provide the model and input parameters in the POST body.
     </para>
     <para>
 	  The following example performs the same calculation as in the previous section, but stores it into a profile for later retrieval.
     </para>
-	<xi:include href='samples/post_3_profiles_UID_items_dataItemUid=AD650C628120_values.volume=500_name=example_startDate=2011-01-05T00:00:00Z.xml'/>
+	<xi:include href='samples/post_3_profiles_UID_items_category=DEFRA_transport_fuel_methodology_fuel=petrol_values.volume=500_name=example_startDate=2011-01-05T00:00:00Z.xml'/>
 	<xi:include href='samples/get_3_profiles_UID_items_UID;amounts.xml'/>
     <para>
       There are a few things to note here, particularly the parameters in the 
-      POST request. The first is <emphasis>dataItemUid</emphasis>, which specifies exactly which data item you wish to 
-      use for the calculation (in this case, the type of fuel). We looked at obtaining these UIDs in the previous chapter,
+      POST request. The first is <emphasis>category</emphasis> and <emphasis>fuel</emphasis> which together specify exactly which model you wish to 
+      use for the calculation (in this case, a particular type of fuel). This is the same as we've done for getting data and for one-off calculations,
       so that should make sense already.
     </para>
     <para>
