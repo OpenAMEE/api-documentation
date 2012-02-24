@@ -9,26 +9,25 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='data'>
   <title>Get Emission Factors</title>
   <para>
-    If you just want access to authoritative emission factors, AMEE has you covered. Using &discover; and 
+    If you just want access to authoritative &emission_factors;, we have you covered. Using &discover; and 
     &api_name;, you can wire the latest data straight into the heart of your application.
   </para>
-  <section xml:id='categories'>
-    <title>Categories</title>
+  <section xml:id='&categories;'>
+    <title>&categories; and &data_items;</title>
     <para>
-      An AMEE category is a collection of emissions models, representing energy consumption or other activities 
-      which share a common way to calculate their associated greenhouse gas emissions. AMEE categories 
-      could represent, to give just a few examples, car or train transport, types of fuel, country-specific 
-      grid electricity, electrical appliances, and agricultural or industrial processes.
+      In &api_name;, a <glossterm>&category;</glossterm> represents a way of calculating something. 
+	  For example, a method of working out car transport emissions, or electricity emissions for different
+	  countries. Each has a set of inputs, outputs, constants, and an algorithm. 
     </para>
 	<para>
-	  Where similar methodologies exist, perhaps from different sources or representative of different 
-	  geographic contexts, alternative categories are available for the same type of emissions activity.
+	  If there are two ways to calculate something, perhaps from different sources or applicable to different 
+	  standards, each one will be a separate &category;. For instance, searching &discover; for
+	  <emphasis>flights</emphasis> brings up a number of options which calculate emissions in different ways.
 	</para>
     <para>
-	  Each category contains a number of different emissions models. These 
-	  represent distinct types of the activity represented by the category, such as 
-      the use of a particular model of car, or the use of a particular electrical
-      appliance. These are sometimes referred to as "data items".
+	  Each &category; contains a number of different <glossterm>&data_items;</glossterm>, which offer specific variations of the
+	  &category;. For instance, a &category; could represent the calculation for electricity in different countries; 
+	  it will have &data_items; for each country, each of which will have different emission factors.
     </para>
   </section>
   <section xml:id='ameediscover'>
@@ -65,7 +64,7 @@
       If you want to access a single data item with the category, you will need to identify which one. The &discover; 
 	  <ulink url='http://discover.amee.com/categories/DEFRA_transport_fuel_methodology/data'>Data Items</ulink> list is useful here. It shows
       all the emissions models (or data items) within a category, including their drilldown options. If we're interested in petrol emissions,
-	  we will want to use the <em>fuel=petrol</em> option.
+	  we will want to use the <code>fuel=petrol</code> option.
     </para>
   </section>
   <section xml:id='get-data-items'>
