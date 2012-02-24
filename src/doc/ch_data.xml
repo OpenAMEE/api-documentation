@@ -64,44 +64,21 @@
     <para>
       If you want to access a single data item with the category, you will need to identify which one. The &discover; 
 	  <ulink url='http://discover.amee.com/categories/DEFRA_transport_fuel_methodology/data'>Data Items</ulink> list is useful here. It shows
-      all the emissions models (or data items) within a category, including their drilldown options.
-    </para>
-  </section>
-  <section xml:id='drilldowns'>
-    <title>Performing Drilldowns</title>
-    <para>
-      Emissions models are identified by their UIDs, not by textual names. In order to get one of these UIDs, you need to perform a drilldown
-      request. To find the UID for the petrol model in the DEFRA transport fuel methodology, you need to make the following call:
-    </para>
-	<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_drill_fuel=petrol.xml' />
-    <para>
-      A drilldown response consists of two sections. The first is the list of 'Selections'. This shows drill selections that have already been
-      made and specified in the drilldown URL. The second are the 'Choices', which shows what choices are available for the next 
-      drill selection. Repeated drilldown requests allow you to interactively choose the model you want to use from a potentially very large list;
-	  see <xref linkend='interactive-drilldowns'/> for details.
-    </para>
-    <para>
-      Here, however, we know all the drill choices we want in advance, so we can specify all the required
-      options and get the resulting UID directly. You can see in the response above that the next choice is called 'uid', and there is only one
-	  option. This is the UID for the item we are interested in, in this case 19B311DDF0B1.
-    </para>
-    <para>
-      <strong>NOTE:</strong> These UIDs are not necessarily the same across different platforms. You should <strong>not</strong> hardcode them
-	  into your application, as it will certainly break when you move from the AMEE staging platform to live. Instead, you should always do a 
-	  drilldown request. It's safe to cache the UIDs once they've been fetched, however, as they change extremely rarely on a single platform.
+      all the emissions models (or data items) within a category, including their drilldown options. If we're interested in petrol emissions,
+	  we will want to use the <em>fuel=petrol</em> option.
     </para>
   </section>
   <section xml:id='get-data-items'>
     <title>Fetching Data Items</title>
     <para>
-      If you want to get the raw emission factors for a model, you can, once you have the UID. You will also need the UID for
-      calculations (see next chapter).
+      If you want to get the raw emission factors for a model, you can.
     </para>
     <para>
-      Fetching a data item is a simple GET to the category items list, with the UID as the last element. You should include the 'values' matrix
+      Fetching a data item is a simple GET to the category items list, with the item drill options as parameters. This will give you
+	  back a list of matching items. If you've specified all drill options, there will only be one. You should include the 'values' matrix
 	  parameter to get back the list of values contained within the item.
     </para>
-	<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_items_UID;values.xml' />
+	<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_items;values_fuel=petrol.xml' />
     <para>
       If you look at the response above, you can see that there are a series of values. Each of these represents a single factor
       or input. If you want to know how much co2 is emitted per litre of petrol, the massTotalCO2ePerVolume value would be the most useful.
