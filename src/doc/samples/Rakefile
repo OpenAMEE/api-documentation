@@ -194,7 +194,6 @@ task :samples do
       request :get, "/3/categories/DEFRA_transport_fuel_methodology"
       request :get, "/3/categories/DEFRA_transport_fuel_methodology/items"
       # Get a large category to demonstrate paging
-      request :get, "/3/categories/US_specific_car_transport/items"
       request :get, "/3/categories/US_specific_car_transport/items;label", :engineSize => '2.5', :resultLimit => 10
       # Do a data calculation
       request :get, "/3/categories/DEFRA_transport_fuel_methodology/calculation", :'values.volume' => 500, :fuel => 'petrol'

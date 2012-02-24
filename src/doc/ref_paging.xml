@@ -20,7 +20,7 @@
     are fairly self-explanatory. 'items' shows the total number of items, while 'itemsFound' is the number of items
     in the response.
   </para>
-  <xi:include href='samples/get_3_categories_US_specific_car_transport_items.xml'/>
+  <xi:include href='samples/get_3_categories_US_specific_car_transport_items;label_engineSize=2.5_resultLimit=10.xml'/>
 	<section>
 	  <title>Request Parameters</title>
 	  <para>
