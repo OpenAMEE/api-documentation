@@ -188,14 +188,6 @@ task :samples do
       profile_uid = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
       # Get profile list
       request :get, "/3/profiles"
-      # Get drill
-      response = request :get, '/3/categories/DEFRA_transport_fuel_methodology/drill', :fuel => 'petrol'
-      case @format
-      when :json
-        data_item_uid = response.body.match(/"values":\["([A-Z0-9]{12})"\],"name":"uid"/)[1]
-      when :xml
-        data_item_uid = response.body.match(/<Value>([A-Z0-9]{12})<\/Value>/)[1]
-      end
       # Do a search
       request :get, "/3/search;name;label;parent", :types => 'DC,DI', :q => 'camels'
       # Get data category information
@@ -204,13 +196,6 @@ task :samples do
       # Get a large category to demonstrate paging
       request :get, "/3/categories/US_specific_car_transport/items"
       request :get, "/3/categories/US_specific_car_transport/items;label", :engineSize => '2.5', :resultLimit => 10
-      # Do a drilldown
-      request :get, "/3/categories/Generic_car_transport/drill"
-      request :get, "/3/categories/Generic_car_transport/drill", :fuel => 'diesel'
-      request :get, "/3/categories/Generic_car_transport/drill", :fuel => 'diesel', :size => 'large'
-      # Get fuel data item
-      request :get, "/3/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid};values"
-      request :get, "/3/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid}/values/massTotalCO2ePerVolume"
       # Do a data calculation
       request :get, "/3/categories/DEFRA_transport_fuel_methodology/calculation", :'values.volume' => 500, :fuel => 'petrol'
       # Create a new profile item
@@ -224,6 +209,19 @@ task :samples do
       request :get, "/3/profiles/#{profile_uid}/items/#{item_uid};amounts"
       # Update a profile item
       request :put, "/3/profiles/#{profile_uid}/items/#{item_uid}", :'values.volume' => 1000
+      # Do an interactive drilldown
+      request :get, "/3/categories/Generic_car_transport/drill"
+      request :get, "/3/categories/Generic_car_transport/drill", :fuel => 'diesel'
+      request :get, "/3/categories/Generic_car_transport/drill", :fuel => 'diesel', :size => 'large'
+      # Get fuel data item details
+      response = request :get, "/3/categories/DEFRA_transport_fuel_methodology/items;values", :fuel => 'petrol'
+      case @format
+      when :json
+        data_item_uid = response.body.match(/"uid":"([A-Z0-9]{12})"/)[1]
+      when :xml
+        data_item_uid = response.body.match(/<Item uid="([A-Z0-9]{12})">/)[1]
+      end
+      request :get, "/3/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid}/values/massTotalCO2ePerVolume"
     ensure
       # Clear up
       request :delete, "/3/profiles/#{profile_uid}/items/#{item_uid}" if item_uid
