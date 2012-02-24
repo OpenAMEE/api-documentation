@@ -169,6 +169,12 @@ def replace_ids(format, old_uid, new_uid)
   end
 end
 
+task :clean do
+  FileUtils.rm Dir.glob('*.xml')
+  FileUtils.rm Dir.glob('xml/*.xml')
+  FileUtils.rm Dir.glob('json/*.xml')
+end
+
 task :samples do
   $formats.each do |format|
     puts "Generating #{format} samples"
