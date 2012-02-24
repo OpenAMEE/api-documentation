@@ -49,34 +49,6 @@
 	  get these is to use the <ulink url='http://discover.amee.com/categories/Great_Circle_flight_methodology/data/developer'>developer tab</ulink>
 	  and copy the drill options. In this case, the drill option we want is <emphasis>type=great+circle+route</emphasis>.
 	</para>
-	<para>
-	  You now have all the information you need to make a drilldown request and get the identifier (UID) for the actual emissions model.
-    </para>
-		<section role='tabbed'>
-  		<section role='tab'>
-  			<title>curl</title>
-   			<section role='httprequest'>
-			  <programlisting>
-$ curl 'https://platform-api-stage.amee.com/3/categories/Great_Circle_flight_methodology/drill?type=great+circle+route' \
-    -H 'Accept: application/xml' \
-    -u username:password -s | \
-    xpath '//Choices/Values/Value/text()'
-              </programlisting>
- 	  	    </section>
-   			<section role='httpresponse'>
-			  <programlisting>
-Found 1 nodes:
--- NODE --
-2EC340002E72
-            </programlisting>
-	  	  </section>
-  		</section>
-		<xi:include href="samples/json/get_3_categories_Great_Circle_flight_methodology_drill_type=great circle route.xml"/>
-		<xi:include href="samples/xml/get_3_categories_Great_Circle_flight_methodology_drill_type=great circle route.xml"/>
-	</section>
-	<para>
-	  The response contains the UID of the emissions model, in this case 2EC340002E72.
-    </para>
   </section>
   <section xml:id='quick-do-calculation'>
     <title>Do the calculation</title>
@@ -98,7 +70,7 @@ Found 1 nodes:
   			<title>curl</title>
    			<section role='httprequest'>
 			  <programlisting>
-$ curl 'https://platform-api-stage.amee.com/3/categories/Great_Circle_flight_methodology/items/2EC340002E72/calculation?IATAcode1=LHR&amp;IATAcode2=LAX' \
+$ curl 'https://platform-api-stage.amee.com/3/categories/Great_Circle_flight_methodology/calculation?type=great+circle+route&amp;values.IATAcode1=LHR&amp;values.IATAcode2=LAX' \
     -H 'Accept: application/xml' \
     -u username:password -s | \
     xpath '//Amounts/Amount'
@@ -131,8 +103,8 @@ Found 7 nodes:
               </programlisting>
  	  	    </section>
 	  	</section>
-		<xi:include href="samples/json/get_3_categories_Great_Circle_flight_methodology_items_UID_calculation_IATAcode1=LHR_IATAcode2=LAX.xml"/>
-		<xi:include href="samples/xml/get_3_categories_Great_Circle_flight_methodology_items_UID_calculation_IATAcode1=LHR_IATAcode2=LAX.xml"/>
+		<xi:include href="samples/json/get_3_categories_Great_Circle_flight_methodology_calculation_type=great circle route_values.IATAcode1=LHR_values.IATAcode2=LAX.xml"/>
+		<xi:include href="samples/xml/get_3_categories_Great_Circle_flight_methodology_calculation_type=great circle route_values.IATAcode1=LHR_values.IATAcode2=LAX.xml"/>
     </section>
     <para>
 	  And that's it! You've just done your first calculation using &api_name;. London to LA: 1065kg of emissions (as shown in the 
