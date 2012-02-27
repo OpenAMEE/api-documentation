@@ -15,14 +15,14 @@
   <section xml:id='&categories;'>
     <title>&categories; and &data_items;</title>
     <para>
-      In &api_name;, a <glossterm>&category;</glossterm> represents a way of calculating something. 
+      First, a couple of definitions; in &api_name;, a <glossterm>&category;</glossterm> represents a way of calculating something. 
 	  For example, a method of working out car transport emissions, or electricity emissions for different
 	  countries. Each has a set of inputs, outputs, constants, and an algorithm. 
     </para>
 	<para>
 	  If there are two ways to calculate something, perhaps from different sources or applicable to different 
 	  standards, each one will be a separate &category;. For instance, searching &discover; for
-	  <emphasis>flights</emphasis> brings up a number of options which calculate emissions in different ways.
+	  "flights" brings up a number of options which calculate emissions in different ways.
 	</para>
     <para>
 	  Each &category; contains a number of different <glossterm>&data_items;</glossterm>, which offer specific variations of the
@@ -33,60 +33,45 @@
   <section xml:id='ameediscover'>
     <title>Introduction to &discover;</title>
     <para>
-      As a neutral aggregation platform, AMEE contains many different methodologies related to environmental
-      intelligence. They use different calculation techniques, different inputs, and have different levels 
-      of accuracy. The choice of which of these to use will be up to you, and will be one of the first things 
-      you will look at when you come to use the platform. Your choice will depend on your reporting requirements, legal 
-      requirements, and so on.
+      Choosing which &categories; you want to use will be one of the first things 
+      you will do when you come to use &api_name;. Your choice will depend on what data you are collecting from your users,
+	  reporting requirements, and so on.
     </para>
     <para>
-      Each of these methodologies is a category, and every category within AMEE is individually documented in 
-      &discover;. The category page describes how the category works, where it came from, relationships 
-      with other categories, and so on. &discover; includes powerful search and tagging capabilities, making 
-      it easy to find the categories and models you wish to use. It also lets you perform 
-      instant calculations directly in your browser, so you can easily check your results. It can even
-      generate example code for you.
-    </para>
-  </section>
-  <section xml:id='using-ameediscover'>
-    <title>Using &discover; with &api_name;</title>
-    <para>
-      If you want to fetch data with &api_name;, you first need to work out which data you want. &discover; helps
-      you to do this and gives you the parameters you need to build the required URLs.
+      Each &category; is individually documented in <ulink url='&discover_url;'>&discover;</ulink>, with a page that describes how it works, where 
+	  it came from, relationships with other &categories;, and so on. &discover; includes powerful search and 
+	  tagging capabilities, making it easy to find the &categories; that are relevant to your application.
     </para>
     <para>
-      Firstly, each category in AMEE has a <emphasis>name</emphasis>. This is part of its URL in &api_name;, and
-      is shown its API form on the the 'Developer' tab for each category. For instance, the 
-	  <ulink url='http://discover.amee.com/categories/DEFRA_transport_fuel_methodology'>DEFRA transport fuel methodology</ulink>
-	  category has a name of <emphasis>DEFRA_transport_fuel_methodology</emphasis>.
-    </para>
-    <para>
-      If you want to access a single data item with the category, you will need to identify which one. The &discover; 
-	  <ulink url='http://discover.amee.com/categories/DEFRA_transport_fuel_methodology/data'>Data Items</ulink> list is useful here. It shows
-      all the emissions models (or data items) within a category, including their drilldown options. If we're interested in petrol emissions,
-	  we will want to use the <code>fuel=petrol</code> option.
+      The &developer_tab; for a &category; in &discover; shows all the information you need to use it with &api_name;.
+	  It shows the &category; name, allows you to interactively select which &data_item; you want to use, tells you which 
+	  &profile_item_values; are required, gives you all the required URL options, and even generates code for you in a 
+	  variety of languages.
     </para>
   </section>
   <section xml:id='get-data-items'>
-    <title>Fetching Data Items</title>
+    <title>Fetching &emission_factors;</title>
     <para>
-      If you want to get the raw emission factors for a model, you can.
-    </para>
-    <para>
-      Fetching a data item is a simple GET to the category items list, with the item drill options as parameters. This will give you
-	  back a list of matching items. If you've specified all drill options, there will only be one. You should include the 'values' matrix
-	  parameter to get back the list of values contained within the item.
+      To get &emission_factors; from &api_name;, you need to identify the &category; and &data_item; you are interested in. You 
+	  then do a GET request in the following format to the appropriate API base URL (initially platform-api-stage.amee.com). Note 
+	  that the &category; name is included in the URL, and the &drill_options;
+	  are provided as parameters. Note also the inclusion of the <code>values</code> matrix parameter in the URL. See the <xref linkend='matrix-parameters'/>
+	  for more details on what matrix parameters are and how they work.
     </para>
 	<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_items;values_fuel=petrol.xml' />
-    <para>
-      If you look at the response above, you can see that there are a series of values. Each of these represents a single factor
-      or input. If you want to know how much co2 is emitted per litre of petrol, the massTotalCO2ePerVolume value would be the most useful.
+    <para>	  
+      Each value in the response represents a single &emission_factor; or other data. If you want to know how much co2 is emitted 
+	  per litre of petrol, the massTotalCO2ePerVolume value would be the most useful.
       This shows that the factor is 2.7227 kg/L. Alternatively, massCH4PerVolume shows that 0.0034 kg of methane is produced for every litre
-      of fuel. However, these input values do vary between categories so you can't assume that the names are always the same.
+      of fuel. The names will vary between &categories;, so you can't assume that the names are always the same; check the documentation.
+    </para>
+    <para>	  
+      Note that if you provide an incomplete set of &drill_options; or even none at all, you will get back a list of all &data_items; that match the 
+	  options you provided. See <xref linkend='list-data-item-reference'/> for more details.
     </para>
   </section>
   <para>
-    These factors can be useful, but it's more often useful to get AMEE to do the entire calculation for you. Many algorithms are much
-    more complex than a*b, and you don't want to implement them all yourself. We'll look at calculations in the next section.
+    &emission_factors; are good, but it's more often useful to get AMEE to do the entire calculation for you. Many algorithms are much
+    more complex than a*b, and you really don't want to implement them all yourself. We'll look at calculations in the next section.
   </para>
 </chapter>
