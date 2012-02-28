@@ -112,7 +112,7 @@ Found 7 nodes:
     </para>
     <para>
       This is, of course, only a quick overview. The rest of this documentation goes into much more detail on what it all means
-	  and what more you can do with it, whether you want to just grab the &emission_factors;, or build up complex histories over time.
+	  and what more you can do with it, whether you want to just grab the &data_item_values;, or build up complex histories over time.
     </para>
   </section>
 </chapter>
