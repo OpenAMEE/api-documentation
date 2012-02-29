@@ -7,6 +7,7 @@
 <!ENTITY categories "models">
 <!ENTITY data_item "context">
 <!ENTITY data_items "contexts">
+<!ENTITY drill_option "context option">
 <!ENTITY drill_options "context options">
 <!ENTITY profile_item_value "input">
 <!ENTITY profile_item_values "inputs">

@@ -14,8 +14,8 @@
 	<title>&categories;</title>
     <para>
 		You can fetch all relevant information for a single &category; via &api_name;, or list a set of
-		&categories; matching specified criteria. In &api_name; URLs and representations, &models; are referred 
-		to as 'categories' for historical reasons.
+		&categories; matching specified criteria. In &api_name; URLs and representations, &categories; are
+		referred to as <emphasis>categories</emphasis>.
     </para>
 	<section>
 		<title>Properties</title>
@@ -39,52 +39,52 @@
 			<tr>					
 				<td>authority</td>
 				<td>The <link linkend='authority'>authority rating</link> of the &category;.</td>
-				<td>authority</td>
+				<td><code>authority</code></td>
 			</tr>
 			<tr>					
 				<td>provenance</td>
 				<td>A link (or set of links) to the original source on which the &category; is based. May include WikiCreole markup for links.</td>
-				<td>provenance</td>
+				<td><code>provenance</code></td>
 			</tr>
 			<tr>
 				<td>history</td>
 				<td>The <link linkend='history'>history</link> data for the &category;. A CSV-style 
 					list of change dates and comments.</td>
-				<td>history</td>
+				<td><code>history</code></td>
 			</tr>
 			<tr>
 				<td>wikiDoc</td>
 				<td>The full documentation for the &category;, as displayed in &discover;. Uses WikiCreole
 					syntax.</td>
-				<td>wikiDoc</td>
+				<td><code>wikiDoc</code></td>
 			</tr>
 			<tr>
 				<td>tags</td>
 				<td>A collection of textual tags, as used by &discover;.</td>
-				<td>tags</td>
+				<td><code>tags</code></td>
 			</tr>
 			<tr>
 				<td>itemDefinition</td>
 				<td>Include details of the item definition, which provides access to information on
 					&profile_item_values; and &return_values;.</td>
-				<td>itemDefinition</td>
+				<td><code>itemDefinition</code></td>
 			</tr>
 			<tr>					
 				<td>created</td>
 				<td>The time and date on which the &category; was created.</td>
-				<td>audit</td>
+				<td><code>audit</code></td>
 			</tr>
 			<tr>					
 				<td>modified</td>
 				<td>The time and date on which the &category; was last modified. Note that this
 				    does not track changes to &data_items; inside the &category;, only to the &category;
 				    itself.</td>
-				<td>audit</td>
+				<td><code>audit</code></td>
 			</tr>
 			<tr>					
 				<td>status</td>
 				<td>The current status of the &category;. Normally this will be <code>ACTIVE</code>.</td>
-				<td>audit</td>
+				<td><code>audit</code></td>
 			</tr>
 		</table>
 	</section>
@@ -96,10 +96,10 @@
 		</para>
 		<table class='requestdetails'>
 			<tr><td>URL</td>
-			    <td>https://{server}.amee.com/3/categories[;{matrix_parameters}]?{query_parameters}</td></tr>
-			<tr><td>HTTP Method</td><td>GET</td></tr>
-			<tr><td>Response Content-Type</td><td>application/xml or application/json</td></tr>
-			<tr><td>Successful Response Code</td><td>200 OK</td></tr>
+			    <td><code>https://{server}.amee.com/3/categories[;{matrix_parameters}]?{query_parameters}</code></td></tr>
+			<tr><td>HTTP Method</td><td><code>GET</code></td></tr>
+			<tr><td>Response Content-Type</td><td><code>application/xml</code> or <code>application/json</code></td></tr>
+			<tr><td>Successful Response Code</td><td><code>200 OK</code></td></tr>
 		</table>
 		<section>
 		  <title>Optional Query Parameters</title>
@@ -114,54 +114,53 @@
 				<th>Description</th>
   			</tr>
 			<tr>
-				<td>wikiName</td>
+				<td><code>wikiName</code></td>
 				<td>Match results by wikiName.</td>
 			</tr>
 			<tr>
-				<td>wikiDoc</td>
+				<td><code>wikiDoc</code></td>
 				<td>Match results by wikiDoc. Normally you'll want to use a substring search here.</td>
 			</tr>
 			<tr>
-				<td>provenance</td>
+				<td><code>provenance</code></td>
 				<td>Match results by provenance; standards body name, for instance.</td>
 			</tr>
 			<tr>
-				<td>authority</td>
-				<td>Match results by authority; Valid values are 'enterprise', 'recommended', 'verified', 
-					or 'unverified'.</td>
+				<td><code>authority</code></td>
+				<td>Match results by authority; Valid values are <code>enterprise</code>, <code>recommended</code>, <code>verified</code>, or <code>unverified</code>.</td>
 			</tr>
 			<tr>
-				<td>itemDefinitionUid</td>
+				<td><code>itemDefinitionUid</code></td>
 				<td>List &categories; that use the specified item definition (by UID).</td>
 			</tr>
 			<tr>
-				<td>itemDefinitionName</td>
+				<td><code>itemDefinitionName</code></td>
 				<td>List &categories; that use the specified item definition (by name).</td>
 			</tr>
 			<tr>
-				<td>tags</td>
+				<td><code>tags</code></td>
 				<td>A comma-separated list of tags that returned &categories; should have.
 					Can also be a lucene query expression.</td>
 			</tr>
 			<tr>
-				<td>excTags</td>
+				<td><code>excTags</code></td>
 				<td>A comma-separated list of tags that returned &categories; should 
 					<emphasis>not</emphasis> have. Can also be a lucene query expression.</td>
 			</tr>
 			<tr>					
-				<td>resultStart</td>
+				<td><code>resultStart</code></td>
 				<td>Zero-based index of the first result that should be returned. See 
 					<xref linkend='paging'/>. Defaults to 0 if not specified.</td>
 			</tr>
 			<tr>					
-				<td>resultLimit</td>
+				<td><code>resultLimit</code></td>
 				<td>Specifies the number of results to return in a single page. See 
 					<xref linkend='paging'/>. Defaults to 50 if not specified..</td>
 			</tr>
   		</table>
 	  </section>
 		<para>
-		  The response contains a JSON or XML encoded description of &categories; that match the query creiteria.
+		  The response contains a JSON or XML encoded description of &categories; that match the query criteria.
   	    </para>
         <xi:include href="samples/get_3_categories_tags=electricity_resultLimit=10.xml"/>
 	</section>
@@ -171,10 +170,10 @@
 			Fetch information about a particular &category;.
 		</para>
 		<table class='requestdetails'>
-			<tr><td>URL</td><td>https://{server}.amee.com/3/categories/{wikiName}[;{matrix_parameters}]</td></tr>
-			<tr><td>HTTP Method</td><td>GET</td></tr>
-			<tr><td>Response Content-Type</td><td>application/xml or application/json</td></tr>
-			<tr><td>Successful Response Code</td><td>200 OK</td></tr>
+			<tr><td>URL</td><td><code>https://{server}.amee.com/3/categories/{wikiName}[;{matrix_parameters}]</code></td></tr>
+			<tr><td>HTTP Method</td><td><code>GET</code></td></tr>
+			<tr><td>Response Content-Type</td><td><code>application/xml</code> or <code>application/json</code></td></tr>
+			<tr><td>Successful Response Code</td><td><code>200 OK</code></td></tr>
 		</table>
 		<para>
 		  The response contains a JSON or XML encoded description of the &category; as shown below.
@@ -182,34 +181,33 @@
         <xi:include href="samples/get_3_categories_DEFRA_transport_fuel_methodology.xml"/>
 	</section>
 	<section id='drilldown-reference'>
-		<title>Look up a Data Item UID</title>
+		<title>Interactive selection of &data_items;</title>
     <para>
-      Drilldowns are a special resource available within every Data Category that contains Data Items.
+      Each &category; contains a number of &data_items;. Normally you will know which &data_item; you want
+	  to use, but sometimes you will want to give that choice to your users. This is particularly important 
+      for large categories, such as 
+	  <ulink url='http://discover.amee.com/categories/US_specific_car_transport'>US specific car
+	  transport</ulink>, which contains many thousands of &data_items;.
     </para>
     <para>
-      As data items are identified by UIDs in &api_name; calls such as creating Profile Items, a way is 
-      required of translating human-readable choices into these UIDs. This is particularly important 
-      for large categories, such as UK car models, which can contain many thousands of data items.
+	  Each &category; has a
+	  <glossterm>drilldown</glossterm> resource which allows you do this kind of user-driven &data_item;
+	  selection. 
+      Each call to the drilldown resource will return a list of choices. You can then select one of
+      these and provide it as a parameter to a subsequent drilldown request. When the sequence of choices
+      uniquely identifies a &data_item;, a single choice named 'uid' is returned. 
     </para>
-    <para>
-      Data item UIDs may be different on different AMEE platforms for the same item. Because of
-      this, data item UIDs should never be hardcoded into client apps. Instead, you should use the 
-      drilldown URL (which doesn't change) to obtain the UIDs, which can then be cached. 
-      Drilldown URLs may be safely hardcoded, so that you don't necessarily have to iterate through
-      the choices each time if you already know which item you want to get to.
-    </para>
-		<para>
-      Each call to the resource will give a list of choices. The client can then select one of
-      these and provide it as a parameter to the next drilldown call. When the sequence of choices
-      uniquely identifies one data item, a single choice named 'uid' is returned. This is the UID 
-      that should be used to refer to the chosen Data Item when creating Profile Items (see 
-      <xref linkend='create-profile-item-reference'/>).
-	  </para>
+	<para>
+	  This UID can be used
+	  to identify the &data_item; in place of the usual &drill_options; when performing calculations or
+	  storing data. These UIDs are not the same across different &api_name; platforms, and so should not 
+	  be hardcoded into applications. They can, however, be cached safely for prolonged periods.
+  	</para>
 		<table class='requestdetails'>
-			<tr><td>URL</td><td>https://{server}.amee.com/data/{category_path}/drill</td></tr>
-			<tr><td>HTTP Method</td><td>GET</td></tr>
-			<tr><td>Response Content-Type</td><td>application/xml or application/json</td></tr>
-			<tr><td>Successful Response Code</td><td>200 OK</td></tr>
+			<tr><td>URL</td><td><code>https://{server}.amee.com/3/categories/{wikiName}/drill[?{&drill_options;}]</code></td></tr>
+			<tr><td>HTTP Method</td><td><code>GET</code></td></tr>
+			<tr><td>Response Content-Type</td><td><code>application/xml</code> or <code>application/json</code></td></tr>
+			<tr><td>Successful Response Code</td><td><code>200 OK</code></td></tr>
 		</table>
 		<section>
 		  <title>Optional Parameters</title>
@@ -219,43 +217,38 @@
 					<th>Description</th>
   			</tr>
 				<tr>
-					<td>{choice_name}</td>
+					<td>{&drill_options;}</td>
 					<td>Any number of choices and the values chosen. See below for detailed explanation.
-					  Choices must be provided in the correct order.</td>
+					  Choices should be provided in the correct order.</td>
 				</tr>
   		</table>
 	  </section>
 		<para>
-		  The response body contains a number of sections. The 'choices' section lists available drill
-		  choices. The 'selections' sections shows choices that have already been made.
+		  The response body contains a number of sections. <code>name</code> is the name of the next
+		  &drill_option;, and <code>choices</code> lists the valid values for it. The <code>selections</code>
+		  list shows &drill_options; that have already been chosen.
 	  </para>
 	  <section>
 	    <title>First Choice</title>
 	    <para>
-	      The first request has no parameters, so fetches the options for the first drill choice.
+	      The first request has no parameters, so fetches the choices for the first &drill_option;.
       </para>
       <xi:include href="samples/get_3_categories_Generic_car_transport_drill.xml"/>
     </section>
 	  <section>
 	    <title>Second Choice</title>
 	    <para>
-	      In this example, the user has picked 'diesel' as the selection for the first choice.
-	      This is passed as a URL parameter to the second request.
+	      In this example, the user has picked 'diesel' for the first &drill_option;.
+	      This is passed as a query parameter to a second drilldown request.
       </para>
       <xi:include href="samples/get_3_categories_Generic_car_transport_drill_fuel=diesel.xml"/>
     </section>
 	  <section>
 	    <title>Final Result</title>
 	    <para>
-	      This category has only two drill choices, so two selections are enough to fully identify a data item. The user 
-	      has selected 'large' for the size choice in this example. The UID of the selected data item appears as a choice
-	      named 'uid'.
-      </para>
-      <para>
-        If you know beforehand the sequence of drill choices you will wish to make, it is not necessary to go through
-        the process of requesting each step of the drill process. That is, while we recommend strongly against
-        hard-coding Data Item UIDs in your application, it is perfectly sensible to code a fully specified Drill
-        request to look up the data UID in your application’s initialisation.
+	      This &category; has only two &drill_options;, so two drilldown selections are enough to fully
+		  identify a &data_item;. The user has selected <code>size=large</code> in this example. 
+		  The UID of the selected &data_item; appears as a choice named 'uid'.
       </para>
       <xi:include href="samples/get_3_categories_Generic_car_transport_drill_fuel=diesel_size=large.xml"/>
     </section>
