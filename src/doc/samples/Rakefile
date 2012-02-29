@@ -191,6 +191,7 @@ task :samples do
       # Do a search
       request :get, "/3/search;name;label;parent", :types => 'DC,DI', :q => 'camels'
       # Get data category information
+      request :get, "/3/categories", :tags => 'electricity', :resultLimit => 10
       request :get, "/3/categories/DEFRA_transport_fuel_methodology"
       request :get, "/3/categories/DEFRA_transport_fuel_methodology/items"
       # Get a large category to demonstrate paging

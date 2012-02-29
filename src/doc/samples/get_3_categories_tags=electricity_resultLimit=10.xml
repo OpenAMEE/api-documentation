@@ -1,0 +1,4 @@
+<section role='tabbed' xmlns:xi='http://www.w3.org/2001/XInclude'>
+<xi:include href='json/get_3_categories_tags=electricity_resultLimit=10.xml'/>
+<xi:include href='xml/get_3_categories_tags=electricity_resultLimit=10.xml'/>
+</section>

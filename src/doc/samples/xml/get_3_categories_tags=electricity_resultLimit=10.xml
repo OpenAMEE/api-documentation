@@ -1,0 +1,66 @@
+<section role='tab'>
+<title>XML</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3/categories?resultLimit=10&amp;tags=electricity HTTP/1.1
+Accept: application/xml
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+</programlisting>
+<programlisting language='xml'><![CDATA[
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Representation>
+ <Categories truncated="true">
+  <Category uid="74AFDCA1BDF6">
+   <Name>China</Name>
+   <WikiName>Electricity_China</WikiName>
+  </Category>
+  <Category uid="F9480414FF6F">
+   <Name>India</Name>
+   <WikiName>Electricity_India</WikiName>
+  </Category>
+  <Category uid="4SBNC26SKOJ8">
+   <Name>Dieselgensets</Name>
+   <WikiName>gensets</WikiName>
+  </Category>
+  <Category uid="203657D67A75">
+   <Name>Renewable</Name>
+   <WikiName>Heating_UK_Renewable</WikiName>
+  </Category>
+  <Category uid="744ZV9W11AWZ">
+   <Name>Diesel Generator Sets</Name>
+   <WikiName>Diesel_Generator_Sets</WikiName>
+  </Category>
+  <Category uid="30BA55A0C472">
+   <Name>Energy</Name>
+   <WikiName>Energy</WikiName>
+  </Category>
+  <Category uid="0D3E0524F89D">
+   <Name>Ireland</Name>
+   <WikiName>Energy_in_Ireland</WikiName>
+  </Category>
+  <Category uid="3C03A03B5F3A">
+   <Name>Generic</Name>
+   <WikiName>Kitchen_generic</WikiName>
+  </Category>
+  <Category uid="E297D48B5830">
+   <Name>UK</Name>
+   <WikiName>UK_energy</WikiName>
+  </Category>
+  <Category uid="DJ85RYYPQCIX">
+   <Name>Nordic Electricity Residual Mix Disclosure - Nordic Domain</Name>
+   <WikiName>Nordic_Electricity_Residual_Mix_Disclosure_Nordic_Domain</WikiName>
+  </Category>
+ </Categories>
+ <Status>OK</Status>
+ <Version>3.6.0</Version>
+</Representation>
+]]></programlisting>
+</section>
+</section>

@@ -1,0 +1,75 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3/categories?resultLimit=10&amp;tags=electricity HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "status": "OK",
+  "resultsTruncated": true,
+  "categories": [
+    {
+      "uid": "74AFDCA1BDF6",
+      "name": "China",
+      "wikiName": "Electricity_China"
+    },
+    {
+      "uid": "F9480414FF6F",
+      "name": "India",
+      "wikiName": "Electricity_India"
+    },
+    {
+      "uid": "4SBNC26SKOJ8",
+      "name": "Dieselgensets",
+      "wikiName": "gensets"
+    },
+    {
+      "uid": "203657D67A75",
+      "name": "Renewable",
+      "wikiName": "Heating_UK_Renewable"
+    },
+    {
+      "uid": "744ZV9W11AWZ",
+      "name": "Diesel Generator Sets",
+      "wikiName": "Diesel_Generator_Sets"
+    },
+    {
+      "uid": "30BA55A0C472",
+      "name": "Energy",
+      "wikiName": "Energy"
+    },
+    {
+      "uid": "0D3E0524F89D",
+      "name": "Ireland",
+      "wikiName": "Energy_in_Ireland"
+    },
+    {
+      "uid": "3C03A03B5F3A",
+      "name": "Generic",
+      "wikiName": "Kitchen_generic"
+    },
+    {
+      "uid": "E297D48B5830",
+      "name": "UK",
+      "wikiName": "UK_energy"
+    },
+    {
+      "uid": "DJ85RYYPQCIX",
+      "name": "Nordic Electricity Residual Mix Disclosure - Nordic Domain",
+      "wikiName": "Nordic_Electricity_Residual_Mix_Disclosure_Nordic_Domain"
+    }
+  ],
+  "version": "3.6.0"
+}
+]]></programlisting>
+</section>
+</section>
