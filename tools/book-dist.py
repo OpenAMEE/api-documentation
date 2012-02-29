@@ -83,7 +83,7 @@ def main():
     try:
         _cleanup_tmp_dirs()
         os.mkdir('__AMEEDOC_TMP__')
-        os.system('DESTDIR=__AMEEDOC_TMP__ make clean %s' \
+        os.system('DESTDIR=__AMEEDOC_TMP__ make %s' \
                   % (' '.join(targets)))
         if os.path.isdir('__AMEEDOC_TMP__/usr/share/doc/amee/doc'):
             os.rename('__AMEEDOC_TMP__/usr/share/doc/amee/doc', name)
