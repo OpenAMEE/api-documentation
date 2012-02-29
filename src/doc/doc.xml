@@ -2,7 +2,7 @@
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
   "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
 [
-<!ENTITY % vers   SYSTEM "version.xml">
+<!ENTITY % vers   SYSTEM "version.ent">
 %vers;
 <!ENTITY % translations   SYSTEM "translations.xml">
 %translations;
