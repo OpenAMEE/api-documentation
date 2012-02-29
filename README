@@ -1,16 +1,31 @@
 This is the documentation for AMEEconnect, written in docbook 4.4.
 
+Requirements
+------------
+
+Assuming OSX:
+
+  docbook (install via homebrew)
+  xsltproc
+  fop (PDF only)
+  Ruby 1.9.2 (and bundler) for automated builds and sample generation
+
+Automated Build
+---------------
+
+From the root directory, run:
+* bundle
+* guard
+
+This should set up automatic building of the HTML documentation. A config.ru file is included
+so you can view it with pow.cx if you want to.
+
+Manual Build
+------------
+
 To build, go into the src directory and run: ../tools/book-dist.py 
 
 options:
   --html: HTML single page
   --html-chunk: HTML multi page
   --pdf: PDF
-  
-  
-Requirements:
-  docbook (install via homebrew)
-  xsltproc
-  fop (PDF only)
-  
-  
