@@ -4,7 +4,7 @@
 [
 <!ENTITY % sgml.features "IGNORE">
 <!ENTITY % xml.features "INCLUDE">
-<!ENTITY % translations   SYSTEM "translations.xml">
+<!ENTITY % translations   SYSTEM "translations.ent">
 %translations;
 ]>
 

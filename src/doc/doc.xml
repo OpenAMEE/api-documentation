@@ -4,7 +4,7 @@
 [
 <!ENTITY % vers   SYSTEM "version.ent">
 %vers;
-<!ENTITY % translations   SYSTEM "translations.xml">
+<!ENTITY % translations   SYSTEM "translations.ent">
 %translations;
 ]>
 
