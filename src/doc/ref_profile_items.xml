@@ -53,11 +53,11 @@
 			</tr>
 			<tr>
 				<td>startDate</td>
-				<td>The date/time from which the profile item is valid. See <xref linkend="build-time-series"/> for more detail.</td>
+				<td>The date/time from which the profile item is valid; only used in prorata calculations. See <xref linkend="build-time-series"/> for more detail.</td>
 			</tr>
 			<tr>
 				<td>endDate</td>
-				<td>The date/time until which the profile item is valid. See <xref linkend="build-time-series"/> for more detail.</td>
+				<td>The date/time until which the profile item is valid; only used in prorata calculations. See <xref linkend="build-time-series"/> for more detail.</td>
 			</tr>
 			<tr>
 				<td>Data Item (dataItemUid)</td>
