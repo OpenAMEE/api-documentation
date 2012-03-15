@@ -79,25 +79,25 @@ $ curl 'https://platform-api-stage.amee.com/3/categories/Great_Circle_flight_met
    			<section role='httpresponse'>
 			  <programlisting>
 Found 7 nodes:
-&lt;Amount default="true" perUnit="" type="totalDirectCO2e" unit="kg"&gt;
+&lt;Amount default="true" type="totalDirectCO2e" unit="kg"&gt;
   1064.491020315156
 &lt;/Amount&gt;
-&lt;Amount perUnit="" type="distance" unit="km"&gt;
+&lt;Amount type="distance" unit="km"&gt;
   9550.430830030109
 &lt;/Amount&gt;
-&lt;Amount perUnit="" type="lifeCycleCO2e" unit="kg"&gt;
+&lt;Amount type="lifeCycleCO2e" unit="kg"&gt;
   1260.561365255674
 &lt;/Amount&gt;
-&lt;Amount perUnit="" type="CO2" unit="kg"&gt;
+&lt;Amount type="CO2" unit="kg"&gt;
   1054.0810507104231
 &lt;/Amount&gt;
-&lt;Amount perUnit="" type="nitrousOxideCO2e" unit="kg"&gt;
+&lt;Amount type="nitrousOxideCO2e" unit="kg"&gt;
   10.409969604732819
 &lt;/Amount&gt;
-&lt;Amount perUnit="" type="methaneCO2e" unit="kg"&gt;
+&lt;Amount type="methaneCO2e" unit="kg"&gt;
   0.0955043083003011
 &lt;/Amount&gt;
-&lt;Amount perUnit="" type="indirectCO2e" unit="kg"&gt;
+&lt;Amount type="indirectCO2e" unit="kg"&gt;
   196.07034494051814
 &lt;/Amount&gt;
               </programlisting>
