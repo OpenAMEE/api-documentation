@@ -17,8 +17,9 @@ Content-Type: application/xml; charset=UTF-8
 
 <Representation>
  <Profiles truncated="false">
-  <Profile uid="W6AWS5W9F6VK"/>
-  <Profile uid="ZWEQYTJA6UBC"/>
+  <Profile uid="WZ516B97NYDZ"/>
+  <Profile uid="NIYUN6Z4FH6M"/>
+  <Profile uid="K5MRP2GMNB6A"/>
   <Profile uid="FC2ODLZHCNHS"/>
  </Profiles>
  <Status>OK</Status>

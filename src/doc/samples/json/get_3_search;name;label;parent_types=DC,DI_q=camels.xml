@@ -16,24 +16,27 @@ Content-Type: application/json; charset=UTF-8
 {
   "results": [
     {
-      "uid": "OY2PAJ81ANXL",
-      "categoryUid": "PZH8T4QFP4NO",
+      "uid": "4EB103700ACD",
+      "categoryUid": "8723DC9314F8",
       "categoryWikiName": "Enteric_fermentation",
       "name": "",
-      "label": "camels, developed countries"
+      "label": "camels, developed countries",
+      "type": "item"
     },
     {
-      "uid": "03KUHQEORUTL",
-      "categoryUid": "PZH8T4QFP4NO",
+      "uid": "AC21F67B978E",
+      "categoryUid": "8723DC9314F8",
       "categoryWikiName": "Enteric_fermentation",
       "name": "",
-      "label": "camels, developing countries"
+      "label": "camels, developing countries",
+      "type": "item"
     },
     {
-      "uid": "5OE77HEIZPTH",
-      "parentUid": "KQH78FEYITVS",
+      "uid": "B1FCD0CFA30E",
+      "parentUid": "01341F8598FF",
       "parentWikiName": "Manure_associated_nitrous_oxide_emissions",
       "name": "IPCC methodology for manure sourced nitrous oxide - other livestock",
+      "type": "category",
       "wikiName": "Other_livestock_manure_nitrous_oxide_emissions"
     }
   ],

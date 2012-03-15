@@ -2,7 +2,7 @@
 <title>XML</title>
 <section role='httprequest'>
 <programlisting role='header'>
-GET /3/categories/DEFRA_transport_fuel_methodology/items/AD650C628120/values/massTotalCO2ePerVolume HTTP/1.1
+GET /3/categories/DEFRA_transport_fuel_methodology/items/AA6B1557CEA6/values/massTotalCO2ePerVolume HTTP/1.1
 Accept: application/xml
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 </programlisting>
@@ -17,11 +17,9 @@ Content-Type: application/xml; charset=UTF-8
 
 <Representation>
  <Values truncated="false">
-  <Value history="false" uid="89286319C934">
+  <Value history="false" uid="F7C4F3FB5C88">
    <Value>2.7227</Value>
-   <Unit>kg</Unit>
-   <PerUnit>L</PerUnit>
-   <CompoundUnit>kg/L</CompoundUnit>
+   <Unit>kg/L</Unit>
    <StartDate>1970-01-01T00:00:00Z</StartDate>
   </Value>
  </Values>

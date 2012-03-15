@@ -14,64 +14,59 @@ Content-Type: application/json; charset=UTF-8
 </programlisting>
 <programlisting language='javascript'><![CDATA[
 {
-  "amounts": [
-    {
-      "perUnit": "",
-      "unit": "kg",
-      "default": true,
-      "value": 1064.491020315156,
-      "type": "totalDirectCO2e"
-    },
-    {
-      "perUnit": "",
-      "unit": "km",
-      "default": false,
-      "value": 9550.430830030109,
-      "type": "distance"
-    },
-    {
-      "perUnit": "",
-      "unit": "kg",
-      "default": false,
-      "value": 1260.561365255674,
-      "type": "lifeCycleCO2e"
-    },
-    {
-      "perUnit": "",
-      "unit": "kg",
-      "default": false,
-      "value": 1054.0810507104231,
-      "type": "CO2"
-    },
-    {
-      "perUnit": "",
-      "unit": "kg",
-      "default": false,
-      "value": 10.409969604732819,
-      "type": "nitrousOxideCO2e"
-    },
-    {
-      "perUnit": "",
-      "unit": "kg",
-      "default": false,
-      "value": 0.0955043083003011,
-      "type": "methaneCO2e"
-    },
-    {
-      "perUnit": "",
-      "unit": "kg",
-      "default": false,
-      "value": 196.07034494051814,
-      "type": "indirectCO2e"
-    }
-  ],
   "status": "OK",
-  "notes": [
-    {
-      "value": "This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation",
-      "type": "comment"
-    }
-  ],
+  "output": {
+    "amounts": [
+      {
+        "unit": "kg",
+        "default": true,
+        "value": 1064.491020315156,
+        "type": "totalDirectCO2e"
+      },
+      {
+        "unit": "km",
+        "default": false,
+        "value": 9550.430830030109,
+        "type": "distance"
+      },
+      {
+        "unit": "kg",
+        "default": false,
+        "value": 1260.561365255674,
+        "type": "lifeCycleCO2e"
+      },
+      {
+        "unit": "kg",
+        "default": false,
+        "value": 1054.0810507104231,
+        "type": "CO2"
+      },
+      {
+        "unit": "kg",
+        "default": false,
+        "value": 10.409969604732819,
+        "type": "nitrousOxideCO2e"
+      },
+      {
+        "unit": "kg",
+        "default": false,
+        "value": 0.0955043083003011,
+        "type": "methaneCO2e"
+      },
+      {
+        "unit": "kg",
+        "default": false,
+        "value": 196.07034494051814,
+        "type": "indirectCO2e"
+      }
+    ],
+    "notes": [
+      {
+        "value": "This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation",
+        "type": "comment"
+      }
+    ]
+  },
   "version": "3.6.0"
 }
 ]]></programlisting>

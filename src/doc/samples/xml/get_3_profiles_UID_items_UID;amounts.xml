@@ -17,17 +17,19 @@ Content-Type: application/xml; charset=UTF-8
 
 <Representation>
  <Item uid="1U36W0KJFW3S">
-  <Amounts>
-   <Amount default="true" perUnit="" type="totalDirectCO2e" unit="kg">1155.8500000000001</Amount>
-   <Amount perUnit="" type="lifeCycleCO2e" unit="kg">1361.3500000000001</Amount>
-   <Amount perUnit="" type="CO2" unit="kg">1150.9</Amount>
-   <Amount perUnit="" type="nitrousOxideCO2e" unit="kg">3.25</Amount>
-   <Amount perUnit="" type="methaneCO2e" unit="kg">1.7</Amount>
-   <Amount perUnit="" type="indirectCO2e" unit="kg">205.5</Amount>
+  <Output>
+   <Amounts>
+    <Amount default="true" type="totalDirectCO2e" unit="kg">1155.8500000000001</Amount>
+    <Amount type="lifeCycleCO2e" unit="kg">1361.3500000000001</Amount>
+    <Amount type="CO2" unit="kg">1150.9</Amount>
+    <Amount type="nitrousOxideCO2e" unit="kg">3.25</Amount>
+    <Amount type="methaneCO2e" unit="kg">1.7</Amount>
+    <Amount type="indirectCO2e" unit="kg">205.5</Amount>
+   </Amounts>
    <Notes>
     <Note type="comment">This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation</Note>
    </Notes>
-  </Amounts>
+  </Output>
  </Item>
  <Status>OK</Status>
  <Version>3.6.0</Version>

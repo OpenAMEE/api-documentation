@@ -17,42 +17,41 @@ Content-Type: application/json; charset=UTF-8
   "status": "OK",
   "item": {
     "uid": "1U36W0KJFW3S",
-    "amounts": {
-      "amount": [
+    "output": {
+      "amounts": [
         {
-          "perUnit": "",
           "unit": "kg",
           "default": true,
           "value": 1155.8500000000001,
           "type": "totalDirectCO2e"
         },
         {
-          "perUnit": "",
           "unit": "kg",
+          "default": false,
           "value": 1361.3500000000001,
           "type": "lifeCycleCO2e"
         },
         {
-          "perUnit": "",
           "unit": "kg",
+          "default": false,
           "value": 1150.9,
           "type": "CO2"
         },
         {
-          "perUnit": "",
           "unit": "kg",
+          "default": false,
           "value": 3.25,
           "type": "nitrousOxideCO2e"
         },
         {
-          "perUnit": "",
           "unit": "kg",
+          "default": false,
           "value": 1.7,
           "type": "methaneCO2e"
         },
         {
-          "perUnit": "",
           "unit": "kg",
+          "default": false,
           "value": 205.5,
           "type": "indirectCO2e"
         }

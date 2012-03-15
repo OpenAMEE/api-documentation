@@ -20,7 +20,7 @@ Content-Type: application/json; charset=UTF-8
     "uid": "FC2ODLZHCNHS",
     "categories": [
       {
-        "uid": "9819052D7010",
+        "uid": "BBAF1A02B8CB",
         "name": "Fuel",
         "wikiName": "DEFRA_transport_fuel_methodology"
       }

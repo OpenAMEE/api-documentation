@@ -17,22 +17,22 @@ Content-Type: application/xml; charset=UTF-8
 
 <Representation>
  <Results truncated="false">
-  <Item uid="OY2PAJ81ANXL">
+  <Item uid="4EB103700ACD">
    <Name/>
    <Label>camels, developed countries</Label>
-   <CategoryUid>PZH8T4QFP4NO</CategoryUid>
+   <CategoryUid>8723DC9314F8</CategoryUid>
    <CategoryWikiName>Enteric_fermentation</CategoryWikiName>
   </Item>
-  <Item uid="03KUHQEORUTL">
+  <Item uid="AC21F67B978E">
    <Name/>
    <Label>camels, developing countries</Label>
-   <CategoryUid>PZH8T4QFP4NO</CategoryUid>
+   <CategoryUid>8723DC9314F8</CategoryUid>
    <CategoryWikiName>Enteric_fermentation</CategoryWikiName>
   </Item>
-  <Category uid="5OE77HEIZPTH">
-   <Name>IPCC methodology for manure sourced nitrous oxide - other livestock</Name>
+  <Category uid="B1FCD0CFA30E">
    <WikiName>Other_livestock_manure_nitrous_oxide_emissions</WikiName>
-   <ParentUid>KQH78FEYITVS</ParentUid>
+   <Name>IPCC methodology for manure sourced nitrous oxide - other livestock</Name>
+   <ParentUid>01341F8598FF</ParentUid>
    <ParentWikiName>Manure_associated_nitrous_oxide_emissions</ParentWikiName>
   </Category>
  </Results>

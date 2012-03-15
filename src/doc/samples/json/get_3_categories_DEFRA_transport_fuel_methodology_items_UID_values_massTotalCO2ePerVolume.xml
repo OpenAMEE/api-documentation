@@ -2,7 +2,7 @@
 <title>JSON</title>
 <section role='httprequest'>
 <programlisting role='header'>
-GET /3/categories/DEFRA_transport_fuel_methodology/items/AD650C628120/values/massTotalCO2ePerVolume HTTP/1.1
+GET /3/categories/DEFRA_transport_fuel_methodology/items/AA6B1557CEA6/values/massTotalCO2ePerVolume HTTP/1.1
 Accept: application/json
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 </programlisting>
@@ -16,13 +16,11 @@ Content-Type: application/json; charset=UTF-8
 {
   "values": [
     {
-      "perUnit": "L",
       "history": false,
-      "uid": "89286319C934",
+      "uid": "F7C4F3FB5C88",
       "startDate": "1970-01-01T00:00:00Z",
-      "unit": "kg",
-      "value": "2.7227",
-      "compoundUnit": "kg/L"
+      "unit": "kg/L",
+      "value": 2.7227
     }
   ],
   "status": "OK",

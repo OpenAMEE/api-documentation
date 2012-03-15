@@ -14,57 +14,53 @@ Content-Type: application/json; charset=UTF-8
 </programlisting>
 <programlisting language='javascript'><![CDATA[
 {
-  "amounts": [
-    {
-      "perUnit": "",
-      "unit": "kg",
-      "default": true,
-      "value": 1155.8500000000001,
-      "type": "totalDirectCO2e"
-    },
-    {
-      "perUnit": "",
-      "unit": "kg",
-      "default": false,
-      "value": 1361.3500000000001,
-      "type": "lifeCycleCO2e"
-    },
-    {
-      "perUnit": "",
-      "unit": "kg",
-      "default": false,
-      "value": 1150.9,
-      "type": "CO2"
-    },
-    {
-      "perUnit": "",
-      "unit": "kg",
-      "default": false,
-      "value": 3.25,
-      "type": "nitrousOxideCO2e"
-    },
-    {
-      "perUnit": "",
-      "unit": "kg",
-      "default": false,
-      "value": 1.7,
-      "type": "methaneCO2e"
-    },
-    {
-      "perUnit": "",
-      "unit": "kg",
-      "default": false,
-      "value": 205.5,
-      "type": "indirectCO2e"
-    }
-  ],
   "status": "OK",
-  "notes": [
-    {
-      "value": "This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation",
-      "type": "comment"
-    }
-  ],
+  "output": {
+    "amounts": [
+      {
+        "unit": "kg",
+        "default": true,
+        "value": 1155.8500000000001,
+        "type": "totalDirectCO2e"
+      },
+      {
+        "unit": "kg",
+        "default": false,
+        "value": 1361.3500000000001,
+        "type": "lifeCycleCO2e"
+      },
+      {
+        "unit": "kg",
+        "default": false,
+        "value": 1150.9,
+        "type": "CO2"
+      },
+      {
+        "unit": "kg",
+        "default": false,
+        "value": 3.25,
+        "type": "nitrousOxideCO2e"
+      },
+      {
+        "unit": "kg",
+        "default": false,
+        "value": 1.7,
+        "type": "methaneCO2e"
+      },
+      {
+        "unit": "kg",
+        "default": false,
+        "value": 205.5,
+        "type": "indirectCO2e"
+      }
+    ],
+    "notes": [
+      {
+        "value": "This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation",
+        "type": "comment"
+      }
+    ]
+  },
   "version": "3.6.0"
 }
 ]]></programlisting>

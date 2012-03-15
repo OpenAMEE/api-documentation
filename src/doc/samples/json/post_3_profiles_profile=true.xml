@@ -15,7 +15,7 @@ profile=true
 <programlisting role='header'>
 HTTP/1.1 201 Created
 Content-Type: application/json; charset=UTF-8
-Location: https://platform-api-dev.amee.com/3.6.0/profiles/FC2ODLZHCNHS
+Location: https://platform-api-stage.amee.com/3.6.0/profiles/FC2ODLZHCNHS
 </programlisting>
 <programlisting language='javascript'><![CDATA[
 {

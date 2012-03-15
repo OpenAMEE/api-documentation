@@ -2,7 +2,7 @@
 <title>JSON</title>
 <section role='httprequest'>
 <programlisting role='header'>
-GET /3/categories/DEFRA_transport_fuel_methodology/items/AD650C628120;values HTTP/1.1
+GET /3/categories/DEFRA_transport_fuel_methodology/items/AA6B1557CEA6;values HTTP/1.1
 Accept: application/json
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 </programlisting>
@@ -16,23 +16,19 @@ Content-Type: application/json; charset=UTF-8
 {
   "status": "OK",
   "item": {
-    "uid": "AD650C628120",
+    "uid": "AA6B1557CEA6",
     "values": [
       {
         "history": false,
-        "perUnit": "L",
-        "unit": "kg",
-        "value": "2.7227",
-        "path": "massTotalCO2ePerVolume",
-        "compoundUnit": "kg/L"
+        "unit": "kg/L",
+        "value": 2.7227,
+        "path": "massTotalCO2ePerVolume"
       },
       {
         "history": false,
-        "perUnit": "L",
-        "unit": "kg",
-        "value": "0.0034",
-        "path": "massCH4PerVolume",
-        "compoundUnit": "kg/L"
+        "unit": "kg/L",
+        "value": 0.0034,
+        "path": "massCH4PerVolume"
       },
       {
         "history": false,
@@ -41,11 +37,9 @@ Content-Type: application/json; charset=UTF-8
       },
       {
         "history": false,
-        "perUnit": "L",
-        "unit": "kg",
-        "value": "2.3117",
-        "path": "massDirectCO2ePerVolume",
-        "compoundUnit": "kg/L"
+        "unit": "kg/L",
+        "value": 2.3117,
+        "path": "massDirectCO2ePerVolume"
       },
       {
         "history": false,
@@ -54,27 +48,21 @@ Content-Type: application/json; charset=UTF-8
       },
       {
         "history": false,
-        "perUnit": "L",
-        "unit": "kg",
-        "value": "0.411",
-        "path": "massIndirectCO2ePerVolume",
-        "compoundUnit": "kg/L"
+        "unit": "kg/L",
+        "value": 0.411,
+        "path": "massIndirectCO2ePerVolume"
       },
       {
         "history": false,
-        "perUnit": "L",
-        "unit": "kg",
-        "value": "2.3018",
-        "path": "massCO2PerVolume",
-        "compoundUnit": "kg/L"
+        "unit": "kg/L",
+        "value": 0.0065,
+        "path": "massN2OPerVolume"
       },
       {
         "history": false,
-        "perUnit": "L",
-        "unit": "kg",
-        "value": "0.0065",
-        "path": "massN2OPerVolume",
-        "compoundUnit": "kg/L"
+        "unit": "kg/L",
+        "value": 2.3018,
+        "path": "massCO2PerVolume"
       }
     ]
   },

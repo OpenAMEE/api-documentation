@@ -17,12 +17,12 @@ Content-Type: application/xml; charset=UTF-8
 
 <Representation>
  <Items truncated="false">
-  <Item uid="726781F150E3"/>
-  <Item uid="383D28DB31BC"/>
-  <Item uid="29AB5GFYOA7R"/>
-  <Item uid="5DE4F990CC2A"/>
-  <Item uid="AD650C628120"/>
-  <Item uid="9K6CYEBA43LN"/>
+  <Item uid="9DE1D9435784"/>
+  <Item uid="5C521E17EDE1"/>
+  <Item uid="S5EJCLVVCUP2"/>
+  <Item uid="68BA9ED4CD1B"/>
+  <Item uid="AA6B1557CEA6"/>
+  <Item uid="NL9467O7Y4K3"/>
  </Items>
  <Status>OK</Status>
  <Version>3.6.0</Version>

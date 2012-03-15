@@ -18,7 +18,7 @@ Content-Type: application/xml; charset=UTF-8
 <Representation>
  <Profile uid="FC2ODLZHCNHS">
   <Categories>
-   <Category uid="9819052D7010">
+   <Category uid="BBAF1A02B8CB">
     <Name>Fuel</Name>
     <WikiName>DEFRA_transport_fuel_methodology</WikiName>
    </Category>

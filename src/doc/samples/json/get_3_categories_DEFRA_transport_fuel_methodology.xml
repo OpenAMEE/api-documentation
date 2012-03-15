@@ -15,8 +15,7 @@ Content-Type: application/json; charset=UTF-8
 <programlisting language='javascript'><![CDATA[
 {
   "category": {
-    "uid": "9819052D7010",
-    "name": "Fuel",
+    "uid": "BBAF1A02B8CB",
     "wikiName": "DEFRA_transport_fuel_methodology"
   },
   "status": "OK",

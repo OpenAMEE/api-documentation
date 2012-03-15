@@ -2,7 +2,7 @@
 <title>XML</title>
 <section role='httprequest'>
 <programlisting role='header'>
-GET /3/categories/DEFRA_transport_fuel_methodology/items/AD650C628120;values HTTP/1.1
+GET /3/categories/DEFRA_transport_fuel_methodology/items/AA6B1557CEA6;values HTTP/1.1
 Accept: application/xml
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 </programlisting>
@@ -16,21 +16,17 @@ Content-Type: application/xml; charset=UTF-8
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <Representation>
- <Item uid="AD650C628120">
+ <Item uid="AA6B1557CEA6">
   <Values>
    <Value history="false">
     <Path>massTotalCO2ePerVolume</Path>
     <Value>2.7227</Value>
-    <Unit>kg</Unit>
-    <PerUnit>L</PerUnit>
-    <CompoundUnit>kg/L</CompoundUnit>
+    <Unit>kg/L</Unit>
    </Value>
    <Value history="false">
     <Path>massCH4PerVolume</Path>
     <Value>0.0034</Value>
-    <Unit>kg</Unit>
-    <PerUnit>L</PerUnit>
-    <CompoundUnit>kg/L</CompoundUnit>
+    <Unit>kg/L</Unit>
    </Value>
    <Value history="false">
     <Path>source</Path>
@@ -39,9 +35,7 @@ Content-Type: application/xml; charset=UTF-8
    <Value history="false">
     <Path>massDirectCO2ePerVolume</Path>
     <Value>2.3117</Value>
-    <Unit>kg</Unit>
-    <PerUnit>L</PerUnit>
-    <CompoundUnit>kg/L</CompoundUnit>
+    <Unit>kg/L</Unit>
    </Value>
    <Value history="false">
     <Path>fuel</Path>
@@ -50,23 +44,17 @@ Content-Type: application/xml; charset=UTF-8
    <Value history="false">
     <Path>massIndirectCO2ePerVolume</Path>
     <Value>0.411</Value>
-    <Unit>kg</Unit>
-    <PerUnit>L</PerUnit>
-    <CompoundUnit>kg/L</CompoundUnit>
-   </Value>
-   <Value history="false">
-    <Path>massCO2PerVolume</Path>
-    <Value>2.3018</Value>
-    <Unit>kg</Unit>
-    <PerUnit>L</PerUnit>
-    <CompoundUnit>kg/L</CompoundUnit>
+    <Unit>kg/L</Unit>
    </Value>
    <Value history="false">
     <Path>massN2OPerVolume</Path>
     <Value>0.0065</Value>
-    <Unit>kg</Unit>
-    <PerUnit>L</PerUnit>
-    <CompoundUnit>kg/L</CompoundUnit>
+    <Unit>kg/L</Unit>
+   </Value>
+   <Value history="false">
+    <Path>massCO2PerVolume</Path>
+    <Value>2.3018</Value>
+    <Unit>kg/L</Unit>
    </Value>
   </Values>
  </Item>

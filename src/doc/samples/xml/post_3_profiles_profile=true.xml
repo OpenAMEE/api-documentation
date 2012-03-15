@@ -15,7 +15,7 @@ profile=true
 <programlisting role='header'>
 HTTP/1.1 201 Created
 Content-Type: application/xml
-Location: https://platform-api-dev.amee.com/3.6.0/profiles/FC2ODLZHCNHS
+Location: https://platform-api-stage.amee.com/3.6.0/profiles/FC2ODLZHCNHS
 </programlisting>
 <programlisting language='xml'><![CDATA[
 <?xml version="1.0" encoding="ISO-8859-1"?>

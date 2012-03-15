@@ -16,18 +16,20 @@ Content-Type: application/xml; charset=UTF-8
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <Representation>
- <Amounts>
-  <Amount default="true" perUnit="" type="totalDirectCO2e" unit="kg">1064.491020315156</Amount>
-  <Amount perUnit="" type="distance" unit="km">9550.430830030109</Amount>
-  <Amount perUnit="" type="lifeCycleCO2e" unit="kg">1260.561365255674</Amount>
-  <Amount perUnit="" type="CO2" unit="kg">1054.0810507104231</Amount>
-  <Amount perUnit="" type="nitrousOxideCO2e" unit="kg">10.409969604732819</Amount>
-  <Amount perUnit="" type="methaneCO2e" unit="kg">0.0955043083003011</Amount>
-  <Amount perUnit="" type="indirectCO2e" unit="kg">196.07034494051814</Amount>
- </Amounts>
- <Notes>
-  <Note type="comment">This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation</Note>
- </Notes>
+ <Output>
+  <Amounts>
+   <Amount default="true" type="totalDirectCO2e" unit="kg">1064.491020315156</Amount>
+   <Amount type="distance" unit="km">9550.430830030109</Amount>
+   <Amount type="lifeCycleCO2e" unit="kg">1260.561365255674</Amount>
+   <Amount type="CO2" unit="kg">1054.0810507104231</Amount>
+   <Amount type="nitrousOxideCO2e" unit="kg">10.409969604732819</Amount>
+   <Amount type="methaneCO2e" unit="kg">0.0955043083003011</Amount>
+   <Amount type="indirectCO2e" unit="kg">196.07034494051814</Amount>
+  </Amounts>
+  <Notes>
+   <Note type="comment">This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation</Note>
+  </Notes>
+ </Output>
  <Status>OK</Status>
  <Version>3.6.0</Version>
 </Representation>
