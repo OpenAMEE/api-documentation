@@ -17,3 +17,5 @@
 <!ENTITY data_item_values "emission factors">
 <!ENTITY profile "profile">
 <!ENTITY profiles "profiles">
+<!ENTITY profile_item "profile item">
+<!ENTITY profile_items "profile items">
