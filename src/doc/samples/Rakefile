@@ -199,8 +199,10 @@ task :samples do
       # Do a data calculation
       request :get, "/3/categories/DEFRA_transport_fuel_methodology/calculation", :'values.volume' => 500, :fuel => 'petrol'
       # Create a new profile item
-      response = request(:post, "/3/profiles/#{profile_uid}/items", :category => 'DEFRA_transport_fuel_methodology', :fuel => 'petrol', :'values.volume' => 500, :name => "example", :startDate => '2011-01-05T00:00:00Z')
+      response = request(:post, "/3/profiles/#{profile_uid}/items", :category => 'DEFRA_transport_fuel_methodology', :fuel => 'petrol', :'values.volume' => 500)
       item_uid = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
+      response = request(:post, "/3/profiles/#{profile_uid}/items", :category => 'DEFRA_transport_fuel_methodology', :fuel => 'petrol', :'values.volume' => 500, :name => "example", :startDate => '2011-01-05T00:00:00Z')
+      item_uid_2 = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
       # Get profile with list of used categories
       request :get, "/3/profiles/#{profile_uid};categories"
       # Get a list of items in a profile
@@ -229,6 +231,7 @@ task :samples do
       request :delete, "/3/profiles/#{profile_uid}" if profile_uid
       # Replace the IDs in the files so we don't change everything every time
       replace_ids(format, item_uid, '1U36W0KJFW3S')
+      replace_ids(format, item_uid_2, 'O9IX7PWGT5W4')
       replace_ids(format, profile_uid, 'FC2ODLZHCNHS')
     end
   end
