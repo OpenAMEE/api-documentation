@@ -104,7 +104,24 @@
   <section id='authority'>
     <title>Authority</title>
 	  <para>
+			All &categories; in &api_name; have an <glossterm>authority</glossterm> rating, which is also shown in
+			&discover;. This indicates how reliable AMEE consider the &category; to be. There are four levels, listed
+			in decreasing order of confidence.
 	  </para>
+		<itemizedlist>
+      <listitem>enterprise</listitem>
+      <listitem>recommended</listitem>
+      <listitem>verified</listitem>
+      <listitem>unverified</listitem>
+    </itemizedlist>
+		<para>
+			For a detailed discussion of what each rating means, and when it is appropriate to use which level of &category;,
+			see <ulink url='http://discover.amee.com/categories/Authority'>&discover;</ulink>.
+		</para>
+		<para>
+			When searching or listing &categories;, you can filter by authority so that you only see &categories; that are sufficiently
+			high-quality for your application.
+		</para>
   </section>
   <section id='paging'>
 		<title>Paging</title>
