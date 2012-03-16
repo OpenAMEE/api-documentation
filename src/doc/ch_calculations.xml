@@ -9,7 +9,7 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='calculations'>
   <title>Perform Calculations</title>
   <section xml:id='doing-calculations'>
-    <title>Choosing your &category;</title>
+    <title>Doing a calculation</title>
     <para>
       Once you've selected a &category; and &data_item;, you can get &api_name; to perform calculations for you. <xref linkend='data'/> explains how to make
 	  your choice, so have a quick read of that first, if you haven't already.
