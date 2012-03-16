@@ -107,12 +107,26 @@
 	  </para>
   </section>
   <section id='paging'>
-    <title>Paging</title>
+		<title>Paging</title>
 	  <para>
-	    Many resources in AMEE are capable of containing a large number of sub-resources, for instance 
-	    profile categories can contain many profile items. Retrieving them all in one request may be prohibitively
-	    expensive, so for this reason such resources are paged. Details of how to page through items in AMEE are provided in <xref linkend="paging-reference"/>.
+	    Many resources in &api_name; are capable of containing a large number of sub-resources; for instance 
+	    &profiles; can contain many &profile_items;. Retrieving them all in one request may be prohibitively
+	    expensive, so for this reason such resources are paged.
 	  </para>
+	  <para>
+	    The representations of these resources will contain an indication as to whether the list is truncated, as shown below. 
+			If the value is <code>true</code>, more results are available. Two GET parameters are available to adjust which 
+			results are returned.
+	  </para>
+		<itemizedlist>
+			<listitem><code>resultStart</code>: The first result that should be returned (zero-indexed). Defaults to 0.</listitem>
+			<listitem><code>resultLimit</code>: The maximum number of results to return in one request. Defaults to 50.</listitem>
+		</itemizedlist>
+		<para>
+			By incrementing the <code>resultStart</code> parameter by <code>resultLimit</code>, you can page through the
+			complete list until <code>truncated</code> is false.
+		</para>
+	  <xi:include href='samples/get_3_categories_US_specific_car_transport_items;label_engineSize=2.5_resultLimit=10.xml'/>
   </section>
   <section xml:id='interactive-drilldowns'>
     <title>Interactive Drilldowns</title>
