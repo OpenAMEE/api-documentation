@@ -24,15 +24,8 @@
   </xsl:template>
 
   <xsl:template name='user.head.content'>
-    <xsl:call-template name='amee.head.content'/>
-  </xsl:template>
-
-  <xsl:template name='user.header.navigation'>
-    <xsl:call-template name='amee.header'/>
-  </xsl:template>
-
-  <xsl:template name='user.footer.navigation'>
-    <xsl:call-template name='amee.footer'/>
+    <script type="text/javascript" src='script/jquery-1.5.min.js'></script>
+    <script type="text/javascript" src='script/tabs.js'></script>
   </xsl:template>
 
 </xsl:stylesheet>

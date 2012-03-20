@@ -18,17 +18,10 @@
   <xsl:param name="toc.section.depth">2</xsl:param>
 
   <xsl:template name='user.head.content'>
-    <xsl:call-template name='amee.head.content'/>
+    <script type="text/javascript" src='script/jquery-1.5.min.js'></script>
+    <script type="text/javascript" src='script/tabs.js'></script>
   </xsl:template>
-
-  <xsl:template name='user.header.content'>
-    <xsl:call-template name='amee.header'/>
-  </xsl:template>
-
-  <xsl:template name='user.footer.content'>
-    <xsl:call-template name='amee.footer'/>
-  </xsl:template>
-
+  
   <xsl:param name="generate.toc">
   appendix  toc,title
   article/appendix  nop

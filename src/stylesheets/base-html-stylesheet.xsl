@@ -20,7 +20,7 @@
       sect5     toc
       section   toc
       set       toc,title
-  </xsl:param>
+  </xsl:param>  
   
   <xsl:param name="use.extensions">1</xsl:param>
   <xsl:param name="callouts.extension">1</xsl:param>
@@ -41,64 +41,6 @@
   <xsl:param name="bibliography.numbered">1</xsl:param>
 
   <xsl:param name="para.propagates.style">1</xsl:param>
-
-  <xsl:template name='amee.head.content'>
-    <script type="text/javascript" src='script/jquery-1.5.min.js'></script>
-    <script type="text/javascript" src='script/tabs.js'></script>
-  </xsl:template>
-  
-  <xsl:template name='amee.header'>
-    <div id="header">
-      <div id="multisitenav">
-        <div id="menu">
-          <ul>
-            <li><img height="12" width="1" src="http://www2.amee.com/wp-content/themes/amee2/images/sitedivider.gif" alt="|"/></li>
-            <li class="menuitem"><a href="http://www.amee.com">About AMEE</a></li>
-            <li><img height="12" width="1" src="http://www2.amee.com/wp-content/themes/amee2/images/sitedivider.gif" alt="|"/></li>
-            <li class="menuitem"><a href="http://explorer.amee.com">AMEE <span class="explorer">explorer</span></a></li>
-            <li><img height="12" width="1" src="http://www2.amee.com/wp-content/themes/amee2/images/sitedivider.gif" alt="|"/></li>
-            <li class="menuitem"><a class='currentsite' href="http://my.amee.com/developers">Developer Center</a></li>
-            <li><img height="12" width="1" src="http://www2.amee.com/wp-content/themes/amee2/images/sitedivider.gif" alt="|"/></li>
-            <li class="menuitem">
-              <a href="/login">My Account</a>
-            </li>
-          </ul>
-        </div>
-        <div class="clear"></div>
-      </div>
-      <div id="sitenav">
-        <div class="header_right">
-          <div class="searchform">
-            <form method="post" action="http://explorer.amee.com/search">
-              <input type="text" value="" size="30" name="search[query]" id="header_search_input"/>
-              <input type="submit" value="Search" name="commit" id="header_search_submit_button"/>
-            </form>
-          </div>
-          <div class="clear"></div>
-        </div>
-        <a href="/"><div id="mainlogo"></div></a>
-        <div class="clear"></div>
-      </div>
-    </div>
-  </xsl:template>
-
-  <xsl:template name='amee.footer'>
-    <div id="footer-wrap">
-      <div id="footer">
-        <div id="footer-logo"></div>
-        <a href="/help">Help</a>
-        |
-        <a href="http://www.amee.com/about">About</a>
-        |
-        <a href="http://www.amee.com/tcs">Terms &amp; Conditions</a>
-        |
-        <a href="http://www.amee.com/contact">Contact</a>
-        <br/>
-        <xsl:apply-templates select="//copyright[1]" mode="titlepage.mode"/>
-        <div class="clear"></div>
-      </div>
-    </div>
-  </xsl:template>
 
   <xsl:template match="sect1" mode="toc">
     <xsl:param name="toc-context" select="."/>
