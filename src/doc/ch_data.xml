@@ -42,12 +42,12 @@
 	  it came from, relationships with other &categories;, and so on. &discover; includes powerful search and 
 	  tagging capabilities, making it easy to find the &categories; that are relevant to your application.
     </para>
-    <para>
+    <!--><para>
       The &developer_tab; for a &category; in &discover; shows all the information you need to use it with &api_name;.
 	  It shows the &category; name, allows you to interactively select which &data_item; you want to use, tells you which 
 	  &profile_item_values; are required, gives you all the required URL options, and even generates code for you in a 
 	  variety of languages.
-    </para>
+    </para>-->
   </section>
   <section xml:id='get-data-items'>
     <title>Fetching &data_item_values;</title>

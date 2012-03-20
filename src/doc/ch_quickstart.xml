@@ -39,13 +39,13 @@
 	</para>
 	<para>
 	  To do a calculation you need two things. First is the <emphasis>&category; name</emphasis>. This
-	  can be found on the <ulink url='&discover_url;/categories/Great_Circle_flight_methodology/data/developer'>&developer_tab;</ulink> for the &category;, 
+	  can be found on the <ulink url='&discover_url;/categories/Great_Circle_flight_methodology&developer_tab_path;'>&developer_tab;</ulink> for the &category;, 
 	  and it's also part of the URL in &discover;. In this case, it's <code>Great_Circle_flight_methodology</code>.
 	</para>
 	<para>
 	  The second are the <emphasis>&drill_options;</emphasis>. Each &category; can contain a number of different &data_items;, each of which is a variant 
 	  on a single calculation; different input values if you like. Each of these is identified by a set of &drill_options;. Again, these are shown on
-	  the <ulink url='&discover_url;/categories/Great_Circle_flight_methodology/data/developer'>&developer_tab;</ulink> for the &category;. 
+	  the <ulink url='&discover_url;/categories/Great_Circle_flight_methodology&developer_tab_path;'>&developer_tab;</ulink> for the &category;. 
 	  For this &category;, there is only one &data_item;, so the &drill_options; are just <code>type=great+circle+route</code>.
 	</para>
   </section>
@@ -58,7 +58,7 @@
 	  You simply do a GET request to URL that represents the &category; you've chosen, which includes made up of the &category; name,
 	  and you include the &drill_options; as parameters in order to identify the &data_item;. You also include some &profile_item_value; parameters; 
 	  these are different for every category, but again the 
-	  <ulink url='&discover_url;/categories/Great_Circle_flight_methodology/data/developer'>&developer_tab;</ulink> will tell you what they are.
+	  <ulink url='&discover_url;/categories/Great_Circle_flight_methodology&developer_tab_path;'>&developer_tab;</ulink> will tell you what they are.
     </para>
 	<para>
 	  In this case there are two required &profile_item_values;, <code>values.IATACode1</code> and <code>values.IATACode2</code>, 
