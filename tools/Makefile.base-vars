@@ -67,7 +67,7 @@ ALL_SOURCE = $(filter-out $(DIR)/version.ent $(DIR)/amee-doc.xml, $(wildcard $(D
 STYLESHEET = $(DIR)/styles.css $(DIR)/script
 INSTALL_SUBDIR = $(INSTALL_DIR)/$(NAME)
 
-ENSURE_XSL = if ! test -e "$(TOOLS_DIR)/xsl"; \
+ENSURE_XSL = if ! test -e "$(XSL_DIR)/xsl"; \
 	     then $(TOOLS_DIR)/bin/find-xsl.py; fi
 IFIMAGES = if test -n "$(IMAGES)"; then
 ENDIF = ; fi
