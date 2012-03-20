@@ -40,6 +40,8 @@ Regenerating Samples
 --------------------
 
     > cd src/doc/samples
+	> cp amee.example.yml amee.yml
+	> vi amee.yml
     > rake
 
 To add new samples, edit Rakefile and add a new request. Then include the generated 
