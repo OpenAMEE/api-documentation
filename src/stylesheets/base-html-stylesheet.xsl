@@ -1,6 +1,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version='1.0'>
 
   <xsl:import href="xsl/xhtml/highlight.xsl"/>
+  <xsl:import href="extensions/cc.xsl"/>
 
   <xsl:param name="generate.toc">
       appendix  toc
@@ -113,6 +114,11 @@
     <hr/>
     <h4>Response</h4>
     <xsl:apply-templates/>    
+  </xsl:template>
+  
+  <xsl:template name="user.footer.navigation">
+    &#169; Copyright 2007-2012 AMEE UK Ltd.
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a>.
   </xsl:template>
   
   <xsl:template match="biblioentry|bibliomixed" mode="xref-to-prefix">

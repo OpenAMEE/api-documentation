@@ -32,7 +32,8 @@
 
     <copyright>
       <year>2007-2012</year>
-      <holder>AMEE UK Ltd.</holder>
+      <holder xlink:href="http://www.amee.com">AMEE UK Ltd.</holder>
+      <license type="cc by-sa" v="3.0"/>
     </copyright>
 
   </bookinfo>

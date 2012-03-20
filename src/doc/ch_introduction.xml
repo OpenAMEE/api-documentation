@@ -16,6 +16,12 @@
 	  or other sustainability-related calculations without having to find all the numbers and algorithms
 	  yourself.
     </para>
+	<para>
+	  This manual is made available under a <ulink url='http://creativecommons.org/licenses/by-sa/3.0/'>
+	  Creative Commons Attribution-ShareAlike 3.0 Unported License</ulink>, which means you can change
+	  and modify it if you want to. The <ulink url='http://github.com/AMEE/api-documentation'>source code</ulink>
+	  is available from Github. Improvements are welcomed!
+	</para>
   </section>
   <section xml:id='before-you-start'>
     <title>Before You Start</title>
