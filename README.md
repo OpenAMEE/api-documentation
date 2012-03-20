@@ -20,12 +20,14 @@ Manual Builds
     > ../tools/book-dist.py [OPTION]
 
 standard options:
- * `--html-chunk`: HTML multi page, generally used in development
- * `--php-chunk`:  PHP multi page for use in AMEE's wordpress site
+
+* `--html-chunk`: HTML multi page, generally used in development
+* `--php-chunk`:  PHP multi page for use in AMEE's wordpress site
 
 other options (used less often, and may not currently work properly):
- * `--pdf`:  single PDF
- * `--html`: single page HTML
+
+* `--pdf`:  single PDF
+* `--html`: single page HTML
 
 Deploying to the live site
 --------------------------
