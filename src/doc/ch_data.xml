@@ -53,7 +53,7 @@
     <title>Fetching &data_item_values;</title>
     <para>
       To get &data_item_values; from &api_name;, you need to identify the &category; and &data_item; you are interested in. You 
-	  then do a GET request in the following format to the appropriate API base URL (initially platform-api-stage.amee.com). Note 
+	  then do a GET request in the following format to the appropriate API base URL (initially &api_url;). Note 
 	  that the &category; name is included in the URL, and the &drill_options;
 	  are provided as parameters. Note also the inclusion of the <code>values</code> matrix parameter in the URL. See the <xref linkend='matrix-parameters'/>
 	  for more details on what matrix parameters are and how they work.

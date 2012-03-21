@@ -96,7 +96,7 @@
 		</para>
 		<table class='requestdetails'>
 			<tr><td>URL</td>
-			    <td><code>https://{server}.amee.com/3/categories[;{matrix_parameters}]?{query_parameters}</code></td></tr>
+			    <td><code>&api_url;/&api_version;/categories[;{matrix_parameters}]?{query_parameters}</code></td></tr>
 			<tr><td>HTTP Method</td><td><code>GET</code></td></tr>
 			<tr><td>Successful Response Code</td><td><code>200 OK</code></td></tr>
 		</table>
@@ -169,7 +169,7 @@
 			Fetch information about a particular &category;.
 		</para>
 		<table class='requestdetails'>
-			<tr><td>URL</td><td><code>https://{server}.amee.com/3/categories/{wikiName}[;{matrix_parameters}]</code></td></tr>
+			<tr><td>URL</td><td><code>&api_url;/&api_version;/categories/{wikiName}[;{matrix_parameters}]</code></td></tr>
 			<tr><td>HTTP Method</td><td><code>GET</code></td></tr>
 			<tr><td>Successful Response Code</td><td><code>200 OK</code></td></tr>
 		</table>
@@ -202,7 +202,7 @@
 	  be hardcoded into applications. They can, however, be cached safely for prolonged periods.
   	</para>
 		<table class='requestdetails'>
-			<tr><td>URL</td><td><code>https://{server}.amee.com/3/categories/{wikiName}/drill[?{&drill_options;}]</code></td></tr>
+			<tr><td>URL</td><td><code>&api_url;/&api_version;/categories/{wikiName}/drill[?{&drill_options;}]</code></td></tr>
 			<tr><td>HTTP Method</td><td><code>GET</code></td></tr>
 			<tr><td>Response Content-Type</td><td><code>application/xml</code> or <code>application/json</code></td></tr>
 			<tr><td>Successful Response Code</td><td><code>200 OK</code></td></tr>

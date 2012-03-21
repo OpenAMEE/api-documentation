@@ -93,7 +93,7 @@
     <title>Search</title>
     <para>
       &api_name; provides full-text search capabilities for both &categories; and &data_items;. To do a search, use the
-	  <code>/3/search</code> resource, and provide the text you want to search for in the <code>q</code> parameter. You
+	  <code>/&api_version;/search</code> resource, and provide the text you want to search for in the <code>q</code> parameter. You
 	  must also supply a <code>types</code> parameter, which controls which resources you would like to search:
     </para>
 	<itemizedlist>

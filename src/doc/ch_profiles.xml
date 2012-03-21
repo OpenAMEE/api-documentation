@@ -33,7 +33,7 @@
       smallest entity in your system will probably correspond to a &profile;.
     </para>
     <para>
-		You create a profile by doing a POST request to <code>/3/profiles</code>, including <code>profile=true</code> in the request body.
+		You create a profile by doing a POST request to <code>/&api_version;/profiles</code>, including <code>profile=true</code> in the request body.
 	</para>
 	<xi:include href='samples/post_3_profiles_profile=true.xml'/>
 	<para>

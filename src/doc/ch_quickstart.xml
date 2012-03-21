@@ -70,7 +70,7 @@
   			<title>curl</title>
    			<section role='httprequest'>
 			  <programlisting>
-$ curl 'https://platform-api-stage.amee.com/3/categories/Great_Circle_flight_methodology/calculation?type=great+circle+route&amp;values.IATAcode1=LHR&amp;values.IATAcode2=LAX' \
+$ curl '&api_url;/&api_version;/categories/Great_Circle_flight_methodology/calculation?type=great+circle+route&amp;values.IATAcode1=LHR&amp;values.IATAcode2=LAX' \
     -H 'Accept: application/xml' \
     -u username:password -s | \
     xpath '//Amounts/Amount'
