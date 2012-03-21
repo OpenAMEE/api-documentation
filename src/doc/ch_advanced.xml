@@ -92,9 +92,39 @@
   <section xml:id='search'>
     <title>Search</title>
     <para>
-      &api_name; provides full-text search capabilities.
+      &api_name; provides full-text search capabilities for both &categories; and &data_items;. To do a search, use the
+	  <code>/3/search</code> resource, and provide the text you want to search for in the <code>q</code> parameter. You
+	  must also supply a <code>types</code> parameter, which controls which resources you would like to search:
     </para>
+	<itemizedlist>
+      <listitem><code>DC</code>: search &categories;</listitem>
+      <listitem><code>DI</code>: search &data_items;</listitem>
+      <listitem><code>DC,DI</code>: search both</listitem>
+    </itemizedlist>
+	<para>
+	  The query can be either a simple string, or a lucene query expression. By default, separate words in the query
+	  are joined with the <code>OR</code> operator. Here are some examples:
+	</para>
+	<itemizedlist>
+      <listitem><code>camels</code></listitem>
+      <listitem><code>camels OR cattle</code> (equivalent to <code>camels cattle</code>)</listitem>
+      <listitem><code>camels AND cattle</code></listitem>
+      <listitem><code>camels -cattle</code></listitem>
+      <listitem><code>(camels AND cattle) OR rabbits</code></listitem>
+    </itemizedlist>
+	<para>
+		For many more options, read the <ulink url='http://lucene.apache.org/core/old_versioned_docs/versions/3_0_0/queryparsersyntax.html'>
+		Lucene Query Parser Syntax</ulink> documentation.
+	</para>
+	<para>
+	  You can include any valid matrix parameters for either &categories; or &data_items; in order to fetch extra data 
+	  as part of the search. See the reference section for details.	
+	</para>
 	<xi:include href='samples/get_3_search;name;label;parent_types=DC,DI_q=camels.xml'/>
+	<para>
+	  In the JSON representation, the <code>type</code> field is used to show what sort of object has been returned, whereas
+	  in XML this is done with the tag name. It is <code>item</code> for &data_items; or <code>category</code> for &categories;.
+	</para>
   </section>
   <section id='matrix-parameters'>
     <title>Matrix Parameters</title>
