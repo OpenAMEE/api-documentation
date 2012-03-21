@@ -1,6 +1,7 @@
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version='1.0'>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:str="http://xsltsl.org/string" version='1.0'>
 
   <xsl:import href="xsl/xhtml/highlight.xsl"/>
+  <xsl:import href="xsl/slides/keynote/xsltsl/stdlib.xsl"/>
   <xsl:import href="extensions/cc.xsl"/>
 
   <xsl:param name="generate.toc">
@@ -103,6 +104,20 @@
         </div>
       </xsl:for-each>
     </div>
+  </xsl:template>
+
+  <xsl:template match="phrase[@role='titleize']">
+		<xsl:call-template name="str:capitalise">
+			<xsl:with-param name="text" select="."/>
+			<xsl:with-param name="all" select="true()"/>
+		</xsl:call-template>
+  </xsl:template>
+
+  <xsl:template match="phrase[@role='capitalize']">
+		<xsl:call-template name="str:capitalise">
+			<xsl:with-param name="text" select="."/>
+			<xsl:with-param name="all" select="false()"/>
+		</xsl:call-template>
   </xsl:template>
 
   <xsl:template match="section[@role='httprequest']">

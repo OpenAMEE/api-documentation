@@ -11,7 +11,7 @@
 ]>
 
 <section xml:id='data-category-reference' xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>&categories;</title>
+	<title><phrase role='titleize'>&categories;</phrase></title>
     <para>
 		You can fetch all relevant information for a single &category; via &api_name;, or list a set of
 		&categories; matching specified criteria. In &api_name; URLs and representations, &categories; are

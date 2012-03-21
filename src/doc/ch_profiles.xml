@@ -9,7 +9,7 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='profiles'>
   <title>Store Data</title>
   <section xml:id='store-data'>
-    <title>Using &api_name; to store data</title>
+    <title>Using &api_name; to Store Data</title>
     <para>
       If you have a lot of energy information, or want to keep your own application as light
       as possible, you can use &api_name; to store your &profile_item_values; permanently, so that you can
@@ -22,7 +22,7 @@
     </para>
   </section>
   <section xml:id='create-profile'>
-    <title>Creating a &profile;</title>
+    <title>Creating a <phrase role='titleize'>&profile;</phrase></title>
     <para>
       In order to store &profile_item_values; in &api_name;, you need to create at least one &profile;. If you have multiple
       entities in your system, you can use multiple &profiles; to separate their &profile_item_values; into silos.
@@ -47,7 +47,7 @@
 	</para>
   </section>
   <section xml:id='create-profile-item'>
-    <title>Storing &profile_item_values;</title>
+    <title>Storing <phrase role='titleize'>&profile_item_values;</phrase></title>
     <para>
       Storing &profile_item_values; in a &profile; is pretty much the same as doing one-off calculations as described in 
 	  <xref linkend='doing-calculations'/>, except that
@@ -72,7 +72,7 @@
 	</para>
   </section>
   <section xml:id='retrieve-items'>
-    <title>Retrieving stored &profile_item_values;</title>
+    <title>Retrieving Stored <phrase role='titleize'>&profile_item_values;</phrase></title>
     <para>
       To retrieve stored &profile_item_values;, you simply perform a GET on the &profile_item; URL, which uses the above UID.
       A sample request that includes the calculated &return_values; is shown below; you could also use the <code>values</code> matrix
@@ -90,7 +90,7 @@
     </para>
   </section>
   <section xml:id='list-items'>
-    <title>List stored &profile_items;</title>
+    <title>List Stored <phrase role='titleize'>&profile_items;</phrase></title>
     <para>
 	  You can also get a list of all &profile_items; that are stored in a single &profile;, by doing a GET to the items collection.
 	</para>
@@ -127,7 +127,7 @@ endDate=2009-08-02T14:30:00-08:00
 duration=PT30M</programlisting>
   </section>
   <section xml:id='naming-items'>
-    <title>Naming &profile_items;</title>
+    <title>Naming <phrase role='titleize'>&profile_items;</phrase></title>
     <para>
 	  &api_name; treats multiple &profile_items; that have the same &category; and &drill_options; as a single time series.
       If you create two &profile_items; for the same &data_item;, and which overlap the same 

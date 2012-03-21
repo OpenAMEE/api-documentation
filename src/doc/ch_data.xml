@@ -7,13 +7,13 @@
 ]>
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='data'>
-  <title>Get Emission Factors</title>
+  <title>Get <phrase role='titleize'>&data_item_values;</phrase></title>
   <para>
     If you just want access to authoritative &data_item_values;, we have you covered. Using &discover; and 
     &api_name;, you can wire the latest data straight into the heart of your application.
   </para>
   <section xml:id='&categories;'>
-    <title>&categories; and &data_items;</title>
+    <title><phrase role='titleize'>&categories;</phrase> and <phrase role='titleize'>&data_items;</phrase></title>
     <para>
       First, a couple of definitions; in &api_name;, a <glossterm>&category;</glossterm> represents a way of calculating something. 
 	  For example, a method of working out car transport emissions, or electricity emissions for different
@@ -31,7 +31,7 @@
     </para>
   </section>
   <section xml:id='ameediscover'>
-    <title>Introduction to &discover;</title>
+    <title>Using &discover;</title>
     <para>
       Choosing which &categories; you want to use will be one of the first things 
       you will do when you come to use &api_name;. Your choice will depend on what data you are collecting from your users,
@@ -50,7 +50,7 @@
     </para>-->
   </section>
   <section xml:id='get-data-items'>
-    <title>Fetching &data_item_values;</title>
+    <title>Fetching <phrase role='titleize'>&data_item_values;</phrase></title>
     <para>
       To get &data_item_values; from &api_name;, you need to identify the &category; and &data_item; you are interested in. You 
 	  then do a GET request in the following format to the appropriate API base URL (initially &api_url;). Note 
@@ -71,7 +71,8 @@
     </para>
   </section>
   <para>
-    &data_item_values; are good, but it's more often useful to get AMEE to do the entire calculation for you. Many algorithms are much
-    more complex than a*b, and you really don't want to implement them all yourself. We'll look at calculations in the next section.
+    <phrase role='capitalize'>&data_item_values;</phrase> are good, but it's more often useful to get AMEE to do the entire calculation 
+	for you. Many algorithms are much more complex than a*b, and you really don't want to implement them all yourself. We'll look at 
+	calculations in the next section.
   </para>
 </chapter>
