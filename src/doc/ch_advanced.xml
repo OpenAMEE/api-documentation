@@ -89,6 +89,23 @@
       <tr><td>Year</td><td>year</td></tr>
     </table>
   </section>
+  <section id='matrix-parameters'>
+    <title>Matrix Parameters</title>
+	  <para>
+		  &api_name; uses <glossterm>matrix parameters</glossterm> to control the content of resource representations. This means that
+		  you will only get a bare minimum of information by default when you do a request. Often, to get more, you will need to provide
+		  a matrix parameter. This keeps responses small and fast, and means that you only have to parse what you need.
+	  </para>
+	  <para>
+		  Matrix parameters are added to the end of a URL, separated by semicolons, but before any query parameters that are present. They 
+		  are not used for parameters that can vary, such as inputs to a calculation or pages in a search result. In the example URI below,
+		  <code>name</code> and <code>address</code> are matrix parameters, and <code>order</code> is a standard query parameter:
+	  </para>
+	  <programlisting>http://example.com/people;name;address?order=asc</programlisting>
+	  <para>
+		  Each resource has a full list of available matrix parameters listed in the appropriate reference section. 
+	  </para>
+  </section>
   <section xml:id='search'>
     <title>Search</title>
     <para>
@@ -125,11 +142,6 @@
 	  In the JSON representation, the <code>type</code> field is used to show what sort of object has been returned, whereas
 	  in XML this is done with the tag name. It is <code>item</code> for &data_items; or <code>category</code> for &categories;.
 	</para>
-  </section>
-  <section id='matrix-parameters'>
-    <title>Matrix Parameters</title>
-	  <para>
-	  </para>
   </section>
   <section id='authority'>
     <title>Authority</title>
