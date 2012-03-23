@@ -72,8 +72,8 @@ def main():
     if len(targets) < 1:
         usage('No targets specified.')
         
-    if not os.path.exists('doc') or not os.path.exists('Makefile'):
-        die('Please run this from the src directory.\n')
+    if not os.path.exists('src/doc') or not os.path.exists('src/Makefile'):
+        die('Please run this from the root directory.\n')
     os.putenv('FOP_OPTS', '-Xms100m -Xmx200m')
 
     def _cleanup_tmp_dirs():
@@ -83,7 +83,7 @@ def main():
     try:
         _cleanup_tmp_dirs()
         os.mkdir('__AMEEDOC_TMP__')
-        os.system('DESTDIR=__AMEEDOC_TMP__ make %s' \
+        os.system('DESTDIR=__AMEEDOC_TMP__ make -f src/Makefile %s' \
                   % (' '.join(targets)))
         if os.path.isdir('__AMEEDOC_TMP__/usr/share/doc/amee/doc'):
             os.rename('__AMEEDOC_TMP__/usr/share/doc/amee/doc', name)

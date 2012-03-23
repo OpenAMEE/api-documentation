@@ -18,8 +18,7 @@ OSX with Homebrew:
 Manual Builds
 -------------
 
-    > cd src
-    > ../tools/book-dist.py [OPTION]
+    > ./build.py [OPTION]
 
 standard options:
 
@@ -34,8 +33,7 @@ other options (used less often, and may not currently work properly):
 Deploying to the live site
 --------------------------
 
-    > cd src
-    > ../tools/book-dist.py --php-chunk
+    > ./book-dist.py --php-chunk
     > cap {staging|production} deploy
 
 Regenerating Samples

@@ -1,12 +1,11 @@
-# This is a Makefile fragment, which is expected to be included by the
-# locale-specific Makefiles located at ../LOCALE_CODE/Makefile .  As a result,
-# the relative paths contained within are relative to the LOCALE_CODE
-# directory, and *not* to the tools directory, where this file itself resides.
+TOOLS_DIR = tools
 
-include ../tools/Makefile.base-vars
+include $(TOOLS_DIR)/Makefile.base-vars
+
 NAME = doc
 OUTNAME = amee-doc
-DIR = doc
+DIR = src/doc
 IMAGES = $(DIR)/images/*.png
 INSTALL_DIR = $(DESTDIR)/usr/share/doc/amee
-include ../tools/Makefile.base-rules
+
+include $(TOOLS_DIR)/Makefile.base-rules
