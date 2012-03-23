@@ -4,7 +4,7 @@ require "capistrano/ext/multistage"
 set :application, "AMEEconnect Documentation"
 
 set :scm, :none
-set :repository,  "./src/doc/php-chunk"
+set :repository,  "./dist/php-chunk"
 set :deploy_via, :copy
 set :copy_compression,    :gzip
 

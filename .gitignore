@@ -2,8 +2,4 @@
 .DS_Store
 *.tmproj
 version.ent
-amee-doc.html
-html-chunk
-php-chunk
-
-amee-doc.tar.gz
+dist

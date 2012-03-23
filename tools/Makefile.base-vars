@@ -43,23 +43,23 @@ OUTNAME = $(NAME)
 
 SAMPLES_DIR = $(DIR)/samples
 SAMPLES_BUILD_CMD = rake
-HTML_CHUNK_DIR = $(DIR)/html-chunk
-HTML_TARGET = $(DIR)/$(OUTNAME).html
+HTML_CHUNK_DIR = $(OUTDIR)/html-chunk
+HTML_TARGET = $(OUTDIR)/$(OUTNAME).html
 # In the HTML chunk build, index.html is created last, so serves as an 
 # acceptable timestamp file for the entire multi-file output.
 HTML_CHUNK_TARGET = $(HTML_CHUNK_DIR)/index.html
-PHP_CHUNK_DIR = $(DIR)/php-chunk
+PHP_CHUNK_DIR = $(OUTDIR)/php-chunk
 PHP_CHUNK_TARGET = $(PHP_CHUNK_DIR)/index.php
 ARCH_CMD = tar -jcvf
 ARCH_EXT = .tar.bz2
 HTML_ARCH_BASENAME = $(OUTNAME)-html
 HTML_CHUNK_ARCH_BASENAME = $(OUTNAME)-html-chunk
-HTML_ARCH_TARGET = $(DIR)/$(HTML_ARCH_BASENAME)$(ARCH_EXT)
-HTML_CHUNK_ARCH_TARGET = $(DIR)/$(HTML_CHUNK_ARCH_BASENAME)$(ARCH_EXT)
-PDF_TARGET = $(DIR)/$(OUTNAME).pdf
-PS_TARGET = $(DIR)/$(OUTNAME).ps
-FO_TARGET = $(DIR)/$(OUTNAME).fo
-EPUB_TARGET = $(DIR)/$(OUTNAME).epub
+HTML_ARCH_TARGET = $(OUTDIR)/$(HTML_ARCH_BASENAME)$(ARCH_EXT)
+HTML_CHUNK_ARCH_TARGET = $(OUTDIR)/$(HTML_CHUNK_ARCH_BASENAME)$(ARCH_EXT)
+PDF_TARGET = $(OUTDIR)/$(OUTNAME).pdf
+PS_TARGET = $(OUTDIR)/$(OUTNAME).ps
+FO_TARGET = $(OUTDIR)/$(OUTNAME).fo
+EPUB_TARGET = $(OUTDIR)/$(OUTNAME).epub
 XML_SOURCE = $(DIR)/$(NAME).xml
 VERSION_SOURCE = $(DIR)/version.ent
 ALL_SOURCE = $(filter-out $(DIR)/version.ent $(DIR)/amee-doc.xml, $(wildcard $(DIR)/*.xml))

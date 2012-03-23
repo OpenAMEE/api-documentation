@@ -7,6 +7,7 @@ include $(TOOLS_DIR)/Makefile.base-vars
 NAME = doc
 OUTNAME = amee-doc
 DIR = src/doc
+OUTDIR = dist
 IMAGES = $(DIR)/images/*.png
 
 include $(TOOLS_DIR)/Makefile.base-rules
