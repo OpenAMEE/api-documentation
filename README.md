@@ -23,7 +23,7 @@ Manual Builds
 standard targets:
 
 * `html-chunk`: HTML multi page, generally used in development
-* `php-chunk`:  PHP multi page for use in AMEE's wordpress site
+* `php-chunk`:  PHP multi page for use in AMEE's wordpress site (this is the default)
 
 other targets (used less often, and may not currently work properly):
 
@@ -33,8 +33,8 @@ other targets (used less often, and may not currently work properly):
 Deploying to the live site
 --------------------------
 
-    > make php-chunk
-    > cap {staging|production} deploy
+    > make
+	> cap {staging|production} deploy
 
 Regenerating Samples
 --------------------

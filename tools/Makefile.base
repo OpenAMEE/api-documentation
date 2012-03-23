@@ -1,5 +1,7 @@
 TOOLS_DIR = tools
 
+default: php-chunk
+
 include $(TOOLS_DIR)/Makefile.base-vars
 
 NAME = doc
