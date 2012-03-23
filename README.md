@@ -9,8 +9,13 @@ This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unpor
 Requirements
 ------------
 
-OSX with Homebrew:
-(Assuming RVM/Ruby 1.9.2/Bundler preinstalled)
+On OSX:
+
+* XCode or the XCode command line tools
+* Homebrew
+* RVM with Ruby 1.9.2
+
+Then:
 
     > brew install docbook fop
     > bundle
@@ -39,8 +44,13 @@ Deploying to the live site
 Regenerating Samples
 --------------------
 
+First time only:
+
 	> cp src/doc/samples/amee.example.yml src/doc/samples/amee.yml
 	> vi src/doc/samples/amee.yml
+
+Every time:
+
     > make samples
 
 To add new samples, edit src/doc/samples/Rakefile and add a new request. Then include the generated 
@@ -51,7 +61,6 @@ Automated Builds
 
 From the root directory, run:
 
-    > bundle
     > guard
 
 This should set up automatic building of the html-chunk documentation. A config.ru file is 
