@@ -29,8 +29,6 @@ XSLTPROC = java -cp '$(TOOLS_DIR)/bin/saxon65.jar:$(TOOLS_DIR)/bin/saxon.jar:$(T
   -Dorg.apache.xerces.xni.parser.XMLParserConfiguration=org.apache.xerces.parsers.XIncludeParserConfiguration \
    com.icl.saxon.StyleSheet
 XMLLINT = xmllint
-INSTALL_DIR = $(DESTDIR)/usr/share/doc/OVERRIDE_ME_WITH_SOMETHING_SUITABLE
-INSTALL_DATA = cp -r
 MKDIR = mkdir -p
 GITVERSION = git log -1 --pretty=%h
 
@@ -64,7 +62,6 @@ XML_SOURCE = $(DIR)/$(NAME).xml
 VERSION_SOURCE = $(DIR)/version.ent
 ALL_SOURCE = $(filter-out $(DIR)/version.ent $(DIR)/amee-doc.xml, $(wildcard $(DIR)/*.xml))
 STYLESHEET = $(DIR)/styles.css $(DIR)/script
-INSTALL_SUBDIR = $(INSTALL_DIR)/$(NAME)
 
 ENSURE_XSL = if ! test -e "$(XSL_DIR)/xsl"; \
 	     then $(TOOLS_DIR)/bin/find-xsl.py; fi

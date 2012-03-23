@@ -6,6 +6,5 @@ NAME = doc
 OUTNAME = amee-doc
 DIR = src/doc
 IMAGES = $(DIR)/images/*.png
-INSTALL_DIR = $(DESTDIR)/usr/share/doc/amee
 
 include $(TOOLS_DIR)/Makefile.base-rules

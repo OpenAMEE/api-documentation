@@ -3,8 +3,6 @@
 
 guard 'shell' do
   watch(/src\/doc\/(.*).xml/) do |m|
-	Dir.chdir("src") do
-      `./build.py --html-chunk`
-    end
+    `make html-chunk`
   end
 end
