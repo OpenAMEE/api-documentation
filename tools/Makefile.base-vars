@@ -41,6 +41,8 @@ IMAGES =
 XSL_DIR = `[ -d src/stylesheets ] && echo src/stylesheets || echo $(TOOLS_DIR)`
 OUTNAME = $(NAME)
 
+SAMPLES_DIR = $(DIR)/samples
+SAMPLES_BUILD_CMD = rake
 HTML_CHUNK_DIR = $(DIR)/html-chunk
 HTML_TARGET = $(DIR)/$(OUTNAME).html
 # In the HTML chunk build, index.html is created last, so serves as an 

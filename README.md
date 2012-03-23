@@ -39,12 +39,11 @@ Deploying to the live site
 Regenerating Samples
 --------------------
 
-    > cd src/doc/samples
-	> cp amee.example.yml amee.yml
-	> vi amee.yml
-    > rake
+	> cp src/doc/samples/amee.example.yml src/doc/samples/amee.yml
+	> vi src/doc/samples/amee.yml
+    > make samples
 
-To add new samples, edit Rakefile and add a new request. Then include the generated 
+To add new samples, edit src/doc/samples/Rakefile and add a new request. Then include the generated 
 file from the samples directory, which will include the XML and JSON variants automatically.
 
 Automated Builds

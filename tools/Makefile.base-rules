@@ -82,8 +82,6 @@ $(EPUB_TARGET): $(ALL_SOURCE)
 book/amee-doc.xml: version
 	xmllint --nonet --noent --xinclude --postvalid --output book/amee-doc.xml book/book.xml
 
-# Targets
-
 html: $(HTML_TARGET)
 
 html-chunk: $(HTML_CHUNK_TARGET)
@@ -97,6 +95,9 @@ html-chunk-arch: $(HTML_CHUNK_ARCH_TARGET)
 pdf: $(PDF_TARGET)
 
 ps: $(PS_TARGET)
+
+samples:
+	cd $(SAMPLES_DIR); $(SAMPLES_BUILD_CMD); cd -
 
 # Clean targets
 clean:
