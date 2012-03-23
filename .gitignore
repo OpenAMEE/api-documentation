@@ -1,5 +1,9 @@
 *~
 .DS_Store
 *.tmproj
+version.ent
+amee-doc.html
+html-chunk
+php-chunk
 
-/src/doc/php-chunk/
+amee-doc.tar.gz
