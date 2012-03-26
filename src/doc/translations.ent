@@ -21,3 +21,5 @@
 <!ENTITY profiles "profiles">
 <!ENTITY profile_item "profile item">
 <!ENTITY profile_items "profile items">
+<!ENTITY required "&check;">
+<!ENTITY not_required "&cross;">

@@ -101,7 +101,7 @@
 			<tr><td>Successful Response Code</td><td><code>200 OK</code></td></tr>
 		</table>
 		<section>
-		  <title>Optional Query Parameters</title>
+		  <title>Query Parameters</title>
 		    <para>
 				The &category; list resource provides a number of parameters for searching. These
 				can be specified as simple strings, in which case an exact match is required, or as 
@@ -111,50 +111,61 @@
   			<tr>
 				<th>Query Parameter</th>
 				<th>Description</th>
+				<th>Required?</th>
   			</tr>
 			<tr>
 				<td><code>wikiName</code></td>
 				<td>Match results by wikiName.</td>
+				<td>&not_required;</td>
 			</tr>
 			<tr>
 				<td><code>wikiDoc</code></td>
 				<td>Match results by wikiDoc. Normally you'll want to use a substring search here.</td>
+				<td>&not_required;</td>
 			</tr>
 			<tr>
 				<td><code>provenance</code></td>
 				<td>Match results by provenance; standards body name, for instance.</td>
+				<td>&not_required;</td>
 			</tr>
 			<tr>
 				<td><code>authority</code></td>
 				<td>Match results by authority; Valid values are <code>enterprise</code>, <code>recommended</code>, <code>verified</code>, or <code>unverified</code>.</td>
+				<td>&not_required;</td>
 			</tr>
 			<tr>
 				<td><code>itemDefinitionUid</code></td>
 				<td>List &categories; that use the specified item definition (by UID).</td>
+				<td>&not_required;</td>
 			</tr>
 			<tr>
 				<td><code>itemDefinitionName</code></td>
 				<td>List &categories; that use the specified item definition (by name).</td>
+				<td>&not_required;</td>
 			</tr>
 			<tr>
 				<td><code>tags</code></td>
 				<td>A comma-separated list of tags that returned &categories; should have.
 					Can also be a lucene query expression.</td>
+				<td>&not_required;</td>
 			</tr>
 			<tr>
 				<td><code>excTags</code></td>
 				<td>A comma-separated list of tags that returned &categories; should 
 					<emphasis>not</emphasis> have. Can also be a lucene query expression.</td>
+				<td>&not_required;</td>
 			</tr>
 			<tr>					
 				<td><code>resultStart</code></td>
 				<td>Zero-based index of the first result that should be returned. See 
 					<xref linkend='paging'/>. Defaults to 0 if not specified.</td>
+				<td>&not_required;</td>
 			</tr>
 			<tr>					
 				<td><code>resultLimit</code></td>
 				<td>Specifies the number of results to return in a single page. See 
 					<xref linkend='paging'/>. Defaults to 50 if not specified..</td>
+				<td>&not_required;</td>
 			</tr>
   		</table>
 	  </section>
