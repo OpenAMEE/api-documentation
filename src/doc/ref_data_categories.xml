@@ -170,7 +170,7 @@
   		</table>
 	  </section>
 		<para>
-		  The response contains a JSON or XML encoded description of &categories; that match the query criteria.
+		  The response contains JSON or XML encoded descriptions of all &categories; that match the query criteria.
   	    </para>
         <xi:include href="samples/get_3_categories_tags=electricity_resultLimit=10.xml"/>
 	</section>
@@ -219,16 +219,18 @@
 			<tr><td>Successful Response Code</td><td><code>200 OK</code></td></tr>
 		</table>
 		<section>
-		  <title>Optional Parameters</title>
+		  <title>Query Parameters</title>
   		<table class='parameters'>
   			<tr>
 					<th>Parameter</th>
 					<th>Description</th>
+					<th>Required?</th>
   			</tr>
 				<tr>
 					<td>{&drill_options;}</td>
 					<td>Any number of choices and the values chosen. See below for detailed explanation.
 					  Choices should be provided in the correct order.</td>
+					<td>&required; (except for first request)</td>
 				</tr>
   		</table>
 	  </section>
