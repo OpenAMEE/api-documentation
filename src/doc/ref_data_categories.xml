@@ -48,7 +48,7 @@
 			</tr>
 			<tr>
 				<td>history</td>
-				<td>The <link linkend='history'>history</link> data for the &category;. A CSV-style 
+				<td>The history data for the &category;. A CSV-style 
 					list of change dates and comments.</td>
 				<td><code>history</code></td>
 			</tr>
