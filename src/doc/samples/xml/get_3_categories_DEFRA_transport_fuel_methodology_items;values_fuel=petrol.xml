@@ -20,13 +20,13 @@ Content-Type: application/xml; charset=UTF-8
   <Item uid="AA6B1557CEA6">
    <Values>
     <Value history="false">
-     <Path>massTotalCO2ePerVolume</Path>
-     <Value>2.7227</Value>
+     <Path>massCH4PerVolume</Path>
+     <Value>0.0034</Value>
      <Unit>kg/L</Unit>
     </Value>
     <Value history="false">
-     <Path>massCH4PerVolume</Path>
-     <Value>0.0034</Value>
+     <Path>massTotalCO2ePerVolume</Path>
+     <Value>2.7227</Value>
      <Unit>kg/L</Unit>
     </Value>
     <Value history="false">
@@ -48,13 +48,13 @@ Content-Type: application/xml; charset=UTF-8
      <Value>petrol</Value>
     </Value>
     <Value history="false">
-     <Path>massN2OPerVolume</Path>
-     <Value>0.0065</Value>
+     <Path>massCO2PerVolume</Path>
+     <Value>2.3018</Value>
      <Unit>kg/L</Unit>
     </Value>
     <Value history="false">
-     <Path>massCO2PerVolume</Path>
-     <Value>2.3018</Value>
+     <Path>massN2OPerVolume</Path>
+     <Value>0.0065</Value>
      <Unit>kg/L</Unit>
     </Value>
    </Values>

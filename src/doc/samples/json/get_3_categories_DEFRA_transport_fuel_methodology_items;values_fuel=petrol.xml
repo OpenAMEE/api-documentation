@@ -22,14 +22,14 @@ Content-Type: application/json; charset=UTF-8
         {
           "history": false,
           "unit": "kg/L",
-          "value": 2.7227,
-          "path": "massTotalCO2ePerVolume"
+          "value": 0.0034,
+          "path": "massCH4PerVolume"
         },
         {
           "history": false,
           "unit": "kg/L",
-          "value": 0.0034,
-          "path": "massCH4PerVolume"
+          "value": 2.7227,
+          "path": "massTotalCO2ePerVolume"
         },
         {
           "history": false,
@@ -56,14 +56,14 @@ Content-Type: application/json; charset=UTF-8
         {
           "history": false,
           "unit": "kg/L",
-          "value": 0.0065,
-          "path": "massN2OPerVolume"
+          "value": 2.3018,
+          "path": "massCO2PerVolume"
         },
         {
           "history": false,
           "unit": "kg/L",
-          "value": 2.3018,
-          "path": "massCO2PerVolume"
+          "value": 0.0065,
+          "path": "massN2OPerVolume"
         }
       ]
     }
