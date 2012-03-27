@@ -163,8 +163,10 @@ def replace_ids(format, old_uid, new_uid)
   puts "  Replacing UIDs (#{old_uid} -> #{new_uid})"
   Dir.glob("#{format}/*.xml") do |filename|
     text = File.read(filename)
+    ic = Iconv.new('UTF-8//IGNORE', 'UTF-8')
+    text = ic.iconv(text)
     File.open(filename, "w") do |file| 
-      file.puts text.gsub(old_uid, new_uid)
+      file.puts text.force_encoding("UTF-8").gsub(old_uid, new_uid)
     end
   end
 end
@@ -225,6 +227,15 @@ task :samples do
       end
       request :get, "/3/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid};values"
       request :get, "/3/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid}/values/massTotalCO2ePerVolume"
+      # Get data item history sample
+      response = request :get, "/3/categories/UK_energy_by_supplier/items;values", :supplier => 'ecotricity'
+      case @format
+      when :json
+        data_item_uid = response.body.match(/"uid":"([A-Z0-9]{12})"/)[1]
+      when :xml
+        data_item_uid = response.body.match(/<Item uid="([A-Z0-9]{12})">/)[1]
+      end
+      request :get, "/3/categories/UK_energy_by_supplier/items/#{data_item_uid}/values/kgCO2PerKWh"
     ensure
       # Clear up
       request :delete, "/3/profiles/#{profile_uid}/items/#{item_uid}" if item_uid
