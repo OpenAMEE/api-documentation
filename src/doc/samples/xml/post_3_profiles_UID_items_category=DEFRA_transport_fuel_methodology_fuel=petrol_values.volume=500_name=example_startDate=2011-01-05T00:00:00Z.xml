@@ -15,7 +15,7 @@ category=DEFRA_transport_fuel_methodology&amp;fuel=petrol&amp;values.volume=500&
 <programlisting role='header'>
 HTTP/1.1 201 Created
 Content-Type: application/xml
-Location: https://platform-api-stage.amee.com/3.6.0/profiles/FC2ODLZHCNHS/items/O9IX7PWGT5W4
+Location: https://api-stage.amee.com/3.6.0/profiles/FC2ODLZHCNHS/items/O9IX7PWGT5W4
 </programlisting>
 <programlisting language='xml'><![CDATA[
 <?xml version="1.0" encoding="ISO-8859-1"?>
