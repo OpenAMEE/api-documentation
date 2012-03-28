@@ -55,7 +55,7 @@
       Now we can actually perform the calculation. 
 	</para>
 	<para>
-	  You simply do a GET request to URL that represents the &category; you've chosen, which includes made up of the &category; name,
+	  You simply do a GET request to the URL that represents the &category; you've chosen, which includes the &category; name,
 	  and you include the &drill_options; as parameters in order to identify the &data_item;. You also include some &profile_item_value; parameters; 
 	  these are different for every category, but again the 
 	  <ulink url='&discover_url;/categories/Great_Circle_flight_methodology&developer_tab_path;'>&developer_tab;</ulink> will tell you what they are.

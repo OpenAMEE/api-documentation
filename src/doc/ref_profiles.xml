@@ -139,7 +139,7 @@
 		</table>
 		<xi:include href="samples/get_3_profiles.xml"/>
 	</section>
-	<section xml:id="delete-profile-item-reference">
+	<section xml:id="delete-profile-reference">
 		<title>Delete &profile;</title>
 		<para>
 			Completely remove the specified &profile; from the AMEE database, including all &profile_items;

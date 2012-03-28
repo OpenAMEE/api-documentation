@@ -183,7 +183,7 @@
 		</itemizedlist>
 		<para>
 			By incrementing the <code>resultStart</code> parameter by <code>resultLimit</code>, you can page through the
-			complete list until <code>truncated</code> is false.
+			complete list until <code>resultsTruncated</code> is false.
 		</para>
 	  <xi:include href='samples/get_3_categories_US_specific_car_transport_items;label_engineSize=2.5_resultLimit=10.xml'/>
   </section>

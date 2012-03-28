@@ -218,7 +218,7 @@
 		</para>
 		<xi:include href="samples/get_3_profiles_UID_items_UID;amounts.xml"/>
 		<para>
-		  If you need the original &profile_item_values; back, you can use the values list resource:
+		  If you need the original &profile_item_values; back, you can use the values list resource.
 		</para>
 		<xi:include href="samples/get_3_profiles_UID_items_UID_values;itemValueDefinition.xml"/>
 	</section>

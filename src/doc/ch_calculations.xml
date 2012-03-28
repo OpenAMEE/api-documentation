@@ -37,7 +37,7 @@
       You can perform thousands of different calculations by using different &categories; and
       &data_items;. As each &category; represents a different methodology, the &profile_item_values;
       are different for each one. &discover; lists which are valid for which &categories;, as well
-      as showing different usage options; which ones are required, optional, and so on.
+      as showing different usage options; which ones are required, which are optional, and so on.
     </para>
     <para>
 	  By using &profiles;, you can also store these &profile_item_values;, or track how they change over time. 

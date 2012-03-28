@@ -164,7 +164,7 @@
 			<tr>					
 				<td><code>resultLimit</code></td>
 				<td>Specifies the number of results to return in a single page. See 
-					<xref linkend='paging'/>. Defaults to 50 if not specified..</td>
+					<xref linkend='paging'/>. Defaults to 50 if not specified.</td>
 				<td>&not_required;</td>
 			</tr>
   		</table>
