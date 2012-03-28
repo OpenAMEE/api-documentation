@@ -36,7 +36,7 @@
 			</tr>
 			<tr>
 				<td>categories</td>
-				<td>The &models; that have been used within this &profile;.</td>
+				<td>The &categories; that have been used within this &profile;.</td>
 				<td><code>categories</code></td>
 			</tr>
 			<tr>

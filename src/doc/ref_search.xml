@@ -29,7 +29,7 @@
 		</tr>
 		<tr>
 			<td>Successful Response Code</td>
-			<td>200 OK</td>
+			<td><code>200 OK</code></td>
 		</tr>
 	</table>
 	<section>
