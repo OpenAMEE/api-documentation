@@ -35,6 +35,11 @@
 				<td></td>
 			</tr>
 			<tr>
+				<td>categories</td>
+				<td>The &models; that have been used within this &profile;.</td>
+				<td><code>categories</code></td>
+			</tr>
+			<tr>
 				<td>created</td>
 				<td>The time and date on which the &profile; was created.</td>
 				<td><code>audit</code></td>
@@ -91,6 +96,28 @@
 		</para>
 		<xi:include href="samples/post_3_profiles_profile=true.xml"/>
 	</section>
+	<section xml:id="get-profile-item-reference">
+		<title>Get &profile;</title>
+		<para>
+			The main information available in the &profile; resource is the list of &categories; used. 
+			This is useful for automating display of stored data.
+		</para>
+		<table class="requestdetails">
+			<tr>
+				<td>URL</td>
+				<td><code>&api_url;/&api_version;/profiles/{profile_uid}</code></td>
+			</tr>
+			<tr>
+				<td>HTTP Method</td>
+				<td><code>GET</code></td>
+			</tr>
+			<tr>
+				<td>Successful Response Code</td>
+				<td><code>200 OK</code></td>
+			</tr>
+		</table>
+		<xi:include href="samples/get_3_profiles_UID;categories.xml"/>
+	</section>
 	<section xml:id="list-profiles-reference">
 		<title>List &profiles;</title>
 		<para>
@@ -133,27 +160,5 @@
 			</tr>
 		</table>
 		<xi:include href="samples/delete_3_profiles_UID.xml"/>
-	</section>
-	<section xml:id="delete-profile-item-reference">
-		<title>List &categories; used</title>
-		<para>
-			It is possible to get a list of which &categories; have been used within a single
-			&profile;. This is useful for automating display of stored data.
-		</para>
-		<table class="requestdetails">
-			<tr>
-				<td>URL</td>
-				<td><code>&api_url;/&api_version;/profiles/{profile_uid}/categories</code></td>
-			</tr>
-			<tr>
-				<td>HTTP Method</td>
-				<td><code>GET</code></td>
-			</tr>
-			<tr>
-				<td>Successful Response Code</td>
-				<td><code>200 OK</code></td>
-			</tr>
-		</table>
-		<xi:include href="samples/get_3_profiles_UID;categories.xml"/>
 	</section>
 </section>
