@@ -11,7 +11,7 @@
 <section xml:id='auth-reference' xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Authentication</title>
   <para>
-    &api_name; uses HTTP Basic authentication <biblioref linkend='httpbasic'/> for all 
+    &api_name; uses <link linkend='httpbasic'>HTTP Basic authentication</link> for all 
     requests. The following example shows how this is done with the CURL command line 
     HTTP client.
   </para>
