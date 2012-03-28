@@ -96,7 +96,7 @@
 		</para>
 		<xi:include href="samples/post_3_profiles_profile=true.xml"/>
 	</section>
-	<section xml:id="get-profile-item-reference">
+	<section xml:id="get-profile-reference">
 		<title>Get &profile;</title>
 		<para>
 			The main information available in the &profile; resource is the list of &categories; used. 
