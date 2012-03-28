@@ -35,58 +35,58 @@
     </para>
     <table class='properties'>
       <tr><th>Mass</th><th>symbol</th></tr>
-      <tr><td>Grams</td><td>g</td></tr>
-      <tr><td>Kilograms</td><td>kg</td></tr>
-      <tr><td>Metric Tons / Tonnes</td><td>t</td></tr>
-      <tr><td>Ounces</td><td>oz</td></tr>
-      <tr><td>Pounds</td><td>lb</td></tr>
-      <tr><td>Tons (UK imperial)</td><td>ton_uk</td></tr>
-      <tr><td>Tons (US imperial)</td><td>ton_us</td></tr>
+      <tr><td>Grams</td><td><code>g</code></td></tr>
+      <tr><td>Kilograms</td><td><code>kg</code></td></tr>
+      <tr><td>Metric Tons / Tonnes</td><td><code>t</code></td></tr>
+      <tr><td>Ounces</td><td><code>oz</code></td></tr>
+      <tr><td>Pounds</td><td><code>lb</code></td></tr>
+      <tr><td>Tons (UK imperial)</td><td><code>ton_uk</code></td></tr>
+      <tr><td>Tons (US imperial)</td><td><code>ton_us</code></td></tr>
       <tr><th>Distance</th><th>symbol</th></tr>
-      <tr><td>Metres</td><td>m</td></tr>
-      <tr><td>Kilometres</td><td>km</td></tr>
-      <tr><td>Feet</td><td>ft</td></tr>
-      <tr><td>Yards</td><td>yd</td></tr>
-      <tr><td>Miles</td><td>mi</td></tr>
-      <tr><td>Nautical Miles</td><td>nmi</td></tr> 
+      <tr><td>Metres</td><td><code>m</code></td></tr>
+      <tr><td>Kilometres</td><td><code>km</code></td></tr>
+      <tr><td>Feet</td><td><code>ft</code></td></tr>
+      <tr><td>Yards</td><td><code>yd</code></td></tr>
+      <tr><td>Miles</td><td><code>mi</code></td></tr>
+      <tr><td>Nautical Miles</td><td><code>nmi</code></td></tr> 
       <tr><th>Volume</th><th>symbol</th></tr>
-      <tr><td>Litres</td><td>L</td></tr>
-      <tr><td>Cubic Metres</td><td>m³</td></tr>
-      <tr><td>Fluid Ounces (UK imperial)</td><td>oz_fl_uk</td></tr>
-      <tr><td>Fluid Ounces (US imperial)</td><td>oz_fl</td></tr>
-      <tr><td>Gallons (UK imperial)</td><td>gal_uk or gallon_uk</td></tr>
-      <tr><td>Gallons (US imperial)</td><td>gal</td></tr>
+      <tr><td>Litres</td><td><code>L</code></td></tr>
+      <tr><td>Cubic Metres</td><td><code>m³</code></td></tr>
+      <tr><td>Fluid Ounces (UK imperial)</td><td><code>oz_fl_uk</code></td></tr>
+      <tr><td>Fluid Ounces (US imperial)</td><td><code>oz_fl</code></td></tr>
+      <tr><td>Gallons (UK imperial)</td><td><code>gal_uk</code> or <code>gallon_uk</code></td></tr>
+      <tr><td>Gallons (US imperial)</td><td><code>gal</code></td></tr>
       <tr><th>Energy</th><th>symbol</th></tr>
-      <tr><td>Kilowatt-Hours</td><td>kWh</td></tr>
-      <tr><td>Joules</td><td>J</td></tr>
+      <tr><td>Kilowatt-Hours</td><td><code>kWh</code></td></tr>
+      <tr><td>Joules</td><td><code>J</code></td></tr>
       <tr><th>Energy - BTU</th><th>symbol</th></tr>
-      <tr><td>39 °F</td><td>BTU_ThirtyNineF</td></tr>
-      <tr><td>Mean</td><td>BTU_Mean</td></tr>
-      <tr><td>IT</td><td>BTU_IT</td></tr>
-      <tr><td>ISO</td><td>BTU_ISO</td></tr>
-      <tr><td>59 °F</td><td>BTU_FiftyNineF</td></tr>
-      <tr><td>60 °F</td><td>BTU_SixtyF</td></tr>
-      <tr><td>63 °F</td><td>BTU_SixtyThreeF</td></tr>
-      <tr><td>Thermochemical</td><td>BTU_Thermochemical</td></tr> 
+      <tr><td>39 °F</td><td><code>BTU_ThirtyNineFv</code></td></tr>
+      <tr><td>Mean</td><td><code>BTU_Mean</code></td></tr>
+      <tr><td>IT</td><td><code>BTU_IT</code></td></tr>
+      <tr><td>ISO</td><td><code>BTU_ISO</code></td></tr>
+      <tr><td>59 °F</td><td><code>BTU_FiftyNineF</code></td></tr>
+      <tr><td>60 °F</td><td><code>BTU_SixtyF</code></td></tr>
+      <tr><td>63 °F</td><td><code>BTU_SixtyThreeF</code></td></tr>
+      <tr><td>Thermochemical</td><td><code>BTU_Thermochemical</code></td></tr> 
       <tr><th>Energy - Therm</th><th>symbol</th></tr>
-      <tr><td>39 °F</td><td>thm_ThirtyNineF</td></tr>
-      <tr><td>Mean</td><td>thm_Mean</td></tr>
-      <tr><td>IT</td><td>thm_IT</td></tr>
-      <tr><td>EC</td><td>thm_ec, alias of thm_IT</td></tr>
-      <tr><td>ISO</td><td>thm_ISO</td></tr>
-      <tr><td>59 °F</td><td>thm_FiftyNineF</td></tr>
-      <tr><td>US</td><td>thm_us, alias of thm_FiftyNineF</td></tr>
-      <tr><td>60 °F</td><td>thm_SixtyF</td></tr>
-      <tr><td>63 °F</td><td>thm_SixtyThreeF</td></tr>
-      <tr><td>Thermochemical</td><td>thm_Thermochemical</td></tr>
+      <tr><td>39 °F</td><td><code>thm_ThirtyNineF</code></td></tr>
+      <tr><td>Mean</td><td><code>thm_Mean</code></td></tr>
+      <tr><td>IT</td><td><code>thm_IT</code></td></tr>
+      <tr><td>EC</td><td><code>thm_ec</code>, alias of <code>thm_IT</code></td></tr>
+      <tr><td>ISO</td><td><code>thm_ISO</code></td></tr>
+      <tr><td>59 °F</td><td><code>thm_FiftyNineF</code></td></tr>
+      <tr><td>US</td><td><code>thm_us</code>, alias of <code>thm_FiftyNineF</code></td></tr>
+      <tr><td>60 °F</td><td><code>thm_SixtyF</code></td></tr>
+      <tr><td>63 °F</td><td><code>thm_SixtyThreeF</code></td></tr>
+      <tr><td>Thermochemical</td><td><code>thm_Thermochemical</code></td></tr>
       <tr><th>Time</th><th>symbol</th></tr>
-      <tr><td>Second</td><td>s</td></tr>
-      <tr><td>Minute</td><td>min</td></tr>
-      <tr><td>Hour</td><td>h</td></tr>
-      <tr><td>Day</td><td>day</td></tr>
-      <tr><td>Week</td><td>week</td></tr>
-      <tr><td>Month</td><td>month</td></tr>
-      <tr><td>Year</td><td>year</td></tr>
+      <tr><td>Second</td><td><code>s</code></td></tr>
+      <tr><td>Minute</td><td><code>min</code></td></tr>
+      <tr><td>Hour</td><td><code>h</code></td></tr>
+      <tr><td>Day</td><td><code>day</code></td></tr>
+      <tr><td>Week</td><td><code>week</code></td></tr>
+      <tr><td>Month</td><td><code>month</code></td></tr>
+      <tr><td>Year</td><td><code>year</code></td></tr>
     </table>
   </section>
   <section id='matrix-parameters'>
@@ -188,7 +188,7 @@
 	  <xi:include href='samples/get_3_categories_US_specific_car_transport_items;label_engineSize=2.5_resultLimit=10.xml'/>
   </section>
   <section xml:id='interactive-drilldowns'>
-    <title>Interactive Drilldowns</title>
+    <title>Interactive <phrase role='titleize'>&data_item;</phrase> Selection</title>
     <para>
       Sometimes you want to give your users a choice of which &data_item; to use within a &category;. For instance, they might
       need to choose the make of their car, or how their home is heated. For those situations when there are too many

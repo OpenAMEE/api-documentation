@@ -72,12 +72,12 @@
 	</para>
   </section>
   <section xml:id='retrieve-items'>
-    <title>Retrieving Stored <phrase role='titleize'>&profile_item_values;</phrase></title>
+    <title>Fetching <phrase role='titleize'>&return_values;</phrase></title>
     <para>
-      To retrieve stored &profile_item_values;, you simply perform a GET on the &profile_item; URL, which uses the above UID.
-      A sample request that includes the calculated &return_values; is shown below; you could also use the <code>values</code> matrix
-	  parameter to get the original &profile_item_values; back. See <xref linkend='get-profile-item-reference'/>
-      for the full details of available matrix parameters.
+      To retrieve &return_values;, you simply perform a GET on the &profile_item; URL, which uses the above UID.
+      A sample request that includes the calculated &return_values; is shown below. You can also access the <code>values</code>
+	  subresource to get the original &profile_item_values; back. See <xref linkend='get-profile-item-reference'/>
+      for full details.
     </para>
 	<xi:include href='samples/get_3_profiles_UID_items_UID;amounts.xml'/>
     <para>
@@ -105,11 +105,11 @@
     <title>Building Time Series</title>
     <para>
       Storing a single &profile_item; is useful, but most data changes over time, particularly 
-      when we dealing with energy use. &api_name; allows you to store time information along 
-      with your &profile_item_values;, so that you can build up a time series of data.
+      when dealing with energy use. &api_name; allows you to store time information along 
+      with your &profile_item_values;, so that you can build up a sequence of data over time.
     </para>
     <para>
-      Three parameters are available to control time information: <code>startDate</code>, <code>endDate</code>, and 
+      Three parameters are available to specify time information: <code>startDate</code>, <code>endDate</code>, and 
       <code>duration</code>. By providing these when you create &profile_items;, you can set the time 
       that the created &profile_item; is valid for. By default, <code>startDate</code> is "now" and 
       <code>endDate</code> is infinitely far in the future. If your data is not time-sensitive, then 
@@ -139,7 +139,7 @@ duration=PT30M</programlisting>
 	</para>
 	<para>
       A name is not required, but it is good practise to specify one. As the default <code>startDate</code> is "now", if you create
-	  &profile_items; for the same &data_item; during the same minute, they will conflict if you do not specify a name.
+	  multiple &profile_items; for the same &data_item; during the same minute, they will conflict if you do not specify a name.
     </para>
   </section>
   <section xml:id='time-series-queries'>
@@ -187,8 +187,8 @@ duration=PT30M</programlisting>
       </table>
       <para>
         For instance, if you have a &profile_item; that lasts a week, and request just one day within that period, if you 
-        do not specify mode, you will get the &return_values; for the entire week. If you specify <code>mode=prorata</code>, you will get the 
-        &return_values; for that single day.
+        do not specify <code>mode</code>, you will get the &return_values; for the entire week. If you specify 
+		<code>mode=prorata</code>, you will get the &return_values; for that single day.
       </para>
     </section>
   </section>
