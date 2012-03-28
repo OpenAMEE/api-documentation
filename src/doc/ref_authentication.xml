@@ -15,21 +15,21 @@
     requests. The following example shows how this is done with the CURL command line 
     HTTP client.
   </para>
-  <programlisting>curl https://live.amee.com/data -H "accept:application/xml" -u username:password</programlisting>
+  <programlisting>curl &api_url;/&api_version;/profiles -H "accept:application/xml" -u username:password</programlisting>
   <para>
     HTTP Basic authentication is sent as an Authorization header in each HTTP request. The header should contain
     a base64-encoded string in the form username:password, as shown in the example below.
   </para>
   <para>
     Because HTTP Basic sends your login credentials with every request encoded in base64 format,
-    you should ensure you always use HTTPS connections to AMEE.
+    &api_name; requires HTTPS connections for security.
   </para>
   <section role='tabbed'>
     <section role='tab'>
       <title>Example</title>
       <section role='httprequest'>
         <programlisting role='header'>
-GET /profile HTTP/1.1
+GET /&api_version;/profiles HTTP/1.1
 Accept: application/xml
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
         </programlisting>
