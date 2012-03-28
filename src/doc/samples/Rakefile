@@ -211,6 +211,7 @@ task :samples do
       request :get, "/3/profiles/#{profile_uid}/items"
       # Get an existing profile item
       request :get, "/3/profiles/#{profile_uid}/items/#{item_uid};amounts"
+      request :get, "/3/profiles/#{profile_uid}/items/#{item_uid}/values;itemValueDefinition"
       # Update a profile item
       request :put, "/3/profiles/#{profile_uid}/items/#{item_uid}", :'values.volume' => 1000
       # Do an interactive drilldown
