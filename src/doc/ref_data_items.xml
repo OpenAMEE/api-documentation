@@ -86,7 +86,7 @@
 		</para>
 		<table class='requestdetails'>
 			<tr><td>URL</td>
-			    <td><code>https://{server}.amee.com/&api_version;/categories/{wikiName}/items[;{matrix_parameters}]?{query_parameters}</code></td></tr>
+			    <td><code>&api_url;/&api_version;/categories/{wikiName}/items[;{matrix_parameters}]?{query_parameters}</code></td></tr>
 			<tr><td>HTTP Method</td><td><code>GET</code></td></tr>
 			<tr><td>Successful Response Code</td><td><code>200 OK</code></td></tr>
 		</table>
@@ -145,7 +145,7 @@
 		</para>
 		<table class='requestdetails'>
 			<tr><td>URL</td>
-			    <td><code>https://{server}.amee.com/&api_version;/categories/{wikiName}/items/{uid}[;{matrix_parameters}]</code></td></tr>
+			    <td><code>&api_url;/&api_version;/categories/{wikiName}/items/{uid}[;{matrix_parameters}]</code></td></tr>
 			<tr><td>HTTP Method</td><td><code>GET</code></td></tr>
 			<tr><td>Successful Response Code</td><td><code>200 OK</code></td></tr>
 		</table>

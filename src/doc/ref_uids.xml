@@ -18,7 +18,7 @@
   <para>
     UIDs should not be hardcoded in client code, as there is normally a method of
     accessing a resource that does not require a UID. However, they are often stored as references to
-    objects created for calculations, such as profiles or profile items.
+    objects created for calculations, such as profiles or &profile_items;.
   </para>
   <para>
     UIDs are twelve character strings containing the letters A-Z and numerals 0-9. The following
