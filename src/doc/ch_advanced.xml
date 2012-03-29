@@ -8,6 +8,33 @@
 
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='advanced'>
   <title>Advanced Options</title>
+  <section xml:id='specifying-api-versions'>
+    <title>Specifying API Version</title>
+		<para>
+			Above version 3, &api_name; includes the API version in the URL. This allows you to code against a particular version
+			and be sure that future updates will not affect your code. This manual, for instance, covers version &api_version;.
+		</para>
+		<para>
+		 Version numbers are made up of:
+		</para>
+		<programlisting>{major_version}.{minor_version}</programlisting>
+		<itemizedlist>
+			<listitem><emphasis>Major</emphasis> versions make large changes, such as URL structure.</listitem>
+			<listitem><emphasis>Minor</emphasis> versions may change resource representations.</listitem>
+		</itemizedlist>
+		<para>
+			You can specify as much or as little of a version in your URLs as you like. The version used will be the 
+			highest matching version number. For instance, if the current version is <code>x.y</code>:
+		</para>
+		<itemizedlist>
+			<listitem><code>/x/</code> will match the highest version less than version <code>x+1</code>, so will use version <code>x.y</code>.</listitem>
+			<listitem><code>/x.y-1/</code> will match only that specific version, but not <code>x.y</code>.</listitem>
+		</itemizedlist>
+		<para>
+			We recommend that you use a major and minor version in your URLs, such as <code>&api_version;</code>. That way, you are guaranteed
+			not to get any API changes.
+		</para>
+  </section>
   <section xml:id='units'>
     <title>Units</title>
     <para>
