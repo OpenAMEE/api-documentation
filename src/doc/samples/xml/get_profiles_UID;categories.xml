@@ -1,0 +1,32 @@
+<section role='tab'>
+<title>XML</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3.6/profiles/FC2ODLZHCNHS;categories HTTP/1.1
+Accept: application/xml
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+</programlisting>
+<programlisting language='xml'><![CDATA[
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Representation>
+ <Profile uid="FC2ODLZHCNHS">
+  <Categories>
+   <Category uid="BBAF1A02B8CB">
+    <Name>Fuel</Name>
+    <WikiName>DEFRA_transport_fuel_methodology</WikiName>
+   </Category>
+  </Categories>
+ </Profile>
+ <Status>OK</Status>
+ <Version>3.6.0</Version>
+</Representation>
+]]></programlisting>
+</section>
+</section>

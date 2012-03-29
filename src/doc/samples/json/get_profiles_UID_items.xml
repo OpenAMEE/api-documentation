@@ -1,0 +1,31 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3.6/profiles/FC2ODLZHCNHS/items HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "status": "OK",
+  "items": [
+    {
+      "uid": "O9IX7PWGT5W4"
+    },
+    {
+      "uid": "1U36W0KJFW3S"
+    }
+  ],
+  "resultsTruncated": false,
+  "version": "3.6.0"
+}
+]]></programlisting>
+</section>
+</section>

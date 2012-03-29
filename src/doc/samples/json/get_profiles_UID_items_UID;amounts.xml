@@ -1,0 +1,71 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3.6/profiles/FC2ODLZHCNHS/items/1U36W0KJFW3S;amounts HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "status": "OK",
+  "item": {
+    "uid": "1U36W0KJFW3S",
+    "output": {
+      "amounts": [
+        {
+          "unit": "kg",
+          "default": true,
+          "value": 1155.8500000000001,
+          "type": "totalDirectCO2e"
+        },
+        {
+          "unit": "kg",
+          "default": false,
+          "value": 1361.3500000000001,
+          "type": "lifeCycleCO2e"
+        },
+        {
+          "unit": "kg",
+          "default": false,
+          "value": 1150.9,
+          "type": "CO2"
+        },
+        {
+          "unit": "kg",
+          "default": false,
+          "value": 3.25,
+          "type": "nitrousOxideCO2e"
+        },
+        {
+          "unit": "kg",
+          "default": false,
+          "value": 1.7,
+          "type": "methaneCO2e"
+        },
+        {
+          "unit": "kg",
+          "default": false,
+          "value": 205.5,
+          "type": "indirectCO2e"
+        }
+      ],
+      "notes": [
+        {
+          "value": "This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation",
+          "type": "comment"
+        }
+      ]
+    }
+  },
+  "version": "3.6.0"
+}
+]]></programlisting>
+</section>
+</section>
