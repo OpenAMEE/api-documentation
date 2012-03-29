@@ -93,7 +93,7 @@
 		<section>
   		  <title>Query Parameters</title>
 		    <para>
-				The &data_item; list resource provides a number of parameters for searching. These
+				The &data_item; list resource provides a number of parameters for searching and filtering. These
 				can be specified as simple strings, in which case an exact match is required, or as 
 				more complex lucene query expressions. See <xref linkend='search'/> for more details.
 			</para>

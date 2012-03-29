@@ -28,16 +28,16 @@
 	</para>
 	<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_calculation_values.volume=500_fuel=petrol.xml' />
     <para>
-	  In this example, we are calculating the emissions for some petrol use. The only required &profile_item_value; is
+	  In this example, we are calculating the emissions for some petrol use. The only required &profile_item_value; is the
 	  <code>values.volume</code> parameter, which represents a volume of fuel used. We're sending a value of 500, so a calculation will
-	  be performed for 500 litres of fuel. &profile_item_value; units are normally SI (or derived), but you can provide &profile_item_values; in other units; 
+	  be performed for 500 litres of fuel. <phrase role='capitalize'>&profile_item_value;</phrase> units are normally SI (or derived), but you can provide &profile_item_values; in other units; 
 	  see <xref linkend='units' /> for details.
     </para>
     <para>
-      You can perform thousands of different calculations by using different the &categories; and
+      You can perform thousands of different calculations by using different &categories; and
       &data_items;. As each &category; represents a different methodology, the &profile_item_values;
-      are different for each one. &discover; lists which are valid for which &models;, as well
-      as showing different usage options; which ones are required, optional, and so on.
+      are different for each one. &discover; lists which are valid for which &categories;, as well
+      as showing different usage options; which ones are required, which are optional, and so on.
     </para>
     <para>
 	  By using &profiles;, you can also store these &profile_item_values;, or track how they change over time. 
@@ -48,13 +48,13 @@
     <title>Getting Results</title>
 	    <para>
 	      The <code>amounts</code> collection in the response shows separately the amounts of greenhouse gases emitted, by name, 
-		  often together with an equivalent amount of CO2 that would have the same climate impact, and other outputs of interest. 
+		  often together with an equivalent amount of CO2 that would have the same climate impact, along with other outputs of interest. 
 		  The exact set of outputs varies from &category; to &category;, as documented in &discover;. In this case we see that 1151kg of 
 	      CO2, plus some other gases, produce the 1156kg of climate-equivalent CO2, or CO2e.
 	    </para>
 	    <para>
 	      Any notes or errors returned by the calculation will also be included in the response. These provide context or explanation of what
-		  the calculation is doing, or what went wrong.
+		  the calculation is doing, or what was wrong in the event of an input error.
 	    </para>
   </section>
 </chapter>

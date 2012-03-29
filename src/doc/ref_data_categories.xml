@@ -103,7 +103,7 @@
 		<section>
 		  <title>Query Parameters</title>
 		    <para>
-				The &category; list resource provides a number of parameters for searching. These
+				The &category; list resource provides a number of parameters for searching and filtering. These
 				can be specified as simple strings, in which case an exact match is required, or as 
 				more complex lucene query expressions. See <xref linkend='search'/> for more details.
 			</para>
@@ -164,7 +164,7 @@
 			<tr>					
 				<td><code>resultLimit</code></td>
 				<td>Specifies the number of results to return in a single page. See 
-					<xref linkend='paging'/>. Defaults to 50 if not specified..</td>
+					<xref linkend='paging'/>. Defaults to 50 if not specified.</td>
 				<td>&not_required;</td>
 			</tr>
   		</table>
@@ -204,7 +204,7 @@
 	  selection. 
       Each call to the drilldown resource will return a list of choices. You can then select one of
       these and provide it as a parameter to a subsequent drilldown request. When the sequence of choices
-      uniquely identifies a &data_item;, a single choice named 'uid' is returned. 
+      uniquely identifies a &data_item;, a single choice named <code>uid</code> is returned. 
     </para>
 	<para>
 	  This UID can be used
@@ -227,7 +227,7 @@
 					<th>Required?</th>
   			</tr>
 				<tr>
-					<td>{&drill_options;}</td>
+					<td><code>{&drill_options;}</code></td>
 					<td>Any number of choices and the values chosen. See below for detailed explanation.
 					  Choices should be provided in the correct order.</td>
 					<td>&required; (except for first request)</td>
@@ -249,7 +249,7 @@
 	  <section>
 	    <title>Second Choice</title>
 	    <para>
-	      In this example, the user has picked 'diesel' for the first &drill_option;.
+	      In this example, the user has picked <code>fuel=diesel</code> for the first &drill_option;.
 	      This is passed as a query parameter to a second drilldown request.
       </para>
       <xi:include href="samples/get_3_categories_Generic_car_transport_drill_fuel=diesel.xml"/>
@@ -259,7 +259,7 @@
 	    <para>
 	      This &category; has only two &drill_options;, so two drilldown selections are enough to fully
 		  identify a &data_item;. The user has selected <code>size=large</code> in this example. 
-		  The UID of the selected &data_item; appears as a choice named 'uid'.
+		  The UID of the selected &data_item; appears as a choice named <code>uid</code>.
       </para>
       <xi:include href="samples/get_3_categories_Generic_car_transport_drill_fuel=diesel_size=large.xml"/>
     </section>

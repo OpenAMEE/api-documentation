@@ -18,7 +18,7 @@
   <section id='dates-times-reference'>
     <title>Dates/Times</title>
     <para>
-      &api_name; allows very fine time resolutions, down to the minute. Dates/Times are represented in the standard IS0 8601<biblioref linkend="ISO8601"/> format:
+      &api_name; allows very fine time resolutions, down to the minute. Dates/Times are represented in the standard <link linkend='ISO8601'>IS0 8601</link> format:
     </para>
     <programlisting>YYYY-MM-DDThh:mm:ssTZD</programlisting>
     <para>
@@ -33,7 +33,7 @@
   <section id='duration-reference'>
     <title>Durations</title>
     <para>
-      Durations are also used in some paramters. These are also represented in IS0 8601<biblioref linkend="ISO8601"/> format:
+      Durations are also used in some paramters. These are also represented in <link linkend='ISO8601'>IS0 8601</link> format:
     </para>
     <programlisting>PnYnMnDTnHnMnS</programlisting>
     <para>

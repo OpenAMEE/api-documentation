@@ -53,17 +53,18 @@
     <title>Fetching <phrase role='titleize'>&data_item_values;</phrase></title>
     <para>
       To get &data_item_values; from &api_name;, you need to identify the &category; and &data_item; you are interested in. You 
-	  then do a GET request in the following format to the appropriate API base URL (initially &api_url;). Note 
+	  then do a GET request in the following format to the appropriate API base URL (initially <code>&api_url;</code>). Note 
 	  that the &category; name is included in the URL, and the &drill_options;
 	  are provided as parameters. Note also the inclusion of the <code>values</code> matrix parameter in the URL. See the <xref linkend='matrix-parameters'/>
 	  for more details on what matrix parameters are and how they work.
     </para>
 	<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_items;values_fuel=petrol.xml' />
     <para>	  
-      Each value in the response represents a single &emission_factor; or other data. If you want to know how much co2 is emitted 
-	  per litre of petrol, the massTotalCO2ePerVolume value would be the most useful.
-      This shows that the factor is 2.7227 kg/L. Alternatively, massCH4PerVolume shows that 0.0034 kg of methane is produced for every litre
-      of fuel. The names will vary between &categories;, so you can't assume that the names are always the same; check the documentation.
+      Each value in the response represents a single &data_item_value; or other data. If you want to know how much CO2 is emitted 
+	  per litre of petrol, the <code>massTotalCO2ePerVolume</code> value would be the most useful.
+      This shows that the factor is 2.7227 kg/L. Alternatively, <code>massCH4PerVolume</code> shows that 0.0034 kg of 
+	  methane is produced for every litre
+      of fuel. The names will vary between &categories;, so you can't assume that the names are always the same; check the &discover; documentation.
     </para>
     <para>	  
       Note that if you provide an incomplete set of &drill_options; or even none at all, you will get back a list of all &data_items; that match the 
@@ -72,7 +73,7 @@
   </section>
   <para>
     <phrase role='capitalize'>&data_item_values;</phrase> are good, but it's more often useful to get AMEE to do the entire calculation 
-	for you. Many algorithms are much more complex than a*b, and you really don't want to implement them all yourself. We'll look at 
+	for you. Many algorithms are much more complex than <code>a*b</code>, and you really don't want to implement them all yourself. We'll look at 
 	calculations in the next section.
   </para>
 </chapter>
