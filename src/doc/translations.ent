@@ -1,0 +1,25 @@
+<!ENTITY api_name "AMEEconnect">
+<!ENTITY api_version "3">
+<!ENTITY api_url "https://api-stage.amee.com">
+<!ENTITY discover "AMEEdiscover">
+<!ENTITY discover_url "http://discover.amee.com">
+<!ENTITY developer_tab "code tab">
+<!ENTITY developer_tab_path "/data/code">
+<!ENTITY category "model">
+<!ENTITY categories "models">
+<!ENTITY data_item "context">
+<!ENTITY data_items "contexts">
+<!ENTITY drill_option "context option">
+<!ENTITY drill_options "context options">
+<!ENTITY profile_item_value "input">
+<!ENTITY profile_item_values "inputs">
+<!ENTITY return_value "return value">
+<!ENTITY return_values "return values">
+<!ENTITY data_item_value "emission factor">
+<!ENTITY data_item_values "emission factors">
+<!ENTITY profile "profile">
+<!ENTITY profiles "profiles">
+<!ENTITY profile_item "profile item">
+<!ENTITY profile_items "profile items">
+<!ENTITY required "&check;">
+<!ENTITY not_required "&cross;">

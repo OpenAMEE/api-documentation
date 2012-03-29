@@ -1,87 +1,60 @@
 <?xml version="1.0"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
-  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
+[
+<!ENTITY % translations   SYSTEM "translations.ent">
+%translations;
+]>
 
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='calculations'>
   <title>Perform Calculations</title>
   <section xml:id='doing-calculations'>
-    <title>Doing Calculations with Data Items</title>
+    <title>Doing a Calculation</title>
     <para>
-      One-off calculations are performed using Data Items. The previous section showed how to select a data item
-	  using drilldowns, so have a read of that first if you haven't already.
+      Once you've selected a &category; and &data_item;, you can get &api_name; to perform calculations for you. <xref linkend='data'/> explains how to make
+	  your choice, so have a quick read of that first, if you haven't already.
     </para>
-	<para>  
-      Once you know the path and UID of the data item you want to use, you simply send a GET request to the item URL as you
-	  would to get the emission factors from the item. The difference is, you provide your input values as query parameters
-	  on the URL, and your calculation will be carried out. 
-	  For example, to calculate some usage data for the /transport/defra/fuel category, you would send the following request:
-    </para>
-		<section role='tabbed'>
-  		<section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/defra/fuel/19B311DDF0B1?volume=500 HTTP/1.1
-Accept: application/xml
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-          <programlisting language='xml'><xi:include href='samples/xml/data_calculation.xml' parse="text"/></programlisting>
-        </section>
-  		</section>
-  		<section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/defra/fuel/19B311DDF0B1?volume=500 HTTP/1.1
-Accept: application/json
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
-          <programlisting language='javascript'><xi:include href='samples/json/data_calculation.js' parse="text"/></programlisting>
-        </section>
-  		</section>
-  	</section>
+	<para>
+      Once you know the &category; name and &data_item; you want, you simply send a GET 
+	  request to the &category;'s calculation URL. You should provide the following query parameters:
+	</para>
+	<itemizedlist>
+		<listitem>The relevant &drill_options;</listitem>
+		<listitem>Some &profile_item_values;, with the form <code>value.{&profile_item_value;_name}={your_value}</code></listitem>
+	</itemizedlist>
+	<para>
+      You can find out all this information, including which <glossterm>&profile_item_values;</glossterm> are required or optional, 
+	  using the &developer_tab; in &discover;.
+	</para>
+	<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_calculation_values.volume=500_fuel=petrol.xml' />
     <para>
-      The parameters to the GET request are your input values obtained from your user (or application). 
-	  Here we just use the <emphasis>volume</emphasis> parameter, 
-	  but as each category represents a different methodology or calculation, the input values 
-      are different for each one. AMEEdiscover lists which are valid for which categories, as well
-      as showing different usage options; which parameters are required, optional, and so on.
+	  In this example, we are calculating the emissions for some petrol use. The only required &profile_item_value; is the
+	  <code>values.volume</code> parameter, which represents a volume of fuel used. We're sending a value of 500, so a calculation will
+	  be performed for 500 litres of fuel. <phrase role='capitalize'>&profile_item_value;</phrase> units are normally SI (or derived), but you can provide &profile_item_values; in other units; 
+	  see <xref linkend='units' /> for details.
     </para>
     <para>
-	  In this case, 
-      the call will send a value of 500 for this item (which is in litres by default - again, see AMEEdiscover).
-	  You can select the units you wish to use for the values in your calculation - see <xref linkend='units' /> 
-	  for details.
+      You can perform thousands of different calculations by using different &categories; and
+      &data_items;. As each &category; represents a different methodology, the &profile_item_values;
+      are different for each one. &discover; lists which are valid for which &categories;, as well
+      as showing different usage options; which ones are required, which are optional, and so on.
     </para>
     <para>
-      You can perform thousands of different types of calculation by finding the appropriate category and
-      data items. By using profiles, you can also store these values, or track how they change over time. 
-      We will go into these options in the following chapter.
+	  By using &profiles;, you can also store these &profile_item_values;, or track how they change over time. 
+      We will go into this option in the following chapter.
     </para>
   </section>
   <section xml:id='getting-results'>
     <title>Getting Results</title>
 	    <para>
-	      The Amounts tag in the response shows separately the amounts of greenhouse gases emitted, by name, often together with 
-	      an equivalent amount of CO2 that would have the same climate impact, and other outputs of interest. The exact set 
-	      of outputs varies from category to category, as documented in AMEEdiscover. In this case we see that 1151kg of 
+	      The <code>amounts</code> collection in the response shows separately the amounts of greenhouse gases emitted, by name, 
+		  often together with an equivalent amount of CO2 that would have the same climate impact, along with other outputs of interest. 
+		  The exact set of outputs varies from &category; to &category;, as documented in &discover;. In this case we see that 1151kg of 
 	      CO2, plus some other gases, produce the 1156kg of climate-equivalent CO2, or CO2e.
 	    </para>
 	    <para>
-	      You may also notice the Amount tag. This shows the default result from the Amounts section, and is for backwards
-	      compatibility only.
+	      Any notes or errors returned by the calculation will also be included in the response. These provide context or explanation of what
+		  the calculation is doing, or what was wrong in the event of an input error.
 	    </para>
   </section>
 </chapter>

@@ -1,0 +1,74 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3/categories/Great_Circle_flight_methodology/calculation?type=great+circle+route&amp;values.IATAcode1=LHR&amp;values.IATAcode2=LAX HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "status": "OK",
+  "output": {
+    "amounts": [
+      {
+        "unit": "kg",
+        "default": true,
+        "value": 1064.491020315156,
+        "type": "totalDirectCO2e"
+      },
+      {
+        "unit": "km",
+        "default": false,
+        "value": 9550.430830030109,
+        "type": "distance"
+      },
+      {
+        "unit": "kg",
+        "default": false,
+        "value": 1260.561365255674,
+        "type": "lifeCycleCO2e"
+      },
+      {
+        "unit": "kg",
+        "default": false,
+        "value": 1054.0810507104231,
+        "type": "CO2"
+      },
+      {
+        "unit": "kg",
+        "default": false,
+        "value": 10.409969604732819,
+        "type": "nitrousOxideCO2e"
+      },
+      {
+        "unit": "kg",
+        "default": false,
+        "value": 0.0955043083003011,
+        "type": "methaneCO2e"
+      },
+      {
+        "unit": "kg",
+        "default": false,
+        "value": 196.07034494051814,
+        "type": "indirectCO2e"
+      }
+    ],
+    "notes": [
+      {
+        "value": "This methodology provides emissions directly in terms of CO2e. No global warming potentials are applied in this calculation",
+        "type": "comment"
+      }
+    ]
+  },
+  "version": "3.6.0"
+}
+]]></programlisting>
+</section>
+</section>

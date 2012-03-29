@@ -1,20 +1,32 @@
 <?xml version="1.0"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
-  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
+[
+<!ENTITY % translations   SYSTEM "translations.ent">
+%translations;
+]>
 
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='introduction'>
   <title>Introduction</title>
   <section xml:id='about'>
     <title>About This Manual</title>
     <para>
-      This manual is designed to show you how to use AMEEconnect to embed environmental intelligence
-      from the AMEE platform into your applications or systems.
+      This manual is designed to show you how to use &api_name; to embed environmental intelligence
+      from the AMEE platform into your applications or systems. This allows you to perform carbon
+	  or other sustainability-related calculations without having to find all the numbers and algorithms
+	  yourself.
     </para>
+	<para>
+	  This manual is made available under a <ulink url='http://creativecommons.org/licenses/by-sa/3.0/'>
+	  Creative Commons Attribution-ShareAlike 3.0 Unported License</ulink>, which means you can change
+	  and modify it if you want to. The <ulink url='http://github.com/AMEE/api-documentation'>source code</ulink>
+	  is available from Github. Improvements are welcomed!
+	</para>
   </section>
   <section xml:id='before-you-start'>
     <title>Before You Start</title>
     <para>
-      As AMEEconnect is an HTTP-based service, we assume that you are familiar with the operation
+      As &api_name; works over HTTP, we assume that you are familiar with the operation
       of HTTP requests, as well as common formats like XML and JSON. In some cases we use XPath and JSONPath
       as well.
     </para>
@@ -22,8 +34,11 @@
   <section xml:id='api-versions'>
     <title>API Versions</title>
     <para>
-      This manual covers API version 2 of AMEEconnect only. If you need documentation 
-      for API version 1, please refer to the legacy documentation at <ulink url="http://www.amee.com/developer/docs/legacy"/>.
+      This manual only covers version 3 of the &api_name; API. If you require documentation 
+      for previous versions please refer to the links below:
     </para>
+	<itemizedlist>
+		<listitem><ulink url="/developer/docs/v2">API Version 2</ulink></listitem>
+	</itemizedlist>
   </section>
 </chapter>

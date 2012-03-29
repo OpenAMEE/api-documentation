@@ -1,0 +1,29 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+PUT /3/profiles/FC2ODLZHCNHS/items/1U36W0KJFW3S HTTP/1.1
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+<programlisting role='body'>
+values.volume=1000
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "status": "OK",
+  "entity": {
+    "uid": "1U36W0KJFW3S"
+  },
+  "version": "3.6.0"
+}
+]]></programlisting>
+</section>
+</section>

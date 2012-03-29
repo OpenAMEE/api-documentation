@@ -1,0 +1,65 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3/categories/US_specific_car_transport/items;label?engineSize=2.5&amp;resultLimit=10 HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "status": "OK",
+  "items": [
+    {
+      "uid": "2D1C40136919",
+      "label": "LEXUS, IS 250, 2.5, Manual(M6)"
+    },
+    {
+      "uid": "E21DCFCC3344",
+      "label": "LEXUS, IS 250, 2.5, Auto(S6)"
+    },
+    {
+      "uid": "07EEAF1991B8",
+      "label": "LEXUS, IS 250 AWD, 2.5, Auto(S6)"
+    },
+    {
+      "uid": "7D1889865A9F",
+      "label": "NISSAN, ALTIMA, 2.5, Auto(AV)"
+    },
+    {
+      "uid": "C3FAD6539589",
+      "label": "NISSAN, ALTIMA, 2.5, Manual(M6)"
+    },
+    {
+      "uid": "E5EB52DA085F",
+      "label": "NISSAN, ALTIMA COUPE, 2.5, Auto(AV)"
+    },
+    {
+      "uid": "09A4F9740C1E",
+      "label": "NISSAN, ALTIMA COUPE, 2.5, Manual(M6)"
+    },
+    {
+      "uid": "17D72E711B41",
+      "label": "NISSAN, ALTIMA HYBRID, 2.5, Auto(AV)"
+    },
+    {
+      "uid": "B42DC8B5B25F",
+      "label": "NISSAN, FRONTIER 2WD, 2.5, Auto(L5)"
+    },
+    {
+      "uid": "1B4A4EA8A46A",
+      "label": "NISSAN, FRONTIER 2WD, 2.5, Manual(M5)"
+    }
+  ],
+  "resultsTruncated": true,
+  "version": "3.6.0"
+}
+]]></programlisting>
+</section>
+</section>

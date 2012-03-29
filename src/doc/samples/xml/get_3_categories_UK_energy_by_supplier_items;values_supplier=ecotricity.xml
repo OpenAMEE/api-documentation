@@ -1,0 +1,43 @@
+<section role='tab'>
+<title>XML</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3/categories/UK_energy_by_supplier/items;values?supplier=ecotricity HTTP/1.1
+Accept: application/xml
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+</programlisting>
+<programlisting language='xml'><![CDATA[
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Representation>
+ <Items truncated="false">
+  <Item uid="E92FCC3E575A">
+   <Values>
+    <Value history="false">
+     <Path>source</Path>
+     <Value>http://www.electricityinfo.org/supplierdataall.php?year=latest</Value>
+    </Value>
+    <Value history="true">
+     <Path>kgCO2PerKWh</Path>
+     <Value>0.232</Value>
+     <Unit>kg/(kWh)</Unit>
+    </Value>
+    <Value history="false">
+     <Path>supplier</Path>
+     <Value>Ecotricity</Value>
+    </Value>
+   </Values>
+  </Item>
+ </Items>
+ <Status>OK</Status>
+ <Version>3.6.0</Version>
+</Representation>
+]]></programlisting>
+</section>
+</section>

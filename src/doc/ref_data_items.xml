@@ -4,135 +4,199 @@
 [
 <!ENTITY % sgml.features "IGNORE">
 <!ENTITY % xml.features "INCLUDE">
-<!ENTITY % dbcent PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/usr/local/Cellar/docbook/5.0/docbook/xml/4.5/dbcentx.mod">
+<!ENTITY % dbcent PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "../../tools/dtd/dbcentx.mod">
 %dbcent;
+<!ENTITY % translations   SYSTEM "translations.ent">
+%translations;
 ]>
 
 <section xml:id='data-item-reference' xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Data Items</title>
-  <para>
-    A Data Item represents a single type of energy usage which contributes to CO2 emissions.
-    Data Items provide the data required to perform emissions calculations for Profile Items.
-  </para>
-  <para>
-    For example, a particular Data Item could represent an average sized petrol car. 
-    You could create a Profile Item associated with this Data Item, which would specify
-    that a user has an average sized petrol car. You could set extra parameters in this
-    Profile Item to specify information such as that the car is driven 5000 kilometres per year.
-  </para>
-  <para>
-    Each Data Item can have several Data Item Values (distance, for instance).
-  </para>
+    <title><phrase role='titleize'>&data_items;</phrase></title>
+    <para>
+      A &data_item; represents a particular type of activity within a &category;. Each has
+	  a unique set of &drill_options;, and contains a set of &data_item_values; which are used as 
+	  constant inputs to calculations.
+    </para>
 	<section>
 		<title>Properties</title>
 		<table class='properties'>
 			<tr>
 				<th>Property</th>
 				<th>Description</th>
+				<th><link linkend='matrix-parameters'>Matrix Parameter</link></th>
 			</tr>
 			<tr>					
 				<td>UID</td>
-				<td>A 12-letter unique identifier for the data item. See <xref linkend='uid-reference'/> for more information.</td>
+				<td>A <link linkend='uid-reference'>unique identification code</link> for the &data_item;.</td>
+				<td></td>
+			</tr>
+			<tr>					
+				<td>label</td>
+				<td>The human-readable name of the &data_item;, made up of all its &drill_options;.</td>
+				<td><code>label</code></td>
+			</tr>
+			<tr>
+				<td>values</td>
+				<td>A collection of &data_item_values; used by the &data_item;.</td>
+				<td><code>values</code></td>
+			</tr>
+			<tr>
+				<td>categoryWikiName</td>
+				<td>The &category; that the &data_item; belongs to.</td>
+				<td><code>parent</code></td>
+			</tr>
+			<tr>					
+				<td>provenance</td>
+				<td>A link (or set of links) to the original source on which the &data_item; is based. May be more detailed than &category; provenance. May include WikiCreole markup for links.</td>
+				<td><code>provenance</code></td>
+			</tr>
+			<tr>
+				<td>wikiDoc</td>
+				<td>The full documentation for the &data_item;, as displayed in &discover;. Uses WikiCreole
+					syntax.</td>
+				<td><code>wikiDoc</code></td>
+			</tr>
+			<tr>
+				<td>itemDefinition</td>
+				<td>Include details of the item definition, which provides access to information on
+					&profile_item_values; and &return_values;.</td>
+				<td><code>itemDefinition</code></td>
 			</tr>
 			<tr>					
 				<td>created</td>
-				<td>The time and date on which the item was created.</td>
+				<td>The time and date on which the &data_item; was created.</td>
+				<td><code>audit</code></td>
 			</tr>
 			<tr>					
 				<td>modified</td>
-				<td>The time and date on which the item was last modified.</td>
+				<td>The time and date on which the &data_item; was last modified.</td>
+				<td><code>audit</code></td>
 			</tr>
 			<tr>					
-				<td>name</td>
-				<td>A display name for this Data Item. This is not always used and 
-				  will default to the UID.</td>
-			</tr>
-			<tr>					
-				<td>path</td>
-				<td>The path segment for this Data Item within the URL path. 
-				  This is not always used and will default to the UID.</td>
+				<td>status</td>
+				<td>The current status of the &data_item;. Normally this will be <code>ACTIVE</code>.</td>
+				<td><code>audit</code></td>
 			</tr>
 		</table>
 	</section>
-	<section xml:id='get-data-item-reference'>
-		<title>Get Data Item</title>
+	<section xml:id='list-data-item-reference'>
+		<title>List &data_items;</title>
 		<para>
-			Fetches a representation of a data item. If query parameters are provided,
-			a calculation is performed.
+			Fetches a list of &data_items; within a single &category;.
 		</para>
 		<table class='requestdetails'>
-			<tr><td>URL</td><td>https://{server}.amee.com/data/{category_path}/{data_item_uid}</td></tr>
-			<tr><td>HTTP Method</td><td>GET</td></tr>
-			<tr><td>Response Content-Type</td><td>application/xml or application/json</td></tr>
-			<tr><td>Successful Response Code</td><td>200 OK</td></tr>
+			<tr><td>URL</td>
+			    <td><code>&api_url;/&api_version;/categories/{wikiName}/items[;{matrix_parameters}]?{query_parameters}</code></td></tr>
+			<tr><td>HTTP Method</td><td><code>GET</code></td></tr>
+			<tr><td>Successful Response Code</td><td><code>200 OK</code></td></tr>
 		</table>
 		<section>
-		  <title>Optional Parameters</title>
-  		<table class='parameters'>
+  		  <title>Query Parameters</title>
+		    <para>
+				The &data_item; list resource provides a number of parameters for searching and filtering. These
+				can be specified as simple strings, in which case an exact match is required, or as 
+				more complex lucene query expressions. See <xref linkend='search'/> for more details.
+			</para>
+  			<table class='parameters'>
   			<tr>
-					<th>Parameter</th>
-					<th>Description</th>
+				<th>Query Parameter</th>
+				<th>Description</th>
+				<th>Required?</th>
   			</tr>
-				<tr>
-					<td>{valueName}</td>
-					<td>Set a Profile Item Value by specifying the name and value. For example, the value 
-					  name could be 'distance' supplied with a value of '300'. Multiple name/value pairs
-					  can be submitted so long as the named Item Values exist. Names
-					  and values are case sensitive.</td>
-				</tr>
-				<tr>					
-					<td>{valueName}Unit</td>
-					<td>If a value is set, a unit can also be set. In the distance example above, the 
-					  'distanceUnit' parameter could be set to 'km', 'mi', or any other supported distance 
-					  unit. All values have default units if none are supplied.</td>
-				</tr>
-				<tr>					
-					<td>{valueName}PerUnit</td>
-					<td>If a value is set, a perUnit can also be set, which indicates the timescale over which
-					  the value applies. In the distance example above, the 'distancePerUnit' parameter could be
-					  set to 'day', 'month', or any other supported time unit. Not all values support perUnits; check 
-					  AMEEdiscover for each case. Relevant values have default perUnits if none are supplied.</td>
-				</tr>
-  		</table>
-	  </section>
+			<tr>
+				<td><code>label</code></td>
+				<td>Match results by label.</td>
+				<td>&not_required;</td>
+			</tr>
+			<tr>
+				<td><code>{&drill_option;}</code></td>
+				<td>Match results by &drill_option;.</td>
+				<td>&not_required;</td>
+			</tr>
+			<tr>
+				<td><code>provenance</code></td>
+				<td>Match results by provenance; standards body name, for instance.</td>
+				<td>&not_required;</td>
+			</tr>
+			<tr>					
+				<td><code>resultStart</code></td>
+				<td>Zero-based index of the first result that should be returned. See 
+					<xref linkend='paging'/>. Defaults to 0 if not specified.</td>
+				<td>&not_required;</td>
+			</tr>
+			<tr>					
+				<td><code>resultLimit</code></td>
+				<td>Specifies the number of results to return in a single page. See 
+					<xref linkend='paging'/>. Defaults to 50 if not specified..</td>
+				<td>&not_required;</td>
+			</tr>
+          </table>
+  	    </section>
 		<para>
-		  The response contains a JSON or XML encoded description of the data item.
-	  </para>
-		<section role='tabbed'>
-		  <section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/plane/generic/FFC7A05D54AD HTTP/1.1
-Accept: application/json
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
-          <programlisting language='javascript'><xi:include href='samples/json/get_data_item.js' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		  <section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/plane/generic/FFC7A05D54AD HTTP/1.1
-Accept: application/xml
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-          <programlisting language='xml'><xi:include href='samples/xml/get_data_item.xml' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		</section>
+		  The response contains a JSON or XML encoded description of the matching &data_items;.
+    	</para>
+	    <xi:include href='samples/get_3_categories_US_specific_car_transport_items;label_engineSize=2.5_resultLimit=10.xml'/>
 	</section>
+	
+	<section xml:id='get-data-item-reference'>
+		<title>Get &data_item;</title>
+		<para>
+			Fetches a representation of a single &data_item;.
+		</para>
+		<table class='requestdetails'>
+			<tr><td>URL</td>
+			    <td><code>&api_url;/&api_version;/categories/{wikiName}/items/{uid}[;{matrix_parameters}]</code></td></tr>
+			<tr><td>HTTP Method</td><td><code>GET</code></td></tr>
+			<tr><td>Successful Response Code</td><td><code>200 OK</code></td></tr>
+		</table>
+		<para>
+		  The response contains a JSON or XML encoded description of the &data_item;.
+	  </para>
+		<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_items_UID;values.xml' />
+	</section>
+
+	<section xml:id='calculate-data-item-reference'>
+		<title>Perform a calculation</title>
+		<para>
+			Performs a calculation for a single &data_item;.
+		</para>
+		<table class='requestdetails'>
+			<tr><td>URL</td>
+			    <td><code>&api_url;/&api_version;/categories/{wikiName}/calculation?{&drill_options;}&amp;{query_parameters}</code> or <code>&api_url;/&api_version;/categories/{wikiName}/items/{uid}/calculation?{query_parameters}</code></td></tr>
+			<tr><td>HTTP Method</td><td><code>GET</code></td></tr>
+			<tr><td>Successful Response Code</td><td><code>200 OK</code></td></tr>
+		</table>
+		<section>
+  		  <title>Query Parameters</title>
+  			<table class='parameters'>
+  			<tr>
+				<th>Query Parameter</th>
+				<th>Description</th>
+				<th>Required?</th>
+  			</tr>
+			<tr>
+				<td><code>{&drill_options;}</code></td>
+				<td>The &drill_options; for the &data_item; that should be used in the calculation.</td>
+				<td>&required;</td>
+			</tr>
+			<tr>
+				<td><code>values.{value_name}</code></td>
+				<td>An &profile_item_value; to be used in the calculation. Any number can be specified in separate parameters.</td>
+				<td>&required;</td>
+			</tr>
+			<tr>
+				<td><code>units.{value_name}</code></td>
+				<td>The unit that the relevant &profile_item_value; is measured in.</td>
+				<td>&not_required;</td>
+			</tr>
+			<tr>
+				<td><code>perUnits.{value_name}</code></td>
+				<td>The perUnit (normally a time unit) that the relevant &profile_item_value; is measured in, if supported.</td>
+				<td>&not_required;</td>
+			</tr>
+          </table>
+  	    </section>
+		<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_calculation_values.volume=500_fuel=petrol.xml' />
+	</section>
+
 </section>

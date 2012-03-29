@@ -24,7 +24,6 @@ version:
 	  mv $(VERSION_SOURCE).tmp $(VERSION_SOURCE); \
 	fi
 
-html: valid $(HTML_TARGET)
 $(HTML_TARGET): $(ALL_SOURCE) $(VERSION_SOURCE) $(STYLESHEET) $(IMAGES)
 	$(ENSURE_XSL)
 	$(XSLTPROC) -o $(HTML_TARGET)  $(XML_SOURCE) \
@@ -32,7 +31,6 @@ $(HTML_TARGET): $(ALL_SOURCE) $(VERSION_SOURCE) $(STYLESHEET) $(IMAGES)
 
 # The trailing slash on the xsltproc --output option is essential to
 # output pages into the directory
-html-chunk: valid $(HTML_CHUNK_TARGET)
 $(HTML_CHUNK_TARGET): $(ALL_SOURCE) $(VERSION_SOURCE) $(STYLESHEET) $(IMAGES)
 	mkdir -p $(HTML_CHUNK_DIR)
 	$(IFIMAGES) mkdir -p $(HTML_CHUNK_DIR)/images $(ENDIF)
@@ -42,7 +40,6 @@ $(HTML_CHUNK_TARGET): $(ALL_SOURCE) $(VERSION_SOURCE) $(STYLESHEET) $(IMAGES)
 	cp -R $(STYLESHEET) $(HTML_CHUNK_DIR)
 	$(IFIMAGES) cp $(IMAGES) $(HTML_CHUNK_DIR)/images $(ENDIF)
 
-php-chunk: valid $(PHP_CHUNK_TARGET)
 $(PHP_CHUNK_TARGET): $(ALL_SOURCE) $(VERSION_SOURCE) $(STYLESHEET) $(IMAGES)
 	mkdir -p $(PHP_CHUNK_DIR)
 	$(IFIMAGES) mkdir -p $(PHP_CHUNK_DIR)/images $(ENDIF)
@@ -52,14 +49,12 @@ $(PHP_CHUNK_TARGET): $(ALL_SOURCE) $(VERSION_SOURCE) $(STYLESHEET) $(IMAGES)
 	cp -R $(STYLESHEET) $(PHP_CHUNK_DIR)
 	$(IFIMAGES) cp $(IMAGES) $(PHP_CHUNK_DIR)/images $(ENDIF)
 
-html-arch: valid $(HTML_ARCH_TARGET)
 $(HTML_ARCH_TARGET): $(HTML_TARGET) $(IMAGES)
 	rm -rf $(HTML_ARCH_BASENAME) && \
 	$(MAKE) install-html INSTALL_SUBDIR=$(HTML_ARCH_BASENAME) && \
 	$(ARCH_CMD) $@ $(HTML_ARCH_BASENAME) && \
 	rm -rf $(HTML_ARCH_BASENAME)
 
-html-chunk-arch: valid $(HTML_CHUNK_ARCH_TARGET)
 $(HTML_CHUNK_ARCH_TARGET): $(HTML_CHUNK_TARGET) $(IMAGES)
 	rm -rf $(HTML_CHUNK_ARCH_BASENAME) && \
 	$(MAKE) install-html-chunk \
@@ -67,22 +62,18 @@ $(HTML_CHUNK_ARCH_TARGET): $(HTML_CHUNK_TARGET) $(IMAGES)
 	$(ARCH_CMD) $@ $(HTML_CHUNK_ARCH_BASENAME) && \
 	rm -rf $(HTML_CHUNK_ARCH_BASENAME)
 
-fo: $(FO_TARGET)
 $(FO_TARGET): $(ALL_SOURCE) $(VERSION_SOURCE) $(IMAGES)
 	$(ENSURE_XSL)
 	$(XSLTPROC) -o $(FO_TARGET)  $(XML_SOURCE) \
 	  $(XSL_DIR)/fo-stylesheet.xsl $(FO_XSLTPROC_OPTS)
 
-pdf: $(PDF_TARGET)
 $(PDF_TARGET): $(FO_TARGET) $(IMAGES)
 	$(TOOLS_DIR)/bin/run-fop.sh -fo $(FO_TARGET) -pdf $(PDF_TARGET)
 
-ps: $(PS_TARGET)
 $(PS_TARGET): $(FO_TARGET) $(IMAGES)
 	$(TOOLS_DIR)/bin/run-fop.sh -fo $(FO_TARGET) -ps $(PS_TARGET)
 
 # Requires at least docbook-xsl-1.74
-epub: book/amee-doc.xml $(EPUB_TARGET)
 $(EPUB_TARGET): $(ALL_SOURCE) 
 	$(ENSURE_XSL)
 	$(TOOLS_DIR)/xsl/epub/bin/dbtoepub book/amee-doc.xml
@@ -91,39 +82,22 @@ $(EPUB_TARGET): $(ALL_SOURCE)
 book/amee-doc.xml: version
 	xmllint --nonet --noent --xinclude --postvalid --output book/amee-doc.xml book/book.xml
 
-# Install targets
-$(INSTALL_SUBDIR):
-	$(MKDIR) $(INSTALL_SUBDIR)
+html: $(HTML_TARGET)
 
-install-html: $(HTML_TARGET) $(INSTALL_SUBDIR)
-	$(IFIMAGES) $(MKDIR) $(INSTALL_SUBDIR)/images $(ENDIF)
-	$(INSTALL_DATA) $(HTML_TARGET) $(INSTALL_SUBDIR)
-	$(INSTALL_DATA) $(STYLESHEET) $(INSTALL_SUBDIR)
-	$(IFIMAGES) $(INSTALL_DATA) $(IMAGES) $(INSTALL_SUBDIR)/images $(ENDIF)
+html-chunk: $(HTML_CHUNK_TARGET)
 
-install-html-chunk: $(HTML_CHUNK_TARGET) $(INSTALL_SUBDIR)
-	$(IFIMAGES) $(MKDIR) $(INSTALL_SUBDIR)/images $(ENDIF)
-	$(INSTALL_DATA) $(HTML_CHUNK_DIR)/*.html $(INSTALL_SUBDIR)
-	$(INSTALL_DATA) $(STYLESHEET) $(INSTALL_SUBDIR)
-	$(IFIMAGES) $(INSTALL_DATA) $(IMAGES) $(INSTALL_SUBDIR)/images $(ENDIF)
+php-chunk: $(PHP_CHUNK_TARGET)
 
-install-php-chunk: $(PHP_CHUNK_TARGET) $(INSTALL_SUBDIR)
-	$(IFIMAGES) $(MKDIR) $(INSTALL_SUBDIR)/images $(ENDIF)
-	$(INSTALL_DATA) $(PHP_CHUNK_DIR)/*.php $(INSTALL_SUBDIR)
-	$(INSTALL_DATA) $(STYLESHEET) $(INSTALL_SUBDIR)
-	$(IFIMAGES) $(INSTALL_DATA) $(IMAGES) $(INSTALL_SUBDIR)/images $(ENDIF)
+html-arch: $(HTML_ARCH_TARGET)
 
-install-html-arch: $(HTML_ARCH_TARGET) $(INSTALL_SUBDIR)
-	$(INSTALL_DATA) $(HTML_ARCH_TARGET) $(INSTALL_SUBDIR)
+html-chunk-arch: $(HTML_CHUNK_ARCH_TARGET)
 
-install-html-chunk-arch: $(HTML_CHUNK_ARCH_TARGET) $(INSTALL_SUBDIR)
-	$(INSTALL_DATA) $(HTML_CHUNK_ARCH_TARGET) $(INSTALL_SUBDIR)
+pdf: $(PDF_TARGET)
 
-install-pdf: $(PDF_TARGET) $(INSTALL_SUBDIR)
-	$(INSTALL_DATA) $(PDF_TARGET) $(INSTALL_SUBDIR)
+ps: $(PS_TARGET)
 
-install-ps: $(PS_TARGET) $(INSTALL_SUBDIR)
-	$(INSTALL_DATA) $(PS_TARGET) $(INSTALL_SUBDIR)
+samples:
+	cd $(SAMPLES_DIR); $(SAMPLES_BUILD_CMD); cd -
 
 # Clean targets
 clean:
