@@ -26,7 +26,7 @@
       You can find out all this information, including which <glossterm>&profile_item_values;</glossterm> are required or optional, 
 	  using the &developer_tab; in &discover;.
 	</para>
-	<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_calculation_values.volume=500_fuel=petrol.xml' />
+	<xi:include href='samples/get_categories_DEFRA_transport_fuel_methodology_calculation_values.volume=500_fuel=petrol.xml' />
     <para>
 	  In this example, we are calculating the emissions for some petrol use. The only required &profile_item_value; is the
 	  <code>values.volume</code> parameter, which represents a volume of fuel used. We're sending a value of 500, so a calculation will

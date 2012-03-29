@@ -35,7 +35,7 @@
     <para>
 		You create a profile by doing a POST request to <code>/&api_version;/profiles</code>, including <code>profile=true</code> in the request body.
 	</para>
-	<xi:include href='samples/post_3_profiles_profile=true.xml'/>
+	<xi:include href='samples/post_profiles_profile=true.xml'/>
 	<para>
 		The important part of the response is the &profile; UID, which is included in the response body and in the <code>Location</code> header.
 		Whenever you want to store &profile_item_values; in this &profile;, you will need the UID. You should store it in your application 
@@ -61,7 +61,7 @@
     <para>
 	  The following example performs the same calculation as before, but stores it into a &profile; for later retrieval.
     </para>
-	<xi:include href='samples/post_3_profiles_UID_items_category=DEFRA_transport_fuel_methodology_fuel=petrol_values.volume=500.xml'/>
+	<xi:include href='samples/post_profiles_UID_items_category=DEFRA_transport_fuel_methodology_fuel=petrol_values.volume=500.xml'/>
     <para>
 	  Apart from the <code>category</code> parameter, these are exactly the same parameters as in <xref linkend='doing-calculations'/>. 
 	  The <code>category</code> parameter specifies the &category; name. For one-off calculations, this is part of the URL, but here it
@@ -79,7 +79,7 @@
 	  subresource to get the original &profile_item_values; back. See <xref linkend='get-profile-item-reference'/>
       for full details.
     </para>
-	<xi:include href='samples/get_3_profiles_UID_items_UID;amounts.xml'/>
+	<xi:include href='samples/get_profiles_UID_items_UID;amounts.xml'/>
     <para>
       These responses can be filtered by time period; see below.
     </para>
@@ -94,7 +94,7 @@
     <para>
 	  You can also get a list of all &profile_items; that are stored in a single &profile;, by doing a GET to the items collection.
 	</para>
-	<xi:include href='samples/get_3_profiles_UID_items.xml'/>
+	<xi:include href='samples/get_profiles_UID_items.xml'/>
 	<para>
 	  This request returns a list of &profile_item; UIDs, which you can use for subsequent GET requests. There are matrix parameters that
 	  let you get back &return_values; or &profile_item_values; in the same request, if you want to. See <xref linkend='list-profile-items-reference'/>.

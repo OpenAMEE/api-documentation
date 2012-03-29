@@ -137,7 +137,7 @@
 	  You can include any valid matrix parameters for either &categories; or &data_items; in order to fetch extra data 
 	  as part of the search. See the reference section for details.	
 	</para>
-	<xi:include href='samples/get_3_search;name;label;parent_types=DC,DI_q=camels.xml'/>
+	<xi:include href='samples/get_search;name;label;parent_types=DC,DI_q=camels.xml'/>
 	<para>
 	  In the JSON representation, the <code>type</code> field is used to show what sort of object has been returned, whereas
 	  in XML this is done with the tag name. It is <code>item</code> for &data_items; or <code>category</code> for &categories;.
@@ -185,7 +185,7 @@
 			By incrementing the <code>resultStart</code> parameter by <code>resultLimit</code>, you can page through the
 			complete list until <code>resultsTruncated</code> is false.
 		</para>
-	  <xi:include href='samples/get_3_categories_US_specific_car_transport_items;label_engineSize=2.5_resultLimit=10.xml'/>
+	  <xi:include href='samples/get_categories_US_specific_car_transport_items;label_engineSize=2.5_resultLimit=10.xml'/>
   </section>
   <section xml:id='interactive-drilldowns'>
     <title>Interactive <phrase role='titleize'>&data_item;</phrase> Selection</title>

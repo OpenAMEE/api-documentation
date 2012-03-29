@@ -191,7 +191,7 @@
 		<para>
 		  The <code>Location</code> header indicates the URL of the new &profile_item;.
 		</para>
-		<xi:include href="samples/post_3_profiles_UID_items_category=DEFRA_transport_fuel_methodology_fuel=petrol_values.volume=500_name=example_startDate=2011-01-05T00:00:00Z.xml"/>
+		<xi:include href="samples/post_profiles_UID_items_category=DEFRA_transport_fuel_methodology_fuel=petrol_values.volume=500_name=example_startDate=2011-01-05T00:00:00Z.xml"/>
 	</section>
 	<section xml:id="get-profile-item-reference">
 		<title>Read &profile_item;</title>
@@ -216,11 +216,11 @@
 		  The response includes a representation of the requested &profile_item;. Matrix parameters can be used to customise the included
 		  data.
 		</para>
-		<xi:include href="samples/get_3_profiles_UID_items_UID;amounts.xml"/>
+		<xi:include href="samples/get_profiles_UID_items_UID;amounts.xml"/>
 		<para>
 		  If you need the original &profile_item_values; back, you can use the values list resource.
 		</para>
-		<xi:include href="samples/get_3_profiles_UID_items_UID_values;itemValueDefinition.xml"/>
+		<xi:include href="samples/get_profiles_UID_items_UID_values;itemValueDefinition.xml"/>
 	</section>
 	<section xml:id="list-profile-items-reference">
 		<title>List &profile_items;</title>
@@ -300,7 +300,7 @@
 				</tr>
 			</table>
 		</section>
-		<xi:include href="samples/get_3_profiles_UID_items.xml"/>
+		<xi:include href="samples/get_profiles_UID_items.xml"/>
 	</section>
 	<section xml:id="update-profile-item-reference">
 		<title>Update &profile_item;</title>
@@ -325,7 +325,7 @@
 				<td><code>200 OK</code></td>
 			</tr>
 		</table>
-		<xi:include href="samples/put_3_profiles_UID_items_UID_values.volume=1000.xml"/>
+		<xi:include href="samples/put_profiles_UID_items_UID_values.volume=1000.xml"/>
 	</section>
 	<section xml:id="delete-profile-item-reference">
 		<title>Delete &profile_item;</title>
@@ -346,6 +346,6 @@
 				<td><code>200 OK</code></td>
 			</tr>
 		</table>
-		<xi:include href="samples/delete_3_profiles_UID_items_UID.xml"/>
+		<xi:include href="samples/delete_profiles_UID_items_UID.xml"/>
 	</section>
 </section>

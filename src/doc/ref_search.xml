@@ -52,5 +52,5 @@
 			</tr>
 		</table>
 	</section>
-	<xi:include href='samples/get_3_search;name;label;parent_types=DC,DI_q=camels.xml'/>
+	<xi:include href='samples/get_search;name;label;parent_types=DC,DI_q=camels.xml'/>
 </section>

@@ -103,8 +103,8 @@ Found 7 nodes:
               </programlisting>
  	  	    </section>
 	  	</section>
-		<xi:include href="samples/json/get_3_categories_Great_Circle_flight_methodology_calculation_type=great circle route_values.IATAcode1=LHR_values.IATAcode2=LAX.xml"/>
-		<xi:include href="samples/xml/get_3_categories_Great_Circle_flight_methodology_calculation_type=great circle route_values.IATAcode1=LHR_values.IATAcode2=LAX.xml"/>
+		<xi:include href="samples/json/get_categories_Great_Circle_flight_methodology_calculation_type=great circle route_values.IATAcode1=LHR_values.IATAcode2=LAX.xml"/>
+		<xi:include href="samples/xml/get_categories_Great_Circle_flight_methodology_calculation_type=great circle route_values.IATAcode1=LHR_values.IATAcode2=LAX.xml"/>
     </section>
     <para>
 	  And that's it! You've just done your first calculation using &api_name;. London to LA: 1065kg of emissions (as shown in the 

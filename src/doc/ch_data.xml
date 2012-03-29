@@ -58,7 +58,7 @@
 	  are provided as parameters. Note also the inclusion of the <code>values</code> matrix parameter in the URL. See the <xref linkend='matrix-parameters'/>
 	  for more details on what matrix parameters are and how they work.
     </para>
-	<xi:include href='samples/get_3_categories_DEFRA_transport_fuel_methodology_items;values_fuel=petrol.xml' />
+	<xi:include href='samples/get_categories_DEFRA_transport_fuel_methodology_items;values_fuel=petrol.xml' />
     <para>	  
       Each value in the response represents a single &data_item_value; or other data. If you want to know how much CO2 is emitted 
 	  per litre of petrol, the <code>massTotalCO2ePerVolume</code> value would be the most useful.

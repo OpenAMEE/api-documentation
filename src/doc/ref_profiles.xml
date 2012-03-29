@@ -94,7 +94,7 @@
 		<para>
 		  The response body contains the created profile UID, as does the <code>Location</code> header.
 		</para>
-		<xi:include href="samples/post_3_profiles_profile=true.xml"/>
+		<xi:include href="samples/post_profiles_profile=true.xml"/>
 	</section>
 	<section xml:id="get-profile-reference">
 		<title>Get &profile;</title>
@@ -116,7 +116,7 @@
 				<td><code>200 OK</code></td>
 			</tr>
 		</table>
-		<xi:include href="samples/get_3_profiles_UID;categories.xml"/>
+		<xi:include href="samples/get_profiles_UID;categories.xml"/>
 	</section>
 	<section xml:id="list-profiles-reference">
 		<title>List &profiles;</title>
@@ -137,7 +137,7 @@
 				<td><code>200 OK</code></td>
 			</tr>
 		</table>
-		<xi:include href="samples/get_3_profiles.xml"/>
+		<xi:include href="samples/get_profiles.xml"/>
 	</section>
 	<section xml:id="delete-profile-reference">
 		<title>Delete &profile;</title>
@@ -159,6 +159,6 @@
 				<td><code>200 OK</code></td>
 			</tr>
 		</table>
-		<xi:include href="samples/delete_3_profiles_UID.xml"/>
+		<xi:include href="samples/delete_profiles_UID.xml"/>
 	</section>
 </section>
