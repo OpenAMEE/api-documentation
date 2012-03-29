@@ -34,7 +34,11 @@
   <section xml:id='api-versions'>
     <title>API Versions</title>
     <para>
-      This manual only covers version 3 of the &api_name; API. If you require documentation 
+      This manual only covers version &api_version; of the &api_name; API. For details of API versioning, see
+	  <xref linkend='specifying-api-versions'/>.
+    </para>
+    <para>	  
+	  If you require documentation 
       for previous versions please refer to the links below:
     </para>
 	<itemizedlist>

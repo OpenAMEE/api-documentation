@@ -1,0 +1,32 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3.6/categories/DEFRA_transport_fuel_methodology/items/AA6B1557CEA6/values/massTotalCO2ePerVolume HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "values": [
+    {
+      "history": false,
+      "uid": "F7C4F3FB5C88",
+      "startDate": "1970-01-01T00:00:00Z",
+      "unit": "kg/L",
+      "value": 2.7227
+    }
+  ],
+  "status": "OK",
+  "resultsTruncated": false,
+  "version": "3.6.0"
+}
+]]></programlisting>
+</section>
+</section>

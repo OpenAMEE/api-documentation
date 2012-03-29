@@ -52,6 +52,6 @@
 			<tr><td>HTTP Method</td><td><code>GET</code></td></tr>
 			<tr><td>Successful Response Code</td><td><code>200 OK</code></td></tr>
 		</table>
-		<xi:include href='samples/get_3_categories_UK_energy_by_supplier_items_UID_values_kgCO2PerKWh.xml' />
+		<xi:include href='samples/get_categories_UK_energy_by_supplier_items_UID_values_kgCO2PerKWh.xml' />
 	</section>
 </section>

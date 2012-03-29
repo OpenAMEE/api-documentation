@@ -172,7 +172,7 @@
 		<para>
 		  The response contains JSON or XML encoded descriptions of all &categories; that match the query criteria.
   	    </para>
-        <xi:include href="samples/get_3_categories_tags=electricity_resultLimit=10.xml"/>
+        <xi:include href="samples/get_categories_tags=electricity_resultLimit=10.xml"/>
 	</section>
 	<section xml:id='get-data-category-reference'>
 		<title>Get a single &category;</title>
@@ -187,7 +187,7 @@
 		<para>
 		  The response contains a JSON or XML encoded description of the &category; as shown below.
   	    </para>
-        <xi:include href="samples/get_3_categories_DEFRA_transport_fuel_methodology.xml"/>
+        <xi:include href="samples/get_categories_DEFRA_transport_fuel_methodology.xml"/>
 	</section>
 	<section id='drilldown-reference'>
 		<title>Interactive selection of &data_items;</title>
@@ -244,7 +244,7 @@
 	    <para>
 	      The first request has no parameters, so fetches the choices for the first &drill_option;.
       </para>
-      <xi:include href="samples/get_3_categories_Generic_car_transport_drill.xml"/>
+      <xi:include href="samples/get_categories_Generic_car_transport_drill.xml"/>
     </section>
 	  <section>
 	    <title>Second Choice</title>
@@ -252,7 +252,7 @@
 	      In this example, the user has picked <code>fuel=diesel</code> for the first &drill_option;.
 	      This is passed as a query parameter to a second drilldown request.
       </para>
-      <xi:include href="samples/get_3_categories_Generic_car_transport_drill_fuel=diesel.xml"/>
+      <xi:include href="samples/get_categories_Generic_car_transport_drill_fuel=diesel.xml"/>
     </section>
 	  <section>
 	    <title>Final Result</title>
@@ -261,7 +261,7 @@
 		  identify a &data_item;. The user has selected <code>size=large</code> in this example. 
 		  The UID of the selected &data_item; appears as a choice named <code>uid</code>.
       </para>
-      <xi:include href="samples/get_3_categories_Generic_car_transport_drill_fuel=diesel_size=large.xml"/>
+      <xi:include href="samples/get_categories_Generic_car_transport_drill_fuel=diesel_size=large.xml"/>
     </section>
 	</section>
 </section>

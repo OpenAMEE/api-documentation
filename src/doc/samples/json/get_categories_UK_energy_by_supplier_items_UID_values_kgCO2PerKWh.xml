@@ -1,0 +1,67 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3.6/categories/UK_energy_by_supplier/items/E92FCC3E575A/values/kgCO2PerKWh HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "values": [
+    {
+      "history": false,
+      "uid": "C32421FDA873",
+      "startDate": "1970-01-01T00:00:00Z",
+      "unit": "kg/(kW·h)",
+      "value": 0.232
+    },
+    {
+      "history": false,
+      "uid": "82E8CDE095E6",
+      "startDate": "2005-01-01T00:00:00Z",
+      "unit": "kg/(kW·h)",
+      "value": 0.338
+    },
+    {
+      "history": false,
+      "uid": "1A24A4BFB9FC",
+      "startDate": "2006-01-01T00:00:00Z",
+      "unit": "kg/(kW·h)",
+      "value": 0.292
+    },
+    {
+      "history": false,
+      "uid": "AA9F3071C7C8",
+      "startDate": "2007-01-01T00:00:00Z",
+      "unit": "kg/(kW·h)",
+      "value": 0.316
+    },
+    {
+      "history": false,
+      "uid": "3AD79475EC09",
+      "startDate": "2008-01-01T00:00:00Z",
+      "unit": "kg/(kW·h)",
+      "value": 0.267
+    },
+    {
+      "history": false,
+      "uid": "5B69BDBD25E7",
+      "startDate": "2009-01-01T00:00:00Z",
+      "unit": "kg/(kW·h)",
+      "value": 0.232
+    }
+  ],
+  "status": "OK",
+  "resultsTruncated": false,
+  "version": "3.6.0"
+}
+]]></programlisting>
+</section>
+</section>

@@ -8,6 +8,9 @@ require 'typhoeus'
 require 'json'
 require 'nokogiri'
 
+# NOTE: If you change this, change it in translations.ent as well!
+$api_version = '3.6'
+
 task :default => 'samples'
 
 $formats = [:json, :xml]
@@ -150,7 +153,7 @@ def request(method, path, options = {})
   else
     request_options[:params] = options unless options.empty?
   end
-  request = Typhoeus::Request.new("https://#{$conf[:server]}#{path}", request_options)
+  request = Typhoeus::Request.new("https://#{$conf[:server]}/#{$api_version}#{path}", request_options)
   $hydra.queue(request)
   $hydra.run
   # Save request
@@ -179,68 +182,68 @@ end
 
 task :samples do
   $formats.each do |format|
-    puts "Generating #{format} samples"
+    puts "Generating #{format} samples for version #{$api_version}"
     @format = format
     uid = nil
     begin
       # Quickstart example
-      request :get, "/3/categories/Great_Circle_flight_methodology/calculation", :type=>'great circle route', :'values.IATAcode1'=>'LHR', :'values.IATAcode2'=>'LAX'
+      request :get, "/categories/Great_Circle_flight_methodology/calculation", :type=>'great circle route', :'values.IATAcode1'=>'LHR', :'values.IATAcode2'=>'LAX'
       # Create profile
-      response = request :post, '/3/profiles', :profile => true
+      response = request :post, "/profiles", :profile => true
       profile_uid = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
       # Get profile list
-      request :get, "/3/profiles"
+      request :get, "/profiles"
       # Do a search
-      request :get, "/3/search;name;label;parent", :types => 'DC,DI', :q => 'camels'
+      request :get, "/search;name;label;parent", :types => 'DC,DI', :q => 'camels'
       # Get data category information
-      request :get, "/3/categories", :tags => 'electricity', :resultLimit => 10
-      request :get, "/3/categories/DEFRA_transport_fuel_methodology"
-      request :get, "/3/categories/DEFRA_transport_fuel_methodology/items"
+      request :get, "/categories", :tags => 'electricity', :resultLimit => 10
+      request :get, "/categories/DEFRA_transport_fuel_methodology"
+      request :get, "/categories/DEFRA_transport_fuel_methodology/items"
       # Get a large category to demonstrate paging
-      request :get, "/3/categories/US_specific_car_transport/items;label", :engineSize => '2.5', :resultLimit => 10
+      request :get, "/categories/US_specific_car_transport/items;label", :engineSize => '2.5', :resultLimit => 10
       # Do a data calculation
-      request :get, "/3/categories/DEFRA_transport_fuel_methodology/calculation", :'values.volume' => 500, :fuel => 'petrol'
+      request :get, "/categories/DEFRA_transport_fuel_methodology/calculation", :'values.volume' => 500, :fuel => 'petrol'
       # Create a new profile item
-      response = request(:post, "/3/profiles/#{profile_uid}/items", :category => 'DEFRA_transport_fuel_methodology', :fuel => 'petrol', :'values.volume' => 500)
+      response = request(:post, "/profiles/#{profile_uid}/items", :category => 'DEFRA_transport_fuel_methodology', :fuel => 'petrol', :'values.volume' => 500)
       item_uid = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
-      response = request(:post, "/3/profiles/#{profile_uid}/items", :category => 'DEFRA_transport_fuel_methodology', :fuel => 'petrol', :'values.volume' => 500, :name => "example", :startDate => '2011-01-05T00:00:00Z')
+      response = request(:post, "/profiles/#{profile_uid}/items", :category => 'DEFRA_transport_fuel_methodology', :fuel => 'petrol', :'values.volume' => 500, :name => "example", :startDate => '2011-01-05T00:00:00Z')
       item_uid_2 = response.headers_hash["Location"].match(/\/([A-Z0-9]{12})$/)[1]
       # Get profile with list of used categories
-      request :get, "/3/profiles/#{profile_uid};categories"
+      request :get, "/profiles/#{profile_uid};categories"
       # Get a list of items in a profile
-      request :get, "/3/profiles/#{profile_uid}/items"
+      request :get, "/profiles/#{profile_uid}/items"
       # Get an existing profile item
-      request :get, "/3/profiles/#{profile_uid}/items/#{item_uid};amounts"
-      request :get, "/3/profiles/#{profile_uid}/items/#{item_uid}/values;itemValueDefinition"
+      request :get, "/profiles/#{profile_uid}/items/#{item_uid};amounts"
+      request :get, "/profiles/#{profile_uid}/items/#{item_uid}/values;itemValueDefinition"
       # Update a profile item
-      request :put, "/3/profiles/#{profile_uid}/items/#{item_uid}", :'values.volume' => 1000
+      request :put, "/profiles/#{profile_uid}/items/#{item_uid}", :'values.volume' => 1000
       # Do an interactive drilldown
-      request :get, "/3/categories/Generic_car_transport/drill"
-      request :get, "/3/categories/Generic_car_transport/drill", :fuel => 'diesel'
-      request :get, "/3/categories/Generic_car_transport/drill", :fuel => 'diesel', :size => 'large'
+      request :get, "/categories/Generic_car_transport/drill"
+      request :get, "/categories/Generic_car_transport/drill", :fuel => 'diesel'
+      request :get, "/categories/Generic_car_transport/drill", :fuel => 'diesel', :size => 'large'
       # Get fuel data item details
-      response = request :get, "/3/categories/DEFRA_transport_fuel_methodology/items;values", :fuel => 'petrol'
+      response = request :get, "/categories/DEFRA_transport_fuel_methodology/items;values", :fuel => 'petrol'
       case @format
       when :json
         data_item_uid = response.body.match(/"uid":"([A-Z0-9]{12})"/)[1]
       when :xml
         data_item_uid = response.body.match(/<Item uid="([A-Z0-9]{12})">/)[1]
       end
-      request :get, "/3/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid};values"
-      request :get, "/3/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid}/values/massTotalCO2ePerVolume"
+      request :get, "/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid};values"
+      request :get, "/categories/DEFRA_transport_fuel_methodology/items/#{data_item_uid}/values/massTotalCO2ePerVolume"
       # Get data item history sample
-      response = request :get, "/3/categories/UK_energy_by_supplier/items;values", :supplier => 'ecotricity'
+      response = request :get, "/categories/UK_energy_by_supplier/items;values", :supplier => 'ecotricity'
       case @format
       when :json
         data_item_uid = response.body.match(/"uid":"([A-Z0-9]{12})"/)[1]
       when :xml
         data_item_uid = response.body.match(/<Item uid="([A-Z0-9]{12})">/)[1]
       end
-      request :get, "/3/categories/UK_energy_by_supplier/items/#{data_item_uid}/values/kgCO2PerKWh"
+      request :get, "/categories/UK_energy_by_supplier/items/#{data_item_uid}/values/kgCO2PerKWh"
     ensure
       # Clear up
-      request :delete, "/3/profiles/#{profile_uid}/items/#{item_uid}" if item_uid
-      request :delete, "/3/profiles/#{profile_uid}" if profile_uid
+      request :delete, "/profiles/#{profile_uid}/items/#{item_uid}" if item_uid
+      request :delete, "/profiles/#{profile_uid}" if profile_uid
       # Replace the IDs in the files so we don't change everything every time
       replace_ids(format, item_uid, '1U36W0KJFW3S')
       replace_ids(format, item_uid_2, 'O9IX7PWGT5W4')
