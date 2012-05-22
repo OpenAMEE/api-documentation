@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
+[
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % dbcent PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "../../tools/dtd/dbcentx.mod">
+%dbcent;
+<!ENTITY % translations   SYSTEM "translations.ent">
+%translations;
+]>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="batch-operations">
+	<title><phrase role='titleize'>&batch_operations;</phrase></title>
+	<para>
+    Multiple &profile_items; can be set in a single HTTP request by using the Batch Update mechanism. Batch updates are 
+    performed by sending an XML or JSON document to the &profile; items URL.  If you send a POST request, new 
+    &profile_items; will be created. If you send a PUT, existing &profile_items; will be updated. If sending to the 
+    &profile; root, any data in any &category; can be created or modified. When sending to a &category;, only items 
+    within that &category; can be created or modified. 
+  </para>
+	<section xml:id='batch-create-reference'>
+		<title>Create multiple &profile_items;</title>
+		<para>
+			Used to create multiple new profile items in a single HTTP request.
+		</para>
+		<table class='requestdetails'>
+			<tr>					
+				<td>URL</td>
+				<td>&api_url;/&api_version;/profiles/{profile_uid}/items</td>
+			</tr>
+			<tr>					
+				<td>HTTP Method</td>
+				<td>POST</td>
+			</tr>
+			<tr>					
+				<td>Request Content-Type</td>
+				<td>application/json or application/xml</td>
+			</tr>
+			<tr>
+				<td>Response Content-Type</td>
+				<td>application/json or application/xml</td>
+			</tr>
+			<tr>
+				<td>Successful Response Code</td>
+				<td>201 OK</td>
+			</tr>
+		</table>
+		<para>
+		  The request should include a JSON or XML-encoded body containing the values which should be set.
+		  See the examples below for the exact structure. Compulsory and optional parameters are as discussed
+		  in <xref linkend='create-profile-item'/>, but instead of putting the parameters in a form
+		  encoded body, parameter names become hash keys or tag names in the JSON or XML.
+	  </para>
+		<para>
+		  If you post to the /items URL of the profile, you do not need to tell the platform which category the 
+		  items should be created in; it will infer this from the specified dataItemUid. This means that items 
+		  can be created across multiple categories at once. However, if you post to a particular category, 
+		  an error will be raised if any dataItemUids are not within that category. This restriction could be useful
+		  for debugging.
+	  </para>
+	  <para>
+      Creation is atomic: in the event of failure, an error code will be returned and none of the items will
+      be created. If successful, the response will contain a list of the locations of the created items.
+		</para>
+		<section role='tabbed'>
+		  <section role='tab'>
+  			<title>JSON</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+            POST /profiles/80EC1B49E2A9 HTTP/1.1
+            Accept: application/json
+            Content-Type: application/json
+            Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+          <programlisting language='javascript'><xi:include href='samples/json/batch_create_request.js' parse="text"/></programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+            HTTP/1.1 200 OK
+            Content-Type: application/json; charset=UTF-8
+          </programlisting>
+  			  <programlisting language='javascript'><xi:include href='samples/json/batch_create.js' parse="text"/></programlisting>
+			  </section>
+  		</section>
+  		<section role='tab'>
+  			<title>XML</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+            POST /profiles/59586731F930 HTTP/1.1
+            Accept: application/xml
+            Content-Type: application/xml
+            Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/batch_create_request.xml' parse="text"/></programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+            HTTP/1.1 200 OK
+            Content-Type: application/xml; charset=UTF-8
+          </programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/batch_create.xml' parse="text"/></programlisting>
+        </section>
+  		</section>
+  	</section>
+	</section>
+	<section xml:id='batch-update-reference'>
+		<title>Update Multiple Profile Items</title>
+		<para>
+			Used to update multiple profile items in a single HTTP request.
+		</para>
+		<table class='requestdetails'>
+			<tr>					
+				<td>URL</td>
+				<td>https://{server}.amee.com/profiles/{profile_uid}[/{category_path}]</td>
+			</tr>
+			<tr>					
+				<td>HTTP Method</td>
+				<td>PUT</td>
+			</tr>
+			<tr>					
+				<td>Request Content-Type</td>
+				<td>application/json or application/xml</td>
+			</tr>
+			<tr>
+				<td>Response Content-Type</td>
+				<td>application/json or application/xml</td>
+			</tr>
+			<tr>
+				<td>Successful Response Code</td>
+				<td>200 OK</td>
+			</tr>
+		</table>
+		<para>
+		  The request should include a JSON or XML-encoded body containing the UIDs of the items, and the values
+		  which should be updated. See the examples below for the exact structure. Parameters are as discussed in 
+		  <xref linkend='update-profile-item-reference'/>, but instead of putting the parameters in a form
+		  encoded body, parameter names become hash keys or tag names in the JSON or XML.
+	  </para>
+	  <para>
+      Updates are atomic: in the event of failure, an error code will be returned and none of the items will
+      be updated.
+		</para>
+		<section role='tabbed'>
+		  <section role='tab'>
+  			<title>JSON</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+            PUT /profiles/80EC1B49E2A9 HTTP/1.1
+            Accept: application/json
+            Content-Type: application/json
+            Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+          <programlisting language='javascript'><xi:include href='samples/json/batch_update_request.js' parse="text"/></programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+            HTTP/1.1 200 OK
+            Content-Type: text/plain
+          </programlisting>
+			  </section>
+  		</section>
+  		<section role='tab'>
+  			<title>XML</title>
+  			<section role='httprequest'>
+  			  <programlisting role='header'>
+            PUT /profiles/59586731F930 HTTP/1.1
+            Accept: application/xml
+            Content-Type: application/xml
+            Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+          </programlisting>
+          <programlisting language='xml'><xi:include href='samples/xml/batch_update_request.xml' parse="text"/></programlisting>
+        </section>
+        <section role='httpresponse'>
+          <programlisting role='header'>
+            HTTP/1.1 200 OK
+            Content-Type: text/plain
+          </programlisting>
+        </section>
+  		</section>
+  	</section>
+	</section>
+</section>
