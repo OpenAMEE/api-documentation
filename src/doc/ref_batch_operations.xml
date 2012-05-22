@@ -62,46 +62,8 @@
 	  <para>
       Creation is atomic: in the event of failure, an error code will be returned and none of the items will
       be created. If successful, the response will contain a list of the locations of the created items.
-		</para>
-		<section role='tabbed'>
-		  <section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-            POST /profiles/80EC1B49E2A9 HTTP/1.1
-            Accept: application/json
-            Content-Type: application/json
-            Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting language='javascript'><xi:include href='samples/json/batch_create_request.js' parse="text"/></programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-            HTTP/1.1 200 OK
-            Content-Type: application/json; charset=UTF-8
-          </programlisting>
-  			  <programlisting language='javascript'><xi:include href='samples/json/batch_create.js' parse="text"/></programlisting>
-			  </section>
-  		</section>
-  		<section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-            POST /profiles/59586731F930 HTTP/1.1
-            Accept: application/xml
-            Content-Type: application/xml
-            Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting language='xml'><xi:include href='samples/xml/batch_create_request.xml' parse="text"/></programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-            HTTP/1.1 200 OK
-            Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-          <programlisting language='xml'><xi:include href='samples/xml/batch_create.xml' parse="text"/></programlisting>
-        </section>
-  		</section>
+	  </para>
+    <xi:include href='samples/post_profiles_batch.xml'/>
   	</section>
 	</section>
 	<section xml:id='batch-update-reference'>
@@ -112,7 +74,7 @@
 		<table class='requestdetails'>
 			<tr>					
 				<td>URL</td>
-				<td>https://{server}.amee.com/profiles/{profile_uid}[/{category_path}]</td>
+				<td>https://{server}.amee.com/profiles/{profile_uid}/items</td>
 			</tr>
 			<tr>					
 				<td>HTTP Method</td>
