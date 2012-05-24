@@ -52,6 +52,7 @@
     <xi:include href='ref_data_item_values.xml'/>
     <xi:include href='ref_profiles.xml'/>
     <xi:include href='ref_profile_items.xml'/>
+    <xi:include href='ref_batch_operations.xml'/>
     <xi:include href='ref_search.xml'/>
     <xi:include href='ref_authentication.xml'/>
     <xi:include href='ref_uids.xml'/>
