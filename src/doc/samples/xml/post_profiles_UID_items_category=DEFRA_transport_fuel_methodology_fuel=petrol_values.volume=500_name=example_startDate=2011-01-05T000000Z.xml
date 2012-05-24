@@ -1,9 +1,9 @@
 <section role='tab'>
-<title>JSON</title>
+<title>XML</title>
 <section role='httprequest'>
 <programlisting role='header'>
 POST /3.6/profiles/FC2ODLZHCNHS/items HTTP/1.1
-Accept: application/json
+Accept: application/xml
 Content-Type: application/x-www-form-urlencoded
 Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
 </programlisting>
@@ -14,18 +14,18 @@ category=DEFRA_transport_fuel_methodology&amp;fuel=petrol&amp;values.volume=500&
 <section role='httpresponse'>
 <programlisting role='header'>
 HTTP/1.1 201 Created
-Content-Type: application/json; charset=UTF-8
+Content-Type: application/xml
 Location: https://api-stage.amee.com/3.6.0/profiles/FC2ODLZHCNHS/items/O9IX7PWGT5W4
 </programlisting>
-<programlisting language='javascript'><![CDATA[
-{
-  "location": "/3.6.0/profiles/FC2ODLZHCNHS/items/O9IX7PWGT5W4",
-  "status": "OK",
-  "entity": {
-    "uid": "O9IX7PWGT5W4"
-  },
-  "version": "3.6.0"
-}
+<programlisting language='xml'><![CDATA[
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Representation>
+ <Status>OK</Status>
+ <Location>/3.6.0/profiles/FC2ODLZHCNHS/items/O9IX7PWGT5W4</Location>
+ <Entity uid="O9IX7PWGT5W4"/>
+ <Version>3.6.0</Version>
+</Representation>
 ]]></programlisting>
 </section>
 </section>
