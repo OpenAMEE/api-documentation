@@ -10,14 +10,13 @@
 %translations;
 ]>
 
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="batch-operations">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="batch-operations-reference">
 	<title><phrase role='titleize'>&batch_operations;</phrase></title>
 	<para>
-    Multiple &profile_items; can be set in a single HTTP request by using the Batch Update mechanism. Batch updates are 
+    Multiple &profile_items; can be set in a single HTTP request by using the batch update mechanism. Batch updates are 
     performed by sending an XML or JSON document to the &profile; items URL.  If you send a POST request, new 
-    &profile_items; will be created. If you send a PUT, existing &profile_items; will be updated. If sending to the 
-    &profile; root, any data in any &category; can be created or modified. When sending to a &category;, only items 
-    within that &category; can be created or modified. 
+    &profile_items; will be created. If you send a PUT, existing &profile_items; will be updated. It is not possible to
+    delete &profile_items; using batch operations. 
   </para>
 	<section xml:id='batch-create-reference'>
 		<title>Create multiple &profile_items;</title>
@@ -67,14 +66,14 @@
   	</section>
 	</section>
 	<section xml:id='batch-update-reference'>
-		<title>Update Multiple Profile Items</title>
+		<title>Update multiple &profile_items;</title>
 		<para>
 			Used to update multiple profile items in a single HTTP request.
 		</para>
 		<table class='requestdetails'>
 			<tr>					
 				<td>URL</td>
-				<td>https://{server}.amee.com/profiles/{profile_uid}/items</td>
+				<td>&api_url;/&api_version;/profiles/{profile_uid}/items</td>
 			</tr>
 			<tr>					
 				<td>HTTP Method</td>
@@ -103,43 +102,6 @@
       Updates are atomic: in the event of failure, an error code will be returned and none of the items will
       be updated.
 		</para>
-		<section role='tabbed'>
-		  <section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-            PUT /profiles/80EC1B49E2A9 HTTP/1.1
-            Accept: application/json
-            Content-Type: application/json
-            Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting language='javascript'><xi:include href='samples/json/batch_update_request.js' parse="text"/></programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-            HTTP/1.1 200 OK
-            Content-Type: text/plain
-          </programlisting>
-			  </section>
-  		</section>
-  		<section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-            PUT /profiles/59586731F930 HTTP/1.1
-            Accept: application/xml
-            Content-Type: application/xml
-            Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-          <programlisting language='xml'><xi:include href='samples/xml/batch_update_request.xml' parse="text"/></programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-            HTTP/1.1 200 OK
-            Content-Type: text/plain
-          </programlisting>
-        </section>
-  		</section>
-  	</section>
+		<xi:include href='samples/put_profiles_batch.xml'/>
 	</section>
 </section>
