@@ -3,3 +3,5 @@
 *.tmproj
 version.ent
 dist
+
+/.project
