@@ -12,11 +12,11 @@ Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
   "profileItems":[
     {
       "profileItemUid":"4U6J56GQ1QRM",
-      "volumePerTime":300
+      "values.volumePerTime":300
     },
     {
       "profileItemUid":"SJOQCNGJV8HG",
-      "distance":400
+      "values.distance":400
     }
   ]
 }
