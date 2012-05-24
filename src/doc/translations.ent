@@ -1,6 +1,7 @@
 <!ENTITY api_name "AMEEconnect">
 <!ENTITY api_version "3.6"> <!-- NOTE: if you change this, change in samples/Rakefile and regenerate the samples! -->
 <!ENTITY api_url "https://api-stage.amee.com">
+<!ENTITY batch_operations "batch operations">
 <!ENTITY discover "AMEEdiscover">
 <!ENTITY discover_url "http://discover.amee.com">
 <!ENTITY developer_tab "code tab">
