@@ -141,38 +141,7 @@
         </div>
       </div>
     </div>
-    <!-- copypasted from site, sadly. to be DRYed later -->
-    <div class="vertwidgets">
-      <div role="complementary" id="right-widget-area">
-        <div class="widget-area" id="first">
-          <ul class="xoxo">
-            <li class="widget-container content2_block" id="secondary-html-content-2">
-              <div class="greyBoxThirdPageHeader">.</div>
-              <div class="greyBoxThirdPageContent subMenuLinks">
-              <div class="subMenuItem"><a href="quickstart.php">Quickstart</a></div>
-              <div class="subMenuItem"><a href="/developer/how-to/">How to</a></div>
-              <div class="subMenuItem"><a href="/developer/amee-appkit/">AMEEappkit</a></div>
-              <div class="subMenuItem"><a href="index.php">Documentation</a></div>
-              <div class="subMenuItem"><a href="reference.php">API reference</a></div>
-              <div class="subMenuItem"><a href="/developer/sdks/">SDKs</a></div>
-              <div class="subMenuItem"><a href="/amee-open-source-policy/">Open Source Policy</a></div>
-              <div class="subMenuItem"><a href="/category/developernews/">Developer Blog</a></div>
-              <div class="subMenuItem"><a href="/developer/labs/">AMEE Labs</a></div>
-              <div class="subMenuItem"><a href="http://status.amee.com">Status</a></div>
-              </div>
-              <div class="greyBoxThirdPageFooter">.</div>
-            </li>
-          </ul>
-        </div>
-        <!-- #first .widget-area -->
-        <div class="widget-area" id="second">
-          <ul class="xoxo"></ul>
-        </div>
-        <!-- #second .widget-area -->
-      </div>
-      <!-- #right-widget-area -->
-    </div>
-
+    
     <xsl:processing-instruction name="php">
       include (TEMPLATEPATH . '/footer_dev.php');
     <xsl:text>?</xsl:text></xsl:processing-instruction>
