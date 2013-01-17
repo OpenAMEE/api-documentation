@@ -1,0 +1,40 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3.6/categories/Generic_car_transport/drill?fuel=diesel&amp;size=large HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "status": "OK",
+  "drill": {
+    "choices": {
+      "values": [
+        "4F6CBCEE95F7"
+      ],
+      "name": "uid"
+    },
+    "selections": [
+      {
+        "name": "fuel",
+        "value": "diesel"
+      },
+      {
+        "name": "size",
+        "value": "large"
+      }
+    ]
+  },
+  "version": "3.6.0"
+}
+]]></programlisting>
+</section>
+</section>

@@ -1,5 +1,7 @@
 *~
 .DS_Store
 *.tmproj
+version.ent
+dist
 
-/src/doc/php-chunk/
+/.project

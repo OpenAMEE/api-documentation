@@ -1,99 +1,153 @@
 <?xml version="1.0"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
-  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
+[
+<!ENTITY % translations   SYSTEM "translations.ent">
+%translations;
+]>
 
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='profiles'>
   <title>Store Data</title>
   <section xml:id='store-data'>
-    <title>Using AMEE to store data</title>
+    <title>Using &api_name; to Store Data</title>
     <para>
       If you have a lot of energy information, or want to keep your own application as light
-      as possible, you can use AMEE to store your calculations permanently so that you can
-      retrieve them later. By handing the database handling requirements to AMEE, you save money 
-      on hosting and processing your own data.
+      as possible, you can use &api_name; to store your &profile_item_values; permanently, so that you can
+      retrieve them later.
     </para>
     <para>
-      The process for doing this is actually exactly the same as for doing calculations as described
-      in the previous chapter; when you do a calculation, you create a Profile Item, which is stored 
-      in the AMEE platform.
-    </para>
-  </section>
-  <section xml:id='about-profiles'>
-    <title>More about Profiles</title>
-    <para>
-      So far, we've mostly ignored Profiles. Here, however, they become more relevant. If you are storing 
-      data for many different entities, you can use multiple profiles to separate that data into silos.
-    </para>
-    <para>
-      A common use case is to have a separate profile for each user of a web application, but equally you could 
-      have a profile for each office in a business application, or any number of other things. In general, the 
-      smallest entity in your system will probably correspond to a profile. You should store the Profile UID generated
-      by AMEE in your application alongside other data for the entity; there is no way to search AMEE for profiles that 
-      match particular metadata, as all profiles are fully anonymised.
+	  To do this, you create <glossterm>&profiles;</glossterm>, and create a <glossterm>&profile_item;</glossterm> for
+	  each set of &profile_item_values;. A &profile; can contain any number of &profile_items;. The API for creating 
+	  &profile_items; is similar to that for performing one-off calculations, so there is very little extra work involved.
     </para>
   </section>
-  <section xml:id='naming-items'>
-    <title>Naming Profile Items</title>
+  <section xml:id='create-profile'>
+    <title>Creating a <phrase role='titleize'>&profile;</phrase></title>
     <para>
-      If you create two profile items with the same data item UID, and which overlap the same 
-      time, then AMEEconnect will complain, as it can't form a single consistent time series from the 
-      data (see below). However, there are cases in which you might want to do this; energy used by two 
-      cars of the same type. In this case, you can provide a name parameter to identify each set. 
-      You can build up multiple datasets in the same profile category 
-      by using different names for each one. A name is not required, but if you suspect that 
-      you will want to store multiple datasets alongside each other, it is good practise 
-      to specify one.
+      In order to store &profile_item_values; in &api_name;, you need to create at least one &profile;. If you have multiple
+      entities in your system, you can use multiple &profiles; to keep their &profile_item_values; separate.
+    </para>
+    <para>
+      A common use case is to have a separate &profile; for each user of a web application, but equally you could 
+      have a &profile; for each office in a business application, or any number of other things. In general, the 
+      smallest entity in your system will probably correspond to a &profile;.
+    </para>
+    <para>
+		You create a profile by doing a POST request to <code>/&api_version;/profiles</code>, including <code>profile=true</code> in the request body.
+	</para>
+	<xi:include href='samples/post_profiles_profile=true.xml'/>
+	<para>
+		The important part of the response is the &profile; UID, which is included in the response body and in the <code>Location</code> header.
+		Whenever you want to store &profile_item_values; in this &profile;, you will need the UID. You should store it in your application 
+		alongside other data for the relevant entity; there is no way to search for &profiles; that match particular metadata, as all &profiles; 
+		are fully anonymised.
+    </para>
+    <para>
+		In this response, the &profile; UID is <code>FC2ODLZHCNHS</code>.
+	</para>
+  </section>
+  <section xml:id='create-profile-item'>
+    <title>Storing <phrase role='titleize'>&profile_item_values;</phrase></title>
+    <para>
+      Storing &profile_item_values; in a &profile; is pretty much the same as doing one-off calculations as described in 
+	  <xref linkend='doing-calculations'/>, except that
+	  you POST to the <code>/items</code> path inside the profile you are using, and provide the following parameters in the POST body:
+    </para>
+	<itemizedlist>
+		<listitem>The &category; name, in the <code>category</code> parameter.</listitem>
+		<listitem>The relevant &drill_options;</listitem>
+		<listitem>Some &profile_item_values;, with the form <code>value.{&profile_item_value;_name}={your_value}</code></listitem>
+	</itemizedlist>
+    <para>
+	  The following example performs the same calculation as before, but stores it into a &profile; for later retrieval.
+    </para>
+	<xi:include href='samples/post_profiles_UID_items_category=DEFRA_transport_fuel_methodology_fuel=petrol_values.volume=500.xml'/>
+    <para>
+	  Apart from the <code>category</code> parameter, these are exactly the same parameters as in <xref linkend='doing-calculations'/>. 
+	  The <code>category</code> parameter specifies the &category; name. For one-off calculations, this is part of the URL, but here it
+	  is a POST parameter.
+	</para>
+	<para>
+	  As for creating &profiles;, the UID of the stored &profile_item; is returned in the response and the Location header.
+	</para>
+  </section>
+  <section xml:id='retrieve-items'>
+    <title>Fetching <phrase role='titleize'>&return_values;</phrase></title>
+    <para>
+      To retrieve &return_values;, you simply perform a GET on the &profile_item; URL, which uses the above UID.
+      A sample request that includes the calculated &return_values; is shown below. You can also access the <code>values</code>
+	  subresource to get the original &profile_item_values; back. See <xref linkend='get-profile-item-reference'/>
+      for full details.
+    </para>
+	<xi:include href='samples/get_profiles_UID_items_UID;amounts.xml'/>
+    <para>
+      These responses can be filtered by time period; see below.
+    </para>
+    <para>
+      &api_name; does not support aggregation across different categories or profiles. Often the same data
+      could be stored in multiple places using different methodologies, so in order to avoid double counting, 
+      the aggregation is left to the client who best understands the business logic involved.
+    </para>
+  </section>
+  <section xml:id='list-items'>
+    <title>List Stored <phrase role='titleize'>&profile_items;</phrase></title>
+    <para>
+	  You can also get a list of all &profile_items; that are stored in a single &profile;, by doing a GET to the items collection.
+	</para>
+	<xi:include href='samples/get_profiles_UID_items.xml'/>
+	<para>
+	  This request returns a list of &profile_item; UIDs, which you can use for subsequent GET requests. There are matrix parameters that
+	  let you get back &return_values; or &profile_item_values; in the same request, if you want to. See <xref linkend='list-profile-items-reference'/>.
+	  You can also filter items on &category;, &drill_options;, and so on.
     </para>
   </section>
   <section xml:id='build-time-series'>
     <title>Building Time Series</title>
     <para>
-      Storing a single profile item is useful, but most data changes over time, particularly 
-      when we are talking about energy use. AMEEconnect allows you to store time information along 
-      with your data, so that you can build up a series of data points over time.
+      Storing a single &profile_item; is useful, but most data changes over time, particularly 
+      when dealing with energy use. &api_name; allows you to store time information along 
+      with your &profile_item_values;, so that you can build up a sequence of data over time.
     </para>
     <para>
-      Three parameters are available to control time information, startDate, endDate, and 
-      duration. By providing these when you create profile items, you can set the time 
-      that the created profile item is valid for. By default, startDate is "now" and 
-      endDate is infinitely far in the future. If your data is not time-sensitive, then 
-      this will be fine. However, if your data represents usage at a particular time, you 
-      can set the values explicitly. The maximum time resolution of AMEEconnect is 1 
+      Three parameters are available to specify time information: <code>startDate</code>, <code>endDate</code>, and 
+      <code>duration</code>. By providing these when you create &profile_items;, you can set the time 
+      that the created &profile_item; is valid for. By default, <code>startDate</code> is "now" and 
+      <code>endDate</code> is infinitely far in the future. If your data is not time-sensitive, then 
+      this will be fine. However, if your data represents usage for a particular time period, you 
+      can set the values explicitly. The maximum time resolution of &api_name; is 1 
       minute. If seconds are specified, they are rounded down. Note that you can't set 
-      endDate and duration at the same time.
+      <code>endDate</code> and <code>duration</code> at the same time.
     </para>
     <para>
       All these parameters are specified in standard ISO-8601 format. For instance, the 
       following would all be valid parameters (when correctly form-encoded):
     </para>
-    <programlisting>startDate=2009-08-01T14:30:55Z
-endDate=2009-08-02T14:30:55-08:00
-duration=PT30S</programlisting>
+    <programlisting>startDate=2009-08-01T14:30:00Z
+endDate=2009-08-02T14:30:00-08:00
+duration=PT30M</programlisting>
   </section>
-  <section xml:id='retrieve-items'>
-    <title>Retrieving stored data</title>
+  <section xml:id='naming-items'>
+    <title>Naming <phrase role='titleize'>&profile_items;</phrase></title>
     <para>
-      To retrieve stored data, you can do a GET on the category in which you have created profiles items.
-      This will return a paged response listing all the profile items in that category, as well as a total amount
-      of emissions for all of them. The request is shown below; see <xref linkend='list-profile-items-reference'/>
-      for the full response details.
-    </para>
-    <para>
-      These responses can be filtered by time period; see below.
-    </para>
-    <para>
-      AMEEconnect does not support aggregation across different categories or profiles. Often the same data
-      could be stored in multiple places using different methodologies, so in order to avoid double counting, 
-      the aggregation is left to the client who best understands the business logic involved.
+	  &api_name; treats multiple &profile_items; that have the same &category; and &drill_options; as a single time series.
+      If you create two &profile_items; for the same &data_item;, and which overlap the same 
+      time, then &api_name; will object, as it can't form a single consistent time series from the 
+      data.
+	  However, there are cases in which you might want to do this; for instance, energy used by two 
+      cars of the same type at the same time. In this case, you can provide a <code>name</code> parameter when you create the &profile_items;
+	  to disambiguate the two sequences. 
+	</para>
+	<para>
+      A name is not required, but it is good practise to specify one. As the default <code>startDate</code> is "now", if you create
+	  multiple &profile_items; for the same &data_item; during the same minute, they will conflict if you do not specify a name.
     </para>
   </section>
   <section xml:id='time-series-queries'>
     <title>Time Series Queries</title>
     <para>
-      Once you have built up a time series, you will probably want to retrieve historical 
-      data. Above, we saw that profile categories include a list of current profile items. 
-      This "present time" behaviour can be modified by providing startDate and endDate query 
-      parameters in the GET request, using the same format as above. 
+      If you build up a time series, you will probably want to retrieve historical data.
+      You can filter which &profile_items; are returned in lists by providing <code>startDate</code> and <code>endDate</code> query 
+      parameters in the GET request, using the same format as above.
     </para>
     <para>
       There are a couple of request parameters that control what is returned:
@@ -104,15 +158,15 @@ duration=PT30S</programlisting>
         <tr><th>Option</th><th>Meaning</th></tr>
         <tr>
           <td><emphasis>unspecified</emphasis></td>
-          <td>Include items which intersects the query window.</td>
+          <td>Include &profile_items; which intersects the query window.</td>
         </tr>
         <tr>
-          <td>start</td>
-          <td>Only include items which start during the query window.</td>
+          <td><code>start</code></td>
+          <td>Only include &profile_items; which start during the query window.</td>
         </tr>
         <tr>
-          <td>end</td>
-          <td>Only include items which end during the query window.</td>
+          <td><code>end</code></td>
+          <td>Only include &profile_items; which end during the query window.</td>
         </tr>
       </table>
     </section>
@@ -127,14 +181,14 @@ duration=PT30S</programlisting>
           </td>
         </tr>
         <tr>
-          <td>prorata</td>
-          <td>Get only the emissions which took place during the query window.</td>
+          <td><code>prorata</code></td>
+          <td>Get only the emissions which took place during the query window, for &data_items; that have a unit including time.</td>
         </tr>
       </table>
       <para>
-        For instance, if you have a profile item that lasts a week, and request just one day within that period, if you 
-        do not specify mode, you will still get the emissions for the week. If you specify mode=prorata, you will get the 
-        emissions just during that single day.
+        For instance, if you have a &profile_item; that lasts a week, and request just one day within that period, if you 
+        do not specify <code>mode</code>, you will get the &return_values; for the entire week. If you specify 
+		<code>mode=prorata</code>, you will get the &return_values; for that single day.
       </para>
     </section>
   </section>

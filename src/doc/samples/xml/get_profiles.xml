@@ -1,41 +1,30 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Resources xmlns="http://schemas.amee.cc/2.0">
-  <ProfilesResource>
-    <Profiles>
-      <Profile created="2009-03-19 10:54:43.0" modified="2009-03-19 10:54:43.0" uid="563DE12868DC">
-        <Path/>
-        <Name/>
-        <Environment uid="5F5887BCF726"/>
-        <Permission created="2009-03-19 10:54:43.0" modified="2009-03-19 10:54:43.0" uid="E746CC640299">
-          <Environment uid="5F5887BCF726"/>
-          <Name>amee</Name>
-          <Username>v2user</Username>
-        </Permission>
-      </Profile>
-      <Profile created="2009-03-17 14:17:12.0" modified="2009-03-17 14:17:12.0" uid="E0047238E5E0">
-        <Path/>
-        <Name/>
-        <Environment uid="5F5887BCF726"/>
-        <Permission created="2009-03-17 14:17:12.0" modified="2009-03-17 14:17:12.0" uid="D24F947B27EA">
-          <Environment uid="5F5887BCF726"/>
-          <Name>amee</Name>
-          <Username>v2user</Username>
-        </Permission>
-      </Profile>
-      ...
-    </Profiles>
-    <Pager>
-      <Start>0</Start>
-      <From>1</From>
-      <To>10</To>
-      <Items>16</Items>
-      <CurrentPage>1</CurrentPage>
-      <RequestedPage>1</RequestedPage>
-      <NextPage>2</NextPage>
-      <PreviousPage>-1</PreviousPage>
-      <LastPage>2</LastPage>
-      <ItemsPerPage>10</ItemsPerPage>
-      <ItemsFound>10</ItemsFound>
-    </Pager>
-  </ProfilesResource>
-</Resources>
+<section role='tab'>
+<title>XML</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3.6/profiles HTTP/1.1
+Accept: application/xml
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/xml; charset=UTF-8
+</programlisting>
+<programlisting language='xml'><![CDATA[
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<Representation>
+ <Profiles truncated="false">
+  <Profile uid="WZ516B97NYDZ"/>
+  <Profile uid="NIYUN6Z4FH6M"/>
+  <Profile uid="K5MRP2GMNB6A"/>
+  <Profile uid="FC2ODLZHCNHS"/>
+ </Profiles>
+ <Status>OK</Status>
+ <Version>3.6.0</Version>
+</Representation>
+]]></programlisting>
+</section>
+</section>

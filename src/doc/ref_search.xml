@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
+[
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % dbcent PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "../../tools/dtd/dbcentx.mod">
+%dbcent;
+<!ENTITY % translations   SYSTEM "translations.ent">
+%translations;
+]>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="search-reference">
+	<title><phrase role='titleize'>Search</phrase></title>
+	<para>
+		The search resource performs full-text searching of all AMEE platform content.
+		Both &categories; and &data_items; can be returned depending on the request,
+		and any matrix parameters valid for those resources can be used to add extra
+		information in the search results.
+    </para>
+	<table class="requestdetails">
+		<tr>
+			<td>URL</td>
+			<td><code>&api_url;/&api_version;/search</code></td>
+		</tr>
+		<tr>
+			<td>HTTP Method</td>
+			<td><code>GET</code></td>
+		</tr>
+		<tr>
+			<td>Successful Response Code</td>
+			<td><code>200 OK</code></td>
+		</tr>
+	</table>
+	<section>
+		<title>Query Parameters</title>
+		<table class="parameters">
+			<tr>
+				<th>Parameter</th>
+				<th>Description</th>
+				<th>Required?</th>
+			</tr>
+			<tr>
+				<td><code>q</code></td>
+				<td>Query string. Either a simple string or a Lucene query expression. See <xref linkend='search'/> for more details.</td>
+				<td>&required;</td>
+			</tr>
+			<tr>
+				<td><code>types</code></td>
+				<td><code>DC</code> will return &categories;, <code>DI</code> will return &data_items;. <code>DC,DI</code> will return both.</td>
+				<td>&required;</td>
+			</tr>
+		</table>
+	</section>
+	<xi:include href='samples/get_search;name;label;parent_types=DC,DI_q=camels.xml'/>
+</section>

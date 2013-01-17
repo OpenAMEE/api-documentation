@@ -1,178 +1,227 @@
 <?xml version="1.0"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
-  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
+[
+<!ENTITY % translations   SYSTEM "translations.ent">
+%translations;
+]>
 
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='advanced'>
   <title>Advanced Options</title>
+  <section xml:id='specifying-api-versions'>
+    <title>Specifying API Version</title>
+		<para>
+			Above version 3, &api_name; includes the API version in the URL. This allows you to code against a particular version
+			and be sure that future updates will not affect your code. This manual, for instance, covers version &api_version;.
+		</para>
+		<para>
+		 Version numbers are made up of:
+		</para>
+		<programlisting>{major_version}.{minor_version}</programlisting>
+		<itemizedlist>
+			<listitem><emphasis>Major</emphasis> versions make large changes, such as URL structure.</listitem>
+			<listitem><emphasis>Minor</emphasis> versions may change resource representations.</listitem>
+		</itemizedlist>
+		<para>
+			You can specify as much or as little of a version in your URLs as you like. The version used will be the 
+			highest matching version number. For instance, if the current version is <code>x.y</code>:
+		</para>
+		<itemizedlist>
+			<listitem><code>/x/</code> will match the highest version less than version <code>x+1</code>, so will use version <code>x.y</code>.</listitem>
+			<listitem><code>/x.y-1/</code> will match only that specific version, but not <code>x.y</code>.</listitem>
+		</itemizedlist>
+		<para>
+			We recommend that you use a major and minor version in your URLs, such as <code>&api_version;</code>. That way, you are guaranteed
+			not to get any API changes.
+		</para>
+  </section>
   <section xml:id='units'>
     <title>Units</title>
     <para>
-      AMEEconnect includes built-in support for a wide range of unit conversions. Most units 
-      are SI by default, but if you want to specify fuel in US gallons instead, you can. Time units can also 
-      be changed. Each parameter in a profile item has associated Unit and PerUnit parameters which control 
-      these. For instance, if you wanted to use the default units for fuel, you could add a fuel purchase with 
-      the following parameter, which would represent a fuel usage of 100 litres per month.
+      &api_name; includes built-in support for a wide range of unit conversions. Most units 
+      are metric by default, but if you want to specify fuel in, say, US gallons instead, you can. Time units can also 
+      be changed if relevant for that &profile_item_value;. 
+		</para>
+		<para>
+		  If you wanted to use the default units, you would use a parameter with no extra options.
+	    </para>
+	    <programlisting>values.volume=100</programlisting>
+		<para>
+		  If you wanted to specify the volume in US gallons, you would specify a unit. This is done by prefixing the
+		  &profile_item_value; name with <code>units</code> instead of <code>values</code>.
     </para>
-    <programlisting>volume=100</programlisting>
+    <programlisting>values.volume=100&amp;units.volume=gal</programlisting>
     <para>
-      If, however, you are measuring in gallons on a weekly basis, you could specify the following parameters:
+      If the &profile_item_value; has default units that included a 'per-time' dimension (for instance kg/year),
+	  	you can change the time dimension with <code>perUnit</code> parameters. Not all &profile_item_values; support this option.
     </para>
-    <programlisting>volume=100&amp;volumeUnit=gal&amp;volumePerUnit=week</programlisting>
+    <programlisting>values.volume=100&amp;units.volume=gal&amp;perUnits.volume=week</programlisting>
     <para>
-      All unit conversion calculations are automatically handled by AMEEconnect, giving you the correct 
-      results for your application with the minimum of effort.
-    </para>
-    <para>
-      The following table lists the most common units supported by AMEE, along with the symbol that 
+      The following table lists the most common units supported by &api_name;, along with the symbol that 
       should be used for the POST options.
     </para>
     <table class='properties'>
       <tr><th>Mass</th><th>symbol</th></tr>
-      <tr><td>Grams</td><td>g</td></tr>
-      <tr><td>Kilograms</td><td>kg</td></tr>
-      <tr><td>Metric Tons / Tonnes</td><td>t</td></tr>
-      <tr><td>Ounces</td><td>oz</td></tr>
-      <tr><td>Pounds</td><td>lb</td></tr>
-      <tr><td>Tons (UK imperial)</td><td>ton_uk</td></tr>
-      <tr><td>Tons (US imperial)</td><td>ton_us</td></tr>
+      <tr><td>Grams</td><td><code>g</code></td></tr>
+      <tr><td>Kilograms</td><td><code>kg</code></td></tr>
+      <tr><td>Metric Tons / Tonnes</td><td><code>t</code></td></tr>
+      <tr><td>Ounces</td><td><code>oz</code></td></tr>
+      <tr><td>Pounds</td><td><code>lb</code></td></tr>
+      <tr><td>Tons (UK imperial)</td><td><code>ton_uk</code></td></tr>
+      <tr><td>Tons (US imperial)</td><td><code>ton_us</code></td></tr>
       <tr><th>Distance</th><th>symbol</th></tr>
-      <tr><td>Metres</td><td>m</td></tr>
-      <tr><td>Kilometres</td><td>km</td></tr>
-      <tr><td>Feet</td><td>ft</td></tr>
-      <tr><td>Yards</td><td>yd</td></tr>
-      <tr><td>Miles</td><td>mi</td></tr>
-      <tr><td>Nautical Miles</td><td>nmi</td></tr> 
+      <tr><td>Metres</td><td><code>m</code></td></tr>
+      <tr><td>Kilometres</td><td><code>km</code></td></tr>
+      <tr><td>Feet</td><td><code>ft</code></td></tr>
+      <tr><td>Yards</td><td><code>yd</code></td></tr>
+      <tr><td>Miles</td><td><code>mi</code></td></tr>
+      <tr><td>Nautical Miles</td><td><code>nmi</code></td></tr> 
       <tr><th>Volume</th><th>symbol</th></tr>
-      <tr><td>Litres</td><td>L</td></tr>
-      <tr><td>Cubic Metres</td><td>m³</td></tr>
-      <tr><td>Fluid Ounces (UK imperial)</td><td>oz_fl_uk</td></tr>
-      <tr><td>Fluid Ounces (US imperial)</td><td>oz_fl</td></tr>
-      <tr><td>Gallons (UK imperial)</td><td>gal_uk or gallon_uk</td></tr>
-      <tr><td>Gallons (US imperial)</td><td>gal</td></tr>
+      <tr><td>Litres</td><td><code>L</code></td></tr>
+      <tr><td>Cubic Metres</td><td><code>m³</code></td></tr>
+      <tr><td>Fluid Ounces (UK imperial)</td><td><code>oz_fl_uk</code></td></tr>
+      <tr><td>Fluid Ounces (US imperial)</td><td><code>oz_fl</code></td></tr>
+      <tr><td>Gallons (UK imperial)</td><td><code>gal_uk</code> or <code>gallon_uk</code></td></tr>
+      <tr><td>Gallons (US imperial)</td><td><code>gal</code></td></tr>
       <tr><th>Energy</th><th>symbol</th></tr>
-      <tr><td>Kilowatt-Hours</td><td>kWh</td></tr>
-      <tr><td>Joules</td><td>J</td></tr>
+      <tr><td>Kilowatt-Hours</td><td><code>kWh</code></td></tr>
+      <tr><td>Joules</td><td><code>J</code></td></tr>
       <tr><th>Energy - BTU</th><th>symbol</th></tr>
-      <tr><td>39 °F</td><td>BTU_ThirtyNineF</td></tr>
-      <tr><td>Mean</td><td>BTU_Mean</td></tr>
-      <tr><td>IT</td><td>BTU_IT</td></tr>
-      <tr><td>ISO</td><td>BTU_ISO</td></tr>
-      <tr><td>59 °F</td><td>BTU_FiftyNineF</td></tr>
-      <tr><td>60 °F</td><td>BTU_SixtyF</td></tr>
-      <tr><td>63 °F</td><td>BTU_SixtyThreeF</td></tr>
-      <tr><td>Thermochemical</td><td>BTU_Thermochemical</td></tr> 
+      <tr><td>39 °F</td><td><code>BTU_ThirtyNineFv</code></td></tr>
+      <tr><td>Mean</td><td><code>BTU_Mean</code></td></tr>
+      <tr><td>IT</td><td><code>BTU_IT</code></td></tr>
+      <tr><td>ISO</td><td><code>BTU_ISO</code></td></tr>
+      <tr><td>59 °F</td><td><code>BTU_FiftyNineF</code></td></tr>
+      <tr><td>60 °F</td><td><code>BTU_SixtyF</code></td></tr>
+      <tr><td>63 °F</td><td><code>BTU_SixtyThreeF</code></td></tr>
+      <tr><td>Thermochemical</td><td><code>BTU_Thermochemical</code></td></tr> 
       <tr><th>Energy - Therm</th><th>symbol</th></tr>
-      <tr><td>39 °F</td><td>thm_ThirtyNineF</td></tr>
-      <tr><td>Mean</td><td>thm_Mean</td></tr>
-      <tr><td>IT</td><td>thm_IT</td></tr>
-      <tr><td>EC</td><td>thm_ec, alias of thm_IT</td></tr>
-      <tr><td>ISO</td><td>thm_ISO</td></tr>
-      <tr><td>59 °F</td><td>thm_FiftyNineF</td></tr>
-      <tr><td>US</td><td>thm_us, alias of thm_FiftyNineF</td></tr>
-      <tr><td>60 °F</td><td>thm_SixtyF</td></tr>
-      <tr><td>63 °F</td><td>thm_SixtyThreeF</td></tr>
-      <tr><td>Thermochemical</td><td>thm_Thermochemical</td></tr>
+      <tr><td>39 °F</td><td><code>thm_ThirtyNineF</code></td></tr>
+      <tr><td>Mean</td><td><code>thm_Mean</code></td></tr>
+      <tr><td>IT</td><td><code>thm_IT</code></td></tr>
+      <tr><td>EC</td><td><code>thm_ec</code>, alias of <code>thm_IT</code></td></tr>
+      <tr><td>ISO</td><td><code>thm_ISO</code></td></tr>
+      <tr><td>59 °F</td><td><code>thm_FiftyNineF</code></td></tr>
+      <tr><td>US</td><td><code>thm_us</code>, alias of <code>thm_FiftyNineF</code></td></tr>
+      <tr><td>60 °F</td><td><code>thm_SixtyF</code></td></tr>
+      <tr><td>63 °F</td><td><code>thm_SixtyThreeF</code></td></tr>
+      <tr><td>Thermochemical</td><td><code>thm_Thermochemical</code></td></tr>
       <tr><th>Time</th><th>symbol</th></tr>
-      <tr><td>Second</td><td>s</td></tr>
-      <tr><td>Minute</td><td>min</td></tr>
-      <tr><td>Hour</td><td>h</td></tr>
-      <tr><td>Day</td><td>day</td></tr>
-      <tr><td>Week</td><td>week</td></tr>
-      <tr><td>Month</td><td>month</td></tr>
-      <tr><td>Year</td><td>year</td></tr>
+      <tr><td>Second</td><td><code>s</code></td></tr>
+      <tr><td>Minute</td><td><code>min</code></td></tr>
+      <tr><td>Hour</td><td><code>h</code></td></tr>
+      <tr><td>Day</td><td><code>day</code></td></tr>
+      <tr><td>Week</td><td><code>week</code></td></tr>
+      <tr><td>Month</td><td><code>month</code></td></tr>
+      <tr><td>Year</td><td><code>year</code></td></tr>
     </table>
-    <section xml:id='return-units'>
-      <title>Return Units</title>
-      <para>
-        Similar to input units, the CO2 emission results generated by AMEE have default units of kg/year. If you 
-        prefer pounds per week, you can specify some special parameters in your GET requests:
-      </para>
-      <programlisting>https://stage.amee.com/profiles/7C7D68C2A7CD/home/energy/quantity?returnUnit=lb&amp;returnPerUnit=week</programlisting>
-      <para>
-        Note that this only affects the default returned amount contained in the single Amount or TotalAmount tag. 
-        The contents of the Amounts tag are not affected, so if you are dealing with multiple gases, this facility
-        will not be available. This will be improved in a future version of the API.
-      </para>
-    </section>
   </section>
-  <section xml:id='authenticated-sessions'>
-    <title>Authenticated Sessions</title>
-    <para>
-      If you do not wish to use HTTP Basic authentication with each request, you can create an
-      authenticated session. You will need to make a POST request to 
-      https://stage.amee.com/auth, providing your username and password as form-encoded data in the request 
-      body. You also need to specify which format you want the result in (XML or JSON) using a standard 
-      "Accept" header. The response to this request includes various pieces of information, but the most 
-      important is the authentication token, which is returned both as a cookie and as a custom header, 
-      both called "authToken".
-    </para>
-		<section role='tabbed'>
-  		<section role='tab'>
-  			<title>Example</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-POST /auth HTTP/1.1
-Accept: application/xml (or applicaiton/json)
-Content-Type: application/x-www-form-urlencoded
-          </programlisting>
-          <programlisting role='body'>
-username=my_username&amp;password=my_password
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 200 OK
-Set-Cookie: authToken=1KVARbypAjxLGViZ0Cg+UskZEHmqVkhx/PmEvzkPGpnUlH17KQbJ58xfapXiewVVPvG2CtrQNTuawY+KWU4Dxx08570dM2Z0sZAoeijdlucuCOvAyHhi9A==; 
-authToken: 1KVARbypAjxLGViZ0Cg+UskZEHmqVkhx/PmEvzkPGpnUlH17KQbJ58xfapXiewVVPvG2CtrQNTuawY+KWU4Dxx08570dM2Z0sZAoeijdlucuCOvAyHhi9A==
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-        </section>
-  		</section>
-  	</section>
-    <para>
-      You should store the authToken value and include it as a cookie in any 
-      subsequent requests. The authToken will expire after two hours, or if unused for half an 
-      hour. Therefore, if you are using authenticated sessions, your application should always be prepared 
-      to re-authorise on any request if you receive a 401 UNAUTHORIZED response.
-    </para>
-		<section role='tabbed'>
-  		<section role='tab'>
-  			<title>Example</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data HTTP/1.1
-Cookie: authToken=1KVARbypAjxLGViZ0Cg+UskZEHmqVkhx/PmEvzkPGpnUlH17KQbJ58xfapXiewVVPvG2CtrQNTuawY+KWU4Dxx08570dM2Z0sZAoeijdlucuCOvAyHhi9A==
-accept:application/xml
-          </programlisting>
-        </section>
-        <section role='httpresponse'>
-          <programlisting role='header'>
-HTTP/1.1 200 OK
-          </programlisting>
-        </section>
-  		</section>
-  	</section>
-    <para>
-      Note that this facility is deprecated, and will not be present in version 3 of AMEEconnect. We highly recommend
-      connecting over HTTPS and using Basic Authentication instead.
-    </para>
-  </section>
-  <section id='paging'>
-    <title>Paging</title>
+  <section id='matrix-parameters'>
+    <title>Matrix Parameters</title>
 	  <para>
-	    Many resources in AMEE are capable of containing a large number of sub-resources, for instance 
-	    profile categories can contain many profile items. Retrieving them all in one request may be prohibitively
-	    expensive, so for this reason such resources are paged. Details of how to page through items in AMEE are provided in <xref linkend="paging-reference"/>.
+		  &api_name; uses <glossterm>matrix parameters</glossterm> to control the content of resource representations. This means that
+		  you will only get a bare minimum of information by default when you do a request. Often, to get more, you will need to provide
+		  a matrix parameter. This keeps responses small and fast, and means that you only have to parse what you need.
+	  </para>
+	  <para>
+		  Matrix parameters are added to the end of a URL, separated by semicolons, but before any query parameters that are present. They 
+		  are not used for parameters that can vary, such as inputs to a calculation or pages in a search result. In the example URI below,
+		  <code>name</code> and <code>address</code> are matrix parameters, and <code>order</code> is a standard query parameter:
+	  </para>
+	  <programlisting>http://example.com/people;name;address?order=asc</programlisting>
+	  <para>
+		  Each resource has a full list of available matrix parameters listed in the appropriate reference section. 
 	  </para>
   </section>
-  <section xml:id='interactive-drilldowns'>
-    <title>Interactive Drilldowns</title>
+  <section xml:id='search'>
+    <title>Search</title>
     <para>
-      Sometimes you want to give your users a choice of which calculation to perform within a category. For instance, they might
-      need to choose the model of their car, or how their home is heated. For those situations when there are too many
-      options to present in a single list, AMEEconnect provides the facility to perform step-by-step interactive drilldowns.
-      You make a request to the drill resource, present the user with the choices, then make another request based on their choice.
-      This gives you the next set of choices, and so on until the drill is fully specified.
+      &api_name; provides full-text search capabilities for both &categories; and &data_items;. To do a search, use the
+	  <code>/&api_version;/search</code> resource, and provide the text you want to search for in the <code>q</code> parameter. You
+	  must also supply a <code>types</code> parameter, which controls which resources you would like to search:
+    </para>
+	<itemizedlist>
+      <listitem><code>DC</code>: search &categories;</listitem>
+      <listitem><code>DI</code>: search &data_items;</listitem>
+      <listitem><code>DC,DI</code>: search both</listitem>
+    </itemizedlist>
+	<para>
+	  The query can be either a simple string, or a lucene query expression. By default, separate words in the query
+	  are joined with the <code>OR</code> operator. Here are some examples:
+	</para>
+	<itemizedlist>
+      <listitem><code>camels</code></listitem>
+      <listitem><code>camels OR cattle</code> (equivalent to <code>camels cattle</code>)</listitem>
+      <listitem><code>camels AND cattle</code></listitem>
+      <listitem><code>camels -cattle</code></listitem>
+      <listitem><code>(camels AND cattle) OR rabbits</code></listitem>
+    </itemizedlist>
+	<para>
+		For many more options, read the <ulink url='http://lucene.apache.org/core/old_versioned_docs/versions/3_0_0/queryparsersyntax.html'>
+		Lucene Query Parser Syntax</ulink> documentation.
+	</para>
+	<para>
+	  You can include any valid matrix parameters for either &categories; or &data_items; in order to fetch extra data 
+	  as part of the search. See the reference section for details.	
+	</para>
+	<xi:include href='samples/get_search;name;label;parent_types=DC,DI_q=camels.xml'/>
+	<para>
+	  In the JSON representation, the <code>type</code> field is used to show what sort of object has been returned, whereas
+	  in XML this is done with the tag name. It is <code>item</code> for &data_items; or <code>category</code> for &categories;.
+	</para>
+  </section>
+  <section id='authority'>
+    <title>Authority</title>
+	  <para>
+			All &categories; in &api_name; have an <glossterm>authority</glossterm> rating, which is also shown in
+			&discover;. This indicates how reliable AMEE consider the &category; to be. There are four levels, listed
+			in decreasing order of confidence.
+	  </para>
+		<itemizedlist>
+      <listitem>enterprise</listitem>
+      <listitem>recommended</listitem>
+      <listitem>verified</listitem>
+      <listitem>unverified</listitem>
+    </itemizedlist>
+		<para>
+			For a detailed discussion of what each rating means, and when it is appropriate to use which level of &category;,
+			see <ulink url='http://discover.amee.com/categories/Authority'>&discover;</ulink>.
+		</para>
+		<para>
+			When searching or listing &categories;, you can filter by authority so that you only see &categories; that are sufficiently
+			high-quality for your application.
+		</para>
+  </section>
+  <section id='paging'>
+		<title>Paging</title>
+	  <para>
+	    Many resources in &api_name; are capable of containing a large number of sub-resources; for instance 
+	    &profiles; can contain many &profile_items;. Retrieving them all in one request may be prohibitively
+	    expensive, so for this reason such resources are paged.
+	  </para>
+	  <para>
+	    The representations of these resources will contain an indication as to whether the list is truncated, as shown below. 
+			If the value is <code>true</code>, more results are available. Two GET parameters are available to adjust which 
+			results are returned.
+	  </para>
+		<itemizedlist>
+			<listitem><code>resultStart</code>: The first result that should be returned (zero-indexed). Defaults to 0.</listitem>
+			<listitem><code>resultLimit</code>: The maximum number of results to return in one request. Defaults to 50.</listitem>
+		</itemizedlist>
+		<para>
+			By incrementing the <code>resultStart</code> parameter by <code>resultLimit</code>, you can page through the
+			complete list until <code>resultsTruncated</code> is false.
+		</para>
+	  <xi:include href='samples/get_categories_US_specific_car_transport_items;label_engineSize=2.5_resultLimit=10.xml'/>
+  </section>
+  <section xml:id='interactive-drilldowns'>
+    <title>Interactive <phrase role='titleize'>&data_item;</phrase> Selection</title>
+    <para>
+      Sometimes you want to give your users a choice of which &data_item; to use within a &category;. For instance, they might
+      need to choose the make of their car, or how their home is heated. For those situations when there are too many
+      options to present in a single list, &api_name; provides the facility to perform step-by-step interactive drilldowns.
+      You make a request to the <code>drill</code> resource for a &category;, present the user with the choices, then make another request 
+			based on their choice. This gives you the next set of choices, and so on until the &drill_options; are fully specified.
     </para>
     <para>
       This process is fully documented in <xref linkend="drilldown-reference"/>.

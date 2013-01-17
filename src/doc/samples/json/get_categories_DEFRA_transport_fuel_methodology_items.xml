@@ -1,0 +1,43 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+GET /3.6/categories/DEFRA_transport_fuel_methodology/items HTTP/1.1
+Accept: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "status": "OK",
+  "items": [
+    {
+      "uid": "9DE1D9435784"
+    },
+    {
+      "uid": "5C521E17EDE1"
+    },
+    {
+      "uid": "S5EJCLVVCUP2"
+    },
+    {
+      "uid": "68BA9ED4CD1B"
+    },
+    {
+      "uid": "AA6B1557CEA6"
+    },
+    {
+      "uid": "NL9467O7Y4K3"
+    }
+  ],
+  "resultsTruncated": false,
+  "version": "3.6.0"
+}
+]]></programlisting>
+</section>
+</section>

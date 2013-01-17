@@ -1,0 +1,49 @@
+<section role='tab'>
+<title>XML</title>
+<section role='httprequest'>
+<programlisting role='header'>
+POST /3.6/profiles/FC2ODLZHCNHS/items HTTP/1.1
+Accept: application/xml
+Content-Type: application/xml
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+<programlisting role='body'><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<ProfileCategory>
+  <ProfileItems>
+    <ProfileItem>
+      <dataItemUid>66056991EE23</dataItemUid>
+      <volumePerTime>10</volumePerTime>
+    </ProfileItem>
+    <ProfileItem>
+      <dataItemUid>4F6CBCEE95F7</dataItemUid>
+      <distance>200</distance>
+    </ProfileItem>
+  </ProfileItems>
+</ProfileCategory>
+]]></programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 201 Created
+Content-Type: application/xml
+</programlisting>
+<programlisting language='xml'><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<Representation>
+    <Status>OK</Status>
+    <ProfileItems>
+        <ProfileItem>
+            <Entity>VPRD1CQJFVWT</Entity>
+            <Location>/3.6.0/profiles/J2EPF2AO7SG8/items/VPRD1CQJFVWT</Location>
+        </ProfileItem>
+        <ProfileItem>
+            <Entity>B2I0D1RR90GI</Entity>
+            <Location>/3.6.0/profiles/J2EPF2AO7SG8/items/B2I0D1RR90GI</Location>
+        </ProfileItem>
+    </ProfileItems>
+    <Version>3.6.0</Version>
+</Representation>
+]]></programlisting>
+</section>
+</section>

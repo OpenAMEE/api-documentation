@@ -1,0 +1,44 @@
+<section role='tab'>
+<title>JSON</title>
+<section role='httprequest'>
+<programlisting role='header'>
+POST /3.6/profiles/FC2ODLZHCNHS/items HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
+</programlisting>
+<programlisting role='body'><![CDATA[
+{
+  "profileItems":[
+    {
+      "dataItemUid":"66056991EE23",
+      "values.volumePerTime":100
+    },
+    {
+      "dataItemUid":"4F6CBCEE95F7",
+      "values.distance":200
+    }
+  ]
+}
+]]></programlisting>
+</section>
+<section role='httpresponse'>
+<programlisting role='header'>
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=UTF-8
+</programlisting>
+<programlisting language='javascript'><![CDATA[
+{
+  "status" : "OK",
+  "version" : "3.6.0",
+  "profileItems" : [ {
+    "uid" : "4U6J56GQ1QRM",
+    "location" : "/3.6.0/profiles/FC2ODLZHCNHS/items/4U6J56GQ1QRM"
+  }, {
+    "uid" : "SJOQCNGJV8HG",
+    "location" : "/3.6.0/profiles/FC2ODLZHCNHS/items/SJOQCNGJV8HG"
+  } ]
+}
+]]></programlisting>
+</section>
+</section>

@@ -1,0 +1,4 @@
+<section role='tabbed' xmlns:xi='http://www.w3.org/2001/XInclude'>
+<xi:include href='json/get_categories_DEFRA_transport_fuel_methodology_items_UID_values_massTotalCO2ePerVolume.xml'/>
+<xi:include href='xml/get_categories_DEFRA_transport_fuel_methodology_items_UID_values_massTotalCO2ePerVolume.xml'/>
+</section>

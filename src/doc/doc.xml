@@ -2,16 +2,18 @@
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
   "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
 [
-<!ENTITY % vers   SYSTEM "version.xml">
+<!ENTITY % vers   SYSTEM "version.ent">
 %vers;
+<!ENTITY % translations   SYSTEM "translations.ent">
+%translations;
 ]>
 
 <book id="amee" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Documentation</title>
+  <title>&api_name; Documentation</title>
 
   <bookinfo>
 
-    <subtitle>AMEEconnect version 2</subtitle>
+    <subtitle>API version &api_version;</subtitle>
 
     <authorgroup>
       <author>
@@ -29,8 +31,9 @@
     </authorgroup>
 
     <copyright>
-      <year>2007-2011</year>
-      <holder>AMEE UK Ltd.</holder>
+      <year>2007-2012</year>
+      <holder xlink:href="http://www.amee.com">AMEE UK Ltd.</holder>
+      <license type="cc by-sa" v="3.0"/>
     </copyright>
 
   </bookinfo>
@@ -42,37 +45,17 @@
   <xi:include href='ch_profiles.xml'/>
   <xi:include href='ch_advanced.xml'/>
 
-  <appendix>
-    <title>Profile Reference</title>
-    <para>
-      AMEEconnect profiles are used to store user data and perform calculations.
-    </para>
-    <xi:include href='ref_profiles.xml'/>
-    <xi:include href='ref_profile_items.xml'/>
-    <xi:include href='ref_profile_batch.xml'/>
-  </appendix>
-
-  <appendix>
-    <title>Data Reference</title>
-    <para>
-      AMEEconnect provides reference-style access to data categories and items 
-      curated by AMEE. It also provides drilldown resources to allow interactive or automatic 
-      selection of data items by client applications.
-    </para>
+  <appendix xml:id='reference'>
+	<title>&api_name; API reference</title>
     <xi:include href='ref_data_categories.xml'/>
     <xi:include href='ref_data_items.xml'/>
     <xi:include href='ref_data_item_values.xml'/>
-  </appendix>
-
-  <appendix>
-    <title>Common Concepts Reference</title>
-    <para>
-      There are a number of concepts that are used by different resources across AMEEconnect. This
-      appendix provides a reference for them.
-    </para>
+    <xi:include href='ref_profiles.xml'/>
+    <xi:include href='ref_profile_items.xml'/>
+    <xi:include href='ref_batch_operations.xml'/>
+    <xi:include href='ref_search.xml'/>
     <xi:include href='ref_authentication.xml'/>
     <xi:include href='ref_uids.xml'/>
-    <xi:include href='ref_paging.xml'/>
     <xi:include href='ref_dates.xml'/>
   </appendix>
 

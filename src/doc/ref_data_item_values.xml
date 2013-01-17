@@ -4,19 +4,17 @@
 [
 <!ENTITY % sgml.features "IGNORE">
 <!ENTITY % xml.features "INCLUDE">
-<!ENTITY % dbcent PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/usr/local/Cellar/docbook/5.0/docbook/xml/4.5/dbcentx.mod">
+<!ENTITY % dbcent PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "../../tools/dtd/dbcentx.mod">
 %dbcent;
+<!ENTITY % translations   SYSTEM "translations.ent">
+%translations;
 ]>
 
 <section xml:id='data-item-value-reference' xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Data Item Values</title>
+  <title><phrase role='titleize'>&data_item_values;</phrase></title>
   <para>
-    Data Item Values belong to Data Items. Each Data Item Value represents a distinct value 
-    such as 'energyConsumption', or 'kgCO2PerkWh'.
-  </para>
-  <para>
-    Data Item Values themselves are rarely used, as all information in them normally appears
-    in their parent Data Item.
+    Each &data_item; has many &data_item_values;, which can be retrieved separately if desired. The normal use for 
+	this is to fetch history data for &data_item_values; which change over time.
   </para>
   <section>
   	<title>Properties</title>
@@ -27,71 +25,33 @@
 			</tr>
 			<tr>					
 				<td>UID</td>
-				<td>A 12-letter unique identifier for the data item. See <xref linkend='uid-reference'/> for more information.</td>
+				<td>A <link linkend='uid-reference'>unique identification code</link> for the &data_item_value;.</td>
 			</tr>
-			<tr>					
-				<td>created</td>
-				<td>The time and date on which the item was created.</td>
-			</tr>
-			<tr>					
-				<td>modified</td>
-				<td>The time and date on which the item was last modified.</td>
-			</tr>
-			<tr>					
+			<tr>
 				<td>value</td>
-				<td>The current value for the Data Item.</td>
+				<td>The actual value of the &data_item_value;.</td>
+			</tr>
+			<tr>					
+				<td>unit</td>
+				<td>The unit of the &data_item_value;, if appropriate.</td>
+			</tr>
+			<tr>					
+				<td>startDate</td>
+				<td>The date from which the &data_item_value; is valid.</td>
 			</tr>
 		</table>
 	</section>
 	<section xml:id='get-data-item-value-reference'>
-		<title>Get Single Value</title>
+		<title>Get &data_item_value;</title>
 		<para>
-			Fetches a representation of a single data item value.
+			Fetches a representation of a single &data_item_value;, including history data if relevant. Actual values are returned as an array.
+			If there is no history data, the array will only have one element.
 		</para>
 		<table class='requestdetails'>
-			<tr><td>URL</td><td>https://{server}.amee.com/data/{category_path}/{data_item_uid}/{value_name}</td></tr>
-			<tr><td>HTTP Method</td><td>GET</td></tr>
-			<tr><td>Response Content-Type</td><td>application/xml or application/json</td></tr>
-			<tr><td>Successful Response Code</td><td>200 OK</td></tr>
+			<tr><td>URL</td><td><code>&api_url;/&api_version;/categories/{wikiName}/items/{item_uid}/values/{value_name}</code></td></tr>
+			<tr><td>HTTP Method</td><td><code>GET</code></td></tr>
+			<tr><td>Successful Response Code</td><td><code>200 OK</code></td></tr>
 		</table>
-		<para>
-		  The response contains a JSON or XML encoded description of the data item.
-	  </para>
-		<section role='tabbed'>
-		  <section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/plane/generic/FFC7A05D54AD/kgCO2PerPassengerJourney HTTP/1.1
-Accept: application/json
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
-          <programlisting language='javascript'><xi:include href='samples/json/get_data_item_value.js' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		  <section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/plane/generic/FFC7A05D54AD/kgCO2PerPassengerJourney HTTP/1.1
-Accept: application/xml
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-          <programlisting language='xml'><xi:include href='samples/xml/get_data_item_value.xml' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		</section>
+		<xi:include href='samples/get_categories_UK_energy_by_supplier_items_UID_values_kgCO2PerKWh.xml' />
 	</section>
 </section>

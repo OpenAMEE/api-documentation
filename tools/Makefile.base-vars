@@ -22,15 +22,13 @@
 # should be overridden if necessary to ensure proper paths are used.
 
 # Paths which you may wish to customize:
-XSLTPROC = java -cp '../tools/bin/saxon65.jar:../tools/bin/saxon.jar:../tools/bin/xercesImpl-2.9.1.jar:../tools/xslthl-2.0.2/xslthl-2.0.2.jar' \
-  -Dxslthl.config="file://$(CURDIR)/../tools/xslthl-2.0.2/highlighters/xslthl-config.xml" \
+XSLTPROC = java -cp '$(TOOLS_DIR)/bin/saxon65.jar:$(TOOLS_DIR)/bin/saxon.jar:$(TOOLS_DIR)/bin/xercesImpl-2.9.1.jar:$(TOOLS_DIR)/xslthl-2.0.2/xslthl-2.0.2.jar' \
+  -Dxslthl.config="file://$(CURDIR)/$(TOOLS_DIR)/xslthl-2.0.2/highlighters/xslthl-config.xml" \
   -Djavax.xml.parsers.DocumentBuilderFactory=org.apache.xerces.jaxp.DocumentBuilderFactoryImpl \
   -Djavax.xml.parsers.SAXParserFactory=org.apache.xerces.jaxp.SAXParserFactoryImpl \
   -Dorg.apache.xerces.xni.parser.XMLParserConfiguration=org.apache.xerces.parsers.XIncludeParserConfiguration \
    com.icl.saxon.StyleSheet
 XMLLINT = xmllint
-INSTALL_DIR = $(DESTDIR)/usr/share/doc/OVERRIDE_ME_WITH_SOMETHING_SUITABLE
-INSTALL_DATA = cp -r
 MKDIR = mkdir -p
 GITVERSION = git log -1 --pretty=%h
 
@@ -40,34 +38,34 @@ SHELL = /bin/sh
 NAME = OVERRIDE_ME_WITH_THE_SHORT_FILESYSTEM_NAME_OF_YOUR_BOOK
 DIR = .
 IMAGES =
-TOOLS_DIR = ../tools
-XSL_DIR = `[ -d stylesheets ] && echo stylesheets || echo $(TOOLS_DIR)`
+XSL_DIR = `[ -d src/stylesheets ] && echo src/stylesheets || echo $(TOOLS_DIR)`
 OUTNAME = $(NAME)
 
-HTML_CHUNK_DIR = $(DIR)/html-chunk
-HTML_TARGET = $(DIR)/$(OUTNAME).html
+SAMPLES_DIR = $(DIR)/samples
+SAMPLES_BUILD_CMD = rake
+HTML_CHUNK_DIR = $(OUTDIR)/html-chunk
+HTML_TARGET = $(OUTDIR)/$(OUTNAME).html
 # In the HTML chunk build, index.html is created last, so serves as an 
 # acceptable timestamp file for the entire multi-file output.
 HTML_CHUNK_TARGET = $(HTML_CHUNK_DIR)/index.html
-PHP_CHUNK_DIR = $(DIR)/php-chunk
+PHP_CHUNK_DIR = $(OUTDIR)/php-chunk
 PHP_CHUNK_TARGET = $(PHP_CHUNK_DIR)/index.php
 ARCH_CMD = tar -jcvf
 ARCH_EXT = .tar.bz2
 HTML_ARCH_BASENAME = $(OUTNAME)-html
 HTML_CHUNK_ARCH_BASENAME = $(OUTNAME)-html-chunk
-HTML_ARCH_TARGET = $(DIR)/$(HTML_ARCH_BASENAME)$(ARCH_EXT)
-HTML_CHUNK_ARCH_TARGET = $(DIR)/$(HTML_CHUNK_ARCH_BASENAME)$(ARCH_EXT)
-PDF_TARGET = $(DIR)/$(OUTNAME).pdf
-PS_TARGET = $(DIR)/$(OUTNAME).ps
-FO_TARGET = $(DIR)/$(OUTNAME).fo
-EPUB_TARGET = $(DIR)/$(OUTNAME).epub
+HTML_ARCH_TARGET = $(OUTDIR)/$(HTML_ARCH_BASENAME)$(ARCH_EXT)
+HTML_CHUNK_ARCH_TARGET = $(OUTDIR)/$(HTML_CHUNK_ARCH_BASENAME)$(ARCH_EXT)
+PDF_TARGET = $(OUTDIR)/$(OUTNAME).pdf
+PS_TARGET = $(OUTDIR)/$(OUTNAME).ps
+FO_TARGET = $(OUTDIR)/$(OUTNAME).fo
+EPUB_TARGET = $(OUTDIR)/$(OUTNAME).epub
 XML_SOURCE = $(DIR)/$(NAME).xml
-VERSION_SOURCE = $(DIR)/version.xml
-ALL_SOURCE = $(filter-out $(DIR)/version.xml $(DIR)/amee-doc.xml, $(wildcard $(DIR)/*.xml))
+VERSION_SOURCE = $(DIR)/version.ent
+ALL_SOURCE = $(filter-out $(DIR)/version.ent $(DIR)/amee-doc.xml, $(wildcard $(DIR)/*.xml))
 STYLESHEET = $(DIR)/styles.css $(DIR)/script
-INSTALL_SUBDIR = $(INSTALL_DIR)/$(NAME)
 
-ENSURE_XSL = if ! test -e "$(TOOLS_DIR)/xsl"; \
+ENSURE_XSL = if ! test -e "$(XSL_DIR)/xsl"; \
 	     then $(TOOLS_DIR)/bin/find-xsl.py; fi
 IFIMAGES = if test -n "$(IMAGES)"; then
 ENDIF = ; fi

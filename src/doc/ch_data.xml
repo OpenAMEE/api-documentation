@@ -1,186 +1,79 @@
 <?xml version="1.0"?>
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN" 
-  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd">
+  "http://www.docbook.org/xml/5.0/dtd/docbook.dtd"
+[
+<!ENTITY % translations   SYSTEM "translations.ent">
+%translations;
+]>
 
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Get Emission Factors</title>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id='data'>
+  <title>Get <phrase role='titleize'>&data_item_values;</phrase></title>
   <para>
-    If you just want access to authoritative emission factors, AMEE has you covered. Using AMEEdiscover and 
-    AMEEconnect, you can wire the latest data straight into the heart of your application. AMEEconnect can also
-    perform the actual calculations for you - we'll cover that in the next chapter.
+    If you just want access to authoritative &data_item_values;, we have you covered. Using &discover; and 
+    &api_name;, you can wire the latest data straight into the heart of your application.
   </para>
-  <section xml:id='categories-and-items'>
-    <title>Categories and Items</title>
+  <section xml:id='&categories;'>
+    <title><phrase role='titleize'>&categories;</phrase> and <phrase role='titleize'>&data_items;</phrase></title>
     <para>
-      A category in AMEE is a collection of items representing energy consuming or other activities 
-      which share a common way to calculate their associated greenhouse gas emissions. AMEE categories 
-      represent, to give just a few examples, car or train transport, types of fuel or country-specific 
-      grid electricity, electrical appliances, and agricultural or industrial processes.
+      First, a couple of definitions; in &api_name;, a <glossterm>&category;</glossterm> represents a way of calculating something. 
+	  For example, a method of working out car transport emissions, or electricity emissions for different
+	  countries. Each has a set of inputs, outputs, constants, and an algorithm. 
     </para>
-		<para>
-		  Where similar methodologies exist, perhaps from different sources or representative of different 
-		  geographic contexts, alternative categories are available for the same type of emissions activity.
-		</para>
+	<para>
+	  If there are two ways to calculate something, perhaps from different sources or applicable to different 
+	  standards, each one will be a separate &category;. For instance, searching &discover; for
+	  "flights" brings up a number of options which calculate emissions in different ways.
+	</para>
     <para>
-      Data items are the fundamental unit of data organisation and emissions calculations in AMEE. 
-      Data items are contained within categories and represent distinct types of activity, such as 
-      the use of a particular model of car, a short-haul flight, or the use of a particular electrical
-      appliance.
+	  Each &category; contains a number of different <glossterm>&data_items;</glossterm>, which offer specific variations of the
+	  &category;. For instance, a &category; could represent the calculation for electricity in different countries; 
+	  it will have &data_items; for each country, each of which will have different emission factors.
     </para>
   </section>
   <section xml:id='ameediscover'>
-    <title>Introduction to AMEEdiscover</title>
+    <title>Using &discover;</title>
     <para>
-      As a neutral aggregation platform, AMEE contains many different methodologies related to environmental
-      intelligence. They use different calculation techniques, different inputs, and have different levels 
-      of accuracy. The choice of which of these to use will be up to you, and should be one of the first things 
-      you will decide when you come to use the platform. It will depend on your reporting requirements, legal 
-      requirements, and so on.
+      Choosing which &categories; you want to use will be one of the first things 
+      you will do when you come to use &api_name;. Your choice will depend on what data you are collecting from your users,
+	  reporting requirements, and so on.
     </para>
     <para>
-      Each of these methodologies is a category, and every category within AMEE is individually documented in 
-      AMEEdiscover. It describes the functionality of each category, the source of any data or calculating methodologies, relationships 
-      with other AMEE categories, and provides instructions for how to use the category to store relevant data 
-      and make emissions calculations. AMEEdiscover provides powerful search and tagging capabilities, making 
-      it easy to discover the categories and data items you wish to use. It also provides the ability to perform 
-      instant calculations directly in your browser, so you can easily check your results, and the ability to 
-      generate example code that helps you use AMEEconnect to access those categories.
+      Each &category; is individually documented in <ulink url='&discover_url;'>&discover;</ulink>, with a page that describes how it works, where 
+	  it came from, relationships with other &categories;, and so on. &discover; includes powerful search and 
+	  tagging capabilities, making it easy to find the &categories; that are relevant to your application.
     </para>
-  </section>
-  <section xml:id='using-ameediscover'>
-    <title>Using AMEEdiscover with AMEEconnect</title>
-    <para>
-      If you want to fetch data with AMEEconnect, you first need to work out which data you want. AMEEdiscover helps
-      you to do this and gives you the parameters you need to build the required URLs.
-    </para>
-    <para>
-      Firstly, each category in AMEE has a <emphasis>path</emphasis>. This corresponds to its URL in AMEEconnect, and
-      is shown in the 'API Details' box on each AMEEdiscover category page. For instance, the <ulink href='http://explorer.amee.com/categories/DEFRA_transport_fuel_methodology'>DEFRA transport fuel methodology</ulink> category
-      has a path of <emphasis>/transport/defra/fuel</emphasis>. You could get a list of available data items in that category through AMEEconnect
-      by doing a GET to /data/transport/defra/fuel; see <xref linkend='get-data-category-reference'/> in the reference guide for details.
-    </para>
-    <para>
-      Alternatively, if you want to access a single data item with the category, you will need to identify which one. The <ulink
-      href='http://explorer.amee.com/categories/DEFRA_transport_fuel_methodology/data'>Data Items</ulink> list is useful here. It shows
-      all the data items within a category, including drilldown options.
-    </para>
-  </section>
-  <section xml:id='drilldowns'>
-    <title>Performing Drilldowns</title>
-    <para>
-      Data items are identified by their UIDs, not by textual names. In order to get one of these UIDs, you need to perform a drilldown
-      request. To find the UID for the petrol item in the DEFRA transport fuel methodology, you need to make the following call:
-    </para>
-		<section role='tabbed'>
-		  <section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/defra/fuel/drill?fuel=petrol HTTP/1.1
-Accept: application/xml
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-          <programlisting language='xml'><xi:include href='samples/xml/fuel_drill.xml' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		  <section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/defra/fuel/drill?fuel=petrol HTTP/1.1
-Accept: application/json
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
-          <programlisting language='javascript'><xi:include href='samples/json/fuel_drill.js' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		</section>
-    <para>
-      A drilldown response consists of two sections. The first is the 'Selections' part. This shows choices that have already been
-      made and specified in the drilldown URL. The second is the 'Choices' part, which shows what choices are available for the next 
-      level of drill. Drilldowns support interactive choice of the various levels; see <xref linkend='interactive-drilldowns'/> for details.
-    </para>
-    <para>
-      Here, however, we know all the drill choices we want in advance; we know we want petrol in this case. So, we can specify all the required
-      options and get the resulting UID directly. You can see in the response above that the next choice is called 'uid', and there is only one option.
-      This is the UID for the item we are interested in, in this case 19B311DDF0B1.
-    </para>
-    <para>
-      Data item UIDs are not necessarily the same across different platforms. You should not hardcode them into your 
-      application, as it will certainly break when you move from staging to live. Instead, you should always do a drilldown request. 
-      It's safe to cache the UIDs once they've been fetched, however, as they change extremely rarely within a single platform.
-    </para>
+    <!--><para>
+      The &developer_tab; for a &category; in &discover; shows all the information you need to use it with &api_name;.
+	  It shows the &category; name, allows you to interactively select which &data_item; you want to use, tells you which 
+	  &profile_item_values; are required, gives you all the required URL options, and even generates code for you in a 
+	  variety of languages.
+    </para>-->
   </section>
   <section xml:id='get-data-items'>
-    <title>Fetching Data Items</title>
+    <title>Fetching <phrase role='titleize'>&data_item_values;</phrase></title>
     <para>
-      If you want to get the raw emission factors for an item, you can, once you have the UID. You will also need the UID for
-      calculations (see next chapter).
+      To get &data_item_values; from &api_name;, you need to identify the &category; and &data_item; you are interested in. You 
+	  then do a GET request in the following format to the appropriate API base URL (initially <code>&api_url;</code>). Note 
+	  that the &category; name is included in the URL, and the &drill_options;
+	  are provided as parameters. Note also the inclusion of the <code>values</code> matrix parameter in the URL. See the <xref linkend='matrix-parameters'/>
+	  for more details on what matrix parameters are and how they work.
     </para>
-    <para>
-      Fetching a data item is as simple as doing a GET on the category path with the UID as the last element:
+	<xi:include href='samples/get_categories_DEFRA_transport_fuel_methodology_items;values_fuel=petrol.xml' />
+    <para>	  
+      Each value in the response represents a single &data_item_value; or other data. If you want to know how much CO2 is emitted 
+	  per litre of petrol, the <code>massTotalCO2ePerVolume</code> value would be the most useful.
+      This shows that the factor is 2.7227 kg/L. Alternatively, <code>massCH4PerVolume</code> shows that 0.0034 kg of 
+	  methane is produced for every litre
+      of fuel. The names will vary between &categories;, so you can't assume that the names are always the same; check the &discover; documentation.
     </para>
-		<section role='tabbed'>
-		  <section role='tab'>
-  			<title>XML</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/defra/fuel/19B311DDF0B1 HTTP/1.1
-Accept: application/xml
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/xml; charset=UTF-8
-          </programlisting>
-          <programlisting language='xml'><xi:include href='samples/xml/fuel_data_item.xml' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		  <section role='tab'>
-  			<title>JSON</title>
-  			<section role='httprequest'>
-  			  <programlisting role='header'>
-GET /data/transport/defra/fuel/19B311DDF0B1 HTTP/1.1
-Accept: application/json
-Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-          </programlisting>
-    		</section>
-  			<section role='httpresponse'>
-  			  <programlisting role='header'>
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-          </programlisting>
-          <programlisting language='javascript'><xi:include href='samples/json/fuel_data_item.js' parse="text"/></programlisting>
-		    </section>
-  		</section>
-		</section>
-		<para>
-		  The response contains a representation of the data item, including all its values. There are various types of values, but at this
-		  point we are interested in the ones where FromData is true - these are the emission factors that act as inputs to calculations.
-	  </para>
-	  <para>
-	    If you look at the response above, you can see that there are a series of ItemValue nodes. Each of these represents a single factor
-	    or input. If you want to know how much co2 is emitted per litre of petrol, the massTotalCO2ePerVolume value would be the most useful.
-	    This shows that the factor is 2.7227 kg/L. Alternatively, massCH4PerVolume shows that 0.0034 kg of methane is produced for every litre
-	    of fuel.
+    <para>	  
+      Note that if you provide an incomplete set of &drill_options; or even none at all, you will get back a list of all &data_items; that match the 
+	  options you provided. See <xref linkend='list-data-item-reference'/> for more details.
     </para>
-	</section>
-	<para>
-	  These factors can be useful, but it's more often useful to get AMEE to do the entire calculation for you. Many algorithms are much
-	  more complex than a*b, and you don't want to implement them all yourself. We'll look at calculations in the next section.
+  </section>
+  <para>
+    <phrase role='capitalize'>&data_item_values;</phrase> are good, but it's more often useful to get AMEE to do the entire calculation 
+	for you. Many algorithms are much more complex than <code>a*b</code>, and you really don't want to implement them all yourself. We'll look at 
+	calculations in the next section.
   </para>
 </chapter>
