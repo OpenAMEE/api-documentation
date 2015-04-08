@@ -82,30 +82,31 @@ You can fetch all relevant information for a single model via AMEEconnect, or li
 
 ### Properties
 
-Property    | Description | [Matrix Parameter](advanced.md#matrix-parameters "Matrix Parameters") |
-------------|-------------|--------------------|
-wikiName    | The unique name of the model. You should use this wherever a model needs to be specified. |  |
-UID         | A [unique identification code](reference.md#uid-reference "UIDs") for the model. |
-authority   | The [authority rating](advanced.md#authority "Authority") of the model. | `authority` |
-provenance  | A link (or set of links) to the original source on which the model is based. May include WikiCreole markup for links. | `provenance` |
-history     | The history data for the model. A CSV-style list of change dates and comments. | `history` |
-wikiDoc     | The full documentation for the model, as displayed in AMEEdiscover. Uses WikiCreole syntax.  | `wikiDoc` |
-tags        | A collection of textual tags, as used by AMEEdiscover. | `tags`|
-itemDefinition | Include details of the item definition, which provides access to information on inputs and return values. `itemDefinition` 
-created | The time and date on which the model was created. | `audit`|
-modified | The time and date on which the model was last modified. Note that this does not track changes to contexts inside the model, only to the model itself. | `audit` |
-status |The current status of the model. Normally this will be `ACTIVE`. | `audit` |
+Property        | Description | [Matrix Parameter](advanced.md#matrix-parameters "Matrix Parameters") |
+------------    |-------------------------------------------------------------------------------------------|--------------------|
+wikiName        | The unique name of the model. You should use this wherever a model needs to be specified. |             |
+UID             | A [unique identification code](reference.md#uid-reference "UIDs") for the model.          |             |
+authority       | The [authority rating](advanced.md#authority "Authority") of the model.                   | `authority` |
+provenance      | A link (or set of links) to the original source on which the model is based. May include WikiCreole markup for links. | `provenance` |
+history         | The history data for the model. A CSV-style list of change dates and comments.            | `history` |
+wikiDoc         | The full documentation for the model, as displayed in AMEEdiscover. Uses WikiCreole syntax.  | `wikiDoc` |
+tags            | A collection of textual tags, as used by AMEEdiscover.                                          | `tags`|
+itemDefinition  | Include details of the item definition, which provides access to information on inputs and return values. | `itemDefinition` 
+created         | The time and date on which the model was created.                                         | `audit`|
+modified        | The time and date on which the model was last modified. Note that this does not track changes to contexts inside the model, only to the model itself. | `audit` |
+status          |The current status of the model. Normally this will be `ACTIVE`.                           | `audit` |
 
 ### List models
 
 Fetches a list of models matching specified criteria. The list is sorted
 by relevance, or by wikiName if no query parameters are supplied.
 
-  -------------------------- ---------------------------------------------------------------------------------------------
-  URL                        `https://api-stage.amee.com/3.6/categories[;{matrix_parameters}]?{query_parameters}`
-  HTTP Method                `GET`
-  Successful Response Code   `200 OK`
-  -------------------------- ---------------------------------------------------------------------------------------------
+  Name                      | Value
+  --------------------------|---------------------------------------------------------------------------------------------
+  URL                       |`https://api-stage.amee.com/3.6/categories[;{matrix_parameters}]?{query_parameters}`
+  HTTP Method               |`GET`
+  Successful Response Code  |`200 OK`
+  --------------------------|---------------------------------------------------------------------------------------------
 
 #### Query Parameters
 
@@ -271,6 +272,7 @@ Content-Type: application/xml; charset=UTF-8
 
 Fetch information about a particular model.
 
+  Name                      | Value
   --------------------------|-------------------------------------------------------------------------------------
   URL                       |`https://api-stage.amee.com/3.6/categories/{wikiName}[;{matrix_parameters}]`
   HTTP Method               |`GET`
@@ -370,6 +372,7 @@ are not the same across different AMEEconnect platforms, and so should
 not be hardcoded into applications. They can, however, be cached safely
 for prolonged periods.
 
+  Name                      | Value
   --------------------------|-----------------------------------------------------------------------------------------
   URL                       |`https://api-stage.amee.com/3.6/categories/{wikiName}/drill[?{context options}]`
   HTTP Method               |`GET`
@@ -713,11 +716,12 @@ factors which are used as constant inputs to calculations.
 
 Fetches a list of contexts within a single model.
 
-  -------------------------- --------------------------------------------------------------------------------------------------------------
-  URL                        `https://api-stage.amee.com/3.6/categories/{wikiName}/items[;{matrix_parameters}]?{query_parameters}`
-  HTTP Method                `GET`
-  Successful Response Code   `200 OK`
-  -------------------------- --------------------------------------------------------------------------------------------------------------
+  Name                      | Value
+  --------------------------|--------------------------------------------------------------------------------------------------------------
+  URL                       |`https://api-stage.amee.com/3.6/categories/{wikiName}/items[;{matrix_parameters}]?{query_parameters}`
+  HTTP Method               |`GET`
+  Successful Response Code  |`200 OK`
+  --------------------------|--------------------------------------------------------------------------------------------------------------
 
 #### Query Parameters
 
@@ -878,6 +882,7 @@ Content-Type: application/xml; charset=UTF-8
 
 Fetches a representation of a single context.
 
+  Name                      | Value
   --------------------------|-------------------------------------------------------------------------------------------------
   URL                       |`https://api-stage.amee.com/3.6/categories/{wikiName}/items/{uid}[;{matrix_parameters}]`
   HTTP Method               |`GET`
@@ -1044,6 +1049,7 @@ Content-Type: application/xml; charset=UTF-8
 
 Performs a calculation for a single context.
 
+  Name                      | Value
   --------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   URL                       |`https://api-stage.amee.com/3.6/categories/{wikiName}/calculation?{context options}&{query_parameters}` or `https://api-stage.amee.com/3.6/categories/{wikiName}/items/{uid}/calculation?{query_parameters}`
   HTTP Method               |`GET`
@@ -1201,6 +1207,7 @@ Fetches a representation of a single emission factor, including history
 data if relevant. Actual values are returned as an array. If there is no
 history data, the array will only have one element.
 
+  Name                      | Value
   --------------------------|----------------------------------------------------------------------------------------------------
   URL                       |`https://api-stage.amee.com/3.6/categories/{wikiName}/items/{item_uid}/values/{value_name}`
   HTTP Method               |`GET`
@@ -1370,6 +1377,7 @@ operations that are performed on or inside the profile.
 
 Used to create a new profile, in which inputs can be stored.
 
+  Name                      | Value
   --------------------------|--------------------------------------------------
   URL                       |`https://api-stage.amee.com/3.6/profiles`
   HTTP Method               |`POST`
@@ -1470,6 +1478,7 @@ Location: https://api-stage.amee.com/3.6.0/profiles/FC2ODLZHCNHS
 The main information available in the profile resource is the list of
 models used. This is useful for automating display of stored data.
 
+  Name                      | Value
   --------------------------|----------------------------------------------------------------
   URL                       |`https://api-stage.amee.com/3.6/profiles/{profile_uid}`
   HTTP Method               |`GET`
@@ -1559,6 +1568,7 @@ Content-Type: application/xml; charset=UTF-8
 
 Lists all profiles available to the current user.
 
+  Name                      | Value
   --------------------------|--------------------------------------------------
   URL                       |`https://api-stage.amee.com/3.6/profiles`
   HTTP Method               |`GET`
@@ -1653,6 +1663,7 @@ Completely remove the specified profile from the AMEE database,
 including all profile items contained within it. This information cannot
 be recovered after deletion.
 
+  Name                      | Value
   --------------------------|----------------------------------------------------------------
   URL                       |`https://api-stage.amee.com/3.6/profiles/{profile_uid}`
   HTTP Method               |`DELETE`
@@ -1756,6 +1767,7 @@ In the responses, these results are included in an 'amounts' object. See
 the examples below for the exact XML and JSON representations. Each
 'amount' returned has the following properties:
 
+  Name     | Value
   ---------|---------------------------------------------------------------------------------------------------------------------------
   type     |A description of the type of output. For instance, 'CO2'.
   value    |The value of the output.
@@ -1772,6 +1784,7 @@ factors that were used.
 
 Used to create a new profile item.
 
+  Name                      | Value
   -------------------------- ----------------------------------------------------------------------
   URL                        `https://api-stage.amee.com/3.6/profiles/{profile_uid}/items`
   HTTP Method                `POST`
@@ -1878,6 +1891,7 @@ Location: https://api-stage.amee.com/3.6.0/profiles/FC2ODLZHCNHS/items/O9IX7PWGT
 
 Used to fetch a representation of an existing profile item.
 
+  Name                      | Value
   --------------------------|-----------------------------------------------------------------------------------------
   URL                       |`https://api-stage.amee.com/3.6/profiles/{profile_uid}/items/{profile_item_uid}`
   HTTP Method               |`GET`
@@ -2119,11 +2133,12 @@ Content-Type: application/xml; charset=UTF-8
 
 Fetches all profile items in a profile.
 
-  -------------------------- ----------------------------------------------------------------------
-  URL                        `https://api-stage.amee.com/3.6/profiles/{profile_uid}/items`
-  HTTP Method                `GET`
-  Successful Response Code   `200 OK`
-  -------------------------- ----------------------------------------------------------------------
+  Name                      | Value
+  --------------------------|----------------------------------------------------------------------
+  URL                       |`https://api-stage.amee.com/3.6/profiles/{profile_uid}/items`
+  HTTP Method               |`GET`
+  Successful Response Code  |`200 OK`
+  --------------------------|----------------------------------------------------------------------
 
 #### Query Parameters
 
@@ -2216,6 +2231,7 @@ Content-Type: application/xml; charset=UTF-8
 Used to update an existing profile item. Parameters are the same as for
 creation.
 
+  Name                      | Value
   --------------------------|-----------------------------------------------------------------------------------------
   URL                       |`https://api-stage.amee.com/3.6/profiles/{profile_uid}/items/{profile_item_uid}`
   HTTP Method               |`PUT`
@@ -2303,6 +2319,7 @@ Content-Type: application/xml
 Completely remove the specified profile item from the AMEE database.
 This information cannot be recovered after deletion.
 
+  Name                      | Value
   --------------------------|-----------------------------------------------------------------------------------------
   URL                       |`https://api-stage.amee.com/3.6/profiles/{profile_uid}/items/{profile_item_uid}`
   HTTP Method               |`DELETE`
@@ -2388,6 +2405,7 @@ operations.
 
 Used to create multiple new profile items in a single HTTP request.
 
+  Name                      | Value
   --------------------------|--------------------------------------------------------------
   URL                       |https://api-stage.amee.com/3.6/profiles/{profile\_uid}/items
   HTTP Method               |POST
@@ -2528,7 +2546,8 @@ Content-Type: application/xml
 ### Update multiple profile items
 
 Used to update multiple profile items in a single HTTP request.
-
+  
+  Name                      | Value
   --------------------------|--------------------------------------------------------------
   URL                       |https://api-stage.amee.com/3.6/profiles/{profile\_uid}/items
   HTTP Method               |PUT
@@ -2666,6 +2685,7 @@ content. Both models and contexts can be returned depending on the
 request, and any matrix parameters valid for those resources can be used
 to add extra information in the search results.
 
+  Name                      | Value
   --------------------------|------------------------------------------------
   URL                       |`https://api-stage.amee.com/3.6/search`
   HTTP Method               |`GET`
