@@ -115,18 +115,18 @@ an exact match is required, or as more complex lucene query expressions.
 See [the section called “Search”](advanced.md#search "Search") for more
 details.
 
-  Query Parameter               Description                                                                                                                                                      Required?
-  ----------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------- -----------
-  `wikiName`             Match results by wikiName.                                                                                                                                       ✗
-  `wikiDoc`              Match results by wikiDoc. Normally you'll want to use a substring search here.                                                                                   ✗
-  `provenance`           Match results by provenance; standards body name, for instance.                                                                                                  ✗
-  `authority`            Match results by authority; Valid values are `enterprise`, `recommended`, `verified`, or `unverified`.                               ✗
-  `itemDefinitionUid`    List models that use the specified item definition (by UID).                                                                                                     ✗
-  `itemDefinitionName`   List models that use the specified item definition (by name).                                                                                                    ✗
-  `tags`                 A comma-separated list of tags that returned models should have. Can also be a lucene query expression.                                                          ✗
-  `excTags`              A comma-separated list of tags that returned models should *not* have. Can also be a lucene query expression.                                                    ✗
-  `resultStart`          Zero-based index of the first result that should be returned. See [the section called “Paging”](advanced.md#paging "Paging"). Defaults to 0 if not specified.   ✗
-  `resultLimit`          Specifies the number of results to return in a single page. See [the section called “Paging”](advanced.md#paging "Paging"). Defaults to 50 if not specified.    ✗
+  Query Parameter              | Description                                                                                                                                                      |Required?
+  -----------------------------| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |-----------
+  `wikiName`             | Match results by wikiName.                                                                                                                                       |✗
+  `wikiDoc`              | Match results by wikiDoc. Normally you'll want to use a substring search here.                                                                                   |✗
+  `provenance`           | Match results by provenance; standards body name, for instance.                                                                                                  |✗
+  `authority`            | Match results by authority; Valid values are `enterprise`, `recommended`, `verified`, or `unverified`.                                                           |✗
+  `itemDefinitionUid`    | List models that use the specified item definition (by UID).                                                                                                     |✗
+  `itemDefinitionName`   | List models that use the specified item definition (by name).                                                                                                    |✗
+  `tags`                 | A comma-separated list of tags that returned models should have. Can also be a lucene query expression.                                                          |✗
+  `excTags`              | A comma-separated list of tags that returned models should *not* have. Can also be a lucene query expression.                                                    |✗
+  `resultStart`          | Zero-based index of the first result that should be returned. See [the section called “Paging”](advanced.md#paging "Paging"). Defaults to 0 if not specified.   |✗
+  `resultLimit`          | Specifies the number of results to return in a single page. See [the section called “Paging”](advanced.md#paging "Paging"). Defaults to 50 if not specified.    |✗
 
 The response contains JSON or XML encoded descriptions of all models
 that match the query criteria.
@@ -271,11 +271,11 @@ Content-Type: application/xml; charset=UTF-8
 
 Fetch information about a particular model.
 
-  -------------------------- -------------------------------------------------------------------------------------
-  URL                        `https://api-stage.amee.com/3.6/categories/{wikiName}[;{matrix_parameters}]`
-  HTTP Method                `GET`
-  Successful Response Code   `200 OK`
-  -------------------------- -------------------------------------------------------------------------------------
+  --------------------------|-------------------------------------------------------------------------------------
+  URL                       |`https://api-stage.amee.com/3.6/categories/{wikiName}[;{matrix_parameters}]`
+  HTTP Method               |`GET`
+  Successful Response Code  |`200 OK`
+  --------------------------|-------------------------------------------------------------------------------------
 
 The response contains a JSON or XML encoded description of the model as
 shown below.
@@ -370,18 +370,18 @@ are not the same across different AMEEconnect platforms, and so should
 not be hardcoded into applications. They can, however, be cached safely
 for prolonged periods.
 
-  -------------------------- -----------------------------------------------------------------------------------------
-  URL                        `https://api-stage.amee.com/3.6/categories/{wikiName}/drill[?{context options}]`
-  HTTP Method                `GET`
-  Response Content-Type      `application/xml` or `application/json`
-  Successful Response Code   `200 OK`
-  -------------------------- -----------------------------------------------------------------------------------------
+  --------------------------|-----------------------------------------------------------------------------------------
+  URL                       |`https://api-stage.amee.com/3.6/categories/{wikiName}/drill[?{context options}]`
+  HTTP Method               |`GET`
+  Response Content-Type     |`application/xml` or `application/json`
+  Successful Response Code  |`200 OK`
+  --------------------------|-----------------------------------------------------------------------------------------
 
 #### Query Parameters
 
-  Parameter                    Description                                                                                                                         Required?
-  ---------------------------- ----------------------------------------------------------------------------------------------------------------------------------- ------------------------------
-  `{context options}`   Any number of choices and the values chosen. See below for detailed explanation. Choices should be provided in the correct order.   ✓ (except for first request)
+  Parameter                   | Description                                                                                                                        |Required?
+  ----------------------------|------------------------------------------------------------------------------------------------------------------------------------|------------------------------
+  `{context options}`         | Any number of choices and the values chosen. See below for detailed explanation. Choices should be provided in the correct order.  |✓ (except for first request)
 
 The response body contains a number of sections. `name` is the
 name of the next context option, and `choices` lists the valid
@@ -696,18 +696,18 @@ factors which are used as constant inputs to calculations.
 
 ### Properties
 
-  Property           Description                                                                                                                                                           [Matrix Parameter](advanced.md#matrix-parameters "Matrix Parameters")
-  ------------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------
-  UID                A [unique identification code](reference.md#uid-reference "UIDs") for the context.                                                                                   
-  label              The human-readable name of the context, made up of all its context options.                                                                                           `label`
-  values             A collection of emission factors used by the context.                                                                                                                 `values`
-  categoryWikiName   The model that the context belongs to.                                                                                                                                `parent`
-  provenance         A link (or set of links) to the original source on which the context is based. May be more detailed than model provenance. May include WikiCreole markup for links.   `provenance`
-  wikiDoc            The full documentation for the context, as displayed in AMEEdiscover. Uses WikiCreole syntax.                                                                         `wikiDoc`
-  itemDefinition     Include details of the item definition, which provides access to information on inputs and return values.                                                             `itemDefinition`
-  created            The time and date on which the context was created.                                                                                                                   `audit`
-  modified           The time and date on which the context was last modified.                                                                                                             `audit`
-  status             The current status of the context. Normally this will be `ACTIVE`.                                                                                             `audit`
+  Property          | Description                                                                                                                                                          |[Matrix Parameter](advanced.md#matrix-parameters "Matrix Parameters")
+  ------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |------------------------------------------------------------------------
+  UID               | A [unique identification code](reference.md#uid-reference "UIDs") for the context.                                                                                   |
+  label             | The human-readable name of the context, made up of all its context options.                                                                                          |`label`
+  values            | A collection of emission factors used by the context.                                                                                                                |`values`
+  categoryWikiName  | The model that the context belongs to.                                                                                                                               |`parent`
+  provenance        | A link (or set of links) to the original source on which the context is based. May be more detailed than model provenance. May include WikiCreole markup for links.  |`provenance`
+  wikiDoc           | The full documentation for the context, as displayed in AMEEdiscover. Uses WikiCreole syntax.                                                                        |`wikiDoc`
+  itemDefinition    | Include details of the item definition, which provides access to information on inputs and return values.                                                            |`itemDefinition`
+  created           | The time and date on which the context was created.                                                                                                                  |`audit`
+  modified          | The time and date on which the context was last modified.                                                                                                            |`audit`
+  status            | The current status of the context. Normally this will be `ACTIVE`.                                                                                                   |`audit`
 
 ### List contexts
 
@@ -727,13 +727,13 @@ an exact match is required, or as more complex lucene query expressions.
 See [the section called “Search”](advanced.md#search "Search") for more
 details.
 
-  Query Parameter             Description                                                                                                                                                      Required?
-  --------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------- -----------
-  `label`              Match results by label.                                                                                                                                          ✗
-  `{context option}`   Match results by context option.                                                                                                                                 ✗
-  `provenance`         Match results by provenance; standards body name, for instance.                                                                                                  ✗
-  `resultStart`        Zero-based index of the first result that should be returned. See [the section called “Paging”](advanced.md#paging "Paging"). Defaults to 0 if not specified.   ✗
-  `resultLimit`        Specifies the number of results to return in a single page. See [the section called “Paging”](advanced.md#paging "Paging"). Defaults to 50 if not specified..   ✗
+  Query Parameter      | Description                                                                                                                                                    | Required?
+  ---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------
+  `label`              |Match results by label.                                                                                                                                         |✗
+  `{context option}`   |Match results by context option.                                                                                                                                |✗
+  `provenance`         |Match results by provenance; standards body name, for instance.                                                                                                 |✗
+  `resultStart`        |Zero-based index of the first result that should be returned. See [the section called “Paging”](advanced.md#paging "Paging"). Defaults to 0 if not specified.   |✗
+  `resultLimit`        |Specifies the number of results to return in a single page. See [the section called “Paging”](advanced.md#paging "Paging"). Defaults to 50 if not specified..   |✗
 
 The response contains a JSON or XML encoded description of the matching
 contexts.
@@ -878,11 +878,11 @@ Content-Type: application/xml; charset=UTF-8
 
 Fetches a representation of a single context.
 
-  -------------------------- -------------------------------------------------------------------------------------------------
-  URL                        `https://api-stage.amee.com/3.6/categories/{wikiName}/items/{uid}[;{matrix_parameters}]`
-  HTTP Method                `GET`
-  Successful Response Code   `200 OK`
-  -------------------------- -------------------------------------------------------------------------------------------------
+  --------------------------|-------------------------------------------------------------------------------------------------
+  URL                       |`https://api-stage.amee.com/3.6/categories/{wikiName}/items/{uid}[;{matrix_parameters}]`
+  HTTP Method               |`GET`
+  Successful Response Code  |`200 OK`
+  --------------------------|-------------------------------------------------------------------------------------------------
 
 The response contains a JSON or XML encoded description of the context.
 
@@ -1044,20 +1044,20 @@ Content-Type: application/xml; charset=UTF-8
 
 Performs a calculation for a single context.
 
-  -------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  URL                        `https://api-stage.amee.com/3.6/categories/{wikiName}/calculation?{context options}&{query_parameters}` or `https://api-stage.amee.com/3.6/categories/{wikiName}/items/{uid}/calculation?{query_parameters}`
-  HTTP Method                `GET`
-  Successful Response Code   `200 OK`
-  -------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  --------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  URL                       |`https://api-stage.amee.com/3.6/categories/{wikiName}/calculation?{context options}&{query_parameters}` or `https://api-stage.amee.com/3.6/categories/{wikiName}/items/{uid}/calculation?{query_parameters}`
+  HTTP Method               |`GET`
+  Successful Response Code  |`200 OK`
+  --------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #### Query Parameters
 
-  Query Parameter                  Description                                                                                   Required?
-  -------------------------------- --------------------------------------------------------------------------------------------- -----------
-  `{context options}`       The context options for the context that should be used in the calculation.                   ✓
-  `values.{value_name}`     An input to be used in the calculation. Any number can be specified in separate parameters.   ✓
-  `units.{value_name}`      The unit that the relevant input is measured in.                                              ✗
-  `perUnits.{value_name}`   The perUnit (normally a time unit) that the relevant input is measured in, if supported.      ✗
+  Query Parameter          |  Description                                                                                 | Required?
+  -------------------------|----------------------------------------------------------------------------------------------|----------------
+  `{context options}`      | The context options for the context that should be used in the calculation.                  | ✓
+  `values.{value_name}`    | An input to be used in the calculation. Any number can be specified in separate parameters.  | ✓
+  `units.{value_name}`     | The unit that the relevant input is measured in.                                             | ✗
+  `perUnits.{value_name}`  | The perUnit (normally a time unit) that the relevant input is measured in, if supported.     | ✗
 
 -   [JSON](javascript:;)
 -   [XML](javascript:;)
@@ -1188,12 +1188,12 @@ for emission factors which change over time.
 
 ### Properties
 
-  Property    Description
-  ----------- ---------------------------------------------------------------------------------------------
-  UID         A [unique identification code](reference.md#uid-reference "UIDs") for the emission factor.
-  value       The actual value of the emission factor.
-  unit        The unit of the emission factor, if appropriate.
-  startDate   The date from which the emission factor is valid.
+  Property   |Description
+  -----------|---------------------------------------------------------------------------------------------
+  UID        |A [unique identification code](reference.md#uid-reference "UIDs") for the emission factor.
+  value      |The actual value of the emission factor.
+  unit       |The unit of the emission factor, if appropriate.
+  startDate  |The date from which the emission factor is valid.
 
 ### Get emission factor
 
@@ -1201,11 +1201,11 @@ Fetches a representation of a single emission factor, including history
 data if relevant. Actual values are returned as an array. If there is no
 history data, the array will only have one element.
 
-  -------------------------- ----------------------------------------------------------------------------------------------------
-  URL                        `https://api-stage.amee.com/3.6/categories/{wikiName}/items/{item_uid}/values/{value_name}`
-  HTTP Method                `GET`
-  Successful Response Code   `200 OK`
-  -------------------------- ----------------------------------------------------------------------------------------------------
+  --------------------------|----------------------------------------------------------------------------------------------------
+  URL                       |`https://api-stage.amee.com/3.6/categories/{wikiName}/items/{item_uid}/values/{value_name}`
+  HTTP Method               |`GET`
+  Successful Response Code  |`200 OK`
+  --------------------------|----------------------------------------------------------------------------------------------------
 
 -   [JSON](javascript:;)
 -   [XML](javascript:;)
@@ -1359,23 +1359,23 @@ operations that are performed on or inside the profile.
 
 ### Properties
 
-  Property     Description                                                                                                                                                                   [Matrix Parameter](advanced.md#matrix-parameters "Matrix Parameters")
-  ------------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------
-  UID          A 12-letter unique identifier for the profile. See [the section called “UIDs”](reference.md#uid-reference "UIDs") for more information.                                      
-  categories   The models that have been used within this profile.                                                                                                                           `categories`
-  created      The time and date on which the profile was created.                                                                                                                           `audit`
-  modified     The time and date on which the profile was last modified. Note that this does not track changes inside the profile, such as to inputs, only to the profile resource itself.   `audit`
+  Property    |Description                                                                                                                                                                  |[Matrix Parameter](advanced.md#matrix-parameters "Matrix Parameters")
+  ------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------
+  UID         |A 12-letter unique identifier for the profile. See [the section called “UIDs”](reference.md#uid-reference "UIDs") for more information.                                      |
+  categories  |The models that have been used within this profile.                                                                                                                          | `categories`
+  created     |The time and date on which the profile was created.                                                                                                                          | `audit`
+  modified    |The time and date on which the profile was last modified. Note that this does not track changes inside the profile, such as to inputs, only to the profile resource itself.  | `audit`
 
 ### Create profile
 
 Used to create a new profile, in which inputs can be stored.
 
-  -------------------------- --------------------------------------------------
-  URL                        `https://api-stage.amee.com/3.6/profiles`
-  HTTP Method                `POST`
-  Request Content-Type       `application/x-www-form-urlencoded`
-  Successful Response Code   `201 CREATED`
-  -------------------------- --------------------------------------------------
+  --------------------------|--------------------------------------------------
+  URL                       |`https://api-stage.amee.com/3.6/profiles`
+  HTTP Method               |`POST`
+  Request Content-Type      |`application/x-www-form-urlencoded`
+  Successful Response Code  |`201 CREATED`
+  --------------------------|--------------------------------------------------
 
 #### Body Parameters
 
@@ -1470,11 +1470,11 @@ Location: https://api-stage.amee.com/3.6.0/profiles/FC2ODLZHCNHS
 The main information available in the profile resource is the list of
 models used. This is useful for automating display of stored data.
 
-  -------------------------- ----------------------------------------------------------------
-  URL                        `https://api-stage.amee.com/3.6/profiles/{profile_uid}`
-  HTTP Method                `GET`
-  Successful Response Code   `200 OK`
-  -------------------------- ----------------------------------------------------------------
+  --------------------------|----------------------------------------------------------------
+  URL                       |`https://api-stage.amee.com/3.6/profiles/{profile_uid}`
+  HTTP Method               |`GET`
+  Successful Response Code  |`200 OK`
+  --------------------------|----------------------------------------------------------------
 
 -   [JSON](javascript:;)
 -   [XML](javascript:;)
@@ -1559,11 +1559,11 @@ Content-Type: application/xml; charset=UTF-8
 
 Lists all profiles available to the current user.
 
-  -------------------------- --------------------------------------------------
-  URL                        `https://api-stage.amee.com/3.6/profiles`
-  HTTP Method                `GET`
-  Successful Response Code   `200 OK`
-  -------------------------- --------------------------------------------------
+  --------------------------|--------------------------------------------------
+  URL                       |`https://api-stage.amee.com/3.6/profiles`
+  HTTP Method               |`GET`
+  Successful Response Code  |`200 OK`
+  --------------------------|--------------------------------------------------
 
 -   [JSON](javascript:;)
 -   [XML](javascript:;)
@@ -1653,11 +1653,11 @@ Completely remove the specified profile from the AMEE database,
 including all profile items contained within it. This information cannot
 be recovered after deletion.
 
-  -------------------------- ----------------------------------------------------------------
-  URL                        `https://api-stage.amee.com/3.6/profiles/{profile_uid}`
-  HTTP Method                `DELETE`
-  Successful Response Code   `200 OK`
-  -------------------------- ----------------------------------------------------------------
+  --------------------------|----------------------------------------------------------------
+  URL                       |`https://api-stage.amee.com/3.6/profiles/{profile_uid}`
+  HTTP Method               |`DELETE`
+  Successful Response Code  |`200 OK`
+  --------------------------|----------------------------------------------------------------
 
 -   [JSON](javascript:;)
 -   [XML](javascript:;)
@@ -1735,16 +1735,16 @@ inside profiles.
 
 ### Properties
 
-  Property    Description                                                                                                                                                                                                                                               [Matrix Parameter](advanced.md#matrix-parameters "Matrix Parameters")
-  ----------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------
-  UID         A 12-letter unique identifier for the profile item. See [the section called “UIDs”](reference.md#uid-reference "UIDs") for more information.                                                                                                             
-  name        The name of the profile item. Two profile items cannot have the same model, context options and overlapping dates unless they also have different names. Profile items with the same name and model/context options are considered to be a time series.   `name`
-  created     The time and date on which the profile item was created.                                                                                                                                                                                                  `audit`
-  modified    The time and date on which the profile item was last modified.                                                                                                                                                                                            `audit`
-  amounts     A set of return values for the item. This may include emissions separated by gas. See [the section called “Results”](reference.md#profile-item-amounts-reference "Results") for details.                                                                 `amounts`
-  startDate   The date/time from which the profile item is valid; only used in prorata calculations. See [the section called “Building Time Series”](profiles.md#build-time-series "Building Time Series") for more detail.                                            `dates`
-  endDate     The date/time until which the profile item is valid; only used in prorata calculations. See [the section called “Building Time Series”](profiles.md#build-time-series "Building Time Series") for more detail.                                           `dates`
-  model       The model which this profile item uses to obtain emission factors.                                                                                                                                                                                        `category`
+  Property   |Description                                                                                                                                                                                                                                              | [Matrix Parameter](advanced.md#matrix-parameters "Matrix Parameters")
+  -----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------
+  UID        |A 12-letter unique identifier for the profile item. See [the section called “UIDs”](reference.md#uid-reference "UIDs") for more information.                                                                                                             |
+  name       |The name of the profile item. Two profile items cannot have the same model, context options and overlapping dates unless they also have different names. Profile items with the same name and model/context options are considered to be a time series.  | `name`
+  created    |The time and date on which the profile item was created.                                                                                                                                                                                                 | `audit`
+  modified   |The time and date on which the profile item was last modified.                                                                                                                                                                                           | `audit`
+  amounts    |A set of return values for the item. This may include emissions separated by gas. See [the section called “Results”](reference.md#profile-item-amounts-reference "Results") for details.                                                                 | `amounts`
+  startDate  |The date/time from which the profile item is valid; only used in prorata calculations. See [the section called “Building Time Series”](profiles.md#build-time-series "Building Time Series") for more detail.                                            | `dates`
+  endDate    |The date/time until which the profile item is valid; only used in prorata calculations. See [the section called “Building Time Series”](profiles.md#build-time-series "Building Time Series") for more detail.                                           | `dates`
+  model      |The model which this profile item uses to obtain emission factors.                                                                                                                                                                                       | `category`
 
 ### Results
 
@@ -1756,12 +1756,12 @@ In the responses, these results are included in an 'amounts' object. See
 the examples below for the exact XML and JSON representations. Each
 'amount' returned has the following properties:
 
-  --------- ---------------------------------------------------------------------------------------------------------------------------
-  type      A description of the type of output. For instance, 'CO2'.
-  value     The value of the output.
-  unit      The units that the value field is measured in.
-  default   Optionally, this field is 'true' for the default result, often an aggregated CO2 equivalent total across different gases.
-  --------- ---------------------------------------------------------------------------------------------------------------------------
+  ---------|---------------------------------------------------------------------------------------------------------------------------
+  type     |A description of the type of output. For instance, 'CO2'.
+  value    |The value of the output.
+  unit     |The units that the value field is measured in.
+  default  |Optionally, this field is 'true' for the default result, often an aggregated CO2 equivalent total across different gases.
+  ---------|---------------------------------------------------------------------------------------------------------------------------
 
 The `amounts` section of the response can also contain
 `note` objects. These provide other textual information relevant
@@ -1781,17 +1781,17 @@ Used to create a new profile item.
 
 #### Body Parameters
 
-  Parameter                        Description                                                                                                                                                                                                                                                                                                                   Required?
-  -------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -----------
-  `category`                The wikiName of the model that should be used for calculation.                                                                                                                                                                                                                                                                ✓
-  `{context options}`       The context options for the context that should be used in the calculation.                                                                                                                                                                                                                                                   ✓
-  `values.{value_name}`     An input to be used in the calculation. Any number can be specified in separate parameters.                                                                                                                                                                                                                                   ✓
-  `units.{value_name}`      The unit that the relevant input is measured in.                                                                                                                                                                                                                                                                              ✗
-  `perUnits.{value_name}`   The perUnit (normally a time unit) that the relevant input is measured in, if supported.                                                                                                                                                                                                                                      ✗
-  `name`                    Set the name of the profile item. You cannot create two profile items with the same model, context options, and overlapping dates unless you give them a unique name.                                                                                                                                                         ✗
-  `startDate`               An ISO8601 date/time which specifies when the profile item should be valid from. This parameter is compulsory if either `endDate` or `duration` are specified. Defaults to the current time. See [the section called “Dates/Times”](reference.md#dates-times-reference "Dates/Times") for details of format.   ✗
-  `endDate`                 An ISO8601 date/time which specifies when the profile item should be valid until. Defaults to infinitely far in the future. See [the section called “Dates/Times”](reference.md#dates-times-reference "Dates/Times") for details of format.                                                                                  ✗
-  `duration`                As an alternative to specifying an end time, you can specify the duration that the profile item should be valid for in ISO8601 duration format. See [the section called “Durations”](reference.md#duration-reference "Durations") for details.                                                                               ✗
+  Parameter                | Description                                                                                                                                                                                                                                                                                                                 |  Required?
+  -------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------
+  `category`               | The wikiName of the model that should be used for calculation.                                                                                                                                                                                                                                                              |  ✓
+  `{context options}`      | The context options for the context that should be used in the calculation.                                                                                                                                                                                                                                                 |  ✓
+  `values.{value_name}`    | An input to be used in the calculation. Any number can be specified in separate parameters.                                                                                                                                                                                                                                 |  ✓
+  `units.{value_name}`     | The unit that the relevant input is measured in.                                                                                                                                                                                                                                                                            |  ✗
+  `perUnits.{value_name}`  | The perUnit (normally a time unit) that the relevant input is measured in, if supported.                                                                                                                                                                                                                                    |  ✗
+  `name`                   | Set the name of the profile item. You cannot create two profile items with the same model, context options, and overlapping dates unless you give them a unique name.                                                                                                                                                       |  ✗
+  `startDate`              | An ISO8601 date/time which specifies when the profile item should be valid from. This parameter is compulsory if either `endDate` or `duration` are specified. Defaults to the current time. See [the section called “Dates/Times”](reference.md#dates-times-reference "Dates/Times") for details of format.                |  ✗
+  `endDate`                | An ISO8601 date/time which specifies when the profile item should be valid until. Defaults to infinitely far in the future. See [the section called “Dates/Times”](reference.md#dates-times-reference "Dates/Times") for details of format.                                                                                 | ✗
+  `duration`               | As an alternative to specifying an end time, you can specify the duration that the profile item should be valid for in ISO8601 duration format. See [the section called “Durations”](reference.md#duration-reference "Durations") for details.                                                                              | ✗
 
 The `Location` header indicates the URL of the new profile item.
 
@@ -1878,11 +1878,11 @@ Location: https://api-stage.amee.com/3.6.0/profiles/FC2ODLZHCNHS/items/O9IX7PWGT
 
 Used to fetch a representation of an existing profile item.
 
-  -------------------------- -----------------------------------------------------------------------------------------
-  URL                        `https://api-stage.amee.com/3.6/profiles/{profile_uid}/items/{profile_item_uid}`
-  HTTP Method                `GET`
-  Successful Response Code   `200 OK`
-  -------------------------- -----------------------------------------------------------------------------------------
+  --------------------------|-----------------------------------------------------------------------------------------
+  URL                       |`https://api-stage.amee.com/3.6/profiles/{profile_uid}/items/{profile_item_uid}`
+  HTTP Method               |`GET`
+  Successful Response Code  |`200 OK`
+  --------------------------|-----------------------------------------------------------------------------------------
 
 The response includes a representation of the requested profile item.
 Matrix parameters can be used to customise the included data.
@@ -2127,15 +2127,15 @@ Fetches all profile items in a profile.
 
 #### Query Parameters
 
-  Parameter              Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               Required?
-  ---------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -----------
-  `startDate`     Start and end dates can be used to define a "query window" for the request. This window affects which profile items will be returned in the response, and included in the total emission value. See parameters below for details. The date should be specified in ISO8601 format. Default value is the start of the current month. If endDate or duration are specified, this parameter is compulsory. See [the section called “Dates/Times”](reference.md#dates-times-reference "Dates/Times") for details of format.   ✗
-  `endDate`       See startDate above. Should be specified in ISO8601 format. Defaults to infinitely far in the future. See [the section called “Dates/Times”](reference.md#dates-times-reference "Dates/Times") for details of format.                                                                                                                                                                                                                                                                                                    ✗
-  `duration`      As an alternative to specifying an end time, you can specify the duration of the query window in ISO8601 duration format. See [the section called “Durations”](reference.md#duration-reference "Durations") for details of format.                                                                                                                                                                                                                                                                                       ✗
-  `selectby`      Setting this to 'start' will only include items which start during the query window. Setting 'end' will include only items which end during the window. The default behaviour is to include any item that intersects the query window.                                                                                                                                                                                                                                                                                    ✗
-  `mode`          Set the calculation mode used. By default, emission values for items are for the whole item, not just the part of the item that intersects the query window. To get just the emissions that took place during the query window, set this parameter to 'prorata'.                                                                                                                                                                                                                                                          ✗
-  `resultStart`   Zero-based index of the first result that should be returned. See [the section called “Paging”](advanced.md#paging "Paging"). Defaults to 0 if not specified.                                                                                                                                                                                                                                                                                                                                                            ✗
-  `resultLimit`   Specifies the number of results to return in a single page. See [the section called “Paging”](advanced.md#paging "Paging"). Defaults to 50 if not specified..                                                                                                                                                                                                                                                                                                                                                            ✗
+  Parameter       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |Required?
+  ----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------
+  `startDate`     | Start and end dates can be used to define a "query window" for the request. This window affects which profile items will be returned in the response, and included in the total emission value. See parameters below for details. The date should be specified in ISO8601 format. Default value is the start of the current month. If endDate or duration are specified, this parameter is compulsory. See [the section called “Dates/Times”](reference.md#dates-times-reference "Dates/Times") for details of format.   |✗
+  `endDate`       | See startDate above. Should be specified in ISO8601 format. Defaults to infinitely far in the future. See [the section called “Dates/Times”](reference.md#dates-times-reference "Dates/Times") for details of format.                                                                                                                                                                                                                                                                                                    |✗
+  `duration`      | As an alternative to specifying an end time, you can specify the duration of the query window in ISO8601 duration format. See [the section called “Durations”](reference.md#duration-reference "Durations") for details of format.                                                                                                                                                                                                                                                                                       |✗
+  `selectby`      | Setting this to 'start' will only include items which start during the query window. Setting 'end' will include only items which end during the window. The default behaviour is to include any item that intersects the query window.                                                                                                                                                                                                                                                                                   |✗
+  `mode`          | Set the calculation mode used. By default, emission values for items are for the whole item, not just the part of the item that intersects the query window. To get just the emissions that took place during the query window, set this parameter to 'prorata'.                                                                                                                                                                                                                                                         |✗
+  `resultStart`   | Zero-based index of the first result that should be returned. See [the section called “Paging”](advanced.md#paging "Paging"). Defaults to 0 if not specified.                                                                                                                                                                                                                                                                                                                                                            |✗
+  `resultLimit`   | Specifies the number of results to return in a single page. See [the section called “Paging”](advanced.md#paging "Paging"). Defaults to 50 if not specified..                                                                                                                                                                                                                                                                                                                                                            |✗
 
 -   [JSON](javascript:;)
 -   [XML](javascript:;)
@@ -2216,12 +2216,12 @@ Content-Type: application/xml; charset=UTF-8
 Used to update an existing profile item. Parameters are the same as for
 creation.
 
-  -------------------------- -----------------------------------------------------------------------------------------
-  URL                        `https://api-stage.amee.com/3.6/profiles/{profile_uid}/items/{profile_item_uid}`
-  HTTP Method                `PUT`
-  Request Content-Type       `application/x-www-form-urlencoded`
-  Successful Response Code   `200 OK`
-  -------------------------- -----------------------------------------------------------------------------------------
+  --------------------------|-----------------------------------------------------------------------------------------
+  URL                       |`https://api-stage.amee.com/3.6/profiles/{profile_uid}/items/{profile_item_uid}`
+  HTTP Method               |`PUT`
+  Request Content-Type      |`application/x-www-form-urlencoded`
+  Successful Response Code  |`200 OK`
+  --------------------------|-----------------------------------------------------------------------------------------
 
 -   [JSON](javascript:;)
 -   [XML](javascript:;)
@@ -2303,11 +2303,11 @@ Content-Type: application/xml
 Completely remove the specified profile item from the AMEE database.
 This information cannot be recovered after deletion.
 
-  -------------------------- -----------------------------------------------------------------------------------------
-  URL                        `https://api-stage.amee.com/3.6/profiles/{profile_uid}/items/{profile_item_uid}`
-  HTTP Method                `DELETE`
-  Successful Response Code   `200 OK`
-  -------------------------- -----------------------------------------------------------------------------------------
+  --------------------------|-----------------------------------------------------------------------------------------
+  URL                       |`https://api-stage.amee.com/3.6/profiles/{profile_uid}/items/{profile_item_uid}`
+  HTTP Method               |`DELETE`
+  Successful Response Code  |`200 OK`
+  --------------------------|-----------------------------------------------------------------------------------------
 
 -   [JSON](javascript:;)
 -   [XML](javascript:;)
@@ -2388,13 +2388,13 @@ operations.
 
 Used to create multiple new profile items in a single HTTP request.
 
-  -------------------------- --------------------------------------------------------------
-  URL                        https://api-stage.amee.com/3.6/profiles/{profile\_uid}/items
-  HTTP Method                POST
-  Request Content-Type       application/json or application/xml
-  Response Content-Type      application/json or application/xml
-  Successful Response Code   201 OK
-  -------------------------- --------------------------------------------------------------
+  --------------------------|--------------------------------------------------------------
+  URL                       |https://api-stage.amee.com/3.6/profiles/{profile\_uid}/items
+  HTTP Method               |POST
+  Request Content-Type      |application/json or application/xml
+  Response Content-Type     |application/json or application/xml
+  Successful Response Code  |201 OK
+  --------------------------|--------------------------------------------------------------
 
 The request should include a JSON or XML-encoded body containing the
 values which should be set. See the examples below for the exact
@@ -2529,13 +2529,13 @@ Content-Type: application/xml
 
 Used to update multiple profile items in a single HTTP request.
 
-  -------------------------- --------------------------------------------------------------
-  URL                        https://api-stage.amee.com/3.6/profiles/{profile\_uid}/items
-  HTTP Method                PUT
-  Request Content-Type       application/json or application/xml
-  Response Content-Type      application/json or application/xml
-  Successful Response Code   200 OK
-  -------------------------- --------------------------------------------------------------
+  --------------------------|--------------------------------------------------------------
+  URL                       |https://api-stage.amee.com/3.6/profiles/{profile\_uid}/items
+  HTTP Method               |PUT
+  Request Content-Type      |application/json or application/xml
+  Response Content-Type     |application/json or application/xml
+  Successful Response Code  |200 OK
+  --------------------------|--------------------------------------------------------------
 
 The request should include a JSON or XML-encoded body containing the
 UIDs of the items, and the values which should be updated. See the
@@ -2666,18 +2666,18 @@ content. Both models and contexts can be returned depending on the
 request, and any matrix parameters valid for those resources can be used
 to add extra information in the search results.
 
-  -------------------------- ------------------------------------------------
-  URL                        `https://api-stage.amee.com/3.6/search`
-  HTTP Method                `GET`
-  Successful Response Code   `200 OK`
-  -------------------------- ------------------------------------------------
+  --------------------------|------------------------------------------------
+  URL                       |`https://api-stage.amee.com/3.6/search`
+  HTTP Method               |`GET`
+  Successful Response Code  |`200 OK`
+  --------------------------|------------------------------------------------
 
 ### Query Parameters
 
-  Parameter        Description                                                                                                                                            Required?
-  ---------------- ------------------------------------------------------------------------------------------------------------------------------------------------------ -----------
-  `q`       Query string. Either a simple string or a Lucene query expression. See [the section called “Search”](advanced.md#search "Search") for more details.   ✓
-  `types`   `DC` will return models, `DI` will return contexts. `DC,DI` will return both.                                                     ✓
+  Parameter       | Description                                                                                                                                          |  Required?
+  ----------------|------------------------------------------------------------------------------------------------------------------------------------------------------|--------------
+  `q`             | Query string. Either a simple string or a Lucene query expression. See [the section called “Search”](advanced.md#search "Search") for more details.  | ✓
+  `types`         | `DC` will return models, `DI` will return contexts. `DC,DI` will return both.                                                                        | ✓
 
 -   [JSON](javascript:;)
 -   [XML](javascript:;)
