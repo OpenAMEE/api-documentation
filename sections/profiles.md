@@ -139,7 +139,6 @@ section called “Read profile
 item”](reference.md#get-profile-item-reference "Read profile item") for
 full details.
 
--   [JSON](javascript:;)
 
 #### Request
 
@@ -302,17 +301,17 @@ There are a couple of request parameters that control what is returned:
 ### selectby
 
 Option          | Meaning
-----------------| ----------------------------- |
-*unspecified*   |   Include profile items which intersects the query window.|
-`start`         | Only include profile items which start during the query window.|
-`end`           |  Only include profile items which end during the query window.|
+----------------| -----------------------------
+*unspecified*   |   Include profile items which intersects the query window.
+`start`         | Only include profile items which start during the query window.
+`end`           |  Only include profile items which end during the query window.
 
 ### mode
 
-Option            | Meaning 
-------------------| --------------| 
-*unspecified*     | Get the total emission values for all items. |
-`prorata`         | Get only the emissions which took place during the query window, for contexts that have a unit including time.|
+Option            | Meaning
+------------------| --------------
+*unspecified*     | Get the total emission values for all items.
+`prorata`         | Get only the emissions which took place during the query window, for contexts that have a unit including time.
 
 For instance, if you have a profile item that lasts a week, and request
 just one day within that period, if you do not specify `mode`,

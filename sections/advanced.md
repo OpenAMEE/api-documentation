@@ -75,73 +75,73 @@ The following table lists the most common units supported by
 AMEEconnect, along with the symbol that should be used for the POST
 options.
 
- Mass  | symbol|
- ----- | ----- |
- Grams | g     |
-Kilograms | kg |
-Metric Tons / Tonnes | t |
-Ounces | oz |
-Pounds | lb |
-Tons (UK imperial) | ton_uk |
-Tons (US imperial) | ton_us |
+ Mass  | symbol
+ ----- | -----
+ Grams | g
+Kilograms | kg
+Metric Tons / Tonnes | t
+Ounces | oz
+Pounds | lb
+Tons (UK imperial) | ton_uk
+Tons (US imperial) | ton_us
 
-Distance |symbol  |
------    | -----  |
-Metres   | m |
-Kilometres | km |
-Feet | ft |
-Yards | yd |
-Miles | mi| 
-Nautical Miles | nmi|
+Distance |symbol  
+-----    | -----  
+Metres   | m
+Kilometres | km
+Feet | ft
+Yards | yd
+Miles | mi
+Nautical Miles | nmi
 
-Volume | symbol |
------    | -----  |
-Litres | L |
-Cubic Metres |m³|
-Fluid Ounces (UK imperial)| oz_fl_uk |
-Fluid Ounces (US imperial)| oz_fl |
-Gallons (UK imperial) |gal\_uk or gallon\_uk|
-Gallons (US imperial) | gal|
+Volume | symbol
+-----    | -----  
+Litres | L
+Cubic Metres |m³
+Fluid Ounces (UK imperial)| oz_fl_uk
+Fluid Ounces (US imperial)| oz_fl
+Gallons (UK imperial) |gal\_uk or gallon\_uk
+Gallons (US imperial) | gal
 
-Energy | symbol |
------    | -----  |
-Kilowatt-Hours| kWh |
-Joules | J|
+Energy | symbol
+-----    | -----  
+Kilowatt-Hours| kWh
+Joules | J
 
-Energy - BTU | symbol|
------    | -----  |
-39 °F |BTU_ThirtyNineFv|
-Mean | BTU_Mean |
-IT | BTU_IT |
-ISO | BTU_ISO|
-59 °F| BTU_FiftyNineF|
-60 °F | BTU_SixtyF |
-63 °F| BTU_SixtyThreeF | 
-Thermochemical| BTU_Thermochemical | 
+Energy - BTU | symbol
+-----    | -----  
+39 °F |BTU_ThirtyNineFv
+Mean | BTU_Mean
+IT | BTU_IT
+ISO | BTU_ISO
+59 °F| BTU_FiftyNineF
+60 °F | BTU_SixtyF
+63 °F| BTU_SixtyThreeF
+Thermochemical| BTU_Thermochemical
 
 Energy - Therm |symbol
------    | -----  |
-39 °F| thm_ThirtyNineF | 
-Mean| thm_Mean | 
-IT| thm_IT | 
-EC| thm_ec , alias of `thm_IT`|
-ISO| thm_ISO | 
-59 °F| thm_FiftyNineF | 
-US| thm_us, alias of `thm_FiftyNineF`|
-60 °F| thm_SixtyF | 
-63 °F| thm_SixtyThreeF | 
-Thermochemical| thm_Thermochemical | 
+-----    | -----  
+39 °F| thm_ThirtyNineF
+Mean| thm_Mean
+IT| thm_IT
+EC| thm_ec , alias of `thm_IT`
+ISO| thm_ISO
+59 °F| thm_FiftyNineF
+US| thm_us, alias of `thm_FiftyNineF`
+60 °F| thm_SixtyF
+63 °F| thm_SixtyThreeF
+Thermochemical| thm_Thermochemical
 
 
-Time | symbol|
------    | -----  |
-Second| s | 
-Minute| min | 
-Hour| h | 
-Day| day | 
-Week| week | 
-Month| month | 
-Year| year | 
+Time | symbol
+-----    | -----  
+Second| s
+Minute| min
+Hour| h
+Day| day
+Week| week
+Month| month
+Year| year
 
 
 Matrix Parameters
@@ -201,7 +201,7 @@ reference section for details.
 #### Request
 
 ```shell
-curl -H "Accept: application/json" -u username:password \ 
+curl -H "Accept: application/json" -u username:password \
 http://stage.amee.com/3.6/search;name;label;parent?q=camels&types=DC%2CDI
 ```
 

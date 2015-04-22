@@ -14,7 +14,7 @@ Getting Started
 ---------------
 
 Before you start, you'll need a free API key, which you can get by
-signing up at [https://my.amee.com/signup](https://my.amee.com/signup).
+signing up at [https://amee.com/api](https://amee.com/api).
 
 AMEEconnect is a RESTful API, with HTTP requests for all actions, and
 uses standard methods of authentication and response selection. Use
@@ -70,7 +70,7 @@ two endpoints of our flight.
 #### Request
 
 ```shell
-curl -H "Accept: application/json" -u username:password \ 
+curl -H "Accept: application/json" -u username:password \
 https://stage.amee.com/3.6/categories/Great_Circle_flight_methodology/calculation?type=great+circle+route&values.IATAcode1=LHR&values.IATAcode2=LAX
 ```
 
