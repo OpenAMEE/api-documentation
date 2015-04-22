@@ -145,4 +145,4 @@ more you can do with it, whether you want to just grab the emission
 factors, or build up complex histories over time.
 
 
-  [« Introduction](introduction.php) |   [Contents](index.php) | [Get Emission Factors »](data.php)
+  [« Introduction](introduction.md) |   [Contents](index.md) | [Get Emission Factors »](data.md)

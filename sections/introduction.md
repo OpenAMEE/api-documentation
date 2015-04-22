@@ -1,11 +1,11 @@
 Introduction
 ------------
 
-[About This Manual](introduction.php#about)
+[About This Manual](introduction.md#about)
 
-[Before You Start](introduction.php#before-you-start)
+[Before You Start](introduction.md#before-you-start)
 
-[API Versions](introduction.php#api-versions)
+[API Versions](introduction.md#api-versions)
 
 About This Manual
 -----------------
@@ -28,12 +28,11 @@ API Versions
 ------------
 
 This manual only covers version 3.6 of the AMEEconnect API. For details of API versioning, see [the section called “Specifying API
-Version”](advanced.php#specifying-api-versions "Specifying API Version").
+Version”](advanced.md#specifying-api-versions "Specifying API Version").
 
 If you require documentation for previous versions please refer to the
 links below:
 
 -   [API Version 2](/developer/docs/v2)
 
-[« AMEEconnect Documentation](index.php) | [Contents](index.php) | [Quick Start »](quickstart.php)
-
+[« AMEEconnect Documentation](index.md) | [Contents](index.md) | [Quick Start »](quickstart.md)

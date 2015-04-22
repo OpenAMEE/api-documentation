@@ -15,4 +15,4 @@ Goessner.
 [4] *[XPath Tutorial](http://www.w3schools.com/xpath/default.asp)*.
 W3Schools.
 
-  [« AMEEconnect API reference](reference.php) | [Contents](index.php)
+  [« AMEEconnect API reference](reference.md) | [Contents](index.md)

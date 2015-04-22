@@ -92,9 +92,3 @@ API version 3.6
 [Date and Time Representation](reference.md#date-reference)
 
 [References](bib.md)
-
-* * * * *
-
-[Introduction »](introduction.md)
-
-
