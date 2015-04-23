@@ -1,4 +1,0 @@
-<section role='tabbed' xmlns:xi='http://www.w3.org/2001/XInclude'>
-<xi:include href='json/get_categories_Generic_car_transport_drill.xml'/>
-<xi:include href='xml/get_categories_Generic_car_transport_drill.xml'/>
-</section>
